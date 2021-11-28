@@ -47,7 +47,7 @@ function Filters() {
       payload: []
     });
     if(addressParam !== '') {
-      window.history.replaceState(null, null,'/');
+      pageLoad();
     }
   }
 
@@ -65,6 +65,9 @@ function Filters() {
       type: 'setFarmFilters',
       payload: nonZeroKeys
     });
+    if(addressParam !== '') {
+      pageLoad();
+    }
   }
 
   const selectFilter = (farmKey) => {
