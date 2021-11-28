@@ -10,6 +10,7 @@ import BSC_JADE from './BSC-JADE.json';
 import BSC_META from './BSC-META.json';
 import BSC_TAC from './BSC-TAC.json';
 import CRO_FORT from './CRO-FORT.json';
+import ETH_LOBI from './ETH-LOBI.json';
 import ETH_OHM from './ETH-OHM.json';
 import ETH_SQUID from './ETH-SQUID.json';
 import FTM_EXOD from './FTM-EXOD.json';
@@ -38,6 +39,7 @@ const farms = {
   ...BSC_JADE,
   ...BSC_META,
   ...BSC_TAC,
+  ...ETH_LOBI,
   ...ETH_OHM,
   ...ETH_SQUID,
   ...FTM_EXOD,

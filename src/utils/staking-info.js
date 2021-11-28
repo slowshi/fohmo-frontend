@@ -22,12 +22,10 @@ class StakingInfo {
     'AVAX-SDOG',
     'AVAX-FORT',
     'ONE-WAGMI',
-    // 'EIGHT',
     'ARB-Z20',
     'AVAX-RUG',
     'ONE-ODAO',
-    // 'FORT'
-  ]
+  ];
   /**
    *
    *
@@ -136,10 +134,13 @@ class StakingInfo {
     } else if (key === 'FTM-SPA') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 7.673).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    } else if (key === 'XEUS') {
+    } else if (key === 'BSC-XEUS') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 4)).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 4)).toFixed(2);
-    } else {
+    } else if (key === 'BSC-META') {
+      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 1)).toFixed(2);
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 1)).toFixed(2);
+    }else {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei')).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
     }
@@ -177,7 +178,7 @@ class StakingInfo {
     );
     let price = 0;
     let ethPrice = 0;
-    if (key === 'ETH-SQUID') {
+    if (key === 'ETH-SQUID' || key === 'ETH-LOBI') {
       const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
       const ethReserves = await this.loadCahceContractCall(
         ethContract,
@@ -185,24 +186,16 @@ class StakingInfo {
         [],
         clearCache
       );
-      ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'mwei') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
-
-      price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+      if(key === 'ETH-LOBI') {
+        ethPrice = ethers.utils.formatUnits(ethReserves.reserve1, 'ether') / ethers.utils.formatUnits(ethReserves.reserve0, 'gwei');
+        price = ethers.utils.formatUnits(reserves.reserve0, 'gwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+      } else {
+        ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'mwei') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
+        price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+      }
       price = Number(price) * ethPrice;
     } else if (key === 'MATIC-KLIMA') {
-      // const bctContract = this.loadCacheContract(farmParams.LPContractBCT, PairContractAbi, networkParams.rpcURL);
-      // const bctReserves = await this.loadCahceContractCall(
-      //   bctContract,
-      //   'getReserves',
-      //   [],
-      //   clearCache
-      // );
-      // const bctPrice = ethers.utils.formatUnits(bctReserves.reserve0, 'mwei') / ethers.utils.formatUnits(bctReserves.reserve1, 'ether');
-      // price = ethers.utils.formatUnits(reserves.reserve0, 'ether') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-      // price = Number(price) * bctPrice;
-      // price = ethers.utils.formatUnits(reserves.reserve0, 'ether') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
       price = ethers.utils.formatUnits(reserves.reserve0, 'mwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-
     } else if(key === 'ARB-Z20' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT') {
       price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
     }else {
@@ -258,7 +251,7 @@ class StakingInfo {
         clearCache
       );
       totalReserves = Number(ethers.utils.formatUnits(totalReserves, 'gwei'));
-      if(key === 'ETH-SQUID') {
+      if(key === 'ETH-SQUID' || key === 'ETH-LOBI') {
         totalReserves = totalReserves * ethPrice;
       }
     }
@@ -287,7 +280,6 @@ class StakingInfo {
       seconds = epoch.endBlock.toNumber() - (Date.now() / 1000);
       distributeInterval = msPerDay / epoch._length.toNumber();
     } else {
-      // const rebaseBlock = this.getRebaseBlock(currentBlock, epoch._length.toNumber());
       distributeInterval = msPerDay / (epoch._length.toNumber() * networkParams.blockRateSeconds)
       seconds = this.secondsUntilBlock(currentBlock, epoch.endBlock.toNumber(), networkParams.blockRateSeconds);
     }
@@ -298,8 +290,6 @@ class StakingInfo {
     }
     // console.log(key, distributeInterval)
     const data = {
-      // farm: farmParams,
-      // network: networkParams,
       balances: {
         total: Number(total.toFixed(2)),
         tokenBalance,

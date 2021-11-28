@@ -1,0 +1,32 @@
+{
+  "MOVR-FHM": {
+    "farmSymbol": "FHM",
+    "networkSymbol": "MOVR",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Fantom",
+      "symbol": "FHM",
+      "link": "https://app.fantohm.com/#/stake",
+      "token": "0xfa1FBb8Ef55A4855E5688C0eE13aC3f202486286",
+      "stakingSymbol": "sFHM",
+      "stakingToken": "0x1888BB30f9EdD63b265942F3E3D061F186f38079",
+      "stakingContract": "0xF5C7D63C5Fc0aD4b7Cef7d8904239860725Ebc87",
+      "LPContract": "0xdbf638d800190271f5473e76898c6c8e741cba51",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xec2ae8a3e2692e4b0836ab5cf88104d101debef4",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xc0c4209e3a6d227ad9fe4dd3f064a1a1ab6a3ce5",
+          "symbol": "USDT.m"
+        },
+        {
+          "address": "0x25ccf3d5b5b856bf019ecfb0c1dcc500c6d8e0a9",
+          "symbol": "USDC.m"
+        }
+      ]
+    }
+  }
+}

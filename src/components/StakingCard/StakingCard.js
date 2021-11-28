@@ -130,7 +130,7 @@ function StakingCard(params) {
           <div>
             <span className="card-text d-flex justify-content-between align-items-center">
               <strong>Price</strong>
-              <span>{farm.data.stakingInfo?.price}</span>
+              <span>${farm.data.stakingInfo?.price}</span>
             </span>
             <span className="card-text d-flex justify-content-between align-items-center">
               <strong>Next Rebase</strong>

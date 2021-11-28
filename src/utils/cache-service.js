@@ -34,7 +34,8 @@ class CacheService {
 
 const cacheServiceInstance = new CacheService();
 
-module.exports = {
+export {
   cacheServiceInstance
-};
+}
+
 
