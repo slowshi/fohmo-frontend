@@ -1,0 +1,36 @@
+{
+  "MATIC-CLAM2": {
+    "farmSymbol": "CLAM2",
+    "networkSymbol": "MATIC",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "OtterClam V2",
+      "symbol": "CLAM2",
+      "link": "https://app.otterclam.finance/#/stake",
+      "token": "0xC250e9987A032ACAC293d838726C511E6E1C029d",
+      "stakingSymbol": "sCLAM2",
+      "stakingToken": "0xAAc144Dc08cE39Ed92182dd85ded60E5000C9e67",
+      "stakingContract": "0xC8B0243F350AA5F8B979b228fAe522DAFC61221a",
+      "LPContract": "0x1581802317f32a2665005109444233ca6e3e2d68",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x8ce47D56EAa1299d3e06FF3E04637449fFb01C9C",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x603A74Fd527b85E0A1e205517c1f24aC71f5C263",
+          "symbol": "MAI"
+        },
+        {
+          "address": "0x706587BD39322A6a78ddD5491cDbb783F8FD983E",
+          "symbol": "MAI-CLAM2"
+        },
+        {
+          "address": "0x5fa0fbdb07fe9647b43426dcc79da984f0327e4a",
+          "symbol": "FRAX (4,4)"
+        }
+      ]
+    }
+  }
+}

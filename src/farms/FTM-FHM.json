@@ -1,0 +1,44 @@
+{
+  "FTM-FHM": {
+    "farmSymbol": "FHM",
+    "networkSymbol": "FTM",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Fantohm",
+      "symbol": "FHM",
+      "link": "https://app.fantohm.com/#/stake",
+      "token": "0xfa1FBb8Ef55A4855E5688C0eE13aC3f202486286",
+      "stakingSymbol": "sFHM",
+      "stakingToken": "0x5E983ff70DE345de15DbDCf0529640F14446cDfa",
+      "stakingContract": "0xcb9297425c889a7cbbaa5d3db97bab4ea54829c2",
+      "LPContract": "0xd77fc9c4074b56ecf80009744391942fbfddd88b",
+      "lockedSupplyContract": "0x34F93b12cA2e13C6E64f45cFA36EABADD0bA30fC",
+      "treasuryContract": "0xA3b52d5A6d2f8932a5cD921e09DA840092349D71",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x6d0a19bbba84cc2fe3cb05b4d9a9aaf52fe9df63",
+          "symbol": "sSPELL"
+        },
+        {
+          "address": "0x462eEC9f8A067f13B5F8F7356D807FF7f0e28c68",
+          "symbol": "DAI"
+        },
+        {
+          "address": "0x7a5523342bBAFC43184f85805d0bACc68f2F3Df1",
+          "symbol": "FHM-DAI"
+        },
+        {
+          "address": "0x3C1a9b5Ff3196C43BcB05Bf1B7467fbA8e07EE61",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0x71976906ad5520a1CB23fd40b40437c1A2640bcd",
+          "symbol": "FHM-MIM"
+        }
+      ]
+    }
+  }
+}

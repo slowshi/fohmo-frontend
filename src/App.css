@@ -1,0 +1,5 @@
+@import url('../node_modules/bootstrap/dist/css/bootstrap.css');
+@import url('../node_modules/bootstrap-icons/font/bootstrap-icons.css');
+.flex1 {
+  flex: 1;
+}

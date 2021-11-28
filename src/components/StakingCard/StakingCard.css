@@ -1,0 +1,58 @@
+.text-placeholder {
+  height: .7rem;
+}
+
+.placeholder {
+  display: inline-block;
+  background-color: var(--bs-gray-300);
+  animation-name: shine;
+  animation-duration: 2.4s;
+  animation-iteration-count: infinite;
+}
+
+.badge-AVAX {
+  background-color: var(--bs-red);
+}
+
+.badge-ETH {
+  background-color: var(--bs-gray);
+}
+
+.badge-FTM {
+  background-color: var(--bs-blue);
+}
+
+.badge-MATIC {
+  background-color: var(--bs-purple);
+}
+
+.badge-ONE {
+  background-color: var(--bs-teal);
+}
+
+.badge-ARB {
+  background-color: var(--bs-cyan);
+}
+
+.badge-BSC {
+  background-color: var(--bs-yellow);
+}
+.badge-MOVR {
+  background-color: var(--bs-orange);
+}
+
+.badge-CRO {
+  background-color: #052c65
+}
+
+@keyframes shine {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "BSC-JADE": {
+    "farmSymbol": "JADE",
+    "networkSymbol": "BSC",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Jade Protocol",
+      "symbol": "JADE",
+      "link": "https://jadeprotocol.io/#/stake",
+      "token": "0x7ad7242A99F21aa543F9650A56D141C57e4F6081",
+      "stakingSymbol": "sJADE",
+      "stakingToken": "0x94CEA04C51E7d3EC0a4A97Ac0C3B3c9254c2aD41",
+      "stakingContract": "0x097d72e1D9bbb8d0263477f9b20bEBF66f243AF4",
+      "LPContract": "0x46503d91D7a41FCbDC250E84ceE9D457d082D7b4",
+      "lockedSupplyContract": "0xfe363340b8f1ea5eb01f81c41bfb30a966a407ec",
+      "treasuryContract": "0x2841c20F1f4C814b1f212d9198d258D5db98eF7d",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x266a93EA88C002ff223E81E40300056289938142",
+          "symbol": "JADE-BUSD"
+        },
+        {
+          "address": "0xD6C73ef5e71A350f8AE642C01Aad3d7637a0c1C8",
+          "symbol": "BUSD"
+        },
+        {
+          "address": "0xB855Ee49DE8F05A441104C4E053A3be7FF45ae56",
+          "symbol": "wBNB"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "FTM-EXOD": {
+    "farmSymbol": "EXOD",
+    "networkSymbol": "FTM",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Exodia",
+      "symbol": "EXOD",
+      "link": "https://app.exodia.finance/#/stake",
+      "token": "0x3b57f3FeAaF1e8254ec680275Ee6E7727C7413c7",
+      "stakingSymbol": "sEXOD",
+      "stakingToken": "0x8de250C65636Ef02a75e4999890c91cECd38D03D",
+      "stakingContract": "0x8b8d40f98a2f14e2dd972b3f2e2a2cc227d1e3be",
+      "LPContract": "0xc0c1dff0fe24108586e11ec9e20a7cbb405cb769",
+      "lockedSupplyContract": "0xc4e0cbe134c48085e8ff72eb31f0ebca29b152ee",
+      "treasuryContract": "0x6A654D988eEBCD9FfB48ECd5AF9Bd79e090D8347",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xC43Db16Ed7b57597170b76D3afF29708bc608483",
+          "symbol": "DAI"
+        },
+        {
+          "address": "0x5B7E66542800cA1A27402DD00f4325460553C5eb",
+          "symbol": "DAI-EXOD"
+        },
+        {
+          "address": "0xd7cbA20A464C10FB03Bbc265D962ADa8e29af118",
+          "symbol": "wFTM"
+        }
+      ]
+    }
+  }
+}

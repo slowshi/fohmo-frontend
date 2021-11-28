@@ -1,0 +1,40 @@
+{
+  "AVAX-SB": {
+    "farmSymbol": "SB",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Snowbank",
+      "symbol": "SB",
+      "link": "https://dapp.snowbank.finance/#/stake",
+      "token": "0x7d1232B90D3F809A54eeaeeBC639C62dF8a8942f",
+      "stakingSymbol": "sSB",
+      "stakingToken": "0xE9Eb40d52CE4744322204d4a29Af63C30f0260a4",
+      "stakingContract": "0x85784d5e2CCae89Bcb39EbF0ac6Cdc93d42d99AD",
+      "LPContract": "0x425c45adfb53861e5db8f17d9b072ab60d4404d8",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xa82422A5FD4F9cB85cD4aAc393cD3296A27dD873",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x90A08fdF9f433954930f19E97FE9A1B0bDBf5C5f",
+          "symbol": "SB-MIM"
+        },
+        {
+          "address": "0x587bc7775f88d9A190aa02D30f7dF2C9Bb183F5D",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0x288E6d7F4935c1F4d2862715306D4BdF8deA6592",
+          "symbol": "TIME-AVAX"
+        },
+        {
+          "address": "0x472c18c4079eCb68629F4FbA1141172404BFEE9C",
+          "symbol": "wAVAX"
+        }
+      ]
+    }
+  }
+}

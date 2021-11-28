@@ -1,0 +1,32 @@
+{
+  "AVAX-RUG": {
+    "farmSymbol": "RUG",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "RUG",
+      "symbol": "RUG",
+      "link": "https://app.rug.farm/#/stake",
+      "token": "0xb8EF3a190b68175000B74B4160d325FD5024760e",
+      "stakingSymbol": "sRUG",
+      "stakingToken": "0xF3caa368B06033a83a49317549b3c1b47E7D5F8F",
+      "stakingContract": "0x47953c729A571Ef331E92D537Adc45985976c756",
+      "LPContract": "0x8b667c1e422c08f9874709939bc90e71c2bea167",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x2F87A9550f19666cEF5De29c5F613966cf164BE6",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xb18ab414499e732554f67698d9214d3f5f1dcc73",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0xd17ac52710f77249d39f72bcbc0c3fa7eefcef84",
+          "symbol": "RUG-MIM"
+        }
+      ]
+    }
+  }
+}

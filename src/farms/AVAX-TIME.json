@@ -1,0 +1,49 @@
+{
+  "AVAX-TIME": {
+    "farmSymbol": "TIME",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Wonderland",
+      "symbol": "TIME",
+      "link": "https://app.wonderland.money/#/stake",
+      "token": "0xb54f16fB19478766A268F172C9480f8da1a7c9C3",
+      "stakingSymbol": "MEMO",
+      "stakingToken": "0x136Acd46C134E8269052c62A67042D6bDeDde3C9",
+      "stakingContract": "0x4456B87Af11e87E329AB7d7C7A246ed1aC2168B9",
+      "LPContract": "0x113f413371fc4cc4c9d6416cf1de9dfd7bf747df",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x1c46450211CB2646cc1DA3c5242422967eD9e04c",
+      "wsOHMSymbol": "wMEMO",
+      "wsOHMNetworks": [
+        {
+          "address": "0x0da67235dd5787d67955420c84ca1cecd4e5bb3b",
+          "networkSymbol": "AVAX"
+        },
+        {
+          "address": "0xddc0385169797937066bbd8ef409b5b3c0dfeb52",
+          "networkSymbol": "FTM"
+        }
+      ],
+      "bondingContracts": [
+        {
+          "address": "0xA184AE1A71EcAD20E822cB965b99c287590c4FFe",
+          "symbol": "TIME-MIM"
+        },
+        {
+          "address": "0xE02B1AA2c4BE73093BE79d763fdFFC0E3cf67318",
+          "symbol": "wAVAX"
+        },
+        {
+          "address": "0xc26850686ce755FFb8690EA156E5A6cf03DcBDE1",
+          "symbol": "TIME-AVAX"
+        },
+        {
+          "address": "0x694738E0A438d90487b4a549b201142c1a97B556",
+          "symbol": "MIM"
+        }
+      ]
+    }
+  }
+}

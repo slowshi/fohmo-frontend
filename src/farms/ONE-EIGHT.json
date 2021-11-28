@@ -1,0 +1,32 @@
+{
+  "ONE-EIGHT": {
+    "farmSymbol": "EIGHT",
+    "networkSymbol": "ONE",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "8ightDAO",
+      "symbol": "EIGHT",
+      "link": "https://app.8ight.finance/#/stake",
+      "token": "0xcda2fdeee5c382e401c04dc929e53ababf6c8109",
+      "stakingSymbol": "sEIGHT",
+      "stakingToken": "0x3a61a9287c319a0ea558f904988cb299ee9cd3f5",
+      "stakingContract": "0x6a4a847e83e923ab587cb3f395baaf1983f54bd6",
+      "LPContract": "0xc97d37434766eec69d606c9038abaf8a6428e7da",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xe35737c865968a6fcb13e536adcaa37d9be0c7eb",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xea37bc1b1261d04218309aca2efdc853a7ca33d8",
+          "symbol": "DAI"
+        },
+        {
+          "address": "0xcd09b4f88775f4b3c1d461abcf9094889a8e395c",
+          "symbol": "EIGHT-DAI"
+        }
+      ]
+    }
+  }
+}

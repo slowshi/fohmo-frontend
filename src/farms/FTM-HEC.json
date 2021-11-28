@@ -1,0 +1,56 @@
+{
+  "FTM-HEC": {
+    "farmSymbol": "HEC",
+    "networkSymbol": "FTM",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Hector",
+      "symbol": "HEC",
+      "link": "https://app.hectordao.com/#/stake",
+      "token": "0x5C4FDfc5233f935f20D2aDbA572F770c2E377Ab0",
+      "stakingSymbol": "sHEC",
+      "stakingToken": "0x75bdeF24285013387A47775828bEC90b91Ca9a5F",
+      "stakingContract": "0xd12930c8deedafd788f437879cba1ad1e3908cc5",
+      "LPContract": "0xbc0eecdA2d8141e3a26D2535C57cadcb1095bca9",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xCB54EA94191B280C296E6ff0E37c7e76Ad42dC6A",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xA1224c353cdCB03eB70FbA44dADC137F39E5EF7d",
+          "symbol": "HEC-DAI"
+        },
+        {
+          "address": "0x4099EB0e82Ffa0048E4BF037a9743ca05Ec561D7",
+          "symbol": "DAI"
+        },
+        {
+          "address": "0x3C57481f373Be0196A26A7d0a8E29E8CedC63ba1",
+          "symbol": "HEC-USDC"
+        },
+        {
+          "address": "0x5d05EF2654B9055895F21D7057095e2D7575f5A2",
+          "symbol": "USDC"
+        },
+        {
+          "address": "0x72de9f0e51ca520379a341318870836fdcaf03b9",
+          "symbol": "wFTM"
+        },
+        {
+          "address": "0x8565f642180fe388f942460b66aba9c2ca7f02ed",
+          "symbol": "MIM (4,4)"
+        },
+        {
+          "address": "0x23337b675375507ce218df5f92f1a71252dab3e5",
+          "symbol": "DAI (4,4)"
+        },
+        {
+          "address": "0xd0373f236be04ecf08f51fc4e3ade7159d7cde65",
+          "symbol": "USDC (4,4)"
+        }
+      ]
+    }
+  }
+}

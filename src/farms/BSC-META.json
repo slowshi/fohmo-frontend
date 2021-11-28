@@ -1,0 +1,44 @@
+{
+  "BSC-META": {
+    "farmSymbol": "META",
+    "networkSymbol": "BSC",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "MetaversePRO",
+      "symbol": "META",
+      "link": "https://app.metaverse.pro/#/stake",
+      "token": "0x0a2046C7fAa5a5F2b38C0599dEB4310AB781CC83",
+      "stakingSymbol": "sMETA",
+      "stakingToken": "0x09f33EC33052Cd253Db79fFA883E9c12Eb578309",
+      "stakingContract": "0xB91Db0C2551AAe4784119cE4c33234C9E3c9aF71",
+      "LPContract": "0x512385e505615eb30ec80a2915575e344acf792a",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xB874aC3A21e3Ffe06fB4B6dcf9B62c7eA753a9A0",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x689615f501b1e143aa1Ed1C5736E9A57198B7173",
+          "symbol": "BUSD"
+        },
+        {
+          "address": "0xa70694Ed3675D7fA8c453e77E905Bbf5Ba1c46A7",
+          "symbol": "META-BUSD"
+        },
+        {
+          "address": "0xf7a38B0B960BaF5ECD065b915dDeD7d938d628bF",
+          "symbol": "META-USDT"
+        },
+        {
+          "address": "0x117A10D6944b18d652cbF428b0D7c97A65887063",
+          "symbol": "META-USDC"
+        },
+        {
+          "address": "0x839Ee222E84849C752Bff1bB129cf34578BcDEc1",
+          "symbol": "wBNB"
+        }
+      ]
+    }
+  }
+}

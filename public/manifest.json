@@ -1,0 +1,39 @@
+{
+  "name": "Fohomo.io",
+  "short_name": "Fohmo",
+  "description": "A simple portfolio of OHM and its forks.",
+  "display": "standalone",
+  "theme_color": "#6c757d",
+  "background_color": "#6c757d",
+  "crossorigin": "use-credentials",
+  "ios": {
+    "apple-mobile-web-app-title": "Fohmo.io",
+    "apple-mobile-web-app-status-bar-style": "#6c757d"
+  },
+  "icons": [
+    {
+      "src": "src/manifest/icon-48x48.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "src/manifest/icon-72x72.png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "src/manifest/icon-96x96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "src/manifest/icon-144x144.png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "src/manifest/icon-192x192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "src/manifest/icon-512x512.png",
+      "sizes": "512x512"
+    }
+  ]
+}

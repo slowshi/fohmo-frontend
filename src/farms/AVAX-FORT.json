@@ -1,0 +1,40 @@
+{
+  "AVAX-FORT": {
+    "farmSymbol": "FORT",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Fortress",
+      "symbol": "FORT",
+      "link": "https://app.fortressdao.finance/#/stake",
+      "token": "0xf6d46849DB378AE01D93732585BEc2C4480D1fD5",
+      "stakingSymbol": "sFORT",
+      "stakingToken": "0x6B8FB769d1957F2c29aBc9d1bEB95851cce775D8",
+      "stakingContract": "0x4D8ba74820e2d6EaD2Ea154586CB7dfbA8A691aa",
+      "LPContract": "0x3e5f198b46f3de52761b02d4ac8ef4ceceac22d6",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xb8e8d2E97C5F4594F65CCe0f5888C641C7A3a056",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x57295798BeF860832f3546E1dAD66554d7F590C1",
+          "symbol": "FORT-MIM"
+        },
+        {
+          "address": "0x56d6994fFE11bc20482849A18C6b1DF8B9a57ac7",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0x83F2333a833CA85ac11D053a811e0bA57203fFE2",
+          "symbol": "wAVAX"
+        },
+        {
+          "address": "0x472c18c4079eCb68629F4FbA1141172404BFEE9C",
+          "symbol": "wAVAX"
+        }
+      ]
+    }
+  }
+}

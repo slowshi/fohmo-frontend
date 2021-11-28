@@ -1,0 +1,52 @@
+{
+  "ONE-WAGMI": {
+    "farmSymbol": "WAGMI",
+    "networkSymbol": "ONE",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Euphoria",
+      "symbol": "WAGMI",
+      "link": "https://app.euphoria.money/#/stake",
+      "token": "0x0dc78c79B4eB080eaD5C1d16559225a46b580694",
+      "stakingSymbol": "sWAGMI",
+      "stakingToken": "0xF38593388079F7f5130d605E38aBF6090D981eC2",
+      "stakingContract": "0x95066025af40F7f7832f61422802cD1e13C23753",
+      "LPContract": "0xb8f4c06dd0c2f9eb5e67b4faa2d56ff3543d6765",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x1A9Be7D6f94D3Ba8c37568E08D8D8780AAD128E6",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xa2473b5B85a9EBEc65679d279979222f28cd9467",
+          "symbol": "DAI"
+        },
+        {
+          "address": "0xECDB54197b7A7F62a8fa3A04850347C4C99Ab7e1",
+          "symbol": "WAGMI-DAI"
+        },
+        {
+          "address": "0xF43911c859532E38c969ee1b59Eeca3De5630Fe3",
+          "symbol": "UST"
+        },
+        {
+          "address": "0x17ADf3fC3319AfC79BF7D7dD49c34E59A30D410f",
+          "symbol": "WAGMI-UST"
+        },
+        {
+          "address": "0x5fa3eC803Ed6EeE64A52C101F4FA96dd1B093ac7",
+          "symbol": "BUSD"
+        },
+        {
+          "address": "0x202c598E93F69dbe3a5e5706DfB85bdc598bb16F",
+          "symbol": "USDC"
+        },
+        {
+          "address": "0x88eD43604976a65F88EE5be38FC743F7b955AB1e",
+          "symbol": "WAGMI-ONE"
+        }
+      ]
+    }
+  }
+}

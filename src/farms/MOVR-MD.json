@@ -1,0 +1,32 @@
+{
+  "MOVR-MD": {
+    "farmSymbol": "MD",
+    "networkSymbol": "MOVR",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "MoonDAO",
+      "symbol": "MD",
+      "link": "https://www.moondao.net/stake",
+      "token": "0x761cb807bfbf14a4f4ba980f29f43f009f6a18c0",
+      "stakingSymbol": "sMD",
+      "stakingToken": "0xf37a32d10bff44a592c46eb65704c42f55a43515",
+      "stakingContract": "0x534f861b6bafdf030e5b469d2d763834163f522f",
+      "LPContract": "0xdbf638d800190271f5473e76898c6c8e741cba51",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xec2ae8a3e2692e4b0836ab5cf88104d101debef4",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xf3dfff887098882c9615ee4c823573585b3be9dd",
+          "symbol": "MD-DAI"
+        },
+        {
+          "address": "0xbdad360458fb9a19611c78f9dc8d1a3ec124a5f8",
+          "symbol": "DAI"
+        }
+      ]
+    }
+  }
+}

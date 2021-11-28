@@ -1,0 +1,32 @@
+{
+  "MATIC-CLAM": {
+    "farmSymbol": "CLAM",
+    "networkSymbol": "MATIC",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "OtterClam",
+      "symbol": "CLAM",
+      "link": "https://app.otterclam.finance/#/stake",
+      "token": "0x4d6A30EFBE2e9D7A9C143Fce1C5Bb30d9312A465",
+      "stakingSymbol": "sCLAM",
+      "stakingToken": "0x3949F058238563803b5971711Ad19551930C8209",
+      "stakingContract": "0xcF2A11937A906e09EbCb8B638309Ae8612850dBf",
+      "LPContract": "0x8094f4c9a4c8ad1ff4c6688d07bd90f996c7ca21",
+      "lockedSupplyContract": "0x929A27c46041196e1a49C7B459d63eC9A20cd879",
+      "treasuryContract": "0xab328Ca61599974b0f577d1F8AB0129f2842d765",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x28077992bFA9609Ae27458A766470b03D43dEe8A",
+          "symbol": "MAI"
+        },
+        {
+          "address": "0x64c766f9A4936c3a4b51C55Ea5C4854E19766035",
+          "symbol": "MAI-CLAM"
+        }
+      ]
+    }
+  }
+}

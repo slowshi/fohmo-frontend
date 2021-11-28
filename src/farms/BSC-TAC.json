@@ -1,0 +1,36 @@
+{
+  "BSC-TAC": {
+    "farmSymbol": "TAC",
+    "networkSymbol": "BSC",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "TaiChi Dao",
+      "symbol": "TAC",
+      "link": "https://app.taichidao.io/#/stake",
+      "token": "0xe49bfC53A195a62D78A941a1967d7B0f83a47C14",
+      "stakingSymbol": "sTAC",
+      "stakingToken": "0x6ADBAA7c9Ed1F29d647e37b1970E32bb41FB18aB",
+      "stakingContract": "0xb12Ef3033D5CE0F3f80f3A15dE7E90Cd87a5973e",
+      "LPContract": "0x5ef473d91e89c613b3e5138fa8279884bf5b7adf",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xD4b0DC48AB6BD7907E3698A62CCD1DBE2d46d310",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x1FDc3A7be18fE40b24b0aBC022FfBd1280d3ab11",
+          "symbol": "TAC-BUSD"
+        },
+        {
+          "address": "0xaeba280c17c5875335211585ea67e37874493515",
+          "symbol": "BNB"
+        },
+        {
+          "address": "0xf0a99f0ca6149fc96a4a802f757dd439655ea479",
+          "symbol": "BUSD"
+        }
+      ]
+    }
+  }
+}

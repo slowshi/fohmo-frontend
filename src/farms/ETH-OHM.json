@@ -1,0 +1,69 @@
+{
+  "ETH-OHM": {
+    "farmSymbol": "OHM",
+    "networkSymbol": "ETH",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "OlympusDAO",
+      "symbol": "OHM",
+      "link": "https://app.olympusdao.finance/#/stake",
+      "token": "0x383518188C0C6d7730D91b2c03a03C837814a899",
+      "stakingSymbol": "sOHM",
+      "stakingToken": "0x04F2694C8fcee23e8Fd0dfEA1d4f5Bb8c352111F",
+      "stakingContract": "0xFd31c7d00Ca47653c6Ce64Af53c1571f9C36566a",
+      "LPContract": "0x34d7d7aaf50ad4944b70b320acb24c95fa2def7c",
+      "lockedSupplyContract": null,
+      "wsOHMSymbol": "wsOHM",
+      "wsOHMNetworks": [
+        {
+          "address": "0xca76543cf381ebbb277be79574059e32108e3e65",
+          "networkSymbol": "ETH"
+        },
+        {
+          "address": "0x739ca6d71365a08f584c8fc4e1029045fa8abc4b",
+          "networkSymbol": "ARB"
+        },
+        {
+          "address": "0x8CD309e14575203535EF120b5b0Ab4DDeD0C2073",
+          "networkSymbol": "AVAX"
+        }
+      ],
+      "treasuryContract": "0x31F8Cc382c9898b273eff4e0b7626a6987C846E8",
+      "bondingContracts": [
+        {
+          "address": "0xFB1776299E7804DD8016303Df9c07a65c80F67b6",
+          "symbol": "OHM-LUSD"
+        },
+        {
+          "address": "0x10C0f93f64e3C8D0a1b0f4B87d6155fd9e89D08D",
+          "symbol": "LUSD"
+        },
+        {
+          "address": "0xE6295201CD1ff13CeD5f063a5421c39A1D236F1c",
+          "symbol": "wETH"
+        },
+        {
+          "address": "0x956c43998316b6a2F21f89a1539f73fB5B78c151",
+          "symbol": "OHM-DAI"
+        },
+        {
+          "address": "0x575409F8d77c12B05feD8B455815f0e54797381c",
+          "symbol": "DAI"
+        },
+        {
+          "address": "0xc20cfff07076858a7e642e396180ec390e5a02f7",
+          "symbol": "OHM-WETH"
+        },
+        {
+          "address": "0xc20CffF07076858a7e642E396180EC390E5A02f7",
+          "symbol": "OHM-FRAX"
+        },
+        {
+          "address": "0x8510c8c2B6891E04864fa196693D44E6B6ec2514",
+          "symbol": "FRAX"
+        }
+      ]
+    }
+  }
+}
