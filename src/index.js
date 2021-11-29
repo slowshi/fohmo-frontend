@@ -4,7 +4,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {store} from './utils/store';
 import { Provider } from 'react-redux';
-import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -18,4 +17,9 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-serviceWorker.register();
+/* istanbul ignore next */
+if (window.location.protocol === 'https:' && process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js', { // eslint-disable-line
+    scope: '/'
+  });
+}
