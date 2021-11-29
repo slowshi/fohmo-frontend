@@ -21,4 +21,7 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root" class="h-100"></div>
   </body>
+  <%if (process.env.NODE_ENV === 'production') { %>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "10c3cc152e574ec2b5a0b9ed90a960ed"}'></script>
+  <% } %>
 </html>
