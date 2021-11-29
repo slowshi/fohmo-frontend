@@ -5,9 +5,9 @@
     "roiDynamic": 1,
     "data": null,
     "constants": {
-      "name": "Zerotwohm",
+      "name": "Umami",
       "symbol": "Z20",
-      "link": "https://app.zerotwohm.finance/#/stake",
+      "link": "https://app.umami.finance/#/stake",
       "token": "0xdb96f8efd6865644993505318cc08ff9c42fb9ac",
       "stakingSymbol": "sZ2O",
       "stakingToken": "0xc45c51d423f5e2ad2e946e45d9ec7dcf04f9bd39",

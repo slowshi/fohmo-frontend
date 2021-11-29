@@ -74,7 +74,7 @@ const networks = {
   KLAY: {
     symbol: 'KLAY',
     name: 'Klaytn',
-    rpcURL: 'https://en.kronosdao.finance',
+    rpcURL: 'https://en.kronosdao.finance/',
     chartURL: 'https://dexscreener.com/cronos/',
     blockRateSeconds: 5.5
   }

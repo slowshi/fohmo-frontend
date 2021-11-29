@@ -22,6 +22,7 @@ class StakingInfo {
     'AVAX-MAXI',
     'AVAX-SDOG',
     'AVAX-FORT',
+    'AVAX-PB',
     'ONE-WAGMI',
     'ARB-Z20',
     'AVAX-RUG',
@@ -132,6 +133,9 @@ class StakingInfo {
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
     } else if (key === 'CRO-FORT') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 16.1).toFixed(2);
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
+    } else if (key === 'AVAX-PB') {
+      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 2000).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
     } else if (key === 'FTM-SPA') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 7.673).toFixed(2);

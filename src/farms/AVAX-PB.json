@@ -1,0 +1,37 @@
+{
+  "AVAX-PB": {
+    "farmSymbol": "PB",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "PiggyBankDAO",
+      "symbol": "PB",
+      "link": "https://app.piggybankdao.finance/#/mints",
+      "token": "0x0E75CDb914DdCcA683357dD94d26Caa39BC14B16",
+      "stakingSymbol": "sPB",
+      "stakingToken": "0x03a808d4063Ac2aEB29545658ad0a3a1EDC55052",
+      "stakingContract": "0xE4738791690AF507C8C7Bf5981ef541568C7C312",
+      "LPContract": "0xd3a6eebbe6f6d9197a7fc2aaaf94d8b0ec51f8a8",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x6687379035822ee15e2164f9C1280fBEAd0D7627",
+      "bondingCalculator": "0x62a1aea22dd9bb7638681908c7853a8b8189286a",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x24b715Ec909C992d0ecdFE23bD28081f889e54bB",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0x0391BA66eEDf8501c8c46b4f4EBE67D1429B5676",
+          "symbol": "PB-MIM"
+        },
+        {
+          "address": "0x0B3ad7792d7B62295CDefec2d68055D3B4e86e67",
+          "symbol": "wBTC"
+        }
+      ]
+    }
+  }
+}

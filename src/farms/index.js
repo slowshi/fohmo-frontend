@@ -3,6 +3,7 @@ import AVAX_FORT from './AVAX-FORT.json';
 import AVAX_MAXI from './AVAX-MAXI.json';
 import AVAX_RUG from './AVAX-RUG.json';
 // import AVAX_SDOG from './AVAX-SDOG.json';
+import AVAX_PB from './AVAX-PB.json';
 import AVAX_SB from './AVAX-SB.json';
 import AVAX_TIME from './AVAX-TIME.json';
 import BSC_GYRO from './BSC-GYRO.json';
@@ -18,6 +19,7 @@ import FTM_EXOD from './FTM-EXOD.json';
 import FTM_FHM from './FTM-FHM.json';
 import FTM_HEC from './FTM-HEC.json';
 import FTM_SPA from './FTM-SPA.json';
+// import KLAY_KRNO from './KLAY-KRNO.json';
 // import MATIC_CLAM from './MATIC-CLAM.json';
 import MATIC_CLAM2 from './MATIC-CLAM2.json';
 import MATIC_GURU from './MATIC-GURU.json';
@@ -33,6 +35,7 @@ const farms = {
   ...AVAX_MAXI,
   ...AVAX_RUG,
   // ...AVAX_SDOG,
+  ...AVAX_PB,
   ...AVAX_SB,
   ...AVAX_TIME,
   ...CRO_FORT,
@@ -48,6 +51,7 @@ const farms = {
   ...FTM_FHM,
   ...FTM_HEC,
   ...FTM_SPA,
+  // ...KLAY_KRNO,
   // ...MATIC_CLAM,
   ...MATIC_CLAM2,
   ...MATIC_GURU,
