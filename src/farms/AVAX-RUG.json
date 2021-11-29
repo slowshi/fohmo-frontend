@@ -25,6 +25,18 @@
         {
           "address": "0xd17ac52710f77249d39f72bcbc0c3fa7eefcef84",
           "symbol": "RUG-MIM"
+        },
+        {
+          "address": "0x8a4e5b690edfa273e59f28bbe2302aceeceefc41",
+          "symbol": "RUG-AVAX"
+        },
+        {
+          "address": "0x3a93493e2E486F818672991de6828a27346Ab0Cb",
+          "symbol": "wAVAX"
+        },
+        {
+          "address": "0x96a03ff213d47d0556a6bd454779e59c12722d19",
+          "symbol": "QI"
         }
       ]
     }

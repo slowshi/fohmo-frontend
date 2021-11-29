@@ -67,6 +67,11 @@ function App() {
       totalProfit += profit;
       totalExpectedValue += newTotal;
     }, 0);
+    if(state.hideTotals || state.addressParam === '') {
+      document.title = `Fohmo.io`
+    } else {
+      document.title = `Fohmo.io - $${totalValue.toLocaleString()}`
+    }
     return {
       totalValue: totalValue.toLocaleString(),
       totalWeightedPercent: Number((totalWeightedPercent * 100).toFixed(4)).toLocaleString(),
