@@ -1,0 +1,29 @@
+{
+  "AVAX-MAXI": {
+    "farmSymbol": "MAXI",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Maximizer",
+      "symbol": "MAXI",
+      "link": "https://app.maxi.xyz/#/dashboard",
+      "token": "0x7C08413cbf02202a1c13643dB173f2694e0F73f0",
+      "stakingSymbol": "sMAXI",
+      "stakingToken": "0xEcE4D1b3C2020A312Ec41A7271608326894076b4",
+      "stakingContract": "0x6d7AD602Ec2EFdF4B7d34A9A53f92F06d27b82B1",
+      "LPContract": "0xfBDC4aa69114AA11Fae65E858e92DC5D013b2EA9",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x22cF6c46b4E321913ec30127C2076b7b12aC6d15",
+      "bondingCalculator": "0xb84E864DDF96B57951Ebe687746418D221C4c1E6",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xA4EbD64423a6FF9baE958Bd0A38Fc216F41b3ef6",
+          "symbol": "MAXI-DAI"
+        }
+      ]
+    }
+  }
+}

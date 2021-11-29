@@ -19,16 +19,24 @@
       "wsOHMSymbol": "",
       "bondingContracts": [
         {
+          "address": "0x5fa0fbdb07fe9647b43426dcc79da984f0327e4a",
+          "symbol": "FRAX (4,4)"
+        },
+        {
+          "address": "0x779cb532e289cbaa3d0692ae989c63c2b4fbd4d0",
+          "symbol": "MAI (4,4)"
+        },
+        {
+          "address": "0xda0d7c3d751d00a1ec1c495eF7Cf3db1a202B0B9",
+          "symbol": "MAI-CLAM2 (4,4)"
+        },
+        {
           "address": "0x603A74Fd527b85E0A1e205517c1f24aC71f5C263",
           "symbol": "MAI"
         },
         {
           "address": "0x706587BD39322A6a78ddD5491cDbb783F8FD983E",
           "symbol": "MAI-CLAM2"
-        },
-        {
-          "address": "0x5fa0fbdb07fe9647b43426dcc79da984f0327e4a",
-          "symbol": "FRAX (4,4)"
         }
       ]
     }

@@ -6,7 +6,7 @@ import Nav from './components/Nav/Nav';
 import Filters from './components/Filters/Filters';
 import StakingCard from './components/StakingCard/StakingCard';
 import Footer from './components/Footer/Footer';
-import {stakingInfo} from './utils/staking-info';
+import {stakingInfo} from './utils/stakingInfo';
 function App() {
   const dispatch = useDispatch();
   const addressParam = useSelector((state)=> state.addressParam);

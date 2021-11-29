@@ -1,5 +1,5 @@
 import {ethers} from 'ethers';
-import {cacheServiceInstance} from './cache-service';
+import {cacheServiceInstance} from './cacheService';
 import {allFarms, networks} from './constants';
 import {abi as IERC20Abi} from '../abis/IERC20.json';
 import {abi as PairContractAbi} from '../abis/PairContract.json';
@@ -19,6 +19,7 @@ class StakingInfo {
   timeTemplates = [
     'AVAX-TIME',
     'AVAX-SB',
+    'AVAX-MAXI',
     'AVAX-SDOG',
     'AVAX-FORT',
     'ONE-WAGMI',
@@ -125,7 +126,8 @@ class StakingInfo {
       [],
       clearCache
     );
-    if (key === 'AVAX-TIME' || key === 'ARB-Z20' || key === 'AVAX-RUG' || key === 'ONE-ODAO') {
+    if (key === 'AVAX-TIME' || key === 'ARB-Z20' || key === 'AVAX-RUG' || key === 'AVAX-MAXI'
+    || key === 'ONE-ODAO') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 4.5).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
     } else if (key === 'CRO-FORT') {
@@ -206,10 +208,8 @@ class StakingInfo {
       }
     }
 
-    const bonds = [];
     let fullBondTotal = 0;
-    for (let i = 0; i < farmParams.bondingContracts.length; i++) {
-      const bondParams = farmParams.bondingContracts[i];
+    const getBondContract = async (bondParams) =>{
       const bondsContract = this.loadCacheContract(bondParams.address, BondContractAbi, networkParams.rpcURL);
       const bondInfo = await this.loadCahceContractCall(
         bondsContract,
@@ -230,13 +230,15 @@ class StakingInfo {
       } else {
         fullBondTotal += payout;
       }
-
-      bonds.push({
+      return {
         payout,
         pendingPayout,
         symbol: bondParams.symbol
-      });
+      }
     }
+    const bondPromises = farmParams.bondingContracts.map(getBondContract);
+    const bonds = await Promise.all(bondPromises);
+
     let totalReserves = 0;
     if(farmParams.treasuryContract !== null) {
       const treasuryContract = this.loadCacheContract(farmParams.treasuryContract, TreasuryAbi, networkParams.rpcURL );
@@ -257,7 +259,7 @@ class StakingInfo {
     }
 
     let total = (tokenBalance + stakingTokenBalance + Number(fullBondTotal)) * price;
-    if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT') {
+    if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'AVAX-RUG') {
       const warmupInfo = await this.loadCahceContractCall(
         stakingContract,
         'warmupInfo',
@@ -320,10 +322,8 @@ class StakingInfo {
   }
 
   async getwsOHMBalances(userAddress, wsOHMNetworks, index, clearCache=false) {
-    let balances = [];
     let total = 0;
-    for (let i = 0; i < wsOHMNetworks.length; i++) {
-      const data = wsOHMNetworks[i]
+    const getBalances = async (data) => {
       const networkParams = networks[data.networkSymbol];
       const tokenContract = this.loadCacheContract(data.address, IERC20Abi, networkParams.rpcURL);
       let tokenBalance = await this.loadCahceContractCall(
@@ -335,12 +335,14 @@ class StakingInfo {
       tokenBalance = Number(ethers.utils.formatUnits(tokenBalance, 'ether'));
       const convertedBalance = Number(tokenBalance  * index);
       total += convertedBalance;
-      balances.push({
+      return {
         symbol: data.networkSymbol,
         tokenBalance: Number(tokenBalance.toFixed(4)).toString(),
         convertedBalance: Number(convertedBalance.toFixed(4)).toString(),
-      });
-    }
+      };
+    };
+    const wsOHMPromises = wsOHMNetworks.map(getBalances);
+    const balances = await Promise.all(wsOHMPromises);
     return {
       total,
       balances

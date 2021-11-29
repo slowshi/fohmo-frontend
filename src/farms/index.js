@@ -1,5 +1,6 @@
 import ARB_Z20 from './ARB-Z20.json';
 import AVAX_FORT from './AVAX-FORT.json';
+import AVAX_MAXI from './AVAX-MAXI.json';
 import AVAX_RUG from './AVAX-RUG.json';
 // import AVAX_SDOG from './AVAX-SDOG.json';
 import AVAX_SB from './AVAX-SB.json';
@@ -29,6 +30,7 @@ import ONE_WAGMI from './ONE-WAGMI.json';
 const farms = {
   ...ARB_Z20,
   ...AVAX_FORT,
+  ...AVAX_MAXI,
   ...AVAX_RUG,
   // ...AVAX_SDOG,
   ...AVAX_SB,

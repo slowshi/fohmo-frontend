@@ -1,5 +1,5 @@
 import {useSelector, useDispatch} from "react-redux";
-import pageLoad from '../../utils/page-load';
+import pageLoad from '../../utils/pageLoad';
 
 function Nav() {
   const dispatch = useDispatch();

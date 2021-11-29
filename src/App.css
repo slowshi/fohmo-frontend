@@ -3,3 +3,6 @@
 .flex1 {
   flex: 1;
 }
+.overflow-anywhere {
+  overflow-wrap: anywhere;
+}

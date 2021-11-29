@@ -1,6 +1,6 @@
 
 import {store} from './store';
-import { stakingInfo } from './staking-info';
+import { stakingInfo } from './stakingInfo';
 const formatURL = (state) => {
   let params = {
     address: state.address

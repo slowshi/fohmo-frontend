@@ -2,7 +2,7 @@
 import {useSelector, useDispatch} from "react-redux";
 import './Filters.css';
 import allFarms from '../../farms/index';
-import pageLoad from '../../utils/page-load';
+import pageLoad from '../../utils/pageLoad';
 
 function Filters() {
   const dispatch = useDispatch();

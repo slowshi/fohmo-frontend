@@ -1,6 +1,6 @@
 import {useSelector, useDispatch} from "react-redux";
 import {networks} from '../../utils/constants'
-import {stakingInfo, formatRebase} from '../../utils/staking-info'
+import {stakingInfo, formatRebase} from '../../utils/stakingInfo'
 import './StakingCard.css';
 
 function StakingCard(params) {
