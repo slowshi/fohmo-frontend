@@ -26,6 +26,7 @@ class StakingInfo {
     'ONE-WAGMI',
     'ARB-Z20',
     'AVAX-RUG',
+    'BSC-RUG',
     'ONE-ODAO',
   ];
   /**
@@ -200,7 +201,7 @@ class StakingInfo {
         price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
       }
       price = Number(price) * ethPrice;
-    } else if (key === 'MATIC-KLIMA') {
+    } else if (key === 'MATIC-KLIMA' || key === 'MOVR-FHM' ) {
       price = ethers.utils.formatUnits(reserves.reserve0, 'mwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
     } else if(key === 'ARB-Z20' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT') {
       price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');

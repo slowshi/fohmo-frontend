@@ -10,6 +10,7 @@ import BSC_GYRO from './BSC-GYRO.json';
 import BSC_XEUS from './BSC-XEUS.json';
 import BSC_JADE from './BSC-JADE.json';
 import BSC_META from './BSC-META.json';
+import BSC_NMS from './BSC-NMS.json';
 import BSC_TAC from './BSC-TAC.json';
 import CRO_FORT from './CRO-FORT.json';
 import ETH_LOBI from './ETH-LOBI.json';
@@ -24,6 +25,7 @@ import FTM_SPA from './FTM-SPA.json';
 import MATIC_CLAM2 from './MATIC-CLAM2.json';
 import MATIC_GURU from './MATIC-GURU.json';
 import MATIC_KLIMA from './MATIC-KLIMA.json';
+import MOVR_FHM from './MOVR-FHM.json';
 import MOVR_MD from './MOVR-MD.json';
 import ONE_EIGHT from './ONE-EIGHT.json';
 import ONE_ODAO from './ONE-ODAO.json';
@@ -43,6 +45,7 @@ const farms = {
   ...BSC_XEUS,
   ...BSC_JADE,
   ...BSC_META,
+  ...BSC_NMS,
   ...BSC_TAC,
   ...ETH_LOBI,
   ...ETH_OHM,
@@ -56,6 +59,7 @@ const farms = {
   ...MATIC_CLAM2,
   ...MATIC_GURU,
   ...MATIC_KLIMA,
+  ...MOVR_FHM,
   ...MOVR_MD,
   ...ONE_EIGHT,
   ...ONE_ODAO,
