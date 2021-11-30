@@ -34,7 +34,7 @@ const networks = {
     name: 'Avalanche',
     rpcURL: 'https://api.avax.network/ext/bc/C/rpc',
     chartURL: 'https://dexscreener.com/avalanche/',
-    blockRateSeconds: 0.7
+    blockRateSeconds: 2
   },
   ONE: {
     symbol: 'ONE',

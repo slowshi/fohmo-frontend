@@ -1,0 +1,33 @@
+{
+  "AVAX-NADO": {
+    "farmSymbol": "NADO",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "TORNADAO",
+      "symbol": "NADO",
+      "link": "https://app.tornadao.finance/#/stake",
+      "token": "0xb80323c7aa915cb960b19b5cca1d88a2132f7bd1",
+      "stakingSymbol": "tNADO",
+      "stakingToken": "0x5c43B500063691F8c893C7425648b3dd3E1ECE34",
+      "stakingContract": "0x39Af1EB019750aDc3Ea89D80080079F64D5432dB",
+      "LPContract": "0xaef85b5b06b13b79b17fd684b1f04035570a9ae0",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x68bb6883B44F4Ab37596b6189FAe354E937D4990",
+      "bondingCalculator": "0x116d2906695aB5632aF78005E4fF0EA53BE09969",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x1020049dc8a45045a3580eb8d8af358d2db19538",
+          "symbol": "NADO-MIM"
+        },
+        {
+          "address": "0x978727ce867307528ed3908a24aebcb6d53184e3",
+          "symbol": "MIM"
+        }
+      ]
+    }
+  }
+}

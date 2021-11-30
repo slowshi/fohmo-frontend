@@ -1,6 +1,8 @@
 import ARB_Z20 from './ARB-Z20.json';
 import AVAX_FORT from './AVAX-FORT.json';
 import AVAX_MAXI from './AVAX-MAXI.json';
+import AVAX_NADO from './AVAX-NADO.json';
+import AVAX_PAPA from './AVAX-PAPA.json';
 import AVAX_RUG from './AVAX-RUG.json';
 // import AVAX_SDOG from './AVAX-SDOG.json';
 import AVAX_PB from './AVAX-PB.json';
@@ -8,6 +10,7 @@ import AVAX_SB from './AVAX-SB.json';
 import AVAX_TIME from './AVAX-TIME.json';
 import BSC_GYRO from './BSC-GYRO.json';
 import BSC_XEUS from './BSC-XEUS.json';
+import BSC_PID from './BSC-PID.json';
 import BSC_JADE from './BSC-JADE.json';
 import BSC_META from './BSC-META.json';
 import BSC_NMS from './BSC-NMS.json';
@@ -26,6 +29,7 @@ import MATIC_CLAM2 from './MATIC-CLAM2.json';
 import MATIC_GURU from './MATIC-GURU.json';
 import MATIC_KLIMA from './MATIC-KLIMA.json';
 import MOVR_FHM from './MOVR-FHM.json';
+// import MOVR_ROME from './MOVR-ROME.json'
 import MOVR_MD from './MOVR-MD.json';
 import ONE_EIGHT from './ONE-EIGHT.json';
 import ONE_ODAO from './ONE-ODAO.json';
@@ -36,6 +40,8 @@ const farms = {
   ...AVAX_FORT,
   ...AVAX_MAXI,
   ...AVAX_RUG,
+  ...AVAX_NADO,
+  ...AVAX_PAPA,
   // ...AVAX_SDOG,
   ...AVAX_PB,
   ...AVAX_SB,
@@ -46,6 +52,7 @@ const farms = {
   ...BSC_JADE,
   ...BSC_META,
   ...BSC_NMS,
+  ...BSC_PID,
   ...BSC_TAC,
   ...ETH_LOBI,
   ...ETH_OHM,
@@ -61,6 +68,7 @@ const farms = {
   ...MATIC_KLIMA,
   ...MOVR_FHM,
   ...MOVR_MD,
+  // ...MOVR_ROME,
   ...ONE_EIGHT,
   ...ONE_ODAO,
   ...ONE_WAGMI,

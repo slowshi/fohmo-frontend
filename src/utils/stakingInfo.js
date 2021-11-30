@@ -21,6 +21,7 @@ class StakingInfo {
     'AVAX-SB',
     'AVAX-MAXI',
     'AVAX-SDOG',
+    'AVAX-NADO',
     'AVAX-FORT',
     'AVAX-PB',
     'ONE-WAGMI',
@@ -203,7 +204,7 @@ class StakingInfo {
       price = Number(price) * ethPrice;
     } else if (key === 'MATIC-KLIMA' || key === 'MOVR-FHM' ) {
       price = ethers.utils.formatUnits(reserves.reserve0, 'mwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-    } else if(key === 'ARB-Z20' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT') {
+    } else if(key === 'ARB-Z20' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID') {
       price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
     }else {
       if (token0 === farmParams.token) {
@@ -447,7 +448,6 @@ class StakingInfo {
   secondsUntilBlock(startBlock, endBlock, blockRateSeconds) {
     const blocksAway = endBlock - startBlock;
     const secondsAway = blocksAway * blockRateSeconds;
-
     return secondsAway;
   }
 

@@ -1,0 +1,33 @@
+{
+  "AVAX-PAPA": {
+    "farmSymbol": "PAPA",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "PAPA DAO",
+      "symbol": "PAPA",
+      "link": "https://papadao.co/#/stake",
+      "token": "0x70b33ebC5544C12691d055b49762D0F8365d99Fe",
+      "stakingSymbol": "sPAPA",
+      "stakingToken": "0x5Ee5fDd4077CaC9138BB854FAED2A40B2482cFd9",
+      "stakingContract": "0xde698Aa043F4A9548AAc041434473E9e53991430",
+      "LPContract": "0xa03a99cd3d553fe9ebbccecabcb8c47100482f72",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x3C8e800B9f12771A5f150D0943De968ABc7A7bE1",
+      "bondingCalculator": "0xa55a711cf7ade1552f77a7127135c5156f75c83c",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x35b912024f639757be4f1a11e4420412af34e661",
+          "symbol": "PAPA-MIM"
+        },
+        {
+          "address": "0x654d5796b2c70d24ed7402e87d8a72bddf87ccca",
+          "symbol": "MIM"
+        }
+      ]
+    }
+  }
+}

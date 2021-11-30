@@ -1,0 +1,44 @@
+{
+  "BSC-PID": {
+    "farmSymbol": "PID",
+    "networkSymbol": "BSC",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "PIDAO",
+      "symbol": "PID",
+      "link": "https://www.pidao.finance/stake",
+      "token": "0x1215ed20aa507578ca352e195016f289e7a17f3a",
+      "stakingSymbol": "sPID",
+      "stakingToken": "0xF6E9FEdef7282C2Df6e805C22ce846eca84469e1",
+      "stakingContract": "0x22d1704817D42bdE262d778bFE097e287151371D",
+      "LPContract": "0x3991e0988A69E4C8Fde46C011Dafe55E26fdD18D",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x458B737d87C40252EC11b160C76bb1C53F248b28",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x5A772CA607d393f84985657536C712E702988fB5",
+          "symbol": "PID-BUSD"
+        },
+        {
+          "address": "0x65488Ec4cFB86b98EAeCb416Eea8131BED00f5F3",
+          "symbol": "PID-USDT"
+        },
+        {
+          "address": "0xF46764743fF3d9B29CD6Cdb1D692221e32ef42e5",
+          "symbol": "BUSD"
+        },
+        {
+          "address": "0x4F1771644ee94ED8aBBA521B68991828FD237cA7",
+          "symbol": "USDT"
+        },
+        {
+          "address": "0xE080905403F0e4332636F93F204256b989702e5E",
+          "symbol": "TUSD"
+        }
+      ]
+    }
+  }
+}
