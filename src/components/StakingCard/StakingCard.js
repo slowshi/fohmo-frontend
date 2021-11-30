@@ -160,6 +160,15 @@ function StakingCard(params) {
               <strong>Risk Free Value</strong>
               <span>{`$${farm.data.stakingInfo?.$RFV}`}</span>
             </span>
+            {farmSymbol === 'ROME' ?
+            <div>
+              <span className="text-muted txt-smol">* TVL/MC/RFV incorrect for ROME unsure why.</span>
+              <div className="text-muted txt-smol">Staking contractBalance: {Number(farm.data.stakingInfo.lockedValue).toLocaleString()} ROME</div>
+              <div className="text-muted txt-smol">ROME totalSupply (-Gnosis -Presale): {Number(farm.data.stakingInfo.totalSupply).toLocaleString()} ROME</div>
+              <div className="text-muted txt-smol">RFV includes DAI from presale</div>
+            </div>
+            :
+            ''}
           </div>
         }
       </div>

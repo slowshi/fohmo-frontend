@@ -44,7 +44,9 @@
 .badge-CRO {
   background-color: #052c65
 }
-
+.txt-smol {
+  font-size: 10px;
+}
 @keyframes shine {
   0% {
     opacity: 1;

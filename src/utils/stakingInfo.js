@@ -95,14 +95,29 @@ class StakingInfo {
       clearCache
     );
     if(farmParams.lockedSupplyContract !== null) {
-      let lockedSupply = await this.loadCahceContractCall(
-        tokenContract,
-        'balanceOf',
-        [farmParams.lockedSupplyContract],
-        clearCache
-      );
-      totalSupply = totalSupply - lockedSupply;
+      if(typeof farmParams.lockedSupplyContract === 'string') {
+        const lockedSupply = await this.loadCahceContractCall(
+          tokenContract,
+          'balanceOf',
+          [farmParams.lockedSupplyContract],
+          clearCache
+        );
+        totalSupply = totalSupply - lockedSupply;
+      } else {
+        const lockedSupplyPromises = farmParams.lockedSupplyContract.map(async (lockedSupplyContract)=>{
+          const lockedSupply = await this.loadCahceContractCall(
+            tokenContract,
+            'balanceOf',
+            [lockedSupplyContract],
+            clearCache
+          );
+          // console.log(lockedSupply);
+          totalSupply = totalSupply - lockedSupply;
+        });
+        await Promise.all(lockedSupplyPromises);
+      }
     }
+
     const epoch = await this.loadCahceContractCall(
       stakingContract,
       'epoch',

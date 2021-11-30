@@ -29,7 +29,7 @@ import MATIC_CLAM2 from './MATIC-CLAM2.json';
 import MATIC_GURU from './MATIC-GURU.json';
 import MATIC_KLIMA from './MATIC-KLIMA.json';
 import MOVR_FHM from './MOVR-FHM.json';
-// import MOVR_ROME from './MOVR-ROME.json'
+import MOVR_ROME from './MOVR-ROME.json'
 import MOVR_MD from './MOVR-MD.json';
 import ONE_EIGHT from './ONE-EIGHT.json';
 import ONE_ODAO from './ONE-ODAO.json';
@@ -68,7 +68,7 @@ const farms = {
   ...MATIC_KLIMA,
   ...MOVR_FHM,
   ...MOVR_MD,
-  // ...MOVR_ROME,
+  ...MOVR_ROME,
   ...ONE_EIGHT,
   ...ONE_ODAO,
   ...ONE_WAGMI,
