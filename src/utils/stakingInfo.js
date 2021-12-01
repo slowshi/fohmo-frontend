@@ -26,6 +26,7 @@ class StakingInfo {
     'AVAX-PB',
     'ONE-WAGMI',
     'ARB-Z20',
+    'ARB-UMAMI',
     'AVAX-RUG',
     'BSC-RUG',
     'ONE-ODAO',
@@ -219,7 +220,7 @@ class StakingInfo {
       price = Number(price) * ethPrice;
     } else if (key === 'MATIC-KLIMA' || key === 'MOVR-FHM' ) {
       price = ethers.utils.formatUnits(reserves.reserve0, 'mwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-    } else if(key === 'ARB-Z20' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID') {
+    } else if(key === 'ARB-Z20' || key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID') {
       price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
     }else {
       if (token0 === farmParams.token) {

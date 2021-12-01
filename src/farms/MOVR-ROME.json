@@ -14,8 +14,7 @@
       "stakingContract": "0x6f7D019502e17F1ef24AC67a260c65Dd23b759f1",
       "LPContract": "0xcf06cfb361615c49403b45a5e56e3b7da3462eea",
       "lockedSupplyContract": [
-        "0x093973dca8f8dab14398b7e472e69f75869bc824",
-        "0xD4a7FEbD52efda82d6f8acE24908aE0aa5b4f956"
+
       ],
       "treasuryContract": "0xfbad41e4dd040bc80c89fcc6e90d152a746139af",
       "bondingCalculator": "0x3b5bbc9d8243c6661ccadade17b68344770c20fd",

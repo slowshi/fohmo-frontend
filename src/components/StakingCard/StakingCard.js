@@ -160,15 +160,6 @@ function StakingCard(params) {
               <strong>Risk Free Value</strong>
               <span>{`$${farm.data.stakingInfo?.$RFV}`}</span>
             </span>
-            {farmSymbol === 'ROME' ?
-            <div>
-              <span className="text-muted txt-smol">* TVL/MC/RFV incorrect for ROME unsure why.</span>
-              <div className="text-muted txt-smol">Staking contractBalance: {Number(farm.data.stakingInfo.lockedValue).toLocaleString()} ROME</div>
-              <div className="text-muted txt-smol">ROME totalSupply (-Gnosis -Presale): {Number(farm.data.stakingInfo.totalSupply).toLocaleString()} ROME</div>
-              <div className="text-muted txt-smol">RFV includes DAI from presale</div>
-            </div>
-            :
-            ''}
           </div>
         }
       </div>
@@ -209,19 +200,19 @@ function StakingCard(params) {
             </span>
             {farm.constants.wsOHMNetworks.length ? <hr></hr> : ''}
             {
-              farm.data?.balances?.wrappedBalances.balances.map((wrappedBalance)=>
-                <span key={wrappedBalance.symbol} className="card-text d-flex justify-content-between align-items-center mb-1">
-                  <strong>{`${farm.constants.wsOHMSymbol} (${wrappedBalance.symbol})`}</strong>
+              farm.data?.balances?.wrappedBalances.balances.map((wrappedBalance, index)=>
+                <span key={index} className="card-text d-flex justify-content-between align-items-center mb-1">
+                  <strong>{`${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol} (${wrappedBalance.symbol})`}</strong>
                   <div className="align-items-end d-flex flex-column overflow-anywhere">
-                    <span>{`${wrappedBalance.tokenBalance} ${farm.constants.wsOHMSymbol}`}</span>
+                    <span>{`${wrappedBalance.tokenBalance} ${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol}`}</span>
                     <span>{`(${wrappedBalance.convertedBalance} ${farmSymbol})`}</span>
                   </div>
                 </span>)
             }
             <hr></hr>
             {
-              farm.data?.balances?.bonds.map((bondData)=>
-              <span key={bondData.symbol} className="card-text d-flex justify-content-between align-items-center mb-1">
+              farm.data?.balances?.bonds.map((bondData, index)=>
+              <span key={index} className="card-text d-flex justify-content-between align-items-center mb-1">
               <strong>{bondData.symbol}</strong>
               <div className="align-items-end d-flex flex-column">
                 <div>{`${bondData.pendingPayout} ${farmSymbol}`} <strong>C</strong></div>
