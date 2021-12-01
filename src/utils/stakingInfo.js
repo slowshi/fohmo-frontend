@@ -217,29 +217,12 @@ class StakingInfo {
         price = ethers.utils.formatUnits(reserves.reserve0, 'gwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
       } else if (key === 'AVAX-OTWO') {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'ether') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
-        // console.log(ethPrice);
         price = ethers.utils.formatUnits(reserves.reserve0, 'ether') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
       } else {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'mwei') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
         price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
       }
       price = Number(price) * ethPrice;
-    } else if (key === 'AVAX-OTWO') {
-      // const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
-      // const ethReserves = await this.loadCahceContractCall(
-      //   ethContract,
-      //   'getReserves',
-      //   [],
-      //   clearCache
-      // );
-      // if(key === 'ETH-LOBI') {
-      //   ethPrice = ethers.utils.formatUnits(ethReserves.reserve1, 'ether') / ethers.utils.formatUnits(ethReserves.reserve0, 'gwei');
-      //   price = ethers.utils.formatUnits(reserves.reserve0, 'gwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-      // } else {
-      //   ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'mwei') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
-      //   price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
-      // }
-      // price = Number(price) * ethPrice;
     } else if (key === 'MATIC-KLIMA' || key === 'MOVR-FHM' ) {
       price = ethers.utils.formatUnits(reserves.reserve0, 'mwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
     } else if(key === 'ARB-Z20' || key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID') {
