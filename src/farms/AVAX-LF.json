@@ -1,0 +1,37 @@
+{
+  "AVAX-LF": {
+    "farmSymbol": "LF",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Life DAO",
+      "symbol": "LF",
+      "link": "https://lifedao.finance/#/stake",
+      "token": "0x5684a087C739A2e845F4AaAaBf4FBd261edc2bE8",
+      "stakingSymbol": "sLF",
+      "stakingToken": "0x769F19A9A449E523fC1F1f7B73051B3bC3C52738",
+      "stakingContract": "0x3C09c500829D09AfEA7575005fcAFBacFcde6902",
+      "LPContract": "0xd7cdc2e47ab29a6b651704e39374bb9857f02e02",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x1e63a2eB2827db56d3CB1e1FF17ef1040B2d3D3f",
+      "bondingCalculator": "0xC28CfF5a18eFd8e6B5c319df4D9C31D3Abe6b71A",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x85e5578d486f8d29127e9380a16a2b3a1fc9ea19",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0x56878e9d28387dd4e1b64d5edfd885abc88a1147",
+          "symbol": "LF-MIM"
+        },
+        {
+          "address": "0xF13EFa98Aa53547a9E226B7A0927280503Ed7DD0",
+          "symbol": "LF-AVAX"
+        }
+      ]
+    }
+  }
+}

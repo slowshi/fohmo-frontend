@@ -18,8 +18,10 @@ import {store} from './store';
 class StakingInfo {
   timeTemplates = [
     'AVAX-TIME',
+    'AVAX-LF',
     'AVAX-SB',
     'AVAX-MAXI',
+    'AVAX-OTWO',
     'AVAX-SDOG',
     'AVAX-NADO',
     'AVAX-FORT',
@@ -146,7 +148,7 @@ class StakingInfo {
       clearCache
     );
     if (key === 'AVAX-TIME' || key === 'ARB-Z20' || key === 'AVAX-RUG' || key === 'AVAX-MAXI'
-    || key === 'ONE-ODAO') {
+    || key === 'ONE-ODAO' || key === 'AVAX-LF') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 4.5).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
     } else if (key === 'CRO-FORT') {
@@ -202,7 +204,7 @@ class StakingInfo {
     );
     let price = 0;
     let ethPrice = 0;
-    if (key === 'ETH-SQUID' || key === 'ETH-LOBI') {
+    if (key === 'ETH-SQUID' || key === 'ETH-LOBI' || key == 'AVAX-OTWO') {
       const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
       const ethReserves = await this.loadCahceContractCall(
         ethContract,
@@ -213,11 +215,31 @@ class StakingInfo {
       if(key === 'ETH-LOBI') {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve1, 'ether') / ethers.utils.formatUnits(ethReserves.reserve0, 'gwei');
         price = ethers.utils.formatUnits(reserves.reserve0, 'gwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+      } else if (key === 'AVAX-OTWO') {
+        ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'ether') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
+        console.log(ethPrice);
+        price = ethers.utils.formatUnits(reserves.reserve0, 'ether') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
       } else {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'mwei') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
         price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
       }
       price = Number(price) * ethPrice;
+    } else if (key === 'AVAX-OTWO') {
+      // const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
+      // const ethReserves = await this.loadCahceContractCall(
+      //   ethContract,
+      //   'getReserves',
+      //   [],
+      //   clearCache
+      // );
+      // if(key === 'ETH-LOBI') {
+      //   ethPrice = ethers.utils.formatUnits(ethReserves.reserve1, 'ether') / ethers.utils.formatUnits(ethReserves.reserve0, 'gwei');
+      //   price = ethers.utils.formatUnits(reserves.reserve0, 'gwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+      // } else {
+      //   ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'mwei') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
+      //   price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+      // }
+      // price = Number(price) * ethPrice;
     } else if (key === 'MATIC-KLIMA' || key === 'MOVR-FHM' ) {
       price = ethers.utils.formatUnits(reserves.reserve0, 'mwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
     } else if(key === 'ARB-Z20' || key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID') {
@@ -275,7 +297,7 @@ class StakingInfo {
         clearCache
       );
       totalReserves = Number(ethers.utils.formatUnits(totalReserves, 'gwei'));
-      if(key === 'ETH-SQUID' || key === 'ETH-LOBI') {
+      if(key === 'ETH-SQUID' || key === 'ETH-LOBI' || key === 'AVAX-OTWO') {
         totalReserves = totalReserves * ethPrice;
       }
     }

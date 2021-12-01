@@ -1,0 +1,33 @@
+{
+  "BSC-RA": {
+    "farmSymbol": "RA",
+    "networkSymbol": "BSC",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "RADAO",
+      "symbol": "RA",
+      "link": "https://radao.finance/stake",
+      "token": "0xcc238200cFfdA7A5E2810086c26d5334e64F1155",
+      "stakingSymbol": "sRA",
+      "stakingToken": "0x06D4A49b0b235B3251Be6e1A668b5151c151B9fC",
+      "stakingContract": "0xf45aE86eD6C7d7A6b6C4640e04FEc228641D4C64",
+      "LPContract": "0xE8C6539663973E892C21652be80cdeE9a62e67BC",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x652A6F3459B276887bf2Fe9fb0FF810c9B24e1E3",
+      "bondingCalculator": "0xB8EC02832bDF94150d74832d6fe4eC7B39546b89",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xc8034bA71935F8f5253298d24fc6D12b04D715b9",
+          "symbol": "RA-BUSD"
+        },
+        {
+          "address": "0x7eB67c27319a7DCC330fF78dd9d725fB9F0e1D41",
+          "symbol": "BUSD"
+        }
+      ]
+    }
+  }
+}

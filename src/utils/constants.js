@@ -27,7 +27,7 @@ const networks = {
     name: 'Polygon',
     rpcURL: 'https://polygon-rpc.com',
     chartURL: 'https://www.defined.fi/matic/',
-    blockRateSeconds: 2.17
+    blockRateSeconds: 2.26
   },
   AVAX: {
     symbol: 'AVAX',

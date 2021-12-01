@@ -1,8 +1,10 @@
 import ARB_Z20 from './ARB-Z20.json';
 import ARB_UMAMI from './ARB-UMAMI.json';
 import AVAX_FORT from './AVAX-FORT.json';
+import AVAX_LF from './AVAX-LF.json';
 import AVAX_MAXI from './AVAX-MAXI.json';
 import AVAX_NADO from './AVAX-NADO.json';
+import AVAX_OTWO from './AVAX-OTWO.json';
 import AVAX_PAPA from './AVAX-PAPA.json';
 import AVAX_RUG from './AVAX-RUG.json';
 // import AVAX_SDOG from './AVAX-SDOG.json';
@@ -13,6 +15,7 @@ import BSC_GYRO from './BSC-GYRO.json';
 import BSC_XEUS from './BSC-XEUS.json';
 import BSC_PID from './BSC-PID.json';
 import BSC_JADE from './BSC-JADE.json';
+import BSC_RA from './BSC-RA.json';
 import BSC_META from './BSC-META.json';
 import BSC_NMS from './BSC-NMS.json';
 import BSC_TAC from './BSC-TAC.json';
@@ -20,6 +23,7 @@ import CRO_FORT from './CRO-FORT.json';
 import ETH_LOBI from './ETH-LOBI.json';
 import ETH_OHM from './ETH-OHM.json';
 import ETH_SQUID from './ETH-SQUID.json';
+import FTM_GIZA from './FTM-GIZA.json';
 import FTM_EXOD from './FTM-EXOD.json';
 import FTM_FHM from './FTM-FHM.json';
 import FTM_HEC from './FTM-HEC.json';
@@ -40,10 +44,12 @@ const farms = {
   ...ARB_Z20,
   ...ARB_UMAMI,
   ...AVAX_FORT,
+  ...AVAX_LF,
   ...AVAX_MAXI,
-  ...AVAX_RUG,
   ...AVAX_NADO,
+  ...AVAX_OTWO,
   ...AVAX_PAPA,
+  ...AVAX_RUG,
   // ...AVAX_SDOG,
   ...AVAX_PB,
   ...AVAX_SB,
@@ -55,12 +61,14 @@ const farms = {
   ...BSC_META,
   ...BSC_NMS,
   ...BSC_PID,
+  ...BSC_RA,
   ...BSC_TAC,
   ...ETH_LOBI,
   ...ETH_OHM,
   ...ETH_SQUID,
   ...FTM_EXOD,
   ...FTM_FHM,
+  ...FTM_GIZA,
   ...FTM_HEC,
   ...FTM_SPA,
   // ...KLAY_KRNO,
