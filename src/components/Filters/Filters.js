@@ -58,7 +58,7 @@ function Filters() {
     const nonZeroKeys = Object.keys(farms)
     .reduce((acc, farmKey)=>{
       const farm = farms[farmKey];
-      const farmBalance = farm.data?.balances?.total || 0;
+      const farmBalance = farm.data?.balances?.rawTotal || 0;
       if (farmBalance > 0) {
         acc.push(farmKey);
       }

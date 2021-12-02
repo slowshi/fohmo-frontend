@@ -70,7 +70,7 @@ function App() {
       const distributeInterval = farm.data?.stakingInfo.distributeInterval || 0;
       const percent = (Math.pow(1 + stakingRebase, distributeInterval * state.totalRoiDynamic) - 1) || 0;
       const profit = (percent * adjustedTotal * price) || 0;
-      const weightedPercent = percent * (farm.data?.balances?.total / totalValue) || 0;
+      const weightedPercent = percent * (farm.data?.balances?.rawTotal / totalValue) || 0;
       const newTotal = ((otherBalance + (adjustedTotal + (percent * adjustedTotal))) * price) || 0;
       totalWeightedPercent += weightedPercent;
       totalProfit += profit;
