@@ -272,8 +272,17 @@ class StakingInfo {
         fullBondTotal += payout;
       }
       return {
-        payout,
-        pendingPayout,
+        payout: Number(payout) === 0 ? 0 : payout.toFixed(4),
+        rawPayout: payout,
+        payoutInUSD: Number(payout * price).toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }),
+        pendingPayout: Number(pendingPayout) === 0 ? 0 : pendingPayout.toFixed(4),
+        pendingPayoutInUSD: Number(pendingPayout * price).toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }),
         symbol: bondParams.symbol
       }
     }
@@ -347,14 +356,14 @@ class StakingInfo {
         nextRebaseSeconds: seconds,
         distributeInterval,
         stakingRebase,
-        rawPrice: Number(price.toFixed(2)),
+        rawPrice: Number(price),
         price: Number(price).toFixed(2),
-        totalReserves: Number(totalReserves).toFixed(2),
+        totalReserves: Number(totalReserves),
         currentIndex,
         rawCurrentIndex,
-        totalSupply: Number(ethers.utils.formatUnits(totalSupply, 'gwei')).toFixed(),
-        circulatingSupply: Number(ethers.utils.formatUnits(circulatingSupply, 'gwei')).toFixed(),
-        lockedValue: Number(ethers.utils.formatUnits(lockedValue, 'gwei')).toFixed(),
+        totalSupply: Number(ethers.utils.formatUnits(totalSupply, 'gwei')),
+        circulatingSupply: Number(ethers.utils.formatUnits(circulatingSupply, 'gwei')),
+        lockedValue: Number(ethers.utils.formatUnits(lockedValue, 'gwei')),
       }
     };
     data = this.formatFarmData(data);
@@ -404,13 +413,19 @@ class StakingInfo {
       ...data,
       balances: {
         ...data.balances,
-        total: Number(data.balances.total).toFixed(2).toLocaleString(),
+        total: Number(data.balances.total).toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }),
         rawTotal: data.balances.total,
         disabled: data.balances.tokenBalance === 0 && data.balances.stakingTokenBalance === 0
       },
       stakingInfo: {
         ...data.stakingInfo,
-        price: Number(data.stakingInfo.price).toLocaleString(),
+        price: Number(data.stakingInfo.price).toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }),
         apy: Number((
           (Math.pow(1 + data.stakingInfo.stakingRebase,
             data.stakingInfo.distributeInterval * 365) - 1) * 100)
@@ -421,14 +436,26 @@ class StakingInfo {
             data.stakingInfo.distributeInterval * 365) - 1) * 100)
           .toFixed(0)),
         $TVL: (Number(data.stakingInfo.lockedValue) *
-        Number(data.stakingInfo.price)).toLocaleString(),
+        Number(data.stakingInfo.price)).toLocaleString(undefined, {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0
+        }),
         $Circ: (Number(data.stakingInfo.circulatingSupply) *
-        Number(data.stakingInfo.price)).toLocaleString(),
+        Number(data.stakingInfo.price)).toLocaleString(undefined, {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0
+        }),
         $MC: (Number(data.stakingInfo.totalSupply) *
-        Number(data.stakingInfo.price)).toLocaleString(),
+        Number(data.stakingInfo.price)).toLocaleString(undefined, {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0
+        }),
         rawMC: (Number(data.stakingInfo.totalSupply) *
         Number(data.stakingInfo.price)),
-        $RFV: Number(data.stakingInfo.totalReserves).toLocaleString(),
+        $RFV: Number(data.stakingInfo.totalReserves).toLocaleString(undefined, {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0
+        }),
         $BackedPrice: (Number(data.stakingInfo.totalReserves) /
         Number(data.stakingInfo.totalSupply)).toLocaleString()
       }
@@ -507,21 +534,6 @@ class StakingInfo {
     return response;
   }
 
-  formatRebase(stakedBalance, otherBalance, price, stakingRebase, count) {
-    const percent = (Math.pow(1 + stakingRebase, count) - 1);
-    return {
-      total: Number(
-        ((otherBalance + (stakedBalance + (percent * stakedBalance))) * price).toFixed(2)
-      ).toLocaleString(),
-      tokenCount: Number(
-        (stakedBalance + (percent * stakedBalance)).toFixed(9)
-      ),
-      percent: Number(
-        (percent * 100).toFixed(4)
-      ).toLocaleString()
-    };
-  }
-
   getRebaseBlock(currentBlock, interval) {
     return currentBlock + interval - (currentBlock % interval);
   }
@@ -562,16 +574,25 @@ const formatRebase = (stakedBalance, otherBalance, price, stakingRebase, count) 
   return {
     profit: Number(
       (percent * stakedBalance * price).toFixed(2)
-    ).toLocaleString(),
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }),
     total: Number(
-      ((otherBalance + (stakedBalance + (percent * stakedBalance))) * price).toFixed(2)
-    ).toLocaleString(),
+      ((otherBalance + (stakedBalance + (percent * stakedBalance))) * price)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }),
     tokenCount: Number(
-      (stakedBalance + (percent * stakedBalance)).toFixed(9)
+      (stakedBalance + (percent * stakedBalance)).toFixed(4)
     ),
     percent: Number(
-      (percent * 100).toFixed(4)
-    ).toLocaleString()
+      (percent * 100)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    })
   };
 };
 const stakingInfo = new StakingInfo();

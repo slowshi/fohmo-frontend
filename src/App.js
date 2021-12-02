@@ -79,13 +79,28 @@ function App() {
     if(state.hideTotals || state.addressParam === '') {
       document.title = `Fohmo.io`
     } else {
-      document.title = `Fohmo.io - $${totalValue.toFixed(2).toLocaleString()}`
+      document.title = `Fohmo.io - $${totalValue.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      })}`
     }
     return {
-      totalValue: totalValue.toFixed(2).toLocaleString(),
-      totalWeightedPercent: Number((totalWeightedPercent * 100).toFixed(4)).toLocaleString(),
-      totalProfit: Number(totalProfit.toFixed(2)).toLocaleString(),
-      totalExpectedValue: Number(totalExpectedValue.toFixed(2)).toLocaleString()
+      totalValue: Number(totalValue).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+      totalWeightedPercent: Number((totalWeightedPercent * 100)).toLocaleString(undefined, {
+        minimumFractionDigits: 4,
+        maximumFractionDigits: 4
+      }),
+      totalProfit: Number(totalProfit).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+      totalExpectedValue: Number(totalExpectedValue).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      })
     };
   })
 

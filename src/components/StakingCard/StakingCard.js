@@ -16,6 +16,7 @@ function StakingCard(params) {
   // });
   const farm = useSelector((state)=> {
     const currentFarm = state.farms[farmKey];
+    console.log(currentFarm);
     if (currentFarm.data === null) return currentFarm;
     const formatRebaseParams = [
       Number(currentFarm.data.balances?.stakingTokenBalance + currentFarm.data.balances?.wrappedBalances?.total),
@@ -195,7 +196,9 @@ function StakingCard(params) {
               <strong>{bondData.symbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
                 <div>{`${bondData.pendingPayout} ${farmSymbol}`} <strong>C</strong></div>
+                <div class="mb-1 txt-smol">(${bondData.pendingPayoutInUSD})</div>
                 <div>{`${bondData.payout} ${farmSymbol}`} <strong>P</strong></div>
+                <div class="mb-1 txt-smol">(${bondData.payoutInUSD})</div>
               </div>
             </span>)
             }
