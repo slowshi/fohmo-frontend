@@ -19,6 +19,7 @@ import BSC_RA from './BSC-RA.json';
 import BSC_META from './BSC-META.json';
 import BSC_NMS from './BSC-NMS.json';
 import BSC_TAC from './BSC-TAC.json';
+import BSC_TEM from './BSC-TEM.json';
 import CRO_FORT from './CRO-FORT.json';
 import ETH_LOBI from './ETH-LOBI.json';
 import ETH_OHM from './ETH-OHM.json';
@@ -63,6 +64,7 @@ const farms = {
   ...BSC_PID,
   ...BSC_RA,
   ...BSC_TAC,
+  ...BSC_TEM,
   ...ETH_LOBI,
   ...ETH_OHM,
   ...ETH_SQUID,
@@ -90,7 +92,8 @@ const updatedFarms = Object.keys(farms)
     [key]: {
       ...farms[key],
       showBalances: false,
-      showROI: false
+      showROI: false,
+      loading: true
     }
   }
   return acc

@@ -26,6 +26,14 @@
         {
           "address": "0x978727ce867307528ed3908a24aebcb6d53184e3",
           "symbol": "MIM"
+        },
+        {
+          "address": "0xa7b3342a03867d0b5179074ee6acebc40dc8218b",
+          "symbol": "NADO-wAVAX"
+        },
+        {
+          "address": "0xd1d58f3fb918e2d949dc340f4ce9654d7cee4c7a",
+          "symbol": "wAVAX"
         }
       ]
     }

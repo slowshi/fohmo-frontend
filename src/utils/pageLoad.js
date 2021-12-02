@@ -8,7 +8,9 @@ const formatURL = (state) => {
   if (state.farmFilters.length > 0) {
     params = {
       ...params,
-      filters: state.farmFilters.toString() || null
+      filters: state.farmFilters.toString() || null,
+      sort: state.sortBy,
+      dir: state.sortDirection,
     };
   }
   const searchParams = new URLSearchParams(params);

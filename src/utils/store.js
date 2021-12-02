@@ -3,6 +3,8 @@ import { allFarms } from './constants';
 const initialState = Object.freeze({
   address: '',
   addressParam: '',
+  sortBy: '',
+  sortDirection: true,
   accountInfo: [],
   farmFilters: [],
   farms: {},
@@ -47,6 +49,16 @@ const appReducer = (state = initialState, action) => {
       return {
         ...state,
         showFilters: action.payload
+      }
+    case "setSortBy":
+      return {
+        ...state,
+        sortBy: action.payload
+      }
+    case "setSortDirection":
+      return {
+        ...state,
+        sortDirection: action.payload
       }
     case "udpateFarm":
       return {
@@ -100,9 +112,18 @@ const appReducer = (state = initialState, action) => {
 const searchParams = (new URL(document.location)).searchParams;
 let addressParam = '';
 let farmFilters = ['ETH-OHM'];
+let sortDirection = 'desc';
+let sortBy = 'balance';
+
 if (searchParams.has('address')) {
   if (searchParams.has('filters')) {
     farmFilters = searchParams.get('filters').split(',');
+  }
+  if (searchParams.has('sort')) {
+    sortBy = searchParams.get('sort');
+  }
+  if (searchParams.has('dir')) {
+    sortDirection = searchParams.get('dir');
   }
   addressParam = searchParams.get('address');
   const validFarmFilters = Object.keys(allFarms);
@@ -119,7 +140,9 @@ const store = createStore(appReducer, {
   addressParam,
   validated: false,
   accountInfo: [],
+  sortDirection,
   farmFilters,
+  sortBy,
   showFilters: false,
   hideTotals: false,
   farms: allFarms,

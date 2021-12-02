@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from "react-redux";
 import './Filters.css';
 import allFarms from '../../farms/index';
 import pageLoad from '../../utils/pageLoad';
+import {sortFilters} from '../../utils/constants'
 
 function Filters() {
   const dispatch = useDispatch();
@@ -10,6 +11,8 @@ function Filters() {
   const hideTotals = useSelector((state)=>state.hideTotals);
   const farmFilters = useSelector((state)=>state.farmFilters);
   const addressParam = useSelector((state)=>state.addressParam);
+  const sortDirection = useSelector((state)=>state.sortDirection);
+  const sortBy = useSelector((state)=>state.sortBy);
   const farms = useSelector((state)=>state.farms);
 
   const $farmFilters = useSelector((state)=>{
@@ -92,17 +95,43 @@ function Filters() {
       pageLoad();
     }
   }
-
+  const updateSortBy = (e) => {
+    dispatch({
+      type: 'setSortBy',
+      payload: e.target.value
+    });
+    if(addressParam !== '') {
+      pageLoad();
+    }
+  }
+  const updateSortDirection = (e) => {
+    dispatch({
+      type: 'setSortDirection',
+      payload: sortDirection === 'asc' ? 'desc': 'asc'
+    });
+    if(addressParam !== '') {
+      pageLoad();
+    }
+  }
   return (
   <div className="container-fluid mt-2 flex1">
     <div className="row">
       <div className="col-12">
-        <div className="d-flex justify-content-between align-items-center mb-2">
-          <div>
+        <div className="d-flex h-auto justify-content-between align-items-center mb-2">
+          <div className="d-flex h-auto align-items-center">
             <button type="button"
                   className={`btn btn-sm me-1 ${showFilters ? 'btn-dark' : 'btn-light'}`}
                   onClick={toggleFilters}>
               <i className="bi bi-menu-button-wide-fill"></i>
+            </button>
+            <select value={sortBy} className="form-select form-select-sm" aria-label="Sort"
+            onChange={updateSortBy}>
+              {sortFilters.map((sortFilter, index)=>
+              <option key={index} value={sortFilter.key}>{sortFilter.label}</option>
+              )}
+            </select>
+            <button className="btn btn-sm btn-light ms-1" onClick={updateSortDirection}>
+              <i className={`bi ${sortDirection === 'desc' ? 'bi-sort-down' : 'bi-sort-up'}`}></i>
             </button>
           </div>
           <div>

@@ -36,9 +36,6 @@ class Footer extends Component {
                     <a id="twitter" className="btn text-light" target="__blank" title="Twitter" href="https://twitter.com/slowshi">
                     <i className="bi bi-twitter"></i>
                     </a>
-                    <a id="telegram" className="btn text-light" target="__blank" title="Telegram" href="https://t.me/joinchat/xG1rYGoKGgJlNWEx">
-                    <i className="bi bi-telegram"></i>
-                    </a>
                   </div>
                   <div id="rightNav" className="col-sm-12 col-md-6 mb-3">
                   <div id="donate" className="input-group input-group-sm">

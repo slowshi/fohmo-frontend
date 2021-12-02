@@ -28,7 +28,7 @@ function Nav() {
         <a className="navbar-brand mb-0 h1" href="/">
           Fohmo.io
         </a>
-        <form id="search" className="d-flex needs-validation flex1"
+        <form id="search" className="d-flex h-auto needs-validation flex1"
         onSubmit={submitForm}>
           <input className="form-control me-2" name="address" onInput={updateSearch} value={address} type="search" placeholder="Wallet Address" aria-label="Search" required/>
           <button className="btn btn-outline-light" type="submit">

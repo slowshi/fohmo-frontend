@@ -25,6 +25,10 @@
         {
           "address": "0x9227cb270f40968B1BC7F34b9eEe8C23C0b5655b",
           "symbol": "FORT-DAI"
+        },
+        {
+          "address": "0xFDE8d34aF0A67D7DDb1AbE446936B4D759265042",
+          "symbol": "USDC"
         }
       ]
     }

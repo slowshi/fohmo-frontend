@@ -1,0 +1,36 @@
+{
+  "BSC-TEM": {
+    "farmSymbol": "TEM",
+    "networkSymbol": "BSC",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Templar DAO",
+      "symbol": "TEM",
+      "link": "https://templar.finance/#/stake",
+      "token": "0x19e6BfC1A6e4B042Fb20531244D47E252445df01",
+      "stakingSymbol": "SWORD",
+      "stakingToken": "0x8C9827Cd430d945aE5A5c3cfdc522f8D342334B9",
+      "stakingContract": "0xa1f61Ca61fe8655d2a204B518f6De964145a9324",
+      "LPContract": "0x1ede821daade714edade648f525ada0c5fe4ee3a",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xd01e8D805BB310F06411e70Fd50eB58cAe2B4C27",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x0d4f509b7D80Bfc7b3aaaEfC1C2edE4B362D8273",
+          "symbol": "TEM-BUSD"
+        },
+        {
+          "address": "0xF171eFc8AD41Aabb798d466861dCd7144f973d62",
+          "symbol": "BUSD"
+        },
+        {
+          "address": "0xe6F0A8E7a3550140495FfC17AB4dE44636278ee2",
+          "symbol": "WBNB"
+        }
+      ]
+    }
+  }
+}

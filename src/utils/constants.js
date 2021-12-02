@@ -6,7 +6,40 @@ const DEV_ADDRESS = '0xe88030c28d23d2120C687f49FB5cC2830F0Edb39';
 const paths = {
   HOME: `/`
 };
-
+const sortFilters = [
+  {
+    label: 'Balance',
+    key: 'balance'
+  },
+  {
+    label: 'MC',
+    key: 'mc'
+  },
+  {
+    label: 'APY',
+    key: 'apy'
+  },
+  {
+    label: 'Next Rebase',
+    key: 'rebase'
+  },
+  {
+    label: 'Farm A-Z',
+    key: 'farm'
+  },
+  {
+    label: 'Eco A-Z',
+    key: 'eco'
+  }
+];
+const sortMap = {
+  'balance': 'data.balances.rawTotal',
+  'mc': 'data.stakingInfo.rawMC',
+  'apy': 'data.stakingInfo.rawApy',
+  'rebase': 'data.stakingInfo.nextRebase',
+  'farm': 'farmSymbol',
+  'eco': 'networkSymbol',
+}
 const networks = {
   FTM: {
     symbol: 'FTM',
@@ -84,5 +117,7 @@ export {
   networks,
   allFarms,
   paths,
+  sortFilters,
+  sortMap,
   DEV_ADDRESS
 };

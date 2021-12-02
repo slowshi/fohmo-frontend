@@ -7,17 +7,28 @@ import Filters from './components/Filters/Filters';
 import StakingCard from './components/StakingCard/StakingCard';
 import Footer from './components/Footer/Footer';
 import {stakingInfo} from './utils/stakingInfo';
+import {sortMap} from './utils/constants';
 function App() {
   const dispatch = useDispatch();
   const addressParam = useSelector((state)=> state.addressParam);
   const hideTotals = useSelector(state => state.hideTotals);
   const totalRoiDynamic = useSelector(state=> state.totalRoiDynamic)
+  const sortByKey = useSelector(state=> sortMap[state.sortBy]);
   useEffect(()=>{
     if (addressParam) {
       stakingInfo.init(addressParam);
     }
   },[addressParam]);
-
+  const ref = (obj, str) => {
+      return str
+      .split(".")
+      .reduce((acc, key) => {
+        if(typeof acc[key] === 'undefined') {
+          return null;
+        }
+        return acc[key];
+      }, obj);
+  }
   const loadedFarms = useSelector((state)=> {
     let farms = [...Object.keys(state.farms)];
     if (state.farmFilters.length > 0) {
@@ -26,12 +37,16 @@ function App() {
     farms = farms
       .map((farmKey)=>state.farms[farmKey])
       .sort((a, b)=>{
-        const aTotal = a.data?.balances?.total;
-        const bTotal = b.data?.balances?.total;
-        if ( aTotal > bTotal ) {
+        if(a.data === null || b.data === null) return 0;
+        const aTotal = ref(a, sortByKey);
+        const bTotal = ref(b, sortByKey);
+        if ((state.sortDirection === 'desc' && aTotal > bTotal) ||
+        (!state.sortDirection === 'asc' && aTotal < bTotal)) {
           return -1;
         }
-        if ( aTotal < bTotal ) {
+
+        if ((state.sortDirection === 'desc' && aTotal < bTotal) ||
+        (!state.sortDirection === 'asc' && aTotal > bTotal)) {
           return 1;
         }
         return 0;
@@ -45,7 +60,7 @@ function App() {
     }
     const filteredFarms = farms.map((farmKey)=>state.farms[farmKey]);
     const totalValue = filteredFarms.reduce((acc, farm)=> {
-      acc += farm.data?.balances?.total || 0;
+      acc += farm.data?.balances?.rawTotal || 0;
       return acc;
     }, 0);
     let totalWeightedPercent = 0;
@@ -91,7 +106,7 @@ function App() {
               <div className="col-sm-12">
                 <div className="card mb-2">
                   <div className="card-body">
-                    <span className="card-text d-flex justify-content-between align-items-center">
+                    <span className="card-text d-flex h-auto justify-content-between align-items-center">
                       <span>Total Value</span>
                       {hideTotals ?
                       <strong>$-</strong>
@@ -104,17 +119,17 @@ function App() {
                         type: 'setTotalRoiDynamic',
                         payload: e.target.value
                       })}/>
-                    <span className="card-text d-flex justify-content-between align-items-center mb-2">
+                    <span className="card-text d-flex h-auto justify-content-between align-items-center mb-2">
                       <strong>{`${totalRoiDynamic} Day ROI`}</strong>
-                      <div className="align-items-end d-flex flex-column overflow-anywhere">
+                      <div className="align-items-end d-flex h-auto flex-column overflow-anywhere">
                         <span>{`${aggregatedTotals.totalWeightedPercent}%`}</span>
                         {hideTotals ?
-                        <span className="align-items-end d-flex flex-column overflow-anywhere">
+                        <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
                           <span>$-</span>
                           <span>+$-</span>
                         </span>
                         :
-                        <span className="align-items-end d-flex flex-column overflow-anywhere">
+                        <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
                           <span>{`$${aggregatedTotals.totalExpectedValue}`}</span>
                           <span>{`+$${aggregatedTotals.totalProfit}`}</span>
                         </span>

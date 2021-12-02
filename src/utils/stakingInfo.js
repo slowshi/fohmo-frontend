@@ -44,13 +44,27 @@ class StakingInfo {
     Object.keys(allFarms).forEach((key)=>{
       const farm = allFarms[key];
       if (state.farmFilters.length === 0 || state.farmFilters.indexOf(key) > -1) {
+        const stateFarm = state.farms[key];
+          store.dispatch({
+            type: 'updateFarm',
+            payload: {
+              farmKey: key,
+              farm: {
+                ...stateFarm,
+                loading: true
+              }
+            }
+          });
         this.getStakingInfo(userAddress, farm.networkSymbol, farm.farmSymbol)
           .then((response)=>{
             store.dispatch({
               type: 'udpateFarm',
               payload: {
                 farmKey: `${farm.networkSymbol}-${farm.farmSymbol}`,
-                farm: response
+                farm: {
+                  ...response,
+                  loading: false
+                }
               }
             });
           });
@@ -318,7 +332,7 @@ class StakingInfo {
       total += wrappedBalances.total * price;
     }
     // console.log(key, distributeInterval)
-    const data = {
+    let data = {
       balances: {
         total: Number(total.toFixed(2)),
         tokenBalance,
@@ -331,6 +345,7 @@ class StakingInfo {
         nextRebase: this.prettifySeconds(seconds),
         distributeInterval,
         stakingRebase,
+        rawPrice: Number(price.toFixed(2)),
         price: Number(price).toFixed(2),
         totalReserves: Number(totalReserves).toFixed(2),
         currentIndex,
@@ -340,6 +355,7 @@ class StakingInfo {
         lockedValue: Number(ethers.utils.formatUnits(lockedValue, 'gwei')).toFixed(),
       }
     };
+    data = this.formatFarmData(data);
     // console.log(key, data.stakingInfo.totalSupply, data.stakingInfo.circulatingSupply)
     return {
       networkSymbol,
@@ -374,6 +390,48 @@ class StakingInfo {
       total,
       balances
     };
+  }
+  formatFarmData(data) {
+    const formatRebaseParams = [
+      Number(data.balances?.stakingTokenBalance + data.balances?.wrappedBalances?.total),
+      Number(data.balances?.fullBondTotal + data.balances.tokenBalance),
+      Number(data.stakingInfo.price),
+      data.stakingInfo.stakingRebase,
+    ];
+    return {
+      ...data,
+      balances: {
+        ...data.balances,
+        total: Number(data.balances.total).toLocaleString(),
+        rawTotal: data.balances.total,
+        disabled: data.balances.tokenBalance === 0 && data.balances.stakingTokenBalance === 0
+      },
+      stakingInfo: {
+        ...data.stakingInfo,
+        price: Number(data.stakingInfo.price).toLocaleString(),
+        apy: Number((
+          (Math.pow(1 + data.stakingInfo.stakingRebase,
+            data.stakingInfo.distributeInterval * 365) - 1) * 100)
+          .toFixed(0))
+          .toLocaleString(),
+        rawApy: Number((
+          (Math.pow(1 + data.stakingInfo.stakingRebase,
+            data.stakingInfo.distributeInterval * 365) - 1) * 100)
+          .toFixed(0)),
+        $TVL: (Number(data.stakingInfo.lockedValue) *
+        Number(data.stakingInfo.price)).toLocaleString(),
+        $Circ: (Number(data.stakingInfo.circulatingSupply) *
+        Number(data.stakingInfo.price)).toLocaleString(),
+        $MC: (Number(data.stakingInfo.totalSupply) *
+        Number(data.stakingInfo.price)).toLocaleString(),
+        rawMC: (Number(data.stakingInfo.totalSupply) *
+        Number(data.stakingInfo.price)),
+        $RFV: Number(data.stakingInfo.totalReserves).toLocaleString(),
+        $BackedPrice: (Number(data.stakingInfo.totalReserves) /
+        Number(data.stakingInfo.totalSupply)).toLocaleString()
+      }
+    }
+
   }
   /**
    *
