@@ -65,7 +65,7 @@ function App() {
       const wrappedStakedBalance = Number(farm.data?.balances?.wrappedBalances?.total) || 0;
       const otherBalance = Number(farm.data?.balances?.fullBondTotal + farm.data?.balances.tokenBalance);
       const adjustedTotal = stakedBalance + wrappedStakedBalance;
-      const price = Number(farm.data?.stakingInfo.price) || 0;
+      const price = Number(farm.data?.stakingInfo.rawPrice) || 0;
       const stakingRebase = farm.data?.stakingInfo.stakingRebase || 0;
       const distributeInterval = farm.data?.stakingInfo.distributeInterval || 0;
       const percent = (Math.pow(1 + stakingRebase, distributeInterval * state.totalRoiDynamic) - 1) || 0;
@@ -79,10 +79,10 @@ function App() {
     if(state.hideTotals || state.addressParam === '') {
       document.title = `Fohmo.io`
     } else {
-      document.title = `Fohmo.io - $${totalValue.toLocaleString()}`
+      document.title = `Fohmo.io - $${totalValue.toFixed(2).toLocaleString()}`
     }
     return {
-      totalValue: totalValue.toLocaleString(),
+      totalValue: totalValue.toFixed(2).toLocaleString(),
       totalWeightedPercent: Number((totalWeightedPercent * 100).toFixed(4)).toLocaleString(),
       totalProfit: Number(totalProfit.toFixed(2)).toLocaleString(),
       totalExpectedValue: Number(totalExpectedValue.toFixed(2)).toLocaleString()

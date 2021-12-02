@@ -404,7 +404,7 @@ class StakingInfo {
       ...data,
       balances: {
         ...data.balances,
-        total: Number(data.balances.total).toLocaleString(),
+        total: Number(data.balances.total).toFixed(2).toLocaleString(),
         rawTotal: data.balances.total,
         disabled: data.balances.tokenBalance === 0 && data.balances.stakingTokenBalance === 0
       },
