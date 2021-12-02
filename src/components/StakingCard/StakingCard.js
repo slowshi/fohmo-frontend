@@ -16,7 +16,6 @@ function StakingCard(params) {
   // });
   const farm = useSelector((state)=> {
     const currentFarm = state.farms[farmKey];
-    console.log(currentFarm);
     if (currentFarm.data === null) return currentFarm;
     const formatRebaseParams = [
       Number(currentFarm.data.balances?.stakingTokenBalance + currentFarm.data.balances?.wrappedBalances?.total),
