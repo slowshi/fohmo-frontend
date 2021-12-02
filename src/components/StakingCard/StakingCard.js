@@ -20,9 +20,10 @@ function StakingCard(params) {
     const formatRebaseParams = [
       Number(currentFarm.data.balances?.stakingTokenBalance + currentFarm.data.balances?.wrappedBalances?.total),
       Number(currentFarm.data.balances?.fullBondTotal + currentFarm.data.balances.tokenBalance),
-      Number(currentFarm.data.stakingInfo.price),
+      Number(currentFarm.data.stakingInfo.rawPrice),
       currentFarm.data.stakingInfo.stakingRebase,
     ];
+
     return {
       ...currentFarm,
       data: {

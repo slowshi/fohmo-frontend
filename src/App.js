@@ -40,15 +40,9 @@ function App() {
         if(a.data === null || b.data === null) return 0;
         const aTotal = ref(a, sortByKey);
         const bTotal = ref(b, sortByKey);
-        if ((state.sortDirection === 'desc' && aTotal > bTotal) ||
-        (!state.sortDirection === 'asc' && aTotal < bTotal)) {
-          return -1;
-        }
+        if (aTotal < bTotal) return state.sortDirection === 'asc' ? -1 : 1;
+        if (aTotal > bTotal) return state.sortDirection === 'desc' ? -1 : 1;
 
-        if ((state.sortDirection === 'desc' && aTotal < bTotal) ||
-        (!state.sortDirection === 'asc' && aTotal > bTotal)) {
-          return 1;
-        }
         return 0;
       });
     return farms;

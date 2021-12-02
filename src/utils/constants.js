@@ -36,9 +36,9 @@ const sortMap = {
   'balance': 'data.balances.rawTotal',
   'mc': 'data.stakingInfo.rawMC',
   'apy': 'data.stakingInfo.rawApy',
-  'rebase': 'data.stakingInfo.nextRebase',
-  'farm': 'farmSymbol',
-  'eco': 'networkSymbol',
+  'rebase': 'data.stakingInfo.nextRebaseSeconds',
+  'farm': 'constants.name',
+  'eco': 'networkParams.name',
 }
 const networks = {
   FTM: {

@@ -1,4 +1,4 @@
-import ARB_Z20 from './ARB-Z20.json';
+// import ARB_Z20 from './ARB-Z20.json';
 import ARB_UMAMI from './ARB-UMAMI.json';
 import AVAX_FORT from './AVAX-FORT.json';
 import AVAX_LF from './AVAX-LF.json';
@@ -42,7 +42,7 @@ import ONE_ODAO from './ONE-ODAO.json';
 import ONE_WAGMI from './ONE-WAGMI.json';
 
 const farms = {
-  ...ARB_Z20,
+  // ...ARB_Z20,
   ...ARB_UMAMI,
   ...AVAX_FORT,
   ...AVAX_LF,

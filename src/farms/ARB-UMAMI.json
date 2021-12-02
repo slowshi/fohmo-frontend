@@ -22,6 +22,10 @@
         {
           "address": "0xb20543f26f598f094c9147c4c331bb36d411ccbf",
           "symbol": "gOHM"
+        },
+        {
+          "address": "0x457c4e6b4bcaaa06245b5b34080ba9578e7fcafa",
+          "symbol": "UMAMI-MIM"
         }
       ]
     }

@@ -333,6 +333,7 @@ class StakingInfo {
     }
     // console.log(key, distributeInterval)
     let data = {
+      networkParams,
       balances: {
         total: Number(total.toFixed(2)),
         tokenBalance,
@@ -343,6 +344,7 @@ class StakingInfo {
       },
       stakingInfo: {
         nextRebase: this.prettifySeconds(seconds),
+        nextRebaseSeconds: seconds,
         distributeInterval,
         stakingRebase,
         rawPrice: Number(price.toFixed(2)),
