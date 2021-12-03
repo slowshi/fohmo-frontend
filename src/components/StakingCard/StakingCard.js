@@ -195,9 +195,9 @@ function StakingCard(params) {
               <strong>{bondData.symbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
                 <div>{`${bondData.pendingPayout} ${farmSymbol}`} <strong>C</strong></div>
-                <div class="mb-1 txt-smol">(${bondData.pendingPayoutInUSD})</div>
+                <div className="mb-1 txt-smol">(${bondData.pendingPayoutInUSD})</div>
                 <div>{`${bondData.payout} ${farmSymbol}`} <strong>P</strong></div>
-                <div class="mb-1 txt-smol">(${bondData.payoutInUSD})</div>
+                <div className="mb-1 txt-smol">(${bondData.payoutInUSD})</div>
               </div>
             </span>)
             }
