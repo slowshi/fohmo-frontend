@@ -21,16 +21,24 @@
       "wsOHMSymbol": "",
       "bondingContracts": [
         {
+          "address": "0x1f309b4834F02dEFAF52BE3b74D086324899De8e",
+          "symbol": "gOHM"
+        },
+        {
+          "address": "0x35E6506D19eEAe0C1564eA3FBa7749C53F34AA21",
+          "symbol": "OTWO-gOHM"
+        },
+        {
+          "address": "0x0b789992b27A5D11F861bA541Bb6844DF08839c7",
+          "symbol": "wMEMO"
+        },
+        {
           "address": "0xf11ddcb8a4167e3eeebc319d441df363743213fb",
           "symbol": "wsOHM"
         },
         {
           "address": "0xc2a7d2b79fac080f9e42b1662395649c4da7bfd1",
           "symbol": "OTWO-wsOHM"
-        },
-        {
-          "address": "0x0b789992b27A5D11F861bA541Bb6844DF08839c7",
-          "symbol": "wMEMO"
         }
       ]
     }
