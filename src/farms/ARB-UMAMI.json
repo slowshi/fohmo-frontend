@@ -12,7 +12,7 @@
       "stakingSymbol": "sZ2O",
       "stakingToken": "0xe6d557d416ff5640235119369c7e26AA18a906D7",
       "stakingContract": "0xc9ecFeF2fac1E38b951B8C5f59294a8366Dfbd81",
-      "LPContract": "0x40c938444c725ea6eb6992ca71f94b6945b43335",
+      "LPContract": "0xce502ee9bf3ef41508a8a4a38fcf02585fcbfdf0",
       "lockedSupplyContract": null,
       "treasuryContract": "0xE8E6a534146EFdCAdB64C4ce78600E5C9e71fc97",
       "bondingCalculator": "0xe0d0e232c09de67a3D74DA1284DC5e72Fc79D808",
