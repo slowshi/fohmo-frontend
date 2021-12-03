@@ -1,0 +1,46 @@
+{
+  "AVAX-GG": {
+    "farmSymbol": "GG",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "GalaxyGoogle",
+      "symbol": "GG",
+      "link": "https://app.galaxygoggle.money/#/stake",
+      "token": "0xf2f7ce610a091b94d41d69f4ff1129434a82e2f0",
+      "stakingSymbol": "sGG",
+      "stakingToken": "0x2482ec3928adf1718caa5956608684f5a54e14d0",
+      "stakingContract": "0x3875AC1F19E05813000F02414b3141DC3Ff991B6",
+      "LPContract": "0xe9e8d6b6ce6d94fc9d724711e80784ec096949fc",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xD5F922e23693e552793fE0431F9a95ba67A60A23",
+      "bondingCalculator": "0x3E0b7BbaD42445dc760059F085d56a86963793c1",
+      "wsOHMNetworks": [
+        {
+          "address": "0x757dd1dcc4546e949cbf4369df13ebc768bfa0b2",
+          "networkSymbol": "AVAX"
+        }
+      ],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x49EDb46546035e28B7138B21FC3fcCd41bF4b928",
+          "symbol": "GG-MIM"
+        },
+        {
+          "address": "0xeDEA430279D40bEDf13ecA7b81bDF01327Abfdd2",
+          "symbol": "wAVAX"
+        },
+        {
+          "address": "0x8D76969ABd6cCE3Ef89c8E0BB0f31fBF008EC3C2",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0xf493218d993c9ad091cd07c90f13c755ceab624d",
+          "symbol": "JOE"
+        }
+      ]
+    }
+  }
+}

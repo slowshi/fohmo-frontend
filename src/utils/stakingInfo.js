@@ -141,13 +141,13 @@ class StakingInfo {
       [],
       clearCache
     );
-    // console.log(
-    //   key,
-    //   epoch._length.toNumber(),
-    //   epoch.number.toNumber(),
-    //   epoch.endBlock.toNumber(),
-    //   epoch.distribute.toNumber(),
-    // )
+    console.log(
+      key,
+      epoch._length.toNumber(),
+      epoch.number.toNumber(),
+      epoch.endBlock.toNumber(),
+      epoch.distribute.toNumber(),
+    )
 
     let rawCurrentIndex = await this.loadCahceContractCall(
       stakingContract,
@@ -167,6 +167,9 @@ class StakingInfo {
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
     } else if (key === 'CRO-FORT') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 16.1).toFixed(2);
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
+    } else if (key === 'AVAX-GG') {
+      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 3).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
     } else if (key === 'AVAX-PB') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 2000).toFixed(2);
@@ -337,7 +340,11 @@ class StakingInfo {
     }
     let wrappedBalances = {};
     if(farmParams.wsOHMNetworks !== null) {
-      wrappedBalances = await this.getwsOHMBalances(userAddress, farmParams.wsOHMNetworks, rawCurrentIndex, clearCache);
+      let useIndex = rawCurrentIndex;
+      if (key === 'FTM-SPA') {
+        useIndex = Number(currentIndex);
+      }
+      wrappedBalances = await this.getwsOHMBalances(userAddress, farmParams.wsOHMNetworks, useIndex, clearCache);
       total += wrappedBalances.total * price;
     }
     // console.log(key, distributeInterval)
