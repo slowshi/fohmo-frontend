@@ -24,6 +24,10 @@
       "wsOHMSymbol": "wsHEC",
       "bondingContracts": [
         {
+          "address": "0x09eb3B10a13DD705C17ced39c35aeEA0D419D0BB",
+          "symbol": "HEC-FRAX (4,4)"
+        },
+        {
           "address": "0xff6508aba1DAd81AACf3894374F291f82Dc024A8",
           "symbol": "HEC-USDC (4,4)"
         },
@@ -46,6 +50,10 @@
         {
           "address": "0xC798e6A22996C554739Df607B7eF1d6d435FDBd9",
           "symbol": "FRAX (4,4)"
+        },
+        {
+          "address": "0xde02631d898acd1bb8ff928c0f0ffa0cf29ab374",
+          "symbol": "HEC-FRAX"
         },
         {
           "address": "0x3C57481f373Be0196A26A7d0a8E29E8CedC63ba1",

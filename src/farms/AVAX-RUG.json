@@ -19,24 +19,32 @@
       "wsOHMSymbol": "",
       "bondingContracts": [
         {
-          "address": "0xb18ab414499e732554f67698d9214d3f5f1dcc73",
-          "symbol": "MIM"
+          "address": "0x881A8ECe1cD45A458eAcBA97f45b0fBc0752fCBF",
+          "symbol": "RUG-AVAX (RLP)"
         },
         {
-          "address": "0xd17ac52710f77249d39f72bcbc0c3fa7eefcef84",
-          "symbol": "RUG-MIM"
+          "address": "0x3a93493e2e486f818672991de6828a27346ab0cb",
+          "symbol": "wAVAX"
+        },
+        {
+          "address": "0x96a03ff213d47d0556a6bd454779e59c12722d19",
+          "symbol": "QI"
         },
         {
           "address": "0x8a4e5b690edfa273e59f28bbe2302aceeceefc41",
           "symbol": "RUG-AVAX"
         },
         {
-          "address": "0x3a93493e2E486F818672991de6828a27346Ab0Cb",
-          "symbol": "wAVAX"
+          "address": "0xd17ac52710f77249d39f72bcbc0c3fa7eefcef84",
+          "symbol": "RUG-MIM"
         },
         {
-          "address": "0x96a03ff213d47d0556a6bd454779e59c12722d19",
-          "symbol": "QI"
+          "address": "0xb18ab414499e732554f67698d9214d3f5f1dcc73",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0x790463505821987709e4c661f9ab56def8a6b682",
+          "symbol": "USDC"
         }
       ]
     }

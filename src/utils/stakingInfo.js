@@ -546,7 +546,7 @@ class StakingInfo {
 
   prettifySeconds(seconds, resolution) {
     if (seconds !== 0 && !seconds) {
-      return '';
+      return 'Rebasing...';
     }
 
     const d = Math.floor(seconds / (3600 * 24));
