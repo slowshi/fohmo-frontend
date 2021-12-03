@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App2 from './App2';
 import reportWebVitals from './reportWebVitals';
-import {store} from './utils/store';
 import { Provider } from 'react-redux';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-
+import store from './store/store';
+// console.log(store2);
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App2 />
   </Provider>,
   document.getElementById('root')
 );

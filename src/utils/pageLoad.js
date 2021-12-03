@@ -1,5 +1,5 @@
 
-import {store} from './store';
+// import {store} from './store';
 import { stakingInfo } from './stakingInfo';
 const formatURL = (state) => {
   let params = {
@@ -19,15 +19,15 @@ const formatURL = (state) => {
 };
 
 const pageLoad = ()=> {
-  const state = store.getState();
-  const address = state.address;
-  const url = formatURL(state);
-  window.history.replaceState(null, null, url);
-  store.dispatch({
-    type: 'setAddressParam',
-    payload: address
-  });
-  stakingInfo.init(address);
+  // const state = store.getState();
+  // const address = state.address;
+  // const url = formatURL(state);
+  // window.history.replaceState(null, null, url);
+  // store.dispatch({
+  //   type: 'setAddressParam',
+  //   payload: address
+  // });
+  // stakingInfo.init(address);
 };
 
 export default pageLoad;

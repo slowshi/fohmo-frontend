@@ -16,7 +16,16 @@ function App() {
   const sortByKey = useSelector(state=> sortMap[state.sortBy]);
   useEffect(()=>{
     if (addressParam) {
-      stakingInfo.init(addressParam);
+      const getInfo = async () => {
+        await stakingInfo.getStakingInfo2('AVAX', 'NADO');
+        if (addressParam) {
+          await stakingInfo.getBalances(addressParam, 'AVAX', 'NADO');
+        }
+      }
+      if (addressParam) {
+        stakingInfo.init(addressParam);
+        getInfo();
+      }
     }
   },[addressParam]);
   const ref = (obj, str) => {

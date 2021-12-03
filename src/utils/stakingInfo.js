@@ -7,7 +7,10 @@ import {abi as StakingAbi} from '../abis/Staking.json';
 import {abi as StakingTokenAbi} from '../abis/StakingToken.json';
 import {abi as BondContractAbi} from '../abis/BondContract.json';
 import {abi as TreasuryAbi} from '../abis/Treasury.json';
-import {store} from './store';
+import store from '../store/store';
+// import { updateStakingInfo } from "../store-deps/reducerFarms";
+// import { updateAddressBalances } from "../store-deps/reducerBalances";
+
 /* eslint-disable */
 
 /**
@@ -39,35 +42,66 @@ class StakingInfo {
    * @param {String} userAddress
    * @return {Array}
    */
-  init(userAddress) {
+  init() {
     const state = store.getState();
-    Object.keys(allFarms).forEach((key)=>{
+    let balancePromises = [];
+    Object.keys(allFarms).forEach((key)=> {
       const farm = allFarms[key];
-      if (state.farmFilters.length === 0 || state.farmFilters.indexOf(key) > -1) {
+      if (state.app.farmFilters.length === 0 || state.app.farmFilters.indexOf(key) > -1) {
         const stateFarm = state.farms[key];
-          store.dispatch({
-            type: 'updateFarm',
-            payload: {
-              farmKey: key,
-              farm: {
-                ...stateFarm,
-                loading: true
-              }
+        store.dispatch({
+          type: 'updateStakingInfo',
+          payload: {
+            farmKey: key,
+            stakingInfo: {
+              ...stateFarm,
+              loading: true
             }
-          });
-        this.getStakingInfo(userAddress, farm.networkSymbol, farm.farmSymbol)
-          .then((response)=>{
-            store.dispatch({
-              type: 'udpateFarm',
+          }
+        });
+        this.getStakingInfo2(farm.networkSymbol, farm.farmSymbol)
+        .then((res)=>{
+          store.dispatch(
+            {
+              type: 'updateStakingInfo',
               payload: {
-                farmKey: `${farm.networkSymbol}-${farm.farmSymbol}`,
-                farm: {
-                  ...response,
+                farmKey: `${res.networkSymbol}-${res.farmSymbol}`,
+                stakingInfo: {
+                  data: res.data,
                   loading: false
                 }
               }
-            });
+            }
+          );
+        });
+
+        const balancePromises = state.app.addresses
+        .map((address)=>{
+          store.dispatch({
+            type: 'updateAddressBalance',
+            payload: {
+              farmKey: key,
+              address: address,
+              balance: {
+                data: null,
+              }
+            }
           });
+          return this.getBalances(address, farm.networkSymbol, farm.farmSymbol)
+        })
+        Promise.all(balancePromises)
+        .then((res)=>{
+          res.forEach((balance)=>{
+            store.dispatch({
+              type: 'updateAddressBalance',
+              payload: {
+                farmKey: key,
+                address: balance.userAddress,
+                balance: balance.data
+              }
+            });
+          })
+        });
       }
     });
   }
@@ -382,6 +416,374 @@ class StakingInfo {
     };
   }
 
+  /**
+   *
+   * Meat
+   * @param {String} networkSymbol
+   * @param {String} farmSymbol
+   * @param {Boolean} [clearCache=false]
+   * @return {Object}
+   */
+   async getStakingInfo2(networkSymbol, farmSymbol, clearCache=false) {
+    const key = `${networkSymbol}-${farmSymbol}`;
+    const networkParams = networks[networkSymbol];
+    const farmParams = allFarms[key].constants;
+    const stakingContract = this.loadCacheContract(farmParams.stakingContract, StakingAbi, networkParams.rpcURL);
+    const tokenContract = this.loadCacheContract(farmParams.token, IERC20Abi, networkParams.rpcURL);
+    const stakingTokenContract = this.loadCacheContract(farmParams.stakingToken, StakingTokenAbi, networkParams.rpcURL);
+
+    let totalSupply = await this.loadCahceContractCall(
+      tokenContract,
+      'totalSupply',
+      [],
+      clearCache
+    );
+    if(farmParams.lockedSupplyContract !== null) {
+      if(typeof farmParams.lockedSupplyContract === 'string') {
+        const lockedSupply = await this.loadCahceContractCall(
+          tokenContract,
+          'balanceOf',
+          [farmParams.lockedSupplyContract],
+          clearCache
+        );
+        totalSupply = totalSupply - lockedSupply;
+      } else {
+        const lockedSupplyPromises = farmParams.lockedSupplyContract.map(async (lockedSupplyContract)=>{
+          const lockedSupply = await this.loadCahceContractCall(
+            tokenContract,
+            'balanceOf',
+            [lockedSupplyContract],
+            clearCache
+          );
+          // console.log(lockedSupply);
+          totalSupply = totalSupply - lockedSupply;
+        });
+        await Promise.all(lockedSupplyPromises);
+      }
+    }
+
+    const epoch = await this.loadCahceContractCall(
+      stakingContract,
+      'epoch',
+      [],
+      clearCache
+    );
+    // console.log(
+    //   key,
+    //   epoch._length.toNumber(),
+    //   epoch.number.toNumber(),
+    //   epoch.endBlock.toNumber(),
+    //   epoch.distribute.toNumber(),
+    // )
+
+    let rawCurrentIndex = await this.loadCahceContractCall(
+      stakingContract,
+      'index',
+      [],
+      clearCache
+    );
+    let currentIndex = await this.loadCahceContractCall(
+      stakingContract,
+      'index',
+      [],
+      clearCache
+    );
+    if (key === 'AVAX-TIME' || key === 'ARB-Z20' || key === 'AVAX-RUG' || key === 'AVAX-MAXI'
+    || key === 'ONE-ODAO' || key === 'AVAX-LF') {
+      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 4.5).toFixed(2);
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
+    } else if (key === 'CRO-FORT') {
+      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 16.1).toFixed(2);
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
+    } else if (key === 'AVAX-PB') {
+      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 2000).toFixed(2);
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
+    } else if (key === 'FTM-SPA') {
+      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 7.673).toFixed(2);
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
+    } else if (key === 'BSC-XEUS') {
+      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 4)).toFixed(2);
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 4)).toFixed(2);
+    } else if (key === 'BSC-META') {
+      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 1)).toFixed(2);
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 1)).toFixed(2);
+    }else {
+      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei')).toFixed(2);
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
+    }
+
+    const lockedValue = await this.loadCahceContractCall(
+      stakingContract,
+      'contractBalance',
+      [],
+      clearCache
+    );
+
+    let stakingReward = epoch.distribute;
+    if (this.timeTemplates.indexOf(key) > -1) {
+      stakingReward = epoch.number;
+    }
+    const circulatingSupply = await this.loadCahceContractCall(
+      stakingTokenContract,
+      'circulatingSupply',
+      [],
+      clearCache
+    );
+    const stakingRebase = Number(stakingReward / circulatingSupply);
+    // console.log(key, stakingReward.toNumber(), circulatingSupply.toNumber(), stakingRebase)
+    const pairingContract = this.loadCacheContract(farmParams.LPContract, PairContractAbi, networkParams.rpcURL);
+    const reserves = await this.loadCahceContractCall(
+      pairingContract,
+      'getReserves',
+      [],
+      clearCache
+    );
+    const token0 = await this.loadCahceContractCall(
+      pairingContract,
+      'token0',
+      []
+    );
+    let price = 0;
+    let ethPrice = 0;
+    if (key === 'ETH-SQUID' || key === 'ETH-LOBI' || key == 'AVAX-OTWO') {
+      const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
+      const ethReserves = await this.loadCahceContractCall(
+        ethContract,
+        'getReserves',
+        [],
+        clearCache
+      );
+      if(key === 'ETH-LOBI') {
+        ethPrice = ethers.utils.formatUnits(ethReserves.reserve1, 'ether') / ethers.utils.formatUnits(ethReserves.reserve0, 'gwei');
+        price = ethers.utils.formatUnits(reserves.reserve0, 'gwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+      } else if (key === 'AVAX-OTWO') {
+        ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'ether') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
+        price = ethers.utils.formatUnits(reserves.reserve0, 'ether') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+      } else {
+        ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'mwei') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
+        price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+      }
+      price = Number(price) * ethPrice;
+    } else if (key === 'MATIC-KLIMA' || key === 'MOVR-FHM' ) {
+      price = ethers.utils.formatUnits(reserves.reserve0, 'mwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+    } else if(key === 'ARB-Z20' || key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID') {
+      price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+    }else {
+      if (token0 === farmParams.token) {
+        price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+      } else {
+        price = ethers.utils.formatUnits(reserves.reserve0, 'ether') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+      }
+    }
+
+    let totalReserves = 0;
+    if(farmParams.treasuryContract !== null) {
+      const treasuryContract = this.loadCacheContract(farmParams.treasuryContract, TreasuryAbi, networkParams.rpcURL );
+      let totalReservesString = 'totalReserves';
+      if(key === 'BSC-GYRO') {
+        totalReservesString = 'totalAssets';
+      }
+      totalReserves = await this.loadCahceContractCall(
+        treasuryContract,
+        totalReservesString,
+        [],
+        clearCache
+      );
+      totalReserves = Number(ethers.utils.formatUnits(totalReserves, 'gwei'));
+      if(key === 'ETH-SQUID' || key === 'ETH-LOBI' || key === 'AVAX-OTWO') {
+        totalReserves = totalReserves * ethPrice;
+      }
+    }
+
+    const currentBlock = await this.loadCacheBlockNumber(networkParams.rpcURL, clearCache);
+    let seconds = 0;
+    let distributeInterval = 0;
+    const msPerDay = 86400;
+    if (this.timeTemplates.indexOf(key) > -1) {
+      seconds = epoch.distribute.toNumber() - (Date.now() / 1000);
+      distributeInterval = msPerDay / epoch.endBlock.toNumber();
+    } else if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'CRO-FORT') {
+      seconds = epoch.endBlock.toNumber() - (Date.now() / 1000);
+      distributeInterval = msPerDay / epoch._length.toNumber();
+    } else {
+      distributeInterval = msPerDay / (epoch._length.toNumber() * networkParams.blockRateSeconds)
+      seconds = this.secondsUntilBlock(currentBlock, epoch.endBlock.toNumber(), networkParams.blockRateSeconds);
+    }
+    // console.log(key, distributeInterval)
+
+    const data = this.formatStakingInfo({
+      nextRebase: this.prettifySeconds(seconds),
+      nextRebaseSeconds: seconds,
+      distributeInterval,
+      stakingRebase,
+      rawPrice: Number(price),
+      price: Number(price).toFixed(2),
+      totalReserves: Number(totalReserves),
+      currentIndex,
+      rawCurrentIndex,
+      totalSupply: Number(ethers.utils.formatUnits(totalSupply, 'gwei')),
+      circulatingSupply: Number(ethers.utils.formatUnits(circulatingSupply, 'gwei')),
+      lockedValue: Number(ethers.utils.formatUnits(lockedValue, 'gwei')),
+    });
+    // console.log(data);
+    return {
+      farmSymbol,
+      networkSymbol,
+      data
+    };
+  }
+
+  formatStakingInfo(stakingInfo) {
+    return {
+      ...stakingInfo,
+      price: Number(stakingInfo.price).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+      apy: Number((
+        (Math.pow(1 + stakingInfo.stakingRebase,
+          stakingInfo.distributeInterval * 365) - 1) * 100)
+        .toFixed(0))
+        .toLocaleString(),
+      rawApy: Number((
+        (Math.pow(1 + stakingInfo.stakingRebase,
+          stakingInfo.distributeInterval * 365) - 1) * 100)
+        .toFixed(0)),
+      $TVL: (Number(stakingInfo.lockedValue) *
+      Number(stakingInfo.price)).toLocaleString(undefined, {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      }),
+      $Circ: (Number(stakingInfo.circulatingSupply) *
+      Number(stakingInfo.price)).toLocaleString(undefined, {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      }),
+      $MC: (Number(stakingInfo.totalSupply) *
+      Number(stakingInfo.price)).toLocaleString(undefined, {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      }),
+      rawMC: (Number(stakingInfo.totalSupply) *
+      Number(stakingInfo.price)),
+      $RFV: Number(stakingInfo.totalReserves).toLocaleString(undefined, {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      }),
+      $BackedPrice: (Number(stakingInfo.totalReserves) /
+      Number(stakingInfo.totalSupply)).toLocaleString()
+    }
+  }
+
+  /**
+   *
+   * Meat
+   * @param {String} userAddress
+   * @param {String} networkSymbol
+   * @param {String} farmSymbol
+   * @param {Boolean} [clearCache=false]
+   * @return {Object}
+   */
+  async getBalances(userAddress, networkSymbol, farmSymbol, clearCache=false) {
+    const key = `${networkSymbol}-${farmSymbol}`;
+    const networkParams = networks[networkSymbol];
+    const farmParams = allFarms[key].constants;
+    const stakingContract = this.loadCacheContract(farmParams.stakingContract, StakingAbi, networkParams.rpcURL);
+    const tokenContract = this.loadCacheContract(farmParams.token, IERC20Abi, networkParams.rpcURL);
+    const stakingTokenContract = this.loadCacheContract(farmParams.stakingToken, StakingTokenAbi, networkParams.rpcURL);
+
+    let tokenBalance = await this.loadCahceContractCall(
+      tokenContract,
+      'balanceOf',
+      [userAddress],
+      clearCache
+    );
+    tokenBalance = Number(ethers.utils.formatUnits(tokenBalance, 'gwei'));
+
+    let stakingTokenBalance = await this.loadCahceContractCall(
+      stakingTokenContract,
+      'balanceOf',
+      [userAddress],
+      clearCache
+    );
+    stakingTokenBalance = Number(ethers.utils.formatUnits(stakingTokenBalance, 'gwei'));
+
+    let fullBondTotal = 0;
+    const getBondContract = async (bondParams) =>{
+      const bondsContract = this.loadCacheContract(bondParams.address, BondContractAbi, networkParams.rpcURL);
+      const bondInfo = await this.loadCahceContractCall(
+        bondsContract,
+        'bondInfo',
+        [userAddress],
+        clearCache
+      );
+      const payout = Number(ethers.utils.formatUnits(bondInfo.payout, 'gwei'));
+      let pendingPayout = await this.loadCahceContractCall(
+        bondsContract,
+        'pendingPayoutFor',
+        [userAddress],
+        clearCache
+      );
+      pendingPayout = Number(ethers.utils.formatUnits(pendingPayout, 'gwei'));
+      if(bondParams.symbol.includes('(4,4)')) {
+        stakingTokenBalance += payout;
+      } else {
+        fullBondTotal += payout;
+      }
+      return {
+        payout: Number(payout) === 0 ? 0 : payout.toFixed(4),
+        rawPayout: payout,
+        pendingPayout: Number(pendingPayout) === 0 ? 0 : pendingPayout.toFixed(4),
+        symbol: bondParams.symbol
+      }
+    }
+    const bondPromises = farmParams.bondingContracts.map(getBondContract);
+    const bonds = await Promise.all(bondPromises);
+
+    if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'AVAX-RUG') {
+      const warmupInfo = await this.loadCahceContractCall(
+        stakingContract,
+        'warmupInfo',
+        [userAddress],
+        clearCache
+      );
+      const warmupDeposit = Number(ethers.utils.formatUnits(warmupInfo.deposit, 'gwei'));
+      tokenBalance = tokenBalance + warmupDeposit;
+    }
+
+    let wrappedBalances = {};
+    if(farmParams.wsOHMNetworks !== null) {
+      let rawCurrentIndex = await this.loadCahceContractCall(
+        stakingContract,
+        'index',
+        [],
+        clearCache
+      );
+      wrappedBalances = await this.getwsOHMBalances(userAddress, farmParams.wsOHMNetworks, rawCurrentIndex, clearCache);
+    }
+    // console.log({
+    //   tokenBalance,
+    //   stakingTokenBalance,
+    //   wrappedBalances,
+    //   fullBondTotal: Number(fullBondTotal),
+    //   bonds,
+    //   disabled: tokenBalance === 0 && stakingTokenBalance === 0
+    // });
+    const data = {
+      tokenBalance,
+      stakingTokenBalance,
+      wrappedBalances,
+      fullBondTotal: Number(fullBondTotal),
+      bonds,
+      disabled: tokenBalance === 0 && stakingTokenBalance === 0
+    };
+    return {
+      userAddress,
+      farmSymbol,
+      networkSymbol,
+      data
+    };
+  }
   async getwsOHMBalances(userAddress, wsOHMNetworks, index, clearCache=false) {
     let total = 0;
     const getBalances = async (data) => {
@@ -409,6 +811,8 @@ class StakingInfo {
       balances
     };
   }
+
+
   formatFarmData(data) {
     const formatRebaseParams = [
       Number(data.balances?.stakingTokenBalance + data.balances?.wrappedBalances?.total),
