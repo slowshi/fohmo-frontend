@@ -141,13 +141,13 @@ class StakingInfo {
       [],
       clearCache
     );
-    console.log(
-      key,
-      epoch._length.toNumber(),
-      epoch.number.toNumber(),
-      epoch.endBlock.toNumber(),
-      epoch.distribute.toNumber(),
-    )
+    // console.log(
+    //   key,
+    //   epoch._length.toNumber(),
+    //   epoch.number.toNumber(),
+    //   epoch.endBlock.toNumber(),
+    //   epoch.distribute.toNumber(),
+    // )
 
     let rawCurrentIndex = await this.loadCahceContractCall(
       stakingContract,
