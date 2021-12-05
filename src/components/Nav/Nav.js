@@ -83,8 +83,8 @@ function Nav() {
   }
 
   return (
-    <div>
-      <nav className="navbar sticky-top navbar-dark bg-dark">
+    <div className="sticky-top">
+      <nav className="navbar navbar-dark bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand mb-0 h1" href="/">
             Fohmo.io
