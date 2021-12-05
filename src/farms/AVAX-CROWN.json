@@ -1,0 +1,37 @@
+{
+  "AVAX-CROWN": {
+    "farmSymbol": "CROWN",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "MidasDAO",
+      "symbol": "CROWN",
+      "link": "https://app.midasdao.xyz/#/dashboard",
+      "token": "0xed46443C18E38064523180Fc364C6180b35803d3",
+      "stakingSymbol": "sCROWN",
+      "stakingToken": "0x2Ac4CCBc98A6680Bbd9Dd0A2eAFBB13BECf09644",
+      "stakingContract": "0x5B92738B2De8331Bee366378f27d146DcBaD85c5",
+      "LPContract": "0x3f0DE4Ec592e4376aA6925C3B3dc33D5ffBCDcc3",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x820885fCA68fB49d29D40AbF920362FC3e9865C6",
+      "bondingCalculator": null,
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xAfbb54F19157657c5BfD350309aa64e39D6214aA",
+          "symbol": "CROWN-MIM"
+        },
+        {
+          "address": "0x4AEC1E194BafF9b880C71b6441b3554DfA34E359",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0x1962D5bC849bCA85860252673f65081a926DbA9a",
+          "symbol": "wAVAX"
+        }
+      ]
+    }
+  }
+}

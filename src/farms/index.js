@@ -1,7 +1,9 @@
 // import ARB_Z20 from './ARB-Z20.json';
 import ARB_UMAMI from './ARB-UMAMI.json';
 import AVAX_FORT from './AVAX-FORT.json';
+import AVAX_CROWN from './AVAX-CROWN.json';
 import AVAX_GG from './AVAX-GG.json';
+// import AVAX_ICE from './AVAX-ICE.json';
 import AVAX_LF from './AVAX-LF.json';
 import AVAX_MAXI from './AVAX-MAXI.json';
 import AVAX_NADO from './AVAX-NADO.json';
@@ -11,6 +13,7 @@ import AVAX_RUG from './AVAX-RUG.json';
 // import AVAX_SDOG from './AVAX-SDOG.json';
 import AVAX_PB from './AVAX-PB.json';
 import AVAX_SB from './AVAX-SB.json';
+// import AVAX_VAL from './AVAX-VAL.json';
 import AVAX_TIME from './AVAX-TIME.json';
 import BSC_GYRO from './BSC-GYRO.json';
 import BSC_XEUS from './BSC-XEUS.json';
@@ -47,8 +50,10 @@ const farms = {
   ...ARB_UMAMI,
   ...AVAX_FORT,
   ...AVAX_GG,
+  // ...AVAX_ICE,
   ...AVAX_LF,
   ...AVAX_MAXI,
+  ...AVAX_CROWN,
   ...AVAX_NADO,
   ...AVAX_OTWO,
   ...AVAX_PAPA,
@@ -57,6 +62,7 @@ const farms = {
   ...AVAX_PB,
   ...AVAX_SB,
   ...AVAX_TIME,
+  // ...AVAX_VAL,
   ...CRO_FORT,
   ...BSC_GYRO,
   ...BSC_XEUS,

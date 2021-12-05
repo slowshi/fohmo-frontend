@@ -12,7 +12,7 @@
       "stakingSymbol": "sROME",
       "stakingToken": "0x89F52002E544585b42F8c7Cf557609CA4c8ce12A",
       "stakingContract": "0x6f7D019502e17F1ef24AC67a260c65Dd23b759f1",
-      "LPContract": "0xcf06cfb361615c49403b45a5e56e3b7da3462eea",
+      "LPContract": "0x069c2065100b4d3d982383f7ef3ecd1b95c05894",
       "lockedSupplyContract": [
         "0xD4a7FEbD52efda82d6f8acE24908aE0aa5b4f956"
       ],

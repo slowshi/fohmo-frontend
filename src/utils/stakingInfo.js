@@ -27,9 +27,11 @@ class StakingInfo {
     'AVAX-MAXI',
     'AVAX-OTWO',
     'AVAX-SDOG',
+    'AVAX-CROWN',
     'AVAX-NADO',
     'AVAX-FORT',
     'AVAX-PB',
+    'AVAX-VAL',
     'ONE-WAGMI',
     'ARB-Z20',
     'ARB-UMAMI',
@@ -108,83 +110,7 @@ class StakingInfo {
       );
     });
   }
-  /**
-   *
-   * Meat
-   * @param {String} userAddress
-   * @param {String} networkSymbol
-   * @param {String} farmSymbol
-   * @param {Boolean} [clearCache=false]
-   * @return {Object}
-   */
-  async getStakingInfo(userAddress, networkSymbol, farmSymbol, clearCache=false) {
-    const key = `${networkSymbol}-${farmSymbol}`;
-    const networkParams = networks[networkSymbol];
-    const farmParams = allFarms[key].constants;
-    const stakingContract = this.loadCacheContract(farmParams.stakingContract, StakingAbi, networkParams.rpcURL);
-    const tokenContract = this.loadCacheContract(farmParams.token, IERC20Abi, networkParams.rpcURL);
-    const stakingTokenContract = this.loadCacheContract(farmParams.stakingToken, StakingTokenAbi, networkParams.rpcURL);
-
-    let tokenBalance = await this.loadCahceContractCall(
-      tokenContract,
-      'balanceOf',
-      [userAddress],
-      clearCache
-    );
-    tokenBalance = Number(ethers.utils.formatUnits(tokenBalance, 'gwei'));
-
-    let stakingTokenBalance = await this.loadCahceContractCall(
-      stakingTokenContract,
-      'balanceOf',
-      [userAddress],
-      clearCache
-    );
-    stakingTokenBalance = Number(ethers.utils.formatUnits(stakingTokenBalance, 'gwei'));
-
-    let totalSupply = await this.loadCahceContractCall(
-      tokenContract,
-      'totalSupply',
-      [],
-      clearCache
-    );
-    if(farmParams.lockedSupplyContract !== null) {
-      if(typeof farmParams.lockedSupplyContract === 'string') {
-        const lockedSupply = await this.loadCahceContractCall(
-          tokenContract,
-          'balanceOf',
-          [farmParams.lockedSupplyContract],
-          clearCache
-        );
-        totalSupply = totalSupply - lockedSupply;
-      } else {
-        const lockedSupplyPromises = farmParams.lockedSupplyContract.map(async (lockedSupplyContract)=>{
-          const lockedSupply = await this.loadCahceContractCall(
-            tokenContract,
-            'balanceOf',
-            [lockedSupplyContract],
-            clearCache
-          );
-          // console.log(lockedSupply);
-          totalSupply = totalSupply - lockedSupply;
-        });
-        await Promise.all(lockedSupplyPromises);
-      }
-    }
-
-    const epoch = await this.loadCahceContractCall(
-      stakingContract,
-      'epoch',
-      [],
-      clearCache
-    );
-    // console.log(
-    //   key,
-    //   epoch._length.toNumber(),
-    //   epoch.number.toNumber(),
-    //   epoch.endBlock.toNumber(),
-    //   epoch.distribute.toNumber(),
-    // )
-
+  async getCurrentIndex(stakingContract, key, clearCache=false) {
     let rawCurrentIndex = await this.loadCahceContractCall(
       stakingContract,
       'index',
@@ -204,9 +130,6 @@ class StakingInfo {
     } else if (key === 'CRO-FORT') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 16.1).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    } else if (key === 'AVAX-GG') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 3).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
     } else if (key === 'AVAX-PB') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 2000).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
@@ -224,200 +147,11 @@ class StakingInfo {
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
     }
 
-    const lockedValue = await this.loadCahceContractCall(
-      stakingContract,
-      'contractBalance',
-      [],
-      clearCache
-    );
-
-    let stakingReward = epoch.distribute;
-    if (this.timeTemplates.indexOf(key) > -1) {
-      stakingReward = epoch.number;
-    }
-    const circulatingSupply = await this.loadCahceContractCall(
-      stakingTokenContract,
-      'circulatingSupply',
-      [],
-      clearCache
-    );
-    const stakingRebase = Number(stakingReward / circulatingSupply);
-    // console.log(key, stakingReward.toNumber(), circulatingSupply.toNumber(), stakingRebase)
-    const pairingContract = this.loadCacheContract(farmParams.LPContract, PairContractAbi, networkParams.rpcURL);
-    const reserves = await this.loadCahceContractCall(
-      pairingContract,
-      'getReserves',
-      [],
-      clearCache
-    );
-    const token0 = await this.loadCahceContractCall(
-      pairingContract,
-      'token0',
-      []
-    );
-    let price = 0;
-    let ethPrice = 0;
-    if (key === 'ETH-SQUID' || key === 'ETH-LOBI' || key == 'AVAX-OTWO') {
-      const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
-      const ethReserves = await this.loadCahceContractCall(
-        ethContract,
-        'getReserves',
-        [],
-        clearCache
-      );
-      if(key === 'ETH-LOBI') {
-        ethPrice = ethers.utils.formatUnits(ethReserves.reserve1, 'ether') / ethers.utils.formatUnits(ethReserves.reserve0, 'gwei');
-        price = ethers.utils.formatUnits(reserves.reserve0, 'gwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-      } else if (key === 'AVAX-OTWO') {
-        ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'ether') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
-        price = ethers.utils.formatUnits(reserves.reserve0, 'ether') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-      } else {
-        ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'mwei') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
-        price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
-      }
-      price = Number(price) * ethPrice;
-    } else if (key === 'MATIC-KLIMA' || key === 'MOVR-FHM' ) {
-      price = ethers.utils.formatUnits(reserves.reserve0, 'mwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-    } else if(key === 'ARB-Z20' || key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID') {
-      price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
-    }else {
-      if (token0 === farmParams.token) {
-        price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
-      } else {
-        price = ethers.utils.formatUnits(reserves.reserve0, 'ether') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-      }
-    }
-
-    let fullBondTotal = 0;
-    const getBondContract = async (bondParams) =>{
-      const bondsContract = this.loadCacheContract(bondParams.address, BondContractAbi, networkParams.rpcURL);
-      const bondInfo = await this.loadCahceContractCall(
-        bondsContract,
-        'bondInfo',
-        [userAddress],
-        clearCache
-      );
-      const payout = Number(ethers.utils.formatUnits(bondInfo.payout, 'gwei'));
-      let pendingPayout = await this.loadCahceContractCall(
-        bondsContract,
-        'pendingPayoutFor',
-        [userAddress],
-        clearCache
-      );
-      pendingPayout = Number(ethers.utils.formatUnits(pendingPayout, 'gwei'));
-      if(bondParams.symbol.includes('(4,4)')) {
-        stakingTokenBalance += payout;
-      } else {
-        fullBondTotal += payout;
-      }
-      return {
-        payout: Number(payout) === 0 ? 0 : payout.toFixed(4),
-        rawPayout: payout,
-        payoutInUSD: Number(payout * price).toLocaleString(undefined, {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2
-        }),
-        pendingPayout: Number(pendingPayout) === 0 ? 0 : pendingPayout.toFixed(4),
-        pendingPayoutInUSD: Number(pendingPayout * price).toLocaleString(undefined, {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2
-        }),
-        symbol: bondParams.symbol
-      }
-    }
-    const bondPromises = farmParams.bondingContracts.map(getBondContract);
-    const bonds = await Promise.all(bondPromises);
-
-    let totalReserves = 0;
-    if(farmParams.treasuryContract !== null) {
-      const treasuryContract = this.loadCacheContract(farmParams.treasuryContract, TreasuryAbi, networkParams.rpcURL );
-      let totalReservesString = 'totalReserves';
-      if(key === 'BSC-GYRO') {
-        totalReservesString = 'totalAssets';
-      }
-      totalReserves = await this.loadCahceContractCall(
-        treasuryContract,
-        totalReservesString,
-        [],
-        clearCache
-      );
-      totalReserves = Number(ethers.utils.formatUnits(totalReserves, 'gwei'));
-      if(key === 'ETH-SQUID' || key === 'ETH-LOBI' || key === 'AVAX-OTWO') {
-        totalReserves = totalReserves * ethPrice;
-      }
-    }
-
-    let total = (tokenBalance + stakingTokenBalance + Number(fullBondTotal)) * price;
-    if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'AVAX-RUG') {
-      const warmupInfo = await this.loadCahceContractCall(
-        stakingContract,
-        'warmupInfo',
-        [userAddress],
-        clearCache
-      );
-      const warmupDeposit = Number(ethers.utils.formatUnits(warmupInfo.deposit, 'gwei'));
-      tokenBalance = tokenBalance = warmupDeposit;
-      total = total + (warmupDeposit * price);
-    }
-
-    const currentBlock = await this.loadCacheBlockNumber(networkParams.rpcURL, clearCache);
-    let seconds = 0;
-    let distributeInterval = 0;
-    const msPerDay = 86400;
-    if (this.timeTemplates.indexOf(key) > -1) {
-      seconds = epoch.distribute.toNumber() - (Date.now() / 1000);
-      distributeInterval = msPerDay / epoch.endBlock.toNumber();
-    } else if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'CRO-FORT') {
-      seconds = epoch.endBlock.toNumber() - (Date.now() / 1000);
-      distributeInterval = msPerDay / epoch._length.toNumber();
-    } else {
-      distributeInterval = msPerDay / (epoch._length.toNumber() * networkParams.blockRateSeconds)
-      seconds = this.secondsUntilBlock(currentBlock, epoch.endBlock.toNumber(), networkParams.blockRateSeconds);
-    }
-    let wrappedBalances = {};
-    if(farmParams.wsOHMNetworks !== null) {
-      let useIndex = rawCurrentIndex;
-      if (key === 'FTM-SPA') {
-        useIndex = Number(currentIndex);
-      }
-      wrappedBalances = await this.getwsOHMBalances(userAddress, farmParams.wsOHMNetworks, useIndex, clearCache);
-      total += wrappedBalances.total * price;
-    }
-    // console.log(key, distributeInterval)
-    let data = {
-      networkParams,
-      balances: {
-        total: Number(total.toFixed(2)),
-        tokenBalance,
-        stakingTokenBalance,
-        wrappedBalances,
-        fullBondTotal: Number(fullBondTotal),
-        bonds
-      },
-      stakingInfo: {
-        nextRebase: this.prettifySeconds(seconds),
-        nextRebaseSeconds: seconds,
-        distributeInterval,
-        stakingRebase,
-        rawPrice: Number(price),
-        price: Number(price).toFixed(2),
-        totalReserves: Number(totalReserves),
-        currentIndex,
-        rawCurrentIndex,
-        totalSupply: Number(ethers.utils.formatUnits(totalSupply, 'gwei')),
-        circulatingSupply: Number(ethers.utils.formatUnits(circulatingSupply, 'gwei')),
-        lockedValue: Number(ethers.utils.formatUnits(lockedValue, 'gwei')),
-      }
-    };
-    data = this.formatFarmData(data);
-    // console.log(key, data.stakingInfo.totalSupply, data.stakingInfo.circulatingSupply)
     return {
-      networkSymbol,
-      farmSymbol,
-      data
-    };
+      currentIndex: Number(currentIndex),
+      rawCurrentIndex: Number(rawCurrentIndex)
+    }
   }
-
   /**
    *
    * Meat
@@ -477,42 +211,7 @@ class StakingInfo {
     //   epoch.endBlock.toNumber(),
     //   epoch.distribute.toNumber(),
     // )
-
-    let rawCurrentIndex = await this.loadCahceContractCall(
-      stakingContract,
-      'index',
-      [],
-      clearCache
-    );
-    let currentIndex = await this.loadCahceContractCall(
-      stakingContract,
-      'index',
-      [],
-      clearCache
-    );
-    if (key === 'AVAX-TIME' || key === 'ARB-Z20' || key === 'AVAX-RUG' || key === 'AVAX-MAXI'
-    || key === 'ONE-ODAO' || key === 'AVAX-LF') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 4.5).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    } else if (key === 'CRO-FORT') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 16.1).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    } else if (key === 'AVAX-PB') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 2000).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    } else if (key === 'FTM-SPA') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 7.673).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    } else if (key === 'BSC-XEUS') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 4)).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 4)).toFixed(2);
-    } else if (key === 'BSC-META') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 1)).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 1)).toFixed(2);
-    }else {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei')).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    }
+    let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, clearCache);
 
     const lockedValue = await this.loadCahceContractCall(
       stakingContract,
@@ -612,7 +311,7 @@ class StakingInfo {
       seconds = this.secondsUntilBlock(currentBlock, epoch.endBlock.toNumber(), networkParams.blockRateSeconds);
     }
     // console.log(key, distributeInterval)
-
+    // console.log(seconds, this.prettifySeconds(seconds));
     const data = this.formatStakingInfo({
       nextRebase: this.prettifySeconds(seconds),
       nextRebaseSeconds: seconds,
@@ -754,15 +453,10 @@ class StakingInfo {
 
     let wrappedBalances = {};
     if(farmParams.wsOHMNetworks !== null) {
-      let rawCurrentIndex = await this.loadCahceContractCall(
-        stakingContract,
-        'index',
-        [],
-        clearCache
-      );
+      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, clearCache);
       let useIndex = rawCurrentIndex;
       if (key === 'FTM-SPA') {
-        useIndex = Number(currentIndex);
+        useIndex = currentIndex;
       }
       wrappedBalances = await this.getwsOHMBalances(userAddress, farmParams.wsOHMNetworks, useIndex, clearCache);
     }
@@ -800,10 +494,8 @@ class StakingInfo {
         [userAddress],
         clearCache
       );
-      // console.log(tokenBalance.toNumber());
       tokenBalance = Number(ethers.utils.formatUnits(tokenBalance, 'ether'));
       const convertedBalance = Number(tokenBalance  * index);
-      // console.log(convertedBalance);
       total += convertedBalance;
       return {
         symbol: data.networkSymbol,
@@ -813,10 +505,7 @@ class StakingInfo {
     };
     const wsOHMPromises = wsOHMNetworks.map(getBalances);
     const balances = await Promise.all(wsOHMPromises);
-    console.log({
-      total,
-      balances
-    })
+
     return {
       total,
       balances
@@ -965,10 +654,10 @@ class StakingInfo {
     if (seconds !== 0 && !seconds) {
       return 'Rebasing...';
     }
-
-    const d = Math.floor(seconds / (3600 * 24));
-    const h = Math.floor((seconds % (3600 * 24)) / 3600);
-    const m = Math.floor((seconds % 3600) / 60);
+    const absSeconds = Math.abs(seconds);
+    const d = Math.floor(absSeconds / (3600 * 24));
+    const h = Math.floor((absSeconds % (3600 * 24)) / 3600);
+    const m = Math.floor((absSeconds % 3600) / 60);
 
     if (resolution === 'day') {
       return d + (d == 1 ? ' day' : ' days');
@@ -982,8 +671,11 @@ class StakingInfo {
     if (mDisplay === '') {
       result = result.slice(0, result.length - 2);
     }
-
-    return result;
+    let neg = '';
+    if(seconds < 0){
+      neg = '-'
+    }
+    return `${neg} ${result}`;
   }
 }
 const formatRebase = (stakedBalance, otherBalance, price, stakingRebase, count) => {

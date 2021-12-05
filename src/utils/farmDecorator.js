@@ -132,8 +132,7 @@ const getFarm = function(currentFarm, balances) {
   if (currentFarm.data === null) return currentFarm;
 
   const formatRebaseParams = [
-    //+ allBalances.wrappedBalances?.total
-    Number(allBalances.stakingTokenBalance),
+    Number(allBalances.stakingTokenBalance + allBalances.wrappedBalances?.total),
     Number(allBalances.fullBondTotal + allBalances.tokenBalance),
     Number(currentFarm.data.rawPrice),
     currentFarm.data.stakingRebase,

@@ -1,0 +1,33 @@
+{
+  "AVAX-ICE": {
+    "farmSymbol": "ICE",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "ICE DAO",
+      "symbol": "ICE",
+      "link": "https://app.icedao.finance/#/stake",
+      "token": "0x9235b893a3e61a14b2d02a91ec1394fbf411689e",
+      "stakingSymbol": "GLA",
+      "stakingToken": "0x769F19A9A449E523fC1F1f7B73051B3bC3C52738",
+      "stakingContract": "0x82eeefe5cc8ad478893b377327ef2b710c51059f",
+      "LPContract": "0xd7cdc2e47ab29a6b651704e39374bb9857f02e02",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x4f3340a84e610fb3030e6ce5081804bdd8d7532a",
+      "bondingCalculator": "0xC28CfF5a18eFd8e6B5c319df4D9C31D3Abe6b71A",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xb4c4be95979f8396a70164255a12acfaa1fa9240",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0xe9A0E94c68ff90BfE941673aCCc898671C05c22a",
+          "symbol": "ICE-MIM"
+        }
+      ]
+    }
+  }
+}
