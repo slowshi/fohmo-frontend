@@ -140,7 +140,8 @@ const getFarm = function(currentFarm, balances) {
   let rawTotal = (
       allBalances.tokenBalance +
       allBalances.stakingTokenBalance +
-      allBalances.fullBondTotal
+      allBalances.fullBondTotal +
+      allBalances.wrappedBalances.total
     ) * currentFarm.data?.rawPrice;
   rawTotal = Number(rawTotal.toFixed(2));
   return {
