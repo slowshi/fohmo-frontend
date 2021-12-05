@@ -9,7 +9,6 @@ import Footer from './components/Footer/Footer';
 import StakingCard from './components/StakingCard2/StakingCard';
 import AllTotalsCard from './components/AllTotalsCard/AllTotalsCard';
 import {sortMap} from './utils/constants';
-import {getFarm} from './utils/farmDecorator'
 
 const ref = (obj, str) => {
   return str
@@ -36,25 +35,23 @@ function App() {
     },[hackyBool]);
 
     const loadedFarms = useSelector((state)=> {
-    let farms = [...Object.keys(state.farms)];
-    if (state.app.farmFilters.length > 0) {
-      farms = [...state.app.farmFilters];
-    }
-    farms = farms
-      .map((farmKey)=>getFarm(state, farmKey))
-      .sort((a, b)=>{
-        if(a.data === null || b.data === null) return 0;
-        const aTotal = ref(a, sortByKey);
-        const bTotal = ref(b, sortByKey);
+      let farms = [...Object.keys(state.farms)];
+      if (state.app.farmFilters.length > 0) {
+        farms = [...state.app.farmFilters];
+      }
+      farms = farms
+        .map((farmKey)=>state.farms[farmKey])
+        .sort((a, b)=>{
+          if(a.data === null || b.data === null) return 0;
+          const aTotal = ref(a, sortByKey);
+          const bTotal = ref(b, sortByKey);
+          if (aTotal < bTotal) return state.app.sortDirection === 'asc' ? -1 : 1;
+          if (aTotal > bTotal) return state.app.sortDirection === 'desc' ? -1 : 1;
 
-        if (aTotal < bTotal) return state.app.sortDirection === 'asc' ? -1 : 1;
-        if (aTotal > bTotal) return state.app.sortDirection === 'desc' ? -1 : 1;
-
-        return 0;
-      });
-    return farms;
-  });
-
+          return 0;
+        });
+      return farms;
+    });
   return (
     <div className="h-100 d-flex flex-column">
       <Nav></Nav>

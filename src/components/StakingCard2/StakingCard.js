@@ -1,7 +1,7 @@
 import {useSelector, useDispatch} from "react-redux";
 import {networks} from '../../utils/constants'
 import './StakingCard.css';
-import {getFarm} from '../../utils/farmDecorator'
+import {getMemoizedFarm} from '../../utils/farmDecorator'
 import { stakingInfo } from "../../utils/stakingInfo";
 function StakingCard(params) {
   const dispatch = useDispatch();
@@ -10,15 +10,7 @@ function StakingCard(params) {
   const hideTotals = useSelector(state => state.app.hideTotals);
   const hideBalanceData = useSelector(state => Object.keys(state.app.addresses).length === 0);
   const network = networks[networkSymbol];
-  // const loading = useSelector((state)=> {
-  //   const currentFarm = state.farms[farmKey];
-  //   return currentFarm.data === null;
-  // });
-  const farm = useSelector((state)=> {
-    console.log(getFarm(state, farmKey));
-    return getFarm(state, farmKey);
-  });
-
+  const farm = useSelector((state)=>getMemoizedFarm(farmKey)(state));
   const refreshData = async () => {
     dispatch({
       type: 'updateStakingInfo',
@@ -32,7 +24,7 @@ function StakingCard(params) {
         }
       }
     });
-    const response = await stakingInfo.getStakingInfo2(networkSymbol, farmSymbol, true);
+    const response = await stakingInfo.doGetStakingInfo(networkSymbol, farmSymbol, true);
     dispatch({
       type: 'updateStakingInfo',
       payload: {

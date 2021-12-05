@@ -89,8 +89,8 @@ function Nav() {
           <a className="navbar-brand mb-0 h1" href="/">
             Fohmo.io
           </a>
-          <div className="btn-group">
-            <button type="button" className="btn btn-sm btn-light" onClick={toggleShow}>
+          <div>
+            <button type="button" className="btn btn-sm btn-light me-2" onClick={toggleShow}>
               {addressCount === 0 ? `+ Add Address`: ''}
               {addressCount === 1 ? `${addressCount} Address`: ''}
               {addressCount > 1 ? `${addressCount} Addresses` : ''}

@@ -8,6 +8,7 @@ import {abi as StakingTokenAbi} from '../abis/StakingToken.json';
 import {abi as BondContractAbi} from '../abis/BondContract.json';
 import {abi as TreasuryAbi} from '../abis/Treasury.json';
 import store from '../store/store';
+import { getFarm } from './farmDecorator';
 // import { updateStakingInfo } from "../store-deps/reducerFarms";
 // import { updateAddressBalances } from "../store-deps/reducerBalances";
 
@@ -47,6 +48,7 @@ class StakingInfo {
     let balancePromises = [];
     Object.keys(allFarms).forEach((key)=> {
       const farm = allFarms[key];
+      const stateFarm = state.farms[key];
       if (state.app.farmFilters.length === 0 || state.app.farmFilters.indexOf(key) > -1) {
         store.dispatch({
           type: 'updateStakingInfo',
@@ -57,51 +59,55 @@ class StakingInfo {
             }
           }
         });
-        this.getStakingInfo2(farm.networkSymbol, farm.farmSymbol, clearCache)
-        .then((res)=>{
-          store.dispatch(
-            {
-              type: 'updateStakingInfo',
-              payload: {
-                farmKey: `${res.networkSymbol}-${res.farmSymbol}`,
-                stakingInfo: {
-                  data: res.data,
-                  loading: false
-                }
-              }
-            }
-          );
-        });
-
-        const balancePromises = Object.keys(state.app.addresses)
-        .map((address)=>{
-          store.dispatch({
-            type: 'updateAddressBalance',
-            payload: {
-              farmKey: key,
-              address: address,
-              balance: null
-            }
-          });
-          return this.getBalances(address, farm.networkSymbol, farm.farmSymbol, clearCache)
-        })
-        Promise.all(balancePromises)
-        .then((res)=>{
-          res.forEach((balance)=>{
-            store.dispatch({
-              type: 'updateAddressBalance',
-              payload: {
-                farmKey: key,
-                address: balance.userAddress,
-                balance: balance.data
-              }
-            });
-          })
-        });
+        this.doGetStakingInfo(farm.networkSymbol, farm.farmSymbol, clearCache);
       }
     });
   }
-
+  async doGetStakingInfo(networkSymbol, farmSymbol, clearCache) {
+    const state = store.getState();
+    const key = `${networkSymbol}-${farmSymbol}`;
+    const stateFarm = state.farms[key];
+    return this.getStakingInfo2(networkSymbol, farmSymbol, clearCache)
+    .then(async (res)=>{
+      const balancePromises = Object.keys(state.app.addresses)
+      .map((address)=>{
+        store.dispatch({
+          type: 'updateAddressBalance',
+          payload: {
+            farmKey: key,
+            address: address,
+            balance: null
+          }
+        });
+        return this.getBalances(address, networkSymbol, farmSymbol, clearCache)
+      })
+      const balances = await Promise.all(balancePromises);
+      const balanceMap = balances.reduce((acc, balance)=>{
+        store.dispatch({
+          type: 'updateAddressBalance',
+          payload: {
+            farmKey: key,
+            address: balance.userAddress,
+            balance: balance.data
+          }
+        });
+        acc[balance.userAddress] = balance.data;
+        return acc;
+      },{});
+      store.dispatch(
+        {
+          type: 'updateStakingInfo',
+          payload: {
+            farmKey: `${res.networkSymbol}-${res.farmSymbol}`,
+            stakingInfo: {
+              ...getFarm({...stateFarm, data: res.data}, balanceMap),
+              loading: false
+            }
+          }
+        }
+      );
+    });
+  }
   /**
    *
    * Meat

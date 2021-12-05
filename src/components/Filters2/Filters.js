@@ -4,7 +4,7 @@ import './Filters.css';
 import {allFarms} from "../../utils/constants";
 import pageLoad from '../../utils/pageLoad';
 import {sortFilters} from '../../utils/constants'
-import {getFarm} from '../../utils/farmDecorator'
+import {getMemoizedFarm} from '../../utils/farmDecorator'
 
 function Filters() {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ function Filters() {
   const nonZeroFarmKeys = useSelector((state)=> {
     return Object.keys(state.farms)
     .reduce((acc, farmKey)=>{
-      const farm = getFarm(state, farmKey);
+      const farm = state.farms[farmKey];
       const farmBalance = farm.balances?.rawTotal || 0;
       if (farmBalance > 0) {
         acc.push(farmKey);
