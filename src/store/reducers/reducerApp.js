@@ -1,6 +1,7 @@
 const initialState = Object.freeze({
-  addresses: [],
+  addresses: {},
   addressParams: '',
+  addressFilters: [],
   sortBy: 'mc',
   sortDirection: 'desc',
   farmFilters: [],
@@ -11,25 +12,25 @@ const initialState = Object.freeze({
 
 const appReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "addAddress":
+    case "setAddresses":
       return {
         ...state,
-        addresses: [
-          ...new Set([...state.addresses, action.payload])
-        ]
+        addresses: action.payload
       }
     case "removeAddress":
-      const addressIndex = state.addresses.indexOf(action.payload);
-      let addresses = state.addresses;
-      if (addressIndex > -1) {
-        addresses = [
-          ...state.addresses.slice(0, addressIndex),
-          ...state.addresses.slice(addressIndex + 1)
-        ]
-      }
+      const newAddresses = state.addresses;
+      delete newAddresses[action.payload];
       return {
         ...state,
-        addresses
+        addresses: newAddresses
+      }
+    case "toggleAddress":
+     return {
+        ...state,
+        addresses: {
+          ...state.addresses,
+          [action.payload]: !state.addresses[action.payload]
+        }
       }
     case "setAddressParams":
       return {

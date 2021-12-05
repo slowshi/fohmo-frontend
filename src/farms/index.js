@@ -87,18 +87,5 @@ const farms = {
   ...ONE_ODAO,
   ...ONE_WAGMI,
 };
-const updatedFarms = Object.keys(farms)
-.reduce((acc, key)=>{
-  acc = {
-    ...acc,
-    [key]: {
-      ...farms[key],
-      showBalances: false,
-      showROI: false,
-      loading: true
-    }
-  }
-  return acc
-}, {});
 
-export default updatedFarms;
+export default farms;

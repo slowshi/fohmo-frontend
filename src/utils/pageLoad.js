@@ -1,33 +1,40 @@
 
-// import {store} from './store';
+import store from '../store/store';
 import { stakingInfo } from './stakingInfo';
+import {sortFilters} from '../utils/constants';
 const formatURL = (state) => {
-  let params = {
-    address: state.address
-  };
-  if (state.farmFilters.length > 0) {
+  let params = {};
+  if(Object.keys(state.app.addresses).length > 0) {
+    params = {
+      address: Object.keys(state.app.addresses).toString()
+    }
+  }
+  let sortByKey = state.app.sortBy
+  if (sortFilters.map((sortFilter)=>sortFilter.key).indexOf(sortByKey) === -1) {
+    sortByKey = 'mc'
+  }
+  if (state.app.farmFilters.length > 0) {
     params = {
       ...params,
-      filters: state.farmFilters.toString() || null,
-      sort: state.sortBy,
-      dir: state.sortDirection,
+      filters: state.app.farmFilters.toString()
     };
   }
+  params = {
+    ...params,
+    sort: state.app.sortBy,
+    dir: state.app.sortDirection,
+  }
+  if(Object.keys(params).length === 0) return '/';
   const searchParams = new URLSearchParams(params);
   const url = `/?${searchParams}`;
   return url;
 };
 
-const pageLoad = ()=> {
-  // const state = store.getState();
-  // const address = state.address;
-  // const url = formatURL(state);
-  // window.history.replaceState(null, null, url);
-  // store.dispatch({
-  //   type: 'setAddressParam',
-  //   payload: address
-  // });
-  // stakingInfo.init(address);
+const pageLoad = (clearCache = false)=> {
+  const state = store.getState();
+  const url = formatURL(state);
+  window.history.replaceState(null, null, url);
+  stakingInfo.init(clearCache);
 };
 
 export default pageLoad;

@@ -1,4 +1,4 @@
-import allFarms from '../farms';
+import farms from '../farms';
 
 const DEV_ADDRESS = '0xe88030c28d23d2120C687f49FB5cC2830F0Edb39';
 
@@ -7,10 +7,6 @@ const paths = {
   HOME: `/`
 };
 const sortFilters = [
-  {
-    label: 'Balance',
-    key: 'balance'
-  },
   {
     label: 'MC',
     key: 'mc'
@@ -33,12 +29,12 @@ const sortFilters = [
   }
 ];
 const sortMap = {
-  'balance': 'data.balances.rawTotal',
-  'mc': 'data.stakingInfo.rawMC',
-  'apy': 'data.stakingInfo.rawApy',
-  'rebase': 'data.stakingInfo.nextRebaseSeconds',
+  'balance': 'balances.rawTotal',
+  'mc': 'data.rawMC',
+  'apy': 'data.rawApy',
+  'rebase': 'data.nextRebaseSeconds',
   'farm': 'constants.name',
-  'eco': 'networkParams.name',
+  'eco': 'networkSymbol',
 }
 const networks = {
   FTM: {
@@ -112,6 +108,20 @@ const networks = {
     blockRateSeconds: 5.5
   }
 };
+
+const allFarms = Object.keys(farms)
+.reduce((acc, key)=>{
+  acc = {
+    ...acc,
+    [key]: {
+      ...farms[key],
+      showBalances: false,
+      showROI: false,
+      loading: true,
+    }
+  }
+  return acc
+}, {});
 
 export {
   networks,

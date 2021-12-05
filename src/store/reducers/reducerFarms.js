@@ -17,7 +17,7 @@ const farmReducer = (state = initialState, action) => {
         ...state,
         [action.payload]: {
           ...state[action.payload],
-          showBalances: !state.farms[action.payload].showBalances
+          showBalances: !state[action.payload].showBalances
         }
       }
     case "toggleFarmROI":
@@ -25,7 +25,7 @@ const farmReducer = (state = initialState, action) => {
         ...state,
         [action.payload]: {
           ...state[action.payload],
-          showROI: !state.farms[action.payload].showROI
+          showROI: !state[action.payload].showROI
         }
       }
     case "setRoiDynamic":

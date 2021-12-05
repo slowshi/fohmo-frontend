@@ -3,12 +3,19 @@ const initialState = {
 };
 /*
   {
-    '0xper': {
-      'ETH-OHM': {
+    'ETH-OHM': {
+      '0xper': {
         stuff,
         loading
       }
-    }
+    },
+    'AVAX-TIME': {
+      '0xper': {
+        stuff,
+        loading
+      }
+    },
+    ...
   }
 
 */
@@ -25,6 +32,7 @@ const balancesReducer = (state = initialState, action) => {
         state = {
           ...state,
           [action.payload.farmKey]: {
+            ...state[action.payload.farmKey],
             [action.payload.address]: null
           }
         }

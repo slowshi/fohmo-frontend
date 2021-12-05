@@ -42,24 +42,22 @@ class StakingInfo {
    * @param {String} userAddress
    * @return {Array}
    */
-  init() {
+  init(clearCache=false) {
     const state = store.getState();
     let balancePromises = [];
     Object.keys(allFarms).forEach((key)=> {
       const farm = allFarms[key];
       if (state.app.farmFilters.length === 0 || state.app.farmFilters.indexOf(key) > -1) {
-        const stateFarm = state.farms[key];
         store.dispatch({
           type: 'updateStakingInfo',
           payload: {
             farmKey: key,
             stakingInfo: {
-              ...stateFarm,
               loading: true
             }
           }
         });
-        this.getStakingInfo2(farm.networkSymbol, farm.farmSymbol)
+        this.getStakingInfo2(farm.networkSymbol, farm.farmSymbol, clearCache)
         .then((res)=>{
           store.dispatch(
             {
@@ -75,19 +73,17 @@ class StakingInfo {
           );
         });
 
-        const balancePromises = state.app.addresses
+        const balancePromises = Object.keys(state.app.addresses)
         .map((address)=>{
           store.dispatch({
             type: 'updateAddressBalance',
             payload: {
               farmKey: key,
               address: address,
-              balance: {
-                data: null,
-              }
+              balance: null
             }
           });
-          return this.getBalances(address, farm.networkSymbol, farm.farmSymbol)
+          return this.getBalances(address, farm.networkSymbol, farm.farmSymbol, clearCache)
         })
         Promise.all(balancePromises)
         .then((res)=>{
@@ -731,9 +727,8 @@ class StakingInfo {
         fullBondTotal += payout;
       }
       return {
-        payout: Number(payout) === 0 ? 0 : payout.toFixed(4),
-        rawPayout: payout,
-        pendingPayout: Number(pendingPayout) === 0 ? 0 : pendingPayout.toFixed(4),
+        payout: Number(payout),
+        pendingPayout: Number(pendingPayout),
         symbol: bondParams.symbol
       }
     }
@@ -800,8 +795,8 @@ class StakingInfo {
       total += convertedBalance;
       return {
         symbol: data.networkSymbol,
-        tokenBalance: Number(tokenBalance.toFixed(4)).toString(),
-        convertedBalance: Number(convertedBalance.toFixed(4)).toString(),
+        tokenBalance: Number(tokenBalance.toFixed(4)),
+        convertedBalance: Number(convertedBalance.toFixed(4)),
       };
     };
     const wsOHMPromises = wsOHMNetworks.map(getBalances);
@@ -814,12 +809,6 @@ class StakingInfo {
 
 
   formatFarmData(data) {
-    const formatRebaseParams = [
-      Number(data.balances?.stakingTokenBalance + data.balances?.wrappedBalances?.total),
-      Number(data.balances?.fullBondTotal + data.balances.tokenBalance),
-      Number(data.stakingInfo.price),
-      data.stakingInfo.stakingRebase,
-    ];
     return {
       ...data,
       balances: {
@@ -915,7 +904,7 @@ class StakingInfo {
    * @return {Contract}
    */
   loadCacheContract(address, abi, rpcURL) {
-    const key = `Contract/${address}`;
+    const key = `Contract/${rpcURL}/${address}`;
     const provider = this.loadCacheProvider(rpcURL);
     if (cacheServiceInstance.has(key)) {
       return cacheServiceInstance.get(key);
@@ -935,7 +924,8 @@ class StakingInfo {
    * @return {mixed}
    */
   async loadCahceContractCall(contract, method, params=[], clearCache=false) {
-    const contractCallKey = `Contract/${contract.address}/${method}/${JSON.stringify(params)}`;
+    const rpcURL = contract.provider?.connection?.url || 'null';
+    const contractCallKey = `Contract/${contract.address}/${rpcURL}/${method}/${JSON.stringify(params)}`;
     if (cacheServiceInstance.has(contractCallKey) && !clearCache) {
       return cacheServiceInstance.get(contractCallKey);
     }
