@@ -9,8 +9,8 @@ const formatURL = (state) => {
       address: Object.keys(state.app.addresses).toString()
     }
   }
-  let sortByKey = state.app.sortBy
-  if (sortFilters.map((sortFilter)=>sortFilter.key).indexOf(sortByKey) === -1) {
+  let sortByKey = state.app.sortBy;
+  if (sortFilters.map(sortFilter=>sortFilter.key).indexOf(sortByKey) === -1 && sortByKey !== 'balance') {
     sortByKey = 'mc'
   }
   if (state.app.farmFilters.length > 0) {

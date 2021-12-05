@@ -21,7 +21,7 @@ if (searchParams.has('filters')) {
 }
 if (searchParams.has('sort')) {
   sortBy = searchParams.get('sort');
-  if (sortFilters.map((sortFilter)=>sortFilter.key).indexOf(sortBy) === -1) {
+  if (sortFilters.map(sortFilter=>sortFilter.key).indexOf(sortBy) === -1 && sortBy !== 'balance') {
     sortBy = 'mc';
   }
 }
