@@ -1,12 +1,71 @@
 
 
 import {useSelector, useDispatch} from "react-redux";
-import {memoizedAggregateTotals} from '../../utils/farmDecorator'
 function AllTotalsCard() {
   const dispatch = useDispatch();
   const totalRoiDynamic = useSelector(state=> state.app.totalRoiDynamic)
   const hideTotals = useSelector(state => state.app.hideTotals);
-  const aggregatedTotals = useSelector(memoizedAggregateTotals)
+  const aggregatedTotals = useSelector((state)=>{
+    const farms = state.farms;
+    const farmFilters = state.app.farmFilters;
+    const totalRoiDynamic = state.app.totalRoiDynamic;
+    const hideTotals = state.app.hideTotals;
+    const addresses = state.app.addresses;
+    let allFarms = [...Object.keys(farms)];
+    if (farmFilters.length > 0) {
+      allFarms = [...farmFilters];
+    }
+    const filteredFarms = allFarms.map((farmKey)=>farms[farmKey]);
+    const totalValue = filteredFarms.reduce((acc, farm)=> {
+      acc += farm.balances?.rawTotal || 0;
+      return acc;
+    }, 0);
+    let totalWeightedPercent = 0;
+    let totalProfit = 0;
+    let totalExpectedValue = 0;
+    filteredFarms.forEach((farm)=> {
+      const stakedBalance = Number(farm.balances?.stakingTokenBalance) || 0;
+      const wrappedStakedBalance = Number(farm.balances?.wrappedBalances?.total) || 0;
+      const otherBalance = Number(farm.balances?.fullBondTotal + farm.balances?.tokenBalance);
+      const adjustedTotal = stakedBalance + wrappedStakedBalance;
+      const price = Number(farm.data?.rawPrice) || 0;
+      const stakingRebase = farm.data?.stakingRebase || 0;
+      const distributeInterval = farm.data?.distributeInterval || 0;
+      const percent = (Math.pow(1 + stakingRebase, distributeInterval * totalRoiDynamic) - 1) || 0;
+      const profit = (percent * adjustedTotal * price) || 0;
+      const weightedPercent = percent * (farm.balances?.rawTotal / totalValue) || 0;
+      const newTotal = ((otherBalance + (adjustedTotal + (percent * adjustedTotal))) * price) || 0;
+      totalWeightedPercent += weightedPercent;
+      totalProfit += profit;
+      totalExpectedValue += newTotal;
+    }, 0);
+    if(hideTotals || Object.keys(addresses).length === 0) {
+      document.title = `Fohmo.io`
+    } else {
+      document.title = `Fohmo.io - $${totalValue.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      })}`
+    }
+    return {
+      totalValue: Number(totalValue).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+      totalWeightedPercent: Number((totalWeightedPercent * 100)).toLocaleString(undefined, {
+        minimumFractionDigits: 4,
+        maximumFractionDigits: 4
+      }),
+      totalProfit: Number(totalProfit).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+      totalExpectedValue: Number(totalExpectedValue).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      })
+    };
+  })
 
   return (
     <div className="card">

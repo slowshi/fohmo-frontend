@@ -1,20 +1,38 @@
 
 import {useSelector, useDispatch} from "react-redux";
 import './Filters.css';
-import allFarms from '../../farms/index';
+import {allFarms} from "../../utils/constants";
 import pageLoad from '../../utils/pageLoad';
 import {sortFilters} from '../../utils/constants'
 
 function Filters() {
   const dispatch = useDispatch();
-  const showFilters = useSelector((state)=>state.showFilters);
-  const hideTotals = useSelector((state)=>state.hideTotals);
-  const farmFilters = useSelector((state)=>state.farmFilters);
-  const addressParam = useSelector((state)=>state.addressParam);
-  const sortDirection = useSelector((state)=>state.sortDirection);
-  const sortBy = useSelector((state)=>state.sortBy);
-  const farms = useSelector((state)=>state.farms);
-
+  const hideBalanceData = useSelector(state => Object.keys(state.app.addresses).length === 0);
+  const formattedSortFilters = useSelector(state => {
+    return (Object.keys(state.app.addresses).length === 0) ? sortFilters : [
+      {
+        label: 'Balance',
+        key: 'balance'
+      },
+      ...sortFilters
+    ]
+  });
+  const showFilters = useSelector((state)=>state.app.showFilters);
+  const hideTotals = useSelector((state)=>state.app.hideTotals);
+  const farmFilters = useSelector((state)=>state.app.farmFilters);
+  const sortDirection = useSelector((state)=>state.app.sortDirection);
+  const sortBy = useSelector((state)=>state.app.sortBy);
+  const nonZeroFarmKeys = useSelector((state)=> {
+    return Object.keys(state.farms)
+    .reduce((acc, farmKey)=>{
+      const farm = state.farms[farmKey];
+      const farmBalance = farm.balances?.rawTotal || 0;
+      if (farmBalance > 0) {
+        acc.push(farmKey);
+      }
+      return acc;
+    }, []);
+  })
   const $farmFilters = useSelector((state)=>{
     const filters = Object.keys(allFarms)
     .map((farmKey, index)=>{
@@ -23,13 +41,11 @@ function Filters() {
         farmSymbol: allFarms[farmKey].farmSymbol,
         networkSymbol: allFarms[farmKey].networkSymbol,
         farmName: allFarms[farmKey].constants.name,
-        active: state.farmFilters.length === 0 || state.farmFilters.indexOf(farmKey) > -1
+        active: state.app.farmFilters.length === 0 || state.app.farmFilters.indexOf(farmKey) > -1
       };
     });
-
     return filters;
-  })
-
+  });
   const toggleFilters = () => {
     dispatch({
       type: 'setShowFilters',
@@ -49,28 +65,15 @@ function Filters() {
       type: 'setFarmFilters',
       payload: []
     });
-    if(addressParam !== '') {
-      pageLoad();
-    }
+    pageLoad();
   }
 
   const hideZeros = () => {
-    const nonZeroKeys = Object.keys(farms)
-    .reduce((acc, farmKey)=>{
-      const farm = farms[farmKey];
-      const farmBalance = farm.data?.balances?.rawTotal || 0;
-      if (farmBalance > 0) {
-        acc.push(farmKey);
-      }
-      return acc;
-    }, []);
     dispatch({
       type: 'setFarmFilters',
-      payload: nonZeroKeys
+      payload: nonZeroFarmKeys
     });
-    if(addressParam !== '') {
-      pageLoad();
-    }
+    pageLoad();
   }
 
   const selectFilter = (farmKey) => {
@@ -91,28 +94,25 @@ function Filters() {
       type: 'setFarmFilters',
       payload: newFilters
     });
-    if(addressParam !== '') {
-      pageLoad();
-    }
+    pageLoad();
   }
+
   const updateSortBy = (e) => {
     dispatch({
       type: 'setSortBy',
       payload: e.target.value
     });
-    if(addressParam !== '') {
-      pageLoad();
-    }
+    pageLoad();
   }
+
   const updateSortDirection = (e) => {
     dispatch({
       type: 'setSortDirection',
       payload: sortDirection === 'asc' ? 'desc': 'asc'
     });
-    if(addressParam !== '') {
-      pageLoad();
-    }
+    pageLoad();
   }
+
   return (
   <div className="container-fluid mt-2 flex1">
     <div className="row">
@@ -126,7 +126,7 @@ function Filters() {
             </button>
             <select value={sortBy} className="form-select form-select-sm" aria-label="Sort"
             onChange={updateSortBy}>
-              {sortFilters.map((sortFilter, index)=>
+              {formattedSortFilters.map((sortFilter, index)=>
               <option key={index} value={sortFilter.key}>{sortFilter.label}</option>
               )}
             </select>
@@ -134,16 +134,19 @@ function Filters() {
               <i className={`bi ${sortDirection === 'desc' ? 'bi-sort-down' : 'bi-sort-up'}`}></i>
             </button>
           </div>
-          <div>
-            <button type="button" className="btn btn-sm btn-light me-1" onClick={hideZeros}>
-              Ø
-            </button>
-            <button type="button"
-              className={`btn btn-sm ${hideTotals ? 'btn-dark' : 'btn-light'}`}
-              onClick={toggleTotals}>
-              <i className="bi bi-eye-fill"></i>
-            </button>
-          </div>
+          {!hideBalanceData ?
+            <div>
+              <button type="button" className="btn btn-sm btn-light me-1" onClick={hideZeros}>
+                Ø
+              </button>
+              <button type="button"
+                className={`btn btn-sm ${hideTotals ? 'btn-dark' : 'btn-light'}`}
+                onClick={toggleTotals}>
+                <i className="bi bi-eye-fill"></i>
+              </button>
+            </div>
+            :''
+          }
         </div>
       </div>
       {

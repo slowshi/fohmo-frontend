@@ -1,5 +1,5 @@
 import {createSelector} from 'reselect';
-import {sortMap} from './constants';
+// import {sortMap} from './constants';
 
 const combineBalances = (balances) => {
   if (typeof balances === 'undefined') return {
@@ -15,6 +15,8 @@ const combineBalances = (balances) => {
   return Object.keys(balances).reduce((acc, address) => {
     const balance = balances[address];
     let combinedBonds = [];
+    let wrappedBalanceTotals = 0;
+    let wrappedBalanceList = [];
     if(typeof balance.bonds !== 'undefined' && typeof acc.bonds !== 'undefined') {
       combinedBonds = balance.bonds.reduce((bondAcc, bond, index)=> {
         bondAcc.push({
@@ -25,28 +27,36 @@ const combineBalances = (balances) => {
         return bondAcc;
       },[])
     }
-    let wrappedBalances = {
-      balances: [],
-      total: 0
-    };
-    // if(typeof balance.wrappedBalances !== 'undefined' && typeof acc.wrappedBalances !== 'undefined') {
-    //   console.log(balance.wrappedBalances);
-    //   wrappedBalances = Object.keys(balance.wrappedBalances).reduce((wrappedAcc, wrappedKey, index)=> {
-    //     return {
-    //       total: acc.wrappedBalances[index].total + balance.total,
-    //       balances: []
-    //     };
-    //   },{
-    //     balances: [],
-    //     total: 0
-    //   })
-    // }
+    if(typeof balance.wrappedBalances !== 'undefined' && typeof acc.wrappedBalances !== 'undefined') {
+      // console.log(balance.wrappedBalances, acc.wrappedBalances);
+      wrappedBalanceList = balance.wrappedBalances.balances.reduce((balanceAcc, balance, index)=> {
+        balanceAcc.push({
+          convertedBalance: (acc.wrappedBalances.balances[index]?.convertedBalance || 0) + balance.convertedBalance,
+          tokenBalance: (acc.wrappedBalances.balances[index]?.tokenBalance || 0) + balance.tokenBalance,
+          symbol: balance.symbol
+        })
+        return balanceAcc;
+      },[])
+      // wrappedBalances = Object.keys(balance.wrappedBalances).reduce((wrappedAcc, wrappedKey, index)=> {
+      //   return {
+      //     total: acc.wrappedBalances[index].total + balance.wrappedBalances.total,
+      //     balances: []
+      //   };
+      // },{
+      //   balances: [],
+      //   total: 0
+      // })
+      wrappedBalanceTotals = acc.wrappedBalances.total + balance.wrappedBalances.total
+    }
     return {
       bonds: combinedBonds,
       fullBondTotal: (acc.fullBondTotal || 0) + (balance.fullBondTotal || 0),
       stakingTokenBalance: (acc.stakingTokenBalance || 0) + (balance.stakingTokenBalance || 0),
       tokenBalance: (acc.tokenBalance || 0) + (balance.tokenBalances || 0),
-      wrappedBalances
+      wrappedBalances: {
+        total: wrappedBalanceTotals,
+        balances: wrappedBalanceList
+      }
     };
   }, {
     bonds: [],
@@ -87,6 +97,7 @@ const formatRebase = (stakedBalance, otherBalance, price, stakingRebase, count) 
 };
 const getFarm = function(currentFarm, balances) {
   const allBalances = combineBalances(balances);
+  // console.log('all', allBalances.wrappedBalances);
   const rawPrice = currentFarm.data?.rawPrice || 0;
   const formattedBonds = allBalances.bonds.map((bond)=>{
     return {
@@ -102,7 +113,22 @@ const getFarm = function(currentFarm, balances) {
         maximumFractionDigits: 2
       }),
     };
-  })
+  });
+  // const formattedWrappedBalances = allBalances.wrappedBalances.balances.map((bond)=>{
+  //   return {
+  //     ...bond,
+  //     payout: Number(bond.payout) === 0 ? 0 : bond.payout.toFixed(4),
+  //     payoutInUSD: Number(bond.payout * rawPrice).toLocaleString(undefined, {
+  //       minimumFractionDigits: 2,
+  //       maximumFractionDigits: 2
+  //     }),
+  //     pendingPayout: Number(bond.pendingPayout) === 0 ? 0 : bond.pendingPayout.toFixed(4),
+  //     pendingPayoutInUSD: Number(bond.pendingPayout * rawPrice).toLocaleString(undefined, {
+  //       minimumFractionDigits: 2,
+  //       maximumFractionDigits: 2
+  //     }),
+  //   };
+  // })
   if (currentFarm.data === null) return currentFarm;
 
   const formatRebaseParams = [
@@ -150,129 +176,126 @@ const getMemoizedFarm = (farmKey) => createSelector(
   }
 )
 
-const getMemoizedFarms = createSelector(
-  state => state.farms,
-  state => state.balances,
-  (farms, balances) => {
-    let farmKeys = [...Object.keys(farms)];
-    return farmKeys
-    .map((farmKey)=>getFarm(farms[farmKey], balances[farmKey]))
-    .reduce((acc, farm) => {
-      const key = `${farm.networkSymbol}-${farm.farmSymbol}`;
-      acc[key] = farm;
-      return acc;
-    }, {});
-  }
-)
+// const getMemoizedFarms = createSelector(
+//   state => state.farms,
+//   state => state.balances,
+//   (farms, balances) => {
+//     let farmKeys = [...Object.keys(farms)];
+//     return farmKeys
+//     .map((farmKey)=>getFarm(farms[farmKey], balances[farmKey]))
+//     .reduce((acc, farm) => {
+//       const key = `${farm.networkSymbol}-${farm.farmSymbol}`;
+//       acc[key] = farm;
+//       return acc;
+//     }, {});
+//   }
+// )
 
-const memoizedAggregateTotals = createSelector(
-  state => state.farms,
-  state => state.balances,
-  state => state.app.farmFilters,
-  state => state.app.totalRoiDynamic,
-  state => state.app.hideTotals,
-  state => state.app.addresses,
-  (farms, balances, farmFilters, totalRoiDynamic, hideTotals, addresses) => {
-    let allFarms = [...Object.keys(farms)];
-    if (farmFilters.length > 0) {
-      allFarms = [...farmFilters];
-    }
-    const filteredFarms = allFarms.map((farmKey)=>farms[farmKey]);
-    const totalValue = filteredFarms.reduce((acc, farm)=> {
-      acc += farm.balances?.rawTotal || 0;
-      return acc;
-    }, 0);
-    let totalWeightedPercent = 0;
-    let totalProfit = 0;
-    let totalExpectedValue = 0;
-    filteredFarms.forEach((farm)=> {
-      const stakedBalance = Number(farm.balances?.stakingTokenBalance) || 0;
-      const wrappedStakedBalance = Number(farm.balances?.wrappedBalances?.total) || 0;
-      const otherBalance = Number(farm.balances?.fullBondTotal + farm.balances?.tokenBalance);
-      const adjustedTotal = stakedBalance + wrappedStakedBalance;
-      const price = Number(farm.data?.rawPrice) || 0;
-      const stakingRebase = farm.data?.stakingRebase || 0;
-      const distributeInterval = farm.data?.distributeInterval || 0;
-      const percent = (Math.pow(1 + stakingRebase, distributeInterval * totalRoiDynamic) - 1) || 0;
-      const profit = (percent * adjustedTotal * price) || 0;
-      const weightedPercent = percent * (farm.balances?.rawTotal / totalValue) || 0;
-      const newTotal = ((otherBalance + (adjustedTotal + (percent * adjustedTotal))) * price) || 0;
-      totalWeightedPercent += weightedPercent;
-      totalProfit += profit;
-      totalExpectedValue += newTotal;
-    }, 0);
-    if(hideTotals || Object.keys(addresses).length === 0) {
-      document.title = `Fohmo.io`
-    } else {
-      document.title = `Fohmo.io - $${totalValue.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      })}`
-    }
-    return {
-      totalValue: Number(totalValue).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }),
-      totalWeightedPercent: Number((totalWeightedPercent * 100)).toLocaleString(undefined, {
-        minimumFractionDigits: 4,
-        maximumFractionDigits: 4
-      }),
-      totalProfit: Number(totalProfit).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }),
-      totalExpectedValue: Number(totalExpectedValue).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      })
-    };
-  }
-)
+// const memoizedAggregateTotals = createSelector(
+//   state => state.farms,
+//   state => state.app.farmFilters,
+//   state => state.app.totalRoiDynamic,
+//   state => state.app.hideTotals,
+//   state => state.app.addresses,
+//   (farms, farmFilters, totalRoiDynamic, hideTotals, addresses) => {
+//     let allFarms = [...Object.keys(farms)];
+//     if (farmFilters.length > 0) {
+//       allFarms = [...farmFilters];
+//     }
+//     const filteredFarms = allFarms.map((farmKey)=>farms[farmKey]);
+//     const totalValue = filteredFarms.reduce((acc, farm)=> {
+//       acc += farm.balances?.rawTotal || 0;
+//       return acc;
+//     }, 0);
+//     let totalWeightedPercent = 0;
+//     let totalProfit = 0;
+//     let totalExpectedValue = 0;
+//     filteredFarms.forEach((farm)=> {
+//       const stakedBalance = Number(farm.balances?.stakingTokenBalance) || 0;
+//       const wrappedStakedBalance = Number(farm.balances?.wrappedBalances?.total) || 0;
+//       const otherBalance = Number(farm.balances?.fullBondTotal + farm.balances?.tokenBalance);
+//       const adjustedTotal = stakedBalance + wrappedStakedBalance;
+//       const price = Number(farm.data?.rawPrice) || 0;
+//       const stakingRebase = farm.data?.stakingRebase || 0;
+//       const distributeInterval = farm.data?.distributeInterval || 0;
+//       const percent = (Math.pow(1 + stakingRebase, distributeInterval * totalRoiDynamic) - 1) || 0;
+//       const profit = (percent * adjustedTotal * price) || 0;
+//       const weightedPercent = percent * (farm.balances?.rawTotal / totalValue) || 0;
+//       const newTotal = ((otherBalance + (adjustedTotal + (percent * adjustedTotal))) * price) || 0;
+//       totalWeightedPercent += weightedPercent;
+//       totalProfit += profit;
+//       totalExpectedValue += newTotal;
+//     }, 0);
+//     if(hideTotals || Object.keys(addresses).length === 0) {
+//       document.title = `Fohmo.io`
+//     } else {
+//       document.title = `Fohmo.io - $${totalValue.toLocaleString(undefined, {
+//         minimumFractionDigits: 2,
+//         maximumFractionDigits: 2
+//       })}`
+//     }
+//     return {
+//       totalValue: Number(totalValue).toLocaleString(undefined, {
+//         minimumFractionDigits: 2,
+//         maximumFractionDigits: 2
+//       }),
+//       totalWeightedPercent: Number((totalWeightedPercent * 100)).toLocaleString(undefined, {
+//         minimumFractionDigits: 4,
+//         maximumFractionDigits: 4
+//       }),
+//       totalProfit: Number(totalProfit).toLocaleString(undefined, {
+//         minimumFractionDigits: 2,
+//         maximumFractionDigits: 2
+//       }),
+//       totalExpectedValue: Number(totalExpectedValue).toLocaleString(undefined, {
+//         minimumFractionDigits: 2,
+//         maximumFractionDigits: 2
+//       })
+//     };
+//   }
+// )
 
-const memoizedSortedFarms = createSelector(
-  state => state.farms,
-  state => state.balances,
-  state => state.app.farmFilters,
-  state => state.app.sortDirection,
-  state=> sortMap[state.app.sortBy] || 'mc',
-  (farms, balances, farmFilters, sortDirection, sortByKey)  => {
-    let allFarms = [...Object.keys(farms)];
-    if (farmFilters.length > 0) {
-      allFarms = [...farmFilters];
-    }
-    return allFarms
-    .sort((a, b)=>{
-      if(a.data === null || b.data === null) return 0;
-      const aTotal = ref(a, sortByKey);
-      const bTotal = ref(b, sortByKey);
+// const memoizedSortedFarms = createSelector(
+//   state => state.farms,
+//   state => state.balances,
+//   state => state.app.farmFilters,
+//   state => state.app.sortDirection,
+//   state=> sortMap[state.app.sortBy] || 'mc',
+//   (farms, balances, farmFilters, sortDirection, sortByKey)  => {
+//     let allFarms = [...Object.keys(farms)];
+//     if (farmFilters.length > 0) {
+//       allFarms = [...farmFilters];
+//     }
+//     return allFarms
+//     .sort((a, b)=>{
+//       if(a.data === null || b.data === null) return 0;
+//       const aTotal = ref(a, sortByKey);
+//       const bTotal = ref(b, sortByKey);
 
-      if (aTotal < bTotal) return sortDirection === 'asc' ? -1 : 1;
-      if (aTotal > bTotal) return sortDirection === 'desc' ? -1 : 1;
+//       if (aTotal < bTotal) return sortDirection === 'asc' ? -1 : 1;
+//       if (aTotal > bTotal) return sortDirection === 'desc' ? -1 : 1;
 
-      return 0;
-    });
+//       return 0;
+//     });
 
-  }
-);
+//   }
+// );
 
 
-const ref = (obj, str) => {
-  return str
-  .split(".")
-  .reduce((acc, key) => {
-    if(typeof acc[key] === 'undefined') {
-      return null;
-    }
-    return acc[key];
-  }, obj);
-}
+// const ref = (obj, str) => {
+//   return str
+//   .split(".")
+//   .reduce((acc, key) => {
+//     if(typeof acc[key] === 'undefined') {
+//       return null;
+//     }
+//     return acc[key];
+//   }, obj);
+// }
 
 export {
   combineBalances,
   getFarm,
-  getMemoizedFarm,
-  getMemoizedFarms,
-  memoizedAggregateTotals,
-  memoizedSortedFarms
+  formatRebase,
+  getMemoizedFarm
 }

@@ -760,7 +760,11 @@ class StakingInfo {
         [],
         clearCache
       );
-      wrappedBalances = await this.getwsOHMBalances(userAddress, farmParams.wsOHMNetworks, rawCurrentIndex, clearCache);
+      let useIndex = rawCurrentIndex;
+      if (key === 'FTM-SPA') {
+        useIndex = Number(currentIndex);
+      }
+      wrappedBalances = await this.getwsOHMBalances(userAddress, farmParams.wsOHMNetworks, useIndex, clearCache);
     }
     // console.log({
     //   tokenBalance,
@@ -796,8 +800,10 @@ class StakingInfo {
         [userAddress],
         clearCache
       );
+      // console.log(tokenBalance.toNumber());
       tokenBalance = Number(ethers.utils.formatUnits(tokenBalance, 'ether'));
       const convertedBalance = Number(tokenBalance  * index);
+      // console.log(convertedBalance);
       total += convertedBalance;
       return {
         symbol: data.networkSymbol,
@@ -807,6 +813,10 @@ class StakingInfo {
     };
     const wsOHMPromises = wsOHMNetworks.map(getBalances);
     const balances = await Promise.all(wsOHMPromises);
+    console.log({
+      total,
+      balances
+    })
     return {
       total,
       balances

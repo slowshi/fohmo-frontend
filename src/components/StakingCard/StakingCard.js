@@ -1,67 +1,35 @@
 import {useSelector, useDispatch} from "react-redux";
 import {networks} from '../../utils/constants'
-import {stakingInfo, formatRebase} from '../../utils/stakingInfo'
 import './StakingCard.css';
-
+import {getMemoizedFarm} from '../../utils/farmDecorator'
+import { stakingInfo } from "../../utils/stakingInfo";
 function StakingCard(params) {
   const dispatch = useDispatch();
   const {farmSymbol, networkSymbol} = params;
   const farmKey = `${networkSymbol}-${farmSymbol}`;
-  const address = useSelector(state => state.address);
-  const hideTotals = useSelector(state => state.hideTotals);
+  const hideTotals = useSelector(state => state.app.hideTotals);
+  const hideBalanceData = useSelector(state => Object.keys(state.app.addresses).length === 0);
   const network = networks[networkSymbol];
-  // const loading = useSelector((state)=> {
-  //   const currentFarm = state.farms[farmKey];
-  //   return currentFarm.data === null;
-  // });
-  const farm = useSelector((state)=> {
-    const currentFarm = state.farms[farmKey];
-    if (currentFarm.data === null) return currentFarm;
-    const formatRebaseParams = [
-      Number(currentFarm.data.balances?.stakingTokenBalance + currentFarm.data.balances?.wrappedBalances?.total),
-      Number(currentFarm.data.balances?.fullBondTotal + currentFarm.data.balances.tokenBalance),
-      Number(currentFarm.data.stakingInfo.rawPrice),
-      currentFarm.data.stakingInfo.stakingRebase,
-    ];
-
-    return {
-      ...currentFarm,
-      data: {
-        ...currentFarm.data,
-        roiCalculations: {
-          roiRebase: formatRebase(...formatRebaseParams, 1),
-          roi5Day: formatRebase(
-            ...formatRebaseParams,
-            currentFarm.data.stakingInfo.distributeInterval * 5),
-          roiDynamic: formatRebase(
-            ...formatRebaseParams,
-            currentFarm.data.stakingInfo.distributeInterval
-            * currentFarm.roiDynamic)
+  const farm = useSelector((state)=>getMemoizedFarm(farmKey)(state));
+  const refreshData = async () => {
+    dispatch({
+      type: 'updateStakingInfo',
+      payload: {
+        farmKey,
+        stakingInfo: {
+          showBalances: false,
+          showROI: false,
+          loading: true,
+          roiDynamic: 1
         }
       }
-    }
-  });
-
-  const refreshData = async () => {
-    const resetFarm = {
-      showBalances: false,
-      showROI: false,
-      loading: true,
-      roiDynamic: 1
-    }
-    dispatch({
-      type: 'udpateFarm',
-      payload: {
-        farmKey,
-        farm: resetFarm
-      }
     });
-    const response = await stakingInfo.getStakingInfo(address, networkSymbol, farmSymbol, true);
+    const response = await stakingInfo.doGetStakingInfo(networkSymbol, farmSymbol, true);
     dispatch({
-      type: 'udpateFarm',
+      type: 'updateStakingInfo',
       payload: {
         farmKey,
-        farm: {
+        stakingInfo: {
           ...response,
           loading: false
         }
@@ -77,9 +45,11 @@ function StakingCard(params) {
             <span>
               {`${farm.constants.name} (${farmSymbol})`}
             </span>
+            {!hideBalanceData ?
             <span>
-              {hideTotals ? `$-` :`$${farm.data?.balances?.total ?? `0`}`}
+              {hideTotals ? `$-` :`$${farm.balances?.total ?? `0`}`}
             </span>
+            : ''}
           </div>
           <div>
             <span className={`badge badge-${networkSymbol}`}>
@@ -109,53 +79,55 @@ function StakingCard(params) {
           <div>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>Price</strong>
-              <span>${farm.data.stakingInfo?.price}</span>
+              <span>${farm.data?.price}</span>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>Next Rebase</strong>
-              <span>{farm.data.stakingInfo?.nextRebase}</span>
+              <span>{farm.data?.nextRebase}</span>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>Index</strong>
-              <span>{farm.data.stakingInfo?.currentIndex}</span>
+              <span>{farm.data?.currentIndex}</span>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>APY</strong>
-              <span className="overflow-anywhere">{`${farm.data.stakingInfo?.apy}%`}</span>
+              <span className="overflow-anywhere">{`${farm.data?.apy}%`}</span>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>Rebase ROI (5-day)</strong>
-              <span>{`${farm.data.roiCalculations?.roiRebase.percent}% (${farm.data.roiCalculations?.roi5Day.percent}%)`}</span>
+              <span>{`${farm.roiCalculations?.roiRebase.percent}% (${farm.roiCalculations?.roi5Day.percent}%)`}</span>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>TVL</strong>
-              <span>{`$${farm.data.stakingInfo?.$TVL}`}</span>
+              <span>{`$${farm.data?.$TVL}`}</span>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>Estimated MC (TS x P)</strong>
-              <span>{`$${farm.data.stakingInfo?.$MC}`}</span>
+              <span>{`$${farm.data?.$MC}`}</span>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>Risk Free Value</strong>
-              <span>{`$${farm.data.stakingInfo?.$RFV}`}</span>
+              <span>{`$${farm.data?.$RFV}`}</span>
             </span>
           </div>
         }
       </div>
       <div className="card-footer">
         <div className="d-flex h-auto justify-content-between">
-          <div>
-            <button type="button"
-                    className={`btn btn-sm me-1 btn-outline-secondary ${farm.showBalances && 'active'}`}
-                    onClick={()=>dispatch({type: 'toggleFarmBalance', payload: farmKey})}
-                    disabled={farm.loading || hideTotals}>
-              <i className="bi bi-currency-dollar" ></i>
-            </button>
-            <button className={`btn btn-sm btn-outline-secondary ${farm.showROI && 'active'}`} onClick={()=>dispatch({type: 'toggleFarmROI', payload: farmKey})}
-              disabled={farm.loading}>
-              <i className="bi bi-clock"></i>
-            </button>
-          </div>
+            {!hideBalanceData ?
+            <div>
+              <button type="button"
+                      className={`btn btn-sm me-1 btn-outline-secondary ${farm.showBalances && 'active'}`}
+                      onClick={()=>dispatch({type: 'toggleFarmBalance', payload: farmKey})}
+                      disabled={farm.loading || hideTotals || hideBalanceData}>
+                <i className="bi bi-currency-dollar" ></i>
+              </button>
+              <button className={`btn btn-sm btn-outline-secondary ${farm.showROI && 'active'}`} onClick={()=>dispatch({type: 'toggleFarmROI', payload: farmKey})}
+                disabled={farm.loading}>
+                <i className="bi bi-clock"></i>
+              </button>
+            </div>
+            : <div></div>}
           <div>
             <button
             onClick={refreshData}
@@ -166,20 +138,20 @@ function StakingCard(params) {
           </div>
         </div>
         {
-          farm.showBalances && !hideTotals &&
+          farm.showBalances && !hideTotals && !hideBalanceData &&
           <div>
             <hr></hr>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>{farmSymbol}</strong>
-              <span>{farm.data?.balances?.tokenBalance}</span>
+              <span>{farm.balances?.tokenBalance}</span>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>{farm.constants.stakingSymbol}</strong>
-              <span>{farm.data?.balances?.stakingTokenBalance}</span>
+              <span>{farm.balances?.stakingTokenBalance}</span>
             </span>
             {farm.constants.wsOHMNetworks.length ? <hr></hr> : ''}
             {
-              farm.data?.balances?.wrappedBalances.balances.map((wrappedBalance, index)=>
+              farm.balances?.wrappedBalances.balances.map((wrappedBalance, index)=>
                 <span key={index} className="card-text d-flex h-auto justify-content-between align-items-center mb-1">
                   <strong>{`${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol} (${wrappedBalance.symbol})`}</strong>
                   <div className="align-items-end d-flex h-auto flex-column overflow-anywhere">
@@ -190,7 +162,7 @@ function StakingCard(params) {
             }
             <hr></hr>
             {
-              farm.data?.balances?.bonds.map((bondData, index)=>
+              farm.balances?.bonds.map((bondData, index)=>
               <span key={index} className="card-text d-flex h-auto justify-content-between align-items-center mb-1">
               <strong>{bondData.symbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
@@ -210,12 +182,12 @@ function StakingCard(params) {
             <span className="card-text d-flex h-auto justify-content-between align-items-center mb-2">
               <strong>Next Rebase</strong>
               <div className="align-items-end d-flex h-auto flex-column">
-                <span>{`${farm.data?.roiCalculations?.roiRebase.percent}%`}</span>
+                <span>{`${farm.roiCalculations?.roiRebase.percent}%`}</span>
                 {!hideTotals ?
                   <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
-                    <span>{`${farm.data?.roiCalculations?.roiRebase.tokenCount} ${farmSymbol}`}</span>
-                    <span>{`$${farm.data?.roiCalculations?.roiRebase.total}`}</span>
-                    <span>{`+$${farm.data?.roiCalculations?.roiRebase.profit}`}</span>
+                    <span>{`${farm.roiCalculations?.roiRebase.tokenCount} ${farmSymbol}`}</span>
+                    <span>{`$${farm.roiCalculations?.roiRebase.total}`}</span>
+                    <span>{`+$${farm.roiCalculations?.roiRebase.profit}`}</span>
                   </span>
                  :
                  <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
@@ -239,12 +211,12 @@ function StakingCard(params) {
             <span className="card-text d-flex h-auto justify-content-between align-items-center mb-2">
               <strong>{`${farm.roiDynamic} Day ROI`}</strong>
               <div className="align-items-end d-flex h-auto flex-column overflow-anywhere">
-                <span>{farm.data?.roiCalculations?.roiDynamic.percent}%</span>
+                <span>{farm.roiCalculations?.roiDynamic.percent}%</span>
                 {!hideTotals ?
                 <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
-                  <span>{farm.data?.roiCalculations?.roiDynamic.tokenCount} ${farmSymbol}</span>
-                  <span>${farm.data?.roiCalculations?.roiDynamic.total}</span>
-                  <span>+${farm.data?.roiCalculations?.roiDynamic.profit}</span>
+                  <span>{farm.roiCalculations?.roiDynamic.tokenCount} ${farmSymbol}</span>
+                  <span>${farm.roiCalculations?.roiDynamic.total}</span>
+                  <span>+${farm.roiCalculations?.roiDynamic.profit}</span>
                 </span>
                 :
                 <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">

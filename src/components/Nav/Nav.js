@@ -90,7 +90,7 @@ function Nav() {
             Fohmo.io
           </a>
           <div>
-            <button type="button" className="btn btn-sm btn-light me-2" onClick={toggleShow}>
+            <button type="button" className={`btn btn-sm me-2 ${show ? 'btn-secondary' : 'btn-light'}`} onClick={toggleShow}>
               {addressCount === 0 ? `+ Add Address`: ''}
               {addressCount === 1 ? `${addressCount} Address`: ''}
               {addressCount > 1 ? `${addressCount} Addresses` : ''}
