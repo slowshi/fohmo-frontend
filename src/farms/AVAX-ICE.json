@@ -12,10 +12,10 @@
       "stakingSymbol": "GLA",
       "stakingToken": "0x4b993a3544b01946c474bcb82fd483a5cff32a46",
       "stakingContract": "0x82eeefe5cc8ad478893b377327ef2b710c51059f",
-      "LPContract": "0xd7cdc2e47ab29a6b651704e39374bb9857f02e02",
+      "LPContract": "0xfefb9b28f341d855b598e16ecc5f83b40cd827e6",
       "lockedSupplyContract": null,
       "treasuryContract": "0x4f3340a84e610fb3030e6ce5081804bdd8d7532a",
-      "bondingCalculator": "0xC28CfF5a18eFd8e6B5c319df4D9C31D3Abe6b71A",
+      "bondingCalculator": null,
       "wsOHMNetworks": [],
       "wsOHMSymbol": "",
       "bondingContracts": [
