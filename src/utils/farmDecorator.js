@@ -6,6 +6,7 @@ const combineBalances = (balances, addresses) => {
     bonds: [],
     fullBondTotal: 0,
     stakingTokenBalance: 0,
+    warmupBalance: 0,
     tokenBalance: 0,
     wrappedBalances: {
       balances: [],
@@ -60,7 +61,8 @@ const combineBalances = (balances, addresses) => {
       bonds: combinedBonds,
       fullBondTotal: (acc.fullBondTotal || 0) + (balance.fullBondTotal || 0),
       stakingTokenBalance: (acc.stakingTokenBalance || 0) + (balance.stakingTokenBalance || 0),
-      tokenBalance: (acc.tokenBalance || 0) + (balance.tokenBalances || 0),
+      tokenBalance: (acc.tokenBalance || 0) + (balance.tokenBalance || 0),
+      warmupBalance: (acc.warmupBalance || 0) + (balance.warmupBalance || 0),
       wrappedBalances: {
         total: wrappedBalanceTotals,
         balances: wrappedBalanceList
@@ -75,6 +77,7 @@ const combineBalances = (balances, addresses) => {
     fullBondTotal: 0,
     stakingTokenBalance: 0,
     tokenBalance: 0,
+    warmupBalance: 0,
     wrappedBalances: {
       balances: [],
       total: 0
@@ -154,7 +157,7 @@ const getFarm = function(currentFarm, balances, addresses) {
   if (currentFarm.data === null) return currentFarm;
 
   const formatRebaseParams = [
-    Number(allBalances.stakingTokenBalance + allBalances.wrappedBalances?.total),
+    Number(allBalances.stakingTokenBalance + allBalances.wrappedBalances?.total + allBalances.warmupBalance),
     Number(allBalances.fullBondTotal + allBalances.tokenBalance),
     Number(currentFarm.data.rawPrice),
     currentFarm.data.stakingRebase,
@@ -163,6 +166,7 @@ const getFarm = function(currentFarm, balances, addresses) {
       allBalances.tokenBalance +
       allBalances.stakingTokenBalance +
       allBalances.fullBondTotal +
+      allBalances.warmupBalance +
       allBalances.wrappedBalances.total +
       allBalances.collateralBalances.total
     ) * currentFarm.data?.rawPrice;
@@ -181,6 +185,11 @@ const getFarm = function(currentFarm, balances, addresses) {
         balances: formattedCollateralBalances
       },
       rawTotal,
+      warmupBalance: Number(allBalances.warmupBalance) === 0 ? 0 :allBalances.warmupBalance.toFixed(4),
+      warmupBalanceInUSD: Number(allBalances.warmupBalance * rawPrice).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
       stakingTokenBalance: Number(allBalances.stakingTokenBalance) === 0 ? 0 :allBalances.stakingTokenBalance.toFixed(4),
       stakingTokenBalanceInUSD: Number(allBalances.stakingTokenBalance * rawPrice).toLocaleString(undefined, {
         minimumFractionDigits: 2,

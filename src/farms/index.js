@@ -3,7 +3,7 @@ import ARB_UMAMI from './ARB-UMAMI.json';
 import AVAX_FORT from './AVAX-FORT.json';
 import AVAX_CROWN from './AVAX-CROWN.json';
 import AVAX_GG from './AVAX-GG.json';
-// import AVAX_ICE from './AVAX-ICE.json';
+import AVAX_ICE from './AVAX-ICE.json';
 import AVAX_LF from './AVAX-LF.json';
 import AVAX_MAXI from './AVAX-MAXI.json';
 import AVAX_NADO from './AVAX-NADO.json';
@@ -51,7 +51,7 @@ const farms = {
   ...ARB_UMAMI,
   ...AVAX_FORT,
   ...AVAX_GG,
-  // ...AVAX_ICE,
+  ...AVAX_ICE,
   ...AVAX_LF,
   ...AVAX_MAXI,
   ...AVAX_CROWN,

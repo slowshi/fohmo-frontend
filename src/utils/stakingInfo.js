@@ -436,7 +436,7 @@ class StakingInfo {
     }
     const bondPromises = farmParams.bondingContracts.map(getBondContract);
     const bonds = await Promise.all(bondPromises);
-
+    let warmupBalance = 0;
     if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'AVAX-RUG' || key == 'AVAX-GG') {
       const warmupInfo = await this.loadCahceContractCall(
         stakingContract,
@@ -444,8 +444,9 @@ class StakingInfo {
         [userAddress],
         clearCache
       );
-      const warmupDeposit = Number(ethers.utils.formatUnits(warmupInfo.deposit, 'gwei'));
-      tokenBalance = tokenBalance + warmupDeposit;
+      // const warmupDeposit = Number(ethers.utils.formatUnits(warmupInfo.deposit, 'gwei'));
+      warmupBalance = Number(ethers.utils.formatUnits(warmupInfo.deposit, 'gwei'));
+      // tokenBalance = tokenBalance + warmupDeposit;
     }
 
     let wrappedBalances = {
@@ -483,6 +484,7 @@ class StakingInfo {
     const data = {
       tokenBalance,
       stakingTokenBalance,
+      warmupBalance,
       wrappedBalances,
       collateralBalances,
       fullBondTotal: Number(fullBondTotal),

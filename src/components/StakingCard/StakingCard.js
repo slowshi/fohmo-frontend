@@ -148,10 +148,22 @@ function StakingCard(params) {
                 <span className="mb-1 txt-smol">(${farm.balances?.tokenBalanceInUSD})</span>
               </div>
             </span>
+            {farm.balances?.warmupBalance > 0 ?
+              <div>
+                <div className="txt-smol">Warmup</div>
+                <span className="card-text d-flex h-auto justify-content-between align-items-top">
+                  <strong>{farm.constants.stakingSymbol}</strong>
+                  <div className="align-items-end d-flex h-auto flex-column">
+                  <span>{farm.balances?.warmupBalance}</span>
+                    <span className="mb-1 txt-smol">(${farm.balances?.warmupBalanceInUSD})</span>
+                  </div>
+                </span>
+              </div>: ''
+            }
             <span className="card-text d-flex h-auto justify-content-between align-items-top">
               <strong>{farm.constants.stakingSymbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
-                <span>{farm.balances?.stakingTokenBalance}</span>
+              <span>{farm.balances?.stakingTokenBalance}</span>
                 <span className="mb-1 txt-smol">(${farm.balances?.stakingTokenBalanceInUSD})</span>
               </div>
             </span>
