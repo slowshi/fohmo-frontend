@@ -4,9 +4,9 @@ import { useState } from "react";
 function Nav() {
   const dispatch = useDispatch();
   const addressCount = useSelector((state)=>Object.keys(state.app.addresses).length);
-  const addresses = useSelector((state)=>state.app.addresses);
+  const loadedAddresses = useSelector((state)=>state.app.addresses);
   const [addressParams, setAddresses] = useState([
-    ...Object.keys(addresses),
+    ...Object.keys(loadedAddresses),
     ''
   ]);
   const [show, setShow] = useState(false);
@@ -47,6 +47,21 @@ function Nav() {
       ...addresses.slice(index + 1)
     ];
     setAddresses(addresses);
+    if(index < addressCount) {
+      const newAddresses = Object.keys(loadedAddresses)
+      .reduce((acc, address, addressIndex)=>{
+        if(address !== '' && addressIndex !== index) {
+          acc[address] = loadedAddresses[address];
+        }
+        return acc
+      }, {});
+
+      dispatch({
+        type: 'setAddresses',
+        payload: newAddresses
+      });
+      pageLoad(true);
+    }
   }
 
   const onClickSearch = ()=> {
@@ -57,7 +72,13 @@ function Nav() {
       pageLoad(true);
     }
   };
-
+  const toggleAddress = (address) => {
+    dispatch({
+      type: 'toggleAddress',
+      payload: address
+    });
+    pageLoad();
+  }
   const submitForm = event => {
     event.preventDefault();
     event.stopPropagation();
@@ -114,19 +135,27 @@ function Nav() {
                   onSubmit={submitForm}>
                     {addressParams.map((address, index)=>
                       <div className="d-flex flex-1 h-auto align-items-center mb-2" key={index}>
-                        <input  className="form-control me-2" name="address"
-                                onInput={(e)=>updateAddress(e, index)}
-                                onPasteCapture={(e)=>updateAddress(e, index)}
-                                value={address}
-                                placeholder="Wallet Address" aria-label="Search"
-                                required={index !== addressParams.length -1}/>
-                        {index !== addressParams.length -1 ?
-                        <div className="d-flex flex-1 h-auto align-items-center">
-                          <button className="btn btn-sm btn-link text-dark" type="button"
-                          onClick={(e)=>removeAddress(index)}>
-                            <i className="bi bi-x"></i>
+                        <div className="input-group">
+                          {index < addressCount  && addressCount > 0 ?
+                          <button className={`btn btn-sm btn-outline-secondary ${!loadedAddresses[address] ? 'active' : ''}`} type="button"
+                          onClick={(e)=>toggleAddress(address)}>
+                            <i className={`bi ${!loadedAddresses[address] ? 'bi-eye-slash' : 'bi-eye-fill'}`}></i>
                           </button>
+                            :''
+                          }
+                          <input  className="form-control me-2" name="address"
+                                  onInput={(e)=>updateAddress(e, index)}
+                                  onPasteCapture={(e)=>updateAddress(e, index)}
+                                  value={address}
+                                  placeholder="Wallet Address" aria-label="Search"
+                                  required={index !== addressParams.length -1}
+                                  disabled={index < addressCount}/>
                         </div>
+                        {index < addressCount && addressCount > 0?
+                        <button className="btn btn-sm btn-link text-dark" type="button"
+                        onClick={(e)=>removeAddress(index)}>
+                          <i className="bi bi-x"></i>
+                        </button>
                           :''
                         }
                       </div>

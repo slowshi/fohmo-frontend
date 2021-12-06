@@ -141,31 +141,51 @@ function StakingCard(params) {
           farm.showBalances && !hideTotals && !hideBalanceData &&
           <div>
             <hr></hr>
-            <span className="card-text d-flex h-auto justify-content-between align-items-center">
+            <span className="card-text d-flex h-auto justify-content-between align-items-top">
               <strong>{farmSymbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
                 <span>{farm.balances?.tokenBalance}</span>
                 <span className="mb-1 txt-smol">(${farm.balances?.tokenBalanceInUSD})</span>
               </div>
             </span>
-            <span className="card-text d-flex h-auto justify-content-between align-items-center">
+            <span className="card-text d-flex h-auto justify-content-between align-items-top">
               <strong>{farm.constants.stakingSymbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
                 <span>{farm.balances?.stakingTokenBalance}</span>
                 <span className="mb-1 txt-smol">(${farm.balances?.stakingTokenBalanceInUSD})</span>
               </div>
             </span>
-            {farm.constants.wsOHMNetworks.length ? <hr></hr> : ''}
-            {
-              farm.balances?.wrappedBalances.balances.map((wrappedBalance, index)=>
-                <span key={index} className="card-text d-flex h-auto justify-content-between align-items-center mb-1">
-                  <strong>{`${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol} (${wrappedBalance.symbol})`}</strong>
-                  <div className="align-items-end d-flex h-auto flex-column overflow-anywhere">
-                    <span>{`${wrappedBalance.tokenBalance} ${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol}`}</span>
-                    <span>{`(${wrappedBalance.convertedBalance} ${farmSymbol})`}</span>
-                  </div>
-                </span>)
-            }
+            {farm.constants.wsOHMNetworks.length ?
+            <div>
+              <hr></hr>
+              {
+                farm.balances?.wrappedBalances.balances.map((wrappedBalance, index)=>
+                  <span key={index} className="card-text d-flex h-auto justify-content-between align-items-top mb-1">
+                    <strong>{`${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol} (${wrappedBalance.symbol})`}</strong>
+                    <div className="align-items-end d-flex h-auto flex-column overflow-anywhere">
+                      <span>{`${wrappedBalance.tokenBalance} ${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol}`}</span>
+                      <span className="mb-1 txt-smol">{`($${wrappedBalance.convertedBalanceInUSD})`}</span>
+                    </div>
+                  </span>)
+              }
+            </div>
+            : ''}
+            {typeof farm.constants.cauldrons !== 'undefined' && farm.constants.cauldrons.length ?
+              <div>
+                <hr></hr>
+                <div className="txt-smol">Collateral</div>
+                {
+                  farm.balances?.collateralBalances?.balances.map((wrappedBalance, index)=>
+                    <span key={index} className="card-text d-flex h-auto justify-content-between align-items-top mb-1">
+                      <strong>{`${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol} (${wrappedBalance.symbol})`}</strong>
+                      <div className="align-items-end d-flex h-auto flex-column overflow-anywhere">
+                        <span>{`${wrappedBalance.tokenBalance} ${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol}`}</span>
+                        <span className="mb-1 txt-smol">{`($${wrappedBalance.convertedBalanceInUSD})`}</span>
+                      </div>
+                    </span>)
+                }
+              </div>
+              : ''}
             <hr></hr>
             {
               farm.balances?.bonds.map((bondData, index)=>

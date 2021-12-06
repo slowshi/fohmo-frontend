@@ -6,7 +6,8 @@ const formatURL = (state) => {
   let params = {};
   if(Object.keys(state.app.addresses).length > 0) {
     params = {
-      address: Object.keys(state.app.addresses).toString()
+      address: Object.keys(state.app.addresses).toString(),
+      visible: Object.values(state.app.addresses).map((visible)=>visible ? '1' : '0')
     }
   }
   let sortByKey = state.app.sortBy;

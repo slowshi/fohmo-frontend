@@ -49,17 +49,6 @@ const balancesReducer = (state = initialState, action) => {
           }
         }
       }
-    case "toggleAddress":
-      return {
-        ...state,
-        [action.payload.address]: {
-          ...state[action.payload.address],
-          [state[action.payload.address][action.payload.farmKey]]: {
-            ...state[action.payload.address][action.payload.farmKey],
-            showAddress: !state[action.payload.address][action.payload.farmKey].showAddress
-          }
-        }
-      }
     default:
     return state
   }

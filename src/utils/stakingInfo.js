@@ -2,6 +2,7 @@ import {ethers} from 'ethers';
 import {cacheServiceInstance} from './cacheService';
 import {allFarms, networks} from './constants';
 import {abi as IERC20Abi} from '../abis/IERC20.json';
+import {abi as CauldronAbi} from '../abis/Cauldron.json';
 import {abi as PairContractAbi} from '../abis/PairContract.json';
 import {abi as StakingAbi} from '../abis/Staking.json';
 import {abi as StakingTokenAbi} from '../abis/StakingToken.json';
@@ -98,7 +99,7 @@ class StakingInfo {
           payload: {
             farmKey: `${res.networkSymbol}-${res.farmSymbol}`,
             stakingInfo: {
-              ...getFarm({...stateFarm, data: res.data}, balanceMap),
+              ...getFarm({...stateFarm, data: res.data}, balanceMap, state.app.addresses),
               loading: false
             }
           }
@@ -447,7 +448,10 @@ class StakingInfo {
       tokenBalance = tokenBalance + warmupDeposit;
     }
 
-    let wrappedBalances = {};
+    let wrappedBalances = {
+      total: 0,
+      balances: []
+    };
     if(farmParams.wsOHMNetworks !== null) {
       let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, clearCache);
       let useIndex = rawCurrentIndex;
@@ -455,6 +459,18 @@ class StakingInfo {
         useIndex = currentIndex;
       }
       wrappedBalances = await this.getwsOHMBalances(userAddress, farmParams.wsOHMNetworks, useIndex, clearCache);
+    }
+    let collateralBalances = {
+      total: 0,
+      balances: []
+    };
+    if(typeof farmParams.cauldrons !== 'undefined') {
+      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, clearCache);
+      let useIndex = rawCurrentIndex;
+      if (key === 'FTM-SPA') {
+        useIndex = currentIndex;
+      }
+      collateralBalances = await this.getCauldronCollateral(userAddress, farmParams.cauldrons, useIndex, clearCache);
     }
     // console.log({
     //   tokenBalance,
@@ -468,6 +484,7 @@ class StakingInfo {
       tokenBalance,
       stakingTokenBalance,
       wrappedBalances,
+      collateralBalances,
       fullBondTotal: Number(fullBondTotal),
       bonds,
       disabled: tokenBalance === 0 && stakingTokenBalance === 0
@@ -479,6 +496,7 @@ class StakingInfo {
       data
     };
   }
+
   async getwsOHMBalances(userAddress, wsOHMNetworks, index, clearCache=false) {
     let total = 0;
     const getBalances = async (data) => {
@@ -491,12 +509,12 @@ class StakingInfo {
         clearCache
       );
       tokenBalance = Number(ethers.utils.formatUnits(tokenBalance, 'ether'));
-      const convertedBalance = Number(tokenBalance  * index);
+      const convertedBalance = Number((tokenBalance  * index).toFixed(4));
       total += convertedBalance;
       return {
         symbol: data.networkSymbol,
         tokenBalance: Number(tokenBalance.toFixed(4)),
-        convertedBalance: Number(convertedBalance.toFixed(4)),
+        convertedBalance
       };
     };
     const wsOHMPromises = wsOHMNetworks.map(getBalances);
@@ -508,61 +526,35 @@ class StakingInfo {
     };
   }
 
+  async getCauldronCollateral(userAddress, cauldrons, index, clearCache=false) {
+    let total = 0;
+    const getBalances = async (data) => {
+      const networkParams = networks[data.networkSymbol];
+      const cauldronContract = this.loadCacheContract(data.address, CauldronAbi, networkParams.rpcURL);
+      let tokenBalance = await this.loadCahceContractCall(
+        cauldronContract,
+        'userCollateralShare',
+        [userAddress],
+        clearCache
+      );
+      tokenBalance = Number(ethers.utils.formatUnits(tokenBalance, 'ether'));
+      const convertedBalance = Number((tokenBalance  * index).toFixed(4));
+      total += convertedBalance;
+      return {
+        symbol: data.networkSymbol,
+        tokenBalance: Number(tokenBalance.toFixed(4)),
+        convertedBalance
+      };
+    };
+    const cauldronPromises = cauldrons.map(getBalances);
+    const balances = await Promise.all(cauldronPromises);
 
-  formatFarmData(data) {
     return {
-      ...data,
-      balances: {
-        ...data.balances,
-        total: Number(data.balances.total).toLocaleString(undefined, {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2
-        }),
-        rawTotal: data.balances.total,
-        disabled: data.balances.tokenBalance === 0 && data.balances.stakingTokenBalance === 0
-      },
-      stakingInfo: {
-        ...data.stakingInfo,
-        price: Number(data.stakingInfo.price).toLocaleString(undefined, {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2
-        }),
-        apy: Number((
-          (Math.pow(1 + data.stakingInfo.stakingRebase,
-            data.stakingInfo.distributeInterval * 365) - 1) * 100)
-          .toFixed(0))
-          .toLocaleString(),
-        rawApy: Number((
-          (Math.pow(1 + data.stakingInfo.stakingRebase,
-            data.stakingInfo.distributeInterval * 365) - 1) * 100)
-          .toFixed(0)),
-        $TVL: (Number(data.stakingInfo.lockedValue) *
-        Number(data.stakingInfo.price)).toLocaleString(undefined, {
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 0
-        }),
-        $Circ: (Number(data.stakingInfo.circulatingSupply) *
-        Number(data.stakingInfo.price)).toLocaleString(undefined, {
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 0
-        }),
-        $MC: (Number(data.stakingInfo.totalSupply) *
-        Number(data.stakingInfo.price)).toLocaleString(undefined, {
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 0
-        }),
-        rawMC: (Number(data.stakingInfo.totalSupply) *
-        Number(data.stakingInfo.price)),
-        $RFV: Number(data.stakingInfo.totalReserves).toLocaleString(undefined, {
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 0
-        }),
-        $BackedPrice: (Number(data.stakingInfo.totalReserves) /
-        Number(data.stakingInfo.totalSupply)).toLocaleString()
-      }
-    }
-
+      total,
+      balances
+    };
   }
+
   /**
    *
    *

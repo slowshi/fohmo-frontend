@@ -15,6 +15,12 @@
       "LPContract": "0x113f413371fc4cc4c9d6416cf1de9dfd7bf747df",
       "lockedSupplyContract": null,
       "treasuryContract": "0x1c46450211CB2646cc1DA3c5242422967eD9e04c",
+      "cauldrons": [
+        {
+          "address": "0x35fa7a723b3b39f15623ff1eb26d8701e7d6bb21",
+          "networkSymbol": "AVAX"
+        }
+      ],
       "wsOHMSymbol": "wMEMO",
       "wsOHMNetworks": [
         {

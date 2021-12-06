@@ -5,14 +5,24 @@ import {sortFilters} from '../utils/constants';
 
 const searchParams = (new URL(document.location)).searchParams;
 let addressParams = '';
+let visible = [];
 let addresses = {};
 let farmFilters = ['ETH-OHM', 'AVAX-TIME', 'MATIC-KLIMA'];
 let sortDirection = 'desc';
 let sortBy = 'mc';
 if (searchParams.has('address')) {
   addressParams = searchParams.get('address');
-  addresses = searchParams.get('address').split(',').reduce((acc, address)=>{
-    acc[address] = true;
+  const currentAddresses = searchParams.get('address').split(',');
+  if(searchParams.has('visible')) {
+    visible = searchParams.get('visible').split(',');
+    if(visible.filter((vis)=>vis !=='1' && vis!=='0').length > 0) {
+      visible = currentAddresses.map((add)=>'1');
+    }
+  } else {
+    visible = currentAddresses.map((add)=>'1');
+  }
+  addresses = currentAddresses.reduce((acc, address, index)=> {
+    acc[address] = visible[index] === '1' ? true : false;
     return acc;
   }, {});
 }
