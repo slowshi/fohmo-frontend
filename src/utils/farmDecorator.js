@@ -150,6 +150,16 @@ const getFarm = function(currentFarm, balances) {
       ...allBalances,
       bonds: formattedBonds,
       rawTotal,
+      stakingTokenBalance: Number(allBalances.stakingTokenBalance) === 0 ? 0 :allBalances.stakingTokenBalance.toFixed(4),
+      stakingTokenBalanceInUSD: Number(allBalances.stakingTokenBalance * rawPrice).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+      tokenBalance: Number(allBalances.tokenBalance) === 0 ? 0 :allBalances.tokenBalance.toFixed(4),
+      tokenBalanceInUSD: Number(allBalances.tokenBalance * rawPrice).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
       total: rawTotal.toLocaleString(undefined, {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2

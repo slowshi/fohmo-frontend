@@ -21,6 +21,8 @@ const initialState = {
 */
 const balancesReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "clearBalances":
+      return initialState;
     case "updateAddressBalance":
       if(typeof state[action.payload.farmKey] === 'undefined') {
         state = {

@@ -143,11 +143,17 @@ function StakingCard(params) {
             <hr></hr>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>{farmSymbol}</strong>
-              <span>{farm.balances?.tokenBalance}</span>
+              <div className="align-items-end d-flex h-auto flex-column">
+                <span>{farm.balances?.tokenBalance}</span>
+                <span className="mb-1 txt-smol">(${farm.balances?.tokenBalanceInUSD})</span>
+              </div>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>{farm.constants.stakingSymbol}</strong>
-              <span>{farm.balances?.stakingTokenBalance}</span>
+              <div className="align-items-end d-flex h-auto flex-column">
+                <span>{farm.balances?.stakingTokenBalance}</span>
+                <span className="mb-1 txt-smol">(${farm.balances?.stakingTokenBalanceInUSD})</span>
+              </div>
             </span>
             {farm.constants.wsOHMNetworks.length ? <hr></hr> : ''}
             {

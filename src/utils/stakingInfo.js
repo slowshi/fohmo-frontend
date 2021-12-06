@@ -61,6 +61,10 @@ class StakingInfo {
             }
           }
         });
+        store.dispatch({
+          type: 'clearBalances',
+          payload: null
+        });
         this.doGetStakingInfo(farm.networkSymbol, farm.farmSymbol, clearCache);
       }
     });
@@ -73,14 +77,6 @@ class StakingInfo {
     .then(async (res)=>{
       const balancePromises = Object.keys(state.app.addresses)
       .map((address)=>{
-        store.dispatch({
-          type: 'updateAddressBalance',
-          payload: {
-            farmKey: key,
-            address: address,
-            balance: null
-          }
-        });
         return this.getBalances(address, networkSymbol, farmSymbol, clearCache)
       })
       const balances = await Promise.all(balancePromises);
