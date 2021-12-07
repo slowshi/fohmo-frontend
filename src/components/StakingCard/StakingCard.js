@@ -153,7 +153,7 @@ function StakingCard(params) {
               <strong>{farmSymbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
                 <span>{farm.balances?.tokenBalance}</span>
-                <span className="mb-1 txt-smol">(${farm.balances?.tokenBalanceInUSD})</span>
+                <span className="mb-1 txt-smol">({farm.balances?.tokenBalanceInUSD})</span>
               </div>
             </span>
             {farm.balances?.warmupBalance > 0 ?
@@ -163,7 +163,7 @@ function StakingCard(params) {
                   <strong>{farm.constants.stakingSymbol}</strong>
                   <div className="align-items-end d-flex h-auto flex-column">
                   <span>{farm.balances?.warmupBalance}</span>
-                    <span className="mb-1 txt-smol">(${farm.balances?.warmupBalanceInUSD})</span>
+                    <span className="mb-1 txt-smol">({farm.balances?.warmupBalanceInUSD})</span>
                   </div>
                 </span>
               </div>: ''
@@ -172,7 +172,7 @@ function StakingCard(params) {
               <strong>{farm.constants.stakingSymbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
               <span>{farm.balances?.stakingTokenBalance}</span>
-                <span className="mb-1 txt-smol">(${farm.balances?.stakingTokenBalanceInUSD})</span>
+                <span className="mb-1 txt-smol">({farm.balances?.stakingTokenBalanceInUSD})</span>
               </div>
             </span>
             {farm.constants.wsOHMNetworks.length ?
@@ -184,7 +184,7 @@ function StakingCard(params) {
                     <strong>{`${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol} (${wrappedBalance.symbol})`}</strong>
                     <div className="align-items-end d-flex h-auto flex-column overflow-anywhere">
                       <span>{`${wrappedBalance.tokenBalance} ${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol}`}</span>
-                      <span className="mb-1 txt-smol">{`($${wrappedBalance.convertedBalanceInUSD})`}</span>
+                      <span className="mb-1 txt-smol">{`(${wrappedBalance.convertedBalanceInUSD})`}</span>
                     </div>
                   </span>)
               }
@@ -200,7 +200,7 @@ function StakingCard(params) {
                       <strong>{`${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol} (${wrappedBalance.symbol})`}</strong>
                       <div className="align-items-end d-flex h-auto flex-column overflow-anywhere">
                         <span>{`${wrappedBalance.tokenBalance} ${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol}`}</span>
-                        <span className="mb-1 txt-smol">{`($${wrappedBalance.convertedBalanceInUSD})`}</span>
+                        <span className="mb-1 txt-smol">{`(${wrappedBalance.convertedBalanceInUSD})`}</span>
                       </div>
                     </span>)
                 }
@@ -213,9 +213,9 @@ function StakingCard(params) {
               <strong>{bondData.symbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
                 <div>{`${bondData.pendingPayout} ${farmSymbol}`} <strong>C</strong></div>
-                <div className="mb-1 txt-smol">(${bondData.pendingPayoutInUSD})</div>
+                <div className="mb-1 txt-smol">({bondData.pendingPayoutInUSD})</div>
                 <div>{`${bondData.payout} ${farmSymbol}`} <strong>P</strong></div>
-                <div className="mb-1 txt-smol">(${bondData.payoutInUSD})</div>
+                <div className="mb-1 txt-smol">({bondData.payoutInUSD})</div>
               </div>
             </span>)
             }
@@ -233,7 +233,7 @@ function StakingCard(params) {
                   <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
                     <span>{`${farm.roiCalculations?.roiRebase.tokenCount} ${farmSymbol}`}</span>
                     <span>{farm.roiCalculations?.roiRebase.total}</span>
-                    <span>{farm.roiCalculations?.roiRebase.profit}</span>
+                    <span className="txt-smol">(+{farm.roiCalculations?.roiRebase.profit})</span>
                   </span>
                  :
                  <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
@@ -262,7 +262,7 @@ function StakingCard(params) {
                 <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
                   <span>{farm.roiCalculations?.roiDynamic.tokenCount} ${farmSymbol}</span>
                   <span>{farm.roiCalculations?.roiDynamic.total}</span>
-                  <span>{farm.roiCalculations?.roiDynamic.profit}</span>
+                  <span className="txt-smol">(+{farm.roiCalculations?.roiDynamic.profit})</span>
                 </span>
                 :
                 <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">

@@ -46,7 +46,9 @@ function AllTotalsCard() {
     if(hideTotals || Object.keys(addresses).length === 0) {
       document.title = `Fohmo.io`
     } else {
-      document.title = `Fohmo.io - $${totalValue.toLocaleString(undefined, {
+      document.title = `Fohmo.io - ${totalValue.toLocaleString(undefined, {
+        style: 'currency',
+        currency,
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
       })}`
@@ -105,7 +107,7 @@ function AllTotalsCard() {
             :
             <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
               <span>{aggregatedTotals.totalExpectedValue}</span>
-              <span>{aggregatedTotals.totalProfit}</span>
+              <span class="txt-smol">(+{aggregatedTotals.totalProfit})</span>
             </span>
             }
           </div>
