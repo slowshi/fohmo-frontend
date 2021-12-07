@@ -29,7 +29,7 @@ function AllTotalsCard() {
     filteredFarms.forEach((farm)=> {
       const stakedBalance = Number(farm.balances?.stakingTokenBalance) || 0;
       const wrappedStakedBalance = Number(farm.balances?.wrappedBalances?.total) || 0;
-      const collateralBalance = Number(farm.balances?.collateralBalance?.total) || 0;
+      const collateralBalance = Number(farm.balances?.collateralBalances?.total) || 0;
       const otherBalance = Number(farm.balances?.fullBondTotal + Number(farm.balances?.tokenBalance));
       const adjustedTotal = stakedBalance + wrappedStakedBalance + collateralBalance;
       const price = Number(farm.data?.rawPrice) || 0;
