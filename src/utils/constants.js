@@ -62,6 +62,10 @@ const fiatCurrencyMap = {
   sgd: {
     label: 'SGD',
     address: '0xe25277ff4bbf9081c75ab0eb13b4a13a721f3e13'
+  },
+  php: {
+    label: 'PHP',
+    address: '0x9481e7ad8be6bbb22a8b9f7b9fb7588d1df65df6'
   }
 }
 const networks = {

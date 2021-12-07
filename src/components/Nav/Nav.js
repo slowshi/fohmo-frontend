@@ -117,7 +117,7 @@ function Nav() {
             Fohmo.io
           </a>
           <div>
-            <select value={currency} className="btn btn-light btn-sm me-2" aria-label="Sort"
+            <select value={currency} className="btn btn-light btn-sm me-2" aria-label="Currency"
             onChange={updateFiatCurrency}>
               {Object.keys(fiatCurrencyMap).map((currencyKey, index)=>
               <option key={index} value={currencyKey}>{fiatCurrencyMap[currencyKey].label}</option>
