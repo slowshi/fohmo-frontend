@@ -6,6 +6,7 @@ const DEV_ADDRESS = '0xe88030c28d23d2120C687f49FB5cC2830F0Edb39';
 const paths = {
   HOME: `/`
 };
+
 const sortFilters = [
   {
     label: 'MC',
@@ -28,6 +29,7 @@ const sortFilters = [
     key: 'eco'
   }
 ];
+
 const sortMap = {
   'balance': 'balances.rawTotal',
   'mc': 'data.rawMC',
@@ -35,6 +37,28 @@ const sortMap = {
   'rebase': 'data.nextRebaseSeconds',
   'farm': 'constants.name',
   'eco': 'networkSymbol',
+};
+const fiatCurrencyMap = {
+  usd: {
+    label: 'USD',
+    address: ''
+  },
+  aud: {
+    label: 'AUD',
+    address: '0x77F9710E7d0A19669A13c055F62cd80d313dF022'
+  },
+  cad: {
+    label: 'CAD',
+    address: '0xa34317db73e77d453b1b8d04550c44d10e981c8e'
+  },
+  gbp: {
+    label: 'GBP',
+    address: '0x5c0ab2d9b5a7ed9f470386e82bb36a3613cdd4b5'
+  },
+  eur: {
+    label: 'EUR',
+    address: '0xb49f677943bc038e9857d61e7d053caa2c1734c1'
+  }
 }
 const networks = {
   FTM: {
@@ -129,5 +153,6 @@ export {
   paths,
   sortFilters,
   sortMap,
+  fiatCurrencyMap,
   DEV_ADDRESS
 };

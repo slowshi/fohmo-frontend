@@ -1,12 +1,13 @@
 import {ethers} from 'ethers';
 import {cacheServiceInstance} from './cacheService';
-import {allFarms, networks} from './constants';
+import {allFarms, networks, fiatCurrencyMap} from './constants';
 import {abi as IERC20Abi} from '../abis/IERC20.json';
 import {abi as CauldronAbi} from '../abis/Cauldron.json';
 import {abi as PairContractAbi} from '../abis/PairContract.json';
 import {abi as StakingAbi} from '../abis/Staking.json';
 import {abi as StakingTokenAbi} from '../abis/StakingToken.json';
 import {abi as BondContractAbi} from '../abis/BondContract.json';
+import {abi as CurrencyAbi} from '../abis/Currency.json';
 import {abi as TreasuryAbi} from '../abis/Treasury.json';
 import store from '../store/store';
 import { getFarm } from './farmDecorator';
@@ -26,6 +27,7 @@ class StakingInfo {
     'AVAX-LF',
     'AVAX-SB',
     'AVAX-MAXI',
+    'AVAX-GG',
     'AVAX-OTWO',
     'AVAX-SDOG',
     'AVAX-CROWN',
@@ -46,8 +48,13 @@ class StakingInfo {
    * @param {String} userAddress
    * @return {Array}
    */
-  init(clearCache=false) {
+  async init(clearCache=false) {
     const state = store.getState();
+    const currencyConversion = await this.getCurrencyConversion(state.app.fiatCurrency, clearCache);
+    store.dispatch({
+      type: 'setCurrencyConversion',
+      payload: currencyConversion
+    });
     let balancePromises = [];
     Object.keys(allFarms).forEach((key)=> {
       const farm = allFarms[key];
@@ -74,7 +81,9 @@ class StakingInfo {
     const state = store.getState();
     const key = `${networkSymbol}-${farmSymbol}`;
     const stateFarm = state.farms[key];
-    return this.getStakingInfo2(networkSymbol, farmSymbol, clearCache)
+    const currencyConversion = state.app.currencyConversion;
+    const fiatCurrency = state.app.fiatCurrency;
+    return this.getStakingInfo(networkSymbol, farmSymbol, currencyConversion, clearCache)
     .then(async (res)=>{
       const balancePromises = Object.keys(state.app.addresses)
       .map((address)=>{
@@ -99,7 +108,7 @@ class StakingInfo {
           payload: {
             farmKey: `${res.networkSymbol}-${res.farmSymbol}`,
             stakingInfo: {
-              ...getFarm({...stateFarm, data: res.data}, balanceMap, state.app.addresses),
+              ...getFarm({...stateFarm, data: res.data}, balanceMap, state.app.addresses, fiatCurrency),
               loading: false
             }
           }
@@ -157,7 +166,7 @@ class StakingInfo {
    * @param {Boolean} [clearCache=false]
    * @return {Object}
    */
-   async getStakingInfo2(networkSymbol, farmSymbol, clearCache=false) {
+   async getStakingInfo(networkSymbol, farmSymbol, currencyConversion=1, clearCache=false) {
     const key = `${networkSymbol}-${farmSymbol}`;
     const networkParams = networks[networkSymbol];
     const farmParams = allFarms[key].constants;
@@ -303,73 +312,40 @@ class StakingInfo {
       seconds = epoch.endBlock.toNumber() - (Date.now() / 1000);
       distributeInterval = msPerDay / epoch._length.toNumber();
     } else {
-      distributeInterval = msPerDay / (epoch._length.toNumber() * networkParams.blockRateSeconds)
+      distributeInterval = msPerDay / (epoch._length.toNumber() * networkParams.blockRateSeconds);
       seconds = this.secondsUntilBlock(currentBlock, epoch.endBlock.toNumber(), networkParams.blockRateSeconds);
     }
-    // console.log(key, distributeInterval)
-    // console.log(seconds, this.prettifySeconds(seconds));
-    const data = this.formatStakingInfo({
-      nextRebase: this.prettifySeconds(seconds),
-      nextRebaseSeconds: seconds,
-      distributeInterval,
-      stakingRebase,
-      rawPrice: Number(price),
-      price: Number(price).toFixed(2),
-      totalReserves: Number(totalReserves),
-      currentIndex,
-      rawCurrentIndex,
-      totalSupply: Number(ethers.utils.formatUnits(totalSupply, 'gwei')),
-      circulatingSupply: Number(ethers.utils.formatUnits(circulatingSupply, 'gwei')),
-      lockedValue: Number(ethers.utils.formatUnits(lockedValue, 'gwei')),
-    });
-    // console.log(data);
+    // const data = {
+    //   nextRebase: this.prettifySeconds(seconds),
+    //   nextRebaseSeconds: seconds,
+    //   distributeInterval,
+    //   stakingRebase,
+    //   rawPrice: Number(price / currencyConversion),
+    //   price: Number((price / currencyConversion).toFixed(2)),
+    //   totalReserves: Number(totalReserves),
+    //   currentIndex,
+    //   rawCurrentIndex,
+    //   totalSupply: Number(ethers.utils.formatUnits(totalSupply, 'gwei')),
+    //   circulatingSupply: Number(ethers.utils.formatUnits(circulatingSupply, 'gwei')),
+    //   lockedValue: Number(ethers.utils.formatUnits(lockedValue, 'gwei')),
+    // };
     return {
       farmSymbol,
       networkSymbol,
-      data
+      data: {
+        nextRebase: this.prettifySeconds(seconds),
+        nextRebaseSeconds: seconds,
+        distributeInterval,
+        stakingRebase,
+        rawPrice: Number(price / currencyConversion),
+        totalReserves: Number(totalReserves),
+        currentIndex,
+        rawCurrentIndex,
+        totalSupply: Number(ethers.utils.formatUnits(totalSupply, 'gwei')),
+        circulatingSupply: Number(ethers.utils.formatUnits(circulatingSupply, 'gwei')),
+        lockedValue: Number(ethers.utils.formatUnits(lockedValue, 'gwei')),
+      }
     };
-  }
-
-  formatStakingInfo(stakingInfo) {
-    return {
-      ...stakingInfo,
-      price: Number(stakingInfo.price).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }),
-      apy: Number((
-        (Math.pow(1 + stakingInfo.stakingRebase,
-          stakingInfo.distributeInterval * 365) - 1) * 100)
-        .toFixed(0))
-        .toLocaleString(),
-      rawApy: Number((
-        (Math.pow(1 + stakingInfo.stakingRebase,
-          stakingInfo.distributeInterval * 365) - 1) * 100)
-        .toFixed(0)),
-      $TVL: (Number(stakingInfo.lockedValue) *
-      Number(stakingInfo.price)).toLocaleString(undefined, {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-      }),
-      $Circ: (Number(stakingInfo.circulatingSupply) *
-      Number(stakingInfo.price)).toLocaleString(undefined, {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-      }),
-      $MC: (Number(stakingInfo.totalSupply) *
-      Number(stakingInfo.price)).toLocaleString(undefined, {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-      }),
-      rawMC: (Number(stakingInfo.totalSupply) *
-      Number(stakingInfo.price)),
-      $RFV: Number(stakingInfo.totalReserves).toLocaleString(undefined, {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-      }),
-      $BackedPrice: (Number(stakingInfo.totalReserves) /
-      Number(stakingInfo.totalSupply)).toLocaleString()
-    }
   }
 
   /**
@@ -555,7 +531,20 @@ class StakingInfo {
       balances
     };
   }
-
+  async getCurrencyConversion(currencyKey='usd', clearCache=false) {
+    if(currencyKey === 'usd') return 1;
+    const networkParams = networks.ETH;
+    const currencyAddress = fiatCurrencyMap[currencyKey].address
+    const currenyContract = this.loadCacheContract(currencyAddress, CurrencyAbi, networkParams.rpcURL);
+    let latestAnswer = await this.loadCahceContractCall(
+      currenyContract,
+      'latestAnswer',
+      [],
+      clearCache
+    );
+    latestAnswer = Number(ethers.utils.formatUnits(latestAnswer, 8));
+    return latestAnswer;
+  }
   /**
    *
    *
@@ -667,34 +656,8 @@ class StakingInfo {
     return `${neg} ${result}`;
   }
 }
-const formatRebase = (stakedBalance, otherBalance, price, stakingRebase, count) => {
-  const percent = (Math.pow(1 + stakingRebase, count) - 1);
-  return {
-    profit: Number(
-      (percent * stakedBalance * price).toFixed(2)
-    ).toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    }),
-    total: Number(
-      ((otherBalance + (stakedBalance + (percent * stakedBalance))) * price)
-    ).toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    }),
-    tokenCount: Number(
-      (stakedBalance + (percent * stakedBalance)).toFixed(4)
-    ),
-    percent: Number(
-      (percent * 100)
-    ).toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    })
-  };
-};
+
 const stakingInfo = new StakingInfo();
 export {
-  stakingInfo,
-  formatRebase
+  stakingInfo
 };

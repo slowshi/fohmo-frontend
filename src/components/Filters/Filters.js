@@ -154,8 +154,8 @@ function Filters() {
         <div className="col-12 mb-2">
           <div className="card">
             <div className="card-body">
-              <button type="button" className="btn btn-sm" onClick={clearFilters}>
-                <i className="bi bi-x"></i>
+              <button type="button" className="btn btn-sm btn-outline-dark" onClick={clearFilters}>
+                <i className="bi bi-trash2"></i>
               </button>
               {$farmFilters.map((farm)=>
                 <button key={farm.farmKey}

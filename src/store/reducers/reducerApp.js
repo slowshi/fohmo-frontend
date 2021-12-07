@@ -1,6 +1,8 @@
 const initialState = Object.freeze({
   addresses: {},
   addressParams: '',
+  fiatCurrency: 'usd',
+  currencyConversion: 1,
   addressFilters: [],
   sortBy: 'mc',
   sortDirection: 'desc',
@@ -12,6 +14,16 @@ const initialState = Object.freeze({
 
 const appReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "setFiatCurrency":
+      return {
+        ...state,
+        fiatCurrency: action.payload
+      }
+    case "setCurrencyConversion":
+      return {
+        ...state,
+        currencyConversion: action.payload
+      }
     case "setAddresses":
       return {
         ...state,

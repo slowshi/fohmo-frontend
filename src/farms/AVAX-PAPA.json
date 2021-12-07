@@ -26,6 +26,14 @@
         {
           "address": "0x654d5796b2c70d24ed7402e87d8a72bddf87ccca",
           "symbol": "MIM"
+        },
+        {
+          "address": "0x63933d4e91c84bae6577744fd75c4f4f2c44d901",
+          "symbol": "wAVAX"
+        },
+        {
+          "address": "0x63933d4e91c84bae6577744fd75c4f4f2c44d901",
+          "symbol": "USDT"
         }
       ]
     }

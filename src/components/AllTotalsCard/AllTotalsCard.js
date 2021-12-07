@@ -1,10 +1,13 @@
 
 
 import {useSelector, useDispatch} from "react-redux";
+import {fiatCurrencyMap} from "../../utils/constants";
+
 function AllTotalsCard() {
   const dispatch = useDispatch();
   const totalRoiDynamic = useSelector(state=> state.app.totalRoiDynamic)
   const hideTotals = useSelector(state => state.app.hideTotals);
+  const currency = useSelector(state => fiatCurrencyMap[state.app.fiatCurrency].label);
   const aggregatedTotals = useSelector((state)=>{
     const farms = state.farms;
     const farmFilters = state.app.farmFilters;
@@ -27,7 +30,7 @@ function AllTotalsCard() {
       const stakedBalance = Number(farm.balances?.stakingTokenBalance) || 0;
       const wrappedStakedBalance = Number(farm.balances?.wrappedBalances?.total) || 0;
       const collateralBalance = Number(farm.balances?.collateralBalance?.total) || 0;
-      const otherBalance = Number(farm.balances?.fullBondTotal + farm.balances?.tokenBalance);
+      const otherBalance = Number(farm.balances?.fullBondTotal + Number(farm.balances?.tokenBalance));
       const adjustedTotal = stakedBalance + wrappedStakedBalance + collateralBalance;
       const price = Number(farm.data?.rawPrice) || 0;
       const stakingRebase = farm.data?.stakingRebase || 0;
@@ -50,6 +53,8 @@ function AllTotalsCard() {
     }
     return {
       totalValue: Number(totalValue).toLocaleString(undefined, {
+        style: 'currency',
+        currency,
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
       }),
@@ -58,10 +63,14 @@ function AllTotalsCard() {
         maximumFractionDigits: 4
       }),
       totalProfit: Number(totalProfit).toLocaleString(undefined, {
+        style: 'currency',
+        currency,
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
       }),
       totalExpectedValue: Number(totalExpectedValue).toLocaleString(undefined, {
+        style: 'currency',
+        currency,
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
       })
@@ -74,9 +83,9 @@ function AllTotalsCard() {
         <span className="card-text d-flex h-auto justify-content-between align-items-center">
           <span>Total Value</span>
           {hideTotals ?
-          <strong>$-</strong>
+          <strong>-</strong>
           :
-          <strong>{`$${aggregatedTotals.totalValue}`}</strong>
+          <strong>{aggregatedTotals.totalValue}</strong>
           }
         </span>
         <input type="range" className="form-range" min="1" max="365" id="dynamic-roi" value={totalRoiDynamic} step="1"
@@ -90,13 +99,13 @@ function AllTotalsCard() {
             <span>{`${aggregatedTotals.totalWeightedPercent}%`}</span>
             {hideTotals ?
             <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
-              <span>$-</span>
-              <span>+$-</span>
+              <span>-</span>
+              <span>-</span>
             </span>
             :
             <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
-              <span>{`$${aggregatedTotals.totalExpectedValue}`}</span>
-              <span>{`+$${aggregatedTotals.totalProfit}`}</span>
+              <span>{aggregatedTotals.totalExpectedValue}</span>
+              <span>{aggregatedTotals.totalProfit}</span>
             </span>
             }
           </div>

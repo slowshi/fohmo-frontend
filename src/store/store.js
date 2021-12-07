@@ -1,7 +1,6 @@
 import {createStore} from 'redux';
 import rootReducer from './reducers/rootReducer';
-import { allFarms } from '../utils/constants';
-import {sortFilters} from '../utils/constants';
+import { allFarms, sortFilters } from '../utils/constants';
 
 const searchParams = (new URL(document.location)).searchParams;
 let addressParams = '';
@@ -10,6 +9,7 @@ let addresses = {};
 let farmFilters = ['ETH-OHM', 'AVAX-TIME', 'MATIC-KLIMA'];
 let sortDirection = 'desc';
 let sortBy = 'mc';
+let fiatCurrency = 'usd';
 if (searchParams.has('address')) {
   addressParams = searchParams.get('address');
   const currentAddresses = searchParams.get('address').split(',');
@@ -38,6 +38,9 @@ if (searchParams.has('sort')) {
 if (searchParams.has('dir')) {
   sortDirection = searchParams.get('dir');
 }
+if (searchParams.has('currency')) {
+  fiatCurrency = searchParams.get('currency');
+}
 const validFarmFilters = Object.keys(allFarms);
 const diff = farmFilters.filter((i) => !validFarmFilters.includes(i));
 if (diff.length > 0) {
@@ -54,6 +57,7 @@ const store = createStore(rootReducer,
     sortBy,
     sortDirection,
     farmFilters,
+    fiatCurrency,
     showFilters: false,
     hideTotals: false,
     totalRoiDynamic: 1

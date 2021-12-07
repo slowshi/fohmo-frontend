@@ -1,5 +1,6 @@
 import {useSelector, useDispatch} from "react-redux";
 import pageLoad from '../../utils/pageLoad';
+import {fiatCurrencyMap} from '../../utils/constants'
 import { useState } from "react";
 function Nav() {
   const dispatch = useDispatch();
@@ -13,10 +14,9 @@ function Nav() {
   const toggleShow = () => {
     setShow(!show)
   };
-  // const [showVisible, setShowVisible] = useState(false);
-  // const toggleShowVisible = () => {
-  //   setShowVisible(!show)
-  // };
+
+  const currency = useSelector((state)=>state.app.fiatCurrency);
+
   const updateAddress = (e, index) => {
     let addresses = [...addressParams];
     let addressString = e.target.value;
@@ -102,7 +102,13 @@ function Nav() {
       pageLoad(true);
     }
   }
-
+  const updateFiatCurrency = (e) => {
+    dispatch({
+      type: 'setFiatCurrency',
+      payload: e.target.value
+    });
+    pageLoad();
+  }
   return (
     <div className="sticky-top">
       <nav className="navbar navbar-dark bg-dark">
@@ -111,6 +117,12 @@ function Nav() {
             Fohmo.io
           </a>
           <div>
+            <select value={currency} className="btn btn-light btn-sm me-2" aria-label="Sort"
+            onChange={updateFiatCurrency}>
+              {Object.keys(fiatCurrencyMap).map((currencyKey, index)=>
+              <option key={index} value={currencyKey}>{fiatCurrencyMap[currencyKey].label}</option>
+              )}
+            </select>
             <button type="button" className={`btn btn-sm me-2 ${show ? 'btn-secondary' : 'btn-light'}`} onClick={toggleShow}>
               {addressCount === 0 ? `+ Add Address`: ''}
               {addressCount === 1 ? `${addressCount} Address`: ''}

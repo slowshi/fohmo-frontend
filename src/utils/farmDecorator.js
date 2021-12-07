@@ -1,6 +1,129 @@
 import {createSelector} from 'reselect';
+import { fiatCurrencyMap } from './constants';
 // import {sortMap} from './constants';
+const getFarm = function(farm, balances, addresses, fiatCurrency) {
+  const currency = fiatCurrencyMap[fiatCurrency].label;
+  const currentFarm = {
+    ...farm,
+    data: formatStakingInfo(farm.data, currency)
+  }
+  const allBalances = combineBalances(balances, addresses, fiatCurrency);
+  const rawPrice = currentFarm.data?.rawPrice || 0;
+  const formattedBonds = allBalances.bonds.map((bond)=>{
+    return {
+      ...bond,
+      payout: Number(bond.payout) === 0 ? 0 : bond.payout.toFixed(4),
+      payoutInUSD: Number(bond.payout * rawPrice).toLocaleString(undefined, {
+        style: 'currency',
+        currency,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+      pendingPayout: Number(bond.pendingPayout) === 0 ? 0 : bond.pendingPayout.toFixed(4),
+      pendingPayoutInUSD: Number(bond.pendingPayout * rawPrice).toLocaleString(undefined, {
+        style: 'currency',
+        currency,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+    };
+  });
+  const formattedWrappedBalances = allBalances.wrappedBalances.balances.map((bond)=>{
+    return {
+      ...bond,
+      convertedBalance: Number(bond.convertedBalance) === 0 ? 0 : bond.convertedBalance.toFixed(4),
+      convertedBalanceInUSD: Number(bond.convertedBalance * rawPrice).toLocaleString(undefined, {
+        style: 'currency',
+        currency,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+      tokenBalance: Number(bond.tokenBalance) === 0 ? 0 : bond.tokenBalance.toFixed(4)
+    };
+  })
+  const formattedCollateralBalances = allBalances.collateralBalances.balances.map((bond)=>{
+    return {
+      ...bond,
+      convertedBalance: Number(bond.convertedBalance) === 0 ? 0 : bond.convertedBalance.toFixed(4),
+      convertedBalanceInUSD: Number(bond.convertedBalance * rawPrice).toLocaleString(undefined, {
+        style: 'currency',
+        currency,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+      tokenBalance: Number(bond.tokenBalance) === 0 ? 0 : bond.tokenBalance.toFixed(4)
+    };
+  })
+  if (currentFarm.data === null) return currentFarm;
 
+  const formatRebaseParams = [
+    Number(allBalances.stakingTokenBalance + allBalances.wrappedBalances?.total + allBalances.warmupBalance + allBalances.collateralBalances?.total),
+    Number(allBalances.fullBondTotal + allBalances.tokenBalance),
+    Number(currentFarm.data.rawPrice),
+    currentFarm.data.stakingRebase,
+  ];
+  let rawTotal = (
+      allBalances.tokenBalance +
+      allBalances.stakingTokenBalance +
+      allBalances.fullBondTotal +
+      allBalances.warmupBalance +
+      allBalances.wrappedBalances.total +
+      allBalances.collateralBalances.total
+    ) * currentFarm.data?.rawPrice;
+  rawTotal = Number(rawTotal.toFixed(2));
+  return {
+    ...currentFarm,
+    balances: {
+      ...allBalances,
+      bonds: formattedBonds,
+      wrappedBalances: {
+        ...allBalances.wrappedBalances,
+        balances: formattedWrappedBalances
+      },
+      collateralBalances: {
+        ...allBalances.collateralBalances,
+        balances: formattedCollateralBalances
+      },
+      rawTotal,
+      warmupBalance: Number(allBalances.warmupBalance) === 0 ? 0 :allBalances.warmupBalance.toFixed(4),
+      warmupBalanceInUSD: Number(allBalances.warmupBalance * rawPrice).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+      stakingTokenBalance: Number(allBalances.stakingTokenBalance) === 0 ? 0 :allBalances.stakingTokenBalance.toFixed(4),
+      stakingTokenBalanceInUSD: Number(allBalances.stakingTokenBalance * rawPrice).toLocaleString(undefined, {
+        style: 'currency',
+        currency,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+      tokenBalance: Number(allBalances.tokenBalance) === 0 ? 0 :allBalances.tokenBalance.toFixed(4),
+      tokenBalanceInUSD: Number(allBalances.tokenBalance * rawPrice).toLocaleString(undefined, {
+        style: 'currency',
+        currency,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }),
+      total: rawTotal.toLocaleString(undefined, {
+        style: 'currency',
+        currency,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      })
+    },
+    roiCalculations: {
+      roiRebase: formatRebase(...formatRebaseParams, 1, currency),
+      roi5Day: formatRebase(
+        ...formatRebaseParams,
+        currentFarm.data.distributeInterval * 5,
+        currency),
+      roiDynamic: formatRebase(
+        ...formatRebaseParams,
+        currentFarm.data.distributeInterval * currentFarm.roiDynamic,
+        currency)
+    }
+  }
+}
 const combineBalances = (balances, addresses) => {
   if (typeof balances === 'undefined') return {
     bonds: [],
@@ -88,18 +211,22 @@ const combineBalances = (balances, addresses) => {
     }
   });
 }
-const formatRebase = (stakedBalance, otherBalance, price, stakingRebase, count) => {
+const formatRebase = (stakedBalance, otherBalance, price, stakingRebase, count, currency) => {
   const percent = (Math.pow(1 + stakingRebase, count) - 1);
   return {
     profit: Number(
-      (percent * stakedBalance * price).toFixed(2)
+      (percent * stakedBalance * price)
     ).toLocaleString(undefined, {
+      style: 'currency',
+      currency,
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     }),
     total: Number(
       ((otherBalance + (stakedBalance + (percent * stakedBalance))) * price)
     ).toLocaleString(undefined, {
+      style: 'currency',
+      currency,
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     }),
@@ -109,121 +236,72 @@ const formatRebase = (stakedBalance, otherBalance, price, stakingRebase, count) 
     percent: Number(
       (percent * 100)
     ).toLocaleString(undefined, {
+      style: 'currency',
+      currency,
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     })
   };
 };
-const getFarm = function(currentFarm, balances, addresses) {
-  const allBalances = combineBalances(balances, addresses);
-  const rawPrice = currentFarm.data?.rawPrice || 0;
-  const formattedBonds = allBalances.bonds.map((bond)=>{
-    return {
-      ...bond,
-      payout: Number(bond.payout) === 0 ? 0 : bond.payout.toFixed(4),
-      payoutInUSD: Number(bond.payout * rawPrice).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }),
-      pendingPayout: Number(bond.pendingPayout) === 0 ? 0 : bond.pendingPayout.toFixed(4),
-      pendingPayoutInUSD: Number(bond.pendingPayout * rawPrice).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }),
-    };
-  });
-  const formattedWrappedBalances = allBalances.wrappedBalances.balances.map((bond)=>{
-    return {
-      ...bond,
-      convertedBalance: Number(bond.convertedBalance) === 0 ? 0 : bond.convertedBalance.toFixed(4),
-      convertedBalanceInUSD: Number(bond.convertedBalance * rawPrice).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }),
-      tokenBalance: Number(bond.tokenBalance) === 0 ? 0 : bond.tokenBalance.toFixed(4)
-    };
-  })
-  const formattedCollateralBalances = allBalances.collateralBalances.balances.map((bond)=>{
-    return {
-      ...bond,
-      convertedBalance: Number(bond.convertedBalance) === 0 ? 0 : bond.convertedBalance.toFixed(4),
-      convertedBalanceInUSD: Number(bond.convertedBalance * rawPrice).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }),
-      tokenBalance: Number(bond.tokenBalance) === 0 ? 0 : bond.tokenBalance.toFixed(4)
-    };
-  })
-  if (currentFarm.data === null) return currentFarm;
-
-  const formatRebaseParams = [
-    Number(allBalances.stakingTokenBalance + allBalances.wrappedBalances?.total + allBalances.warmupBalance + allBalances.collateralBalances?.total),
-    Number(allBalances.fullBondTotal + allBalances.tokenBalance),
-    Number(currentFarm.data.rawPrice),
-    currentFarm.data.stakingRebase,
-  ];
-  let rawTotal = (
-      allBalances.tokenBalance +
-      allBalances.stakingTokenBalance +
-      allBalances.fullBondTotal +
-      allBalances.warmupBalance +
-      allBalances.wrappedBalances.total +
-      allBalances.collateralBalances.total
-    ) * currentFarm.data?.rawPrice;
-  rawTotal = Number(rawTotal.toFixed(2));
+const formatStakingInfo = (stakingInfo, currency) => {
+  if(stakingInfo === null) return stakingInfo;
   return {
-    ...currentFarm,
-    balances: {
-      ...allBalances,
-      bonds: formattedBonds,
-      wrappedBalances: {
-        ...allBalances.wrappedBalances,
-        balances: formattedWrappedBalances
-      },
-      collateralBalances: {
-        ...allBalances.collateralBalances,
-        balances: formattedCollateralBalances
-      },
-      rawTotal,
-      warmupBalance: Number(allBalances.warmupBalance) === 0 ? 0 :allBalances.warmupBalance.toFixed(4),
-      warmupBalanceInUSD: Number(allBalances.warmupBalance * rawPrice).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }),
-      stakingTokenBalance: Number(allBalances.stakingTokenBalance) === 0 ? 0 :allBalances.stakingTokenBalance.toFixed(4),
-      stakingTokenBalanceInUSD: Number(allBalances.stakingTokenBalance * rawPrice).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }),
-      tokenBalance: Number(allBalances.tokenBalance) === 0 ? 0 :allBalances.tokenBalance.toFixed(4),
-      tokenBalanceInUSD: Number(allBalances.tokenBalance * rawPrice).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }),
-      total: rawTotal.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      })
-    },
-    roiCalculations: {
-      roiRebase: formatRebase(...formatRebaseParams, 1),
-      roi5Day: formatRebase(
-        ...formatRebaseParams,
-        currentFarm.data.distributeInterval * 5),
-      roiDynamic: formatRebase(
-        ...formatRebaseParams,
-        currentFarm.data.distributeInterval
-        * currentFarm.roiDynamic)
-    }
+    ...stakingInfo,
+    price: Number(stakingInfo.rawPrice).toLocaleString(undefined, {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }),
+    apy: Number((
+      (Math.pow(1 + stakingInfo.stakingRebase,
+        stakingInfo.distributeInterval * 365) - 1) * 100)
+      .toFixed(0))
+      .toLocaleString(),
+    rawApy: Number((
+      (Math.pow(1 + stakingInfo.stakingRebase,
+        stakingInfo.distributeInterval * 365) - 1) * 100)
+      .toFixed(0)),
+    $TVL: (Number(stakingInfo.lockedValue) *
+    Number(stakingInfo.rawPrice)).toLocaleString(undefined, {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }),
+    $Circ: (Number(stakingInfo.circulatingSupply) *
+    Number(stakingInfo.rawPrice)).toLocaleString(undefined, {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }),
+    $MC: (Number(stakingInfo.totalSupply) *
+    Number(stakingInfo.rawPrice)).toLocaleString(undefined, {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }),
+    rawMC: (Number(stakingInfo.totalSupply) *
+    Number(stakingInfo.rawPrice)),
+    $RFV: Number(stakingInfo.totalReserves).toLocaleString(undefined, {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }),
+    $BackedPrice: (Number(stakingInfo.totalReserves) /
+    Number(stakingInfo.totalSupply)).toLocaleString()
   }
-}
-
+};
 const getMemoizedFarm = (farmKey) => createSelector(
   (state)=> state.farms[farmKey],
   (state) => state.balances[farmKey],
   (state) => state.app.addresses,
-  (farm, balances, addresses) => {
-    return getFarm(farm, balances, addresses);
+  (state) => state.app.fiatCurrency,
+  (farm, balances, addresses, fiatCurrency) => {
+    return getFarm(farm, balances, addresses, fiatCurrency);
   }
 )
 

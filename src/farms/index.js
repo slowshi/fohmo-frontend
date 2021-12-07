@@ -19,6 +19,7 @@ import BSC_GYRO from './BSC-GYRO.json';
 import BSC_XEUS from './BSC-XEUS.json';
 import BSC_PID from './BSC-PID.json';
 import BSC_JADE from './BSC-JADE.json';
+import BSC_LOVE from './BSC-LOVE.json';
 import BSC_RA from './BSC-RA.json';
 import BSC_META from './BSC-META.json';
 import BSC_NMS from './BSC-NMS.json';
@@ -69,6 +70,7 @@ const farms = {
   ...BSC_XEUS,
   ...BSC_JADE,
   ...BSC_META,
+  ...BSC_LOVE,
   ...BSC_NMS,
   ...BSC_PID,
   ...BSC_RA,
