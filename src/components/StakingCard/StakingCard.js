@@ -48,7 +48,7 @@ function StakingCard(params) {
             </span>
             {!hideBalanceData ?
             <span>
-              {hideTotals ? `-` :`${farm.balances?.total ?? `0`}`}
+              {hideTotals ? `-` :`${farm.balances?.total ?? 0}`}
             </span>
             : ''}
           </div>

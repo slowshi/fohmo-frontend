@@ -51,13 +51,17 @@ const fiatCurrencyMap = {
     label: 'CAD',
     address: '0xa34317db73e77d453b1b8d04550c44d10e981c8e'
   },
+  eur: {
+    label: 'EUR',
+    address: '0xb49f677943bc038e9857d61e7d053caa2c1734c1'
+  },
   gbp: {
     label: 'GBP',
     address: '0x5c0ab2d9b5a7ed9f470386e82bb36a3613cdd4b5'
   },
-  eur: {
-    label: 'EUR',
-    address: '0xb49f677943bc038e9857d61e7d053caa2c1734c1'
+  sgd: {
+    label: 'SGD',
+    address: '0xe25277ff4bbf9081c75ab0eb13b4a13a721f3e13'
   }
 }
 const networks = {

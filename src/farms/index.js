@@ -43,7 +43,7 @@ import MOVR_FHM from './MOVR-FHM.json';
 import MOVR_ROME from './MOVR-ROME.json'
 import MOVR_MD from './MOVR-MD.json';
 import ONE_CHEEZ from './ONE-CHEEZ.json';
-import ONE_EIGHT from './ONE-EIGHT.json';
+// import ONE_EIGHT from './ONE-EIGHT.json';
 import ONE_ODAO from './ONE-ODAO.json';
 import ONE_WAGMI from './ONE-WAGMI.json';
 
@@ -93,7 +93,7 @@ const farms = {
   ...MOVR_MD,
   ...MOVR_ROME,
   ...ONE_CHEEZ,
-  ...ONE_EIGHT,
+  // ...ONE_EIGHT,
   ...ONE_ODAO,
   ...ONE_WAGMI,
 };
