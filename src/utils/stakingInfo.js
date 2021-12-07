@@ -270,9 +270,14 @@ class StakingInfo {
         price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
       }
       price = Number(price) * ethPrice;
-    } else if (key === 'MATIC-KLIMA' || key === 'MOVR-FHM' ) {
-      price = ethers.utils.formatUnits(reserves.reserve0, 'mwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-    } else if(key === 'ARB-Z20' || key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID') {
+    } else if (key === 'MATIC-KLIMA' || key === 'MOVR-FHM' || key === 'ARB-OMIC' ) {
+      //usdc
+      if (token0 === farmParams.token) {
+        price = ethers.utils.formatUnits(reserves.reserve1, 'mwei')/ ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+      } else {
+        price = ethers.utils.formatUnits(reserves.reserve0, 'mwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+      }
+    } else if(key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID') {
       price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
     }else {
       if (token0 === farmParams.token) {
@@ -308,6 +313,11 @@ class StakingInfo {
     if (this.timeTemplates.indexOf(key) > -1) {
       seconds = epoch.distribute.toNumber() - (Date.now() / 1000);
       distributeInterval = msPerDay / epoch.endBlock.toNumber();
+    } else if(key === 'ARB-FCS' || key === 'ARB-OMIC') {
+      const ethParams = networks.ETH;
+      const ethCurrentBlock = await this.loadCacheBlockNumber(ethParams.rpcURL, clearCache);
+      distributeInterval = msPerDay / (epoch._length.toNumber() * ethParams.blockRateSeconds);
+      seconds = this.secondsUntilBlock(ethCurrentBlock, epoch.endBlock.toNumber(), ethParams.blockRateSeconds);
     } else if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'CRO-FORT') {
       seconds = epoch.endBlock.toNumber() - (Date.now() / 1000);
       distributeInterval = msPerDay / epoch._length.toNumber();

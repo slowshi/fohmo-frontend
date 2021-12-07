@@ -109,7 +109,7 @@ const networks = {
     name: 'Arbitrum',
     rpcURL: 'https://arb1.arbitrum.io/rpc',
     chartURL: 'https://dexscreener.com/arbitrum/',
-    blockRateSeconds: 3.53
+    blockRateSeconds: 3.02
   },
   BSC: {
     symbol: 'BSC',

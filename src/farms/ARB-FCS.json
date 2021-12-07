@@ -1,0 +1,37 @@
+{
+  "ARB-FCS": {
+    "farmSymbol": "FCS",
+    "networkSymbol": "ARB",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "FaircastleDAO",
+      "symbol": "FCS",
+      "link": "https://app.faircastle.finance/#/stake",
+      "token": "0xf754675Ca3d7D34290007065a4DE786FeA6bB9B5",
+      "stakingSymbol": "sFCS",
+      "stakingToken": "0x61876B7bde26F64131aCF27eBD17B5d3B1c2892c",
+      "stakingContract": "0x98CE2a2F2797A8A1880C359cD8279d1dfFd04f6C",
+      "LPContract": "0xcce0a7f46bc1698365602834b3eaa448c16eb886",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x0F8A60fED0f95A0020F544E46813A8397bf23E18",
+      "bondingCalculator": "0x0C70ebE4C234E94159b8ba8b3DaD02840aF4D781",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xccee26786acc7febe175d42a205ee917496ab388",
+          "symbol": "FCS-MIM"
+        },
+        {
+          "address": "0xb20543f26f598f094c9147c4c331bb36d411ccbf",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0xD43a17f14Cf65f74689327c2Ad46FE4BCea76155",
+          "symbol": "wETH"
+        }
+      ]
+    }
+  }
+}
