@@ -629,7 +629,7 @@ class StakingInfo {
   }
 
   prettifySeconds(seconds, resolution) {
-    if (seconds !== 0 && !seconds) {
+    if (seconds !== 0 && !seconds || seconds < 0) {
       return 'Rebasing...';
     }
     const absSeconds = Math.abs(seconds);
