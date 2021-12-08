@@ -1,0 +1,41 @@
+{
+  "FTM-LUX": {
+    "farmSymbol": "LUX",
+    "networkSymbol": "FTM",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Luxor",
+      "symbol": "LUX",
+      "link": "https://app.luxor.money/#/stake",
+      "token": "0x6671E20b83Ba463F270c8c75dAe57e3Cc246cB2b",
+      "stakingSymbol": "LUMENS",
+      "stakingToken": "0x4290b33158F429F40C0eDc8f9b9e5d8C5288800c",
+      "stakingContract": "0xf3F0BCFd430085e198466cdCA4Db8C2Af47f0802",
+      "LPContract": "0x46729c2aeeabe7774a0e710867df80a6e19ef851",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xDF2A28Cc2878422354A93fEb05B41Bd57d71DB24",
+      "bondingCalculator": "0x6e2bd6d4654226C752A0bC753A3f9Cd6F569B6cB",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xaC64DC47A1fe52458D3418AC7C568Edc3306130a",
+          "symbol": "LUX-DAI"
+        },
+        {
+          "address": "0xCf994423b39A6991e82443a8011Bf6749e19434b",
+          "symbol": "DAI"
+        },
+        {
+          "address": "0x6fB6368e59621eD69639a44C7b39930780cCCE51",
+          "symbol": "LUX-wFTM"
+        },
+        {
+          "address": "0x376969e00621Ebf685fC3D1F216C00d19B162923",
+          "symbol": "wFTM"
+        }
+      ]
+    }
+  }
+}

@@ -21,6 +21,10 @@ const sortFilters = [
     key: 'rebase'
   },
   {
+    label: 'TVL',
+    key: 'tvl'
+  },
+  {
     label: 'Farm A-Z',
     key: 'farm'
   },
@@ -34,6 +38,7 @@ const sortMap = {
   'balance': 'balances.rawTotal',
   'mc': 'data.rawMC',
   'apy': 'data.rawApy',
+  'tvl': 'data.rawTVL',
   'rebase': 'data.nextRebaseSeconds',
   'farm': 'constants.name',
   'eco': 'networkSymbol',

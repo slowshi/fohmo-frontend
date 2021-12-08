@@ -107,7 +107,7 @@ function AllTotalsCard() {
             :
             <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
               <span>{aggregatedTotals.totalExpectedValue}</span>
-              <span class="txt-smol">(+{aggregatedTotals.totalProfit})</span>
+              <span className="txt-smol">(+{aggregatedTotals.totalProfit})</span>
             </span>
             }
           </div>

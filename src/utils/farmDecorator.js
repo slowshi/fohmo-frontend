@@ -260,6 +260,8 @@ const formatStakingInfo = (stakingInfo, currency) => {
       (Math.pow(1 + stakingInfo.stakingRebase,
         stakingInfo.distributeInterval * 365) - 1) * 100)
       .toFixed(0)),
+    rawTVL:(Number(stakingInfo.lockedValue) *
+    Number(stakingInfo.rawPrice)),
     $TVL: (Number(stakingInfo.lockedValue) *
     Number(stakingInfo.rawPrice)).toLocaleString(undefined, {
       style: 'currency',

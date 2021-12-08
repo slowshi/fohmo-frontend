@@ -35,6 +35,7 @@ import FTM_GIZA from './FTM-GIZA.json';
 import FTM_EXOD from './FTM-EXOD.json';
 import FTM_FHM from './FTM-FHM.json';
 import FTM_HEC from './FTM-HEC.json';
+import FTM_LUX from './FTM-LUX.json';
 import FTM_SPA from './FTM-SPA.json';
 // import KLAY_KRNO from './KLAY-KRNO.json';
 // import MATIC_CLAM from './MATIC-CLAM.json';
@@ -87,6 +88,7 @@ const farms = {
   ...FTM_FHM,
   ...FTM_GIZA,
   ...FTM_HEC,
+  ...FTM_LUX,
   ...FTM_SPA,
   // ...KLAY_KRNO,
   // ...MATIC_CLAM,

@@ -35,6 +35,7 @@ class StakingInfo {
     'AVAX-FORT',
     'AVAX-PB',
     'AVAX-VAL',
+    'FTM-LUX',
     'ONE-WAGMI',
     'ARB-Z20',
     'ARB-UMAMI',
@@ -130,7 +131,7 @@ class StakingInfo {
       clearCache
     );
     if (key === 'AVAX-TIME' || key === 'ARB-Z20' || key === 'AVAX-RUG' || key === 'AVAX-MAXI'
-    || key === 'ONE-ODAO' || key === 'AVAX-LF') {
+    || key === 'ONE-ODAO' || key === 'AVAX-LF' || key === 'FTM-LUX') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 4.5).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
     } else if (key === 'CRO-FORT') {
