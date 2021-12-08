@@ -1,8 +1,10 @@
 import {useSelector, useDispatch} from "react-redux";
-import {networks} from '../../utils/constants'
+import {networks, allFarms} from '../../utils/constants'
 import './StakingCard.css';
 import {getMemoizedFarm} from '../../utils/farmDecorator'
 import { stakingInfo } from "../../utils/stakingInfo";
+import pageLoad from '../../utils/pageLoad';
+
 function StakingCard(params) {
   const dispatch = useDispatch();
   const {farmSymbol, networkSymbol} = params;
@@ -37,7 +39,28 @@ function StakingCard(params) {
       }
     });
   };
-
+  const farmFilters = useSelector((state)=>state.app.farmFilters);
+  const removeFilter = () => {
+    if(farmFilters.length === 0) return;
+    const index = farmFilters.indexOf(farmKey);
+    let newFilters = [];
+    if (index > -1) {
+      newFilters = [
+        ...farmFilters.slice(0, index),
+        ...farmFilters.slice(index + 1)
+      ];
+    } else {
+      newFilters = [
+        ...farmFilters,
+        farmKey
+      ];
+    }
+    dispatch({
+      type: 'setFarmFilters',
+      payload: newFilters
+    });
+    pageLoad();
+  }
   return (
     <div className="card mb-2">
       <div className="card-body">
@@ -142,6 +165,13 @@ function StakingCard(params) {
             </div>
             : <div></div>}
           <div>
+            {farmFilters.length > 0 ?
+            <button className="btn btn-sm btn-outline-secondary me-1"
+            onClick={removeFilter}
+            disabled={farmFilters.length === 1}>
+              <i className="bi bi-x"></i>
+            </button>
+            : ''}
             <button
             onClick={refreshData}
             className="btn btn-sm btn-outline-secondary"
