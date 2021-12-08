@@ -262,6 +262,12 @@ const formatStakingInfo = (stakingInfo, currency) => {
       .toFixed(0)),
     rawTVL:(Number(stakingInfo.lockedValue) *
     Number(stakingInfo.rawPrice)),
+    $LPLiquidity: Number(stakingInfo.rawLPLiquidity).toLocaleString(undefined, {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }),
     $TVL: (Number(stakingInfo.lockedValue) *
     Number(stakingInfo.rawPrice)).toLocaleString(undefined, {
       style: 'currency',

@@ -25,6 +25,10 @@ const sortFilters = [
     key: 'tvl'
   },
   {
+    label: 'LP Liquidity',
+    key: 'liquidity'
+  },
+  {
     label: 'Farm A-Z',
     key: 'farm'
   },
@@ -39,6 +43,7 @@ const sortMap = {
   'mc': 'data.rawMC',
   'apy': 'data.rawApy',
   'tvl': 'data.rawTVL',
+  'liquidity': 'data.rawLPLiquidity',
   'rebase': 'data.nextRebaseSeconds',
   'farm': 'constants.name',
   'eco': 'networkSymbol',

@@ -76,6 +76,7 @@ function StakingCard(params) {
             <div className="text-placeholder placeholder w-100"></div>
             <div className="text-placeholder placeholder w-100"></div>
             <div className="text-placeholder placeholder w-100"></div>
+            <div className="text-placeholder placeholder w-100"></div>
           </div>
         :
           <div>
@@ -110,12 +111,16 @@ function StakingCard(params) {
               <span>{farm.data?.$TVL}</span>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
-              <strong>Estimated MC (TS x P)</strong>
+              <strong>Estimated MC</strong>
               <span>{farm.data?.$MC}</span>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>Risk Free Value</strong>
               <span>{farm.data?.$RFV}</span>
+            </span>
+            <span className="card-text d-flex h-auto justify-content-between align-items-center">
+              <strong>LP Liquidity</strong>
+              <span>{farm.data?.$LPLiquidity}</span>
             </span>
           </div>
         }

@@ -252,6 +252,9 @@ class StakingInfo {
     );
     let price = 0;
     let ethPrice = 0;
+    let rawLPLiquidity = 0;
+    let stable = 0;
+    let token = 0;
     if (key === 'ETH-SQUID' || key === 'ETH-LOBI' || key == 'AVAX-OTWO') {
       const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
       const ethReserves = await this.loadCahceContractCall(
@@ -262,31 +265,41 @@ class StakingInfo {
       );
       if(key === 'ETH-LOBI') {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve1, 'ether') / ethers.utils.formatUnits(ethReserves.reserve0, 'gwei');
-        price = ethers.utils.formatUnits(reserves.reserve0, 'gwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+        stable = ethPrice * ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+        token =  ethers.utils.formatUnits(reserves.reserve1, 'gwei');
       } else if (key === 'AVAX-OTWO') {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'ether') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
-        price = ethers.utils.formatUnits(reserves.reserve0, 'ether') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+        stable = ethPrice * ethers.utils.formatUnits(reserves.reserve0, 'ether');
+        token =  ethers.utils.formatUnits(reserves.reserve1, 'gwei');
       } else {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'mwei') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
-        price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+        stable = ethPrice * ethers.utils.formatUnits(reserves.reserve1, 'ether');
+        token =  ethers.utils.formatUnits(reserves.reserve0, 'gwei');
       }
       price = Number(price) * ethPrice;
     } else if (key === 'MATIC-KLIMA' || key === 'MOVR-FHM' || key === 'ARB-OMIC' ) {
       //usdc
       if (token0 === farmParams.token) {
-        price = ethers.utils.formatUnits(reserves.reserve1, 'mwei')/ ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+        stable = ethers.utils.formatUnits(reserves.reserve1, 'mwei');
+        token = ethers.utils.formatUnits(reserves.reserve0, 'gwei');
       } else {
-        price = ethers.utils.formatUnits(reserves.reserve0, 'mwei') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+        stable = ethers.utils.formatUnits(reserves.reserve0, 'mwei');
+        token = ethers.utils.formatUnits(reserves.reserve1, 'gwei');
       }
     } else if(key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID') {
-      price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+      stable = ethers.utils.formatUnits(reserves.reserve1, 'ether');
+      token = ethers.utils.formatUnits(reserves.reserve0, 'gwei');
     }else {
       if (token0 === farmParams.token) {
-        price = ethers.utils.formatUnits(reserves.reserve1, 'ether') / ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+        stable = ethers.utils.formatUnits(reserves.reserve1, 'ether');
+        token = ethers.utils.formatUnits(reserves.reserve0, 'gwei');
       } else {
-        price = ethers.utils.formatUnits(reserves.reserve0, 'ether') / ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+        stable = ethers.utils.formatUnits(reserves.reserve0, 'ether');
+        token = ethers.utils.formatUnits(reserves.reserve1, 'gwei');
       }
     }
+    price = stable / token;
+    rawLPLiquidity = stable * 2;
 
     let totalReserves = 0;
     if(farmParams.treasuryContract !== null) {
@@ -349,6 +362,7 @@ class StakingInfo {
         distributeInterval,
         stakingRebase,
         rawPrice: Number(price / currencyConversion),
+        rawLPLiquidity,
         totalReserves: Number(totalReserves),
         currentIndex,
         rawCurrentIndex,
