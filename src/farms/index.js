@@ -27,6 +27,7 @@ import BSC_META from './BSC-META.json';
 import BSC_NMS from './BSC-NMS.json';
 import BSC_TAC from './BSC-TAC.json';
 import BSC_TEM from './BSC-TEM.json';
+import BSC_UDO from './BSC-UDO.json';
 import CRO_FORT from './CRO-FORT.json';
 import ETH_LOBI from './ETH-LOBI.json';
 import ETH_OHM from './ETH-OHM.json';
@@ -37,6 +38,7 @@ import FTM_FHM from './FTM-FHM.json';
 import FTM_HEC from './FTM-HEC.json';
 import FTM_LUX from './FTM-LUX.json';
 import FTM_SPA from './FTM-SPA.json';
+// import FTM_PUMP from './FTM-PUMP.json';
 // import KLAY_KRNO from './KLAY-KRNO.json';
 // import MATIC_CLAM from './MATIC-CLAM.json';
 import MATIC_CLAM2 from './MATIC-CLAM2.json';
@@ -81,6 +83,7 @@ const farms = {
   ...BSC_RA,
   ...BSC_TAC,
   ...BSC_TEM,
+  ...BSC_UDO,
   ...ETH_LOBI,
   ...ETH_OHM,
   ...ETH_SQUID,
@@ -90,6 +93,7 @@ const farms = {
   ...FTM_HEC,
   ...FTM_LUX,
   ...FTM_SPA,
+  // ...FTM_PUMP,
   // ...KLAY_KRNO,
   // ...MATIC_CLAM,
   ...MATIC_CLAM2,

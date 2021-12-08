@@ -31,6 +31,10 @@
           "symbol": "UST"
         },
         {
+          "address": "0x0B6FFe53C737fB3BEAfcD0Cfd4A560e9C2EE3742",
+          "symbol": "BUSD"
+        },
+        {
           "address": "0xd6400D88A59035274555583A3748E8A9C98941F1",
           "symbol": "USDT"
         },

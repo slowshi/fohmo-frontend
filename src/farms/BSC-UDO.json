@@ -1,0 +1,36 @@
+{
+  "BSC-UDO": {
+    "farmSymbol": "UDO",
+    "networkSymbol": "BSC",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "UnusDAO",
+      "symbol": "UDO",
+      "link": "https://unusdao.finance/#/stake",
+      "token": "0xB91Ec4F9D7D12A1aC145A7Ae3b78AFb45856C9c8",
+      "stakingSymbol": "sUDO",
+      "stakingToken": "0x76D91700CE49968DC314a23287343Ed9A0571eD0",
+      "stakingContract": "0xC34AF465Aac5928afec7e3642BD8Ca7873a7F2b2",
+      "LPContract": "0x364952dc20b5720b7fd3e73141cf6a85d9af8643",
+      "lockedSupplyContract": "0xfe363340b8f1ea5eb01f81c41bfb30a966a407ec",
+      "treasuryContract": "0x01CDdb5C0986B8521F93A9A5C6d84D6994a82742",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xdE2730eb9bAC0E704e0F322b5BE87B6e404C639b",
+          "symbol": "UDO-BUSD"
+        },
+        {
+          "address": "0x7609fE013d928704505eD95efD1b0EF09a725791",
+          "symbol": "BUSD"
+        },
+        {
+          "address": "0xD74973Fd1af062B1CAA0e843aBF06AD77236c001",
+          "symbol": "USDT"
+        }
+      ]
+    }
+  }
+}

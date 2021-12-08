@@ -28,6 +28,7 @@ class StakingInfo {
     'AVAX-SB',
     'AVAX-MAXI',
     'AVAX-GG',
+    'AVAX-PUMP',
     'AVAX-OTWO',
     'AVAX-SDOG',
     'AVAX-CROWN',
@@ -130,12 +131,15 @@ class StakingInfo {
       [],
       clearCache
     );
-    if (key === 'AVAX-TIME' || key === 'ARB-Z20' || key === 'AVAX-RUG' || key === 'AVAX-MAXI'
+    if (key === 'AVAX-TIME' || key === 'ARB-Z20' || key === 'AVAX-MAXI'
     || key === 'ONE-ODAO' || key === 'AVAX-LF' || key === 'FTM-LUX') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 4.5).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
     } else if (key === 'CRO-FORT') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 16.1).toFixed(2);
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
+    } else if (key === 'AVAX-RUG') {
+      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei')/ 100).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
     } else if (key === 'AVAX-PB') {
       currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 2000).toFixed(2);
@@ -211,13 +215,7 @@ class StakingInfo {
       [],
       clearCache
     );
-    // console.log(
-    //   key,
-    //   epoch._length.toNumber(),
-    //   epoch.number.toNumber(),
-    //   epoch.endBlock.toNumber(),
-    //   epoch.distribute.toNumber(),
-    // )
+
     let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, clearCache);
 
     const lockedValue = await this.loadCahceContractCall(
@@ -319,7 +317,13 @@ class StakingInfo {
         totalReserves = totalReserves * ethPrice;
       }
     }
-
+    // console.log(
+    //   key,
+    //   'len', epoch._length.toNumber(),
+    //   'num', epoch.number.toNumber(),
+    //   'end', epoch.endBlock.toNumber(),
+    //   'dist', epoch.distribute.toNumber(),
+    // )
     const currentBlock = await this.loadCacheBlockNumber(networkParams.rpcURL, clearCache);
     let seconds = 0;
     let distributeInterval = 0;
@@ -335,24 +339,13 @@ class StakingInfo {
     } else if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'CRO-FORT') {
       seconds = epoch.endBlock.toNumber() - (Date.now() / 1000);
       distributeInterval = msPerDay / epoch._length.toNumber();
+    } else if (key === 'FTM-PUMP'){
+      seconds = epoch.distribute.toNumber() - (Date.now() / 1000);
+      distributeInterval = msPerDay / epoch.endBlock.toNumber();
     } else {
       distributeInterval = msPerDay / (epoch._length.toNumber() * networkParams.blockRateSeconds);
       seconds = this.secondsUntilBlock(currentBlock, epoch.endBlock.toNumber(), networkParams.blockRateSeconds);
     }
-    // const data = {
-    //   nextRebase: this.prettifySeconds(seconds),
-    //   nextRebaseSeconds: seconds,
-    //   distributeInterval,
-    //   stakingRebase,
-    //   rawPrice: Number(price / currencyConversion),
-    //   price: Number((price / currencyConversion).toFixed(2)),
-    //   totalReserves: Number(totalReserves),
-    //   currentIndex,
-    //   rawCurrentIndex,
-    //   totalSupply: Number(ethers.utils.formatUnits(totalSupply, 'gwei')),
-    //   circulatingSupply: Number(ethers.utils.formatUnits(circulatingSupply, 'gwei')),
-    //   lockedValue: Number(ethers.utils.formatUnits(lockedValue, 'gwei')),
-    // };
     return {
       farmSymbol,
       networkSymbol,

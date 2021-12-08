@@ -1,0 +1,40 @@
+{
+  "FTM-PUMP": {
+    "farmSymbol": "PUMP",
+    "networkSymbol": "FTM",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "PumpkinDAO",
+      "symbol": "PUMP",
+      "link": "https://app.pumpkindao.com/#/stake",
+      "token": "0x8eDDA0107D661E82df660DBa01Ff1D40FA17B70c",
+      "stakingSymbol": "KIN",
+      "stakingToken": "0x05A54D71e0c9F4bd0bF2CAF47344e6393DA66701",
+      "stakingContract": "0x5d189D8224a9aFBc3eC69bedBe2f6dd89B937E73",
+      "LPContract": "0xdf42866dc8fa6a962124b5d9eb8c91fa447f4feb",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x0DEA39519cb8c7c549e321d3020E96f91Ed36Ed3",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xa75e675B31fd279f80646D151BC95b94dEcaf26E",
+          "symbol": "DAI"
+        },
+        {
+          "address": "0x0a7C6339345a22FD0193Bd6E3b0DE62c73B33fFB",
+          "symbol": "PUMP-DAI"
+        },
+        {
+          "address": "0x5d5d07c0d9c4af80e40fc779b12e8b696197fd31",
+          "symbol": "wFTM"
+        },
+        {
+          "address": "0xb75aac5b0061d9395e4b005a4417b21b32055158",
+          "symbol": "PUMP-wFTM"
+        }
+      ]
+    }
+  }
+}
