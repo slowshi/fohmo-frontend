@@ -30,8 +30,9 @@ function AllTotalsCard() {
       const stakedBalance = Number(farm.balances?.stakingTokenBalance) || 0;
       const wrappedStakedBalance = Number(farm.balances?.wrappedBalances?.total) || 0;
       const collateralBalance = Number(farm.balances?.collateralBalances?.total) || 0;
+      const warmupBalance = Number(farm.balances?.warmupBalance) || 0;
       const otherBalance = Number(farm.balances?.fullBondTotal + Number(farm.balances?.tokenBalance));
-      const adjustedTotal = stakedBalance + wrappedStakedBalance + collateralBalance;
+      const adjustedTotal = stakedBalance + wrappedStakedBalance + collateralBalance + warmupBalance;
       const price = Number(farm.data?.rawPrice) || 0;
       const stakingRebase = farm.data?.stakingRebase || 0;
       const distributeInterval = farm.data?.distributeInterval || 0;
