@@ -80,10 +80,10 @@ function StakingCard(params) {
               {network.name}
             </span>
             <a className="btn text-dark btn-sm"
-            target="__blank" href={farm.constants.link}>
+            target="_blank" rel="noreferrer" href={farm.constants.link}>
                 <i className="bi bi-box-arrow-up-right"></i>
             </a>
-            <a className="btn text-dark btn-sm" target="__blank" href={`${network.chartURL}${farm.constants.LPContract}`}>
+            <a className="btn text-dark btn-sm" target="_blank" rel="noreferrer" href={`${network.chartURL}${farm.constants.LPContract}`}>
               <i className="bi bi-graph-down-arrow"></i>
             </a>
           </div>
