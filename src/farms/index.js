@@ -15,7 +15,7 @@ import AVAX_RUG from './AVAX-RUG.json';
 // import AVAX_SDOG from './AVAX-SDOG.json';
 import AVAX_PB from './AVAX-PB.json';
 import AVAX_SB from './AVAX-SB.json';
-// import AVAX_TEMPO from './AVAX-TEMPO.json';
+import AVAX_TEMPO from './AVAX-TEMPO.json';
 import AVAX_VAL from './AVAX-VAL.json';
 import AVAX_TIME from './AVAX-TIME.json';
 import BSC_GYRO from './BSC-GYRO.json';
@@ -71,7 +71,7 @@ const farms = {
   // ...AVAX_SDOG,
   ...AVAX_PB,
   ...AVAX_SB,
-  // ...AVAX_TEMPO,
+  ...AVAX_TEMPO,
   ...AVAX_TIME,
   ...AVAX_VAL,
   ...CRO_FORT,

@@ -42,6 +42,10 @@
         {
           "address": "0x839Ee222E84849C752Bff1bB129cf34578BcDEc1",
           "symbol": "wBNB"
+        },
+        {
+          "address": "0x295923D9ED2De2f7164669b90328E9Bc43523256",
+          "symbol": "USDC"
         }
       ]
     }
