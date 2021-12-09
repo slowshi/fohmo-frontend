@@ -120,9 +120,10 @@ function Filters() {
         <div className="d-flex h-auto justify-content-between align-items-center mb-2">
           <div className="d-flex h-auto align-items-center">
             <button type="button"
+                  title="More Forks"
                   className={`btn btn-sm me-1 ${showFilters ? 'btn-dark' : 'btn-light'}`}
                   onClick={toggleFilters}>
-              <i className="bi bi-menu-button-wide-fill"></i>
+              <i className="bi bi-list"></i>
             </button>
             <select value={sortBy} className="form-select form-select-sm" aria-label="Sort"
             onChange={updateSortBy}>
@@ -130,16 +131,16 @@ function Filters() {
               <option key={index} value={sortFilter.key}>{sortFilter.label}</option>
               )}
             </select>
-            <button className="btn btn-sm btn-light ms-1" onClick={updateSortDirection}>
+            <button title="Sort Direction" className="btn btn-sm btn-light ms-1" onClick={updateSortDirection}>
               <i className={`bi ${sortDirection === 'desc' ? 'bi-sort-down' : 'bi-sort-up'}`}></i>
             </button>
           </div>
           {!hideBalanceData ?
             <div>
-              <button type="button" className="btn btn-sm btn-light me-1" onClick={hideZeros}>
+              <button type="button" title="Clear 0 Balances" className="btn btn-sm btn-light me-1" onClick={hideZeros}>
                 Ø
               </button>
-              <button type="button"
+              <button type="button" title="Hide Totals"
                 className={`btn btn-sm ${hideTotals ? 'btn-dark' : 'btn-light'}`}
                 onClick={toggleTotals}>
                 <i className="bi bi-eye-fill"></i>

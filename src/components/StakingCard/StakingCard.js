@@ -1,5 +1,5 @@
 import {useSelector, useDispatch} from "react-redux";
-import {networks, allFarms} from '../../utils/constants'
+import {networks} from '../../utils/constants'
 import './StakingCard.css';
 import {getMemoizedFarm} from '../../utils/farmDecorator'
 import { stakingInfo } from "../../utils/stakingInfo";
@@ -153,12 +153,13 @@ function StakingCard(params) {
             {!hideBalanceData ?
             <div>
               <button type="button"
+                      title="Staking Info"
                       className={`btn btn-sm me-1 btn-outline-secondary ${farm.showBalances && 'active'}`}
                       onClick={()=>dispatch({type: 'toggleFarmBalance', payload: farmKey})}
                       disabled={farm.loading || hideTotals || hideBalanceData}>
                 <i className="bi bi-currency-dollar" ></i>
               </button>
-              <button className={`btn btn-sm btn-outline-secondary ${farm.showROI && 'active'}`} onClick={()=>dispatch({type: 'toggleFarmROI', payload: farmKey})}
+              <button title="ROI Info" className={`btn btn-sm btn-outline-secondary ${farm.showROI && 'active'}`} onClick={()=>dispatch({type: 'toggleFarmROI', payload: farmKey})}
                 disabled={farm.loading}>
                 <i className="bi bi-clock"></i>
               </button>
@@ -166,13 +167,14 @@ function StakingCard(params) {
             : <div></div>}
           <div>
             {farmFilters.length > 0 ?
-            <button className="btn btn-sm btn-outline-secondary me-1"
+            <button title="Remove" className="btn btn-sm btn-outline-secondary me-1"
             onClick={removeFilter}
             disabled={farmFilters.length === 1}>
               <i className="bi bi-x"></i>
             </button>
             : ''}
             <button
+            title="Refresh"
             onClick={refreshData}
             className="btn btn-sm btn-outline-secondary"
             disabled={farm.loading}>

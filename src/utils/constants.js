@@ -76,6 +76,10 @@ const fiatCurrencyMap = {
   php: {
     label: 'PHP',
     address: '0x9481e7ad8be6bbb22a8b9f7b9fb7588d1df65df6'
+  },
+  brl: {
+    label: 'BRL',
+    address: '0x971e8f1b779a5f1c36e1cd7ef44ba1cc2f5eee0f'
   }
 }
 const networks = {

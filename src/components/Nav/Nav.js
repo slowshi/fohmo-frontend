@@ -117,18 +117,18 @@ function Nav() {
             Fohmo.io
           </a>
           <div>
-            <select value={currency} className="btn btn-light btn-sm me-2" aria-label="Currency"
+            <select value={currency} title="Currency" className="btn btn-light btn-sm me-2" aria-label="Currency"
             onChange={updateFiatCurrency}>
               {Object.keys(fiatCurrencyMap).map((currencyKey, index)=>
               <option key={index} value={currencyKey}>{fiatCurrencyMap[currencyKey].label}</option>
               )}
             </select>
-            <button type="button" className={`btn btn-sm me-2 ${show ? 'btn-secondary' : 'btn-light'}`} onClick={toggleShow}>
+            <button type="button" title="Addresses" className={`btn btn-sm me-2 ${show ? 'btn-secondary' : 'btn-light'}`} onClick={toggleShow}>
               {addressCount === 0 ? `+ Add Address`: ''}
               {addressCount === 1 ? `${addressCount} Address`: ''}
               {addressCount > 1 ? `${addressCount} Addresses` : ''}
             </button>
-            <button type="submit" form="search" className="btn btn-sm btn-light" onClick={onClickSearch}>
+            <button type="submit" form="search" title="Search/Refresh" className="btn btn-sm btn-light" onClick={onClickSearch}>
               <i className="bi bi-search"></i>
             </button>
               {/* <button type="button" className="btn btn-sm btn-light" onClick={toggleShowVisible}>
