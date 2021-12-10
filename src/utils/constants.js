@@ -81,6 +81,10 @@ const fiatCurrencyMap = {
     label: 'BRL',
     address: '0x971e8f1b779a5f1c36e1cd7ef44ba1cc2f5eee0f'
   }
+  // eth: {
+  //   label: 'ETH',
+  //   address: '0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419'
+  // }
 }
 const networks = {
   FTM: {

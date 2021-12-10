@@ -30,6 +30,18 @@
         {
           "address": "0xD43a17f14Cf65f74689327c2Ad46FE4BCea76155",
           "symbol": "wETH"
+        },
+        {
+          "address": "0xe4606b7c077f5e49ae56134599138747292738a1",
+          "symbol": "FRAX"
+        },
+        {
+          "address": "0xb678c334aae2ba7caa7f50c202011b06468ebfac",
+          "symbol": "wBTC"
+        },
+        {
+          "address": "0xa6117937331e8ed3cedf679fb6b4d09b211b00fa",
+          "symbol": "FCS-wETH"
         }
       ]
     }
