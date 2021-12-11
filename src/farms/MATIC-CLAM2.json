@@ -23,6 +23,10 @@
           "symbol": "FRAX (4,4)"
         },
         {
+          "address": "0xd99c8af24c5e7fd6e292b1682ec0f0cb3535e002",
+          "symbol": "FRAX-CLAM2 (4,4)"
+        },
+        {
           "address": "0x779cb532e289cbaa3d0692ae989c63c2b4fbd4d0",
           "symbol": "MAI (4,4)"
         },
@@ -31,12 +35,12 @@
           "symbol": "MAI-CLAM2 (4,4)"
         },
         {
-          "address": "0x603A74Fd527b85E0A1e205517c1f24aC71f5C263",
-          "symbol": "MAI"
+          "address": "0x1dac605bdd4e8f3ab23da9b360e672f4e973a196",
+          "symbol": "wMATIC-CLAM2 (4,4)"
         },
         {
-          "address": "0x706587BD39322A6a78ddD5491cDbb783F8FD983E",
-          "symbol": "MAI-CLAM2"
+          "address": "0xf57fb38f57d2a4fca0ee074a3f3b4e5c570959e4",
+          "symbol": "wMATIC (4,4)"
         }
       ]
     }
