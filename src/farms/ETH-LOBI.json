@@ -30,6 +30,10 @@
         {
           "address": "0xAC0d4C05797F25EfD51B8062a6CeC0F9171f22cB",
           "symbol": "FXS"
+        },
+        {
+          "address": "0x9fe77f1e0ced9c0b245363c019850b2e79821bba",
+          "symbol": "TOKE"
         }
       ]
     }
