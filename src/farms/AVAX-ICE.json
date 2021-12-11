@@ -18,6 +18,7 @@
       "bondingCalculator": null,
       "wsOHMNetworks": [],
       "wsOHMSymbol": "",
+      "isWarmup": true,
       "bondingContracts": [
         {
           "address": "0xb4c4be95979f8396a70164255a12acfaa1fa9240",

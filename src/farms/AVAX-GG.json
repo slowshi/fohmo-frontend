@@ -23,6 +23,7 @@
         }
       ],
       "wsOHMSymbol": "wsGG",
+      "isWarmup": true,
       "bondingContracts": [
         {
           "address": "0x49EDb46546035e28B7138B21FC3fcCd41bF4b928",

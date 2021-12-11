@@ -17,6 +17,7 @@
       "treasuryContract": "0x2F87A9550f19666cEF5De29c5F613966cf164BE6",
       "wsOHMNetworks": [],
       "wsOHMSymbol": "",
+      "isWarmup": true,
       "bondingContracts": [
         {
           "address": "0x881A8ECe1cD45A458eAcBA97f45b0fBc0752fCBF",

@@ -430,7 +430,7 @@ class StakingInfo {
     const bondPromises = farmParams.bondingContracts.map(getBondContract);
     const bonds = await Promise.all(bondPromises);
     let warmupBalance = 0;
-    if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'AVAX-RUG' || key == 'AVAX-GG' || key === 'AVAX-ICE') {
+    if (typeof farmParams.isWarmup !== 'undefined' && farmParams.isWarmup) {
       const warmupInfo = await this.loadCahceContractCall(
         stakingContract,
         'warmupInfo',

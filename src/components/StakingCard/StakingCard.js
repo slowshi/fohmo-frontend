@@ -193,7 +193,7 @@ function StakingCard(params) {
                 <span className="mb-1 txt-smol">({farm.balances?.tokenBalanceInUSD})</span>
               </div>
             </span>
-            {farm.balances?.warmupBalance > 0 ?
+            {typeof farm.constants.isWarmup !== 'undefined' && farm.constants.isWarmup ?
               <div>
                 <div className="txt-smol">Warmup</div>
                 <span className="card-text d-flex h-auto justify-content-between align-items-top">
