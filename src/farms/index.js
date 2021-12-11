@@ -28,6 +28,7 @@ import BSC_META from './BSC-META.json';
 import BSC_NMS from './BSC-NMS.json';
 import BSC_TAC from './BSC-TAC.json';
 import BSC_TEM from './BSC-TEM.json';
+// import BSC_DIOS from './BSC-DIOS.json';
 import BSC_UDO from './BSC-UDO.json';
 import CRO_FORT from './CRO-FORT.json';
 import ETH_LOBI from './ETH-LOBI.json';
@@ -75,6 +76,7 @@ const farms = {
   ...AVAX_TIME,
   ...AVAX_VAL,
   ...CRO_FORT,
+  // ...BSC_DIOS,
   ...BSC_GYRO,
   ...BSC_XEUS,
   ...BSC_JADE,

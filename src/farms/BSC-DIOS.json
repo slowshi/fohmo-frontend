@@ -1,0 +1,33 @@
+{
+  "BSC-DIOS": {
+    "farmSymbol": "DIOS",
+    "networkSymbol": "BSC",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Dios Finance",
+      "symbol": "DIOS",
+      "link": " https://app.dios.finance/#/stake",
+      "token": "0x08eEcF5d03bDA3dF2467F6AF46b160c24D931DE7",
+      "stakingSymbol": "sDIOS",
+      "stakingToken": "0xb837E751A5a310e3A58D5cb22934900898CDD8ba",
+      "stakingContract": "0x36c8a6E7436EDd850752E09539a519a369D95096",
+      "LPContract": "0x2d7a5e9d85f62adbaea9d48b11f5947f3ac57fc8",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x98eE3F3629aCFA6fDDB49028C494030E5dFA349a",
+      "bondingCalculator": null,
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xA7976fB62D9f35880ab400faacdbBF463F8C9b9a",
+          "symbol": "BUSD"
+        },
+        {
+          "address": "0x039991C7f543f6703e3d81bedA094AC0C259FDEe",
+          "symbol": "DIOS-BUSD"
+        }
+      ]
+    }
+  }
+}
