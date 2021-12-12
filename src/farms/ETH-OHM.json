@@ -44,24 +44,16 @@
       "treasuryContract": "0x31F8Cc382c9898b273eff4e0b7626a6987C846E8",
       "bondingContracts": [
         {
-          "address": "0xFB1776299E7804DD8016303Df9c07a65c80F67b6",
-          "symbol": "OHM-LUSD"
+          "address": "0x575409F8d77c12B05feD8B455815f0e54797381c",
+          "symbol": "DAI"
         },
         {
-          "address": "0x10C0f93f64e3C8D0a1b0f4B87d6155fd9e89D08D",
-          "symbol": "LUSD"
+          "address": "0x8510c8c2B6891E04864fa196693D44E6B6ec2514",
+          "symbol": "FRAX"
         },
         {
           "address": "0xE6295201CD1ff13CeD5f063a5421c39A1D236F1c",
           "symbol": "wETH"
-        },
-        {
-          "address": "0x956c43998316b6a2F21f89a1539f73fB5B78c151",
-          "symbol": "OHM-DAI"
-        },
-        {
-          "address": "0x575409F8d77c12B05feD8B455815f0e54797381c",
-          "symbol": "DAI"
         },
         {
           "address": "0xc20cfff07076858a7e642e396180ec390e5a02f7",
@@ -70,10 +62,6 @@
         {
           "address": "0xc20CffF07076858a7e642E396180EC390E5A02f7",
           "symbol": "OHM-FRAX"
-        },
-        {
-          "address": "0x8510c8c2B6891E04864fa196693D44E6B6ec2514",
-          "symbol": "FRAX"
         }
       ]
     }

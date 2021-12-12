@@ -41,7 +41,10 @@ if (searchParams.has('dir')) {
 if (searchParams.has('currency')) {
   fiatCurrency = searchParams.get('currency');
 }
-const validFarmFilters = Object.keys(allFarms);
+if(farmFilters.length === 1 && farmFilters[0] === 'ALL') {
+  farmFilters = [];
+}
+const validFarmFilters = [...Object.keys(allFarms), 'ALL'];
 const diff = farmFilters.filter((i) => !validFarmFilters.includes(i));
 if (diff.length > 0) {
   addressParams = '';

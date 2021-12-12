@@ -19,6 +19,11 @@ const formatURL = (state) => {
       ...params,
       filters: state.app.farmFilters.toString()
     };
+  } else {
+    params = {
+      ...params,
+      filters: 'ALL'
+    }
   }
   params = {
     ...params,

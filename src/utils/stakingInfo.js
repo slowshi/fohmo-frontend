@@ -61,7 +61,7 @@ class StakingInfo {
     Object.keys(allFarms).forEach((key)=> {
       const farm = allFarms[key];
       const stateFarm = state.farms[key];
-      if (state.app.farmFilters.length === 0 || state.app.farmFilters.indexOf(key) > -1) {
+      if (state.app.farmFilters === [] || state.app.farmFilters.indexOf(key) > -1) {
         store.dispatch({
           type: 'updateStakingInfo',
           payload: {
