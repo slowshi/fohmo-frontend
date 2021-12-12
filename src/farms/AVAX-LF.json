@@ -30,6 +30,10 @@
         {
           "address": "0xF13EFa98Aa53547a9E226B7A0927280503Ed7DD0",
           "symbol": "LF-AVAX"
+        },
+        {
+          "address": "0xe69d04f089da1e2417ff4080ff1a8e885499ea88",
+          "symbol": "wAVAX"
         }
       ]
     }
