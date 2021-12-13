@@ -19,6 +19,18 @@
       "wsOHMSymbol": "",
       "bondingContracts": [
         {
+          "address": "0x061bb1a6aecb179b79ae5da6bae179f1d1a79ac8",
+          "symbol": "TEM-MIM"
+        },
+        {
+          "address": "0x061bb1a6aecb179b79ae5da6bae179f1d1a79ac8",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0x1b83388d6113629c46a98d7de82f58531a8dc710",
+          "symbol": "MIM-BUSD"
+        },
+        {
           "address": "0x1FDc3A7be18fE40b24b0aBC022FfBd1280d3ab11",
           "symbol": "TAC-BUSD"
         },

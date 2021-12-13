@@ -2,6 +2,8 @@
 import {useEffect} from 'react';
 import {useSelector} from "react-redux";
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import {stakingInfo} from './utils/stakingInfo';
 import Nav from './components/Nav/Nav';
 import Filters from './components/Filters/Filters';

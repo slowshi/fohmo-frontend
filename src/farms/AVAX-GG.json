@@ -30,12 +30,20 @@
           "symbol": "GG-MIM"
         },
         {
-          "address": "0xeDEA430279D40bEDf13ecA7b81bDF01327Abfdd2",
-          "symbol": "wAVAX"
+          "address": "0x2c9ee2ac3868659789c87a1268a7e2b9e7e9b867",
+          "symbol": "GG-AVAX"
         },
         {
           "address": "0x8D76969ABd6cCE3Ef89c8E0BB0f31fBF008EC3C2",
           "symbol": "MIM"
+        },
+        {
+          "address": "0xeDEA430279D40bEDf13ecA7b81bDF01327Abfdd2",
+          "symbol": "wAVAX"
+        },
+        {
+          "address": "0xc7c2cff75ae7e126527f64d64dabbc5548a18690",
+          "symbol": "USDC"
         },
         {
           "address": "0xf493218d993c9ad091cd07c90f13c755ceab624d",

@@ -214,6 +214,12 @@ const combineBalances = (balances, addresses) => {
 const formatRebase = (stakedBalance, otherBalance, price, stakingRebase, count, currency) => {
   const percent = (Math.pow(1 + stakingRebase, count) - 1);
   return {
+    tokenProfit: Number(
+      (percent * stakedBalance)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 4,
+      maximumFractionDigits: 4
+    }),
     profit: Number(
       (percent * stakedBalance * price)
     ).toLocaleString(undefined, {

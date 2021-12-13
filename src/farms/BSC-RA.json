@@ -26,6 +26,22 @@
         {
           "address": "0x7eB67c27319a7DCC330fF78dd9d725fB9F0e1D41",
           "symbol": "BUSD"
+        },
+        {
+          "address": "0x7d79fd5591dbe15427c00f3979c560176071e0d3",
+          "symbol": "DAI"
+        },
+        {
+          "address": "0xcc6ea13ba8a8d3716bebaa6504b352d9b5c908be",
+          "symbol": "USDC"
+        },
+        {
+          "address": "0x2e3c55ae5d8d5a8d5333517085a4b458d4e1e3bd",
+          "symbol": "USDT"
+        },
+        {
+          "address": "0xd870ad3cafbdb2671ce035a928ef900b4328360d",
+          "symbol": "wBNB"
         }
       ]
     }

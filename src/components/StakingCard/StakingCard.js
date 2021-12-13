@@ -13,7 +13,6 @@ function StakingCard(params) {
   const hideBalanceData = useSelector(state => Object.keys(state.app.addresses).length === 0);
   const network = networks[networkSymbol];
   const farm = useSelector((state)=>getMemoizedFarm(farmKey)(state));
-
   const refreshData = async () => {
     dispatch({
       type: 'updateStakingInfo',
@@ -193,7 +192,7 @@ function StakingCard(params) {
                 <span className="mb-1 txt-smol">({farm.balances?.tokenBalanceInUSD})</span>
               </div>
             </span>
-            {typeof farm.constants.isWarmup !== 'undefined' && farm.constants.isWarmup ?
+            {farm.balances?.warmupBalance > 0 ?
               <div>
                 <div className="txt-smol">Warmup</div>
                 <span className="card-text d-flex h-auto justify-content-between align-items-top">
@@ -270,7 +269,10 @@ function StakingCard(params) {
                   <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
                     <span>{`${farm.roiCalculations?.roiRebase.tokenCount} ${farmSymbol}`}</span>
                     <span>{farm.roiCalculations?.roiRebase.total}</span>
-                    <span className="txt-smol">(+{farm.roiCalculations?.roiRebase.profit})</span>
+                    <span className="txt-smol align-items-end d-flex h-auto flex-column overflow-anywhere">
+                      <div>+{farm.roiCalculations?.roiRebase.tokenProfit} {farmSymbol}</div>
+                      <div>+{farm.roiCalculations?.roiRebase.profit}</div>
+                    </span>
                   </span>
                  :
                  <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
@@ -299,7 +301,10 @@ function StakingCard(params) {
                 <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
                   <span>{farm.roiCalculations?.roiDynamic.tokenCount} ${farmSymbol}</span>
                   <span>{farm.roiCalculations?.roiDynamic.total}</span>
-                  <span className="txt-smol">(+{farm.roiCalculations?.roiDynamic.profit})</span>
+                  <span className="txt-smol align-items-end d-flex h-auto flex-column overflow-anywhere">
+                    <div>+{farm.roiCalculations?.roiDynamic.tokenProfit} {farmSymbol}</div>
+                    <div>+{farm.roiCalculations?.roiDynamic.profit}</div>
+                  </span>
                 </span>
                 :
                 <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">

@@ -429,17 +429,16 @@ class StakingInfo {
     }
     const bondPromises = farmParams.bondingContracts.map(getBondContract);
     const bonds = await Promise.all(bondPromises);
+
     let warmupBalance = 0;
-    if (typeof farmParams.isWarmup !== 'undefined' && farmParams.isWarmup) {
+    if (key !== 'BSC-GYRO') {
       const warmupInfo = await this.loadCahceContractCall(
         stakingContract,
         'warmupInfo',
         [userAddress],
         clearCache
       );
-      // const warmupDeposit = Number(ethers.utils.formatUnits(warmupInfo.deposit, 'gwei'));
       warmupBalance = Number(ethers.utils.formatUnits(warmupInfo.deposit, 'gwei'));
-      // tokenBalance = tokenBalance + warmupDeposit;
     }
 
     let wrappedBalances = {
@@ -466,14 +465,7 @@ class StakingInfo {
       }
       collateralBalances = await this.getCauldronCollateral(userAddress, farmParams.cauldrons, useIndex, clearCache);
     }
-    // console.log({
-    //   tokenBalance,
-    //   stakingTokenBalance,
-    //   wrappedBalances,
-    //   fullBondTotal: Number(fullBondTotal),
-    //   bonds,
-    //   disabled: tokenBalance === 0 && stakingTokenBalance === 0
-    // });
+
     const data = {
       tokenBalance,
       stakingTokenBalance,
@@ -634,10 +626,6 @@ class StakingInfo {
     cacheServiceInstance.set(contractCallKey, response);
 
     return response;
-  }
-
-  getRebaseBlock(currentBlock, interval) {
-    return currentBlock + interval - (currentBlock % interval);
   }
 
   secondsUntilBlock(startBlock, endBlock, blockRateSeconds) {
