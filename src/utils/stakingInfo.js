@@ -254,7 +254,7 @@ class StakingInfo {
     let rawLPLiquidity = 0;
     let stable = 0;
     let token = 0;
-    if (key === 'ETH-SQUID' || key === 'ETH-LOBI' || key == 'AVAX-OTWO') {
+    if (key === 'ETH-SQUID' || key === 'ETH-LOBI' || key == 'AVAX-OTWO' || key == 'AVAX-RUG') {
       const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
       const ethReserves = await this.loadCahceContractCall(
         ethContract,
@@ -270,8 +270,11 @@ class StakingInfo {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'ether') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
         stable = ethPrice * ethers.utils.formatUnits(reserves.reserve0, 'ether');
         token =  ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-      } else {
+      } else if (key === 'AVAX-RUG') {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'mwei') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
+        stable = ethPrice * ethers.utils.formatUnits(reserves.reserve0, 'ether');
+        token =  ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+      } else {
         stable = ethPrice * ethers.utils.formatUnits(reserves.reserve1, 'ether');
         token =  ethers.utils.formatUnits(reserves.reserve0, 'gwei');
       }
@@ -285,7 +288,7 @@ class StakingInfo {
         stable = ethers.utils.formatUnits(reserves.reserve0, 'mwei');
         token = ethers.utils.formatUnits(reserves.reserve1, 'gwei');
       }
-    } else if(key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID') {
+    } else if(key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID' || key === 'BSC-WHISKEY') {
       stable = ethers.utils.formatUnits(reserves.reserve1, 'ether');
       token = ethers.utils.formatUnits(reserves.reserve0, 'gwei');
     }else {
@@ -298,7 +301,7 @@ class StakingInfo {
       }
     }
     price = stable / token;
-    rawLPLiquidity = stable * 2;
+    rawLPLiquidity = token * price * 2;
 
     let totalReserves = 0;
     if(farmParams.treasuryContract !== null) {

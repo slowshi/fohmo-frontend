@@ -1,0 +1,36 @@
+{
+  "BSC-WHISKEY": {
+    "farmSymbol": "WHISKEY",
+    "networkSymbol": "BSC",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Bourbon DAO",
+      "symbol": "WHISKEY",
+      "link": "https://www.bourbondao.com/stake",
+      "token": "0xce1ad4e2810e413e2e3684decc58a0bd01c907d9",
+      "stakingSymbol": "SCREWBALL",
+      "stakingToken": "0x06cae0720fa3147e2d8db66a18b7883221d84246",
+      "stakingContract": "0x5e398c5da5353182aae7410fb824a1578fc518cb",
+      "LPContract": "0x96b6d5482313eecc031afeb2fb32da2ba7439ba2",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x950d8c342bc6e0bcf9c1deb87d039947f35b3eb9",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x7f1b0dab5c7c8d7a63758946f853049bc53f4306",
+          "symbol": "WHISKEY-BUSD"
+        },
+        {
+          "address": "0x8A8dD632f9461138CAA15f57d0F107eFFa38dD47",
+          "symbol": "BUSD"
+        },
+        {
+          "address": "0x9a2e559bbe717497dd2ce9d83a463dcf7ea11790",
+          "symbol": "wBNB"
+        }
+      ]
+    }
+  }
+}

@@ -31,6 +31,7 @@ import BSC_TAC from './BSC-TAC.json';
 import BSC_TEM from './BSC-TEM.json';
 import BSC_DIOS from './BSC-DIOS.json';
 import BSC_UDO from './BSC-UDO.json';
+import BSC_WHISKEY from './BSC-WHISKEY.json';
 import CRO_FORT from './CRO-FORT.json';
 import ETH_LOBI from './ETH-LOBI.json';
 import ETH_OHM from './ETH-OHM.json';
@@ -90,6 +91,7 @@ const farms = {
   ...BSC_TAC,
   ...BSC_TEM,
   ...BSC_UDO,
+  ...BSC_WHISKEY,
   ...ETH_LOBI,
   ...ETH_OHM,
   ...ETH_SQUID,
