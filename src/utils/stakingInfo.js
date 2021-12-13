@@ -24,6 +24,7 @@ import { getFarm } from './farmDecorator';
 class StakingInfo {
   timeTemplates = [
     'AVAX-TIME',
+    'AVAX-CAKE',
     'AVAX-LF',
     'AVAX-SB',
     'AVAX-MAXI',

@@ -1,0 +1,29 @@
+{
+  "AVAX-CAKE": {
+    "farmSymbol": "CAKE",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "CakeDAO",
+      "symbol": "CAKE",
+      "link": "https://app.cakedao.finance/#/stake",
+      "token": "0x4eb49a2f9a79053866fae806fac95a3ef5b92c05",
+      "stakingSymbol": "sCAKE",
+      "stakingToken": "0x1ba497712e20f8d629f16ca9e7e070a6f4779754",
+      "stakingContract": "0xa3e4200ca1ac92331d529327e82d89c149ccd81c",
+      "LPContract": "0x84d2fe6adace63407f4b6bd91ab9f782ba3cb420",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x829d805f26e26ae6c2c6294b7ff9c0fe14d982ac",
+      "bondingCalculator": null,
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xc7f186281c6b01b10e7df939803f967a1416f23d",
+          "symbol": "MIM"
+        }
+      ]
+    }
+  }
+}

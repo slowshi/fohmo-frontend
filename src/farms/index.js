@@ -2,6 +2,7 @@
 import ARB_FCS from './ARB-FCS.json';
 import ARB_UMAMI from './ARB-UMAMI.json';
 import ARB_OMIC from './ARB-OMIC.json';
+import AVAX_CAKE from './AVAX-CAKE.json';
 import AVAX_FORT from './AVAX-FORT.json';
 import AVAX_CROWN from './AVAX-CROWN.json';
 import AVAX_GG from './AVAX-GG.json';
@@ -59,6 +60,7 @@ const farms = {
   ...ARB_FCS,
   ...ARB_OMIC,
   ...ARB_UMAMI,
+  ...AVAX_CAKE,
   ...AVAX_FORT,
   ...AVAX_GG,
   ...AVAX_ICE,
