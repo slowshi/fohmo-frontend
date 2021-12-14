@@ -1,0 +1,24 @@
+{
+  "AVAX-RGK": {
+    "farmSymbol": "RGK",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "RagnarokDAO",
+      "symbol": "RGK",
+      "link": "https://ragnarokdao.finance/",
+      "token": "0x46fccf447f74ec97a521615fce111118597071f7",
+      "stakingSymbol": "sRGK",
+      "stakingToken": "0xeff46B56Fb421bC0B6438DC4AE84d945573C0D6D",
+      "stakingContract": "0xeb6B44834E002ECDEAdF9E61448B21cCc33284ca",
+      "LPContract": "0xe8419ecda1c76c38800b21e7d43bdb6b02f51ace",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xfa9cCe3098C02F770DcB2D17Df9B8f5331bE86D0",
+      "bondingCalculator": "0xfaA70Fe165ddB29B4F4e335a2E3251c7b396F4E9",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": []
+    }
+  }
+}
