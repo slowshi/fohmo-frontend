@@ -49,6 +49,10 @@
         {
           "address": "0x19A6182adD8Ff4dd50ddf6495292Fc39B019DA38",
           "symbol": "ONE-ODAO"
+        },
+        {
+          "address": "0xfaED1F7f2A111FA07c2c66409968cF001BD8E9f8",
+          "symbol": "FRAX"
         }
       ]
     }
