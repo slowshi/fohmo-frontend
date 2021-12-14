@@ -20,6 +20,14 @@
       "wsOHMSymbol": "",
       "bondingContracts": [
         {
+          "address": "0x04b0db0bd9bab2e5854ff5cca0a30d0c56459b9b",
+          "symbol": "PAPA-MIM (4,4)"
+        },
+        {
+          "address": "0xb5e4a9002b060d29d6752297e4ffd335bab34ba3",
+          "symbol": "MIM (4,4)"
+        },
+        {
           "address": "0x35b912024f639757be4f1a11e4420412af34e661",
           "symbol": "PAPA-MIM"
         },
