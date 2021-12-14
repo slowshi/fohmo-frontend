@@ -18,7 +18,16 @@
       "bondingCalculator": "0xfaA70Fe165ddB29B4F4e335a2E3251c7b396F4E9",
       "wsOHMNetworks": [],
       "wsOHMSymbol": "",
-      "bondingContracts": []
+      "bondingContracts": [
+        {
+          "address":"0x0f11debabd1131970e1e93d07eb4427faa5d5691",
+          "symbol": "???-???"
+        },
+        {
+          "address":"0x8c42fe3c8df7e0e2d41e1faaa75511c22f17af0f",
+          "symbol": "???-???"
+        }
+      ]
     }
   }
 }
