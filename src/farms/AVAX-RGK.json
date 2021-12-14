@@ -21,11 +21,11 @@
       "bondingContracts": [
         {
           "address":"0x0f11debabd1131970e1e93d07eb4427faa5d5691",
-          "symbol": "???-???"
+          "symbol": "RGK-MIM"
         },
         {
           "address":"0x8c42fe3c8df7e0e2d41e1faaa75511c22f17af0f",
-          "symbol": "???-???"
+          "symbol": "MIM"
         }
       ]
     }
