@@ -22,6 +22,10 @@
         {
           "address": "0xc7f186281c6b01b10e7df939803f967a1416f23d",
           "symbol": "MIM"
+        },
+        {
+          "address": "0x18cd97879aae4e72bfbffd5681b951568add930c",
+          "symbol": "CAKE-MIM"
         }
       ]
     }
