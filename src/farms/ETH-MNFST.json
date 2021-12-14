@@ -1,0 +1,41 @@
+{
+  "ETH-MNFST": {
+    "farmSymbol": "MNFST",
+    "networkSymbol": "ETH",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Manifest",
+      "symbol": "MNFST",
+      "link": "https://app.manifest.gg/#/stake",
+      "token": "0x21585bbcd5bdc3f5737620cf0db2e51978cf60ac",
+      "stakingSymbol": "sMNFST",
+      "stakingToken": "0xd9ccb7bd2b66edb2998e9de53bd7883891ca665b",
+      "stakingContract": "0x9c9022c6a2e1ed9f3110e177763123c4400d5eb6",
+      "LPContract": "0x89c4d11dfd5868d847ca26c8b1caa9c25c712cef",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x200a433086c37eb55bc4cd31f8195831052a67c6",
+      "LPContractETH": "0x34d7d7Aaf50AD4944B70B320aCB24C95fa2def7c",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x4c3B12152300091B813236bE7066A5759E581672",
+          "symbol": "MNFST-OHM"
+        },
+        {
+          "address": "0x4B53412bEAAd7d62Cd00754757632f939391487b",
+          "symbol": "wETH"
+        },
+        {
+          "address": "0xFEff98fdBd76B51Fd7Fd0E95eC1CD9c28DD1503F",
+          "symbol": "sOHM"
+        },
+        {
+          "address": "0x9fe77f1e0ced9c0b245363c019850b2e79821bba",
+          "symbol": "TOKE"
+        }
+      ]
+    }
+  }
+}

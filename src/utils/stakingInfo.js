@@ -254,7 +254,7 @@ class StakingInfo {
     let rawLPLiquidity = 0;
     let stable = 0;
     let token = 0;
-    if (key === 'ETH-SQUID' || key === 'ETH-LOBI' || key == 'AVAX-OTWO' || key == 'AVAX-RUG') {
+    if (key === 'ETH-SQUID' || key === 'ETH-LOBI' || key === 'ETH-MNFST' || key == 'AVAX-OTWO' || key == 'AVAX-RUG') {
       const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
       const ethReserves = await this.loadCahceContractCall(
         ethContract,
@@ -266,6 +266,10 @@ class StakingInfo {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve1, 'ether') / ethers.utils.formatUnits(ethReserves.reserve0, 'gwei');
         stable = ethPrice * ethers.utils.formatUnits(reserves.reserve0, 'gwei');
         token =  ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+      } else if (key === 'ETH-MNFST') {
+        ethPrice = ethers.utils.formatUnits(ethReserves.reserve1, 'ether') / ethers.utils.formatUnits(ethReserves.reserve0, 'gwei');
+        stable = ethPrice * ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+        token =  ethers.utils.formatUnits(reserves.reserve0, 'gwei');
       } else if (key === 'AVAX-OTWO') {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'ether') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
         stable = ethPrice * ethers.utils.formatUnits(reserves.reserve0, 'ether');
@@ -317,7 +321,7 @@ class StakingInfo {
         clearCache
       );
       totalReserves = Number(ethers.utils.formatUnits(totalReserves, 'gwei'));
-      if(key === 'ETH-SQUID' || key === 'ETH-LOBI' || key === 'AVAX-OTWO') {
+      if(key === 'ETH-SQUID' || key === 'ETH-LOBI' || key === 'ETH-MNFST' || key === 'AVAX-OTWO') {
         totalReserves = totalReserves * ethPrice;
       }
     }
@@ -666,6 +670,7 @@ class StakingInfo {
   }
 
   prettifySeconds(seconds, resolution) {
+    // console.log(seconds);
     if (seconds !== 0 && !seconds || seconds < 0) {
       return 'Past Due...';
     }

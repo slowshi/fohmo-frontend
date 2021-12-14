@@ -35,6 +35,7 @@ import BSC_UDO from './BSC-UDO.json';
 import BSC_WHISKEY from './BSC-WHISKEY.json';
 import CRO_FORT from './CRO-FORT.json';
 import ETH_LOBI from './ETH-LOBI.json';
+import ETH_MNFST from './ETH-MNFST.json';
 import ETH_OHM from './ETH-OHM.json';
 import ETH_SQUID from './ETH-SQUID.json';
 import FTM_GIZA from './FTM-GIZA.json';
@@ -96,6 +97,7 @@ const farms = {
   ...BSC_UDO,
   ...BSC_WHISKEY,
   ...ETH_LOBI,
+  ...ETH_MNFST,
   ...ETH_OHM,
   ...ETH_SQUID,
   ...FTM_EXOD,
