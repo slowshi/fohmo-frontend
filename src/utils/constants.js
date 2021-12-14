@@ -92,7 +92,7 @@ const networks = {
     name: 'Fantom',
     rpcURL: 'https://rpc.ftm.tools',
     chartURL: 'https://dexscreener.com/fantom/',
-    blockRateSeconds: .89
+    blockRateSeconds: .9
   },
   ETH: {
     symbol: 'ETH',

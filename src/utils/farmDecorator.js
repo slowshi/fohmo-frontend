@@ -153,7 +153,8 @@ const combineBalances = (balances, addresses) => {
         bondAcc.push({
           payout: (acc.bonds[index]?.payout || 0) + bond.payout,
           pendingPayout: (acc.bonds[index]?.pendingPayout || 0) + bond.pendingPayout,
-          symbol: bond.symbol
+          symbol: bond.symbol,
+          lastTime: bond.lastTime
         })
         return bondAcc;
       },[])

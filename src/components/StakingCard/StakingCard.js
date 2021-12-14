@@ -248,6 +248,7 @@ function StakingCard(params) {
               <span key={index} className="card-text d-flex h-auto justify-content-between align-items-center mb-1">
               <strong>{bondData.symbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
+                <div className="mb-1 txt-smol">{bondData.lastTime}</div>
                 <div>{`${bondData.pendingPayout} ${farmSymbol}`} <strong>C</strong></div>
                 <div className="mb-1 txt-smol">({bondData.pendingPayoutInUSD})</div>
                 <div>{`${bondData.payout} ${farmSymbol}`} <strong>P</strong></div>

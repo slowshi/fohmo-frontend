@@ -412,6 +412,21 @@ class StakingInfo {
         [userAddress],
         clearCache
       );
+      // console.log(
+      //   key,
+      //   'lastBlock', Number(bondInfo.lastBlock),
+      //   'payout', Number(bondInfo.payout),
+      //   'pricePaid', Number(bondInfo.pricePaid),
+      //   'vesting', Number(bondInfo.vesting)
+      // )
+      if(Number(bondInfo.payout) === 0) {
+        return {
+          payout: 0,
+          lastTime: '',
+          pendingPayout: 0,
+          symbol: bondParams.symbol
+        }
+      }
       const payout = Number(ethers.utils.formatUnits(bondInfo.payout, 'gwei'));
       let pendingPayout = await this.loadCahceContractCall(
         bondsContract,
@@ -425,15 +440,27 @@ class StakingInfo {
       } else {
         fullBondTotal += payout;
       }
+      let bondSeconds = 0;
+      if (this.timeTemplates.indexOf(key) > -1) {
+        bondSeconds = Number(bondInfo.pricePaid) +  Number(bondInfo.lastBlock) - (Date.now() / 1000);
+      } else{
+        const currentBlock = await this.loadCacheBlockNumber(networkParams.rpcURL, clearCache);
+        bondSeconds = this.secondsUntilBlock(
+          currentBlock,
+          Number(bondInfo.vesting) +  Number(bondInfo.lastBlock),
+          networkParams.blockRateSeconds
+        )
+      }
       return {
         payout: Number(payout),
+        lastTime: this.prettifySeconds(bondSeconds),
         pendingPayout: Number(pendingPayout),
         symbol: bondParams.symbol
       }
     }
     const bondPromises = farmParams.bondingContracts.map(getBondContract);
     const bonds = await Promise.all(bondPromises);
-
+    // console.log(bonds);
     let warmupBalance = 0;
     if (key !== 'BSC-GYRO') {
       const warmupInfo = await this.loadCahceContractCall(
@@ -640,7 +667,7 @@ class StakingInfo {
 
   prettifySeconds(seconds, resolution) {
     if (seconds !== 0 && !seconds || seconds < 0) {
-      return 'Rebasing...';
+      return 'Past Due...';
     }
     const absSeconds = Math.abs(seconds);
     const d = Math.floor(absSeconds / (3600 * 24));
