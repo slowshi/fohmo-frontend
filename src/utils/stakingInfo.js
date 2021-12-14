@@ -9,6 +9,7 @@ import {abi as StakingTokenAbi} from '../abis/StakingToken.json';
 import {abi as BondContractAbi} from '../abis/BondContract.json';
 import {abi as CurrencyAbi} from '../abis/Currency.json';
 import {abi as TreasuryAbi} from '../abis/Treasury.json';
+import {abi as wsOHMPoolAbi} from '../abis/wsOHMPool.json';
 import store from '../store/store';
 import { getFarm } from './farmDecorator';
 // import { updateStakingInfo } from "../store-deps/reducerFarms";
@@ -503,12 +504,21 @@ class StakingInfo {
       }
       collateralBalances = await this.getCauldronCollateral(userAddress, farmParams.cauldrons, useIndex, clearCache);
     }
-
+    let wsOHMPoolBalance = 0;
+    if(typeof farmParams.wsOHMPool !== 'undefined') {
+      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, clearCache);
+      let useIndex = rawCurrentIndex;
+      if (key === 'FTM-SPA') {
+        useIndex = currentIndex;
+      }
+      wsOHMPoolBalance = await this.getwsOHMPoolBalances(userAddress, farmParams.wsOHMPool, useIndex, networkParams.rpcURL, clearCache);
+    }
     const data = {
       tokenBalance,
       stakingTokenBalance,
       warmupBalance,
       wrappedBalances,
+      wsOHMPoolBalance,
       collateralBalances,
       fullBondTotal: Number(fullBondTotal),
       bonds,
@@ -521,7 +531,22 @@ class StakingInfo {
       data
     };
   }
+  async getwsOHMPoolBalances(userAddress, wsOHMPool, index, rpcURL, clearCache) {
+    const wsOHMPoolContract = this.loadCacheContract(wsOHMPool, wsOHMPoolAbi, rpcURL);
+    const userInfo = await this.loadCahceContractCall(
+      wsOHMPoolContract,
+      'userInfo',
+      [userAddress],
+      clearCache
+    );
+    const tokenBalance = Number(ethers.utils.formatUnits(userInfo.staked, 'ether'));
+    const convertedBalance = Number((tokenBalance  * index).toFixed(4));
 
+    return {
+      tokenBalance,
+      convertedBalance
+    }
+  }
   async getwsOHMBalances(userAddress, wsOHMNetworks, index, clearCache=false) {
     let total = 0;
     const getBalances = async (data) => {

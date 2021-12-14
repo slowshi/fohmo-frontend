@@ -226,6 +226,18 @@ function StakingCard(params) {
               }
             </div>
             : ''}
+            {farm.balances.wsOHMPoolBalance.tokenBalance > 0 ?
+            <div>
+              <hr></hr>
+              <span className="card-text d-flex h-auto justify-content-between align-items-top">
+                <strong>{farm.constants.wsOHMSymbol} (6,6)</strong>
+                <div className="align-items-end d-flex h-auto flex-column">
+                  <span>{farm.balances?.wsOHMPoolBalance?.tokenBalance}</span>
+                  <span className="mb-1 txt-smol">({farm.balances?.wsOHMPoolBalance?.convertedBalanceInUSD})</span>
+                </div>
+              </span>
+            </div>
+            : ''}
             {typeof farm.constants.cauldrons !== 'undefined' && farm.constants.cauldrons.length ?
               <div>
                 <hr></hr>

@@ -57,7 +57,7 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
   if (currentFarm.data === null) return currentFarm;
 
   const formatRebaseParams = [
-    Number(allBalances.stakingTokenBalance + allBalances.wrappedBalances?.total + allBalances.warmupBalance + allBalances.collateralBalances?.total),
+    Number(allBalances.stakingTokenBalance + allBalances.wrappedBalances?.total + allBalances.warmupBalance + allBalances.collateralBalances?.total + allBalances.wsOHMPoolBalance.convertedBalance),
     Number(allBalances.fullBondTotal + allBalances.tokenBalance),
     Number(currentFarm.data.rawPrice),
     currentFarm.data.stakingRebase,
@@ -67,6 +67,7 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
       allBalances.stakingTokenBalance +
       allBalances.fullBondTotal +
       allBalances.warmupBalance +
+      allBalances.wsOHMPoolBalance.convertedBalance +
       allBalances.wrappedBalances.total +
       allBalances.collateralBalances.total
     ) * currentFarm.data?.rawPrice;
@@ -83,6 +84,16 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
       collateralBalances: {
         ...allBalances.collateralBalances,
         balances: formattedCollateralBalances
+      },
+      wsOHMPoolBalance: {
+        ...allBalances.wsOHMPoolBalance,
+        tokenBalance: Number(allBalances.wsOHMPoolBalance.tokenBalance) === 0 ? 0 :allBalances.wsOHMPoolBalance.tokenBalance.toFixed(4),
+        convertedBalanceInUSD: Number(allBalances.wsOHMPoolBalance.convertedBalance * rawPrice).toLocaleString(undefined, {
+          style: 'currency',
+          currency,
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }),
       },
       rawTotal,
       warmupBalance: Number(allBalances.warmupBalance) === 0 ? 0 :allBalances.warmupBalance.toFixed(4),
@@ -131,6 +142,10 @@ const combineBalances = (balances, addresses) => {
     stakingTokenBalance: 0,
     warmupBalance: 0,
     tokenBalance: 0,
+    wsOHMPoolBalance: {
+      tokenBalance: 0,
+      convertedBalance: 0
+    },
     wrappedBalances: {
       balances: [],
       total: 0
@@ -187,6 +202,10 @@ const combineBalances = (balances, addresses) => {
       stakingTokenBalance: (acc.stakingTokenBalance || 0) + (balance.stakingTokenBalance || 0),
       tokenBalance: (acc.tokenBalance || 0) + (balance.tokenBalance || 0),
       warmupBalance: (acc.warmupBalance || 0) + (balance.warmupBalance || 0),
+      wsOHMPoolBalance: {
+        tokenBalance: (acc.wsOHMPoolBalance.tokenBalance || 0) + (balance.wsOHMPoolBalance.tokenBalance || 0),
+        convertedBalance: (acc.wsOHMPoolBalance.convertedBalance || 0) + (balance.wsOHMPoolBalance.convertedBalance || 0)
+      },
       wrappedBalances: {
         total: wrappedBalanceTotals,
         balances: wrappedBalanceList
@@ -202,6 +221,10 @@ const combineBalances = (balances, addresses) => {
     stakingTokenBalance: 0,
     tokenBalance: 0,
     warmupBalance: 0,
+    wsOHMPoolBalance: {
+      tokenBalance: 0,
+      convertedBalance: 0
+    },
     wrappedBalances: {
       balances: [],
       total: 0

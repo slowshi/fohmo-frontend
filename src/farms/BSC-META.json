@@ -22,6 +22,7 @@
         }
       ],
       "wsOHMSymbol": "wsMETA",
+      "wsOHMPool": "0x73b2aec992fbb9573aa540916d1fe7bd4de5e83c",
       "bondingContracts": [
         {
           "address": "0x689615f501b1e143aa1Ed1C5736E9A57198B7173",
