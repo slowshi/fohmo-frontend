@@ -80,11 +80,19 @@ const fiatCurrencyMap = {
   brl: {
     label: 'BRL',
     address: '0x971e8f1b779a5f1c36e1cd7ef44ba1cc2f5eee0f'
+  },
+  jpy: {
+    label: 'JPY',
+    address: '0xbce206cae7f0ec07b545edde332a47c2f75bbeb3'
+  },
+  btc: {
+    label: 'BTC',
+    address: '0xf4030086522a5beea4988f8ca5b36dbc97bee88c'
+  },
+  eth: {
+    label: 'ETH',
+    address: '0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419'
   }
-  // eth: {
-  //   label: 'ETH',
-  //   address: '0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419'
-  // }
 }
 const networks = {
   FTM: {

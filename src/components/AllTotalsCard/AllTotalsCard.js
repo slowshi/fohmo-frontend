@@ -8,6 +8,10 @@ function AllTotalsCard() {
   const totalRoiDynamic = useSelector(state=> state.app.totalRoiDynamic)
   const hideTotals = useSelector(state => state.app.hideTotals);
   const currency = useSelector(state => fiatCurrencyMap[state.app.fiatCurrency].label);
+  let fractionDigits = 2;
+  if(currency === 'ETH' || currency === 'BTC') {
+    fractionDigits = 8;
+  }
   const aggregatedTotals = useSelector((state)=>{
     const farms = state.farms;
     const farmFilters = state.app.farmFilters;
@@ -50,16 +54,16 @@ function AllTotalsCard() {
       document.title = `Fohmo.io - ${totalValue.toLocaleString(undefined, {
         style: 'currency',
         currency,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
       })}`
     }
     return {
       totalValue: Number(totalValue).toLocaleString(undefined, {
         style: 'currency',
         currency,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
       }),
       totalWeightedPercent: Number((totalWeightedPercent * 100)).toLocaleString(undefined, {
         minimumFractionDigits: 4,
@@ -68,14 +72,14 @@ function AllTotalsCard() {
       totalProfit: Number(totalProfit).toLocaleString(undefined, {
         style: 'currency',
         currency,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
       }),
       totalExpectedValue: Number(totalExpectedValue).toLocaleString(undefined, {
         style: 'currency',
         currency,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
       })
     };
   })

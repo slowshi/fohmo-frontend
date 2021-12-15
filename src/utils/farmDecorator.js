@@ -3,6 +3,10 @@ import { fiatCurrencyMap } from './constants';
 // import {sortMap} from './constants';
 const getFarm = function(farm, balances, addresses, fiatCurrency) {
   const currency = fiatCurrencyMap[fiatCurrency].label;
+  let fractionDigits = 2;
+  if(currency === 'ETH' || currency === 'BTC') {
+    fractionDigits = 8;
+  }
   const currentFarm = {
     ...farm,
     data: formatStakingInfo(farm.data, currency)
@@ -16,15 +20,15 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
       payoutInUSD: Number(bond.payout * rawPrice).toLocaleString(undefined, {
         style: 'currency',
         currency,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
       }),
       pendingPayout: Number(bond.pendingPayout) === 0 ? 0 : bond.pendingPayout.toFixed(4),
       pendingPayoutInUSD: Number(bond.pendingPayout * rawPrice).toLocaleString(undefined, {
         style: 'currency',
         currency,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
       }),
     };
   });
@@ -35,8 +39,8 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
       convertedBalanceInUSD: Number(bond.convertedBalance * rawPrice).toLocaleString(undefined, {
         style: 'currency',
         currency,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
       }),
       tokenBalance: Number(bond.tokenBalance) === 0 ? 0 : bond.tokenBalance.toFixed(4)
     };
@@ -48,8 +52,8 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
       convertedBalanceInUSD: Number(bond.convertedBalance * rawPrice).toLocaleString(undefined, {
         style: 'currency',
         currency,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
       }),
       tokenBalance: Number(bond.tokenBalance) === 0 ? 0 : bond.tokenBalance.toFixed(4)
     };
@@ -71,7 +75,7 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
       allBalances.wrappedBalances.total +
       allBalances.collateralBalances.total
     ) * currentFarm.data?.rawPrice;
-  rawTotal = Number(rawTotal.toFixed(2));
+  rawTotal = Number(rawTotal);
   return {
     ...currentFarm,
     balances: {
@@ -91,35 +95,35 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
         convertedBalanceInUSD: Number(allBalances.wsOHMPoolBalance.convertedBalance * rawPrice).toLocaleString(undefined, {
           style: 'currency',
           currency,
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2
+          minimumFractionDigits: fractionDigits,
+          maximumFractionDigits: fractionDigits
         }),
       },
       rawTotal,
       warmupBalance: Number(allBalances.warmupBalance) === 0 ? 0 :allBalances.warmupBalance.toFixed(4),
       warmupBalanceInUSD: Number(allBalances.warmupBalance * rawPrice).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
       }),
       stakingTokenBalance: Number(allBalances.stakingTokenBalance) === 0 ? 0 :allBalances.stakingTokenBalance.toFixed(4),
       stakingTokenBalanceInUSD: Number(allBalances.stakingTokenBalance * rawPrice).toLocaleString(undefined, {
         style: 'currency',
         currency,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
       }),
       tokenBalance: Number(allBalances.tokenBalance) === 0 ? 0 :allBalances.tokenBalance.toFixed(4),
       tokenBalanceInUSD: Number(allBalances.tokenBalance * rawPrice).toLocaleString(undefined, {
         style: 'currency',
         currency,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
       }),
       total: rawTotal.toLocaleString(undefined, {
         style: 'currency',
         currency,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
       })
     },
     roiCalculations: {
@@ -236,6 +240,10 @@ const combineBalances = (balances, addresses) => {
   });
 }
 const formatRebase = (stakedBalance, otherBalance, price, stakingRebase, count, currency) => {
+  let fractionDigits = 2;
+  if(currency === 'ETH' || currency === 'BTC') {
+    fractionDigits = 8;
+  }
   const percent = (Math.pow(1 + stakingRebase, count) - 1);
   return {
     tokenProfit: Number(
@@ -249,16 +257,16 @@ const formatRebase = (stakedBalance, otherBalance, price, stakingRebase, count, 
     ).toLocaleString(undefined, {
       style: 'currency',
       currency,
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
+      minimumFractionDigits: fractionDigits,
+      maximumFractionDigits: fractionDigits
     }),
     total: Number(
       ((otherBalance + (stakedBalance + (percent * stakedBalance))) * price)
     ).toLocaleString(undefined, {
       style: 'currency',
       currency,
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
+      minimumFractionDigits: fractionDigits,
+      maximumFractionDigits: fractionDigits
     }),
     tokenCount: Number(
       (stakedBalance + (percent * stakedBalance)).toFixed(4)
@@ -272,14 +280,18 @@ const formatRebase = (stakedBalance, otherBalance, price, stakingRebase, count, 
   };
 };
 const formatStakingInfo = (stakingInfo, currency) => {
+  let fractionDigits = 2;
+  if(currency === 'ETH' || currency === 'BTC') {
+    fractionDigits = 8;
+  }
   if(stakingInfo === null) return stakingInfo;
   return {
     ...stakingInfo,
     price: Number(stakingInfo.rawPrice).toLocaleString(undefined, {
       style: 'currency',
       currency,
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
+      minimumFractionDigits: fractionDigits,
+      maximumFractionDigits: fractionDigits
     }),
     apy: Number((
       (Math.pow(1 + stakingInfo.stakingRebase,
@@ -396,26 +408,26 @@ const getMemoizedFarm = (farmKey) => createSelector(
 //       document.title = `Fohmo.io`
 //     } else {
 //       document.title = `Fohmo.io - $${totalValue.toLocaleString(undefined, {
-//         minimumFractionDigits: 2,
-//         maximumFractionDigits: 2
+//         minimumFractionDigits: fractionDigits,
+//         maximumFractionDigits: fractionDigits
 //       })}`
 //     }
 //     return {
 //       totalValue: Number(totalValue).toLocaleString(undefined, {
-//         minimumFractionDigits: 2,
-//         maximumFractionDigits: 2
+//         minimumFractionDigits: fractionDigits,
+//         maximumFractionDigits: fractionDigits
 //       }),
 //       totalWeightedPercent: Number((totalWeightedPercent * 100)).toLocaleString(undefined, {
 //         minimumFractionDigits: 4,
 //         maximumFractionDigits: 4
 //       }),
 //       totalProfit: Number(totalProfit).toLocaleString(undefined, {
-//         minimumFractionDigits: 2,
-//         maximumFractionDigits: 2
+//         minimumFractionDigits: fractionDigits,
+//         maximumFractionDigits: fractionDigits
 //       }),
 //       totalExpectedValue: Number(totalExpectedValue).toLocaleString(undefined, {
-//         minimumFractionDigits: 2,
-//         maximumFractionDigits: 2
+//         minimumFractionDigits: fractionDigits,
+//         maximumFractionDigits: fractionDigits
 //       })
 //     };
 //   }
