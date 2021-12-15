@@ -26,6 +26,7 @@ class StakingInfo {
   timeTemplates = [
     'AVAX-TIME',
     'AVAX-CAKE',
+    'AVAX-SPACE',
     'AVAX-LF',
     'AVAX-SB',
     'AVAX-MAXI',
@@ -329,13 +330,13 @@ class StakingInfo {
         totalReserves = totalReserves * ethPrice;
       }
     }
-    // console.log(
-    //   key,
-    //   'len', epoch._length.toNumber(),
-    //   'num', epoch.number.toNumber(),
-    //   'end', epoch.endBlock.toNumber(),
-    //   'dist', epoch.distribute.toNumber(),
-    // )
+    console.log(
+      key,
+      'len', epoch._length.toNumber(),
+      'num', epoch.number.toNumber(),
+      'end', epoch.endBlock.toNumber(),
+      'dist', epoch.distribute.toNumber(),
+    )
     const currentBlock = await this.loadCacheBlockNumber(networkParams.rpcURL, clearCache);
     let seconds = 0;
     let distributeInterval = 0;

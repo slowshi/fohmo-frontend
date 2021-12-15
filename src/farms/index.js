@@ -14,6 +14,7 @@ import AVAX_OTWO from './AVAX-OTWO.json';
 import AVAX_PAPA from './AVAX-PAPA.json';
 import AVAX_RUG from './AVAX-RUG.json';
 import AVAX_RGK from './AVAX-RGK.json';
+import AVAX_SPACE from './AVAX-SPACE.json';
 // import AVAX_SDOG from './AVAX-SDOG.json';
 import AVAX_PB from './AVAX-PB.json';
 import AVAX_SB from './AVAX-SB.json';
@@ -80,6 +81,7 @@ const farms = {
   // ...AVAX_SDOG,
   ...AVAX_PB,
   ...AVAX_SB,
+  ...AVAX_SPACE,
   ...AVAX_TEMPO,
   ...AVAX_TIME,
   ...AVAX_VAL,

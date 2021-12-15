@@ -1,0 +1,37 @@
+{
+  "AVAX-SPACE": {
+    "farmSymbol": "SPACE",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Vortex",
+      "symbol": "SPACE",
+      "link": "https://app.cakedao.finance/#/stake",
+      "token": "0x353af195c0d82820c59427bfbd318a49971aae1a",
+      "stakingSymbol": "sSPACE",
+      "stakingToken": "0xA0998E0Eae80Ab5425071d3F669c858E26e34352",
+      "stakingContract": "0x910F038C9E74dF8baEd886a22f75C69FaE8a6792",
+      "LPContract": "0x5087706dd31962938c57a0fb3a3107ed3794c996",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xE05CEc7Ed93C2d3E106Df88B8d7B963Ce3618f46",
+      "bondingCalculator": null,
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x7a04fc0ce36e3f897ce11492bd6b117ba82a0ccb",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0x390b4bcc52f2ed283d5828e69cf84910b479dfc6",
+          "symbol": "SPACE-MIM"
+        },
+        {
+          "address": "0x71594df529db52875a03e500131c6bf06bf2fd60",
+          "symbol": "AVAI"
+        }
+      ]
+    }
+  }
+}
