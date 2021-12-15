@@ -61,7 +61,7 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
   if (currentFarm.data === null) return currentFarm;
 
   const formatRebaseParams = [
-    Number(allBalances.stakingTokenBalance + allBalances.wrappedBalances?.total + allBalances.warmupBalance + allBalances.collateralBalances?.total + allBalances.wsOHMPoolBalance.convertedBalance),
+    Number(allBalances.stakingTokenBalance + allBalances.wrappedBalances?.total + allBalances.collateralBalances?.total + allBalances.wsOHMPoolBalance.convertedBalance),
     Number(allBalances.fullBondTotal + allBalances.tokenBalance),
     Number(currentFarm.data.rawPrice),
     currentFarm.data.stakingRebase,
@@ -70,7 +70,7 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
       allBalances.tokenBalance +
       allBalances.stakingTokenBalance +
       allBalances.fullBondTotal +
-      allBalances.warmupBalance +
+      // allBalances.warmupBalance +
       allBalances.wsOHMPoolBalance.convertedBalance +
       allBalances.wrappedBalances.total +
       allBalances.collateralBalances.total

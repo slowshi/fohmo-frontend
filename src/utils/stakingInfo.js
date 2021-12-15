@@ -478,7 +478,15 @@ class StakingInfo {
         [userAddress],
         clearCache
       );
+      const balanceForGons = await this.loadCahceContractCall(
+        stakingTokenContract,
+        'balanceForGons',
+        [warmupInfo.gons],
+        clearCache
+      );
       warmupBalance = Number(ethers.utils.formatUnits(warmupInfo.deposit, 'gwei'));
+      const gonsBalance = Number(ethers.utils.formatUnits(balanceForGons, 'gwei'));
+      stakingTokenBalance = stakingTokenBalance + gonsBalance;
     }
 
     let wrappedBalances = {
