@@ -8,10 +8,10 @@
       "name": "RagnarokDAO",
       "symbol": "RGK",
       "link": "https://ragnarokdao.finance/",
-      "token": "0x46fccf447f74ec97a521615fce111118597071f7",
+      "token": "0x46fCCf447f74ec97a521615fcE111118597071f7",
       "stakingSymbol": "sRGK",
-      "stakingToken": "0xeff46B56Fb421bC0B6438DC4AE84d945573C0D6D",
-      "stakingContract": "0xeb6B44834E002ECDEAdF9E61448B21cCc33284ca",
+      "stakingToken": "0xeff46b56fb421bc0b6438dc4ae84d945573c0d6d",
+      "stakingContract": "0xeb6b44834e002ecdeadf9e61448b21ccc33284ca",
       "LPContract": "0xe8419ecda1c76c38800b21e7d43bdb6b02f51ace",
       "lockedSupplyContract": null,
       "treasuryContract": "0xfa9cCe3098C02F770DcB2D17Df9B8f5331bE86D0",
@@ -21,10 +21,18 @@
       "bondingContracts": [
         {
           "address":"0x0f11debabd1131970e1e93d07eb4427faa5d5691",
-          "symbol": "RGK-MIM"
+          "symbol": "RGK-MIM (old)"
         },
         {
           "address":"0x8c42fe3c8df7e0e2d41e1faaa75511c22f17af0f",
+          "symbol": "MIM (old)"
+        },
+        {
+          "address":"0xc26f1b62f59cd066b4fb6c52d387792ea8f35926",
+          "symbol": "RGK-MIM"
+        },
+        {
+          "address":"0x4e6bfc87322974c2ac04a66a29a212ae5ceca451",
           "symbol": "MIM"
         }
       ]
