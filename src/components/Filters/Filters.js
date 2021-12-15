@@ -23,10 +23,15 @@ function Filters() {
   const sortDirection = useSelector((state)=>state.app.sortDirection);
   const sortBy = useSelector((state)=>state.app.sortBy);
   const nonZeroFarmKeys = useSelector((state)=> {
+    const currencyKey = state.app.fiatCurrency;
+    let fractionDigits = 2;
+    if(currencyKey === 'eth' || currencyKey === 'btc') {
+      fractionDigits = 8;
+    }
     return Object.keys(state.farms)
     .reduce((acc, farmKey)=>{
       const farm = state.farms[farmKey];
-      const farmBalance = farm.balances?.rawTotal || 0;
+      const farmBalance = +farm.balances?.rawTotal.toFixed(fractionDigits) || 0;
       if (farmBalance > 0) {
         acc.push(farmKey);
       }
