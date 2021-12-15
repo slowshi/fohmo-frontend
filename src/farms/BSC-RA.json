@@ -5,6 +5,7 @@
     "roiDynamic": 1,
     "data": null,
     "constants": {
+      "rugged": true,
       "name": "RADAO",
       "symbol": "RA",
       "link": "https://radao.finance/stake",

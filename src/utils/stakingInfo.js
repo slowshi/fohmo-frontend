@@ -256,7 +256,7 @@ class StakingInfo {
     let rawLPLiquidity = 0;
     let stable = 0;
     let token = 0;
-    if (key === 'ETH-SQUID' || key === 'ETH-LOBI' || key === 'ETH-MNFST' || key == 'AVAX-OTWO' || key == 'AVAX-RUG') {
+    if (key === 'ETH-SQUID' || key === 'ETH-OHM2' || key === 'ETH-LOBI' || key === 'ETH-MNFST' || key == 'AVAX-OTWO' || key == 'AVAX-RUG') {
       const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
       const ethReserves = await this.loadCahceContractCall(
         ethContract,
@@ -281,6 +281,7 @@ class StakingInfo {
         stable = ethPrice * ethers.utils.formatUnits(reserves.reserve0, 'ether');
         token =  ethers.utils.formatUnits(reserves.reserve1, 'gwei');
       } else {
+        ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 6) / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
         stable = ethPrice * ethers.utils.formatUnits(reserves.reserve1, 'ether');
         token =  ethers.utils.formatUnits(reserves.reserve0, 'gwei');
       }
@@ -323,17 +324,17 @@ class StakingInfo {
         clearCache
       );
       totalReserves = Number(ethers.utils.formatUnits(totalReserves, 'gwei'));
-      if(key === 'ETH-SQUID' || key === 'ETH-LOBI' || key === 'ETH-MNFST' || key === 'AVAX-OTWO') {
+      if(key === 'ETH-SQUID') {
         totalReserves = totalReserves * ethPrice;
       }
     }
-    console.log(
-      key,
-      'len', epoch._length.toNumber(),
-      'num', epoch.number.toNumber(),
-      'end', epoch.endBlock.toNumber(),
-      'dist', epoch.distribute.toNumber(),
-    )
+    // console.log(
+    //   key,
+    //   'len', epoch._length.toNumber(),
+    //   'num', epoch.number.toNumber(),
+    //   'end', epoch.endBlock.toNumber(),
+    //   'dist', epoch.distribute.toNumber(),
+    // )
     const currentBlock = await this.loadCacheBlockNumber(networkParams.rpcURL, clearCache);
     let seconds = 0;
     let distributeInterval = 0;

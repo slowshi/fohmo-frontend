@@ -62,11 +62,11 @@ function StakingCard(params) {
   }
   return (
     <div className="card mb-2">
-      <div className="card-body">
+      <div className={`card-body ${farm.constants.rugged ? `bg-danger` : ''}`}>
         <h5 className="card-title">
           <div className="d-flex h-auto justify-content-between align-items-center">
             <span>
-              {`${farm.constants.name} (${farm.constants.symbol})`}
+              {`${farm.constants.name} (${farm.constants.symbol})`} {farm.constants.rugged ? `- RUGGED` : ''}
             </span>
             {!hideBalanceData ?
             <span>

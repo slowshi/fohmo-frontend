@@ -5,14 +5,15 @@
     "roiDynamic": 1,
     "data": null,
     "constants": {
-      "name": "OlympusDAO v2",
+      "name": "OlympusDAO",
       "symbol": "OHM",
       "link": "https://app.olympusdao.finance/#/stake",
-      "token": "0x383518188C0C6d7730D91b2c03a03C837814a899",
+      "token": "0x64aa3364f17a4d01c6f1751fd97c2bd3d7e7f1d5",
       "stakingSymbol": "sOHM",
-      "stakingToken": "0x04F2694C8fcee23e8Fd0dfEA1d4f5Bb8c352111F",
+      "stakingToken": "0x04906695d6d12cf5459975d7c3c03356e4ccd460",
       "stakingContract": "0xB63cac384247597756545b500253ff8E607a8020",
-      "LPContract": "0x34d7d7aaf50ad4944b70b320acb24c95fa2def7c",
+      "LPContract": "0x69b81152c5a8d35a67b32a4d3772795d96cae4da",
+      "LPContractETH": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
       "lockedSupplyContract": null,
       "wsOHMSymbol": "gOHM",
       "wsOHMNetworks": [
@@ -29,7 +30,7 @@
           "networkSymbol": "AVAX"
         }
       ],
-      "treasuryContract": "0x31F8Cc382c9898b273eff4e0b7626a6987C846E8",
+      "treasuryContract": "0x9a315bdf513367c0377fb36545857d12e85813ef",
       "bondingContracts": [
       ]
     }

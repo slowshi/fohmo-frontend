@@ -49,7 +49,7 @@ const diff = farmFilters.filter((i) => !validFarmFilters.includes(i));
 if (diff.length > 0) {
   addressParams = '';
   addresses = [];
-  farmFilters = ['ETH-OHM', 'AVAX-TIME', 'MATIC-KLIMA'];
+  farmFilters = ['ETH-OHM', 'ETH-OHM2', 'AVAX-TIME', 'MATIC-KLIMA'];
   window.history.replaceState(null, null,'/');
 }
 const store = createStore(rootReducer,
