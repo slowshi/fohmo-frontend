@@ -37,6 +37,7 @@ import CRO_FORT from './CRO-FORT.json';
 import ETH_LOBI from './ETH-LOBI.json';
 import ETH_MNFST from './ETH-MNFST.json';
 import ETH_OHM from './ETH-OHM.json';
+import ETH_OHM2 from './ETH-OHM2.json';
 import ETH_SQUID from './ETH-SQUID.json';
 import FTM_GIZA from './FTM-GIZA.json';
 import FTM_EXOD from './FTM-EXOD.json';
@@ -99,6 +100,7 @@ const farms = {
   ...ETH_LOBI,
   ...ETH_MNFST,
   ...ETH_OHM,
+  ...ETH_OHM2,
   ...ETH_SQUID,
   ...FTM_EXOD,
   ...FTM_VOLT,

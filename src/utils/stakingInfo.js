@@ -218,13 +218,15 @@ class StakingInfo {
     );
 
     let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, clearCache);
-
-    const lockedValue = await this.loadCahceContractCall(
-      stakingContract,
-      'contractBalance',
-      [],
-      clearCache
-    );
+    let lockedValue = 0;
+    if(key !== 'ETH-OHM2') {
+      lockedValue = await this.loadCahceContractCall(
+        stakingContract,
+        'contractBalance',
+        [],
+        clearCache
+      );
+    }
 
     let stakingReward = epoch.distribute;
     if (this.timeTemplates.indexOf(key) > -1) {
@@ -325,13 +327,13 @@ class StakingInfo {
         totalReserves = totalReserves * ethPrice;
       }
     }
-    // console.log(
-    //   key,
-    //   'len', epoch._length.toNumber(),
-    //   'num', epoch.number.toNumber(),
-    //   'end', epoch.endBlock.toNumber(),
-    //   'dist', epoch.distribute.toNumber(),
-    // )
+    console.log(
+      key,
+      'len', epoch._length.toNumber(),
+      'num', epoch.number.toNumber(),
+      'end', epoch.endBlock.toNumber(),
+      'dist', epoch.distribute.toNumber(),
+    )
     const currentBlock = await this.loadCacheBlockNumber(networkParams.rpcURL, clearCache);
     let seconds = 0;
     let distributeInterval = 0;
@@ -344,7 +346,7 @@ class StakingInfo {
       const ethCurrentBlock = await this.loadCacheBlockNumber(ethParams.rpcURL, clearCache);
       distributeInterval = msPerDay / (epoch._length.toNumber() * ethParams.blockRateSeconds);
       seconds = this.secondsUntilBlock(ethCurrentBlock, epoch.endBlock.toNumber(), ethParams.blockRateSeconds);
-    } else if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'CRO-FORT') {
+    } else if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'CRO-FORT' || key === 'ETH-OHM2') {
       seconds = epoch.endBlock.toNumber() - (Date.now() / 1000);
       distributeInterval = msPerDay / epoch._length.toNumber();
     } else if (key === 'FTM-PUMP'){

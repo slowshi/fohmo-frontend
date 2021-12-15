@@ -66,7 +66,7 @@ function StakingCard(params) {
         <h5 className="card-title">
           <div className="d-flex h-auto justify-content-between align-items-center">
             <span>
-              {`${farm.constants.name} (${farmSymbol})`}
+              {`${farm.constants.name} (${farm.constants.symbol})`}
             </span>
             {!hideBalanceData ?
             <span>
@@ -186,7 +186,7 @@ function StakingCard(params) {
           <div>
             <hr></hr>
             <span className="card-text d-flex h-auto justify-content-between align-items-top">
-              <strong>{farmSymbol}</strong>
+              <strong>{farm.constants.symbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
                 <span>{farm.balances?.tokenBalance}</span>
                 <span className="mb-1 txt-smol">({farm.balances?.tokenBalanceInUSD})</span>
@@ -217,9 +217,9 @@ function StakingCard(params) {
               {
                 farm.balances?.wrappedBalances.balances.map((wrappedBalance, index)=>
                   <span key={index} className="card-text d-flex h-auto justify-content-between align-items-top mb-1">
-                    <strong>{`${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol} (${wrappedBalance.symbol})`}</strong>
+                    <strong>{farm.constants.wsOHMSymbol} ({wrappedBalance.symbol})</strong>
                     <div className="align-items-end d-flex h-auto flex-column overflow-anywhere">
-                      <span>{`${wrappedBalance.tokenBalance} ${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol}`}</span>
+                      <span>{`${wrappedBalance.tokenBalance} ${farm.constants.wsOHMSymbol}`}</span>
                       <span className="mb-1 txt-smol">{`(${wrappedBalance.convertedBalanceInUSD})`}</span>
                     </div>
                   </span>)
@@ -233,9 +233,9 @@ function StakingCard(params) {
                 {
                   farm.balances?.collateralBalances?.balances.map((wrappedBalance, index)=>
                     <span key={index} className="card-text d-flex h-auto justify-content-between align-items-top mb-1">
-                      <strong>{`${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol} (${wrappedBalance.symbol})`}</strong>
+                      <strong>{`${farm.constants.wsOHMSymbol} (${wrappedBalance.symbol})`}</strong>
                       <div className="align-items-end d-flex h-auto flex-column overflow-anywhere">
-                        <span>{`${wrappedBalance.tokenBalance} ${farmSymbol === 'OHM' && index < 3 ? 'wsOHM' : farm.constants.wsOHMSymbol}`}</span>
+                        <span>{`${wrappedBalance.tokenBalance} ${farm.constants.wsOHMSymbol}`}</span>
                         <span className="mb-1 txt-smol">{`(${wrappedBalance.convertedBalanceInUSD})`}</span>
                       </div>
                     </span>)
@@ -249,9 +249,9 @@ function StakingCard(params) {
               <strong>{bondData.symbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
                 <div className="mb-1 txt-smol">{bondData.lastTime}</div>
-                <div>{`${bondData.pendingPayout} ${farmSymbol}`} <strong>C</strong></div>
+                <div>{`${bondData.pendingPayout} ${farm.constants.symbol}`} <strong>C</strong></div>
                 <div className="mb-1 txt-smol">({bondData.pendingPayoutInUSD})</div>
-                <div>{`${bondData.payout} ${farmSymbol}`} <strong>P</strong></div>
+                <div>{`${bondData.payout} ${farm.constants.symbol}`} <strong>P</strong></div>
                 <div className="mb-1 txt-smol">({bondData.payoutInUSD})</div>
               </div>
             </span>)
@@ -268,16 +268,16 @@ function StakingCard(params) {
                 <span>{`${farm.roiCalculations?.roiRebase.percent}%`}</span>
                 {!hideTotals ?
                   <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
-                    <span>{`${farm.roiCalculations?.roiRebase.tokenCount} ${farmSymbol}`}</span>
+                    <span>{`${farm.roiCalculations?.roiRebase.tokenCount} ${farm.constants.symbol}`}</span>
                     <span>{farm.roiCalculations?.roiRebase.total}</span>
                     <span className="txt-smol align-items-end d-flex h-auto flex-column overflow-anywhere">
-                      <div>+{farm.roiCalculations?.roiRebase.tokenProfit} {farmSymbol}</div>
+                      <div>+{farm.roiCalculations?.roiRebase.tokenProfit} {farm.constants.symbol}</div>
                       <div>+{farm.roiCalculations?.roiRebase.profit}</div>
                     </span>
                   </span>
                  :
                  <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
-                   <span>{`- ${farmSymbol}`}</span>
+                   <span>{`- ${farm.constants.symbol}`}</span>
                    <span>$-</span>
                    <span>+$-</span>
                  </span>
@@ -300,16 +300,16 @@ function StakingCard(params) {
                 <span>{farm.roiCalculations?.roiDynamic.percent}%</span>
                 {!hideTotals ?
                 <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
-                  <span>{farm.roiCalculations?.roiDynamic.tokenCount} ${farmSymbol}</span>
+                  <span>{farm.roiCalculations?.roiDynamic.tokenCount} ${farm.constants.symbol}</span>
                   <span>{farm.roiCalculations?.roiDynamic.total}</span>
                   <span className="txt-smol align-items-end d-flex h-auto flex-column overflow-anywhere">
-                    <div>+{farm.roiCalculations?.roiDynamic.tokenProfit} {farmSymbol}</div>
+                    <div>+{farm.roiCalculations?.roiDynamic.tokenProfit} {farm.constants.symbol}</div>
                     <div>+{farm.roiCalculations?.roiDynamic.profit}</div>
                   </span>
                 </span>
                 :
                 <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
-                  <span>-{farmSymbol}</span>
+                  <span>-{farm.constants.symbol}</span>
                   <span>-</span>
                   <span>-</span>
                 </span>
