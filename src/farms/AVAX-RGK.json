@@ -7,7 +7,7 @@
     "constants": {
       "name": "RagnarokDAO",
       "symbol": "RGK",
-      "link": "https://ragnarokdao.finance/",
+      "link": "https://app.ragnarokdao.finance/#/stake",
       "token": "0x46fCCf447f74ec97a521615fcE111118597071f7",
       "stakingSymbol": "sRGK",
       "stakingToken": "0xeff46b56fb421bc0b6438dc4ae84d945573c0d6d",
