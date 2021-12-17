@@ -34,6 +34,7 @@ class StakingInfo {
     'AVAX-PUMP',
     'AVAX-OTWO',
     'AVAX-SDOG',
+    'AVAX-SBR',
     'AVAX-CROWN',
     'AVAX-NADO',
     'AVAX-FORT',

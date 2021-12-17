@@ -1,0 +1,41 @@
+{
+  "AVAX-SBR": {
+    "farmSymbol": "SBR",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Snowbear",
+      "symbol": "SBR",
+      "link": "https://app.snowbeardao.com/#/stake",
+      "token": "0x19613Fec180746831bdf819e0790F35741040DFD",
+      "stakingSymbol": "sSBR",
+      "stakingToken": "0x98D23024CC53CfE3A3d72106526eAf85D412fBD1",
+      "stakingContract": "0x94f4578128b3f8e8c74d7250e8f42b5de79259f9",
+      "LPContract": "0xeE60d85fFa7A4E223A92Dbd40c6Fb685ea916B7a",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x8A7F149e067C46364FFeE96194c4683B8FD298Ab",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingCalculator": "0x1ffe63ec7a4f7aceacaaace23df9d224f1bf002d",
+      "bondingContracts": [
+        {
+          "address": "0x72f16ac2f1bd0756709106f38682d8977721e2d5",
+          "symbol": "SBR-MIM"
+        },
+        {
+          "address": "0xb9cc0029447490d1c6751d725a189733efa68a1b",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0xb4f55c9c476b54840e5fa747a1957a7f1935bd45",
+          "symbol": "SBR-wAVAX"
+        },
+        {
+          "address": "0x6996f79e290a66d85f818fe37d69f72eb7ef786b",
+          "symbol": "wAVAX"
+        }
+      ]
+    }
+  }
+}

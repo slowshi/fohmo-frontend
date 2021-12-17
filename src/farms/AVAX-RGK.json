@@ -34,6 +34,10 @@
         {
           "address":"0x4e6bfc87322974c2ac04a66a29a212ae5ceca451",
           "symbol": "MIM"
+        },
+        {
+          "address": "0x72b87ae6566cfd27deeaacaa48b79b50ee050d93",
+          "symbol": "USDC"
         }
       ]
     }
