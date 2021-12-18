@@ -2,7 +2,7 @@
 import {useEffect} from 'react';
 import {useSelector} from "react-redux";
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-dark-5/dist/css/bootstrap-night.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import {stakingInfo} from './utils/stakingInfo';
 import Nav from './components/Nav/Nav';
@@ -68,7 +68,7 @@ function App() {
             : ''}
               {
               loadedFarms.map((farm)=>
-                <div key={`${farm.networkSymbol}-${farm.farmSymbol}`} className="col-sm-12 col-md-6 col-xl-4 col-xxl-3">
+                <div key={`${farm.networkSymbol}-${farm.farmSymbol}`} className="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
                   <StakingCard
                     farmSymbol={farm.farmSymbol}
                     networkSymbol={farm.networkSymbol}

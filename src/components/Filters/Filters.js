@@ -135,7 +135,7 @@ function Filters() {
           <div className="d-flex h-auto align-items-center">
             <button type="button"
                   title="More Forks"
-                  className={`btn btn-sm me-1 ${showFilters ? 'btn-dark' : 'btn-light'}`}
+                  className={`btn btn-sm me-1 btn-dark ${showFilters ? 'active' : ''}`}
                   onClick={toggleFilters}>
               <i className="bi bi-list"></i>
             </button>
@@ -145,17 +145,17 @@ function Filters() {
               <option key={index} value={sortFilter.key}>{sortFilter.label}</option>
               )}
             </select>
-            <button title="Sort Direction" className="btn btn-sm btn-light ms-1" onClick={updateSortDirection}>
+            <button title="Sort Direction" className="btn btn-sm btn-dark ms-1" onClick={updateSortDirection}>
               <i className={`bi ${sortDirection === 'desc' ? 'bi-sort-down' : 'bi-sort-up'}`}></i>
             </button>
           </div>
           {!hideBalanceData ?
             <div>
-              <button type="button" title="Clear 0 Balances" className="btn btn-sm btn-light me-1" onClick={hideZeros}>
+              <button type="button" title="Clear 0 Balances" className="btn btn-sm btn-dark me-1" onClick={hideZeros}>
                 Ø
               </button>
               <button type="button" title="Hide Totals"
-                className={`btn btn-sm ${hideTotals ? 'btn-dark' : 'btn-light'}`}
+                className={`btn btn-sm btn-dark ${hideTotals ? 'active' : ''}`}
                 onClick={toggleTotals}>
                 <i className="bi bi-eye-fill"></i>
               </button>
@@ -169,7 +169,7 @@ function Filters() {
         <div className="col-12 mb-2">
           <div className="card">
             <div className="card-body">
-              <button type="button" className="btn btn-sm btn-outline-dark" onClick={clearFilters}>
+              <button type="button" className="btn btn-sm btn-dark" onClick={clearFilters}>
                 <i className="bi bi-trash2"></i>
               </button>
               {$farmFilters.map((farm)=>

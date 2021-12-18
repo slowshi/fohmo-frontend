@@ -26,22 +26,25 @@ class Footer extends Component {
             <hr className="text-light"></hr>
               <div className="container-fluid">
                 <div className="row">
-                  <div id="leftNav" className="col-sm-12 col-md-6 mb-3">
+                  <div id="leftNav" className="col-md-6 mb-3 col-sm-12">
                     <div className="p-2">
                       <img src={avatar} alt="0xLen" width="22" height="22"/>
                     </div>
                     <a id="discord" className="btn text-light" target="__blank" title="Discord" href="https://discord.gg/Tq3bTFkURb">
-                    <i className="bi bi-discord"></i>
+                      <i className="bi bi-discord"></i>
                     </a>
                     <a id="twitter" className="btn text-light" target="__blank" title="Twitter" href="https://twitter.com/slowshi">
-                    <i className="bi bi-twitter"></i>
+                      <i className="bi bi-twitter"></i>
+                    </a>
+                    <a id="docs" className="btn text-light" target="__blank" title="Docs" href="https://docs.fohmo.io/">
+                      <i className="bi bi-file-text-fill"></i>
                     </a>
                   </div>
-                  <div id="rightNav" className="col-sm-12 col-md-6 mb-3">
+                  <div id="rightNav" className="col-md-6 mb-3 col-sm-12">
                   <div id="donate" className="input-group input-group-sm">
                     <span className="input-group-text">Donate</span>
                     <input type="text" className="form-control" disabled value={DEV_ADDRESS} aria-label="Dev Address"/>
-                      <button className="btn btn-light" type="button" id="button-addon2"
+                      <button className="btn btn-dark" type="button" id="button-addon2"
                       onClick={this.copyClipboard.bind(this)}>
                       {this.state.copied ?
                       <i className="bi bi-clipboard-check"></i>

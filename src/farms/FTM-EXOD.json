@@ -15,8 +15,13 @@
       "LPContract": "0xc0c1dff0fe24108586e11ec9e20a7cbb405cb769",
       "lockedSupplyContract": "0xc4e0cbe134c48085e8ff72eb31f0ebca29b152ee",
       "treasuryContract": "0x6A654D988eEBCD9FfB48ECd5AF9Bd79e090D8347",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
+      "wsOHMNetworks": [
+        {
+          "address": "0xe992c5abddb05d86095b18a158251834d616f0d1",
+          "networkSymbol": "FTM"
+        }
+      ],
+      "wsOHMSymbol": "wsEXOD",
       "bondingContracts": [
         {
           "address": "0xC43Db16Ed7b57597170b76D3afF29708bc608483",

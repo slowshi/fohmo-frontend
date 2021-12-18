@@ -26,6 +26,10 @@
         {
           "address": "0x18cd97879aae4e72bfbffd5681b951568add930c",
           "symbol": "CAKE-MIM"
+        },
+        {
+          "address": "0x57cd8114e590c30cfc17b7a37b21059fc07a24e0",
+          "symbol": "wAVAX"
         }
       ]
     }

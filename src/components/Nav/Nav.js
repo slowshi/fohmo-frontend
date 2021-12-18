@@ -117,21 +117,21 @@ function Nav() {
             Fohmo.io
           </a>
           <div>
-            <select value={currency} title="Currency" className="btn btn-light btn-sm me-2" aria-label="Currency"
+            <select value={currency} title="Currency" className="btn btn-dark btn-sm me-2" aria-label="Currency"
             onChange={updateFiatCurrency}>
               {Object.keys(fiatCurrencyMap).map((currencyKey, index)=>
               <option key={index} value={currencyKey}>{fiatCurrencyMap[currencyKey].label}</option>
               )}
             </select>
-            <button type="button" title="Addresses" className={`btn btn-sm me-2 ${show ? 'btn-secondary' : 'btn-light'}`} onClick={toggleShow}>
+            <button type="button" title="Addresses" className={`btn btn-sm me-2 ${show ? 'btn-secondary' : 'btn-dark'}`} onClick={toggleShow}>
               {addressCount === 0 ? `+ Add Address`: ''}
               {addressCount === 1 ? `${addressCount} Address`: ''}
               {addressCount > 1 ? `${addressCount} Addresses` : ''}
             </button>
-            <button type="submit" form="search" title="Search/Refresh" className="btn btn-sm btn-light" onClick={onClickSearch}>
+            <button type="submit" form="search" title="Search/Refresh" className="btn btn-sm btn-dark" onClick={onClickSearch}>
               <i className="bi bi-search"></i>
             </button>
-              {/* <button type="button" className="btn btn-sm btn-light" onClick={toggleShowVisible}>
+              {/* <button type="button" className="btn btn-sm btn-dark" onClick={toggleShowVisible}>
                 <i className="bi bi-eye"></i>
               </button> */}
             </div>
@@ -149,7 +149,7 @@ function Nav() {
                       <div className="d-flex flex-1 h-auto align-items-center mb-2" key={index}>
                         <div className="input-group">
                           {index < addressCount  && addressCount > 0 ?
-                          <button className={`btn btn-sm btn-outline-secondary ${!loadedAddresses[address] ? 'active' : ''}`} type="button"
+                          <button className={`btn btn-sm btn-dark ${!loadedAddresses[address] ? 'active' : ''}`} type="button"
                           onClick={(e)=>toggleAddress(address)}>
                             <i className={`bi ${!loadedAddresses[address] ? 'bi-eye-slash' : 'bi-eye-fill'}`}></i>
                           </button>

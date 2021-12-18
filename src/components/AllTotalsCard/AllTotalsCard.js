@@ -102,15 +102,15 @@ function AllTotalsCard() {
           })}/>
         <span className="card-text d-flex h-auto justify-content-between align-items-center mb-2">
           <strong>{`${totalRoiDynamic} Day ROI`}</strong>
-          <div className="align-items-end d-flex h-auto flex-column overflow-anywhere">
+          <div className="align-items-end d-flex h-auto flex-column overflow-hidden">
             <span>{`${aggregatedTotals.totalWeightedPercent}%`}</span>
             {hideTotals ?
-            <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
+            <span className="align-items-end d-flex h-auto flex-column overflow-hidden">
               <span>-</span>
               <span>-</span>
             </span>
             :
-            <span className="align-items-end d-flex h-auto flex-column overflow-anywhere">
+            <span className="align-items-end d-flex h-auto flex-column overflow-hidden">
               <span>{aggregatedTotals.totalExpectedValue}</span>
               <span className="txt-smol">(+{aggregatedTotals.totalProfit})</span>
             </span>
