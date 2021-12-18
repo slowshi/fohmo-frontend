@@ -29,6 +29,7 @@ class StakingInfo {
     'AVAX-BLIGHT',
     'AVAX-CAKE',
     'AVAX-SPACE',
+    'AVAX-SPACEv1',
     'AVAX-LF',
     'AVAX-SB',
     'AVAX-MAXI',
@@ -43,6 +44,7 @@ class StakingInfo {
     'AVAX-PB',
     'AVAX-VAL',
     'FTM-LUX',
+    'FTM-SCR',
     'ONE-WAGMI',
     'ARB-Z20',
     'ARB-UMAMI',
@@ -335,13 +337,13 @@ class StakingInfo {
         totalReserves = totalReserves * ethPrice;
       }
     }
-    // console.log(
-    //   key,
-    //   'len', epoch._length.toNumber(),
-    //   'num', epoch.number.toNumber(),
-    //   'end', epoch.endBlock.toNumber(),
-    //   'dist', epoch.distribute.toNumber(),
-    // )
+    console.log(
+      key,
+      'len', epoch._length.toNumber(),
+      'num', epoch.number.toNumber(),
+      'end', epoch.endBlock.toNumber(),
+      'dist', epoch.distribute.toNumber(),
+    )
     const currentBlock = await this.loadCacheBlockNumber(networkParams.rpcURL, clearCache);
     let seconds = 0;
     let distributeInterval = 0;

@@ -1,0 +1,24 @@
+{
+  "AVAX-SPACEv1": {
+    "farmSymbol": "SPACEv1",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "Vortex v1",
+      "symbol": "SPACE",
+      "link": "https://vortexdao.com/#/stake",
+      "token": "0x353af195c0d82820c59427bfbd318a49971aae1a",
+      "stakingSymbol": "sSPACE",
+      "stakingToken": "0xA0998E0Eae80Ab5425071d3F669c858E26e34352",
+      "stakingContract": "0x910F038C9E74dF8baEd886a22f75C69FaE8a6792",
+      "LPContract": "0x5087706dd31962938c57a0fb3a3107ed3794c996",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xE05CEc7Ed93C2d3E106Df88B8d7B963Ce3618f46",
+      "bondingCalculator": null,
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": []
+    }
+  }
+}
