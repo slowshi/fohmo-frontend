@@ -48,9 +48,18 @@ function Filters() {
         farmName: allFarms[farmKey].constants.name,
         active: state.app.farmFilters.length === 0 || state.app.farmFilters.indexOf(farmKey) > -1
       };
+    })
+    .sort((a,b)=>{
+      const aName = `${a.networkSymbol}-${a.farmName}`;
+      const bName = `${b.networkSymbol}-${b.farmName}`;
+      if (aName < bName) return -1;
+      if (aName > bName) return 1;
+
+      return 0;
     });
     return filters;
   });
+
   const toggleFilters = () => {
     dispatch({
       type: 'setShowFilters',

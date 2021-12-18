@@ -25,6 +25,8 @@ import { getFarm } from './farmDecorator';
 class StakingInfo {
   timeTemplates = [
     'AVAX-TIME',
+    'AVAX-VALDAO',
+    'AVAX-BLIGHT',
     'AVAX-CAKE',
     'AVAX-SPACE',
     'AVAX-LF',
@@ -233,6 +235,8 @@ class StakingInfo {
 
     let stakingReward = epoch.distribute;
     if (this.timeTemplates.indexOf(key) > -1) {
+      stakingReward = epoch.number;
+    } else if(key === 'FTM-PUMP') {
       stakingReward = epoch.number;
     }
     const circulatingSupply = await this.loadCahceContractCall(

@@ -1,0 +1,37 @@
+{
+  "AVAX-BLIGHT": {
+    "farmSymbol": "BLIGHT",
+    "networkSymbol": "AVAX",
+    "roiDynamic": 1,
+    "data": null,
+    "constants": {
+      "name": "FarmersDAO",
+      "symbol": "BLIGHT",
+      "link": "https://dao.farmersonly.farm/#/stake",
+      "token": "0x350b3Ff32ab1b6BeaBec41aBCEbff682e0F37A3B",
+      "stakingSymbol": "sBLIGHT",
+      "stakingToken": "0xa6772f1efedef231a3d92851470bd73316ddeaa9",
+      "stakingContract": "0xC58Cd958D35E380Ab891B7F001a03117A3f80F08",
+      "LPContract": "0x9E8f4f93533109b81FFf92247aE74723c1438A33",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x8921910C43CF7a32Bc55B1771bE5d7A4757d97d9",
+      "bondingCalculator": "0x921C108245495Bdd159dCf0c8B017E6EAa78d223",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x36429157548c2dc41b41487cb7f45d09ae34c46a",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0x8d6d328a414ca1c493086e3d9208a692f8c1d985",
+          "symbol": "BLIGHT-MIM"
+        },
+        {
+          "address": "0x915d090174900062a1fe39a0eb891ff116c0ab52",
+          "symbol": "wAVAX"
+        }
+      ]
+    }
+  }
+}

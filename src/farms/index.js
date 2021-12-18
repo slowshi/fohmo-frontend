@@ -19,8 +19,10 @@ import AVAX_SBR from './AVAX-SBR.json';
 // import AVAX_SDOG from './AVAX-SDOG.json';
 import AVAX_PB from './AVAX-PB.json';
 import AVAX_SB from './AVAX-SB.json';
+import AVAX_BLIGHT from './AVAX-BLIGHT.json';
 import AVAX_TEMPO from './AVAX-TEMPO.json';
 import AVAX_VAL from './AVAX-VAL.json';
+// import AVAX_VALDAO from './AVAX-VALDAO.json';
 import AVAX_TIME from './AVAX-TIME.json';
 import BSC_GYRO from './BSC-GYRO.json';
 import BSC_XEUS from './BSC-XEUS.json';
@@ -48,7 +50,7 @@ import FTM_HEC from './FTM-HEC.json';
 import FTM_LUX from './FTM-LUX.json';
 import FTM_SPA from './FTM-SPA.json';
 import FTM_VOLT from './FTM-VOLT.json';
-// import FTM_PUMP from './FTM-PUMP.json';
+import FTM_PUMP from './FTM-PUMP.json';
 // import KLAY_KRNO from './KLAY-KRNO.json';
 // import MATIC_CLAM from './MATIC-CLAM.json';
 import MATIC_CLAM2 from './MATIC-CLAM2.json';
@@ -84,9 +86,11 @@ const farms = {
   ...AVAX_SB,
   ...AVAX_SBR,
   ...AVAX_SPACE,
+  ...AVAX_BLIGHT,
   ...AVAX_TEMPO,
   ...AVAX_TIME,
   ...AVAX_VAL,
+  // ...AVAX_VALDAO,
   ...CRO_FORT,
   ...BSC_DIOS,
   ...BSC_GYRO,
@@ -113,7 +117,7 @@ const farms = {
   ...FTM_HEC,
   ...FTM_LUX,
   ...FTM_SPA,
-  // ...FTM_PUMP,
+  ...FTM_PUMP,
   // ...KLAY_KRNO,
   // ...MATIC_CLAM,
   ...MATIC_CLAM2,
