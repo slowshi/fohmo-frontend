@@ -50,7 +50,8 @@ import FTM_FHM from './FTM-FHM.json';
 import FTM_HEC from './FTM-HEC.json';
 import FTM_LUX from './FTM-LUX.json';
 import FTM_SPA from './FTM-SPA.json';
-// import FTM_SCR from './FTM-SCR.json';
+import FTM_SCR from './FTM-SCR.json';
+import FTM_WEN from './FTM-WEN.json';
 import FTM_VOLT from './FTM-VOLT.json';
 import FTM_PUMP from './FTM-PUMP.json';
 // import KLAY_KRNO from './KLAY-KRNO.json';
@@ -115,13 +116,14 @@ const farms = {
   ...ETH_SQUID,
   ...FTM_EXOD,
   ...FTM_VOLT,
-  // ...FTM_SCR,
+  ...FTM_SCR,
   ...FTM_FHM,
   ...FTM_GIZA,
   ...FTM_HEC,
   ...FTM_LUX,
   ...FTM_SPA,
   ...FTM_PUMP,
+  ...FTM_WEN,
   // ...KLAY_KRNO,
   // ...MATIC_CLAM,
   ...MATIC_CLAM2,

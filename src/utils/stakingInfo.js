@@ -34,7 +34,6 @@ class StakingInfo {
     'AVAX-SB',
     'AVAX-MAXI',
     'AVAX-GG',
-    'AVAX-PUMP',
     'AVAX-OTWO',
     'AVAX-SDOG',
     'AVAX-SBR',
@@ -359,7 +358,7 @@ class StakingInfo {
     } else if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'CRO-FORT' || key === 'ETH-OHM2') {
       seconds = epoch.endBlock.toNumber() - (Date.now() / 1000);
       distributeInterval = msPerDay / epoch._length.toNumber();
-    } else if (key === 'FTM-PUMP'){
+    } else if (key === 'FTM-PUMP' || key === 'FTM-WEN'){
       seconds = epoch.distribute.toNumber() - (Date.now() / 1000);
       distributeInterval = msPerDay / epoch.endBlock.toNumber();
     } else {
