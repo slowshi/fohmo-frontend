@@ -21,6 +21,10 @@
       "isWarmup": true,
       "bondingContracts": [
         {
+          "address": "0x25b78a4d1bc21a47fa3e16b55da45127eccb6a34",
+          "symbol": "wAVAX"
+        },
+        {
           "address": "0xb4c4be95979f8396a70164255a12acfaa1fa9240",
           "symbol": "MIM"
         },
