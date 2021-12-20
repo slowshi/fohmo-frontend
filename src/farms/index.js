@@ -13,7 +13,7 @@ import AVAX_CLAVIS from './AVAX-CLAVIS.json';
 import AVAX_NADO from './AVAX-NADO.json';
 import AVAX_OTWO from './AVAX-OTWO.json';
 import AVAX_PAPA from './AVAX-PAPA.json';
-import AVAX_PARR from './AVAX-PARR.json';
+// import AVAX_PARR from './AVAX-PARR.json';
 import AVAX_RUG from './AVAX-RUG.json';
 import AVAX_RGK from './AVAX-RGK.json';
 import AVAX_SPACE from './AVAX-SPACE.json';
@@ -87,7 +87,7 @@ const farms = {
   ...AVAX_PAPA,
   ...AVAX_RUG,
   ...AVAX_RGK,
-  ...AVAX_PARR,
+  // ...AVAX_PARR,
   // ...AVAX_SDOG,
   ...AVAX_PB,
   ...AVAX_SB,
