@@ -2,11 +2,10 @@
   "AVAX-SDOG": {
     "farmSymbol": "SDOG",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Snowdog",
       "symbol": "SDOG",
+      "timeTemplate": true,
       "link": "https://www.snowdogdao.com/#/stake",
       "token": "0xdE9E52F1838951e4d2bb6C59723B003c353979b6",
       "stakingSymbol": "sSDOG",

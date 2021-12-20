@@ -64,16 +64,17 @@ function StakingCard(params) {
     <div className="card mb-2">
       <div className={`card-body ${farm.constants.rugged ? `bg-danger` : ''}`}>
         <h5 className="card-title">
-          <div className="d-flex h-auto justify-content-between align-items-center">
-            <span>
-              {`${farm.constants.name} (${farm.constants.symbol})`} {farm.constants.rugged ? `- RUGGED` : ''}
+          <div className="d-flex h-auto justify-content-between align-items-top">
+            <span className="d-flex flex-column align-items-end">
+              <span>{`${farm.constants.name} (${farm.constants.symbol})`}</span>
+              <span className="claimable-placeholder"></span>
             </span>
             {!hideBalanceData ?
             <span>
               {hideTotals ? `-` :
                 <span className="d-flex flex-column align-items-end">
                   <span>{farm.balances?.total ?? 0}</span>
-                  {farm.balances?.fullPendingBondTotal > 0 ? <span className="txt-smol">Claimable: ({farm.balances?.fullPendingBondTotalInUSD})</span> : ''}
+                  {farm.balances?.fullPendingBondTotal > 0 ? <span className="txt-smol">Claimable: ({farm.balances?.fullPendingBondTotalInUSD})</span> : <span className="claimable-placeholder"></span>}
                 </span>
               }
             </span>

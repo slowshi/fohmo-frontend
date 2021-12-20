@@ -2,11 +2,11 @@
   "AVAX-OTWO": {
     "farmSymbol": "OTWO",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "OTWO",
       "symbol": "OTWO",
+      "timeTemplate": true,
+      "date": "Nov-20-2021 11:55:33 PM",
       "link": "https://app.otwodao.com/#/stake",
       "token": "0xAA2439DBAd718c9329a5893A51a708C015F76346",
       "stakingSymbol": "sOTWO",

@@ -2,11 +2,10 @@
   "FTM-VOLT": {
     "farmSymbol": "VOLT",
     "networkSymbol": "FTM",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "VOLTA",
       "symbol": "VOLT",
+      "date": "Dec-07-2021 02:19:09 PM",
       "link": "https://app.voltadao.finance/#/stake",
       "token": "0xae280713f30942c5956eb0da21f8fed0394af211",
       "stakingSymbol": "VOLTs",

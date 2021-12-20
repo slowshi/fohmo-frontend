@@ -2,11 +2,11 @@
   "AVAX-SB": {
     "farmSymbol": "SB",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Snowbank",
       "symbol": "SB",
+      "timeTemplate": true,
+      "date": "Nov-05-2021 01:28:36 PM",
       "link": "https://dapp.snowbank.finance/#/stake",
       "token": "0x7d1232B90D3F809A54eeaeeBC639C62dF8a8942f",
       "stakingSymbol": "sSB",

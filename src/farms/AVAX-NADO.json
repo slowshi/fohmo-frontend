@@ -2,11 +2,11 @@
   "AVAX-NADO": {
     "farmSymbol": "NADO",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "TORNADAO",
       "symbol": "NADO",
+      "timeTemplate": true,
+      "date": "Nov-27-2021 09:37:22 AM",
       "link": "https://app.tornadao.finance/#/stake",
       "token": "0xb80323c7aa915cb960b19b5cca1d88a2132f7bd1",
       "stakingSymbol": "tNADO",

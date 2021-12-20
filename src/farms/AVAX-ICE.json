@@ -2,11 +2,10 @@
   "AVAX-ICE": {
     "farmSymbol": "ICE",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "ICE DAO",
       "symbol": "ICE",
+      "date": "Dec-03-2021 03:37:34 PM",
       "link": "https://app.icedao.finance/#/stake",
       "token": "0x9235b893a3e61a14b2d02a91ec1394fbf411689e",
       "stakingSymbol": "GLA",

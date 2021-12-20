@@ -2,11 +2,11 @@
   "AVAX-CROWN": {
     "farmSymbol": "CROWN",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "MidasDAO",
       "symbol": "CROWN",
+      "timeTemplate": true,
+      "date": "Dec-03-2021 07:20:15 PM",
       "link": "https://app.midasdao.xyz/#/dashboard",
       "token": "0xed46443C18E38064523180Fc364C6180b35803d3",
       "stakingSymbol": "sCROWN",

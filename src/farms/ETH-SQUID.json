@@ -2,11 +2,10 @@
   "ETH-SQUID": {
     "farmSymbol": "SQUID",
     "networkSymbol": "ETH",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "SquidDAO",
       "symbol": "SQUID",
+      "date": "Oct-29-2021 12:00:06 PM",
       "link": "https://squid.xyz/#/stake",
       "token": "0x21ad647b8F4Fe333212e735bfC1F36B4941E6Ad2",
       "stakingSymbol": "sSQUID",

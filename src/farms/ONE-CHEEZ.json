@@ -2,11 +2,10 @@
   "ONE-CHEEZ": {
     "farmSymbol": "CHEEZ",
     "networkSymbol": "ONE",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "CheeseDAO",
       "symbol": "CHEEZ",
+      "date": "Dec-08-2021 12:00:00 AM",
       "link": "https://www.cheesedao.xyz/#/ageing",
       "token": "0xBbD83eF0c9D347C85e60F1b5D2c58796dBE1bA0d",
       "stakingSymbol": "sCHEEZ",

@@ -2,11 +2,10 @@
   "BSC-TEM": {
     "farmSymbol": "TEM",
     "networkSymbol": "BSC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Templar DAO",
       "symbol": "TEM",
+      "date": "Nov-21-2021 01:55:15 PM",
       "link": "https://templar.finance/#/stake",
       "token": "0x19e6BfC1A6e4B042Fb20531244D47E252445df01",
       "stakingSymbol": "SWORD",

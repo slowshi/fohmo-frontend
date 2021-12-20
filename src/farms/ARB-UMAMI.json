@@ -2,15 +2,16 @@
   "ARB-UMAMI": {
     "farmSymbol": "UMAMI",
     "networkSymbol": "ARB",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Umami",
       "symbol": "UMAMI",
+      "timeTemplate": true,
+      "date": "Nov-29-2021 09:16:49 PM",
       "link": "https://app.umami.finance/#/stake",
       "token": "0x1622bF67e6e5747b81866fE0b85178a93C7F86e3",
       "stakingSymbol": "sUMAMI",
       "stakingToken": "0xe6d557d416ff5640235119369c7e26AA18a906D7",
+      "indexRatio": 4.5,
       "stakingContract": "0xc9ecFeF2fac1E38b951B8C5f59294a8366Dfbd81",
       "LPContract": "0xce502ee9bf3ef41508a8a4a38fcf02585fcbfdf0",
       "lockedSupplyContract": null,

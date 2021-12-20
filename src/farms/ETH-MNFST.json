@@ -2,11 +2,10 @@
   "ETH-MNFST": {
     "farmSymbol": "MNFST",
     "networkSymbol": "ETH",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Manifest",
       "symbol": "MNFST",
+      "date": "Nov-10-2021 02:53:59 AM",
       "link": "https://app.manifest.gg/#/stake",
       "token": "0x21585bbcd5bdc3f5737620cf0db2e51978cf60ac",
       "stakingSymbol": "sMNFST",

@@ -2,11 +2,11 @@
   "AVAX-BLIGHT": {
     "farmSymbol": "BLIGHT",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "FarmersDAO",
       "symbol": "BLIGHT",
+      "timeTemplate": true,
+      "date": "Dec-14-2021 05:49:35 PM",
       "link": "https://dao.farmersonly.farm/#/stake",
       "token": "0x350b3Ff32ab1b6BeaBec41aBCEbff682e0F37A3B",
       "stakingSymbol": "sBLIGHT",

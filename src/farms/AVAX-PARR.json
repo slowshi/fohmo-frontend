@@ -1,0 +1,30 @@
+{
+  "AVAX-PARR": {
+    "farmSymbol": "PARR",
+    "networkSymbol": "AVAX",
+    "constants": {
+      "name": "ParrotDAO",
+      "symbol": "PARR",
+      "timeTemplate": true,
+      "date": "Dec-17-2021 11:33:57 PM",
+      "link": "https://app.snowbeardao.com/#/stake",
+      "token": "0xf10b5a72f0abeb27a5ddba950082e4edff4c825d",
+      "stakingSymbol": "sPARR",
+      "stakingToken": "0xdacc1d06f3b6686b633a06fe82e5a7ac434d54e6",
+      "indexRatio": 4.5,
+      "stakingContract": "0xF13D8833Edb1D692b0818896D56Ee1f2f63b72F1",
+      "LPContract": "0x29F9d7A515815377d850060996ab06C4202AB4FA",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xab5837daeb77f15b68fab4ffc549a2ac7ebf9d0c",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingCalculator": "",
+      "bondingContracts": [
+        {
+          "address": "0xca547441fbed28aee7aad030d0ea743a769b0674",
+          "symbol": "MIM"
+        }
+      ]
+    }
+  }
+}

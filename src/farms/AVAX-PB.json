@@ -2,15 +2,16 @@
   "AVAX-PB": {
     "farmSymbol": "PB",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "PiggyBankDAO",
       "symbol": "PB",
+      "timeTemplate": true,
+      "date": "Nov-10-2021 03:25:01",
       "link": "https://app.piggybankdao.finance/#/mints",
       "token": "0x0E75CDb914DdCcA683357dD94d26Caa39BC14B16",
       "stakingSymbol": "sPB",
       "stakingToken": "0x03a808d4063Ac2aEB29545658ad0a3a1EDC55052",
+      "indexRatio": 2000,
       "stakingContract": "0xE4738791690AF507C8C7Bf5981ef541568C7C312",
       "LPContract": "0xd3a6eebbe6f6d9197a7fc2aaaf94d8b0ec51f8a8",
       "lockedSupplyContract": null,

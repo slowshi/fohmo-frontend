@@ -2,11 +2,10 @@
   "BSC-PID": {
     "farmSymbol": "PID",
     "networkSymbol": "BSC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "PIDAO",
       "symbol": "PID",
+      "date": "Nov-08-2021 08:07:53 AM",
       "link": "https://www.pidao.finance/stake",
       "token": "0x1215ed20aa507578ca352e195016f289e7a17f3a",
       "stakingSymbol": "sPID",

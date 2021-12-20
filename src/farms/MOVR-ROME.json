@@ -2,11 +2,10 @@
   "MOVR-ROME": {
     "farmSymbol": "ROME",
     "networkSymbol": "MOVR",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "RomeDAO",
       "symbol": "ROME",
+      "date": "Nov-30-2021 12:20:00 AM",
       "link": "https://romedao.finance/",
       "token": "0x4a436073552044D5f2f49B176853ad3Ad473d9d6",
       "stakingSymbol": "sROME",

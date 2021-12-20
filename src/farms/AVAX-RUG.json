@@ -2,15 +2,16 @@
   "AVAX-RUG": {
     "farmSymbol": "RUG",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "R U Generous",
       "symbol": "RUG",
+      "timeTemplate": true,
+      "date": "Nov-15-2021 09:18:46 PM",
       "link": "https://app.rug.farm/#/stake",
       "token": "0xb8EF3a190b68175000B74B4160d325FD5024760e",
       "stakingSymbol": "sRUG",
       "stakingToken": "0xF3caa368B06033a83a49317549b3c1b47E7D5F8F",
+      "indexRatio": 100,
       "stakingContract": "0x47953c729A571Ef331E92D537Adc45985976c756",
       "LPContract": "0xb6e73230b0a8d1caa44f186ab8146f10ab49314a",
       "LPContractETH": "0xa389f9430876455c36478deea9769b7ca4e3ddb1",

@@ -2,11 +2,10 @@
   "MOVR-FHM": {
     "farmSymbol": "FHM",
     "networkSymbol": "MOVR",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Fantohm",
       "symbol": "FHM",
+      "date": "Nov-26-2021 09:07:18 PM",
       "link": "https://app.fantohm.com/#/stake",
       "token": "0xfa1FBb8Ef55A4855E5688C0eE13aC3f202486286",
       "stakingSymbol": "sFHM",

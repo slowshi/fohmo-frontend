@@ -2,11 +2,10 @@
   "ARB-Z20": {
     "farmSymbol": "Z20",
     "networkSymbol": "ARB",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Zerotwohm",
       "symbol": "Z20",
+      "timeTemplate": true,
       "link": "https://app.umami.finance/#/stake",
       "token": "0xdb96f8efd6865644993505318cc08ff9c42fb9ac",
       "stakingSymbol": "sZ2O",

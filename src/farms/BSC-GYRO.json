@@ -2,11 +2,10 @@
   "BSC-GYRO": {
     "farmSymbol": "GYRO",
     "networkSymbol": "BSC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Gyro",
       "symbol": "GYRO",
+      "date": "Aug-30-2021 04:01:39 AM",
       "link": "https://app.gyro.money/stake/detail",
       "token": "0x1b239abe619e74232c827fbe5e49a4c072bd869d",
       "stakingSymbol": "sGYRO",

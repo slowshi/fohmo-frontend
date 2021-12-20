@@ -21,6 +21,10 @@ const sortFilters = [
     key: 'rebase'
   },
   {
+    label: 'Date Released',
+    key: 'date'
+  },
+  {
     label: 'TVL',
     key: 'tvl'
   },
@@ -46,6 +50,7 @@ const sortMap = {
   'liquidity': 'data.rawLPLiquidity',
   'rebase': 'data.nextRebaseSeconds',
   'farm': 'constants.name',
+  'date': 'data.date',
   'eco': 'networkSymbol',
 };
 const fiatCurrencyMap = {
@@ -176,6 +181,8 @@ const allFarms = Object.keys(farms)
       showBalances: false,
       showROI: false,
       loading: true,
+      roiDynamic: 1,
+      data: null
     }
   }
   return acc

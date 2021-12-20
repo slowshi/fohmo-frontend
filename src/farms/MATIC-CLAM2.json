@@ -2,11 +2,10 @@
   "MATIC-CLAM2": {
     "farmSymbol": "CLAM2",
     "networkSymbol": "MATIC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "OtterClam V2",
       "symbol": "CLAM2",
+      "date": "Oct-29-2021 07:56:47 PM",
       "link": "https://app.otterclam.finance/#/stake",
       "token": "0xC250e9987A032ACAC293d838726C511E6E1C029d",
       "stakingSymbol": "sCLAM2",

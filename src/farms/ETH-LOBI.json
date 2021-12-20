@@ -2,11 +2,10 @@
   "ETH-LOBI": {
     "farmSymbol": "LOBI",
     "networkSymbol": "ETH",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "LOBIS",
       "symbol": "LOBI",
+      "date": "Nov-23-2021 07:01:00 PM",
       "link": "https://app.lobis.finance/#/",
       "token": "0xDEc41Db0c33F3F6f3cb615449C311ba22D418A8d",
       "stakingSymbol": "sLOBI",

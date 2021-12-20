@@ -2,11 +2,10 @@
   "ETH-OHM": {
     "farmSymbol": "OHM",
     "networkSymbol": "ETH",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "OlympusDAO v1",
       "symbol": "OHM",
+      "date": "Jun-12-2021 11:32:39 PM",
       "link": "https://app.olympusdao.finance/#/stake",
       "token": "0x383518188C0C6d7730D91b2c03a03C837814a899",
       "stakingSymbol": "sOHM",

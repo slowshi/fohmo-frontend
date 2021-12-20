@@ -2,11 +2,10 @@
   "AVAX-PAPA": {
     "farmSymbol": "PAPA",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "PAPA DAO",
       "symbol": "PAPA",
+      "date": "Dec-02-2021 12:03:44 PM",
       "link": "https://papadao.co/#/stake",
       "token": "0x70b33ebC5544C12691d055b49762D0F8365d99Fe",
       "stakingSymbol": "sPAPA",

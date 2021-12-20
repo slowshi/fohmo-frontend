@@ -2,11 +2,10 @@
   "MATIC-KLIMA": {
     "farmSymbol": "KLIMA",
     "networkSymbol": "MATIC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "KLIMA",
       "symbol": "KLIMA",
+      "date": "Oct-17-2021 09:55:50 PM",
       "link": "https://dapp.klimadao.finance/#/stake",
       "token": "0x4e78011Ce80ee02d2c3e649Fb657E45898257815",
       "stakingSymbol": "sKLIMA",

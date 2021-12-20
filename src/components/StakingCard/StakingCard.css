@@ -47,6 +47,9 @@
 .txt-smol {
   font-size: 11px;
 }
+.claimable-placeholder {
+  height: 13px;
+}
 @keyframes shine {
   0% {
     opacity: 1;

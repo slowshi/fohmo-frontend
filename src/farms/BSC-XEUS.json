@@ -2,15 +2,15 @@
   "BSC-ZEUS": {
     "farmSymbol": "ZEUS",
     "networkSymbol": "BSC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Xeus",
       "symbol": "XEUS",
+      "date": "Oct-29-2021 01:54:00 AM",
       "link": "https://xeus.finance/#/stake",
       "token": "0x4E141769366634D9c4e498257Fa7EC204d22b634",
       "stakingSymbol": "sXEUS",
       "stakingToken": "0x52eb4A4aF85bf7921813a12B7Cc9Ec02b5e94D6e",
+      "indexRatio": 0.00001,
       "stakingContract": "0x4669A93D251633C9983103529783eD1E4E36F20c",
       "LPContract": "0x76129f6e590f7aaac39b9804048a18060297a79b",
       "treasuryContract": "0xF1081555011689cCCfa29CCA6a9E6AFcB907B0bC",

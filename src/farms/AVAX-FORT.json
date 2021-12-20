@@ -2,11 +2,11 @@
   "AVAX-FORT": {
     "farmSymbol": "FORT",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Fortress",
       "symbol": "FORT",
+      "timeTemplate": true,
+      "date": "Nov-18-2021 05:44:29 PM",
       "link": "https://app.fortressdao.finance/#/stake",
       "token": "0xf6d46849DB378AE01D93732585BEc2C4480D1fD5",
       "stakingSymbol": "sFORT",

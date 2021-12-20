@@ -2,11 +2,10 @@
   "AVAX-RGK": {
     "farmSymbol": "RGK",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "RagnarokDAO",
       "symbol": "RGK",
+      "date": "Dec-14-2021 08:56:51 PM",
       "link": "https://app.ragnarokdao.finance/#/stake",
       "token": "0x46fCCf447f74ec97a521615fcE111118597071f7",
       "stakingSymbol": "sRGK",

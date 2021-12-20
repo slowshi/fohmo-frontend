@@ -2,15 +2,15 @@
   "CRO-FORT": {
     "farmSymbol": "FORT",
     "networkSymbol": "CRO",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "FortuneDAO",
       "symbol": "FORT",
+      "date": "Nov-17-2021 09:03:39 AM",
       "link": "https://www.fortunedao.com/#/stake",
       "token": "0xcA558149225Fb386B9c26716e8C35a650C74d35e",
       "stakingSymbol": "sFORT",
       "stakingToken": "0x74bdCAF923e75856E3b9427EFaD4Ad0F3DfE7951",
+      "indexRatio": 16.1,
       "stakingContract": "0xAFfB721B859db8300F7a13d8E80E7b74845Fe47a",
       "LPContract": "0x88ef5a29eec8baaab8c1111a57ad2fcec8ad6109",
       "lockedSupplyContract": null,

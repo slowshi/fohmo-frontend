@@ -2,11 +2,11 @@
   "AVAX-SPACE": {
     "farmSymbol": "SPACE",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Vortex",
       "symbol": "SPACE",
+      "timeTemplate": true,
+      "date": "Dec-15-2021 05:43:22 AM",
       "link": "https://vortexdao.com/#/stake",
       "token": "0x353af195c0d82820c59427bfbd318a49971aae1a",
       "stakingSymbol": "sSPACE",

@@ -2,11 +2,10 @@
   "BSC-LOVE": {
     "farmSymbol": "LOVE",
     "networkSymbol": "BSC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "HunnyDAO",
       "symbol": "LOVE",
+      "date": "Nov-19-2021 04:29:22 AM",
       "link": "https://dao.hunny.finance/#/stake",
       "token": "0x9505dbD77DaCD1F6C89F101b98522D4b871d88C5",
       "stakingSymbol": "KISS",

@@ -2,11 +2,10 @@
   "ARB-FCS": {
     "farmSymbol": "FCS",
     "networkSymbol": "ARB",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "FaircastleDAO",
       "symbol": "FCS",
+      "date": "Dec-04-2021 08:33:37 PM",
       "link": "https://app.faircastle.finance/#/stake",
       "token": "0xf754675Ca3d7D34290007065a4DE786FeA6bB9B5",
       "stakingSymbol": "sFCS",

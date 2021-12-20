@@ -2,11 +2,10 @@
   "BSC-TAC": {
     "farmSymbol": "TAC",
     "networkSymbol": "BSC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "TaiChi Dao",
       "symbol": "TAC",
+      "date": "Oct-27-2021 04:35:31 PM",
       "link": "https://app.taichidao.io/#/stake",
       "token": "0xe49bfC53A195a62D78A941a1967d7B0f83a47C14",
       "stakingSymbol": "sTAC",

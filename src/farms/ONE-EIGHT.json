@@ -2,8 +2,6 @@
   "ONE-EIGHT": {
     "farmSymbol": "EIGHT",
     "networkSymbol": "ONE",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "8ightDAO",
       "symbol": "EIGHT",

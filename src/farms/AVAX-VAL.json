@@ -2,11 +2,11 @@
   "AVAX-VAL": {
     "farmSymbol": "VAL",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Vikings Finance",
       "symbol": "VAL",
+      "timeTemplate": true,
+      "date": "Dec-02-2021 03:39:34 PM",
       "link": "https://vikings.finance/#/stake",
       "token": "0xE0474c15BC7f8213eE5bfB42f9E68B2d6BE2e136",
       "stakingSymbol": "sVAL",

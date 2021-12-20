@@ -2,11 +2,11 @@
   "AVAX-CAKE": {
     "farmSymbol": "CAKE",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "CakeDao",
       "symbol": "CAKE",
+      "timeTemplate": true,
+      "date": "Dec-12-2021 09:29:12 AM",
       "link": "https://app.cakedao.finance/#/stake",
       "token": "0x4eb49a2f9a79053866fae806fac95a3ef5b92c05",
       "stakingSymbol": "sCAKE",

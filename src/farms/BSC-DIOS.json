@@ -2,11 +2,10 @@
   "BSC-DIOS": {
     "farmSymbol": "DIOS",
     "networkSymbol": "BSC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Dios Finance",
       "symbol": "DIOS",
+      "date": "Dec-08-2021 03:16:02 AM",
       "link": " https://app.dios.finance/#/stake",
       "token": "0x08eEcF5d03bDA3dF2467F6AF46b160c24D931DE7",
       "stakingSymbol": "sDIOS",

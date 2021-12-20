@@ -2,11 +2,10 @@
   "BSC-WHISKEY": {
     "farmSymbol": "WHISKEY",
     "networkSymbol": "BSC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Bourbon DAO",
       "symbol": "WHISKEY",
+      "date": "Dec-07-2021 01:28:03 AM",
       "link": "https://www.bourbondao.com/stake",
       "token": "0xce1ad4e2810e413e2e3684decc58a0bd01c907d9",
       "stakingSymbol": "SCREWBALL",

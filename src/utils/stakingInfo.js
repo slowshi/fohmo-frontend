@@ -23,35 +23,6 @@ import { getFarm } from './farmDecorator';
  * @class StakingInfo
  */
 class StakingInfo {
-  timeTemplates = [
-    'AVAX-TIME',
-    'AVAX-VALDAO',
-    'AVAX-BLIGHT',
-    'AVAX-CAKE',
-    'AVAX-SPACE',
-    'AVAX-SPACEv1',
-    'AVAX-LF',
-    'AVAX-SB',
-    'AVAX-MAXI',
-    'AVAX-CLAVIS',
-    'AVAX-GG',
-    'AVAX-OTWO',
-    'AVAX-SDOG',
-    'AVAX-SBR',
-    'AVAX-CROWN',
-    'AVAX-NADO',
-    'AVAX-FORT',
-    'AVAX-PB',
-    'AVAX-VAL',
-    'FTM-LUX',
-    'FTM-SCR',
-    'ONE-WAGMI',
-    'ARB-Z20',
-    'ARB-UMAMI',
-    'AVAX-RUG',
-    'BSC-RUG',
-    'ONE-ODAO',
-  ];
   /**
    *
    *
@@ -126,7 +97,7 @@ class StakingInfo {
       );
     });
   }
-  async getCurrentIndex(stakingContract, key, clearCache=false) {
+  async getCurrentIndex(stakingContract, indexRatio=1, clearCache=false) {
     let rawCurrentIndex = await this.loadCahceContractCall(
       stakingContract,
       'index',
@@ -139,32 +110,8 @@ class StakingInfo {
       [],
       clearCache
     );
-    if (key === 'AVAX-TIME' || key === 'ARB-Z20' || key === 'AVAX-MAXI'
-    || key === 'ONE-ODAO' || key === 'AVAX-LF' || key === 'FTM-LUX' || key === 'AVAX-GG') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 4.5).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    } else if (key === 'CRO-FORT') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 16.1).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    } else if (key === 'AVAX-RUG') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei')/ 100).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    } else if (key === 'AVAX-PB') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 2000).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    } else if (key === 'FTM-SPA') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / 7.673).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    } else if (key === 'BSC-XEUS') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 4)).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 4)).toFixed(2);
-    } else if (key === 'BSC-META') {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 1)).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 1)).toFixed(2);
-    }else {
-      currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei')).toFixed(2);
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-    }
+    currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / indexRatio).toFixed(2);
+    rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
 
     return {
       currentIndex: Number(currentIndex),
@@ -224,7 +171,7 @@ class StakingInfo {
       clearCache
     );
 
-    let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, clearCache);
+    let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, farmParams.indexRatio, clearCache);
     let lockedValue = 0;
     if(key !== 'ETH-OHM2') {
       lockedValue = await this.loadCahceContractCall(
@@ -236,7 +183,7 @@ class StakingInfo {
     }
 
     let stakingReward = epoch.distribute;
-    if (this.timeTemplates.indexOf(key) > -1) {
+    if (typeof farmParams.timeTemplate !== 'undefined' && farmParams.timeTemplate) {
       stakingReward = epoch.number;
     } else if(key === 'FTM-PUMP') {
       stakingReward = epoch.number;
@@ -348,7 +295,7 @@ class StakingInfo {
     let seconds = 0;
     let distributeInterval = 0;
     const msPerDay = 86400;
-    if (this.timeTemplates.indexOf(key) > -1) {
+    if (typeof farmParams.timeTemplate !== 'undefined' && farmParams.timeTemplate) {
       seconds = epoch.distribute.toNumber() - (Date.now() / 1000);
       distributeInterval = msPerDay / epoch.endBlock.toNumber();
     } else if(key === 'ARB-FCS' || key === 'ARB-OMIC') {
@@ -370,6 +317,7 @@ class StakingInfo {
       farmSymbol,
       networkSymbol,
       data: {
+        date: new Date(farmParams.date).getTime(),
         nextRebase: this.prettifySeconds(seconds),
         nextRebaseSeconds: seconds,
         distributeInterval,
@@ -459,7 +407,7 @@ class StakingInfo {
         fullPendingBondTotal += pendingPayout;
       }
       let bondSeconds = 0;
-      if (this.timeTemplates.indexOf(key) > -1) {
+      if (typeof farmParams.timeTemplate !== 'undefined' && farmParams.timeTemplate) {
         bondSeconds = Number(bondInfo.pricePaid) +  Number(bondInfo.lastBlock) - (Date.now() / 1000);
       } else{
         const currentBlock = await this.loadCacheBlockNumber(networkParams.rpcURL, clearCache);
@@ -503,7 +451,7 @@ class StakingInfo {
       balances: []
     };
     if(farmParams.wsOHMNetworks !== null) {
-      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, clearCache);
+      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, farmParams.indexRatio, clearCache);
       let useIndex = rawCurrentIndex;
       if (key === 'FTM-SPA') {
         useIndex = currentIndex;
@@ -515,7 +463,7 @@ class StakingInfo {
       balances: []
     };
     if(typeof farmParams.cauldrons !== 'undefined') {
-      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, clearCache);
+      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, farmParams.indexRatio, clearCache);
       let useIndex = rawCurrentIndex;
       if (key === 'FTM-SPA') {
         useIndex = currentIndex;
@@ -524,7 +472,7 @@ class StakingInfo {
     }
     let wsOHMPoolBalance = 0;
     if(typeof farmParams.wsOHMPool !== 'undefined') {
-      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, clearCache);
+      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, farmParams.indexRatio, clearCache);
       let useIndex = rawCurrentIndex;
       if (key === 'FTM-SPA') {
         useIndex = currentIndex;

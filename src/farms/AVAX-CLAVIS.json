@@ -2,11 +2,11 @@
   "AVAX-CLAVIS": {
     "farmSymbol": "CLAVIS",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Agartha",
       "symbol": "CLAVIS",
+      "timeTemplate": true,
+      "date": "Dec-18-2021 06:26:45 PM",
       "link": "https://agartha.money/#/stake",
       "token": "0xA5b0f5ef809FD04C9D4320211C711Cb34ef812dD",
       "stakingSymbol": "sCLAVIS",

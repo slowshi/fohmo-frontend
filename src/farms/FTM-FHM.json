@@ -2,11 +2,10 @@
   "FTM-FHM": {
     "farmSymbol": "FHM",
     "networkSymbol": "FTM",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Fantohm",
       "symbol": "FHM",
+      "date": "Oct-26-2021 08:26:38 PM",
       "link": "https://app.fantohm.com/#/stake",
       "token": "0xfa1FBb8Ef55A4855E5688C0eE13aC3f202486286",
       "stakingSymbol": "sFHM",

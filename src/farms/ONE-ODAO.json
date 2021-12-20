@@ -2,15 +2,16 @@
   "ONE-ODAO": {
     "farmSymbol": "ODAO",
     "networkSymbol": "ONE",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "OneDAO",
       "symbol": "ODAO",
+      "timeTemplate": true,
+      "date": "Nov-3-2021 12:00:00 AM",
       "link": "https://app.onedao.finance/#/stake",
       "token": "0x947394294F75D7502977AC6813FD99f77C2931ec",
       "stakingSymbol": "OXY",
       "stakingToken": "0x7a8698A1595D7821C04732A242F21C3C6f50cd66",
+      "indexRatio": 4.5,
       "stakingContract": "0x9cAc73eA219e5F8a96485c937E2C8A617f7F4f37",
       "LPContract": "0x4f658217f163509115b6e1fbba37cd9aefbdba12",
       "lockedSupplyContract": null,

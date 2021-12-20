@@ -2,11 +2,11 @@
   "AVAX-SBR": {
     "farmSymbol": "SBR",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Snowbear",
       "symbol": "SBR",
+      "timeTemplate": true,
+      "date": "Dec-15-2021 01:07:23 AM",
       "link": "https://app.snowbeardao.com/#/stake",
       "token": "0x19613Fec180746831bdf819e0790F35741040DFD",
       "stakingSymbol": "sSBR",

@@ -2,15 +2,16 @@
   "AVAX-TIME": {
     "farmSymbol": "TIME",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Wonderland",
       "symbol": "TIME",
+      "timeTemplate": true,
+      "date": "Sep-02-2021 09:29:25 PM",
       "link": "https://app.wonderland.money/#/stake",
       "token": "0xb54f16fB19478766A268F172C9480f8da1a7c9C3",
       "stakingSymbol": "MEMO",
       "stakingToken": "0x136Acd46C134E8269052c62A67042D6bDeDde3C9",
+      "indexRatio": 4.5,
       "stakingContract": "0x4456B87Af11e87E329AB7d7C7A246ed1aC2168B9",
       "LPContract": "0x113f413371fc4cc4c9d6416cf1de9dfd7bf747df",
       "lockedSupplyContract": null,

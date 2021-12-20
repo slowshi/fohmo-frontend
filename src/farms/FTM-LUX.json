@@ -2,11 +2,11 @@
   "FTM-LUX": {
     "farmSymbol": "LUX",
     "networkSymbol": "FTM",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Luxor",
       "symbol": "LUX",
+      "timeTemplate": true,
+      "date": "Dec-03-2021 12:30:22 AM",
       "link": "https://app.luxor.money/#/stake",
       "token": "0x6671E20b83Ba463F270c8c75dAe57e3Cc246cB2b",
       "stakingSymbol": "LUMENS",

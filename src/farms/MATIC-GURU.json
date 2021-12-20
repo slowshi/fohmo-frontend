@@ -2,11 +2,10 @@
   "MATIC-GURU": {
     "farmSymbol": "GURU",
     "networkSymbol": "MATIC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "NidhiDAO",
       "symbol": "GURU",
+      "date": "Nov-22-2021 09:29:09 PM",
       "link": "https://app.nidhidao.finance/#/dashboard",
       "token": "0x057E0bd9B797f9Eeeb8307B35DbC8c12E534c41E",
       "stakingSymbol": "sGURU",

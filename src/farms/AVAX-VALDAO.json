@@ -2,11 +2,11 @@
   "AVAX-VALDAO": {
     "farmSymbol": "VALDAO",
     "networkSymbol": "AVAX",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "Valhalla DAO",
       "symbol": "VALDAO",
+      "timeTemplate": true,
+      "date": "Dec-15-2021 10:51:22 AM",
       "link": "https://valhalladao.app/#/stake",
       "token": "0x84506992349429dac867b2168843ffca263af6e8",
       "stakingSymbol": "sVALDAO",

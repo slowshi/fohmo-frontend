@@ -2,8 +2,6 @@
   "BSC-RA": {
     "farmSymbol": "RA",
     "networkSymbol": "BSC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "rugged": true,
       "name": "RADAO",

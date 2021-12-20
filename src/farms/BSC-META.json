@@ -2,15 +2,15 @@
   "BSC-META": {
     "farmSymbol": "META",
     "networkSymbol": "BSC",
-    "roiDynamic": 1,
-    "data": null,
     "constants": {
       "name": "MetaversePRO",
       "symbol": "META",
+      "date": "Nov-16-2021 04:09:02 AM",
       "link": "https://app.metaverse.pro/#/stake",
       "token": "0x0a2046C7fAa5a5F2b38C0599dEB4310AB781CC83",
       "stakingSymbol": "sMETA",
       "stakingToken": "0x09f33EC33052Cd253Db79fFA883E9c12Eb578309",
+      "indexRatio": 0.00000001,
       "stakingContract": "0xB91Db0C2551AAe4784119cE4c33234C9E3c9aF71",
       "LPContract": "0x512385e505615eb30ec80a2915575e344acf792a",
       "lockedSupplyContract": null,
