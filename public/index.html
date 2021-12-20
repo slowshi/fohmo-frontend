@@ -28,5 +28,14 @@
   </body>
   <%if (process.env.NODE_ENV === 'production') { %>
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "10c3cc152e574ec2b5a0b9ed90a960ed"}'></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SY6NMXWHJ0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SY6NMXWHJ0');
+    </script>
   <% } %>
 </html>
