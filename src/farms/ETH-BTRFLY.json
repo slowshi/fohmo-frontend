@@ -1,0 +1,24 @@
+{
+  "ETH-BTRFLY": {
+    "farmSymbol": "BTRFLY",
+    "networkSymbol": "ETH",
+    "constants": {
+      "name": "[REDACTED]",
+      "symbol": "BTRFLY",
+      "date": "Dec-17-2021 10:48:29 PM",
+      "link": "https://app.redactedcartel.xyz/stake",
+      "token": "0xc0d4ceb216b3ba9c3701b291766fdcba977cec3a",
+      "stakingSymbol": "xBTRFLY",
+      "stakingToken": "0xCC94Faf235cC5D3Bf4bEd3a30db5984306c86aBC",
+      "stakingContract": "0xBdE4Dfb0dbb0Dd8833eFb6C5BD0Ce048C852C487",
+      "LPContract": "0xe9AB8038Ee6Dd4fCC7612997FE28d4e22019C4B4",
+      "LPContractETH": "0x055475920a8c93cffb64d039a8205f7acc7722d3",
+      "lockedSupplyContract": null,
+      "wsOHMSymbol": "",
+      "wsOHMNetworks": [],
+      "treasuryContract": "0x086C98855dF3C78C6b481b6e1D47BeF42E9aC36B",
+      "bondingCalculator": "0xCA1d53E40eab232DEff03Dc824410100BcCCF2bC",
+      "bondingContracts": []
+    }
+  }
+}

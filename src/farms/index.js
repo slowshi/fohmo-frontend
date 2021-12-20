@@ -13,16 +13,17 @@ import AVAX_CLAVIS from './AVAX-CLAVIS.json';
 import AVAX_NADO from './AVAX-NADO.json';
 import AVAX_OTWO from './AVAX-OTWO.json';
 import AVAX_PAPA from './AVAX-PAPA.json';
-// import AVAX_PARR from './AVAX-PARR.json';
+import AVAX_PARR from './AVAX-PARR.json';
 import AVAX_RUG from './AVAX-RUG.json';
 import AVAX_RGK from './AVAX-RGK.json';
 import AVAX_SPACE from './AVAX-SPACE.json';
-import AVAX_SPACEv1 from './AVAX-SPACEv1.json';
+// import AVAX_SPACEv1 from './AVAX-SPACEv1.json';
 import AVAX_SBR from './AVAX-SBR.json';
 // import AVAX_SDOG from './AVAX-SDOG.json';
 import AVAX_PB from './AVAX-PB.json';
 import AVAX_SB from './AVAX-SB.json';
 import AVAX_BLIGHT from './AVAX-BLIGHT.json';
+import AVAX_BLANC from './AVAX-BLANC.json';
 import AVAX_TEMPO from './AVAX-TEMPO.json';
 import AVAX_VAL from './AVAX-VAL.json';
 import AVAX_VALDAO from './AVAX-VALDAO.json';
@@ -46,6 +47,7 @@ import ETH_MNFST from './ETH-MNFST.json';
 import ETH_OHM from './ETH-OHM.json';
 import ETH_OHM2 from './ETH-OHM2.json';
 import ETH_SQUID from './ETH-SQUID.json';
+import ETH_BTRFLY from './ETH-BTRFLY.json';
 import FTM_GIZA from './FTM-GIZA.json';
 import FTM_EXOD from './FTM-EXOD.json';
 import FTM_FHM from './FTM-FHM.json';
@@ -87,13 +89,14 @@ const farms = {
   ...AVAX_PAPA,
   ...AVAX_RUG,
   ...AVAX_RGK,
-  // ...AVAX_PARR,
+  ...AVAX_PARR,
+  ...AVAX_BLANC,
   // ...AVAX_SDOG,
   ...AVAX_PB,
   ...AVAX_SB,
   ...AVAX_SBR,
   ...AVAX_SPACE,
-  ...AVAX_SPACEv1,
+  // ...AVAX_SPACEv1,
   ...AVAX_BLIGHT,
   ...AVAX_TEMPO,
   ...AVAX_TIME,
@@ -117,6 +120,7 @@ const farms = {
   ...ETH_MNFST,
   ...ETH_OHM,
   ...ETH_OHM2,
+  ...ETH_BTRFLY,
   ...ETH_SQUID,
   ...FTM_EXOD,
   ...FTM_VOLT,

@@ -26,6 +26,10 @@
           "symbol": "RUG-AVAX (RLP)"
         },
         {
+          "address": "0x6a94c5cfc9cd43d2b43c4f2b0b82a786df83d2ea",
+          "symbol": "RUG-MIM (RLP)"
+        },
+        {
           "address": "0x3a93493e2e486f818672991de6828a27346ab0cb",
           "symbol": "wAVAX"
         },

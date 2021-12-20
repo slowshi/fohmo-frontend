@@ -212,12 +212,14 @@ class StakingInfo {
       'token0',
       []
     );
+
     let price = 0;
     let ethPrice = 0;
     let rawLPLiquidity = 0;
     let stable = 0;
     let token = 0;
-    if (key === 'ETH-SQUID' || key === 'ETH-OHM2' || key === 'ETH-LOBI' || key === 'ETH-MNFST' || key == 'AVAX-OTWO' || key == 'AVAX-RUG') {
+    if (key === 'ETH-SQUID' || key === 'ETH-OHM2' || key === 'ETH-LOBI' ||
+        key === 'ETH-MNFST' || key == 'AVAX-OTWO' || key == 'AVAX-RUG' || key === 'ETH-BTRFLY') {
       const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
       const ethReserves = await this.loadCahceContractCall(
         ethContract,
@@ -225,7 +227,7 @@ class StakingInfo {
         [],
         clearCache
       );
-      if(key === 'ETH-LOBI') {
+      if(key === 'ETH-LOBI' || key === 'ETH-BTRFLY') {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve1, 'ether') / ethers.utils.formatUnits(ethReserves.reserve0, 'gwei');
         stable = ethPrice * ethers.utils.formatUnits(reserves.reserve0, 'gwei');
         token =  ethers.utils.formatUnits(reserves.reserve1, 'gwei');
@@ -433,6 +435,7 @@ class StakingInfo {
     const bonds = await Promise.all(bondPromises);
     // console.log(bonds);
     let warmupBalance = 0;
+    // let warmupPeriod = 0;
     if (key !== 'BSC-GYRO') {
       const warmupInfo = await this.loadCahceContractCall(
         stakingContract,
@@ -440,17 +443,24 @@ class StakingInfo {
         [userAddress],
         clearCache
       );
+      // warmupPeriod = await this.loadCahceContractCall(
+      //   stakingContract,
+      //   'warmupPeriod',
+      //   [],
+      //   clearCache
+      // );
       const balanceForGons = await this.loadCahceContractCall(
         stakingTokenContract,
         'balanceForGons',
         [warmupInfo.gons],
         clearCache
       );
+      // warmupPeriod = Number(warmupPeriod);
       warmupBalance = Number(ethers.utils.formatUnits(warmupInfo.deposit, 'gwei'));
       const gonsBalance = Number(ethers.utils.formatUnits(balanceForGons, 'gwei'));
       stakingTokenBalance = stakingTokenBalance + gonsBalance;
     }
-
+    // console.log(warmupPeriod);
     let wrappedBalances = {
       total: 0,
       balances: []
