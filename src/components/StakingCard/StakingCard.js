@@ -70,7 +70,12 @@ function StakingCard(params) {
             </span>
             {!hideBalanceData ?
             <span>
-              {hideTotals ? `-` :`${farm.balances?.total ?? 0}`}
+              {hideTotals ? `-` :
+                <span className="d-flex flex-column align-items-end">
+                  <span>{farm.balances?.total ?? 0}</span>
+                  {farm.balances?.fullPendingBondTotal > 0 ? <span className="txt-smol">Claimable: ({farm.balances?.fullPendingBondTotalInUSD})</span> : ''}
+                </span>
+              }
             </span>
             : ''}
           </div>

@@ -105,6 +105,13 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
         minimumFractionDigits: fractionDigits,
         maximumFractionDigits: fractionDigits
       }),
+      fullPendingBondTotal: Number(allBalances.fullPendingBondTotal) === 0 ? 0 :allBalances.fullPendingBondTotal.toFixed(4),
+      fullPendingBondTotalInUSD: Number(allBalances.fullPendingBondTotal * rawPrice).toLocaleString(undefined, {
+        style: 'currency',
+        currency,
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
+      }),
       stakingTokenBalance: Number(allBalances.stakingTokenBalance) === 0 ? 0 :allBalances.stakingTokenBalance.toFixed(4),
       stakingTokenBalanceInUSD: Number(allBalances.stakingTokenBalance * rawPrice).toLocaleString(undefined, {
         style: 'currency',
@@ -143,6 +150,7 @@ const combineBalances = (balances, addresses) => {
   if (typeof balances === 'undefined') return {
     bonds: [],
     fullBondTotal: 0,
+    fullPendingBondTotal: 0,
     stakingTokenBalance: 0,
     warmupBalance: 0,
     tokenBalance: 0,
@@ -203,6 +211,7 @@ const combineBalances = (balances, addresses) => {
     return {
       bonds: combinedBonds,
       fullBondTotal: (acc.fullBondTotal || 0) + (balance.fullBondTotal || 0),
+      fullPendingBondTotal: (acc.fullPendingBondTotal || 0) + (balance.fullPendingBondTotal || 0),
       stakingTokenBalance: (acc.stakingTokenBalance || 0) + (balance.stakingTokenBalance || 0),
       tokenBalance: (acc.tokenBalance || 0) + (balance.tokenBalance || 0),
       warmupBalance: (acc.warmupBalance || 0) + (balance.warmupBalance || 0),
@@ -222,6 +231,7 @@ const combineBalances = (balances, addresses) => {
   }, {
     bonds: [],
     fullBondTotal: 0,
+    fullPendingBondTotal: 0,
     stakingTokenBalance: 0,
     tokenBalance: 0,
     warmupBalance: 0,

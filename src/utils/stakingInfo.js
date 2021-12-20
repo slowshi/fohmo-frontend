@@ -420,7 +420,8 @@ class StakingInfo {
     stakingTokenBalance = Number(ethers.utils.formatUnits(stakingTokenBalance, 'gwei'));
 
     let fullBondTotal = 0;
-    const getBondContract = async (bondParams) =>{
+    let fullPendingBondTotal = 0;
+    const getBondContract = async (bondParams) => {
       const bondsContract = this.loadCacheContract(bondParams.address, BondContractAbi, networkParams.rpcURL);
       const bondInfo = await this.loadCahceContractCall(
         bondsContract,
@@ -455,6 +456,7 @@ class StakingInfo {
         stakingTokenBalance += payout;
       } else {
         fullBondTotal += payout;
+        fullPendingBondTotal += pendingPayout;
       }
       let bondSeconds = 0;
       if (this.timeTemplates.indexOf(key) > -1) {
@@ -537,6 +539,7 @@ class StakingInfo {
       wsOHMPoolBalance,
       collateralBalances,
       fullBondTotal: Number(fullBondTotal),
+      fullPendingBondTotal: Number(fullPendingBondTotal),
       bonds,
       disabled: tokenBalance === 0 && stakingTokenBalance === 0
     };
