@@ -30,6 +30,10 @@
         {
           "address": "0x915d090174900062a1fe39a0eb891ff116c0ab52",
           "symbol": "wAVAX"
+        },
+        {
+          "address": "0x65546e7c448d48b1ba4a64fba4ee84859f21d508",
+          "symbol": "ONION"
         }
       ]
     }

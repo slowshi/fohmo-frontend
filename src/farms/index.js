@@ -9,6 +9,7 @@ import AVAX_GG from './AVAX-GG.json';
 import AVAX_ICE from './AVAX-ICE.json';
 import AVAX_LF from './AVAX-LF.json';
 import AVAX_MAXI from './AVAX-MAXI.json';
+import AVAX_CLAVIS from './AVAX-CLAVIS.json';
 import AVAX_NADO from './AVAX-NADO.json';
 import AVAX_OTWO from './AVAX-OTWO.json';
 import AVAX_PAPA from './AVAX-PAPA.json';
@@ -79,6 +80,7 @@ const farms = {
   ...AVAX_LF,
   ...AVAX_MAXI,
   ...AVAX_CROWN,
+  ...AVAX_CLAVIS,
   ...AVAX_NADO,
   ...AVAX_OTWO,
   ...AVAX_PAPA,

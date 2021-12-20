@@ -33,6 +33,7 @@ class StakingInfo {
     'AVAX-LF',
     'AVAX-SB',
     'AVAX-MAXI',
+    'AVAX-CLAVIS',
     'AVAX-GG',
     'AVAX-OTWO',
     'AVAX-SDOG',
