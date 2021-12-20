@@ -97,7 +97,7 @@ class StakingInfo {
       );
     });
   }
-  async getCurrentIndex(stakingContract, indexRatio=1, clearCache=false) {
+  async getCurrentIndex(stakingContract, key, indexRatio=1, clearCache=false) {
     let rawCurrentIndex = await this.loadCahceContractCall(
       stakingContract,
       'index',
@@ -111,7 +111,12 @@ class StakingInfo {
       clearCache
     );
     currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / indexRatio).toFixed(2);
-    rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
+    if (key === 'BSC-META' || key === 'BSC-GYRO') {
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei') / indexRatio).toFixed(2);
+    } else {
+      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
+
+    }
 
     return {
       currentIndex: Number(currentIndex),
@@ -171,7 +176,7 @@ class StakingInfo {
       clearCache
     );
 
-    let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, farmParams.indexRatio, clearCache);
+    let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
     let lockedValue = 0;
     if(key !== 'ETH-OHM2') {
       lockedValue = await this.loadCahceContractCall(
@@ -451,7 +456,7 @@ class StakingInfo {
       balances: []
     };
     if(farmParams.wsOHMNetworks !== null) {
-      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, farmParams.indexRatio, clearCache);
+      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
       let useIndex = rawCurrentIndex;
       if (key === 'FTM-SPA') {
         useIndex = currentIndex;
@@ -463,7 +468,7 @@ class StakingInfo {
       balances: []
     };
     if(typeof farmParams.cauldrons !== 'undefined') {
-      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, farmParams.indexRatio, clearCache);
+      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
       let useIndex = rawCurrentIndex;
       if (key === 'FTM-SPA') {
         useIndex = currentIndex;
@@ -472,7 +477,7 @@ class StakingInfo {
     }
     let wsOHMPoolBalance = 0;
     if(typeof farmParams.wsOHMPool !== 'undefined') {
-      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, farmParams.indexRatio, clearCache);
+      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
       let useIndex = rawCurrentIndex;
       if (key === 'FTM-SPA') {
         useIndex = currentIndex;
