@@ -1,0 +1,34 @@
+{
+  "AVAX-GHOST": {
+    "farmSymbol": "GHOST",
+    "networkSymbol": "AVAX",
+    "constants": {
+      "name": "GHOSTmizer",
+      "symbol": "GHOST",
+      "timeTemplate": true,
+      "date": "Nov-25-2021 07:20:20 AM",
+      "link": "https://app.GHOST.xyz/#/dashboard",
+      "token": "0xa72eab7327e48bde0ff873eaf1d4fecf6036504f",
+      "stakingSymbol": "TOMB",
+      "stakingToken": "0x908a1c13c6dd126307221102e61b55d86c836c7b",
+      "indexRatio": 4.5,
+      "stakingContract": "0x37076706ee1c549a32103e81dcc3ee56e6477960",
+      "LPContract": "0x0bc14d02d04dcd6c7a73d1f89d2448f09676a849",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x32a0befc3092f3740d9d507aa4ec6c9cf0848e2e",
+      "bondingCalculator": "",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x294b750e89d7981565ba3a96150206d93f4df5d9",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0xf210d2393539c064234d16f215bff9260524c9a6",
+          "symbol": "GHOST-MIM"
+        }
+      ]
+    }
+  }
+}
