@@ -31,6 +31,10 @@
         {
           "address": "0xbbe4eba54583296f78f5c48a4e16205683329df2",
           "symbol": "USDT (4,4)"
+        },
+        {
+          "address": "0xb4582e43f98991ba6ef03f6a9091f16e3a438c90",
+          "symbol": "MIM-PARR (4,4)"
         }
       ]
     }
