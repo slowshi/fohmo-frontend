@@ -295,6 +295,13 @@ const formatStakingInfo = (stakingInfo, currency) => {
     fractionDigits = 8;
   }
   if(stakingInfo === null) return stakingInfo;
+  // console.log('stakingReward/circulatingSupply', stakingInfo.stakingRebase);
+  // console.log('rebases per day', stakingInfo.distributeInterval);
+  // console.log('1 Rebase',Number((
+  //   (Math.pow(1 + stakingInfo.stakingRebase,
+  //     1) - 1) * 100)
+  //   .toFixed(4))
+  //   .toLocaleString());
   return {
     ...stakingInfo,
     price: Number(stakingInfo.rawPrice).toLocaleString(undefined, {

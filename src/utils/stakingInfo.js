@@ -200,6 +200,8 @@ class StakingInfo {
       clearCache
     );
     const stakingRebase = Number(stakingReward / circulatingSupply);
+    // console.log('stakingReward', Number(stakingReward));
+    // console.log('circulatingSupply', Number(circulatingSupply));
     const pairingContract = this.loadCacheContract(farmParams.LPContract, PairContractAbi, networkParams.rpcURL);
     const reserves = await this.loadCahceContractCall(
       pairingContract,
