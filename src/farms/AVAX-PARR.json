@@ -23,6 +23,10 @@
         {
           "address": "0xca547441fbed28aee7aad030d0ea743a769b0674",
           "symbol": "MIM"
+        },
+        {
+          "address": "0xd1dbc1ff134ac420fcaa8b78de33dca285aa3d0c",
+          "symbol": "MIM (4,4)"
         }
       ]
     }

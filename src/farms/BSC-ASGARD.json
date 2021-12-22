@@ -1,0 +1,61 @@
+{
+  "BSC-ASGARD": {
+    "farmSymbol": "ASGARD",
+    "networkSymbol": "BSC",
+    "constants": {
+      "name": "Asgard DAO",
+      "symbol": "ASGARD",
+      "date": "Dec-01-2021 04:29:45 PM",
+      "link": "https://ASGARDplar.finance/#/stake",
+      "token": "0xa5593837af2b99021fe657c80d70d2365F5CfD38",
+      "stakingSymbol": "sASGARD",
+      "stakingToken": "0xf93606A556B5B74fc3472da9226C83Abd22DA155",
+      "stakingContract": "0xFdFC6a9717B33Ab43d066cFa686D0e374Cf2779b",
+      "LPContract": "0x11ceddd7a64ec79212d8ae9c8b46d23b8b750db0",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xFb445ce1CFE11B86505dD293f1bE438fFaa4fF8c",
+      "wsOHMNetworks": [
+        {
+          "address": "0xCfddA53061bC16B3E83Ae4D6c3aFF767707eDE84",
+          "networkSymbol": "BSC"
+        }
+      ],
+      "wsOHMSymbol": "wsASGARD",
+      "bondingCalculator": "0x29198e68aD7D99c9D7446CfA435DC6c4628D2ca3",
+      "bondingContracts": [
+        {
+          "address": "0x11CeddD7a64eC79212d8Ae9C8B46d23b8B750dB0",
+          "symbol": "ASGARD-BUSD"
+        },
+        {
+          "address": "0xa96bd517b4bbbe94008ec5e9860bcb1fa32e9e64",
+          "symbol": "ASGARD-wBNB"
+        },
+        {
+          "address": "0xE5E926c8Ca7A44F7FFD900F5a88eA33E2B07162D",
+          "symbol": "ASGARD-DAI"
+        },
+        {
+          "address": "0xd187acef6b4b1aa777019adfc1d28de716cce988",
+          "symbol": "BUSD"
+        },
+        {
+          "address": "0x94d198e2d34d7d78683894efa623dc4ed5cc5462",
+          "symbol": "WBNB"
+        },
+        {
+          "address": "0x7cd4a2052507d9a746427e49ef58d261daea3cef",
+          "symbol": "DAI"
+        },
+        {
+          "address": "0xf46e237bf264ecbc3e21f7d73a4d05cc19d79101",
+          "symbol": "USDT"
+        },
+        {
+          "address": "0xa96bd517b4bbbe94008ec5e9860bcb1fa32e9e64",
+          "symbol": "CAKE"
+        }
+      ]
+    }
+  }
+}

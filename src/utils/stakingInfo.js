@@ -258,7 +258,7 @@ class StakingInfo {
         stable = ethers.utils.formatUnits(reserves.reserve0, 'mwei');
         token = ethers.utils.formatUnits(reserves.reserve1, 'gwei');
       }
-    } else if(key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID' || key === 'BSC-WHISKEY') {
+    } else if(key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'MOVR-MD' || key === 'ONE-EIGHT' || key === 'BSC-PID' || key === 'BSC-WHISKEY' || key === 'BSC-SD') {
       stable = ethers.utils.formatUnits(reserves.reserve1, 'ether');
       token = ethers.utils.formatUnits(reserves.reserve0, 'gwei');
     }else {

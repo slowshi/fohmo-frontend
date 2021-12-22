@@ -1,0 +1,39 @@
+{
+  "AVAX-ARA": {
+    "farmSymbol": "ARA",
+    "networkSymbol": "AVAX",
+    "constants": {
+      "name": "ARA Finance",
+      "symbol": "ARA",
+      "timeTemplate": true,
+      "date": "Dec-20-2021 07:04:16 PM",
+      "link": "https://app.arafinance.land/#/stake",
+      "token": "0x2cEd20fdFcBe72C27a607d0c9Ab1C9aDa598C60F",
+      "stakingSymbol": "xARA",
+      "stakingToken": "0x6e8c279bc7ec182b808ffa11c38452813a0de715",
+      "indexRatio": 4.5,
+      "stakingContract": "0x19672375464CCbF1f8c6c7C32D8d8987d27262a5",
+      "LPContract": "0x9DD1Cde570b96bA13E63D317e23637651142227C",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x674969110CA4004A804eeA5043CD9302996900AC",
+      "bondingCalculator": "0x61846Dcbf458a7548BcD60ed8125Ac6640C96E74",
+      "wsOHMNetworks": [
+        {
+          "address": "0x45b0d715bF409C6f2A17c39786EF703b24B88d10",
+          "networkSymbol": "AVAX"
+        }
+      ],
+      "wsOHMSymbol": "MIM",
+      "bondingContracts": [
+        {
+          "address": "0x111d6e4a6e68a3f3898b3ed8cacb3355ad90dafe",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0x1810405ac71f51c310fb832b12f3a59d9d3a2748",
+          "symbol": "ARA-MIM"
+        }
+      ]
+    }
+  }
+}

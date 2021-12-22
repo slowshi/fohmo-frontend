@@ -15,6 +15,7 @@ import AVAX_OTWO from './AVAX-OTWO.json';
 import AVAX_PAPA from './AVAX-PAPA.json';
 import AVAX_PARR from './AVAX-PARR.json';
 import AVAX_RUG from './AVAX-RUG.json';
+import AVAX_ARA from './AVAX-ARA.json';
 import AVAX_RGK from './AVAX-RGK.json';
 import AVAX_GHOST from './AVAX-GHOST.json';
 import AVAX_SPACE from './AVAX-SPACE.json';
@@ -32,6 +33,8 @@ import AVAX_TIME from './AVAX-TIME.json';
 import BSC_GYRO from './BSC-GYRO.json';
 import BSC_XEUS from './BSC-XEUS.json';
 import BSC_PID from './BSC-PID.json';
+import BSC_ASGARD from './BSC-ASGARD.json';
+import BSC_SD from './BSC-SD.json';
 import BSC_JADE from './BSC-JADE.json';
 import BSC_LOVE from './BSC-LOVE.json';
 // import BSC_RA from './BSC-RA.json';
@@ -88,6 +91,7 @@ const farms = {
   ...AVAX_NADO,
   ...AVAX_OTWO,
   ...AVAX_PAPA,
+  ...AVAX_ARA,
   ...AVAX_RUG,
   ...AVAX_RGK,
   ...AVAX_PARR,
@@ -112,6 +116,8 @@ const farms = {
   ...BSC_META,
   ...BSC_LOVE,
   ...BSC_NMS,
+  ...BSC_ASGARD,
+  ...BSC_SD,
   ...BSC_PID,
   // ...BSC_RA,
   ...BSC_TAC,
