@@ -24,6 +24,10 @@
           "symbol": "CLAVIS-MIM"
         },
         {
+          "address": "0x9febea27f8278bb59b344d374f84037cc7b234bf",
+          "symbol": "CLAVIS-wAVAX"
+        },
+        {
           "address": "0xad9a446e5269d59a17d713de23706e3d5428edda",
           "symbol": "MIM"
         },
