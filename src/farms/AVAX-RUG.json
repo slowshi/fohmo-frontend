@@ -5,6 +5,7 @@
     "constants": {
       "name": "R U Generous",
       "symbol": "RUG",
+      "rugged": true,
       "timeTemplate": true,
       "date": "Nov-15-2021 09:18:46 PM",
       "link": "https://app.rug.farm/#/stake",

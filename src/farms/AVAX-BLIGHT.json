@@ -5,6 +5,7 @@
     "constants": {
       "name": "FarmersDAO",
       "symbol": "BLIGHT",
+      "rugged": true,
       "timeTemplate": true,
       "date": "Dec-14-2021 05:49:35 PM",
       "link": "https://dao.farmersonly.farm/#/stake",

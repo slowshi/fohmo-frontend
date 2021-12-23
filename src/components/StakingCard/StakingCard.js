@@ -62,7 +62,7 @@ function StakingCard(params) {
   }
   return (
     <div className="card mb-2">
-      <div className={`card-body ${farm.constants.rugged ? `bg-danger` : ''}`}>
+      <div className="card-body">
         <h5 className="card-title">
           <div className="d-flex h-auto justify-content-between align-items-top">
             <span className="d-flex flex-column align-items-end">
@@ -80,17 +80,24 @@ function StakingCard(params) {
             </span>
             : ''}
           </div>
-          <div>
-            <span className={`badge badge-${networkSymbol}`}>
-              {network.name}
+          <div className="d-flex justify-content-between align-items-center">
+            <div>
+              <span className={`badge badge-${networkSymbol}`}>
+                {network.name}
+              </span>
+              <a className="btn text-dark btn-sm"
+              target="_blank" rel="noreferrer" href={farm.constants.link}>
+                  <i className="bi bi-box-arrow-up-right"></i>
+              </a>
+              <a className="btn text-dark btn-sm" target="_blank" rel="noreferrer" href={`${network.chartURL}${farm.constants.LPContract}`}>
+                <i className="bi bi-graph-down-arrow"></i>
+              </a>
+            </div>
+            {farm.constants.rugged ?
+            <span className={`badge btn-danger`}>
+              RUGGED
             </span>
-            <a className="btn text-dark btn-sm"
-            target="_blank" rel="noreferrer" href={farm.constants.link}>
-                <i className="bi bi-box-arrow-up-right"></i>
-            </a>
-            <a className="btn text-dark btn-sm" target="_blank" rel="noreferrer" href={`${network.chartURL}${farm.constants.LPContract}`}>
-              <i className="bi bi-graph-down-arrow"></i>
-            </a>
+            :''}
           </div>
         </h5>
         {farm.loading ?

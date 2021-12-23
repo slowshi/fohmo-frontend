@@ -6,6 +6,7 @@
       "name": "ParrotDAO",
       "symbol": "PARR",
       "timeTemplate": true,
+      "rugged": true,
       "date": "Dec-17-2021 11:33:57 PM",
       "link": "https://parrotdao.net/#/stake",
       "token": "0xf10b5a72f0abeb27a5ddba950082e4edff4c825d",

@@ -6,6 +6,7 @@
       "name": "Life DAO",
       "symbol": "LF",
       "timeTemplate": true,
+      "rugged": true,
       "date": "Nov-28-2021 04:18:55 PM",
       "link": "https://lifedao.finance/#/stake",
       "token": "0x5684a087C739A2e845F4AaAaBf4FBd261edc2bE8",
