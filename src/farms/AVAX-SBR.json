@@ -5,6 +5,7 @@
     "constants": {
       "name": "Snowbear",
       "symbol": "SBR",
+      "rugged": true,
       "timeTemplate": true,
       "date": "Dec-15-2021 01:07:23 AM",
       "link": "https://app.snowbeardao.com/#/stake",

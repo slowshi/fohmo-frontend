@@ -26,10 +26,6 @@
         {
           "address": "0x8CD309e14575203535EF120b5b0Ab4DDeD0C2073",
           "networkSymbol": "AVAX"
-        },
-        {
-          "address": "0xd8cA34fd379d9ca3C6Ee3b3905678320F5b45195",
-          "networkSymbol": "MATIC"
         }
       ],
       "treasuryContract": "0x31F8Cc382c9898b273eff4e0b7626a6987C846E8",
