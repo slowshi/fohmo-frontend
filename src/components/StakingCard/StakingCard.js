@@ -142,10 +142,10 @@ function StakingCard(params) {
               <strong>Estimated MC</strong>
               <span>{farm.data?.$MC}</span>
             </span>
-            <span className="card-text d-flex h-auto justify-content-between align-items-center">
-              <strong>Risk Free Value</strong>
-              <span>{farm.data?.$RFV}</span>
-            </span>
+            {/* <span className="card-text d-flex h-auto justify-content-between align-items-center">
+              <strong>Staked (Circ / Tot)</strong>
+              <span>{farm.data?.$Staked}</span>
+            </span> */}
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
               <strong>LP Liquidity</strong>
               <span>{farm.data?.$LPLiquidity}</span>

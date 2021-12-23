@@ -335,6 +335,12 @@ const formatStakingInfo = (stakingInfo, currency) => {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
     }),
+    $Staked: (Number(stakingInfo.circulatingSupply) /
+    Number(stakingInfo.totalSupply)).toLocaleString(undefined, {
+      style: 'percent',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }),
     $Circ: (Number(stakingInfo.circulatingSupply) *
     Number(stakingInfo.rawPrice)).toLocaleString(undefined, {
       style: 'currency',

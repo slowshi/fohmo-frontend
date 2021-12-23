@@ -37,6 +37,7 @@ import BSC_ASGARD from './BSC-ASGARD.json';
 import BSC_SD from './BSC-SD.json';
 import BSC_JADE from './BSC-JADE.json';
 import BSC_LOVE from './BSC-LOVE.json';
+import BSC_XPH from './BSC-XPH.json';
 // import BSC_RA from './BSC-RA.json';
 import BSC_META from './BSC-META.json';
 import BSC_NMS from './BSC-NMS.json';
@@ -52,6 +53,7 @@ import ETH_OHM from './ETH-OHM.json';
 import ETH_OHM2 from './ETH-OHM2.json';
 import ETH_SQUID from './ETH-SQUID.json';
 import ETH_BTRFLY from './ETH-BTRFLY.json';
+import ETH_3DOG from './ETH-3DOG.json';
 import FTM_GIZA from './FTM-GIZA.json';
 import FTM_EXOD from './FTM-EXOD.json';
 import FTM_FHM from './FTM-FHM.json';
@@ -123,11 +125,13 @@ const farms = {
   ...BSC_TAC,
   ...BSC_TEM,
   ...BSC_UDO,
+  ...BSC_XPH,
   ...BSC_WHISKEY,
   ...ETH_LOBI,
   ...ETH_MNFST,
   ...ETH_OHM,
   ...ETH_OHM2,
+  ...ETH_3DOG,
   ...ETH_BTRFLY,
   ...ETH_SQUID,
   ...FTM_EXOD,

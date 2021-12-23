@@ -1,0 +1,40 @@
+{
+  "ETH-3DOG": {
+    "farmSymbol": "3DOG",
+    "networkSymbol": "ETH",
+    "constants": {
+      "name": "CerberusDAO",
+      "symbol": "3DOG",
+      "date": "Oct-25-2021 01:49:17 PM",
+      "link": "https://app.cerberusdao.finance/#/stake",
+      "token": "0x8a14897eA5F668f36671678593fAe44Ae23B39FB",
+      "stakingSymbol": "3DOGs",
+      "stakingToken": "0xA552f061d8962BE4c1f6BC6B0403Ca620F569330",
+      "stakingContract": "0x95deaF8dd30380acd6CC5E4E90e5EEf94d258854",
+      "LPContract": "0xB5B6C3816C66Fa6BC5b189F49e5b088E2dE5082a",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x56D595ea5591D264bc1Ef9E073aF66685F0bFD31",
+      "LPContractETH": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0xd2E0BD64B3e6fbc4d09f9a11e5852bf9A46A6731",
+          "symbol": "wETH-3DOG"
+        },
+        {
+          "address": "0x30F5039447B8AEf529DB99324896b14d453D85Fa",
+          "symbol": "wETH"
+        },
+        {
+          "address": "0x5F50d0f427228F48665fB790685c450328995C0D",
+          "symbol": "SHIB"
+        },
+        {
+          "address": "0xf0c2b0eC587155abE978AE47705f0C619F44Bc65",
+          "symbol": "FLOK"
+        }
+      ]
+    }
+  }
+}

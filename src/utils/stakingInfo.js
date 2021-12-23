@@ -221,7 +221,7 @@ class StakingInfo {
     let stable = 0;
     let token = 0;
     if (key === 'ETH-SQUID' || key === 'ETH-OHM2' || key === 'ETH-LOBI' ||
-        key === 'ETH-MNFST' || key == 'AVAX-OTWO' || key == 'AVAX-RUG' || key === 'ETH-BTRFLY') {
+        key === 'ETH-MNFST' || key == 'AVAX-OTWO' || key == 'AVAX-RUG' || key === 'ETH-BTRFLY' || key === 'ETH-3DOG') {
       const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
       const ethReserves = await this.loadCahceContractCall(
         ethContract,
