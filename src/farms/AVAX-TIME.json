@@ -43,6 +43,10 @@
           "symbol": "wAVAX"
         },
         {
+          "address": "0x858636f350fc812c3c88d1578925c502727ab323",
+          "symbol": "wETH"
+        },
+        {
           "address": "0xc26850686ce755FFb8690EA156E5A6cf03DcBDE1",
           "symbol": "TIME-AVAX"
         },
