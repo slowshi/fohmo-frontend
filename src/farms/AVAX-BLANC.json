@@ -6,6 +6,7 @@
       "name": "AVALPS",
       "symbol": "BLANC",
       "timeTemplate": true,
+      "rugged": true,
       "date": "Dec-20-2021 01:51:13 AM",
       "link": "https://ape.avalps.finance/#/stake",
       "token": "0xf481Eec738C46F675e077ee966A680a19210Af11",

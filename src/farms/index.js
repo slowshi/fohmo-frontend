@@ -13,16 +13,19 @@ import AVAX_CLAVIS from './AVAX-CLAVIS.json';
 import AVAX_NADO from './AVAX-NADO.json';
 import AVAX_OTWO from './AVAX-OTWO.json';
 import AVAX_PAPA from './AVAX-PAPA.json';
-import AVAX_PARR from './AVAX-PARR.json';
+// import AVAX_PARR from './AVAX-PARR.json';
 import AVAX_RUG from './AVAX-RUG.json';
 import AVAX_ARA from './AVAX-ARA.json';
 import AVAX_RGK from './AVAX-RGK.json';
 import AVAX_GHOST from './AVAX-GHOST.json';
 import AVAX_SPACE from './AVAX-SPACE.json';
+import AVAX_SPC from './AVAX-SPC.json';
+import AVAX_JOLLY from './AVAX-JOLLY.json';
 // import AVAX_SPACEv1 from './AVAX-SPACEv1.json';
 import AVAX_SBR from './AVAX-SBR.json';
 import AVAX_SCAT from './AVAX-SCAT.json';
 import AVAX_PB from './AVAX-PB.json';
+import AVAX_VERSE from './AVAX-VERSE.json'
 import AVAX_SB from './AVAX-SB.json';
 import AVAX_BLIGHT from './AVAX-BLIGHT.json';
 import AVAX_BLANC from './AVAX-BLANC.json';
@@ -71,6 +74,7 @@ import MATIC_GURU from './MATIC-GURU.json';
 import MATIC_KLIMA from './MATIC-KLIMA.json';
 import MOVR_FHM from './MOVR-FHM.json';
 import MOVR_ROME from './MOVR-ROME.json'
+import MOVR_TEM from './MOVR-TEM.json';
 // import MOVR_MD from './MOVR-MD.json';
 import ONE_CHEEZ from './ONE-CHEEZ.json';
 // import ONE_EIGHT from './ONE-EIGHT.json';
@@ -96,10 +100,11 @@ const farms = {
   ...AVAX_ARA,
   ...AVAX_RUG,
   ...AVAX_RGK,
-  ...AVAX_PARR,
+  // ...AVAX_PARR,
   ...AVAX_BLANC,
   ...AVAX_SCAT,
   ...AVAX_PB,
+  ...AVAX_VERSE,
   ...AVAX_SB,
   ...AVAX_SBR,
   ...AVAX_SPACE,
@@ -109,6 +114,8 @@ const farms = {
   ...AVAX_TEMPO,
   ...AVAX_TIME,
   ...AVAX_VAL,
+  ...AVAX_SPC,
+  ...AVAX_JOLLY,
   ...AVAX_VALDAO,
   ...CRO_FORT,
   ...BSC_DIOS,
@@ -150,6 +157,7 @@ const farms = {
   ...MATIC_GURU,
   ...MATIC_KLIMA,
   ...MOVR_FHM,
+  ...MOVR_TEM,
   // ...MOVR_MD,
   ...MOVR_ROME,
   ...ONE_CHEEZ,

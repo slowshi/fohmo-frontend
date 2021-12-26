@@ -1,0 +1,32 @@
+{
+  "MOVR-TEM": {
+    "farmSymbol": "TEM",
+    "networkSymbol": "MOVR",
+    "constants": {
+      "name": "Templar DAO",
+      "symbol": "TEM",
+      "date": "Dec-24-2021 09:56:54 PM",
+      "link": "https://templar.finance/#/stake",
+      "token": "0xd86e3f7b2ff4e803f90c799d702955003bca9875",
+      "stakingSymbol": "SWORD",
+      "stakingToken": "0x8c9827cd430d945ae5a5c3cfdc522f8d342334b9",
+      "stakingContract": "0xa1f61ca61fe8655d2a204b518f6de964145a9324",
+      "LPContract": "0x5ef6e7e82b2402d354a22a0714299920135b45be",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xd01e8D805BB310F06411e70Fd50eB58cAe2B4C27",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingCalculator": "0xd7fe341fce9f3882d57eba5692221877830a5ddd",
+      "bondingContracts": [
+        {
+          "address": "0x534bd77db3ada353c7a30d5d591407c3e0c74bd2",
+          "symbol": "TEM-MIM"
+        },
+        {
+          "address": "0xcbffdeb456aa6b35ac345dbe14776c1d99d88105",
+          "symbol": "MIM"
+        }
+      ]
+    }
+  }
+}

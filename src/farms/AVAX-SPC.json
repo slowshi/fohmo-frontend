@@ -1,0 +1,42 @@
+{
+  "AVAX-SPC": {
+    "farmSymbol": "SPC",
+    "networkSymbol": "AVAX",
+    "constants": {
+      "name": "SpicyDAO",
+      "symbol": "SPC",
+      "timeTemplate": true,
+      "date": "Dec-23-2021 10:20:03 PM",
+      "link": "https://app.spicydao.finance/#/stake",
+      "token": "0x6007fca39b5398feac4d06d75435a564a086bab8",
+      "stakingSymbol": "SPICY",
+      "stakingToken": "0xb6b624621b9ef3d9e4b8a4918673828dd496827b",
+      "stakingContract": "0xE1F2C6D1194eA9bfd532b66de7066944600cC58E",
+      "LPContract": "0x720dd9292b3d0dd78c9afa57afd948c2ea2d50d8",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x1BE5AE11277c3bf72D60794CaE262d90645912d9",
+      "bondingCalculator": "0x9aaa55874f7226edf9c61864bb9fd5a3acaf3762",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "isWarmup": true,
+      "bondingContracts": [
+        {
+          "address": "0x0a235951b775b89d3d531757787ce7b605f3afc0",
+          "symbol": "SPC-DAI"
+        },
+        {
+          "address": "0x793393a2a0e2dceaba687c139f657bdc9259335d",
+          "symbol": "DAI"
+        },
+        {
+          "address": "0xc59c97065873a433431a880e5a30888605323d87",
+          "symbol": "SPC-MIM"
+        },
+        {
+          "address": "0x24b330a84a3a8114fcb8a29c80c0b39b6bff5bb2",
+          "symbol": "MIM"
+        }
+      ]
+    }
+  }
+}

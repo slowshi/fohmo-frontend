@@ -1,0 +1,35 @@
+{
+  "AVAX-JOLLY": {
+    "farmSymbol": "JOLLY",
+    "networkSymbol": "AVAX",
+    "constants": {
+      "name": "Pirate DAO",
+      "symbol": "JOLLY",
+      "timeTemplate": true,
+      "date": "Dec-26-2021 05:15:59 PM",
+      "link": "https://piratedao.money/#/stake",
+      "token": "0x30ff717fc266f2dcb3adc1af4043f8c517491e66",
+      "stakingSymbol": "ROGER",
+      "indexRatio": 4.5,
+      "stakingToken": "0xec6b908eb69a971952de3035fefc4a5d72e10bab",
+      "stakingContract": "0xDd9a1371035a7483E77Ebb95903816D73DE1B2b4",
+      "LPContract": "0x3FF63b999749cA19e254CAADE820ED73d580ec69",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x661eaa3754a78e223bdc470f32f8305bfe777112",
+      "bondingCalculator": "0x9bb021179cb1e13fa82c84a80201a8d92ce95716",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "isWarmup": true,
+      "bondingContracts": [
+        {
+          "address": "0xe091be4216ccf1b466a13ba29156bb926a6c8f88",
+          "symbol": "JOLLY-MIM"
+        },
+        {
+          "address": "0xc29bfafb781ddbc848d8817d4caad4e7761db689",
+          "symbol": "MIM"
+        }
+      ]
+    }
+  }
+}

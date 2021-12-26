@@ -28,6 +28,18 @@
         {
           "address": "0xe6F0A8E7a3550140495FfC17AB4dE44636278ee2",
           "symbol": "WBNB"
+        },
+        {
+          "address": "0x1b83388d6113629c46a98d7de82f58531a8dc710",
+          "symbol": "MIM-BUSD"
+        },
+        {
+          "address": "0x061bb1a6aecb179b79ae5da6bae179f1d1a79ac8",
+          "symbol": "MIM"
+        },
+        {
+          "address": "0xd93e4d6cfa40bf9ed141d690e2af038aaf59ab7e",
+          "symbol": "TEM-MIM"
         }
       ]
     }
