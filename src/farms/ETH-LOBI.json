@@ -11,15 +11,15 @@
       "stakingSymbol": "sLOBI",
       "stakingToken": "0x8ab17e2cd4f894f8641a31f99f673a5762f53c8e",
       "stakingContract": "0x3818eff63418e0a0ba3980aba5ff388b029b6d90",
-      "LPContract": "0x2734F4A846D1127f4B5D3BAb261FaCfe51dF1D9a",
+      "LPContract": "0x193008eaade86658df8237a436261e23e3bcbbaa",
       "lockedSupplyContract": null,
       "treasuryContract": "0x873ad91fa4f2aa0d557c0919ec3f6c9d240cdd05",
-      "LPContractETH": "0x34d7d7Aaf50AD4944B70B320aCB24C95fa2def7c",
+      "LPContractETH": "0x055475920a8c93cffb64d039a8205f7acc7722d3",
       "wsOHMNetworks": [],
       "wsOHMSymbol": "",
       "bondingContracts": [
         {
-          "address": "0x563068babea85e8192b45b402557f47755e1bbf3",
+          "address": "0xf8a5b15E7C96ed29c1cC4a594fdAB5F0C60C8266",
           "symbol": "LOBI-OHM"
         },
         {
