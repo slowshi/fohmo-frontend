@@ -12,7 +12,7 @@
       "stakingSymbol": "SPICY",
       "stakingToken": "0xb6b624621b9ef3d9e4b8a4918673828dd496827b",
       "stakingContract": "0xE1F2C6D1194eA9bfd532b66de7066944600cC58E",
-      "LPContract": "0x720dd9292b3d0dd78c9afa57afd948c2ea2d50d8",
+      "LPContract": "0x910fa8fcd781accaa82cd544ac235ba921927494",
       "lockedSupplyContract": null,
       "treasuryContract": "0x1BE5AE11277c3bf72D60794CaE262d90645912d9",
       "bondingCalculator": "0x9aaa55874f7226edf9c61864bb9fd5a3acaf3762",
