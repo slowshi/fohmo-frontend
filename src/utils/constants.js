@@ -158,7 +158,7 @@ const networks = {
     name: 'Moonriver',
     rpcURL: 'https://rpc.moonriver.moonbeam.network/',
     chartURL: 'https://dexscreener.com/moonriver/',
-    blockRateSeconds: 14.1
+    blockRateSeconds: 12.69
   },
   CRO: {
     symbol: 'CRO',
