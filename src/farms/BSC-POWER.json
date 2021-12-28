@@ -1,0 +1,32 @@
+{
+  "BSC-POWER": {
+    "farmSymbol": "POWER",
+    "networkSymbol": "BSC",
+    "constants": {
+      "name": "MetaReserve",
+      "symbol": "POWER",
+      "date": "Dec-28-2021 06:54:04 AM",
+      "link": "https://app.metareserve.finance/#/stake",
+      "token": "0x000c6322df760155bbe4f20f2edd8f4cd35733a6",
+      "stakingSymbol": "HONOR",
+      "stakingToken": "0x0955f99963b1aec8d0fe18a35ad830f562b113bc",
+      "stakingContract": "0x5c643737AF2aD7A0B9ae62158b715793505967bE",
+      "LPContract": "0xa1a64b7d85b92a19fdb628557cc44bcb40284b65",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x6651bdee6a47f6962c86d680b498dc492a7e78c8",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingCalculator": "",
+      "bondingContracts": [
+        {
+          "address": "0xeea8075f0ada3c7a6af4bbb1497a73ed372c6e7e",
+          "symbol": "POWER-BUSD"
+        },
+        {
+          "address": "0xec788d7fa07adb9ca488032172f3bb3437e017b6",
+          "symbol": "BUSD"
+        }
+      ]
+    }
+  }
+}

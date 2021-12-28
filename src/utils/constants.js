@@ -122,7 +122,7 @@ const networks = {
     symbol: 'MATIC',
     name: 'Polygon',
     rpcURL: 'https://polygon-rpc.com',
-    chartURL: 'https://www.defined.fi/matic/',
+    chartURL: 'https://dexscreener.com/polygon/',
     blockRateSeconds: 2.26
   },
   AVAX: {

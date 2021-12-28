@@ -41,6 +41,7 @@ import BSC_SD from './BSC-SD.json';
 import BSC_JADE from './BSC-JADE.json';
 import BSC_LOVE from './BSC-LOVE.json';
 import BSC_XPH from './BSC-XPH.json';
+import BSC_POWER from './BSC-POWER.json';
 // import BSC_RA from './BSC-RA.json';
 import BSC_META from './BSC-META.json';
 import BSC_NMS from './BSC-NMS.json';
@@ -72,6 +73,7 @@ import FTM_PUMP from './FTM-PUMP.json';
 import MATIC_CLAM2 from './MATIC-CLAM2.json';
 import MATIC_GURU from './MATIC-GURU.json';
 import MATIC_KLIMA from './MATIC-KLIMA.json';
+import MATIC_MAMA from './MATIC-MAMA.json';
 import MOVR_FHM from './MOVR-FHM.json';
 import MOVR_ROME from './MOVR-ROME.json'
 import MOVR_TEM from './MOVR-TEM.json';
@@ -124,6 +126,7 @@ const farms = {
   ...BSC_JADE,
   ...BSC_META,
   ...BSC_LOVE,
+  ...BSC_POWER,
   ...BSC_NMS,
   ...BSC_ASGARD,
   ...BSC_SD,
@@ -155,6 +158,7 @@ const farms = {
   // ...MATIC_CLAM,
   ...MATIC_CLAM2,
   ...MATIC_GURU,
+  ...MATIC_MAMA,
   ...MATIC_KLIMA,
   ...MOVR_FHM,
   ...MOVR_TEM,
