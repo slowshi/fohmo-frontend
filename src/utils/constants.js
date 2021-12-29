@@ -163,7 +163,7 @@ const networks = {
   CRO: {
     symbol: 'CRO',
     name: 'Cronos',
-    rpcURL: 'https://rpc.nebkas.ro/',
+    rpcURL: 'https://rpc.vvs.finance/',
     chartURL: 'https://dexscreener.com/cronos/',
     blockRateSeconds: 5.5
   },
