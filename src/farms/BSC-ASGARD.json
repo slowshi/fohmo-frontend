@@ -24,15 +24,19 @@
       "bondingCalculator": "0x29198e68aD7D99c9D7446CfA435DC6c4628D2ca3",
       "bondingContracts": [
         {
-          "address": "0x11CeddD7a64eC79212d8Ae9C8B46d23b8B750dB0",
+          "address": "0x358f13380935c4a90d7addac0b13e018e0723a49",
+          "symbol": "BUSD (4,4)"
+        },
+        {
+          "address": "0xddcfdcddd8d04547bfcae36036ef810806f850b8",
           "symbol": "ASGARD-BUSD"
         },
         {
-          "address": "0xa96bd517b4bbbe94008ec5e9860bcb1fa32e9e64",
+          "address": "0x0091774550dafcf56df1eca5b5560bb7e7b5fe74",
           "symbol": "ASGARD-wBNB"
         },
         {
-          "address": "0xE5E926c8Ca7A44F7FFD900F5a88eA33E2B07162D",
+          "address": "0xe226729895b2a1cde9e0f439feb6fa93b2d0483a",
           "symbol": "ASGARD-DAI"
         },
         {
