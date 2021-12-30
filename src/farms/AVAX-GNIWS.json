@@ -1,0 +1,34 @@
+{
+  "AVAX-GNIWS": {
+    "farmSymbol": "GNIWS",
+    "networkSymbol": "AVAX",
+    "constants": {
+      "name": "Swing Dao",
+      "symbol": "GNIWS",
+      "timeTemplate": true,
+      "date": "Dec-29-2021 10:25:22 PM",
+      "link": "https://swingdao.finance/#/stake",
+      "token": "0x19fbfa5987efecceff41b190759a9d883a4bea21",
+      "stakingSymbol": "sGNIWS",
+      "indexRatio": 4.5,
+      "stakingToken": "0xfe546133f74711f8eb2fab686c2d467a875dd392",
+      "stakingContract": "0x8d0d683f8030356C6f3dDD5Ed01372f82F8ce833",
+      "LPContract": "0xAd5bADe2C8c6DCD0774581d29bb403D7b3d8194e",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xeE9181EB5c49712d6be9905c369d0e605061f284",
+      "bondingCalculator": "0xb3340A3eB3DcaB7abC051fEA1477C7FA717196A4",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x4c121e6c0a1aa3d129980abfa1b877b6dd62959f",
+          "symbol": "GNIWS-MIM"
+        },
+        {
+          "address": "0x6707c71835604ae995e3b9b061dc4ecfd526ff0d",
+          "symbol": "MIM"
+        }
+      ]
+    }
+  }
+}

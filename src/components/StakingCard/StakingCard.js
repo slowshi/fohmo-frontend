@@ -111,7 +111,6 @@ function StakingCard(params) {
             <div className="text-placeholder placeholder w-100"></div>
             <div className="text-placeholder placeholder w-100"></div>
             <div className="text-placeholder placeholder w-100"></div>
-            <div className="text-placeholder placeholder w-100"></div>
           </div>
         :
           <div>

@@ -22,6 +22,7 @@ import AVAX_SPACE from './AVAX-SPACE.json';
 import AVAX_SPC from './AVAX-SPC.json';
 import AVAX_JOLLY from './AVAX-JOLLY.json';
 import AVAX_PEPE from './AVAX-PEPE.json'
+import AVAX_GNIWS from './AVAX-GNIWS.json'
 // import AVAX_SPACEv1 from './AVAX-SPACEv1.json';
 import AVAX_SBR from './AVAX-SBR.json';
 import AVAX_SCAT from './AVAX-SCAT.json';
@@ -104,6 +105,7 @@ const farms = {
   ...AVAX_ARA,
   ...AVAX_RUG,
   ...AVAX_RGK,
+  ...AVAX_GNIWS,
   // ...AVAX_PARR,
   ...AVAX_BLANC,
   ...AVAX_SCAT,
