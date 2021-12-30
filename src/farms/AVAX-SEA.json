@@ -1,0 +1,34 @@
+{
+  "AVAX-SEA": {
+    "farmSymbol": "SEA",
+    "networkSymbol": "AVAX",
+    "constants": {
+      "name": "DeepSeaDAO",
+      "symbol": "SEA",
+      "timeTemplate": true,
+      "date": "Dec-29-2021 08:27:52 PM",
+      "link": "https://dapp.daodeepsea.com/#/stake",
+      "token": "0xb195af20a0fec7e2c95b22a1c5de86a2389e40d5",
+      "stakingSymbol": "sSEA",
+      "indexRatio": 4.5,
+      "stakingToken": "0x79b38a11545c8c9dc9868d304f0c98fa91e1f82a",
+      "stakingContract": "0x844e56e53839dda19e85894c8e3c1c13d7aa9463",
+      "LPContract": "0x4A99bCa37a3E442eCC60Ece9Ae4d3bfF3f9A423e",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0x4db9ca15eb32d205b7cd2927d5ae33924f4da22a",
+      "bondingCalculator": "0x8d48B14796Daf44CBBd6cAdBf9Df6268e68aE264",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "bondingContracts": [
+        {
+          "address": "0x68f403df134b183dda1f4eeab9d1e243591b3da6",
+          "symbol": "SEA-MIM"
+        },
+        {
+          "address": "0x70e4a8d2914dc97178402b9e69d2f7d756bd9018",
+          "symbol": "MIM"
+        }
+      ]
+    }
+  }
+}

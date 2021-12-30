@@ -24,13 +24,14 @@ import AVAX_JOLLY from './AVAX-JOLLY.json';
 import AVAX_PEPE from './AVAX-PEPE.json'
 import AVAX_GNIWS from './AVAX-GNIWS.json'
 // import AVAX_SPACEv1 from './AVAX-SPACEv1.json';
-import AVAX_SBR from './AVAX-SBR.json';
-import AVAX_SCAT from './AVAX-SCAT.json';
+// import AVAX_SBR from './AVAX-SBR.json';
+// import AVAX_SCAT from './AVAX-SCAT.json';
 import AVAX_PB from './AVAX-PB.json';
 import AVAX_VERSE from './AVAX-VERSE.json'
 import AVAX_SB from './AVAX-SB.json';
-import AVAX_BLIGHT from './AVAX-BLIGHT.json';
-import AVAX_BLANC from './AVAX-BLANC.json';
+import AVAX_SEA from './AVAX-SEA.json';
+// import AVAX_BLIGHT from './AVAX-BLIGHT.json';
+// import AVAX_BLANC from './AVAX-BLANC.json';
 import AVAX_TEMPO from './AVAX-TEMPO.json';
 import AVAX_VAL from './AVAX-VAL.json';
 import AVAX_VALDAO from './AVAX-VALDAO.json';
@@ -107,16 +108,17 @@ const farms = {
   ...AVAX_RGK,
   ...AVAX_GNIWS,
   // ...AVAX_PARR,
-  ...AVAX_BLANC,
-  ...AVAX_SCAT,
+  // ...AVAX_BLANC,
+  // ...AVAX_SCAT,
   ...AVAX_PB,
+  ...AVAX_SEA,
   ...AVAX_VERSE,
   ...AVAX_SB,
-  ...AVAX_SBR,
+  // ...AVAX_SBR,
   ...AVAX_SPACE,
   ...AVAX_GHOST,
   // ...AVAX_SPACEv1,
-  ...AVAX_BLIGHT,
+  // ...AVAX_BLIGHT,
   ...AVAX_TEMPO,
   ...AVAX_TIME,
   ...AVAX_VAL,
