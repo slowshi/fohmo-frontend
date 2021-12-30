@@ -1,0 +1,39 @@
+{
+  "AVAX-PEPE": {
+    "farmSymbol": "PEPE",
+    "networkSymbol": "AVAX",
+    "constants": {
+      "name": "PepeDAO",
+      "symbol": "PEPE",
+      "timeTemplate": true,
+      "date": "Dec-27-2021 07:36:20 PM",
+      "link": "https://pepedao.finance/#/stake",
+      "token": "0x6eece47a60f92d04746e11988972c801a9be7a1e",
+      "stakingSymbol": "sPEPE",
+      "indexRatio": 4.5,
+      "stakingToken": "0xde99ebedbf918f1cca29a24ab0a121a11f07ec5c",
+      "stakingContract": "0xf18a125665b743a1c725ece1699591e0102deafe",
+      "LPContract": "0xdf4c30cb27adf8c28b4663b900196d4b4eed287a",
+      "lockedSupplyContract": null,
+      "treasuryContract": "0xc3c59d2c57c403949a3bdd4f3945a040ded29e28",
+      "bondingCalculator": "0x8ab1fff68d0a0b7e1ea0ba9910fb3e33d2aa0932",
+      "wsOHMNetworks": [],
+      "wsOHMSymbol": "",
+      "isWarmup": true,
+      "bondingContracts": [
+        {
+          "address": "0x5f20fad263154403cc802e0383a4c636fbf62a00",
+          "symbol": "PEPE-MIM"
+        },
+        {
+          "address": "0x296454aC245b022671423755FC811B87557De34A",
+          "symbol": "wAVAX"
+        },
+        {
+          "address": "0x9f03BB13359a5702877b7309383cea7fE665958d",
+          "symbol": "MIM"
+        }
+      ]
+    }
+  }
+}
