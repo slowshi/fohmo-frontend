@@ -12,9 +12,7 @@
       "stakingToken": "0x89F52002E544585b42F8c7Cf557609CA4c8ce12A",
       "stakingContract": "0x6f7D019502e17F1ef24AC67a260c65Dd23b759f1",
       "LPContract": "0x069c2065100b4d3d982383f7ef3ecd1b95c05894",
-      "lockedSupplyContract": [
-        "0xD4a7FEbD52efda82d6f8acE24908aE0aa5b4f956"
-      ],
+      "lockedSupplyContract": null,
       "treasuryContract": "0xfbad41e4dd040bc80c89fcc6e90d152a746139af",
       "bondingCalculator": "0x3b5bbc9d8243c6661ccadade17b68344770c20fd",
       "wsOHMNetworks": [],

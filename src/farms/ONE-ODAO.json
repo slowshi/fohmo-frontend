@@ -16,8 +16,13 @@
       "LPContract": "0x4f658217f163509115b6e1fbba37cd9aefbdba12",
       "lockedSupplyContract": null,
       "treasuryContract": "0xcdC825e5Fc3D5af362dAF887D4EDc4c73c072EdE",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
+      "wsOHMNetworks": [
+        {
+          "address": "0xc7a26fb8feb79e60a356682eb468719388a89cab",
+          "networkSymbol": "ONE"
+        }
+      ],
+      "wsOHMSymbol": "wOXY",
       "bondingContracts": [
         {
           "address": "0xE690ecDbe7e3cCAdE0Af9c66160Ed1529bd8C9E7",
@@ -34,6 +39,10 @@
         {
           "address": "0x0B6FFe53C737fB3BEAfcD0Cfd4A560e9C2EE3742",
           "symbol": "BUSD"
+        },
+        {
+          "address": "0x2dc6e871fafba4baa67d77ed5754fd44e2980aa0",
+          "symbol": "wONE"
         },
         {
           "address": "0xd6400D88A59035274555583A3748E8A9C98941F1",

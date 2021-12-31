@@ -11,11 +11,16 @@
       "stakingSymbol": "sCLAM2",
       "stakingToken": "0xAAc144Dc08cE39Ed92182dd85ded60E5000C9e67",
       "stakingContract": "0xC8B0243F350AA5F8B979b228fAe522DAFC61221a",
-      "LPContract": "0x1581802317f32a2665005109444233ca6e3e2d68",
+      "LPContract": "0x1f847e05afaf47ec54626928d0e6c235663e938f",
       "lockedSupplyContract": null,
       "treasuryContract": "0x8ce47D56EAa1299d3e06FF3E04637449fFb01C9C",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
+      "wsOHMNetworks": [
+        {
+          "address": "0x52a7f40bb6e9bd9183071cdbdd3a977d713f2e34",
+          "networkSymbol": "MATIC"
+        }
+      ],
+      "wsOHMSymbol": "PEARL",
       "isWarmup": true,
       "bondingContracts": [
         {

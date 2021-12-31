@@ -5,24 +5,24 @@ import ARB_OMIC from './ARB-OMIC.json';
 import AVAX_CAKE from './AVAX-CAKE.json';
 import AVAX_FORT from './AVAX-FORT.json';
 import AVAX_CROWN from './AVAX-CROWN.json';
-import AVAX_GG from './AVAX-GG.json';
+// import AVAX_GG from './AVAX-GG.json';
 import AVAX_ICE from './AVAX-ICE.json';
 import AVAX_LF from './AVAX-LF.json';
 import AVAX_MAXI from './AVAX-MAXI.json';
 import AVAX_CLAVIS from './AVAX-CLAVIS.json';
-import AVAX_NADO from './AVAX-NADO.json';
+// import AVAX_NADO from './AVAX-NADO.json';
 import AVAX_OTWO from './AVAX-OTWO.json';
 import AVAX_PAPA from './AVAX-PAPA.json';
 // import AVAX_PARR from './AVAX-PARR.json';
 import AVAX_RUG from './AVAX-RUG.json';
 import AVAX_ARA from './AVAX-ARA.json';
-import AVAX_RGK from './AVAX-RGK.json';
-import AVAX_GHOST from './AVAX-GHOST.json';
+// import AVAX_RGK from './AVAX-RGK.json';
+// import AVAX_GHOST from './AVAX-GHOST.json';
 import AVAX_SPACE from './AVAX-SPACE.json';
 import AVAX_SPC from './AVAX-SPC.json';
 import AVAX_JOLLY from './AVAX-JOLLY.json';
 import AVAX_PEPE from './AVAX-PEPE.json'
-import AVAX_GNIWS from './AVAX-GNIWS.json'
+// import AVAX_GNIWS from './AVAX-GNIWS.json'
 // import AVAX_SPACEv1 from './AVAX-SPACEv1.json';
 // import AVAX_SBR from './AVAX-SBR.json';
 // import AVAX_SCAT from './AVAX-SCAT.json';
@@ -43,6 +43,7 @@ import BSC_ASGARD from './BSC-ASGARD.json';
 // import BSC_SD from './BSC-SD.json';
 import BSC_JADE from './BSC-JADE.json';
 import BSC_LOVE from './BSC-LOVE.json';
+import BSC_GG from './BSC-GG.json';
 import BSC_XPH from './BSC-XPH.json';
 import BSC_POWER from './BSC-POWER.json';
 // import BSC_RA from './BSC-RA.json';
@@ -93,20 +94,20 @@ const farms = {
   ...ARB_UMAMI,
   ...AVAX_CAKE,
   ...AVAX_FORT,
-  ...AVAX_GG,
+  // ...AVAX_GG,
   ...AVAX_ICE,
   ...AVAX_LF,
   ...AVAX_MAXI,
   ...AVAX_CROWN,
   ...AVAX_PEPE,
   ...AVAX_CLAVIS,
-  ...AVAX_NADO,
+  // ...AVAX_NADO,
   ...AVAX_OTWO,
   ...AVAX_PAPA,
   ...AVAX_ARA,
   ...AVAX_RUG,
-  ...AVAX_RGK,
-  ...AVAX_GNIWS,
+  // ...AVAX_RGK,
+  // ...AVAX_GNIWS,
   // ...AVAX_PARR,
   // ...AVAX_BLANC,
   // ...AVAX_SCAT,
@@ -116,7 +117,7 @@ const farms = {
   ...AVAX_SB,
   // ...AVAX_SBR,
   ...AVAX_SPACE,
-  ...AVAX_GHOST,
+  // ...AVAX_GHOST,
   // ...AVAX_SPACEv1,
   // ...AVAX_BLIGHT,
   ...AVAX_TEMPO,
@@ -131,6 +132,7 @@ const farms = {
   ...BSC_XEUS,
   ...BSC_JADE,
   ...BSC_META,
+  ...BSC_GG,
   ...BSC_LOVE,
   ...BSC_POWER,
   ...BSC_NMS,
