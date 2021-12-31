@@ -24,6 +24,10 @@
       "wsOHMSymbol": "wsWAGMI",
       "bondingContracts": [
         {
+          "address": "0x1153b233076ee226a1b43f56a9ed55293a6833ee",
+          "symbol": "wONE"
+        },
+        {
           "address": "0xa2473b5B85a9EBEc65679d279979222f28cd9467",
           "symbol": "DAI"
         },
