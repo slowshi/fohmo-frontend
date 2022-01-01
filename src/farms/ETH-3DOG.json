@@ -1,40 +1,71 @@
 {
-  "ETH-3DOG": {
-    "farmSymbol": "3DOG",
-    "networkSymbol": "ETH",
-    "constants": {
-      "name": "CerberusDAO",
-      "symbol": "3DOG",
-      "date": "Oct-25-2021 01:49:17 PM",
-      "link": "https://app.cerberusdao.finance/#/stake",
-      "token": "0x8a14897eA5F668f36671678593fAe44Ae23B39FB",
-      "stakingSymbol": "3DOGs",
-      "stakingToken": "0xA552f061d8962BE4c1f6BC6B0403Ca620F569330",
-      "stakingContract": "0x95deaF8dd30380acd6CC5E4E90e5EEf94d258854",
-      "LPContract": "0xB5B6C3816C66Fa6BC5b189F49e5b088E2dE5082a",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x56D595ea5591D264bc1Ef9E073aF66685F0bFD31",
-      "LPContractETH": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xd2E0BD64B3e6fbc4d09f9a11e5852bf9A46A6731",
-          "symbol": "wETH-3DOG"
-        },
-        {
-          "address": "0x30F5039447B8AEf529DB99324896b14d453D85Fa",
-          "symbol": "wETH"
-        },
-        {
-          "address": "0x5F50d0f427228F48665fB790685c450328995C0D",
-          "symbol": "SHIB"
-        },
-        {
-          "address": "0xf0c2b0eC587155abE978AE47705f0C619F44Bc65",
-          "symbol": "FLOK"
+    "ETH-3DOG": {
+        "farmSymbol": "3DOG",
+        "networkSymbol": "ETH",
+        "constants": {
+            "name": "CerberusDAO",
+            "symbol": "3DOG",
+            "date": "Oct-25-2021 01:49:17 PM",
+            "link": "https://app.cerberusdao.finance/#/stake",
+            "token": "0x8a14897eA5F668f36671678593fAe44Ae23B39FB",
+            "stakingSymbol": "3DOGs",
+            "stakingToken": "0xA552f061d8962BE4c1f6BC6B0403Ca620F569330",
+            "stakingContract": "0x95deaF8dd30380acd6CC5E4E90e5EEf94d258854",
+            "LPContract": "0xB5B6C3816C66Fa6BC5b189F49e5b088E2dE5082a",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x56D595ea5591D264bc1Ef9E073aF66685F0bFD31",
+            "LPContractETH": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xd2E0BD64B3e6fbc4d09f9a11e5852bf9A46A6731",
+                    "symbol": "wETH-3DOG"
+                },
+                {
+                    "address": "0x30F5039447B8AEf529DB99324896b14d453D85Fa",
+                    "symbol": "wETH"
+                },
+                {
+                    "address": "0x5F50d0f427228F48665fB790685c450328995C0D",
+                    "symbol": "SHIB"
+                },
+                {
+                    "address": "0xf0c2b0eC587155abE978AE47705f0C619F44Bc65",
+                    "symbol": "FLOK"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "decimals": 18
+                    },
+                    "symbol": "SHIB",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xb011EA8096cE5986f3e89B4C2c02f193c82AbEa8"
+                },
+                {
+                    "symbol": "3DOG-WETH",
+                    "token0": {
+                        "address": "0x8a14897eA5F668f36671678593fAe44Ae23B39FB",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xB5B6C3816C66Fa6BC5b189F49e5b088E2dE5082a",
+                    "stable": false,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x29d6f2fF916f7847Ba5c086BaEef36A09187f5C9"
         }
-      ]
     }
-  }
 }

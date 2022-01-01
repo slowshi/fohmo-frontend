@@ -1,40 +1,56 @@
 {
-  "AVAX-SCAT": {
-    "farmSymbol": "SCAT",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "SnowCatDAO",
-      "symbol": "SCAT",
-      "date": "Dec-19-2021 08:54:00 PM",
-      "timeTemplate": true,
-      "link": "https://snowcatdao.com/#/stake",
-      "token": "0x2558b8fba8f678fd3029c927cd3780f5d3c266c7",
-      "stakingSymbol": "sSCAT",
-      "stakingToken": "0xfd097fd708c0bb25c43ff9364569cdf100676bf3",
-      "indexRatio": 4.5,
-      "stakingContract": "0x2466A2042236ece30de125594D7775143A845551",
-      "LPContract": "0x65a607BD82e48eeD640A314A1A26137b62Ad6204",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x9B24eF0Ebe7C2Df748376469073968Ae7062d9C9",
-      "bondingCalculator": "0xe4980630ec231b138f863031afc66c940534b8ef",
-      "wsOHMNetworks": [
-        {
-          "address": "0xffa654f3ae81a43eba1fc7ea343702052d76aefe",
-          "networkSymbol": "AVAX"
+    "AVAX-SCAT": {
+        "farmSymbol": "SCAT",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "SnowCatDAO",
+            "symbol": "SCAT",
+            "date": "Dec-19-2021 08:54:00 PM",
+            "timeTemplate": true,
+            "link": "https://snowcatdao.com/#/stake",
+            "token": "0x2558b8fba8f678fd3029c927cd3780f5d3c266c7",
+            "stakingSymbol": "sSCAT",
+            "stakingToken": "0xfd097fd708c0bb25c43ff9364569cdf100676bf3",
+            "indexRatio": 4.5,
+            "stakingContract": "0x2466A2042236ece30de125594D7775143A845551",
+            "LPContract": "0x65a607BD82e48eeD640A314A1A26137b62Ad6204",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x9B24eF0Ebe7C2Df748376469073968Ae7062d9C9",
+            "bondingCalculator": "",
+            "wsOHMNetworks": [
+                {
+                    "address": "0xffa654f3ae81a43eba1fc7ea343702052d76aefe",
+                    "networkSymbol": "AVAX"
+                }
+            ],
+            "wsOHMSymbol": "wsSCAT",
+            "isWarmup": true,
+            "bondingContracts": [
+                {
+                    "address": "0xe921aEaF9eA91c2223fafF1cB4ECBAE1800296FD",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0xd8fb9F2Ac20eC22533e65EEc46573fa4DB8f7c5b",
+                    "symbol": "SCAT-MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                }
+            ]
         }
-      ],
-      "wsOHMSymbol": "wsSCAT",
-      "isWarmup": true,
-      "bondingContracts": [
-        {
-          "address": "0xe921aEaF9eA91c2223fafF1cB4ECBAE1800296FD",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0xd8fb9F2Ac20eC22533e65EEc46573fa4DB8f7c5b",
-          "symbol": "SCAT-MIM"
-        }
-      ]
     }
-  }
 }

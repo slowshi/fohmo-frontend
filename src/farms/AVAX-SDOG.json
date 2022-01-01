@@ -1,47 +1,120 @@
 {
-  "AVAX-SDOG": {
-    "farmSymbol": "SDOG",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "Snowdog",
-      "symbol": "SDOG",
-      "timeTemplate": true,
-      "link": "https://www.snowdogdao.com/#/stake",
-      "token": "0xdE9E52F1838951e4d2bb6C59723B003c353979b6",
-      "stakingSymbol": "sSDOG",
-      "stakingToken": "0x10720a029a5e5281391be3181477e48d47d0ff91",
-      "stakingContract": "0xc970dab38627bc7Ba1487754d832A327E0e626Cd",
-      "LPContract": "0xa3F1F5076499EC37D5BB095551f85ab5a344BB58",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xC0E7DA06e56727F3B55B24F58e9503FdaAfb2a68",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x2c8ba2705f5fb5ac7217f6c275114725f2f4b88c",
-          "symbol": "SDOG-MIM"
-        },
-        {
-          "address": "0x3507e56d5e632c3a361bc94ceb3d7946961ae374",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0xe287023a1d1a4dc84e658ea0c1672607668b1ac4",
-          "symbol": "JOE"
-        },
-        {
-          "address": "0xc2a77c964957f98787af627b6930e0a50f22bd29",
-          "symbol": "wAVAX"
-        },
-        {
-          "address": "0xdbed7494df1dc8f06bc2063fb55495260d7b3077",
-          "symbol": "SPELL"
-        },
-        {
-          "address": "0x7cf2c5ca2e9901c6ace4c4c1f75c8f31e69c1c36",
-          "symbol": "wETH"
+    "AVAX-SDOG": {
+        "farmSymbol": "SDOG",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Snowdog",
+            "symbol": "SDOG",
+            "timeTemplate": true,
+            "link": "https://www.snowdogdao.com/#/stake",
+            "token": "0xdE9E52F1838951e4d2bb6C59723B003c353979b6",
+            "stakingSymbol": "sSDOG",
+            "stakingToken": "0x10720a029a5e5281391be3181477e48d47d0ff91",
+            "stakingContract": "0xc970dab38627bc7Ba1487754d832A327E0e626Cd",
+            "LPContract": "0xa3F1F5076499EC37D5BB095551f85ab5a344BB58",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xC0E7DA06e56727F3B55B24F58e9503FdaAfb2a68",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x2c8ba2705f5fb5ac7217f6c275114725f2f4b88c",
+                    "symbol": "SDOG-MIM"
+                },
+                {
+                    "address": "0x3507e56d5e632c3a361bc94ceb3d7946961ae374",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0xe287023a1d1a4dc84e658ea0c1672607668b1ac4",
+                    "symbol": "JOE"
+                },
+                {
+                    "address": "0xc2a77c964957f98787af627b6930e0a50f22bd29",
+                    "symbol": "wAVAX"
+                },
+                {
+                    "address": "0xdbed7494df1dc8f06bc2063fb55495260d7b3077",
+                    "symbol": "SPELL"
+                },
+                {
+                    "address": "0x7cf2c5ca2e9901c6ace4c4c1f75c8f31e69c1c36",
+                    "symbol": "wETH"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WAVAX",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256"
+                },
+                {
+                    "token0": {
+                        "address": "0xCE1bFFBD5374Dac86a2893119683F4911a2F7814",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "SPELL",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x183A69911cF60d0cBD89AC73E92E7200c0f79256"
+                },
+                {
+                    "token0": {
+                        "address": "0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "JOE",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x1643de2efB8e35374D796297a9f95f64C082a8ce"
+                },
+                {
+                    "token0": {
+                        "address": "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WETH.e",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xbe1b87f47fDE3F338Aa3AA98b85435e1709dFD06"
+                }
+            ],
+            "bondingCalculator": ""
         }
-      ]
     }
-  }
 }

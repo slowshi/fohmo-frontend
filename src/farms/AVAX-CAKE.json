@@ -1,37 +1,137 @@
 {
-  "AVAX-CAKE": {
-    "farmSymbol": "CAKE",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "CakeDao",
-      "symbol": "CAKE",
-      "timeTemplate": true,
-      "date": "Dec-12-2021 09:29:12 AM",
-      "link": "https://app.cakedao.finance/#/stake",
-      "token": "0x4eb49a2f9a79053866fae806fac95a3ef5b92c05",
-      "stakingSymbol": "sCAKE",
-      "stakingToken": "0x1ba497712e20f8d629f16ca9e7e070a6f4779754",
-      "stakingContract": "0xa3e4200ca1ac92331d529327e82d89c149ccd81c",
-      "LPContract": "0x84d2fe6adace63407f4b6bd91ab9f782ba3cb420",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x829d805f26e26ae6c2c6294b7ff9c0fe14d982ac",
-      "bondingCalculator": null,
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xc7f186281c6b01b10e7df939803f967a1416f23d",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0x18cd97879aae4e72bfbffd5681b951568add930c",
-          "symbol": "CAKE-MIM"
-        },
-        {
-          "address": "0x57cd8114e590c30cfc17b7a37b21059fc07a24e0",
-          "symbol": "wAVAX"
+    "AVAX-CAKE": {
+        "farmSymbol": "CAKE",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "CakeDao",
+            "symbol": "CAKE",
+            "timeTemplate": true,
+            "date": "Dec-12-2021 09:29:12 AM",
+            "link": "https://app.cakedao.finance/#/stake",
+            "token": "0x4eb49a2f9a79053866fae806fac95a3ef5b92c05",
+            "stakingSymbol": "sCAKE",
+            "stakingToken": "0x1ba497712e20f8d629f16ca9e7e070a6f4779754",
+            "stakingContract": "0xa3e4200ca1ac92331d529327e82d89c149ccd81c",
+            "LPContract": "0x84d2fe6adace63407f4b6bd91ab9f782ba3cb420",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x829d805f26e26ae6c2c6294b7ff9c0fe14d982ac",
+            "bondingCalculator": "0x07b0BCa31Cb1AfF048Df3B68E0830BAf38e8309D",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xc7f186281c6b01b10e7df939803f967a1416f23d",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x18cd97879aae4e72bfbffd5681b951568add930c",
+                    "symbol": "CAKE-MIM"
+                },
+                {
+                    "address": "0x57cd8114e590c30cfc17b7a37b21059fc07a24e0",
+                    "symbol": "wAVAX"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WAVAX",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256"
+                },
+                {
+                    "token0": {
+                        "address": "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDT.e",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WETH.e",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xbe1b87f47fDE3F338Aa3AA98b85435e1709dFD06"
+                },
+                {
+                    "token0": {
+                        "address": "0x50b7545627a5162F82A992c33b87aDc75187B218",
+                        "decimals": 8
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WBTC.e",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xB8D5E8a9247db183847c7D79af9C67F6aeF759f7"
+                },
+                {
+                    "symbol": "MIM-CAKE",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x4Eb49A2F9A79053866faE806fAc95A3eF5B92C05",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x84D2fe6AdacE63407f4B6BD91Ab9f782BA3cb420",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "CAKE-WAVAX",
+                    "token0": {
+                        "address": "0x4Eb49A2F9A79053866faE806fAc95A3eF5B92C05",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xB8dF8111A74E5FD62b13dBBe59ddEb343fC91D4a",
+                    "stable": false,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

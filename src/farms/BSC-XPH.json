@@ -1,28 +1,58 @@
 {
-  "BSC-XPH": {
-    "farmSymbol": "XPH",
-    "networkSymbol": "BSC",
-    "constants": {
-      "name": "Xenophon",
-      "symbol": "XPH",
-      "date": "Dec-21-2021 01:53:33 PM",
-      "link": "https://app.xenophon.finance/#/stake",
-      "token": "0x3e29633846E8b857B7f6d7f293F895186804264b",
-      "stakingSymbol": "sXPH",
-      "stakingToken": "0xD748150822d7C7e9095D014fF2e9CB27b6a102E7",
-      "stakingContract": "0xE90afe3349E42f416406c592f4B7192265085695",
-      "LPContract": "0x5866d1032b5b6001429Bf2A47B830bDC0DD138EA",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x4b69C32450cE85d76aC94215fb81C21B434696eA",
-      "bondingCalculator": "0x0b335af2ADDfcC3e7D88d34451987B80DA58Ad03",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x011C748F1C238ae152167EB497DC8fA1cb0d8815",
-          "symbol": "XPH-BUSD"
+    "BSC-XPH": {
+        "farmSymbol": "XPH",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "Xenophon",
+            "symbol": "XPH",
+            "date": "Dec-21-2021 01:53:33 PM",
+            "link": "https://app.xenophon.finance/#/stake",
+            "token": "0x3e29633846E8b857B7f6d7f293F895186804264b",
+            "stakingSymbol": "sXPH",
+            "stakingToken": "0xD748150822d7C7e9095D014fF2e9CB27b6a102E7",
+            "stakingContract": "0xE90afe3349E42f416406c592f4B7192265085695",
+            "LPContract": "0x5866d1032b5b6001429Bf2A47B830bDC0DD138EA",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x4b69C32450cE85d76aC94215fb81C21B434696eA",
+            "bondingCalculator": "0x0b335af2ADDfcC3e7D88d34451987B80DA58Ad03",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x011C748F1C238ae152167EB497DC8fA1cb0d8815",
+                    "symbol": "XPH-BUSD"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "XPH-BUSD",
+                    "token0": {
+                        "address": "0x3e29633846E8b857B7f6d7f293F895186804264b",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x5866d1032b5b6001429Bf2A47B830bDC0DD138EA",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

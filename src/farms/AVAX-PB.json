@@ -1,38 +1,82 @@
 {
-  "AVAX-PB": {
-    "farmSymbol": "PB",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "PiggyBankDAO",
-      "symbol": "PB",
-      "timeTemplate": true,
-      "date": "Nov-10-2021 03:25:01",
-      "link": "https://app.piggybankdao.finance/#/mints",
-      "token": "0x0E75CDb914DdCcA683357dD94d26Caa39BC14B16",
-      "stakingSymbol": "sPB",
-      "stakingToken": "0x03a808d4063Ac2aEB29545658ad0a3a1EDC55052",
-      "indexRatio": 2000,
-      "stakingContract": "0xE4738791690AF507C8C7Bf5981ef541568C7C312",
-      "LPContract": "0xd3a6eebbe6f6d9197a7fc2aaaf94d8b0ec51f8a8",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x6687379035822ee15e2164f9C1280fBEAd0D7627",
-      "bondingCalculator": "0x62a1aea22dd9bb7638681908c7853a8b8189286a",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x24b715Ec909C992d0ecdFE23bD28081f889e54bB",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0x0391BA66eEDf8501c8c46b4f4EBE67D1429B5676",
-          "symbol": "PB-MIM"
-        },
-        {
-          "address": "0x0B3ad7792d7B62295CDefec2d68055D3B4e86e67",
-          "symbol": "wBTC"
+    "AVAX-PB": {
+        "farmSymbol": "PB",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "PiggyBankDAO",
+            "symbol": "PB",
+            "timeTemplate": true,
+            "date": "Nov-10-2021 03:25:01",
+            "link": "https://app.piggybankdao.finance/#/mints",
+            "token": "0x0E75CDb914DdCcA683357dD94d26Caa39BC14B16",
+            "stakingSymbol": "sPB",
+            "stakingToken": "0x03a808d4063Ac2aEB29545658ad0a3a1EDC55052",
+            "indexRatio": 2000,
+            "stakingContract": "0xE4738791690AF507C8C7Bf5981ef541568C7C312",
+            "LPContract": "0xd3a6eebbe6f6d9197a7fc2aaaf94d8b0ec51f8a8",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x6687379035822ee15e2164f9C1280fBEAd0D7627",
+            "bondingCalculator": "0x7048866FC18186f5865c26c5A89edfd2AE80D8c0",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x24b715Ec909C992d0ecdFE23bD28081f889e54bB",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x0391BA66eEDf8501c8c46b4f4EBE67D1429B5676",
+                    "symbol": "PB-MIM"
+                },
+                {
+                    "address": "0x0B3ad7792d7B62295CDefec2d68055D3B4e86e67",
+                    "symbol": "wBTC"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x50b7545627a5162F82A992c33b87aDc75187B218",
+                        "decimals": 8
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WBTC.e",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xB8D5E8a9247db183847c7D79af9C67F6aeF759f7"
+                },
+                {
+                    "symbol": "PB-MIM",
+                    "token0": {
+                        "address": "0x0E75CDb914DdCcA683357dD94d26Caa39BC14B16",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xD3A6eeBBe6F6d9197a7fC2aaAF94D8B0ec51f8a8",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

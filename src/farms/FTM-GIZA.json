@@ -1,31 +1,48 @@
 {
-  "FTM-GIZA": {
-    "farmSymbol": "GIZA",
-    "networkSymbol": "FTM",
-    "constants": {
-      "name": "Giza DAO",
-      "symbol": "GIZA",
-      "date": "Dec-01-2021 11:46:50 AM",
-      "link": "https://app.gizadao.com/#/stake",
-      "token": "0x3389492f36642f27F7bF4a7749fb3FC2c8fbB7EE",
-      "stakingSymbol": "sGIZA",
-      "stakingToken": "0x1e452a0e085fede45f723c9ccea77bba29204f74",
-      "stakingContract": "0xF5aB479d02336917bA84981fb8C3999147FcC12B",
-      "LPContract": "0x9026711a2097252a198e6602a052117eaa5f3cab",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x6e273a49ba8f77d03c0cf5a190f226dca7d46e9f",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x11ed8ba44c0610f7611b6b02047c395f52054b3c",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0xbcda59a0f390c12701ae8eb12117e611accf6220",
-          "symbol": "DAI-GIZA"
+    "FTM-GIZA": {
+        "farmSymbol": "GIZA",
+        "networkSymbol": "FTM",
+        "constants": {
+            "name": "Giza DAO",
+            "symbol": "GIZA",
+            "date": "Dec-01-2021 11:46:50 AM",
+            "link": "https://app.gizadao.com/#/stake",
+            "token": "0x3389492f36642f27F7bF4a7749fb3FC2c8fbB7EE",
+            "stakingSymbol": "sGIZA",
+            "stakingToken": "0x1e452a0e085fede45f723c9ccea77bba29204f74",
+            "stakingContract": "0xF5aB479d02336917bA84981fb8C3999147FcC12B",
+            "LPContract": "0x9026711a2097252a198e6602a052117eaa5f3cab",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x6e273a49ba8f77d03c0cf5a190f226dca7d46e9f",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x11ed8ba44c0610f7611b6b02047c395f52054b3c",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0xbcda59a0f390c12701ae8eb12117e611accf6220",
+                    "symbol": "DAI-GIZA"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xBE2197512C36614cC9EFCf45f30e1CFAd2573989",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+                        "decimals": 18
+                    },
+                    "symbol": "VAT",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                }
+            ],
+            "bondingCalculator": ""
         }
-      ]
     }
-  }
 }

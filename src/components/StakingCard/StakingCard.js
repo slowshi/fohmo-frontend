@@ -111,6 +111,11 @@ function StakingCard(params) {
             <div className="text-placeholder placeholder w-100"></div>
             <div className="text-placeholder placeholder w-100"></div>
             <div className="text-placeholder placeholder w-100"></div>
+            <div className="text-placeholder placeholder w-100"></div>
+            <div className="text-placeholder placeholder w-100"></div>
+            <div className="text-placeholder placeholder w-100"></div>
+            <div className="text-placeholder placeholder w-100"></div>
+            <div className="text-placeholder placeholder w-100"></div>
           </div>
         :
           <div>
@@ -156,6 +161,27 @@ function StakingCard(params) {
               <strong>LP Liquidity</strong>
               <span>{farm.data?.$LPLiquidity}</span>
             </span>
+            <hr></hr>
+            <span className="card-text d-flex h-auto justify-content-between align-items-center">
+              <strong>Treasury</strong>
+              <span>{farm.treasuryBalance?.total}</span>
+            </span>
+            <span className="card-text d-flex h-auto justify-content-between align-items-center">
+              <strong>RFV</strong>
+              <span>{farm.treasuryBalance?.rfvInUSD}</span>
+            </span>
+            <span className="card-text d-flex h-auto justify-content-between align-items-center">
+              <strong>Runway</strong>
+              <span>{farm.treasuryBalance?.runway}</span>
+            </span>
+            <span className="card-text d-flex h-auto justify-content-between align-items-center">
+              <strong>Backing Price</strong>
+              <span>{farm.treasuryBalance?.backingPrice}</span>
+            </span>
+            <span className="card-text d-flex h-auto justify-content-between align-items-center">
+              <strong>Price / Backing</strong>
+              <span>{farm.treasuryBalance?.priceBackingRatio}</span>
+            </span>
           </div>
         }
       </div>
@@ -163,6 +189,10 @@ function StakingCard(params) {
         <div className="d-flex h-auto justify-content-between">
             {!hideBalanceData ?
             <div>
+              <button title="Treasury Balances" className={`me-1 btn btn-sm btn-dark ${farm.showTreasury && 'active'}`} onClick={()=>dispatch({type: 'toggleTreasuryBalances', payload: farmKey})}
+                disabled={farm.loading}>
+                <i className="bi bi-bank"></i>
+              </button>
               <button type="button"
                       title="Staking Info"
                       className={`btn btn-sm me-1 btn-dark ${farm.showBalances && 'active'}`}
@@ -175,7 +205,14 @@ function StakingCard(params) {
                 <i className="bi bi-clock"></i>
               </button>
             </div>
-            : <div></div>}
+            :
+            <div>
+              <button title="Treasury Balances" className={`btn btn-sm btn-dark ${farm.showTreasury && 'active'}`} onClick={()=>dispatch({type: 'toggleTreasuryBalances', payload: farmKey})}
+                disabled={farm.loading}>
+                <i className="bi bi-bank"></i>
+              </button>
+            </div>
+            }
           <div>
             {farmFilters.length > 0 ?
             <button title="Remove" className="btn btn-sm btn-dark me-1"
@@ -194,9 +231,28 @@ function StakingCard(params) {
           </div>
         </div>
         {
+          farm.showTreasury && !farm.loading &&
+          <div>
+            <hr></hr>
+            <strong>Treasury</strong>
+            <div>
+              {
+                farm.treasuryBalance?.allBalances.map((balance, index)=>
+                  <span key={index} className="card-text d-flex h-auto justify-content-between align-items-center mb-1">
+                    <strong>{balance.symbol}</strong>
+                    <span>{balance.valueInUSD}</span>
+                  </span>
+                )
+              }
+              <span className="txt-smol text-muted">*Treasury balances may be missing or incorrect which will affect other calculations.</span>
+            </div>
+          </div>
+        }
+        {
           farm.showBalances && !hideTotals && !hideBalanceData &&
           <div>
             <hr></hr>
+            <strong>Balances</strong>
             <span className="card-text d-flex h-auto justify-content-between align-items-top">
               <strong>{farm.constants.symbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">
@@ -269,16 +325,17 @@ function StakingCard(params) {
             <hr></hr>
             {
               farm.balances?.bonds.map((bondData, index)=>
-              <span key={index} className="card-text d-flex h-auto justify-content-between align-items-center mb-1">
-              <strong>{bondData.symbol}</strong>
-              <div className="align-items-end d-flex h-auto flex-column">
-                <div className="mb-1 txt-smol">{bondData.lastTime}</div>
-                <div>{`${bondData.pendingPayout} ${farm.constants.symbol}`} <strong>C</strong></div>
-                <div className="mb-1 txt-smol">({bondData.pendingPayoutInUSD})</div>
-                <div>{`${bondData.payout} ${farm.constants.symbol}`} <strong>P</strong></div>
-                <div className="mb-1 txt-smol">({bondData.payoutInUSD})</div>
-              </div>
-            </span>)
+                <span key={index} className="card-text d-flex h-auto justify-content-between align-items-center mb-1">
+                  <strong>{bondData.symbol}</strong>
+                  <div className="align-items-end d-flex h-auto flex-column">
+                    <div className="mb-1 txt-smol">{bondData.lastTime}</div>
+                    <div>{`${bondData.pendingPayout} ${farm.constants.symbol}`} <strong>C</strong></div>
+                    <div className="mb-1 txt-smol">({bondData.pendingPayoutInUSD})</div>
+                    <div>{`${bondData.payout} ${farm.constants.symbol}`} <strong>P</strong></div>
+                    <div className="mb-1 txt-smol">({bondData.payoutInUSD})</div>
+                  </div>
+                </span>
+              )
             }
           </div>
         }
@@ -286,6 +343,7 @@ function StakingCard(params) {
           farm.showROI &&
           <div>
             <hr></hr>
+            <strong>Calculator</strong>
             <span className="card-text d-flex h-auto justify-content-between align-items-center mb-2">
               <strong>Next Rebase</strong>
               <div className="align-items-end d-flex h-auto flex-column">
@@ -311,7 +369,7 @@ function StakingCard(params) {
             <div>
               <input type="range"
               className="form-range"
-               min="1" max="365" id="dynamic-roi" step="1"
+               min="1" max={Number(farm.treasuryBalance.runway).toFixed(0)} id="dynamic-roi" step="1"
                value={farm.roiDynamic}
                onInput={(e)=>dispatch({
                   type: 'setRoiDynamic',

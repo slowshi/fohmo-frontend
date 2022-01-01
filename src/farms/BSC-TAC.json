@@ -1,47 +1,79 @@
 {
-  "BSC-TAC": {
-    "farmSymbol": "TAC",
-    "networkSymbol": "BSC",
-    "constants": {
-      "name": "TaiChi Dao",
-      "symbol": "TAC",
-      "date": "Oct-27-2021 04:35:31 PM",
-      "link": "https://app.taichidao.io/#/stake",
-      "token": "0xe49bfC53A195a62D78A941a1967d7B0f83a47C14",
-      "stakingSymbol": "sTAC",
-      "stakingToken": "0x6ADBAA7c9Ed1F29d647e37b1970E32bb41FB18aB",
-      "stakingContract": "0xb12Ef3033D5CE0F3f80f3A15dE7E90Cd87a5973e",
-      "LPContract": "0x5ef473d91e89c613b3e5138fa8279884bf5b7adf",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xD4b0DC48AB6BD7907E3698A62CCD1DBE2d46d310",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x061bb1a6aecb179b79ae5da6bae179f1d1a79ac8",
-          "symbol": "TEM-MIM"
-        },
-        {
-          "address": "0x061bb1a6aecb179b79ae5da6bae179f1d1a79ac8",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0x1b83388d6113629c46a98d7de82f58531a8dc710",
-          "symbol": "MIM-BUSD"
-        },
-        {
-          "address": "0x1FDc3A7be18fE40b24b0aBC022FfBd1280d3ab11",
-          "symbol": "TAC-BUSD"
-        },
-        {
-          "address": "0xaeba280c17c5875335211585ea67e37874493515",
-          "symbol": "BNB"
-        },
-        {
-          "address": "0xf0a99f0ca6149fc96a4a802f757dd439655ea479",
-          "symbol": "BUSD"
+    "BSC-TAC": {
+        "farmSymbol": "TAC",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "TaiChi Dao",
+            "symbol": "TAC",
+            "rugged": true,
+            "date": "Oct-27-2021 04:35:31 PM",
+            "link": "https://app.taichidao.io/#/stake",
+            "token": "0xe49bfC53A195a62D78A941a1967d7B0f83a47C14",
+            "stakingSymbol": "sTAC",
+            "stakingToken": "0x6ADBAA7c9Ed1F29d647e37b1970E32bb41FB18aB",
+            "stakingContract": "0xb12Ef3033D5CE0F3f80f3A15dE7E90Cd87a5973e",
+            "LPContract": "0x5ef473d91e89c613b3e5138fa8279884bf5b7adf",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xD4b0DC48AB6BD7907E3698A62CCD1DBE2d46d310",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x061bb1a6aecb179b79ae5da6bae179f1d1a79ac8",
+                    "symbol": "TEM-MIM"
+                },
+                {
+                    "address": "0x061bb1a6aecb179b79ae5da6bae179f1d1a79ac8",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x1b83388d6113629c46a98d7de82f58531a8dc710",
+                    "symbol": "MIM-BUSD"
+                },
+                {
+                    "address": "0x1FDc3A7be18fE40b24b0aBC022FfBd1280d3ab11",
+                    "symbol": "TAC-BUSD"
+                },
+                {
+                    "address": "0xaeba280c17c5875335211585ea67e37874493515",
+                    "symbol": "BNB"
+                },
+                {
+                    "address": "0xf0a99f0ca6149fc96a4a802f757dd439655ea479",
+                    "symbol": "BUSD"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "WBNB",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16"
+                }
+            ],
+            "bondingCalculator": ""
         }
-      ]
     }
-  }
 }

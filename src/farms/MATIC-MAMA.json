@@ -1,33 +1,63 @@
 {
-  "MATIC-MAMA": {
-    "farmSymbol": "MAMA",
-    "networkSymbol": "MATIC",
-    "constants": {
-      "name": "MAMADAO",
-      "symbol": "MAMA",
-      "timeTemplate": true,
-      "date": "Dec-26-2021 01:05:25 PM",
-      "link": "https://app.mamadao.co/#/stake",
-      "token": "0xA9a779aeA33b6f40CfC78A29Cf56Fc7e6fb329AB",
-      "stakingSymbol": "sMAMA",
-      "stakingToken": "0xace14532d052a71869506856ef8ad7cf8a136128",
-      "stakingContract": "0xe1B64E20921a38c20BE98f953F758e9DeD80F89b",
-      "LPContract": "0xbddb96d54e1434654f8e46dba41120cd652039bb",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x884f6A98477b0F689f1da280A83a963f2B768972",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingCalculator": "0xf8e2eb302f39e8eab5002df006fe6cab017aa247",
-      "bondingContracts": [
-        {
-          "address": "0x10C7A3489C5A64540D336d89Cbfd43589Bf16770",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0xccef3A469E197C7717d429B28dE8701776c2E7af",
-          "symbol": "DAI-MAMA"
+    "MATIC-MAMA": {
+        "farmSymbol": "MAMA",
+        "networkSymbol": "MATIC",
+        "constants": {
+            "name": "MAMADAO",
+            "symbol": "MAMA",
+            "timeTemplate": true,
+            "date": "Dec-26-2021 01:05:25 PM",
+            "link": "https://app.mamadao.co/#/stake",
+            "token": "0xA9a779aeA33b6f40CfC78A29Cf56Fc7e6fb329AB",
+            "stakingSymbol": "sMAMA",
+            "stakingToken": "0xace14532d052a71869506856ef8ad7cf8a136128",
+            "stakingContract": "0xe1B64E20921a38c20BE98f953F758e9DeD80F89b",
+            "LPContract": "0xbddb96d54e1434654f8e46dba41120cd652039bb",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x884f6A98477b0F689f1da280A83a963f2B768972",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingCalculator": "0xf8E2eB302f39E8eab5002Df006fE6caB017aa247",
+            "bondingContracts": [
+                {
+                    "address": "0x10C7A3489C5A64540D336d89Cbfd43589Bf16770",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0xccef3A469E197C7717d429B28dE8701776c2E7af",
+                    "symbol": "DAI-MAMA"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "DAI-MAMA",
+                    "token0": {
+                        "address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xA9a779aeA33b6f40CfC78A29Cf56Fc7e6fb329AB",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0xBdDB96D54E1434654f8E46Dba41120cd652039bb",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

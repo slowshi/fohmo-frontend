@@ -1,56 +1,86 @@
 {
-  "AVAX-GG": {
-    "farmSymbol": "GG",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "GalaxyGoggle",
-      "symbol": "GG",
-      "timeTemplate": true,
-      "date": "Nov-25-2021 04:56:25 PM",
-      "link": "https://app.galaxygoggle.money/#/stake",
-      "token": "0xf2f7ce610a091b94d41d69f4ff1129434a82e2f0",
-      "stakingSymbol": "sGG",
-      "stakingToken": "0x2482ec3928adf1718caa5956608684f5a54e14d0",
-      "indexRatio": 4.5,
-      "stakingContract": "0xbd79c01140cee7040f8f5e935b72e13540a801b6",
-      "LPContract": "0xe9e8d6b6ce6d94fc9d724711e80784ec096949fc",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xD5F922e23693e552793fE0431F9a95ba67A60A23",
-      "bondingCalculator": "0x3E0b7BbaD42445dc760059F085d56a86963793c1",
-      "wsOHMNetworks": [
-        {
-          "address": "0x757dd1dcc4546e949cbf4369df13ebc768bfa0b2",
-          "networkSymbol": "AVAX"
+    "AVAX-GG": {
+        "farmSymbol": "GG",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "GalaxyGoggle",
+            "symbol": "GG",
+            "timeTemplate": true,
+            "date": "Nov-25-2021 04:56:25 PM",
+            "link": "https://app.galaxygoggle.money/#/stake",
+            "token": "0xf2f7ce610a091b94d41d69f4ff1129434a82e2f0",
+            "stakingSymbol": "sGG",
+            "stakingToken": "0x2482ec3928adf1718caa5956608684f5a54e14d0",
+            "indexRatio": 4.5,
+            "stakingContract": "0xbd79c01140cee7040f8f5e935b72e13540a801b6",
+            "LPContract": "0xe9e8d6b6ce6d94fc9d724711e80784ec096949fc",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xD5F922e23693e552793fE0431F9a95ba67A60A23",
+            "bondingCalculator": "0x3E0b7BbaD42445dc760059F085d56a86963793c1",
+            "wsOHMNetworks": [
+                {
+                    "address": "0x757dd1dcc4546e949cbf4369df13ebc768bfa0b2",
+                    "networkSymbol": "AVAX"
+                }
+            ],
+            "wsOHMSymbol": "wsGG",
+            "isWarmup": true,
+            "bondingContracts": [
+                {
+                    "address": "0x49EDb46546035e28B7138B21FC3fcCd41bF4b928",
+                    "symbol": "GG-MIM"
+                },
+                {
+                    "address": "0x2c9ee2ac3868659789c87a1268a7e2b9e7e9b867",
+                    "symbol": "GG-AVAX"
+                },
+                {
+                    "address": "0x8D76969ABd6cCE3Ef89c8E0BB0f31fBF008EC3C2",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0xeDEA430279D40bEDf13ecA7b81bDF01327Abfdd2",
+                    "symbol": "wAVAX"
+                },
+                {
+                    "address": "0xc7c2cff75ae7e126527f64d64dabbc5548a18690",
+                    "symbol": "USDC"
+                },
+                {
+                    "address": "0xf493218d993c9ad091cd07c90f13c755ceab624d",
+                    "symbol": "JOE"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MIM-GG",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xF2F7CE610a091B94d41D69f4fF1129434a82E2f0",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0xe9E8d6b6ce6D94Fc9d724711e80784Ec096949Fc",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ],
-      "wsOHMSymbol": "wsGG",
-      "isWarmup": true,
-      "bondingContracts": [
-        {
-          "address": "0x49EDb46546035e28B7138B21FC3fcCd41bF4b928",
-          "symbol": "GG-MIM"
-        },
-        {
-          "address": "0x2c9ee2ac3868659789c87a1268a7e2b9e7e9b867",
-          "symbol": "GG-AVAX"
-        },
-        {
-          "address": "0x8D76969ABd6cCE3Ef89c8E0BB0f31fBF008EC3C2",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0xeDEA430279D40bEDf13ecA7b81bDF01327Abfdd2",
-          "symbol": "wAVAX"
-        },
-        {
-          "address": "0xc7c2cff75ae7e126527f64d64dabbc5548a18690",
-          "symbol": "USDC"
-        },
-        {
-          "address": "0xf493218d993c9ad091cd07c90f13c755ceab624d",
-          "symbol": "JOE"
-        }
-      ]
     }
-  }
 }

@@ -1,31 +1,62 @@
 {
-  "MATIC-GURU": {
-    "farmSymbol": "GURU",
-    "networkSymbol": "MATIC",
-    "constants": {
-      "name": "NidhiDAO",
-      "symbol": "GURU",
-      "date": "Nov-22-2021 09:29:09 PM",
-      "link": "https://app.nidhidao.finance/#/dashboard",
-      "token": "0x057E0bd9B797f9Eeeb8307B35DbC8c12E534c41E",
-      "stakingSymbol": "sGURU",
-      "stakingToken": "0x04568467f0AAe5fb85Bf0e031ee66FF2C200a6Fb",
-      "stakingContract": "0x4Eef9cb4D2DA4AB2A76a4477E9d2b07f403f0675",
-      "LPContract": "0x7c9b16d845fe163f464d265193cc2b4ee3fac326",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x90515c4ae15B7DF8CCD497e02802d0b832f4e33D",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xFDAACD04f8ad605e928F4A44864FF825dCd4796d",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0xbbA07bd5B20B63249398b831082ace6415afB7E0",
-          "symbol": "DAI-GURU"
+    "MATIC-GURU": {
+        "farmSymbol": "GURU",
+        "networkSymbol": "MATIC",
+        "constants": {
+            "name": "NidhiDAO",
+            "symbol": "GURU",
+            "date": "Nov-22-2021 09:29:09 PM",
+            "link": "https://app.nidhidao.finance/#/dashboard",
+            "token": "0x057E0bd9B797f9Eeeb8307B35DbC8c12E534c41E",
+            "stakingSymbol": "sGURU",
+            "stakingToken": "0x04568467f0AAe5fb85Bf0e031ee66FF2C200a6Fb",
+            "stakingContract": "0x4Eef9cb4D2DA4AB2A76a4477E9d2b07f403f0675",
+            "LPContract": "0x7c9b16d845fe163f464d265193cc2b4ee3fac326",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x90515c4ae15B7DF8CCD497e02802d0b832f4e33D",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xFDAACD04f8ad605e928F4A44864FF825dCd4796d",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0xbbA07bd5B20B63249398b831082ace6415afB7E0",
+                    "symbol": "DAI-GURU"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "GURU-DAI",
+                    "token0": {
+                        "address": "0x057E0bd9B797f9Eeeb8307B35DbC8c12E534c41E",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x7c9B16d845FE163F464d265193cC2B4eE3faC326",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x66039dD0B3B9Fb224460c22CEB5b7900e86b1399"
         }
-      ]
     }
-  }
 }

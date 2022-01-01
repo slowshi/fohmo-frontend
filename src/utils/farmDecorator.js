@@ -76,8 +76,61 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
       allBalances.collateralBalances.total
     ) * currentFarm.data?.rawPrice;
   rawTotal = Number(rawTotal);
+
+  const formattedAllBalances = currentFarm.treasuryBalance?.allBalances
+  .map((balance) => {
+    let value = balance.value;
+    if(balance.symbol.indexOf('-') > -1) {
+      value = balance.value * currentFarm.data?.rawPrice;
+    }
+    const valueInUSD = Number(value).toLocaleString(undefined, {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: fractionDigits,
+      maximumFractionDigits: fractionDigits
+    })
+    return {
+      ...balance,
+      valueInUSD
+    };
+  });
+  const rawTreasuryTotal = currentFarm.treasuryBalance?.usdTreasuryValues +
+  (currentFarm.treasuryBalance?.ohmTreasuryValues * currentFarm.data?.rawPrice);
+  const rawBackingPrice = Number(rawTreasuryTotal / currentFarm.data?.totalSupply);
+
+  const treasuryRunway = rawTreasuryTotal / currentFarm.data?.circulatingSupply;
+  const runway = (Math.log(treasuryRunway) / Math.log(1 + currentFarm.data?.stakingRebase) / currentFarm.data?.distributeInterval).toFixed(2);
+
+  const treasuryBalance = {
+    ...currentFarm.treasuryBalance,
+    allBalances: formattedAllBalances,
+    priceBackingRatio: (currentFarm.data?.rawPrice / rawBackingPrice).toFixed(2),
+    rawBackingPrice,
+    runway,
+    backingPrice: Number(rawTreasuryTotal / currentFarm.data?.totalSupply)
+    .toLocaleString(undefined, {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: fractionDigits,
+      maximumFractionDigits: fractionDigits
+    }),
+    rawTreasuryTotal,
+    rfvInUSD: Number(currentFarm.treasuryBalance?.rfv).toLocaleString(undefined, {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }),
+    total: Number(rawTreasuryTotal).toLocaleString(undefined, {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    })
+  };
   return {
     ...currentFarm,
+    treasuryBalance,
     balances: {
       ...allBalances,
       bonds: formattedBonds,
@@ -376,123 +429,6 @@ const getMemoizedFarm = (farmKey) => createSelector(
     return getFarm(farm, balances, addresses, fiatCurrency);
   }
 )
-
-// const getMemoizedFarms = createSelector(
-//   state => state.farms,
-//   state => state.balances,
-//   (farms, balances) => {
-//     let farmKeys = [...Object.keys(farms)];
-//     return farmKeys
-//     .map((farmKey)=>getFarm(farms[farmKey], balances[farmKey]))
-//     .reduce((acc, farm) => {
-//       const key = `${farm.networkSymbol}-${farm.farmSymbol}`;
-//       acc[key] = farm;
-//       return acc;
-//     }, {});
-//   }
-// )
-
-// const memoizedAggregateTotals = createSelector(
-//   state => state.farms,
-//   state => state.app.farmFilters,
-//   state => state.app.totalRoiDynamic,
-//   state => state.app.hideTotals,
-//   state => state.app.addresses,
-//   (farms, farmFilters, totalRoiDynamic, hideTotals, addresses) => {
-//     let allFarms = [...Object.keys(farms)];
-//     if (farmFilters.length > 0) {
-//       allFarms = [...farmFilters];
-//     }
-//     const filteredFarms = allFarms.map((farmKey)=>farms[farmKey]);
-//     const totalValue = filteredFarms.reduce((acc, farm)=> {
-//       acc += farm.balances?.rawTotal || 0;
-//       return acc;
-//     }, 0);
-//     let totalWeightedPercent = 0;
-//     let totalProfit = 0;
-//     let totalExpectedValue = 0;
-//     filteredFarms.forEach((farm)=> {
-//       const stakedBalance = Number(farm.balances?.stakingTokenBalance) || 0;
-//       const wrappedStakedBalance = Number(farm.balances?.wrappedBalances?.total) || 0;
-//       const otherBalance = Number(farm.balances?.fullBondTotal + farm.balances?.tokenBalance);
-//       const adjustedTotal = stakedBalance + wrappedStakedBalance;
-//       const price = Number(farm.data?.rawPrice) || 0;
-//       const stakingRebase = farm.data?.stakingRebase || 0;
-//       const distributeInterval = farm.data?.distributeInterval || 0;
-//       const percent = (Math.pow(1 + stakingRebase, distributeInterval * totalRoiDynamic) - 1) || 0;
-//       const profit = (percent * adjustedTotal * price) || 0;
-//       const weightedPercent = percent * (farm.balances?.rawTotal / totalValue) || 0;
-//       const newTotal = ((otherBalance + (adjustedTotal + (percent * adjustedTotal))) * price) || 0;
-//       totalWeightedPercent += weightedPercent;
-//       totalProfit += profit;
-//       totalExpectedValue += newTotal;
-//     }, 0);
-//     if(hideTotals || Object.keys(addresses).length === 0) {
-//       document.title = `Fohmo.io`
-//     } else {
-//       document.title = `Fohmo.io - $${totalValue.toLocaleString(undefined, {
-//         minimumFractionDigits: fractionDigits,
-//         maximumFractionDigits: fractionDigits
-//       })}`
-//     }
-//     return {
-//       totalValue: Number(totalValue).toLocaleString(undefined, {
-//         minimumFractionDigits: fractionDigits,
-//         maximumFractionDigits: fractionDigits
-//       }),
-//       totalWeightedPercent: Number((totalWeightedPercent * 100)).toLocaleString(undefined, {
-//         minimumFractionDigits: 4,
-//         maximumFractionDigits: 4
-//       }),
-//       totalProfit: Number(totalProfit).toLocaleString(undefined, {
-//         minimumFractionDigits: fractionDigits,
-//         maximumFractionDigits: fractionDigits
-//       }),
-//       totalExpectedValue: Number(totalExpectedValue).toLocaleString(undefined, {
-//         minimumFractionDigits: fractionDigits,
-//         maximumFractionDigits: fractionDigits
-//       })
-//     };
-//   }
-// )
-
-// const memoizedSortedFarms = createSelector(
-//   state => state.farms,
-//   state => state.balances,
-//   state => state.app.farmFilters,
-//   state => state.app.sortDirection,
-//   state=> sortMap[state.app.sortBy] || 'mc',
-//   (farms, balances, farmFilters, sortDirection, sortByKey)  => {
-//     let allFarms = [...Object.keys(farms)];
-//     if (farmFilters.length > 0) {
-//       allFarms = [...farmFilters];
-//     }
-//     return allFarms
-//     .sort((a, b)=>{
-//       if(a.data === null || b.data === null) return 0;
-//       const aTotal = ref(a, sortByKey);
-//       const bTotal = ref(b, sortByKey);
-
-//       if (aTotal < bTotal) return sortDirection === 'asc' ? -1 : 1;
-//       if (aTotal > bTotal) return sortDirection === 'desc' ? -1 : 1;
-
-//       return 0;
-//     });
-
-//   }
-// );
-
-
-// const ref = (obj, str) => {
-//   return str
-//   .split(".")
-//   .reduce((acc, key) => {
-//     if(typeof acc[key] === 'undefined') {
-//       return null;
-//     }
-//     return acc[key];
-//   }, obj);
-// }
 
 export {
   combineBalances,

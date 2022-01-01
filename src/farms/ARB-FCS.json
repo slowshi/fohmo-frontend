@@ -1,48 +1,64 @@
 {
-  "ARB-FCS": {
-    "farmSymbol": "FCS",
-    "networkSymbol": "ARB",
-    "constants": {
-      "name": "FaircastleDAO",
-      "symbol": "FCS",
-      "date": "Dec-04-2021 08:33:37 PM",
-      "link": "https://app.faircastle.finance/#/stake",
-      "token": "0xf754675Ca3d7D34290007065a4DE786FeA6bB9B5",
-      "stakingSymbol": "sFCS",
-      "stakingToken": "0x61876B7bde26F64131aCF27eBD17B5d3B1c2892c",
-      "stakingContract": "0x98CE2a2F2797A8A1880C359cD8279d1dfFd04f6C",
-      "LPContract": "0xcce0a7f46bc1698365602834b3eaa448c16eb886",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x0F8A60fED0f95A0020F544E46813A8397bf23E18",
-      "bondingCalculator": "0x0C70ebE4C234E94159b8ba8b3DaD02840aF4D781",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xccee26786acc7febe175d42a205ee917496ab388",
-          "symbol": "FCS-MIM"
-        },
-        {
-          "address": "0xb20543f26f598f094c9147c4c331bb36d411ccbf",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0xD43a17f14Cf65f74689327c2Ad46FE4BCea76155",
-          "symbol": "wETH"
-        },
-        {
-          "address": "0xe4606b7c077f5e49ae56134599138747292738a1",
-          "symbol": "FRAX"
-        },
-        {
-          "address": "0xb678c334aae2ba7caa7f50c202011b06468ebfac",
-          "symbol": "wBTC"
-        },
-        {
-          "address": "0xa6117937331e8ed3cedf679fb6b4d09b211b00fa",
-          "symbol": "FCS-wETH"
+    "ARB-FCS": {
+        "farmSymbol": "FCS",
+        "networkSymbol": "ARB",
+        "constants": {
+            "name": "FaircastleDAO",
+            "symbol": "FCS",
+            "date": "Dec-04-2021 08:33:37 PM",
+            "link": "https://app.faircastle.finance/#/stake",
+            "token": "0xf754675Ca3d7D34290007065a4DE786FeA6bB9B5",
+            "stakingSymbol": "sFCS",
+            "stakingToken": "0x61876B7bde26F64131aCF27eBD17B5d3B1c2892c",
+            "stakingContract": "0x98CE2a2F2797A8A1880C359cD8279d1dfFd04f6C",
+            "LPContract": "0xcce0a7f46bc1698365602834b3eaa448c16eb886",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x0F8A60fED0f95A0020F544E46813A8397bf23E18",
+            "bondingCalculator": "",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xccee26786acc7febe175d42a205ee917496ab388",
+                    "symbol": "FCS-MIM"
+                },
+                {
+                    "address": "0xb20543f26f598f094c9147c4c331bb36d411ccbf",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0xD43a17f14Cf65f74689327c2Ad46FE4BCea76155",
+                    "symbol": "wETH"
+                },
+                {
+                    "address": "0xe4606b7c077f5e49ae56134599138747292738a1",
+                    "symbol": "FRAX"
+                },
+                {
+                    "address": "0xb678c334aae2ba7caa7f50c202011b06468ebfac",
+                    "symbol": "wBTC"
+                },
+                {
+                    "address": "0xa6117937331e8ed3cedf679fb6b4d09b211b00fa",
+                    "symbol": "FCS-wETH"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x155f0DD04424939368972f4e1838687d6a831151",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+                        "decimals": 6
+                    },
+                    "symbol": "ADoge",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                }
+            ]
         }
-      ]
     }
-  }
 }

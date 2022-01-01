@@ -1,32 +1,63 @@
 {
-  "FTM-WEN": {
-    "farmSymbol": "WEN",
-    "networkSymbol": "FTM",
-    "constants": {
-      "name": "WagmiDAO",
-      "symbol": "WEN",
-      "timeTemplate": true,
-      "date": "Dec-17-2021 02:57:53 PM",
-      "link": "https://wenwagmi.com/#/stake",
-      "token": "0x86D7BcCB91B1c5A01A7aD7D7D0eFC7106928c7F8",
-      "stakingSymbol": "sWEN",
-      "stakingToken": "0x74d02d9cfe67f1fc60019db470b46f5b0dc82b32",
-      "stakingContract": "0x1a16805c1e60E7bf206304efDF31E7b8a151235B",
-      "LPContract": "0x0169721fdca4c1e201F9F44CeC5fb1C0AF356AE1",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x25b6e27a7279ae1ea95d29078d1d35200813035c",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "wsWEN",
-      "bondingContracts": [
-        {
-          "address": "0x7f4aea8a240a8f5c0e62eb387d1f929536e1b756",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0xc82514b8a3f4579abee1592eadd249d693a7213e",
-          "symbol": "WEN-DAI"
+    "FTM-WEN": {
+        "farmSymbol": "WEN",
+        "networkSymbol": "FTM",
+        "constants": {
+            "name": "WagmiDAO",
+            "symbol": "WEN",
+            "timeTemplate": true,
+            "date": "Dec-17-2021 02:57:53 PM",
+            "link": "https://wenwagmi.com/#/stake",
+            "token": "0x86D7BcCB91B1c5A01A7aD7D7D0eFC7106928c7F8",
+            "stakingSymbol": "sWEN",
+            "stakingToken": "0x74d02d9cfe67f1fc60019db470b46f5b0dc82b32",
+            "stakingContract": "0x1a16805c1e60E7bf206304efDF31E7b8a151235B",
+            "LPContract": "0x0169721fdca4c1e201F9F44CeC5fb1C0AF356AE1",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x25b6e27a7279ae1ea95d29078d1d35200813035c",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "wsWEN",
+            "bondingContracts": [
+                {
+                    "address": "0x7f4aea8a240a8f5c0e62eb387d1f929536e1b756",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0xc82514b8a3f4579abee1592eadd249d693a7213e",
+                    "symbol": "WEN-DAI"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "WEN-DAI",
+                    "token0": {
+                        "address": "0x86D7BcCB91B1c5A01A7aD7D7D0eFC7106928c7F8",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x0169721fdca4c1e201F9F44CeC5fb1C0AF356AE1",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0xfFb293E20bABD58Cb10D3C3640B2806da63Ad4A8"
         }
-      ]
     }
-  }
 }

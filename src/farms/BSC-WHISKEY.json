@@ -1,35 +1,94 @@
 {
-  "BSC-WHISKEY": {
-    "farmSymbol": "WHISKEY",
-    "networkSymbol": "BSC",
-    "constants": {
-      "name": "Bourbon DAO",
-      "symbol": "WHISKEY",
-      "date": "Dec-07-2021 01:28:03 AM",
-      "link": "https://www.bourbondao.com/stake",
-      "token": "0xce1ad4e2810e413e2e3684decc58a0bd01c907d9",
-      "stakingSymbol": "SCREWBALL",
-      "stakingToken": "0x06cae0720fa3147e2d8db66a18b7883221d84246",
-      "stakingContract": "0x5e398c5da5353182aae7410fb824a1578fc518cb",
-      "LPContract": "0x96b6d5482313eecc031afeb2fb32da2ba7439ba2",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x950d8c342bc6e0bcf9c1deb87d039947f35b3eb9",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x7f1b0dab5c7c8d7a63758946f853049bc53f4306",
-          "symbol": "WHISKEY-BUSD"
-        },
-        {
-          "address": "0x8A8dD632f9461138CAA15f57d0F107eFFa38dD47",
-          "symbol": "BUSD"
-        },
-        {
-          "address": "0x9a2e559bbe717497dd2ce9d83a463dcf7ea11790",
-          "symbol": "wBNB"
+    "BSC-WHISKEY": {
+        "farmSymbol": "WHISKEY",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "Bourbon DAO",
+            "symbol": "WHISKEY",
+            "date": "Dec-07-2021 01:28:03 AM",
+            "link": "https://www.bourbondao.com/stake",
+            "token": "0xce1ad4e2810e413e2e3684decc58a0bd01c907d9",
+            "stakingSymbol": "SCREWBALL",
+            "stakingToken": "0x06cae0720fa3147e2d8db66a18b7883221d84246",
+            "stakingContract": "0x5e398c5da5353182aae7410fb824a1578fc518cb",
+            "LPContract": "0x96b6d5482313eecc031afeb2fb32da2ba7439ba2",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x950d8c342bc6e0bcf9c1deb87d039947f35b3eb9",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x7f1b0dab5c7c8d7a63758946f853049bc53f4306",
+                    "symbol": "WHISKEY-BUSD"
+                },
+                {
+                    "address": "0x8A8dD632f9461138CAA15f57d0F107eFFa38dD47",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0x9a2e559bbe717497dd2ce9d83a463dcf7ea11790",
+                    "symbol": "wBNB"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x55d398326f99059fF775485246999027B3197955",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDT",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "WBNB",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16"
+                },
+                {
+                    "symbol": "WHISKEY-BUSD",
+                    "token0": {
+                        "address": "0xce1aD4E2810E413e2e3684DeCC58A0Bd01c907d9",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x96b6d5482313eECC031aFEb2Fb32da2BA7439BA2",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x855D0eb9CcAFB566dEeBc7089396c5f8af4937C2"
         }
-      ]
     }
-  }
 }

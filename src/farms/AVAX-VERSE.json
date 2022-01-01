@@ -1,38 +1,54 @@
 {
-  "AVAX-VERSE": {
-    "farmSymbol": "VERSE",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "Traverse",
-      "symbol": "VERSE",
-      "timeTemplate": true,
-      "date": "Dec-01-2021 04:52:30 PM",
-      "link": "https://app.traverse.money/#/stake",
-      "token": "0xB72ab6f7177bBb41eFcC17D817778d77460259F1",
-      "stakingSymbol": "sVERSE",
-      "stakingToken": "0x28F930fB6a2FbBa4667eF5394dEE96e24520cA34",
-      "stakingContract": "0x3fb7931f7BFA9f318Fbf2346f568802a76531774",
-      "LPContract": "0xbf56ea8a64faf58889584930716e655317d22ea6",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x50862E119a56ff41c6d660128e072ADd7dEc837b",
-      "bondingCalculator": "0x970fA579FA01E56B6FCE4E8A91Bf81DD84b3B559",
-      "wsOHMNetworks": [
-        {
-          "address": "0xE6420ee02D2B61Bd8556E5F8a5197983ce51e1f1",
-          "networkSymbol": "AVAX"
+    "AVAX-VERSE": {
+        "farmSymbol": "VERSE",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Traverse",
+            "symbol": "VERSE",
+            "timeTemplate": true,
+            "date": "Dec-01-2021 04:52:30 PM",
+            "link": "https://app.traverse.money/#/stake",
+            "token": "0xB72ab6f7177bBb41eFcC17D817778d77460259F1",
+            "stakingSymbol": "sVERSE",
+            "stakingToken": "0x28F930fB6a2FbBa4667eF5394dEE96e24520cA34",
+            "stakingContract": "0x3fb7931f7BFA9f318Fbf2346f568802a76531774",
+            "LPContract": "0xbf56ea8a64faf58889584930716e655317d22ea6",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x50862E119a56ff41c6d660128e072ADd7dEc837b",
+            "bondingCalculator": "",
+            "wsOHMNetworks": [
+                {
+                    "address": "0xE6420ee02D2B61Bd8556E5F8a5197983ce51e1f1",
+                    "networkSymbol": "AVAX"
+                }
+            ],
+            "wsOHMSymbol": "wsVERSE",
+            "bondingContracts": [
+                {
+                    "address": "0x658aa84B0651A4aE2739773c3C8fE698e6c2A7d3",
+                    "symbol": "DAI.e"
+                },
+                {
+                    "address": "0xa28DDB429DEEE0c6D70580f318A0cEf5bD6dC883",
+                    "symbol": "VERSE-DAI.e"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI.e",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                }
+            ]
         }
-      ],
-      "wsOHMSymbol": "wsVERSE",
-      "bondingContracts": [
-        {
-          "address": "0x658aa84B0651A4aE2739773c3C8fE698e6c2A7d3",
-          "symbol": "DAI.e"
-        },
-        {
-          "address": "0xa28DDB429DEEE0c6D70580f318A0cEf5bD6dC883",
-          "symbol": "VERSE-DAI.e"
-        }
-      ]
     }
-  }
 }

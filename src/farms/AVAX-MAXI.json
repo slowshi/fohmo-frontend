@@ -1,54 +1,140 @@
 {
-  "AVAX-MAXI": {
-    "farmSymbol": "MAXI",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "Maximizer",
-      "symbol": "MAXI",
-      "timeTemplate": true,
-      "date": "Nov-25-2021 07:20:20 AM",
-      "link": "https://app.maxi.xyz/#/dashboard",
-      "token": "0x7C08413cbf02202a1c13643dB173f2694e0F73f0",
-      "stakingSymbol": "sMAXI",
-      "stakingToken": "0xEcE4D1b3C2020A312Ec41A7271608326894076b4",
-      "indexRatio": 4.5,
-      "stakingContract": "0x6d7AD602Ec2EFdF4B7d34A9A53f92F06d27b82B1",
-      "LPContract": "0xfBDC4aa69114AA11Fae65E858e92DC5D013b2EA9",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x22cF6c46b4E321913ec30127C2076b7b12aC6d15",
-      "bondingCalculator": "0xb84E864DDF96B57951Ebe687746418D221C4c1E6",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xf46969c3256dbdd1e48ce9c29926bd7208ba6ede",
-          "symbol": "USDC"
-        },
-        {
-          "address": "0x03f40ac35171e2ab7451b1410cf4e00f1d1915ce",
-          "symbol": "MAXI-AVAX PLG"
-        },
-        {
-          "address": "0xa4ebd64423a6ff9bae958bd0a38fc216f41b3ef6",
-          "symbol": "MAXI-DAI.e JLP"
-        },
-        {
-          "address": "0xa4d6757e6f313ea8857f50547f0ce4946ff1eb84",
-          "symbol": "AVAX"
-        },
-        {
-          "address": "0x103f6bd55c192b86ad576c0c36be7ab0945ebe48",
-          "symbol": "DAI.e"
-        },
-        {
-          "address": "0xfb04f718a4575a44982493ed987966c9f5ec818a",
-          "symbol": "QI-AVAX PLG"
-        },
-        {
-          "address": "0x20f91e4b39f405efa821a11543a8c03265045b84",
-          "symbol": "PNG-AVAX PLG"
+    "AVAX-MAXI": {
+        "farmSymbol": "MAXI",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Maximizer",
+            "symbol": "MAXI",
+            "timeTemplate": true,
+            "date": "Nov-25-2021 07:20:20 AM",
+            "link": "https://app.maxi.xyz/#/dashboard",
+            "token": "0x7C08413cbf02202a1c13643dB173f2694e0F73f0",
+            "stakingSymbol": "sMAXI",
+            "stakingToken": "0xEcE4D1b3C2020A312Ec41A7271608326894076b4",
+            "indexRatio": 4.5,
+            "stakingContract": "0x6d7AD602Ec2EFdF4B7d34A9A53f92F06d27b82B1",
+            "LPContract": "0xfBDC4aa69114AA11Fae65E858e92DC5D013b2EA9",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x22cF6c46b4E321913ec30127C2076b7b12aC6d15",
+            "bondingCalculator": "0xb84E864DDF96B57951Ebe687746418D221C4c1E6",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xf46969c3256dbdd1e48ce9c29926bd7208ba6ede",
+                    "symbol": "USDC"
+                },
+                {
+                    "address": "0x03f40ac35171e2ab7451b1410cf4e00f1d1915ce",
+                    "symbol": "MAXI-AVAX PLG"
+                },
+                {
+                    "address": "0xa4ebd64423a6ff9bae958bd0a38fc216f41b3ef6",
+                    "symbol": "MAXI-DAI.e JLP"
+                },
+                {
+                    "address": "0xa4d6757e6f313ea8857f50547f0ce4946ff1eb84",
+                    "symbol": "AVAX"
+                },
+                {
+                    "address": "0x103f6bd55c192b86ad576c0c36be7ab0945ebe48",
+                    "symbol": "DAI.e"
+                },
+                {
+                    "address": "0xfb04f718a4575a44982493ed987966c9f5ec818a",
+                    "symbol": "QI-AVAX PLG"
+                },
+                {
+                    "address": "0x20f91e4b39f405efa821a11543a8c03265045b84",
+                    "symbol": "PNG-AVAX PLG"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI.e",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WAVAX",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256"
+                },
+                {
+                    "token0": {
+                        "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MAXI-DAI.e",
+                    "token0": {
+                        "address": "0x7C08413cbf02202a1c13643dB173f2694e0F73f0",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xfBDC4aa69114AA11Fae65E858e92DC5D013b2EA9",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "MAXI-WAVAX",
+                    "token0": {
+                        "address": "0x7C08413cbf02202a1c13643dB173f2694e0F73f0",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xbb700450811a30c5ee0dB80925Cf1BA53dBBd60A",
+                    "stable": false,
+                    "single": false
+                },
+                {
+                    "symbol": "PNG-WAVAX",
+                    "token0": {
+                        "address": "0x60781C2586D68229fde47564546784ab3fACA982",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xd7538cABBf8605BdE1f4901B47B8D42c61DE0367",
+                    "stable": false,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

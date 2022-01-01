@@ -1,36 +1,95 @@
 {
-  "AVAX-FORT": {
-    "farmSymbol": "FORT",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "Fortress",
-      "symbol": "FORT",
-      "timeTemplate": true,
-      "date": "Nov-18-2021 05:44:29 PM",
-      "link": "https://app.fortressdao.finance/#/stake",
-      "token": "0xf6d46849DB378AE01D93732585BEc2C4480D1fD5",
-      "stakingSymbol": "sFORT",
-      "stakingToken": "0x6B8FB769d1957F2c29aBc9d1bEB95851cce775D8",
-      "stakingContract": "0x4D8ba74820e2d6EaD2Ea154586CB7dfbA8A691aa",
-      "LPContract": "0x3e5f198b46f3de52761b02d4ac8ef4ceceac22d6",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xb8e8d2E97C5F4594F65CCe0f5888C641C7A3a056",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x57295798BeF860832f3546E1dAD66554d7F590C1",
-          "symbol": "FORT-MIM"
-        },
-        {
-          "address": "0x56d6994fFE11bc20482849A18C6b1DF8B9a57ac7",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0x83F2333a833CA85ac11D053a811e0bA57203fFE2",
-          "symbol": "wAVAX"
+    "AVAX-FORT": {
+        "farmSymbol": "FORT",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Fortress",
+            "symbol": "FORT",
+            "timeTemplate": true,
+            "date": "Nov-18-2021 05:44:29 PM",
+            "link": "https://app.fortressdao.finance/#/stake",
+            "token": "0xf6d46849DB378AE01D93732585BEc2C4480D1fD5",
+            "stakingSymbol": "sFORT",
+            "stakingToken": "0x6B8FB769d1957F2c29aBc9d1bEB95851cce775D8",
+            "stakingContract": "0x4D8ba74820e2d6EaD2Ea154586CB7dfbA8A691aa",
+            "LPContract": "0x3e5f198b46f3de52761b02d4ac8ef4ceceac22d6",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xb8e8d2E97C5F4594F65CCe0f5888C641C7A3a056",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x57295798BeF860832f3546E1dAD66554d7F590C1",
+                    "symbol": "FORT-MIM"
+                },
+                {
+                    "address": "0x56d6994fFE11bc20482849A18C6b1DF8B9a57ac7",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x83F2333a833CA85ac11D053a811e0bA57203fFE2",
+                    "symbol": "wAVAX"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WAVAX",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256"
+                },
+                {
+                    "symbol": "MIM-FORT",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xf6d46849DB378AE01D93732585BEc2C4480D1fD5",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x3E5F198B46F3dE52761b02d4aC8ef4cECeAc22D6",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "WAVAX-FORT",
+                    "token0": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xf6d46849DB378AE01D93732585BEc2C4480D1fD5",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x2A91134162e2dA1394DF9e5e64608109d73ED3a0",
+                    "stable": false,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x25fBF364939f571e35BeEfce953bc1D05DB6625e"
         }
-      ]
     }
-  }
 }

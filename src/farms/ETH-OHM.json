@@ -1,56 +1,129 @@
 {
-  "ETH-OHM": {
-    "farmSymbol": "OHM",
-    "networkSymbol": "ETH",
-    "constants": {
-      "name": "OlympusDAO v1",
-      "symbol": "OHM",
-      "date": "Jun-12-2021 11:32:39 PM",
-      "link": "https://app.olympusdao.finance/#/stake",
-      "token": "0x383518188C0C6d7730D91b2c03a03C837814a899",
-      "stakingSymbol": "sOHM",
-      "stakingToken": "0x04F2694C8fcee23e8Fd0dfEA1d4f5Bb8c352111F",
-      "stakingContract": "0xFd31c7d00Ca47653c6Ce64Af53c1571f9C36566a",
-      "LPContract": "0x34d7d7aaf50ad4944b70b320acb24c95fa2def7c",
-      "lockedSupplyContract": null,
-      "wsOHMSymbol": "wsOHM",
-      "wsOHMNetworks": [
-        {
-          "address": "0xca76543cf381ebbb277be79574059e32108e3e65",
-          "networkSymbol": "ETH"
-        },
-        {
-          "address": "0x739ca6d71365a08f584c8fc4e1029045fa8abc4b",
-          "networkSymbol": "ARB"
-        },
-        {
-          "address": "0x8CD309e14575203535EF120b5b0Ab4DDeD0C2073",
-          "networkSymbol": "AVAX"
+    "ETH-OHM": {
+        "farmSymbol": "OHM",
+        "networkSymbol": "ETH",
+        "constants": {
+            "name": "OlympusDAO v1",
+            "symbol": "OHM",
+            "date": "Jun-12-2021 11:32:39 PM",
+            "link": "https://app.olympusdao.finance/#/stake",
+            "token": "0x383518188C0C6d7730D91b2c03a03C837814a899",
+            "stakingSymbol": "sOHM",
+            "stakingToken": "0x04F2694C8fcee23e8Fd0dfEA1d4f5Bb8c352111F",
+            "stakingContract": "0xFd31c7d00Ca47653c6Ce64Af53c1571f9C36566a",
+            "LPContract": "0x34d7d7aaf50ad4944b70b320acb24c95fa2def7c",
+            "lockedSupplyContract": null,
+            "wsOHMSymbol": "wsOHM",
+            "wsOHMNetworks": [
+                {
+                    "address": "0xca76543cf381ebbb277be79574059e32108e3e65",
+                    "networkSymbol": "ETH"
+                },
+                {
+                    "address": "0x739ca6d71365a08f584c8fc4e1029045fa8abc4b",
+                    "networkSymbol": "ARB"
+                },
+                {
+                    "address": "0x8CD309e14575203535EF120b5b0Ab4DDeD0C2073",
+                    "networkSymbol": "AVAX"
+                }
+            ],
+            "treasuryContract": "0x31F8Cc382c9898b273eff4e0b7626a6987C846E8",
+            "bondingContracts": [
+                {
+                    "address": "0x575409F8d77c12B05feD8B455815f0e54797381c",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0x8510c8c2B6891E04864fa196693D44E6B6ec2514",
+                    "symbol": "FRAX"
+                },
+                {
+                    "address": "0xE6295201CD1ff13CeD5f063a5421c39A1D236F1c",
+                    "symbol": "wETH"
+                },
+                {
+                    "address": "0xc20cfff07076858a7e642e396180ec390e5a02f7",
+                    "symbol": "OHM-WETH"
+                },
+                {
+                    "address": "0xc20CffF07076858a7e642E396180EC390E5A02f7",
+                    "symbol": "OHM-FRAX"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x853d955aCEf822Db058eb8505911ED77F175b99e",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "FRAX",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "decimals": 18
+                    },
+                    "symbol": "WETH",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xC3D03e4F041Fd4cD388c549Ee2A29a9E5075882f"
+                },
+                {
+                    "token0": {
+                        "address": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "decimals": 18
+                    },
+                    "symbol": "LUSD",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                },
+                {
+                    "token0": {
+                        "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "decimals": 18
+                    },
+                    "symbol": "CVX",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                }
+            ],
+            "bondingCalculator": ""
         }
-      ],
-      "treasuryContract": "0x31F8Cc382c9898b273eff4e0b7626a6987C846E8",
-      "bondingContracts": [
-        {
-          "address": "0x575409F8d77c12B05feD8B455815f0e54797381c",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0x8510c8c2B6891E04864fa196693D44E6B6ec2514",
-          "symbol": "FRAX"
-        },
-        {
-          "address": "0xE6295201CD1ff13CeD5f063a5421c39A1D236F1c",
-          "symbol": "wETH"
-        },
-        {
-          "address": "0xc20cfff07076858a7e642e396180ec390e5a02f7",
-          "symbol": "OHM-WETH"
-        },
-        {
-          "address": "0xc20CffF07076858a7e642E396180EC390E5A02f7",
-          "symbol": "OHM-FRAX"
-        }
-      ]
     }
-  }
 }

@@ -1,40 +1,99 @@
 {
-  "ETH-LOBI": {
-    "farmSymbol": "LOBI",
-    "networkSymbol": "ETH",
-    "constants": {
-      "name": "LOBIS",
-      "symbol": "LOBI",
-      "date": "Nov-23-2021 07:01:00 PM",
-      "link": "https://app.lobis.finance/#/",
-      "token": "0xDEc41Db0c33F3F6f3cb615449C311ba22D418A8d",
-      "stakingSymbol": "sLOBI",
-      "stakingToken": "0x8ab17e2cd4f894f8641a31f99f673a5762f53c8e",
-      "stakingContract": "0x3818eff63418e0a0ba3980aba5ff388b029b6d90",
-      "LPContract": "0x193008eaade86658df8237a436261e23e3bcbbaa",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x873ad91fa4f2aa0d557c0919ec3f6c9d240cdd05",
-      "LPContractETH": "0x055475920a8c93cffb64d039a8205f7acc7722d3",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xf8a5b15E7C96ed29c1cC4a594fdAB5F0C60C8266",
-          "symbol": "LOBI-OHM"
-        },
-        {
-          "address": "0x885d782b58fa757a3634415132b7f499c306da65",
-          "symbol": "CRV"
-        },
-        {
-          "address": "0xAC0d4C05797F25EfD51B8062a6CeC0F9171f22cB",
-          "symbol": "FXS"
-        },
-        {
-          "address": "0x9fe77f1e0ced9c0b245363c019850b2e79821bba",
-          "symbol": "TOKE"
+    "ETH-LOBI": {
+        "farmSymbol": "LOBI",
+        "networkSymbol": "ETH",
+        "constants": {
+            "name": "LOBIS",
+            "symbol": "LOBI",
+            "date": "Nov-23-2021 07:01:00 PM",
+            "link": "https://app.lobis.finance/#/",
+            "token": "0xDEc41Db0c33F3F6f3cb615449C311ba22D418A8d",
+            "stakingSymbol": "sLOBI",
+            "stakingToken": "0x8ab17e2cd4f894f8641a31f99f673a5762f53c8e",
+            "stakingContract": "0x3818eff63418e0a0ba3980aba5ff388b029b6d90",
+            "LPContract": "0x193008eaade86658df8237a436261e23e3bcbbaa",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x873ad91fa4f2aa0d557c0919ec3f6c9d240cdd05",
+            "LPContractETH": "0x055475920a8c93cffb64d039a8205f7acc7722d3",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xf8a5b15E7C96ed29c1cC4a594fdAB5F0C60C8266",
+                    "symbol": "LOBI-OHM"
+                },
+                {
+                    "address": "0x885d782b58fa757a3634415132b7f499c306da65",
+                    "symbol": "CRV"
+                },
+                {
+                    "address": "0xAC0d4C05797F25EfD51B8062a6CeC0F9171f22cB",
+                    "symbol": "FXS"
+                },
+                {
+                    "address": "0x9fe77f1e0ced9c0b245363c019850b2e79821bba",
+                    "symbol": "TOKE"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "decimals": 18
+                    },
+                    "symbol": "CRV",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x747c9884d29474fe4334C477ebfd25f8a6f5B90D"
+                },
+                {
+                    "token0": {
+                        "address": "0x3432B6A60D23Ca0dFCa7761B7ab56459D9C964D0",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "decimals": 18
+                    },
+                    "symbol": "FXS",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                },
+                {
+                    "token0": {
+                        "address": "0x2e9d63788249371f1DFC918a52f8d799F4a38C94",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "decimals": 18
+                    },
+                    "symbol": "TOKE",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                },
+                {
+                    "symbol": "OHM-LOBI",
+                    "token0": {
+                        "address": "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xDEc41Db0c33F3F6f3cb615449C311ba22D418A8d",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x193008EAAde86658Df8237A436261e23e3BcBbAa",
+                    "stable": false,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": ""
         }
-      ]
     }
-  }
 }

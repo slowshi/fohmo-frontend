@@ -1,44 +1,74 @@
 {
-  "BSC-GG": {
-    "farmSymbol": "GG",
-    "networkSymbol": "BSC",
-    "constants": {
-      "name": "GalaxyGoggle",
-      "symbol": "GG",
-      "timeTemplate": true,
-      "date": "Dec-25-2021 02:08:49 AM",
-      "link": "https://app.galaxygoggle.money/#/stake",
-      "token": "0xcAf23964Ca8db16D816eB314a56789F58fE0e10e",
-      "stakingSymbol": "sGG",
-      "stakingToken": "0x98868ebA22Ce858a19d67E984211fa80aB74DF8B",
-      "indexRatio": 4.5,
-      "stakingContract": "0x97209cf7a6fccc388eeff85b35d858756f31690d",
-      "LPContract": "0x13Cf29b3F58f777dDeD38278F7d938401f6b260c",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xf76c9753507b3df0867eb02d86d07c6ffceecaf1",
-      "bondingCalculator": "0xe4677ba3fc3cbb92633e6c636f073e76f3a76a61",
-      "wsOHMNetworks": [
-        {
-          "address": "0xb18b51de676f466e3758f9e3b0739cba564c7209",
-          "networkSymbol": "BSC"
+    "BSC-GG": {
+        "farmSymbol": "GG",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "GalaxyGoggle",
+            "symbol": "GG",
+            "timeTemplate": true,
+            "date": "Dec-25-2021 02:08:49 AM",
+            "link": "https://app.galaxygoggle.money/#/stake",
+            "token": "0xcAf23964Ca8db16D816eB314a56789F58fE0e10e",
+            "stakingSymbol": "sGG",
+            "stakingToken": "0x98868ebA22Ce858a19d67E984211fa80aB74DF8B",
+            "indexRatio": 4.5,
+            "stakingContract": "0x97209cf7a6fccc388eeff85b35d858756f31690d",
+            "LPContract": "0x13Cf29b3F58f777dDeD38278F7d938401f6b260c",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xf76c9753507b3df0867eb02d86d07c6ffceecaf1",
+            "bondingCalculator": "0xE4677ba3fc3CBB92633e6c636F073E76F3A76a61",
+            "wsOHMNetworks": [
+                {
+                    "address": "0xb18b51de676f466e3758f9e3b0739cba564c7209",
+                    "networkSymbol": "BSC"
+                }
+            ],
+            "wsOHMSymbol": "wsGG",
+            "isWarmup": true,
+            "bondingContracts": [
+                {
+                    "address": "0x6490a323f6c0aea17b480055ff8069d096ed9c62",
+                    "symbol": "GG-BUSD"
+                },
+                {
+                    "address": "0x4d60c0b9ec47440e412a8080cc040a9364e1eab4",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0x50a0dde8734ac2b68013825fce6958bbbf86dac2",
+                    "symbol": "wBNB"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "GG-BUSD",
+                    "token0": {
+                        "address": "0xcAf23964Ca8db16D816eB314a56789F58fE0e10e",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x13Cf29b3F58f777dDeD38278F7d938401f6b260c",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ],
-      "wsOHMSymbol": "wsGG",
-      "isWarmup": true,
-      "bondingContracts": [
-        {
-          "address": "0x6490a323f6c0aea17b480055ff8069d096ed9c62",
-          "symbol": "GG-BUSD"
-        },
-        {
-          "address": "0x4d60c0b9ec47440e412a8080cc040a9364e1eab4",
-          "symbol": "BUSD"
-        },
-        {
-          "address": "0x50a0dde8734ac2b68013825fce6958bbbf86dac2",
-          "symbol": "wBNB"
-        }
-      ]
     }
-  }
 }

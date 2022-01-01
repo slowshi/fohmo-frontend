@@ -149,7 +149,7 @@ const networks = {
   BSC: {
     symbol: 'BSC',
     name: 'Binance',
-    rpcURL: 'https://bscnode1.anyswap.exchange/',
+    rpcURL: 'https://bsc-dataseed3.binance.org/',
     chartURL: 'https://dexscreener.com/bsc/',
     blockRateSeconds: 3.00
   },
@@ -184,6 +184,7 @@ const allFarms = Object.keys(farms)
       ...farms[key],
       showBalances: false,
       showROI: false,
+      showTreasury: false,
       loading: true,
       roiDynamic: 1,
       data: null

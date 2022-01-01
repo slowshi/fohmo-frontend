@@ -1,38 +1,55 @@
 {
-  "KLAY-KRNO": {
-    "farmSymbol": "KRNO",
-    "networkSymbol": "KLAY",
-    "constants": {
-      "name": "KronosDAO",
-      "symbol": "KRNO",
-      "link": "https://app.kronosdao.finance/#/stake",
-      "token": "0xD676e57Ca65b827fEb112AD81Ff738E7B6c1048d",
-      "stakingSymbol": "sKRNO",
-      "stakingToken": "0x6555F93f608980526B5cA79b3bE2d4EdadB5C562",
-      "stakingContract": "0x39281362641Da798De3801B23BFBA19155B57f13",
-      "LPContract": "0xdf5caf79899407da1c1b31389448861a9846956d",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x03c812eE50e244909efE72e8c729976ACc5C16bb",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x5c74070fdea071359b86082bd9f9b3deaafbe32b",
-          "symbol": "KDAI"
-        },
-        {
-          "address": "0x9bA4428d3B753880dF53F67ABb31222EF900DB79",
-          "symbol": "KDAI-KRNO"
-        },
-        {
-          "address": "0x1FF29982e7eC4F53728ED398063587876F2a0d22",
-          "symbol": "KSD"
-        },
-        {
-          "address": "0x16DC360812d3d07D27bA35eca4CFC01b6E1C947f",
-          "symbol": "KLAY-KRNO (4,4)"
+    "KLAY-KRNO": {
+        "farmSymbol": "KRNO",
+        "networkSymbol": "KLAY",
+        "constants": {
+            "name": "KronosDAO",
+            "symbol": "KRNO",
+            "link": "https://app.kronosdao.finance/#/stake",
+            "token": "0xD676e57Ca65b827fEb112AD81Ff738E7B6c1048d",
+            "stakingSymbol": "sKRNO",
+            "stakingToken": "0x6555F93f608980526B5cA79b3bE2d4EdadB5C562",
+            "stakingContract": "0x39281362641Da798De3801B23BFBA19155B57f13",
+            "LPContract": "0xdf5caf79899407da1c1b31389448861a9846956d",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x03c812eE50e244909efE72e8c729976ACc5C16bb",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x5c74070fdea071359b86082bd9f9b3deaafbe32b",
+                    "symbol": "KDAI"
+                },
+                {
+                    "address": "0x9bA4428d3B753880dF53F67ABb31222EF900DB79",
+                    "symbol": "KDAI-KRNO"
+                },
+                {
+                    "address": "0x1FF29982e7eC4F53728ED398063587876F2a0d22",
+                    "symbol": "KSD"
+                },
+                {
+                    "address": "0x16DC360812d3d07D27bA35eca4CFC01b6E1C947f",
+                    "symbol": "KLAY-KRNO (4,4)"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x5c74070FDeA071359b86082bd9f9b3dEaafbe32b",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "KDAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                }
+            ],
+            "bondingCalculator": ""
         }
-      ]
     }
-  }
 }

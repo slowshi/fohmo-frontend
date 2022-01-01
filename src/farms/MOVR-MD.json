@@ -1,30 +1,103 @@
 {
-  "MOVR-MD": {
-    "farmSymbol": "MD",
-    "networkSymbol": "MOVR",
-    "constants": {
-      "name": "MoonDAO",
-      "symbol": "MD",
-      "link": "https://www.moondao.net/stake",
-      "token": "0x761cb807bfbf14a4f4ba980f29f43f009f6a18c0",
-      "stakingSymbol": "sMD",
-      "stakingToken": "0xf37a32d10bff44a592c46eb65704c42f55a43515",
-      "stakingContract": "0x534f861b6bafdf030e5b469d2d763834163f522f",
-      "LPContract": "0xdbf638d800190271f5473e76898c6c8e741cba51",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xec2ae8a3e2692e4b0836ab5cf88104d101debef4",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xf3dfff887098882c9615ee4c823573585b3be9dd",
-          "symbol": "MD-DAI"
-        },
-        {
-          "address": "0xbdad360458fb9a19611c78f9dc8d1a3ec124a5f8",
-          "symbol": "DAI"
+    "MOVR-MD": {
+        "farmSymbol": "MD",
+        "networkSymbol": "MOVR",
+        "constants": {
+            "name": "MoonDAO",
+            "symbol": "MD",
+            "link": "https://www.moondao.net/stake",
+            "token": "0x761cb807bfbf14a4f4ba980f29f43f009f6a18c0",
+            "stakingSymbol": "sMD",
+            "stakingToken": "0xf37a32d10bff44a592c46eb65704c42f55a43515",
+            "stakingContract": "0x534f861b6bafdf030e5b469d2d763834163f522f",
+            "LPContract": "0xdbf638d800190271f5473e76898c6c8e741cba51",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xec2ae8a3e2692e4b0836ab5cf88104d101debef4",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xf3dfff887098882c9615ee4c823573585b3be9dd",
+                    "symbol": "MD-DAI"
+                },
+                {
+                    "address": "0xbdad360458fb9a19611c78f9dc8d1a3ec124a5f8",
+                    "symbol": "DAI"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x80A16016cC4A2E6a2CACA8a4a498b1699fF0f844",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x98878B06940aE243284CA214f92Bb71a2b032B8A",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x80a16016cc4a2e6a2caca8a4a498b1699ff0f844",
+                        "decimals": 18
+                    },
+                    "symbol": "WMOVR",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x1c64E77a3419205C91262Ae0e5D9D33B3b1a6c34"
+                },
+                {
+                    "symbol": "MD-DAI",
+                    "token0": {
+                        "address": "0x761cb807bFbF14A4f4bA980f29F43F009F6a18c0",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x80A16016cC4A2E6a2CACA8a4a498b1699fF0f844",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xDbf638D800190271F5473e76898c6c8e741cbA51",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "MD-WMOVR",
+                    "token0": {
+                        "address": "0x761cb807bFbF14A4f4bA980f29F43F009F6a18c0",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x98878B06940aE243284CA214f92Bb71a2b032B8A",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x36D5ba93c6E862aC4e90318742A6bFF821068f05",
+                    "stable": false,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0xcb959452d0375A894d228F2F9273e4a9BE13B048"
         }
-      ]
     }
-  }
 }

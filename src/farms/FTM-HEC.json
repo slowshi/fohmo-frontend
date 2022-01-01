@@ -1,96 +1,225 @@
 {
-  "FTM-HEC": {
-    "farmSymbol": "HEC",
-    "networkSymbol": "FTM",
-    "constants": {
-      "name": "Hector",
-      "symbol": "HEC",
-      "date": "Nov-14-2021 01:47:24 PM",
-      "link": "https://app.hectordao.com/#/stake",
-      "token": "0x5C4FDfc5233f935f20D2aDbA572F770c2E377Ab0",
-      "stakingSymbol": "sHEC",
-      "stakingToken": "0x75bdeF24285013387A47775828bEC90b91Ca9a5F",
-      "stakingContract": "0xd12930c8deedafd788f437879cba1ad1e3908cc5",
-      "LPContract": "0xbc0eecdA2d8141e3a26D2535C57cadcb1095bca9",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xCB54EA94191B280C296E6ff0E37c7e76Ad42dC6A",
-      "wsOHMNetworks": [
-        {
-          "address": "0x94ccf60f700146bea8ef7832820800e2dfa92eda",
-          "networkSymbol": "FTM"
+    "FTM-HEC": {
+        "farmSymbol": "HEC",
+        "networkSymbol": "FTM",
+        "constants": {
+            "name": "Hector",
+            "symbol": "HEC",
+            "date": "Nov-14-2021 01:47:24 PM",
+            "link": "https://app.hectordao.com/#/stake",
+            "token": "0x5C4FDfc5233f935f20D2aDbA572F770c2E377Ab0",
+            "stakingSymbol": "sHEC",
+            "stakingToken": "0x75bdeF24285013387A47775828bEC90b91Ca9a5F",
+            "stakingContract": "0xd12930c8deedafd788f437879cba1ad1e3908cc5",
+            "LPContract": "0xbc0eecdA2d8141e3a26D2535C57cadcb1095bca9",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xCB54EA94191B280C296E6ff0E37c7e76Ad42dC6A",
+            "wsOHMNetworks": [
+                {
+                    "address": "0x94ccf60f700146bea8ef7832820800e2dfa92eda",
+                    "networkSymbol": "FTM"
+                }
+            ],
+            "wsOHMSymbol": "wsHEC",
+            "bondingContracts": [
+                {
+                    "address": "0xe07fc828f104c523d1e16ebe93f958a521a9f8b3",
+                    "symbol": "HEC-gOHM (4,4)"
+                },
+                {
+                    "address": "0x09eb3B10a13DD705C17ced39c35aeEA0D419D0BB",
+                    "symbol": "HEC-FRAX (4,4)"
+                },
+                {
+                    "address": "0xff6508aba1DAd81AACf3894374F291f82Dc024A8",
+                    "symbol": "HEC-USDC (4,4)"
+                },
+                {
+                    "address": "0xfF40F40E376030394B154dadcB4173277633b405",
+                    "symbol": "HEC-DAI (4,4)"
+                },
+                {
+                    "address": "0xd0373f236be04ecf08f51fc4e3ade7159d7cde65",
+                    "symbol": "USDC (4,4)"
+                },
+                {
+                    "address": "0x23337b675375507ce218df5f92f1a71252dab3e5",
+                    "symbol": "DAI (4,4)"
+                },
+                {
+                    "address": "0x8565f642180fE388F942460B66ABa9c2ca7F02Ed",
+                    "symbol": "MIM (4,4)"
+                },
+                {
+                    "address": "0xC798e6A22996C554739Df607B7eF1d6d435FDBd9",
+                    "symbol": "FRAX (4,4)"
+                },
+                {
+                    "address": "0xde13dd3bca9cbac23f46e5c587b48320f5f5c483",
+                    "symbol": "HEC-gOHM"
+                },
+                {
+                    "address": "0xde02631d898acd1bb8ff928c0f0ffa0cf29ab374",
+                    "symbol": "HEC-FRAX"
+                },
+                {
+                    "address": "0x3C57481f373Be0196A26A7d0a8E29E8CedC63ba1",
+                    "symbol": "HEC-USDC"
+                },
+                {
+                    "address": "0xA1224c353cdCB03eB70FbA44dADC137F39E5EF7d",
+                    "symbol": "HEC-DAI"
+                },
+                {
+                    "address": "0x5d05EF2654B9055895F21D7057095e2D7575f5A2",
+                    "symbol": "USDC"
+                },
+                {
+                    "address": "0x4099EB0e82Ffa0048E4BF037a9743ca05Ec561D7",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0xa695750b8439AB2AfBd88310946C99747C5B3A2E",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0xA4E87A25bC9058e4eC193151558c3c5D02cebE31",
+                    "symbol": "FRAX"
+                },
+                {
+                    "address": "0x72de9f0e51ca520379a341318870836fdcaf03b9",
+                    "symbol": "wFTM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+                        "decimals": 18
+                    },
+                    "symbol": "WFTM",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xe120ffBDA0d14f3Bb6d6053E90E63c572A66a428"
+                },
+                {
+                    "token0": {
+                        "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x82f0B8B456c1A451378467398982d4834b6829c1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xdc301622e621166BD8E82f2cA0A26c13Ad0BE355",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "FRAX",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "HEC-DAI",
+                    "token0": {
+                        "address": "0x5C4FDfc5233f935f20D2aDbA572F770c2E377Ab0",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xbc0eecdA2d8141e3a26D2535C57cadcb1095bca9",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "USDC-HEC",
+                    "token0": {
+                        "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "0x5C4FDfc5233f935f20D2aDbA572F770c2E377Ab0",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0xd661952749f05aCc40503404938A91aF9aC1473b",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "HEC-FRAX",
+                    "token0": {
+                        "address": "0x5C4FDfc5233f935f20D2aDbA572F770c2E377Ab0",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xdc301622e621166BD8E82f2cA0A26c13Ad0BE355",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x0f8D6953F58C0dd38077495ACA64cbd1c76b7501",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "HEC-gOHM",
+                    "token0": {
+                        "address": "0x5C4FDfc5233f935f20D2aDbA572F770c2E377Ab0",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x91fa20244Fb509e8289CA630E5db3E9166233FDc",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xEb7942E26368b2052CBbDa2c054482F00436ef7B",
+                    "stable": false,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0xA36De21abd90b27e5EfF108D761Ab4fe06fD4Ab4"
         }
-      ],
-      "wsOHMSymbol": "wsHEC",
-      "bondingContracts": [
-        {
-          "address": "0xe07fc828f104c523d1e16ebe93f958a521a9f8b3",
-          "symbol": "HEC-gOHM (4,4)"
-        },
-        {
-          "address": "0x09eb3B10a13DD705C17ced39c35aeEA0D419D0BB",
-          "symbol": "HEC-FRAX (4,4)"
-        },
-        {
-          "address": "0xff6508aba1DAd81AACf3894374F291f82Dc024A8",
-          "symbol": "HEC-USDC (4,4)"
-        },
-        {
-          "address": "0xfF40F40E376030394B154dadcB4173277633b405",
-          "symbol": "HEC-DAI (4,4)"
-        },
-        {
-          "address": "0xd0373f236be04ecf08f51fc4e3ade7159d7cde65",
-          "symbol": "USDC (4,4)"
-        },
-        {
-          "address": "0x23337b675375507ce218df5f92f1a71252dab3e5",
-          "symbol": "DAI (4,4)"
-        },
-        {
-          "address": "0x8565f642180fE388F942460B66ABa9c2ca7F02Ed",
-          "symbol": "MIM (4,4)"
-        },
-        {
-          "address": "0xC798e6A22996C554739Df607B7eF1d6d435FDBd9",
-          "symbol": "FRAX (4,4)"
-        },
-        {
-          "address": "0xde13dd3bca9cbac23f46e5c587b48320f5f5c483",
-          "symbol": "HEC-gOHM"
-        },
-        {
-          "address": "0xde02631d898acd1bb8ff928c0f0ffa0cf29ab374",
-          "symbol": "HEC-FRAX"
-        },
-        {
-          "address": "0x3C57481f373Be0196A26A7d0a8E29E8CedC63ba1",
-          "symbol": "HEC-USDC"
-        },
-        {
-          "address": "0xA1224c353cdCB03eB70FbA44dADC137F39E5EF7d",
-          "symbol": "HEC-DAI"
-        },
-        {
-          "address": "0x5d05EF2654B9055895F21D7057095e2D7575f5A2",
-          "symbol": "USDC"
-        },
-        {
-          "address": "0x4099EB0e82Ffa0048E4BF037a9743ca05Ec561D7",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0xa695750b8439AB2AfBd88310946C99747C5B3A2E",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0xA4E87A25bC9058e4eC193151558c3c5D02cebE31",
-          "symbol": "FRAX"
-        },
-        {
-          "address": "0x72de9f0e51ca520379a341318870836fdcaf03b9",
-          "symbol": "wFTM"
-        }
-      ]
     }
-  }
 }

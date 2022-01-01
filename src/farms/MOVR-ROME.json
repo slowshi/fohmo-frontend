@@ -1,36 +1,108 @@
 {
-  "MOVR-ROME": {
-    "farmSymbol": "ROME",
-    "networkSymbol": "MOVR",
-    "constants": {
-      "name": "RomeDAO",
-      "symbol": "ROME",
-      "date": "Nov-30-2021 12:20:00 AM",
-      "link": "https://romedao.finance/",
-      "token": "0x4a436073552044D5f2f49B176853ad3Ad473d9d6",
-      "stakingSymbol": "sROME",
-      "stakingToken": "0x89F52002E544585b42F8c7Cf557609CA4c8ce12A",
-      "stakingContract": "0x6f7D019502e17F1ef24AC67a260c65Dd23b759f1",
-      "LPContract": "0x069c2065100b4d3d982383f7ef3ecd1b95c05894",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xfbad41e4dd040bc80c89fcc6e90d152a746139af",
-      "bondingCalculator": "0x3b5bbc9d8243c6661ccadade17b68344770c20fd",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x065588602bd7206b15f9630fdb2e81e4ca51ad8a",
-          "symbol": "ROME-FRAX"
-        },
-        {
-          "address": "0xe2f71c68db7ecc0c9a907ad2e40e2394c5cac367",
-          "symbol": "FRAX"
-        },
-        {
-          "address": "0x91a5184741fdc64f7507a7db6aa3764a747f8089",
-          "symbol": "MIM"
+    "MOVR-ROME": {
+        "farmSymbol": "ROME",
+        "networkSymbol": "MOVR",
+        "constants": {
+            "name": "RomeDAO",
+            "symbol": "ROME",
+            "date": "Nov-30-2021 12:20:00 AM",
+            "link": "https://romedao.finance/",
+            "token": "0x4a436073552044D5f2f49B176853ad3Ad473d9d6",
+            "stakingSymbol": "sROME",
+            "stakingToken": "0x89F52002E544585b42F8c7Cf557609CA4c8ce12A",
+            "stakingContract": "0x6f7D019502e17F1ef24AC67a260c65Dd23b759f1",
+            "LPContract": "0x069c2065100b4d3d982383f7ef3ecd1b95c05894",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xfbad41e4dd040bc80c89fcc6e90d152a746139af",
+            "bondingCalculator": "0x3b5bbC9d8243C6661CcadAdE17B68344770c20FD",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x065588602bd7206b15f9630fdb2e81e4ca51ad8a",
+                    "symbol": "ROME-FRAX"
+                },
+                {
+                    "address": "0xe2f71c68db7ecc0c9a907ad2e40e2394c5cac367",
+                    "symbol": "FRAX"
+                },
+                {
+                    "address": "0x91a5184741fdc64f7507a7db6aa3764a747f8089",
+                    "symbol": "MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x80A16016cC4A2E6a2CACA8a4a498b1699fF0f844",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x0caE51e1032e8461f4806e26332c030E34De3aDb",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x1A93B23281CC1CDE4C4741353F3064709A16197d",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "FRAX",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x98878B06940aE243284CA214f92Bb71a2b032B8A",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x80a16016cc4a2e6a2caca8a4a498b1699ff0f844",
+                        "decimals": 18
+                    },
+                    "symbol": "WMOVR",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x1c64E77a3419205C91262Ae0e5D9D33B3b1a6c34"
+                },
+                {
+                    "symbol": "FRAX-ROME",
+                    "token0": {
+                        "address": "0x1A93B23281CC1CDE4C4741353F3064709A16197d",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x4a436073552044D5f2f49B176853ad3Ad473d9d6",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x069C2065100b4D3D982383f7Ef3EcD1b95C05894",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

@@ -1,24 +1,68 @@
 {
-  "AVAX-SPACEv1": {
-    "farmSymbol": "SPACEv1",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "Vortex v1",
-      "symbol": "SPACE",
-      "timeTemplate": true,
-      "date": "Dec-15-2021 05:43:22 AM",
-      "link": "https://vortexdao.com/#/stake",
-      "token": "0x353af195c0d82820c59427bfbd318a49971aae1a",
-      "stakingSymbol": "sSPACE",
-      "stakingToken": "0xA0998E0Eae80Ab5425071d3F669c858E26e34352",
-      "stakingContract": "0x910F038C9E74dF8baEd886a22f75C69FaE8a6792",
-      "LPContract": "0x5087706dd31962938c57a0fb3a3107ed3794c996",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xE05CEc7Ed93C2d3E106Df88B8d7B963Ce3618f46",
-      "bondingCalculator": null,
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": []
+    "AVAX-SPACEv1": {
+        "farmSymbol": "SPACEv1",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Vortex v1",
+            "symbol": "SPACE",
+            "timeTemplate": true,
+            "date": "Dec-15-2021 05:43:22 AM",
+            "link": "https://vortexdao.com/#/stake",
+            "token": "0x353af195c0d82820c59427bfbd318a49971aae1a",
+            "stakingSymbol": "sSPACE",
+            "stakingToken": "0xA0998E0Eae80Ab5425071d3F669c858E26e34352",
+            "stakingContract": "0x910F038C9E74dF8baEd886a22f75C69FaE8a6792",
+            "LPContract": "0x5087706dd31962938c57a0fb3a3107ed3794c996",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xE05CEc7Ed93C2d3E106Df88B8d7B963Ce3618f46",
+            "bondingCalculator": "0x006178A760Bad4508160a3DB7B346c59AE91BE40",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x346A59146b9b4a77100D369a3d18E8007A9F46a6",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "AVAI",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                },
+                {
+                    "symbol": "MIM-SPACE",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x353af195c0d82820c59427BFbD318A49971AAe1a",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x5087706DD31962938c57a0fB3A3107ed3794c996",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
     }
-  }
 }

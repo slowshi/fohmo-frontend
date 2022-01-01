@@ -1,33 +1,34 @@
 {
-    "BSC-UDO": {
-        "farmSymbol": "UDO",
+    "BSC-ZEUS": {
+        "farmSymbol": "ZEUS",
         "networkSymbol": "BSC",
         "constants": {
-            "name": "UnusDAO",
-            "symbol": "UDO",
-            "date": "Nov-21-2021 05:12:40 AM",
-            "link": "https://unusdao.finance/#/stake",
-            "token": "0xB91Ec4F9D7D12A1aC145A7Ae3b78AFb45856C9c8",
-            "stakingSymbol": "sUDO",
-            "stakingToken": "0x76D91700CE49968DC314a23287343Ed9A0571eD0",
-            "stakingContract": "0xC34AF465Aac5928afec7e3642BD8Ca7873a7F2b2",
-            "LPContract": "0x1f9e3432a89E53dA95AC85c76CCb129841166e69",
-            "lockedSupplyContract": "0xfe363340b8f1ea5eb01f81c41bfb30a966a407ec",
-            "treasuryContract": "0x01CDdb5C0986B8521F93A9A5C6d84D6994a82742",
+            "name": "Xeus",
+            "symbol": "XEUS",
+            "date": "Oct-29-2021 01:54:00 AM",
+            "link": "https://xeus.finance/#/stake",
+            "token": "0x4E141769366634D9c4e498257Fa7EC204d22b634",
+            "stakingSymbol": "sXEUS",
+            "stakingToken": "0x52eb4A4aF85bf7921813a12B7Cc9Ec02b5e94D6e",
+            "indexRatio": 0.00001,
+            "stakingContract": "0x4669A93D251633C9983103529783eD1E4E36F20c",
+            "LPContract": "0x76129f6e590f7aaac39b9804048a18060297a79b",
+            "treasuryContract": "0xF1081555011689cCCfa29CCA6a9E6AFcB907B0bC",
+            "lockedSupplyContract": null,
             "wsOHMNetworks": [],
             "wsOHMSymbol": "",
             "bondingContracts": [
                 {
-                    "address": "0xdE2730eb9bAC0E704e0F322b5BE87B6e404C639b",
-                    "symbol": "UDO-BUSD"
+                    "address": "0xe259A3dFc976b43815C43723ecACB5c1E8794518",
+                    "symbol": "GYRO"
                 },
                 {
-                    "address": "0x7609fE013d928704505eD95efD1b0EF09a725791",
+                    "address": "0xE7208fd2deD9A372457367077B3796ED278E75eC",
+                    "symbol": "XEUS-BUSD"
+                },
+                {
+                    "address": "0x4c5c0cadec7b66b8f71018bbdabab7b4f0b8aca6",
                     "symbol": "BUSD"
-                },
-                {
-                    "address": "0xD74973Fd1af062B1CAA0e843aBF06AD77236c001",
-                    "symbol": "USDT"
                 }
             ],
             "treasuryAssets": [
@@ -47,34 +48,34 @@
                 },
                 {
                     "token0": {
-                        "address": "0x55d398326f99059fF775485246999027B3197955",
+                        "address": "0xE50c40B0B84946D7491337613059F181700ddBEa",
                         "decimals": 18
                     },
                     "token1": {
                         "address": "",
                         "decimals": ""
                     },
-                    "symbol": "USDT",
+                    "symbol": "DAI",
                     "stable": true,
                     "single": true,
                     "LPAddress": ""
                 },
                 {
-                    "symbol": "UDO-BUSD",
+                    "symbol": "XEUS-BUSD",
                     "token0": {
-                        "address": "0xB91Ec4F9D7D12A1aC145A7Ae3b78AFb45856C9c8",
+                        "address": "0x4E141769366634D9c4e498257Fa7EC204d22b634",
                         "decimals": 9
                     },
                     "token1": {
                         "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
                         "decimals": 18
                     },
-                    "LPAddress": "0x1f9e3432a89E53dA95AC85c76CCb129841166e69",
+                    "LPAddress": "0x76129F6E590f7aaAc39b9804048a18060297a79B",
                     "stable": true,
                     "single": false
                 }
             ],
-            "bondingCalculator": "0x97eaF49656a2a8BB52d9E48c566319F86fF07860"
+            "bondingCalculator": "0x10BF322D0E735d1E9d93462F6E32085765a3b804"
         }
     }
 }

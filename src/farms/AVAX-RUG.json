@@ -1,63 +1,108 @@
 {
-  "AVAX-RUG": {
-    "farmSymbol": "RUG",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "R U Generous",
-      "symbol": "RUG",
-      "timeTemplate": true,
-      "date": "Nov-15-2021 09:18:46 PM",
-      "link": "https://app.rug.farm/#/stake",
-      "token": "0xb8EF3a190b68175000B74B4160d325FD5024760e",
-      "stakingSymbol": "sRUG",
-      "stakingToken": "0xF3caa368B06033a83a49317549b3c1b47E7D5F8F",
-      "indexRatio": 100,
-      "stakingContract": "0x47953c729A571Ef331E92D537Adc45985976c756",
-      "LPContract": "0x5f953ac71a131cf877c5a9d040e67aedd6e37caf",
-      "LPContractETH": "0xa389f9430876455c36478deea9769b7ca4e3ddb1",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x2F87A9550f19666cEF5De29c5F613966cf164BE6",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "isWarmup": true,
-      "bondingContracts": [
-        {
-          "address": "0x881A8ECe1cD45A458eAcBA97f45b0fBc0752fCBF",
-          "symbol": "RUG-AVAX (RLP)"
-        },
-        {
-          "address": "0x6a94c5cfc9cd43d2b43c4f2b0b82a786df83d2ea",
-          "symbol": "RUG-MIM (RLP)"
-        },
-        {
-          "address": "0x3a93493e2e486f818672991de6828a27346ab0cb",
-          "symbol": "wAVAX"
-        },
-        {
-          "address": "0x8ab416d2dc33ed848a2b3fa75293c7e3b16f056e",
-          "symbol": "USDT"
-        },
-        {
-          "address": "0x96a03ff213d47d0556a6bd454779e59c12722d19",
-          "symbol": "QI"
-        },
-        {
-          "address": "0x8a4e5b690edfa273e59f28bbe2302aceeceefc41",
-          "symbol": "RUG-AVAX"
-        },
-        {
-          "address": "0xd17ac52710f77249d39f72bcbc0c3fa7eefcef84",
-          "symbol": "RUG-MIM"
-        },
-        {
-          "address": "0xb18ab414499e732554f67698d9214d3f5f1dcc73",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0x790463505821987709e4c661f9ab56def8a6b682",
-          "symbol": "USDC"
+    "AVAX-RUG": {
+        "farmSymbol": "RUG",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "R U Generous",
+            "symbol": "RUG",
+            "timeTemplate": true,
+            "date": "Nov-15-2021 09:18:46 PM",
+            "link": "https://app.rug.farm/#/stake",
+            "token": "0xb8EF3a190b68175000B74B4160d325FD5024760e",
+            "stakingSymbol": "sRUG",
+            "stakingToken": "0xF3caa368B06033a83a49317549b3c1b47E7D5F8F",
+            "indexRatio": 100,
+            "stakingContract": "0x47953c729A571Ef331E92D537Adc45985976c756",
+            "LPContract": "0x5f953ac71a131cf877c5a9d040e67aedd6e37caf",
+            "LPContractETH": "0xa389f9430876455c36478deea9769b7ca4e3ddb1",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x2F87A9550f19666cEF5De29c5F613966cf164BE6",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "isWarmup": true,
+            "bondingContracts": [
+                {
+                    "address": "0x881A8ECe1cD45A458eAcBA97f45b0fBc0752fCBF",
+                    "symbol": "RUG-AVAX (RLP)"
+                },
+                {
+                    "address": "0x6a94c5cfc9cd43d2b43c4f2b0b82a786df83d2ea",
+                    "symbol": "RUG-MIM (RLP)"
+                },
+                {
+                    "address": "0x3a93493e2e486f818672991de6828a27346ab0cb",
+                    "symbol": "wAVAX"
+                },
+                {
+                    "address": "0x8ab416d2dc33ed848a2b3fa75293c7e3b16f056e",
+                    "symbol": "USDT"
+                },
+                {
+                    "address": "0x96a03ff213d47d0556a6bd454779e59c12722d19",
+                    "symbol": "QI"
+                },
+                {
+                    "address": "0x8a4e5b690edfa273e59f28bbe2302aceeceefc41",
+                    "symbol": "RUG-AVAX"
+                },
+                {
+                    "address": "0xd17ac52710f77249d39f72bcbc0c3fa7eefcef84",
+                    "symbol": "RUG-MIM"
+                },
+                {
+                    "address": "0xb18ab414499e732554f67698d9214d3f5f1dcc73",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x790463505821987709e4c661f9ab56def8a6b682",
+                    "symbol": "USDC"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI.e",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "RUG-DAI.e",
+                    "token0": {
+                        "address": "0xb8EF3a190b68175000B74B4160d325FD5024760e",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xC0123C360f000338Ce3b54B600697F3584054Bc1",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x0bC65542e9A8fD79002beE76C2E8CfE5A0CA573A"
         }
-      ]
     }
-  }
 }

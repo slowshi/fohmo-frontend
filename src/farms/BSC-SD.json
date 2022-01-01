@@ -1,40 +1,84 @@
 {
-  "BSC-SD": {
-    "farmSymbol": "SD",
-    "networkSymbol": "BSC",
-    "constants": {
-      "name": "ShibDao",
-      "symbol": "SD",
-      "date": "Dec-21-2021 05:46:57 PM",
-      "link": "https://www.shibadao.club/stake",
-      "token": "0x1a1ef8a523487e4357d3af900de46ec307433c10",
-      "stakingSymbol": "sSD",
-      "stakingToken": "0x576c9fd0cf4feaaf16763af1d938c0223c93b26f",
-      "stakingContract": "0xb6530fd1305195e2bf2b5160846d4d34d0ba1e56",
-      "LPContract": "0xa4b945fe67808af0426436a884c7d4544c1c05d2",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x9ade2e9fc86b895e66e4fe7d58dba827965ef8fe",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "wsSD",
-      "bondingCalculator": "0x5540baa8a0c8123512dda828a32754cf3a2d71ac",
-      "bondingContracts": [
-        {
-          "address": "0x5683aea5df802699b33a99ddf2d0cbe48a123ab9",
-          "symbol": "SD-BUSD"
-        },
-        {
-          "address": "0xcece0a5a032e7bf08fe8dae2cef3c9d41e37f3a2",
-          "symbol": "BUSD"
-        },
-        {
-          "address": "0x5abbe07fd191d3b679bc85350b12454980687937",
-          "symbol": "WBNB"
-        },
-        {
-          "address": "0x5f93f8eca463bfeb446d04a4d73ece727e1ecf65",
-          "symbol": "USDC"
+    "BSC-SD": {
+        "farmSymbol": "SD",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "ShibDao",
+            "symbol": "SD",
+            "date": "Dec-21-2021 05:46:57 PM",
+            "link": "https://www.shibadao.club/stake",
+            "token": "0x1a1ef8a523487e4357d3af900de46ec307433c10",
+            "stakingSymbol": "sSD",
+            "stakingToken": "0x576c9fd0cf4feaaf16763af1d938c0223c93b26f",
+            "stakingContract": "0xb6530fd1305195e2bf2b5160846d4d34d0ba1e56",
+            "LPContract": "0xa4b945fe67808af0426436a884c7d4544c1c05d2",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x9ade2e9fc86b895e66e4fe7d58dba827965ef8fe",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "wsSD",
+            "bondingCalculator": "",
+            "bondingContracts": [
+                {
+                    "address": "0x5683aea5df802699b33a99ddf2d0cbe48a123ab9",
+                    "symbol": "SD-BUSD"
+                },
+                {
+                    "address": "0xcece0a5a032e7bf08fe8dae2cef3c9d41e37f3a2",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0x5abbe07fd191d3b679bc85350b12454980687937",
+                    "symbol": "WBNB"
+                },
+                {
+                    "address": "0x5f93f8eca463bfeb446d04a4d73ece727e1ecf65",
+                    "symbol": "USDC"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "WBNB",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16"
+                },
+                {
+                    "token0": {
+                        "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                }
+            ]
         }
-      ]
     }
-  }
 }

@@ -1,52 +1,124 @@
 {
-  "AVAX-PAPA": {
-    "farmSymbol": "PAPA",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "PAPA DAO",
-      "symbol": "PAPA",
-      "date": "Dec-02-2021 12:03:44 PM",
-      "link": "https://papadao.co/#/stake",
-      "token": "0x70b33ebC5544C12691d055b49762D0F8365d99Fe",
-      "stakingSymbol": "sPAPA",
-      "stakingToken": "0xdd8e1245f8b285672111c9e4051504d654f4d43a",
-      "stakingContract": "0x3875AC1F19E05813000F02414b3141DC3Ff991B6",
-      "LPContract": "0xa03a99cd3d553fe9ebbccecabcb8c47100482f72",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x3C8e800B9f12771A5f150D0943De968ABc7A7bE1",
-      "bondingCalculator": "0xa55a711cf7ade1552f77a7127135c5156f75c83c",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x04b0db0bd9bab2e5854ff5cca0a30d0c56459b9b",
-          "symbol": "PAPA-MIM (4,4)"
-        },
-        {
-          "address": "0xb5e4a9002b060d29d6752297e4ffd335bab34ba3",
-          "symbol": "MIM (4,4)"
-        },
-        {
-          "address": "0x35b912024f639757be4f1a11e4420412af34e661",
-          "symbol": "PAPA-MIM"
-        },
-        {
-          "address": "0x6045dd16ee5cbe4a0d09fd28abbc68dcd71f2bf6",
-          "symbol": "PAPA-wAVAX"
-        },
-        {
-          "address": "0x654d5796b2c70d24ed7402e87d8a72bddf87ccca",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0x63933d4e91c84bae6577744fd75c4f4f2c44d901",
-          "symbol": "wAVAX"
-        },
-        {
-          "address": "0x3e185190f044b3c887b65c11657b0d5433560618",
-          "symbol": "USDT"
+    "AVAX-PAPA": {
+        "farmSymbol": "PAPA",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "PAPA DAO",
+            "symbol": "PAPA",
+            "date": "Dec-02-2021 12:03:44 PM",
+            "link": "https://papadao.co/#/stake",
+            "token": "0x70b33ebC5544C12691d055b49762D0F8365d99Fe",
+            "stakingSymbol": "sPAPA",
+            "stakingToken": "0xdd8e1245f8b285672111c9e4051504d654f4d43a",
+            "stakingContract": "0x3875AC1F19E05813000F02414b3141DC3Ff991B6",
+            "LPContract": "0xa03a99cd3d553fe9ebbccecabcb8c47100482f72",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x3C8e800B9f12771A5f150D0943De968ABc7A7bE1",
+            "bondingCalculator": "0xA55A711Cf7adE1552f77A7127135C5156f75c83C",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x04b0db0bd9bab2e5854ff5cca0a30d0c56459b9b",
+                    "symbol": "PAPA-MIM (4,4)"
+                },
+                {
+                    "address": "0xb5e4a9002b060d29d6752297e4ffd335bab34ba3",
+                    "symbol": "MIM (4,4)"
+                },
+                {
+                    "address": "0x35b912024f639757be4f1a11e4420412af34e661",
+                    "symbol": "PAPA-MIM"
+                },
+                {
+                    "address": "0x6045dd16ee5cbe4a0d09fd28abbc68dcd71f2bf6",
+                    "symbol": "PAPA-wAVAX"
+                },
+                {
+                    "address": "0x654d5796b2c70d24ed7402e87d8a72bddf87ccca",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x63933d4e91c84bae6577744fd75c4f4f2c44d901",
+                    "symbol": "wAVAX"
+                },
+                {
+                    "address": "0x3e185190f044b3c887b65c11657b0d5433560618",
+                    "symbol": "USDT"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WAVAX",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256"
+                },
+                {
+                    "token0": {
+                        "address": "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDT.e",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MIM-PAPA",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x70b33ebC5544C12691d055b49762D0F8365d99Fe",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0xA03a99CD3d553fE9EbBcCecAbcB8c47100482F72",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "PAPA-WAVAX",
+                    "token0": {
+                        "address": "0x70b33ebC5544C12691d055b49762D0F8365d99Fe",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x29828626CA711B0E13de1031aaE1F5423100E642",
+                    "stable": false,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

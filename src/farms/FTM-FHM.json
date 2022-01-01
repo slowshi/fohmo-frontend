@@ -1,43 +1,144 @@
 {
-  "FTM-FHM": {
-    "farmSymbol": "FHM",
-    "networkSymbol": "FTM",
-    "constants": {
-      "name": "Fantohm",
-      "symbol": "FHM",
-      "date": "Oct-26-2021 08:26:38 PM",
-      "link": "https://app.fantohm.com/#/stake",
-      "token": "0xfa1FBb8Ef55A4855E5688C0eE13aC3f202486286",
-      "stakingSymbol": "sFHM",
-      "stakingToken": "0x5E983ff70DE345de15DbDCf0529640F14446cDfa",
-      "stakingContract": "0xcb9297425c889a7cbbaa5d3db97bab4ea54829c2",
-      "LPContract": "0xd77fc9c4074b56ecf80009744391942fbfddd88b",
-      "lockedSupplyContract": "0x34F93b12cA2e13C6E64f45cFA36EABADD0bA30fC",
-      "treasuryContract": "0xA3b52d5A6d2f8932a5cD921e09DA840092349D71",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x6d0a19bbba84cc2fe3cb05b4d9a9aaf52fe9df63",
-          "symbol": "sSPELL"
-        },
-        {
-          "address": "0x462eEC9f8A067f13B5F8F7356D807FF7f0e28c68",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0x7a5523342bBAFC43184f85805d0bACc68f2F3Df1",
-          "symbol": "FHM-DAI"
-        },
-        {
-          "address": "0x3C1a9b5Ff3196C43BcB05Bf1B7467fbA8e07EE61",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0x71976906ad5520a1CB23fd40b40437c1A2640bcd",
-          "symbol": "FHM-MIM"
+    "FTM-FHM": {
+        "farmSymbol": "FHM",
+        "networkSymbol": "FTM",
+        "constants": {
+            "name": "Fantohm",
+            "symbol": "FHM",
+            "date": "Oct-26-2021 08:26:38 PM",
+            "link": "https://app.fantohm.com/#/stake",
+            "token": "0xfa1FBb8Ef55A4855E5688C0eE13aC3f202486286",
+            "stakingSymbol": "sFHM",
+            "stakingToken": "0x5E983ff70DE345de15DbDCf0529640F14446cDfa",
+            "stakingContract": "0xcb9297425c889a7cbbaa5d3db97bab4ea54829c2",
+            "LPContract": "0xd77fc9c4074b56ecf80009744391942fbfddd88b",
+            "lockedSupplyContract": "0x34F93b12cA2e13C6E64f45cFA36EABADD0bA30fC",
+            "treasuryContract": "0xA3b52d5A6d2f8932a5cD921e09DA840092349D71",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x6d0a19bbba84cc2fe3cb05b4d9a9aaf52fe9df63",
+                    "symbol": "sSPELL"
+                },
+                {
+                    "address": "0x462eEC9f8A067f13B5F8F7356D807FF7f0e28c68",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0x7a5523342bBAFC43184f85805d0bACc68f2F3Df1",
+                    "symbol": "FHM-DAI"
+                },
+                {
+                    "address": "0x3C1a9b5Ff3196C43BcB05Bf1B7467fbA8e07EE61",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x71976906ad5520a1CB23fd40b40437c1A2640bcd",
+                    "symbol": "FHM-MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x82f0B8B456c1A451378467398982d4834b6829c1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xbB29D2A58d880Af8AA5859e30470134dEAf84F2B",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+                        "decimals": 18
+                    },
+                    "symbol": "sSPELL",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                },
+                {
+                    "token0": {
+                        "address": "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+                        "decimals": 18
+                    },
+                    "symbol": "WFTM",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xe120ffBDA0d14f3Bb6d6053E90E63c572A66a428"
+                },
+                {
+                    "token0": {
+                        "address": "0x18F7f88BE24a1d1d0a4E61B6Ebf564225398adb0",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "FHUD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MIM-FHM",
+                    "token0": {
+                        "address": "0x82f0B8B456c1A451378467398982d4834b6829c1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xfa1FBb8Ef55A4855E5688C0eE13aC3f202486286",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x46622913cE40c54Ec14857f72968d4BAAF963947",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "DAI-FHM",
+                    "token0": {
+                        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xfa1FBb8Ef55A4855E5688C0eE13aC3f202486286",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0xd77fc9c4074b56Ecf80009744391942FBFDDd88b",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0xf7595d3D87D976CA011E89Ca6A95e827E31Dd581"
         }
-      ]
     }
-  }
 }

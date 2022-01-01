@@ -1,46 +1,62 @@
 {
-  "AVAX-OTWO": {
-    "farmSymbol": "OTWO",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "OTWO",
-      "symbol": "OTWO",
-      "timeTemplate": true,
-      "date": "Nov-20-2021 11:55:33 PM",
-      "link": "https://app.otwodao.com/#/stake",
-      "token": "0xAA2439DBAd718c9329a5893A51a708C015F76346",
-      "stakingSymbol": "sOTWO",
-      "stakingToken": "0xB28D86Ed75E049AE3E2c98e656c376CD397a1538",
-      "stakingContract": "0x50971d6B5a3CCd79C516f914208C67C8104977dF",
-      "LPContract": "0x918028f9bb2c7a707e2f194a82000923dd7338f3",
-      "LPContractETH": "0xaa92c71bb5ecb6a7311e4239b93ad8ae173e0c05",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xcFdd88430712350704b23c91b6cC6469fbd351F1",
-      "bondingCalculator": "0x1080c8690a473E00edF300807098de92d80d849b",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x1f309b4834F02dEFAF52BE3b74D086324899De8e",
-          "symbol": "gOHM"
-        },
-        {
-          "address": "0x35E6506D19eEAe0C1564eA3FBa7749C53F34AA21",
-          "symbol": "OTWO-gOHM"
-        },
-        {
-          "address": "0x0b789992b27A5D11F861bA541Bb6844DF08839c7",
-          "symbol": "wMEMO"
-        },
-        {
-          "address": "0xf11ddcb8a4167e3eeebc319d441df363743213fb",
-          "symbol": "wsOHM"
-        },
-        {
-          "address": "0xc2a7d2b79fac080f9e42b1662395649c4da7bfd1",
-          "symbol": "OTWO-wsOHM"
+    "AVAX-OTWO": {
+        "farmSymbol": "OTWO",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "OTWO",
+            "symbol": "OTWO",
+            "timeTemplate": true,
+            "date": "Nov-20-2021 11:55:33 PM",
+            "link": "https://app.otwodao.com/#/stake",
+            "token": "0xAA2439DBAd718c9329a5893A51a708C015F76346",
+            "stakingSymbol": "sOTWO",
+            "stakingToken": "0xB28D86Ed75E049AE3E2c98e656c376CD397a1538",
+            "stakingContract": "0x50971d6B5a3CCd79C516f914208C67C8104977dF",
+            "LPContract": "0x918028f9bb2c7a707e2f194a82000923dd7338f3",
+            "LPContractETH": "0xaa92c71bb5ecb6a7311e4239b93ad8ae173e0c05",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xcFdd88430712350704b23c91b6cC6469fbd351F1",
+            "bondingCalculator": "",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x1f309b4834F02dEFAF52BE3b74D086324899De8e",
+                    "symbol": "gOHM"
+                },
+                {
+                    "address": "0x35E6506D19eEAe0C1564eA3FBa7749C53F34AA21",
+                    "symbol": "OTWO-gOHM"
+                },
+                {
+                    "address": "0x0b789992b27A5D11F861bA541Bb6844DF08839c7",
+                    "symbol": "wMEMO"
+                },
+                {
+                    "address": "0xf11ddcb8a4167e3eeebc319d441df363743213fb",
+                    "symbol": "wsOHM"
+                },
+                {
+                    "address": "0xc2a7d2b79fac080f9e42b1662395649c4da7bfd1",
+                    "symbol": "OTWO-wsOHM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x567CDC23ec64B538deA9d8297E1cB3d8cdE148F2",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "dwsOHM",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                }
+            ]
         }
-      ]
     }
-  }
 }

@@ -1,5 +1,5 @@
 import {ethers} from 'ethers';
-import {cacheServiceInstance} from './cacheService';
+import {cacheEthers} from './cacheEthersService';
 import {allFarms, networks, fiatCurrencyMap} from './constants';
 import {abi as IERC20Abi} from '../abis/IERC20.json';
 import {abi as CauldronAbi} from '../abis/Cauldron.json';
@@ -12,8 +12,6 @@ import {abi as TreasuryAbi} from '../abis/Treasury.json';
 import {abi as wsOHMPoolAbi} from '../abis/wsOHMPool.json';
 import store from '../store/store';
 import { getFarm } from './farmDecorator';
-// import { updateStakingInfo } from "../store-deps/reducerFarms";
-// import { updateAddressBalances } from "../store-deps/reducerBalances";
 
 /* eslint-disable */
 
@@ -83,6 +81,7 @@ class StakingInfo {
         acc[balance.userAddress] = balance.data;
         return acc;
       },{});
+      const treasuryBalance = await this.getTreasury(res.networkSymbol, res.farmSymbol, clearCache)
       store.dispatch(
         {
           type: 'updateStakingInfo',
@@ -90,21 +89,22 @@ class StakingInfo {
             farmKey: `${res.networkSymbol}-${res.farmSymbol}`,
             stakingInfo: {
               ...getFarm({...stateFarm, data: res.data}, balanceMap, state.app.addresses, fiatCurrency),
+              treasuryBalance,
               loading: false
-            }
+            },
           }
         }
       );
     });
   }
   async getCurrentIndex(stakingContract, key, indexRatio=1, clearCache=false) {
-    let rawCurrentIndex = await this.loadCahceContractCall(
+    let rawCurrentIndex = await cacheEthers.contractCall(
       stakingContract,
       'index',
       [],
       clearCache
     );
-    let currentIndex = await this.loadCahceContractCall(
+    let currentIndex = await cacheEthers.contractCall(
       stakingContract,
       'index',
       [],
@@ -135,41 +135,41 @@ class StakingInfo {
     const key = `${networkSymbol}-${farmSymbol}`;
     const networkParams = networks[networkSymbol];
     const farmParams = allFarms[key].constants;
-    const stakingContract = this.loadCacheContract(farmParams.stakingContract, StakingAbi, networkParams.rpcURL);
-    const tokenContract = this.loadCacheContract(farmParams.token, IERC20Abi, networkParams.rpcURL);
-    const stakingTokenContract = this.loadCacheContract(farmParams.stakingToken, StakingTokenAbi, networkParams.rpcURL);
+    const stakingContract = cacheEthers.contract(farmParams.stakingContract, StakingAbi, networkParams.rpcURL);
+    const tokenContract = cacheEthers.contract(farmParams.token, IERC20Abi, networkParams.rpcURL);
+    const stakingTokenContract = cacheEthers.contract(farmParams.stakingToken, StakingTokenAbi, networkParams.rpcURL);
 
-    let totalSupply = await this.loadCahceContractCall(
+    let totalSupply = await cacheEthers.contractCall(
       tokenContract,
       'totalSupply',
       [],
       clearCache
     );
-    if(farmParams.lockedSupplyContract !== null) {
-      if(typeof farmParams.lockedSupplyContract === 'string') {
-        const lockedSupply = await this.loadCahceContractCall(
-          tokenContract,
-          'balanceOf',
-          [farmParams.lockedSupplyContract],
-          clearCache
-        );
-        totalSupply = totalSupply - lockedSupply;
-      } else {
-        const lockedSupplyPromises = farmParams.lockedSupplyContract.map(async (lockedSupplyContract)=>{
-          const lockedSupply = await this.loadCahceContractCall(
-            tokenContract,
-            'balanceOf',
-            [lockedSupplyContract],
-            clearCache
-          );
-          // console.log(lockedSupply);
-          totalSupply = totalSupply - lockedSupply;
-        });
-        await Promise.all(lockedSupplyPromises);
-      }
-    }
+    // if(farmParams.lockedSupplyContract !== null) {
+    //   if(typeof farmParams.lockedSupplyContract === 'string') {
+    //     const lockedSupply = await cacheEthers.contractCall(
+    //       tokenContract,
+    //       'balanceOf',
+    //       [farmParams.lockedSupplyContract],
+    //       clearCache
+    //     );
+    //     totalSupply = totalSupply - lockedSupply;
+    //   } else {
+    //     const lockedSupplyPromises = farmParams.lockedSupplyContract.map(async (lockedSupplyContract)=>{
+    //       const lockedSupply = await cacheEthers.contractCall(
+    //         tokenContract,
+    //         'balanceOf',
+    //         [lockedSupplyContract],
+    //         clearCache
+    //       );
+    //       // console.log(lockedSupply);
+    //       totalSupply = totalSupply - lockedSupply;
+    //     });
+    //     await Promise.all(lockedSupplyPromises);
+    //   }
+    // }
 
-    const epoch = await this.loadCahceContractCall(
+    const epoch = await cacheEthers.contractCall(
       stakingContract,
       'epoch',
       [],
@@ -179,7 +179,7 @@ class StakingInfo {
     let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
     let lockedValue = 0;
     if(key !== 'ETH-OHM2') {
-      lockedValue = await this.loadCahceContractCall(
+      lockedValue = await cacheEthers.contractCall(
         stakingContract,
         'contractBalance',
         [],
@@ -193,7 +193,7 @@ class StakingInfo {
     } else if(key === 'FTM-PUMP') {
       stakingReward = epoch.number;
     }
-    const circulatingSupply = await this.loadCahceContractCall(
+    const circulatingSupply = await cacheEthers.contractCall(
       stakingTokenContract,
       'circulatingSupply',
       [],
@@ -202,14 +202,14 @@ class StakingInfo {
     const stakingRebase = Number(stakingReward / circulatingSupply);
     // console.log('stakingReward', Number(stakingReward));
     // console.log('circulatingSupply', Number(circulatingSupply));
-    const pairingContract = this.loadCacheContract(farmParams.LPContract, PairContractAbi, networkParams.rpcURL);
-    const reserves = await this.loadCahceContractCall(
+    const pairingContract = cacheEthers.contract(farmParams.LPContract, PairContractAbi, networkParams.rpcURL);
+    const reserves = await cacheEthers.contractCall(
       pairingContract,
       'getReserves',
       [],
       clearCache
     );
-    const token0 = await this.loadCahceContractCall(
+    const token0 = await cacheEthers.contractCall(
       pairingContract,
       'token0',
       []
@@ -222,8 +222,8 @@ class StakingInfo {
     let token = 0;
     if (key === 'ETH-SQUID' || key === 'ETH-OHM2' || key === 'ETH-LOBI' ||
         key === 'ETH-MNFST' || key == 'AVAX-OTWO' || key === 'ETH-BTRFLY' || key === 'ETH-3DOG') {
-      const ethContract = this.loadCacheContract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
-      const ethReserves = await this.loadCahceContractCall(
+      const ethContract = cacheEthers.contract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
+      const ethReserves = await cacheEthers.contractCall(
         ethContract,
         'getReserves',
         [],
@@ -273,12 +273,12 @@ class StakingInfo {
 
     let totalReserves = 0;
     if(farmParams.treasuryContract !== null) {
-      const treasuryContract = this.loadCacheContract(farmParams.treasuryContract, TreasuryAbi, networkParams.rpcURL );
+      const treasuryContract = cacheEthers.contract(farmParams.treasuryContract, TreasuryAbi, networkParams.rpcURL );
       let totalReservesString = 'totalReserves';
       if(key === 'BSC-GYRO') {
         totalReservesString = 'totalAssets';
       }
-      totalReserves = await this.loadCahceContractCall(
+      totalReserves = await cacheEthers.contractCall(
         treasuryContract,
         totalReservesString,
         [],
@@ -296,7 +296,7 @@ class StakingInfo {
     //   'end', epoch.endBlock.toNumber(),
     //   'dist', epoch.distribute.toNumber(),
     // )
-    const currentBlock = await this.loadCacheBlockNumber(networkParams.rpcURL, clearCache);
+    const currentBlock = await cacheEthers.blockNumber(networkParams.rpcURL, clearCache);
     let seconds = 0;
     let distributeInterval = 0;
     const msPerDay = 86400;
@@ -305,7 +305,7 @@ class StakingInfo {
       distributeInterval = msPerDay / epoch.endBlock.toNumber();
     } else if(key === 'ARB-FCS' || key === 'ARB-OMIC') {
       const ethParams = networks.ETH;
-      const ethCurrentBlock = await this.loadCacheBlockNumber(ethParams.rpcURL, clearCache);
+      const ethCurrentBlock = await cacheEthers.blockNumber(ethParams.rpcURL, clearCache);
       distributeInterval = msPerDay / (epoch._length.toNumber() * ethParams.blockRateSeconds);
       seconds = this.secondsUntilBlock(ethCurrentBlock, epoch.endBlock.toNumber(), ethParams.blockRateSeconds);
     } else if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'CRO-FORT' || key === 'ETH-OHM2') {
@@ -352,11 +352,11 @@ class StakingInfo {
     const key = `${networkSymbol}-${farmSymbol}`;
     const networkParams = networks[networkSymbol];
     const farmParams = allFarms[key].constants;
-    const stakingContract = this.loadCacheContract(farmParams.stakingContract, StakingAbi, networkParams.rpcURL);
-    const tokenContract = this.loadCacheContract(farmParams.token, IERC20Abi, networkParams.rpcURL);
-    const stakingTokenContract = this.loadCacheContract(farmParams.stakingToken, StakingTokenAbi, networkParams.rpcURL);
+    const stakingContract = cacheEthers.contract(farmParams.stakingContract, StakingAbi, networkParams.rpcURL);
+    const tokenContract = cacheEthers.contract(farmParams.token, IERC20Abi, networkParams.rpcURL);
+    const stakingTokenContract = cacheEthers.contract(farmParams.stakingToken, StakingTokenAbi, networkParams.rpcURL);
 
-    let tokenBalance = await this.loadCahceContractCall(
+    let tokenBalance = await cacheEthers.contractCall(
       tokenContract,
       'balanceOf',
       [userAddress],
@@ -364,7 +364,7 @@ class StakingInfo {
     );
     tokenBalance = Number(ethers.utils.formatUnits(tokenBalance, 'gwei'));
 
-    let stakingTokenBalance = await this.loadCahceContractCall(
+    let stakingTokenBalance = await cacheEthers.contractCall(
       stakingTokenContract,
       'balanceOf',
       [userAddress],
@@ -375,8 +375,8 @@ class StakingInfo {
     let fullBondTotal = 0;
     let fullPendingBondTotal = 0;
     const getBondContract = async (bondParams) => {
-      const bondsContract = this.loadCacheContract(bondParams.address, BondContractAbi, networkParams.rpcURL);
-      const bondInfo = await this.loadCahceContractCall(
+      const bondsContract = cacheEthers.contract(bondParams.address, BondContractAbi, networkParams.rpcURL);
+      const bondInfo = await cacheEthers.contractCall(
         bondsContract,
         'bondInfo',
         [userAddress],
@@ -398,7 +398,7 @@ class StakingInfo {
         }
       }
       const payout = Number(ethers.utils.formatUnits(bondInfo.payout, 'gwei'));
-      let pendingPayout = await this.loadCahceContractCall(
+      let pendingPayout = await cacheEthers.contractCall(
         bondsContract,
         'pendingPayoutFor',
         [userAddress],
@@ -415,7 +415,7 @@ class StakingInfo {
       if (typeof farmParams.timeTemplate !== 'undefined' && farmParams.timeTemplate) {
         bondSeconds = Number(bondInfo.pricePaid) +  Number(bondInfo.lastBlock) - (Date.now() / 1000);
       } else{
-        const currentBlock = await this.loadCacheBlockNumber(networkParams.rpcURL, clearCache);
+        const currentBlock = await cacheEthers.blockNumber(networkParams.rpcURL, clearCache);
         bondSeconds = this.secondsUntilBlock(
           currentBlock,
           Number(bondInfo.vesting) +  Number(bondInfo.lastBlock),
@@ -435,19 +435,19 @@ class StakingInfo {
     let warmupBalance = 0;
     // let warmupPeriod = 0;
     if (key !== 'BSC-GYRO') {
-      const warmupInfo = await this.loadCahceContractCall(
+      const warmupInfo = await cacheEthers.contractCall(
         stakingContract,
         'warmupInfo',
         [userAddress],
         clearCache
       );
-      // warmupPeriod = await this.loadCahceContractCall(
+      // warmupPeriod = await cacheEthers.contractCall(
       //   stakingContract,
       //   'warmupPeriod',
       //   [],
       //   clearCache
       // );
-      const balanceForGons = await this.loadCahceContractCall(
+      const balanceForGons = await cacheEthers.contractCall(
         stakingTokenContract,
         'balanceForGons',
         [warmupInfo.gons],
@@ -511,9 +511,10 @@ class StakingInfo {
       data
     };
   }
+
   async getwsOHMPoolBalances(userAddress, wsOHMPool, index, rpcURL, clearCache) {
-    const wsOHMPoolContract = this.loadCacheContract(wsOHMPool, wsOHMPoolAbi, rpcURL);
-    const userInfo = await this.loadCahceContractCall(
+    const wsOHMPoolContract = cacheEthers.contract(wsOHMPool, wsOHMPoolAbi, rpcURL);
+    const userInfo = await cacheEthers.contractCall(
       wsOHMPoolContract,
       'userInfo',
       [userAddress],
@@ -527,12 +528,13 @@ class StakingInfo {
       convertedBalance
     }
   }
+
   async getwsOHMBalances(userAddress, wsOHMNetworks, index, clearCache=false) {
     let total = 0;
     const getBalances = async (data) => {
       const networkParams = networks[data.networkSymbol];
-      const tokenContract = this.loadCacheContract(data.address, IERC20Abi, networkParams.rpcURL);
-      let tokenBalance = await this.loadCahceContractCall(
+      const tokenContract = cacheEthers.contract(data.address, IERC20Abi, networkParams.rpcURL);
+      let tokenBalance = await cacheEthers.contractCall(
         tokenContract,
         'balanceOf',
         [userAddress],
@@ -560,8 +562,8 @@ class StakingInfo {
     let total = 0;
     const getBalances = async (data) => {
       const networkParams = networks[data.networkSymbol];
-      const cauldronContract = this.loadCacheContract(data.address, CauldronAbi, networkParams.rpcURL);
-      let tokenBalance = await this.loadCahceContractCall(
+      const cauldronContract = cacheEthers.contract(data.address, CauldronAbi, networkParams.rpcURL);
+      let tokenBalance = await cacheEthers.contractCall(
         cauldronContract,
         'userCollateralShare',
         [userAddress],
@@ -584,12 +586,13 @@ class StakingInfo {
       balances
     };
   }
+
   async getCurrencyConversion(currencyKey='usd', clearCache=false) {
     if(currencyKey === 'usd') return 1;
     const networkParams = networks.ETH;
     const currencyAddress = fiatCurrencyMap[currencyKey].address
-    const currenyContract = this.loadCacheContract(currencyAddress, CurrencyAbi, networkParams.rpcURL);
-    let latestAnswer = await this.loadCahceContractCall(
+    const currenyContract = cacheEthers.contract(currencyAddress, CurrencyAbi, networkParams.rpcURL);
+    let latestAnswer = await cacheEthers.contractCall(
       currenyContract,
       'latestAnswer',
       [],
@@ -598,77 +601,151 @@ class StakingInfo {
     latestAnswer = Number(ethers.utils.formatUnits(latestAnswer, 8));
     return latestAnswer;
   }
-  /**
-   *
-   *
-   * @param {String} rpcURL
-   * @return {JsonRpcProvider}
-   */
-  loadCacheProvider(rpcURL) {
-    const key = `Provider/${rpcURL}`;
-    if (cacheServiceInstance.has(key)) {
-      return cacheServiceInstance.get(key);
-    }
-    const provider = new ethers.providers.JsonRpcProvider(rpcURL);
-    cacheServiceInstance.set(key, provider);
-    return provider;
+  async getTreasury(networkSymbol, farmSymbol, clearCache=false) {
+    const key = `${networkSymbol}-${farmSymbol}`;
+    const networkParams = networks[networkSymbol];
+    const farmParams = allFarms[key].constants;
+    const promises = farmParams.treasuryAssets.map((asset)=>{
+      return this.getAssetBalance(farmParams.token, farmParams.treasuryContract, asset, networkParams.rpcURL, clearCache);
+    });
+    const allBalances = await Promise.all(promises);
+    const rfv = allBalances.reduce((acc, data)=>{
+      if(data.singleStable) {
+        acc += data.value;
+      }
+      return acc;
+    }, 0);
+    const usdTreasuryValues = allBalances.reduce((acc, data)=>{
+      if(data.symbol.indexOf('-') === -1) {
+        acc += data.value;
+      }
+      return acc;
+    }, 0);
+    const ohmTreasuryValues = allBalances.reduce((acc, data)=>{
+      if(data.symbol.indexOf('-') > -1) {
+        acc += data.value;
+      }
+      return acc;
+    }, 0);
+    return {
+      rfv,
+      usdTreasuryValues,
+      ohmTreasuryValues,
+      allBalances,
+    };
   }
 
-  /**
-   *
-   *
-   * @param {String} rpcURL
-   * @param {Boolean} [clearCache=false]
-   * @return {Object}
-   */
-  async loadCacheBlockNumber(rpcURL, clearCache) {
-    const key = `ProviderBlock/${rpcURL}`;
-    if (cacheServiceInstance.has(key) && !clearCache) {
-      return cacheServiceInstance.get(key);
+  async getAssetBalance(tokenAddress, treasuryAddress, assetInfo, rpcURL, clearCache=false) {
+    if(assetInfo.stable && assetInfo.single) {
+      //Stable
+      const token0Contract = cacheEthers.contract(assetInfo.token0.address, IERC20Abi, rpcURL);
+      const balanceOf = await cacheEthers.contractCall(
+        token0Contract,
+        'balanceOf',
+        [treasuryAddress],
+        clearCache
+      );
+      const balance = ethers.utils.formatUnits(balanceOf, assetInfo.token0.decimals);
+      return {
+        symbol: assetInfo.symbol,
+        singleStable: true,
+        value: +balance
+      };
+    } else if(!assetInfo.stable && assetInfo.single) {
+      //NonStable
+      const token0Contract = cacheEthers.contract(assetInfo.token0.address, IERC20Abi, rpcURL);
+      const balanceOf = await cacheEthers.contractCall(
+        token0Contract,
+        'balanceOf',
+        [treasuryAddress],
+        clearCache
+      );
+      if(assetInfo.LPAddress === '0x0000000000000000000000000000000000000000') {
+        return {
+          symbol: assetInfo.symbol,
+          singleStable: false,
+          value: 0
+        };
+      }
+      const LPContract = cacheEthers.contract(assetInfo.LPAddress, PairContractAbi, rpcURL);
+      const reserves = await cacheEthers.contractCall(
+        LPContract,
+        'getReserves',
+        [],
+        clearCache
+      );
+      const token0 = await cacheEthers.contractCall(
+        LPContract,
+        'token0',
+        [],
+        clearCache
+      );
+      let stable = 0;
+      let token = 0;
+      if(token0.toLowerCase() === assetInfo.token0.address.toLowerCase()) {
+        stable = ethers.utils.formatUnits(reserves.reserve1, assetInfo.token1.decimals);
+        token = ethers.utils.formatUnits(reserves.reserve0, assetInfo.token0.decimals);
+      } else {
+        stable = ethers.utils.formatUnits(reserves.reserve0, assetInfo.token0.decimals);
+        token = ethers.utils.formatUnits(reserves.reserve1, assetInfo.token1.decimals);
+      }
+      const balance = ethers.utils.formatUnits(balanceOf, assetInfo.token0.decimals);
+      const price = stable / token;
+      return {
+        symbol: assetInfo.symbol,
+        singleStable: false,
+        value: +(balance * price)
+      };
+    } else {
+      //Token-NonStable
+      if(assetInfo.LPAddress === '0x0000000000000000000000000000000000000000') {
+        return {
+          symbol: assetInfo.symbol,
+          singleStable: false,
+          value: 0
+        };
+      }
+      const LPContract = cacheEthers.contract(assetInfo.LPAddress, PairContractAbi, rpcURL);
+      let balanceOf = await cacheEthers.contractCall(
+        LPContract,
+        'balanceOf',
+        [treasuryAddress],
+        clearCache
+      );
+      const tokenReserves = await cacheEthers.contractCall(
+        LPContract,
+        'getReserves',
+        [],
+        clearCache
+      );
+      let totalSupply = await cacheEthers.contractCall(
+        LPContract,
+        'totalSupply',
+        [],
+        clearCache
+      );
+      const reserves0 = await cacheEthers.contractCall(
+        LPContract,
+        'token0',
+        [],
+        clearCache
+      );
+      let reserve;
+      if(reserves0.toLowerCase() === tokenAddress.toLowerCase()) {
+        reserve = tokenReserves.reserve0;
+      } else {
+        reserve = tokenReserves.reserve1;
+      }
+      const LPReserves = (ethers.utils.formatUnits(reserve, 'gwei') * 2);
+      totalSupply = ethers.utils.formatUnits(totalSupply, 'ether');
+      balanceOf = ethers.utils.formatUnits(balanceOf, 'ether');
+      const valueInOHM = balanceOf /totalSupply * LPReserves;
+      return {
+        symbol: assetInfo.symbol,
+        singleStable: false,
+        value: +(valueInOHM)
+      };
     }
-    const provider = this.loadCacheProvider(rpcURL);
-    const response = await provider.getBlockNumber();
-    cacheServiceInstance.set(key, response);
-    return response;
-  }
-
-  /**
-   *
-   *
-   * @param {String} address
-   * @param {String} abi
-   * @return {Contract}
-   */
-  loadCacheContract(address, abi, rpcURL) {
-    const key = `Contract/${rpcURL}/${address}`;
-    const provider = this.loadCacheProvider(rpcURL);
-    if (cacheServiceInstance.has(key)) {
-      return cacheServiceInstance.get(key);
-    }
-    const contract = new ethers.Contract(address, abi, provider);
-    cacheServiceInstance.set(key, contract);
-    return contract;
-  }
-
-  /**
-   *
-   *
-   * @param {Contract} contract
-   * @param {String} method
-   * @param {Array} [params=[]]
-   * @param {Boolean} [clearCache=false]
-   * @return {mixed}
-   */
-  async loadCahceContractCall(contract, method, params=[], clearCache=false) {
-    const rpcURL = contract.provider?.connection?.url || 'null';
-    const contractCallKey = `Contract/${contract.address}/${rpcURL}/${method}/${JSON.stringify(params)}`;
-    if (cacheServiceInstance.has(contractCallKey) && !clearCache) {
-      return cacheServiceInstance.get(contractCallKey);
-    }
-    const response = await contract[method](...params);
-    cacheServiceInstance.set(contractCallKey, response);
-
-    return response;
   }
 
   secondsUntilBlock(startBlock, endBlock, blockRateSeconds) {

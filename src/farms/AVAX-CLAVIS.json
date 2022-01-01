@@ -1,41 +1,99 @@
 {
-  "AVAX-CLAVIS": {
-    "farmSymbol": "CLAVIS",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "Agartha",
-      "symbol": "CLAVIS",
-      "timeTemplate": true,
-      "date": "Dec-18-2021 06:26:45 PM",
-      "link": "https://agartha.money/#/stake",
-      "token": "0xA5b0f5ef809FD04C9D4320211C711Cb34ef812dD",
-      "stakingSymbol": "sCLAVIS",
-      "stakingToken": "0x4fb8ec7e0ea19100b2fbd24f58454421f9764529",
-      "stakingContract": "0x7e4939ca7847ae3ff9501b27470dcd0a69f54fa6",
-      "LPContract": "0x72f95Da8d7a9b405191cAE0Fc31711d575044eFb",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x2C5BB99Df3d43eFD98ff1D7Aa34D4207C83638E4",
-      "bondingCalculator": "",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xd8f995d0ccabcb6725fa58091ecbe63be89944f8",
-          "symbol": "CLAVIS-MIM"
-        },
-        {
-          "address": "0x9febea27f8278bb59b344d374f84037cc7b234bf",
-          "symbol": "CLAVIS-wAVAX"
-        },
-        {
-          "address": "0xad9a446e5269d59a17d713de23706e3d5428edda",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0x7f0fdd3149501a03d883987beec59def1f5b51c5",
-          "symbol": "wAVAX"
+    "AVAX-CLAVIS": {
+        "farmSymbol": "CLAVIS",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Agartha",
+            "symbol": "CLAVIS",
+            "timeTemplate": true,
+            "date": "Dec-18-2021 06:26:45 PM",
+            "link": "https://agartha.money/#/stake",
+            "token": "0xA5b0f5ef809FD04C9D4320211C711Cb34ef812dD",
+            "stakingSymbol": "sCLAVIS",
+            "stakingToken": "0x4fb8ec7e0ea19100b2fbd24f58454421f9764529",
+            "stakingContract": "0x7e4939ca7847ae3ff9501b27470dcd0a69f54fa6",
+            "LPContract": "0x72f95Da8d7a9b405191cAE0Fc31711d575044eFb",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x2C5BB99Df3d43eFD98ff1D7Aa34D4207C83638E4",
+            "bondingCalculator": "0x0595259668Ed31d25f295D2306ba2fD9276F6360",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xd8f995d0ccabcb6725fa58091ecbe63be89944f8",
+                    "symbol": "CLAVIS-MIM"
+                },
+                {
+                    "address": "0x9febea27f8278bb59b344d374f84037cc7b234bf",
+                    "symbol": "CLAVIS-wAVAX"
+                },
+                {
+                    "address": "0xad9a446e5269d59a17d713de23706e3d5428edda",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x7f0fdd3149501a03d883987beec59def1f5b51c5",
+                    "symbol": "wAVAX"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WAVAX",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256"
+                },
+                {
+                    "symbol": "MIM-CLAVIS",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xA5b0f5ef809FD04C9D4320211C711Cb34ef812dD",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x72f95Da8d7a9b405191cAE0Fc31711d575044eFb",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "CLAVIS-WAVAX",
+                    "token0": {
+                        "address": "0xA5b0f5ef809FD04C9D4320211C711Cb34ef812dD",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x7D5B42704bB34C5BBbcd3bE4f5762A663B38a2df",
+                    "stable": false,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

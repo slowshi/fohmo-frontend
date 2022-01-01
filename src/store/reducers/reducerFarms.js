@@ -20,6 +20,14 @@ const farmReducer = (state = initialState, action) => {
           showBalances: !state[action.payload].showBalances
         }
       }
+    case "toggleTreasuryBalances":
+      return {
+        ...state,
+        [action.payload]: {
+          ...state[action.payload],
+          showTreasury: !state[action.payload].showTreasury
+        }
+      }
     case "toggleFarmROI":
       return {
         ...state,

@@ -1,48 +1,134 @@
 {
-  "BSC-LOVE": {
-    "farmSymbol": "LOVE",
-    "networkSymbol": "BSC",
-    "constants": {
-      "name": "HunnyDAO",
-      "symbol": "LOVE",
-      "date": "Nov-19-2021 04:29:22 AM",
-      "link": "https://dao.hunny.finance/#/stake",
-      "token": "0x9505dbD77DaCD1F6C89F101b98522D4b871d88C5",
-      "stakingSymbol": "KISS",
-      "stakingToken": "0x9f12cad130d40d40541cae8e3c295228769ad111",
-      "stakingContract": "0x79261d56c88af27cae29b107cb5872104d1fe623",
-      "LPContract": "0x9e8ae3a26536582823ef82c155b69637a4a753f8",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x631Fb1f772b8A20e775D1d4F3F87BfCaBA317527",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "wsMETA",
-      "bondingCalculator": "0x8c62271dee37ee321a2e3aa9939c372cefb5ffb1",
-      "bondingContracts": [
-        {
-          "address": "0x6a33a10bca3f8c0cbffb4488f74e3540c9bc00bc",
-          "symbol": "LOVE-BUSD"
-        },
-        {
-          "address": "0x1d61dcea330237f4258c173779ee7560c7954329",
-          "symbol": "BUSD"
-        },
-        {
-          "address": "0x947f83268109307a077878a09db78258a28f8319",
-          "symbol": "CAKE"
-        },
-        {
-          "address": "0x53cb12a5d2674e10c2862c0698ca51470fba06bc",
-          "symbol": "USDT"
-        },
-        {
-          "address": "0x7ba755fe7107121e07bc3f00cb295e8823c23dfb",
-          "symbol": "HUNNY"
-        },
-        {
-          "address": "0xE469b97F0f21Ced4104c51F63862a35ae3D688D2",
-          "symbol": "wBNB"
+    "BSC-LOVE": {
+        "farmSymbol": "LOVE",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "HunnyDAO",
+            "symbol": "LOVE",
+            "date": "Nov-19-2021 04:29:22 AM",
+            "link": "https://dao.hunny.finance/#/stake",
+            "token": "0x9505dbD77DaCD1F6C89F101b98522D4b871d88C5",
+            "stakingSymbol": "KISS",
+            "stakingToken": "0x9f12cad130d40d40541cae8e3c295228769ad111",
+            "stakingContract": "0x79261d56c88af27cae29b107cb5872104d1fe623",
+            "LPContract": "0x9e8ae3a26536582823ef82c155b69637a4a753f8",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x631Fb1f772b8A20e775D1d4F3F87BfCaBA317527",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "wsMETA",
+            "bondingCalculator": "0x8c62271Dee37eE321A2e3AA9939c372CEFb5Ffb1",
+            "bondingContracts": [
+                {
+                    "address": "0x6a33a10bca3f8c0cbffb4488f74e3540c9bc00bc",
+                    "symbol": "LOVE-BUSD"
+                },
+                {
+                    "address": "0x1d61dcea330237f4258c173779ee7560c7954329",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0x947f83268109307a077878a09db78258a28f8319",
+                    "symbol": "CAKE"
+                },
+                {
+                    "address": "0x53cb12a5d2674e10c2862c0698ca51470fba06bc",
+                    "symbol": "USDT"
+                },
+                {
+                    "address": "0x7ba755fe7107121e07bc3f00cb295e8823c23dfb",
+                    "symbol": "HUNNY"
+                },
+                {
+                    "address": "0xE469b97F0f21Ced4104c51F63862a35ae3D688D2",
+                    "symbol": "wBNB"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "WBNB",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16"
+                },
+                {
+                    "token0": {
+                        "address": "0x565b72163f17849832A692A3c5928cc502f46D69",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "HUNNY",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xa18045Bae185aca1872E081A815E113909fea84F"
+                },
+                {
+                    "token0": {
+                        "address": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "Cake",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x804678fa97d91B974ec2af3c843270886528a9E6"
+                },
+                {
+                    "token0": {
+                        "address": "0x55d398326f99059fF775485246999027B3197955",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDT",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "LOVE-BUSD",
+                    "token0": {
+                        "address": "0x9505dbD77DaCD1F6C89F101b98522D4b871d88C5",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x9e8Ae3a26536582823Ef82c155B69637a4A753F8",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

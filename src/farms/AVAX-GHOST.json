@@ -1,34 +1,64 @@
 {
-  "AVAX-GHOST": {
-    "farmSymbol": "GHOST",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "Spirit DAO",
-      "symbol": "GHOST",
-      "timeTemplate": true,
-      "date": "Dec-21-2021 02:13:24 PM",
-      "link": "https://dapp.spiritdao.finance/#/stake",
-      "token": "0xa72eab7327e48bde0ff873eaf1d4fecf6036504f",
-      "stakingSymbol": "TOMB",
-      "stakingToken": "0x908a1c13c6dd126307221102e61b55d86c836c7b",
-      "indexRatio": 4.5,
-      "stakingContract": "0x37076706ee1c549a32103e81dcc3ee56e6477960",
-      "LPContract": "0x0bc14d02d04dcd6c7a73d1f89d2448f09676a849",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x32a0befc3092f3740d9d507aa4ec6c9cf0848e2e",
-      "bondingCalculator": "",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x294b750e89d7981565ba3a96150206d93f4df5d9",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0xf210d2393539c064234d16f215bff9260524c9a6",
-          "symbol": "GHOST-MIM"
+    "AVAX-GHOST": {
+        "farmSymbol": "GHOST",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Spirit DAO",
+            "symbol": "GHOST",
+            "timeTemplate": true,
+            "date": "Dec-21-2021 02:13:24 PM",
+            "link": "https://dapp.spiritdao.finance/#/stake",
+            "token": "0xa72eab7327e48bde0ff873eaf1d4fecf6036504f",
+            "stakingSymbol": "TOMB",
+            "stakingToken": "0x908a1c13c6dd126307221102e61b55d86c836c7b",
+            "indexRatio": 4.5,
+            "stakingContract": "0x37076706ee1c549a32103e81dcc3ee56e6477960",
+            "LPContract": "0x0bc14d02d04dcd6c7a73d1f89d2448f09676a849",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x32a0befc3092f3740d9d507aa4ec6c9cf0848e2e",
+            "bondingCalculator": "0xf8EB13C57d028f68cDB2BFF62B6B9d67008B78c2",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x294b750e89d7981565ba3a96150206d93f4df5d9",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0xf210d2393539c064234d16f215bff9260524c9a6",
+                    "symbol": "GHOST-MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MIM-GHOST",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xA72eAb7327e48bdE0FF873eAF1D4FecF6036504F",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x0BC14d02d04dCd6c7a73D1f89d2448F09676a849",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

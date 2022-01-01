@@ -1,70 +1,171 @@
 {
-  "ONE-ODAO": {
-    "farmSymbol": "ODAO",
-    "networkSymbol": "ONE",
-    "constants": {
-      "name": "OneDAO",
-      "symbol": "ODAO",
-      "timeTemplate": true,
-      "date": "Nov-3-2021 12:00:00 AM",
-      "link": "https://app.onedao.finance/#/stake",
-      "token": "0x947394294F75D7502977AC6813FD99f77C2931ec",
-      "stakingSymbol": "OXY",
-      "stakingToken": "0x7a8698A1595D7821C04732A242F21C3C6f50cd66",
-      "indexRatio": 4.5,
-      "stakingContract": "0x9cAc73eA219e5F8a96485c937E2C8A617f7F4f37",
-      "LPContract": "0x4f658217f163509115b6e1fbba37cd9aefbdba12",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xcdC825e5Fc3D5af362dAF887D4EDc4c73c072EdE",
-      "wsOHMNetworks": [
-        {
-          "address": "0xc7a26fb8feb79e60a356682eb468719388a89cab",
-          "networkSymbol": "ONE"
+    "ONE-ODAO": {
+        "farmSymbol": "ODAO",
+        "networkSymbol": "ONE",
+        "constants": {
+            "name": "OneDAO",
+            "symbol": "ODAO",
+            "timeTemplate": true,
+            "date": "Nov-3-2021 12:00:00 AM",
+            "link": "https://app.onedao.finance/#/stake",
+            "token": "0x947394294F75D7502977AC6813FD99f77C2931ec",
+            "stakingSymbol": "OXY",
+            "stakingToken": "0x7a8698A1595D7821C04732A242F21C3C6f50cd66",
+            "indexRatio": 4.5,
+            "stakingContract": "0x9cAc73eA219e5F8a96485c937E2C8A617f7F4f37",
+            "LPContract": "0x4f658217f163509115b6e1fbba37cd9aefbdba12",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xcdC825e5Fc3D5af362dAF887D4EDc4c73c072EdE",
+            "wsOHMNetworks": [
+                {
+                    "address": "0xc7a26fb8feb79e60a356682eb468719388a89cab",
+                    "networkSymbol": "ONE"
+                }
+            ],
+            "wsOHMSymbol": "wOXY",
+            "bondingContracts": [
+                {
+                    "address": "0xE690ecDbe7e3cCAdE0Af9c66160Ed1529bd8C9E7",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0xc8825b841932Ca070AC308cD9F4CA8E18C407fb4",
+                    "symbol": "DAI-ODAO"
+                },
+                {
+                    "address": "0x0D2A60323048E568c52AD59ddC73376dA564d376",
+                    "symbol": "UST"
+                },
+                {
+                    "address": "0x0B6FFe53C737fB3BEAfcD0Cfd4A560e9C2EE3742",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0x2dc6e871fafba4baa67d77ed5754fd44e2980aa0",
+                    "symbol": "wONE"
+                },
+                {
+                    "address": "0xd6400D88A59035274555583A3748E8A9C98941F1",
+                    "symbol": "USDT"
+                },
+                {
+                    "address": "0x45cB267A4F92F7cB5831017EA5cAF60e73655d05",
+                    "symbol": "USDC"
+                },
+                {
+                    "address": "0x9b90CdfCD172EB3DC75cb8347725917AF228fAbB",
+                    "symbol": "ETH-ODAO"
+                },
+                {
+                    "address": "0x19A6182adD8Ff4dd50ddf6495292Fc39B019DA38",
+                    "symbol": "ONE-ODAO"
+                },
+                {
+                    "address": "0xfaED1F7f2A111FA07c2c66409968cF001BD8E9f8",
+                    "symbol": "FRAX"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xEf977d2f931C1978Db5F6747666fa1eACB0d0339",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "1DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x3C2B8Be99c50593081EAA2A724F0B8285F5aba8f",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "1USDT",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x985458E523dB3d53125813eD68c274899e9DfAb4",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "1USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x224e64ec1BDce3870a6a6c777eDd450454068FEC",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "UST",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "ODAO-1DAI",
+                    "token0": {
+                        "address": "0x947394294F75D7502977AC6813FD99f77C2931ec",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xEf977d2f931C1978Db5F6747666fa1eACB0d0339",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x4F658217F163509115b6e1fbbA37Cd9aeFBdbA12",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "1ETH-ODAO",
+                    "token0": {
+                        "address": "0x6983D1E6DEf3690C4d616b13597A09e6193EA013",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x947394294F75D7502977AC6813FD99f77C2931ec",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x34f21378A6fc29acc1eACB82bC5F7deC794Ce537",
+                    "stable": false,
+                    "single": false
+                },
+                {
+                    "symbol": "ODAO-WONE",
+                    "token0": {
+                        "address": "0x947394294F75D7502977AC6813FD99f77C2931ec",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x171fF11B53674958C273bCFCcBc731aa6cae96F8",
+                    "stable": false,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x26aA6C36f45409955593a59467d4a9d371D9F395"
         }
-      ],
-      "wsOHMSymbol": "wOXY",
-      "bondingContracts": [
-        {
-          "address": "0xE690ecDbe7e3cCAdE0Af9c66160Ed1529bd8C9E7",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0xc8825b841932Ca070AC308cD9F4CA8E18C407fb4",
-          "symbol": "DAI-ODAO"
-        },
-        {
-          "address": "0x0D2A60323048E568c52AD59ddC73376dA564d376",
-          "symbol": "UST"
-        },
-        {
-          "address": "0x0B6FFe53C737fB3BEAfcD0Cfd4A560e9C2EE3742",
-          "symbol": "BUSD"
-        },
-        {
-          "address": "0x2dc6e871fafba4baa67d77ed5754fd44e2980aa0",
-          "symbol": "wONE"
-        },
-        {
-          "address": "0xd6400D88A59035274555583A3748E8A9C98941F1",
-          "symbol": "USDT"
-        },
-        {
-          "address": "0x45cB267A4F92F7cB5831017EA5cAF60e73655d05",
-          "symbol": "USDC"
-        },
-        {
-          "address": "0x9b90CdfCD172EB3DC75cb8347725917AF228fAbB",
-          "symbol": "ETH-ODAO"
-        },
-        {
-          "address": "0x19A6182adD8Ff4dd50ddf6495292Fc39B019DA38",
-          "symbol": "ONE-ODAO"
-        },
-        {
-          "address": "0xfaED1F7f2A111FA07c2c66409968cF001BD8E9f8",
-          "symbol": "FRAX"
-        }
-      ]
     }
-  }
 }

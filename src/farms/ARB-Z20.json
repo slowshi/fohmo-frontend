@@ -1,47 +1,49 @@
 {
-  "ARB-Z20": {
-    "farmSymbol": "Z20",
-    "networkSymbol": "ARB",
-    "constants": {
-      "name": "Zerotwohm",
-      "symbol": "Z20",
-      "timeTemplate": true,
-      "link": "https://app.umami.finance/#/stake",
-      "token": "0xdb96f8efd6865644993505318cc08ff9c42fb9ac",
-      "stakingSymbol": "sZ2O",
-      "stakingToken": "0xc45c51d423f5e2ad2e946e45d9ec7dcf04f9bd39",
-      "stakingContract": "0x06b4dfabaf0fb0cf813526572cc86b2695c9d050",
-      "LPContract": "0x40c938444c725ea6eb6992ca71f94b6945b43335",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x00eFcbd55b59b5D08F3a7501C0Ddad34a57A3611",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x546c928B1B2263c292Cf45922A48dDfACD9C10b6",
-          "symbol": "wETH"
-        },
-        {
-          "address": "0x16F5E519D108fE421358118e940B7dD5161E300C",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0xbf537603176ac48a7d4a91d04b51f5d7137a83d7",
-          "symbol": "Z20-MIM"
-        },
-        {
-          "address": "0xaa6c3a59c5cac339189927561db29b71642bd119",
-          "symbol": "wBTC"
-        },
-        {
-          "address": "0xca271BBFCE2B0CA4aB022855bC4eC382C2E373D1",
-          "symbol": "wsOHM"
-        },
-        {
-          "address": "0xe80ddac9b67f42dd0a7e98f27c0bbc2e226dd17b",
-          "symbol": "chMIM"
+    "ARB-Z20": {
+        "farmSymbol": "Z20",
+        "networkSymbol": "ARB",
+        "constants": {
+            "name": "Zerotwohm",
+            "symbol": "Z20",
+            "timeTemplate": true,
+            "link": "https://app.umami.finance/#/stake",
+            "token": "0xdb96f8efd6865644993505318cc08ff9c42fb9ac",
+            "stakingSymbol": "sZ2O",
+            "stakingToken": "0xc45c51d423f5e2ad2e946e45d9ec7dcf04f9bd39",
+            "stakingContract": "0x06b4dfabaf0fb0cf813526572cc86b2695c9d050",
+            "LPContract": "0x40c938444c725ea6eb6992ca71f94b6945b43335",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x00eFcbd55b59b5D08F3a7501C0Ddad34a57A3611",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x546c928B1B2263c292Cf45922A48dDfACD9C10b6",
+                    "symbol": "wETH"
+                },
+                {
+                    "address": "0x16F5E519D108fE421358118e940B7dD5161E300C",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0xbf537603176ac48a7d4a91d04b51f5d7137a83d7",
+                    "symbol": "Z20-MIM"
+                },
+                {
+                    "address": "0xaa6c3a59c5cac339189927561db29b71642bd119",
+                    "symbol": "wBTC"
+                },
+                {
+                    "address": "0xca271BBFCE2B0CA4aB022855bC4eC382C2E373D1",
+                    "symbol": "wsOHM"
+                },
+                {
+                    "address": "0xe80ddac9b67f42dd0a7e98f27c0bbc2e226dd17b",
+                    "symbol": "chMIM"
+                }
+            ],
+            "treasuryAssets": [],
+            "bondingCalculator": ""
         }
-      ]
     }
-  }
 }

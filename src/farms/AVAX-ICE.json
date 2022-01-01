@@ -1,37 +1,81 @@
 {
-  "AVAX-ICE": {
-    "farmSymbol": "ICE",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "ICE DAO",
-      "symbol": "ICE",
-      "date": "Dec-03-2021 03:37:34 PM",
-      "link": "https://app.icedao.finance/#/stake",
-      "token": "0x9235b893a3e61a14b2d02a91ec1394fbf411689e",
-      "stakingSymbol": "GLA",
-      "stakingToken": "0x4b993a3544b01946c474bcb82fd483a5cff32a46",
-      "stakingContract": "0x82eeefe5cc8ad478893b377327ef2b710c51059f",
-      "LPContract": "0xfefb9b28f341d855b598e16ecc5f83b40cd827e6",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x4f3340a84e610fb3030e6ce5081804bdd8d7532a",
-      "bondingCalculator": null,
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "isWarmup": true,
-      "bondingContracts": [
-        {
-          "address": "0x9ec6EdE1D47e4B9E4fF12dd38f7e087a036dD651",
-          "symbol": "wAVAX"
-        },
-        {
-          "address": "0xb4c4be95979f8396a70164255a12acfaa1fa9240",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0xe9A0E94c68ff90BfE941673aCCc898671C05c22a",
-          "symbol": "ICE-MIM"
+    "AVAX-ICE": {
+        "farmSymbol": "ICE",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "ICE DAO",
+            "symbol": "ICE",
+            "date": "Dec-03-2021 03:37:34 PM",
+            "link": "https://app.icedao.finance/#/stake",
+            "token": "0x9235b893a3e61a14b2d02a91ec1394fbf411689e",
+            "stakingSymbol": "GLA",
+            "stakingToken": "0x4b993a3544b01946c474bcb82fd483a5cff32a46",
+            "stakingContract": "0x82eeefe5cc8ad478893b377327ef2b710c51059f",
+            "LPContract": "0xfefb9b28f341d855b598e16ecc5f83b40cd827e6",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x4f3340a84e610fb3030e6ce5081804bdd8d7532a",
+            "bondingCalculator": "0x62afc49295EA9E28926ad124072E8875463177aB",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "isWarmup": true,
+            "bondingContracts": [
+                {
+                    "address": "0x9ec6EdE1D47e4B9E4fF12dd38f7e087a036dD651",
+                    "symbol": "wAVAX"
+                },
+                {
+                    "address": "0xb4c4be95979f8396a70164255a12acfaa1fa9240",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0xe9A0E94c68ff90BfE941673aCCc898671C05c22a",
+                    "symbol": "ICE-MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WAVAX",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256"
+                },
+                {
+                    "symbol": "MIM-ICE",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x9235B893a3e61a14b2D02a91EC1394fbF411689E",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0xFeFB9b28f341d855b598E16ECc5f83b40cd827E6",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

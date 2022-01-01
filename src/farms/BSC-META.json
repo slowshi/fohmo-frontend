@@ -1,54 +1,183 @@
 {
-  "BSC-META": {
-    "farmSymbol": "META",
-    "networkSymbol": "BSC",
-    "constants": {
-      "name": "MetaversePRO",
-      "symbol": "META",
-      "date": "Nov-16-2021 04:09:02 AM",
-      "link": "https://app.metaverse.pro/#/stake",
-      "token": "0x0a2046C7fAa5a5F2b38C0599dEB4310AB781CC83",
-      "stakingSymbol": "sMETA",
-      "stakingToken": "0x09f33EC33052Cd253Db79fFA883E9c12Eb578309",
-      "indexRatio": 0.00000001,
-      "stakingContract": "0xB91Db0C2551AAe4784119cE4c33234C9E3c9aF71",
-      "LPContract": "0x512385e505615eb30ec80a2915575e344acf792a",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xB874aC3A21e3Ffe06fB4B6dcf9B62c7eA753a9A0",
-      "wsOHMNetworks": [
-        {
-          "address": "0x29eb42fee61a516d1fa514a93a3067da4c13f9d8",
-          "networkSymbol": "BSC"
+    "BSC-META": {
+        "farmSymbol": "META",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "MetaversePRO",
+            "symbol": "META",
+            "date": "Nov-16-2021 04:09:02 AM",
+            "link": "https://app.metaverse.pro/#/stake",
+            "token": "0x0a2046C7fAa5a5F2b38C0599dEB4310AB781CC83",
+            "stakingSymbol": "sMETA",
+            "stakingToken": "0x09f33EC33052Cd253Db79fFA883E9c12Eb578309",
+            "indexRatio": 1e-8,
+            "stakingContract": "0xB91Db0C2551AAe4784119cE4c33234C9E3c9aF71",
+            "LPContract": "0x512385e505615eb30ec80a2915575e344acf792a",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xB874aC3A21e3Ffe06fB4B6dcf9B62c7eA753a9A0",
+            "wsOHMNetworks": [
+                {
+                    "address": "0x29eb42fee61a516d1fa514a93a3067da4c13f9d8",
+                    "networkSymbol": "BSC"
+                }
+            ],
+            "wsOHMSymbol": "wsMETA",
+            "wsOHMPool": "0x73b2aec992fbb9573aa540916d1fe7bd4de5e83c",
+            "bondingContracts": [
+                {
+                    "address": "0x689615f501b1e143aa1Ed1C5736E9A57198B7173",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0xa70694Ed3675D7fA8c453e77E905Bbf5Ba1c46A7",
+                    "symbol": "META-BUSD"
+                },
+                {
+                    "address": "0xf7a38B0B960BaF5ECD065b915dDeD7d938d628bF",
+                    "symbol": "META-USDT"
+                },
+                {
+                    "address": "0x117A10D6944b18d652cbF428b0D7c97A65887063",
+                    "symbol": "META-USDC"
+                },
+                {
+                    "address": "0x839Ee222E84849C752Bff1bB129cf34578BcDEc1",
+                    "symbol": "wBNB"
+                },
+                {
+                    "address": "0x295923D9ED2De2f7164669b90328E9Bc43523256",
+                    "symbol": "USDC"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "WBNB",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16"
+                },
+                {
+                    "token0": {
+                        "address": "0x55d398326f99059fF775485246999027B3197955",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDT",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "Meta-BUSD",
+                    "token0": {
+                        "address": "0x0a2046C7fAa5a5F2b38C0599dEB4310AB781CC83",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x512385e505615eb30ec80A2915575E344ACf792A",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "Meta-USDT",
+                    "token0": {
+                        "address": "0x0a2046C7fAa5a5F2b38C0599dEB4310AB781CC83",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x55d398326f99059fF775485246999027B3197955",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x5438C0730E45Ef25ec5E5110c939dC0c90AEC4b4",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "Meta-USDC",
+                    "token0": {
+                        "address": "0x0a2046C7fAa5a5F2b38C0599dEB4310AB781CC83",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x1c8Ed2F2CEF333aa43f1ba9A4589899C53787d2F",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "Meta-WBNB",
+                    "token0": {
+                        "address": "0x0a2046C7fAa5a5F2b38C0599dEB4310AB781CC83",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x1dD778e874DC1b45a676e38abA1916517C3648c8",
+                    "stable": false,
+                    "single": false
+                },
+                {
+                    "symbol": "Meta-BUSD",
+                    "token0": {
+                        "address": "0x0a2046C7fAa5a5F2b38C0599dEB4310AB781CC83",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x78E7B85Fe94E1672C59C51600E0654CBA22c2011",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x2FabAE7FD812ce30C7934942252058C54e1076cD"
         }
-      ],
-      "wsOHMSymbol": "wsMETA",
-      "wsOHMPool": "0x73b2aec992fbb9573aa540916d1fe7bd4de5e83c",
-      "bondingContracts": [
-        {
-          "address": "0x689615f501b1e143aa1Ed1C5736E9A57198B7173",
-          "symbol": "BUSD"
-        },
-        {
-          "address": "0xa70694Ed3675D7fA8c453e77E905Bbf5Ba1c46A7",
-          "symbol": "META-BUSD"
-        },
-        {
-          "address": "0xf7a38B0B960BaF5ECD065b915dDeD7d938d628bF",
-          "symbol": "META-USDT"
-        },
-        {
-          "address": "0x117A10D6944b18d652cbF428b0D7c97A65887063",
-          "symbol": "META-USDC"
-        },
-        {
-          "address": "0x839Ee222E84849C752Bff1bB129cf34578BcDEc1",
-          "symbol": "wBNB"
-        },
-        {
-          "address": "0x295923D9ED2De2f7164669b90328E9Bc43523256",
-          "symbol": "USDC"
-        }
-      ]
     }
-  }
 }

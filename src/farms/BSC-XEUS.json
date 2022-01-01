@@ -7,30 +7,28 @@
       "symbol": "XEUS",
       "date": "Oct-29-2021 01:54:00 AM",
       "link": "https://xeus.finance/#/stake",
-      "token": "0x4E141769366634D9c4e498257Fa7EC204d22b634",
+      "token": "0x1b239abe619e74232c827fbe5e49a4c072bd869d",
       "stakingSymbol": "sXEUS",
-      "stakingToken": "0x52eb4A4aF85bf7921813a12B7Cc9Ec02b5e94D6e",
+      "stakingToken": "0x4fbcde2c859e3c1ab2034474e4d97a6beb220297",
       "indexRatio": 0.00001,
       "stakingContract": "0x4669A93D251633C9983103529783eD1E4E36F20c",
-      "LPContract": "0x76129f6e590f7aaac39b9804048a18060297a79b",
-      "treasuryContract": "0xF1081555011689cCCfa29CCA6a9E6AFcB907B0bC",
+      "LPContract": "0x5ca063a7e2bebefeb2bdea42158f5b825f0f9ffb",
+      "treasuryContract": "0xfe363340b8f1ea5eb01f81c41bfb30a966a407ec",
       "lockedSupplyContract": null,
       "wsOHMNetworks": [],
       "wsOHMSymbol": "",
+      "bondingCalculator": "0xf14a3eefa14c43e2fff341f8b40bee924121fec5",
       "bondingContracts": [
         {
-          "address": "0xe259A3dFc976b43815C43723ecACB5c1E8794518",
-          "symbol": "GYRO"
+          "address": "0x170da1a957e816aa030de37b71ba0e9746afc5ef",
+          "symbol": "GYRO-USDT"
         },
         {
-          "address": "0xE7208fd2deD9A372457367077B3796ED278E75eC",
-          "symbol": "XEUS-BUSD"
-        },
-        {
-          "address": "0x4c5c0cadec7b66b8f71018bbdabab7b4f0b8aca6",
-          "symbol": "BUSD"
+          "address": "0x170da1a957e816aa030de37b71ba0e9746afc5ef",
+          "symbol": "GYRO-BUSD"
         }
-      ]
+      ],
+      "treasuryAssets": []
     }
   }
 }

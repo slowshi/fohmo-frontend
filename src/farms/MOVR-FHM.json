@@ -1,34 +1,107 @@
 {
-  "MOVR-FHM": {
-    "farmSymbol": "FHM",
-    "networkSymbol": "MOVR",
-    "constants": {
-      "name": "Fantohm",
-      "symbol": "FHM",
-      "date": "Nov-26-2021 09:07:18 PM",
-      "link": "https://app.fantohm.com/#/stake",
-      "token": "0xfa1FBb8Ef55A4855E5688C0eE13aC3f202486286",
-      "stakingSymbol": "sFHM",
-      "stakingToken": "0x1888BB30f9EdD63b265942F3E3D061F186f38079",
-      "stakingContract": "0xF5C7D63C5Fc0aD4b7Cef7d8904239860725Ebc87",
-      "LPContract": "0x0b6116bb2926d996cdeba9e1a79e44324b0401c9",
-      "lockedSupplyContract": [
-        "0xe3cd5475f18a97d3563307b4e1a6467470237927",
-        "0xcb9297425c889a7cbbaa5d3db97bab4ea54829c2"
-      ],
-      "treasuryContract": "0xec2ae8a3e2692e4b0836ab5cf88104d101debef4",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xc0c4209e3a6d227ad9fe4dd3f064a1a1ab6a3ce5",
-          "symbol": "USDT.m"
-        },
-        {
-          "address": "0x25ccf3d5b5b856bf019ecfb0c1dcc500c6d8e0a9",
-          "symbol": "USDC.m"
+    "MOVR-FHM": {
+        "farmSymbol": "FHM",
+        "networkSymbol": "MOVR",
+        "constants": {
+            "name": "Fantohm",
+            "symbol": "FHM",
+            "date": "Nov-26-2021 09:07:18 PM",
+            "link": "https://app.fantohm.com/#/stake",
+            "token": "0xfa1FBb8Ef55A4855E5688C0eE13aC3f202486286",
+            "stakingSymbol": "sFHM",
+            "stakingToken": "0x1888BB30f9EdD63b265942F3E3D061F186f38079",
+            "stakingContract": "0xF5C7D63C5Fc0aD4b7Cef7d8904239860725Ebc87",
+            "LPContract": "0x0b6116bb2926d996cdeba9e1a79e44324b0401c9",
+            "lockedSupplyContract": [
+                "0xe3cd5475f18a97d3563307b4e1a6467470237927",
+                "0xcb9297425c889a7cbbaa5d3db97bab4ea54829c2"
+            ],
+            "treasuryContract": "0xec2ae8a3e2692e4b0836ab5cf88104d101debef4",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xc0c4209e3a6d227ad9fe4dd3f064a1a1ab6a3ce5",
+                    "symbol": "USDT.m"
+                },
+                {
+                    "address": "0x25ccf3d5b5b856bf019ecfb0c1dcc500c6d8e0a9",
+                    "symbol": "USDC.m"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x80A16016cC4A2E6a2CACA8a4a498b1699fF0f844",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x98878B06940aE243284CA214f92Bb71a2b032B8A",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x80a16016cc4a2e6a2caca8a4a498b1699ff0f844",
+                        "decimals": 18
+                    },
+                    "symbol": "WMOVR",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x1c64E77a3419205C91262Ae0e5D9D33B3b1a6c34"
+                },
+                {
+                    "symbol": "MD-DAI",
+                    "token0": {
+                        "address": "0x761cb807bFbF14A4f4bA980f29F43F009F6a18c0",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x80A16016cC4A2E6a2CACA8a4a498b1699fF0f844",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xDbf638D800190271F5473e76898c6c8e741cbA51",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "MD-WMOVR",
+                    "token0": {
+                        "address": "0x761cb807bFbF14A4f4bA980f29F43F009F6a18c0",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x98878B06940aE243284CA214f92Bb71a2b032B8A",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x36D5ba93c6E862aC4e90318742A6bFF821068f05",
+                    "stable": false,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0xcb959452d0375A894d228F2F9273e4a9BE13B048"
         }
-      ]
     }
-  }
 }

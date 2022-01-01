@@ -1,35 +1,79 @@
 {
-  "AVAX-BLANC": {
-    "farmSymbol": "BLANC",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "AVALPS",
-      "symbol": "BLANC",
-      "timeTemplate": true,
-      "rugged": true,
-      "date": "Dec-20-2021 01:51:13 AM",
-      "link": "https://ape.avalps.finance/#/stake",
-      "token": "0xf481Eec738C46F675e077ee966A680a19210Af11",
-      "stakingSymbol": "SKI",
-      "stakingToken": "0xAa11B6BbD665b6e6F04a32014E16abe3C7b63c36",
-      "indexRatio": 4.5,
-      "stakingContract": "0x1b6CD48f1148FF53e61809a68bca74b384B8C630",
-      "LPContract": "0x9b4e1cfd1417cba22a2fb2b7cbdd8dcc1dc1e7c7",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x76EcB72ffeEb0Bf57869758c9bf020F45d0a04d0",
-      "bondingCalculator": "0xA043A25eC04c9e317FEA1c244A314D2bb8466533",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x124043595D162A5214160C2D3aCcB93DDDdDAA41",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0x2b31ae4CB427102a9997505bDCd44fe718887D20",
-          "symbol": "BLANC-MIM"
+    "AVAX-BLANC": {
+        "farmSymbol": "BLANC",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "AVALPS",
+            "symbol": "BLANC",
+            "timeTemplate": true,
+            "rugged": true,
+            "date": "Dec-20-2021 01:51:13 AM",
+            "link": "https://ape.avalps.finance/#/stake",
+            "token": "0xf481Eec738C46F675e077ee966A680a19210Af11",
+            "stakingSymbol": "SKI",
+            "stakingToken": "0xAa11B6BbD665b6e6F04a32014E16abe3C7b63c36",
+            "indexRatio": 4.5,
+            "stakingContract": "0x1b6CD48f1148FF53e61809a68bca74b384B8C630",
+            "LPContract": "0x9b4e1cfd1417cba22a2fb2b7cbdd8dcc1dc1e7c7",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x76EcB72ffeEb0Bf57869758c9bf020F45d0a04d0",
+            "bondingCalculator": "0xA043A25eC04c9e317FEA1c244A314D2bb8466533",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x124043595D162A5214160C2D3aCcB93DDDdDAA41",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x2b31ae4CB427102a9997505bDCd44fe718887D20",
+                    "symbol": "BLANC-MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MIM-BLANC",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xf481Eec738C46F675e077ee966A680a19210Af11",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x9B4E1cFD1417cBa22a2fb2B7cbdd8dcC1dc1e7C7",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "WAVAX-BLANC",
+                    "token0": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xf481Eec738C46F675e077ee966A680a19210Af11",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x0FB87c2dA68CC565f380DDE4A5cdafd6F5A315b0",
+                    "stable": false,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

@@ -1,42 +1,128 @@
 {
-  "AVAX-BLIGHT": {
-    "farmSymbol": "BLIGHT",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "FarmersDAO",
-      "symbol": "BLIGHT",
-      "rugged": true,
-      "timeTemplate": true,
-      "date": "Dec-14-2021 05:49:35 PM",
-      "link": "https://dao.farmersonly.farm/#/stake",
-      "token": "0x350b3Ff32ab1b6BeaBec41aBCEbff682e0F37A3B",
-      "stakingSymbol": "sBLIGHT",
-      "stakingToken": "0xa6772f1efedef231a3d92851470bd73316ddeaa9",
-      "stakingContract": "0xC58Cd958D35E380Ab891B7F001a03117A3f80F08",
-      "LPContract": "0x9E8f4f93533109b81FFf92247aE74723c1438A33",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x8921910C43CF7a32Bc55B1771bE5d7A4757d97d9",
-      "bondingCalculator": "0x921C108245495Bdd159dCf0c8B017E6EAa78d223",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x36429157548c2dc41b41487cb7f45d09ae34c46a",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0x8d6d328a414ca1c493086e3d9208a692f8c1d985",
-          "symbol": "BLIGHT-MIM"
-        },
-        {
-          "address": "0x915d090174900062a1fe39a0eb891ff116c0ab52",
-          "symbol": "wAVAX"
-        },
-        {
-          "address": "0x65546e7c448d48b1ba4a64fba4ee84859f21d508",
-          "symbol": "ONION"
+    "AVAX-BLIGHT": {
+        "farmSymbol": "BLIGHT",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "FarmersDAO",
+            "symbol": "BLIGHT",
+            "rugged": true,
+            "timeTemplate": true,
+            "date": "Dec-14-2021 05:49:35 PM",
+            "link": "https://dao.farmersonly.farm/#/stake",
+            "token": "0x350b3Ff32ab1b6BeaBec41aBCEbff682e0F37A3B",
+            "stakingSymbol": "sBLIGHT",
+            "stakingToken": "0xa6772f1efedef231a3d92851470bd73316ddeaa9",
+            "stakingContract": "0xC58Cd958D35E380Ab891B7F001a03117A3f80F08",
+            "LPContract": "0x9E8f4f93533109b81FFf92247aE74723c1438A33",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x8921910C43CF7a32Bc55B1771bE5d7A4757d97d9",
+            "bondingCalculator": "",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x36429157548c2dc41b41487cb7f45d09ae34c46a",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x8d6d328a414ca1c493086e3d9208a692f8c1d985",
+                    "symbol": "BLIGHT-MIM"
+                },
+                {
+                    "address": "0x915d090174900062a1fe39a0eb891ff116c0ab52",
+                    "symbol": "wAVAX"
+                },
+                {
+                    "address": "0x65546e7c448d48b1ba4a64fba4ee84859f21d508",
+                    "symbol": "ONION"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WAVAX",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256"
+                },
+                {
+                    "token0": {
+                        "address": "0xf6931e67EF0cB20423351A53069719Df2ad76e78",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "ONION",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x47C113915506a6319206676356a61eF7ce8fA856"
+                },
+                {
+                    "token0": {
+                        "address": "0xFcA54c64BC44ce2E72d621B6Ed34981e53B66CaE",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "CORN",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x8b482DF152Aa158C76f8235256DdAC272509A08A"
+                },
+                {
+                    "token0": {
+                        "address": "0xf5760bbbC3565f6A513a9c20300a335A1250C57e",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "TMT",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x2b2793d3ED4640db784e6a438a5bc25b6FE7C169"
+                },
+                {
+                    "token0": {
+                        "address": "0x9E8f4f93533109b81FFf92247aE74723c1438A33",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "JLP",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                }
+            ]
         }
-      ]
     }
-  }
 }

@@ -1,47 +1,134 @@
 {
-  "BSC-TEM": {
-    "farmSymbol": "TEM",
-    "networkSymbol": "BSC",
-    "constants": {
-      "name": "Templar DAO",
-      "symbol": "TEM",
-      "date": "Nov-21-2021 01:55:15 PM",
-      "link": "https://templar.finance/#/stake",
-      "token": "0x19e6BfC1A6e4B042Fb20531244D47E252445df01",
-      "stakingSymbol": "SWORD",
-      "stakingToken": "0x8C9827Cd430d945aE5A5c3cfdc522f8D342334B9",
-      "stakingContract": "0xa1f61Ca61fe8655d2a204B518f6De964145a9324",
-      "LPContract": "0x1ede821daade714edade648f525ada0c5fe4ee3a",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xd01e8D805BB310F06411e70Fd50eB58cAe2B4C27",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x0d4f509b7D80Bfc7b3aaaEfC1C2edE4B362D8273",
-          "symbol": "TEM-BUSD"
-        },
-        {
-          "address": "0xF171eFc8AD41Aabb798d466861dCd7144f973d62",
-          "symbol": "BUSD"
-        },
-        {
-          "address": "0xe6F0A8E7a3550140495FfC17AB4dE44636278ee2",
-          "symbol": "WBNB"
-        },
-        {
-          "address": "0x1b83388d6113629c46a98d7de82f58531a8dc710",
-          "symbol": "MIM-BUSD"
-        },
-        {
-          "address": "0x061bb1a6aecb179b79ae5da6bae179f1d1a79ac8",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0xd93e4d6cfa40bf9ed141d690e2af038aaf59ab7e",
-          "symbol": "TEM-MIM"
+    "BSC-TEM": {
+        "farmSymbol": "TEM",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "Templar DAO",
+            "symbol": "TEM",
+            "date": "Nov-21-2021 01:55:15 PM",
+            "link": "https://templar.finance/#/stake",
+            "token": "0x19e6BfC1A6e4B042Fb20531244D47E252445df01",
+            "stakingSymbol": "SWORD",
+            "stakingToken": "0x8C9827Cd430d945aE5A5c3cfdc522f8D342334B9",
+            "stakingContract": "0xa1f61Ca61fe8655d2a204B518f6De964145a9324",
+            "LPContract": "0x1ede821daade714edade648f525ada0c5fe4ee3a",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xd01e8D805BB310F06411e70Fd50eB58cAe2B4C27",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x0d4f509b7D80Bfc7b3aaaEfC1C2edE4B362D8273",
+                    "symbol": "TEM-BUSD"
+                },
+                {
+                    "address": "0xF171eFc8AD41Aabb798d466861dCd7144f973d62",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0xe6F0A8E7a3550140495FfC17AB4dE44636278ee2",
+                    "symbol": "WBNB"
+                },
+                {
+                    "address": "0x1b83388d6113629c46a98d7de82f58531a8dc710",
+                    "symbol": "MIM-BUSD"
+                },
+                {
+                    "address": "0x061bb1a6aecb179b79ae5da6bae179f1d1a79ac8",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0xd93e4d6cfa40bf9ed141d690e2af038aaf59ab7e",
+                    "symbol": "TEM-MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "WBNB",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16"
+                },
+                {
+                    "token0": {
+                        "address": "0xfE19F0B51438fd612f6FD59C1dbB3eA319f433Ba",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "TEM-BUSD",
+                    "token0": {
+                        "address": "0x19e6BfC1A6e4B042Fb20531244D47E252445df01",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x1eDe821DAADe714edADe648F525AdA0C5fE4Ee3A",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "BUSD-MIM",
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xfE19F0B51438fd612f6FD59C1dbB3eA319f433Ba",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x9911e98974d0BaDDE85bD5F4d1f93087Aa3Ec5fa",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "TEM-MIM",
+                    "token0": {
+                        "address": "0x19e6BfC1A6e4B042Fb20531244D47E252445df01",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xfE19F0B51438fd612f6FD59C1dbB3eA319f433Ba",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xbF598a387c5F96f8BAC9bdcCf8Fb68BC189cDfF7",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0xD7FE341FCE9F3882d57eBA5692221877830a5DDd"
         }
-      ]
     }
-  }
 }

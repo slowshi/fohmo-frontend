@@ -1,32 +1,77 @@
 {
-  "FTM-SCR": {
-    "farmSymbol": "SCR",
-    "networkSymbol": "FTM",
-    "constants": {
-      "name": "SecureDAO",
-      "symbol": "SCR",
-      "timeTemplate": true,
-      "date": "Dec-16-2021 06:04:50 AM",
-      "link": "https://www.securedao.finance/#/app/stake",
-      "token": "0x8183C18887aC4386CE09Dbdf5dF7c398DAcB2B5a",
-      "stakingSymbol": "sSCR",
-      "stakingToken": "0x27Eef8DC26A6747C54cB74e18665B0734d533a17",
-      "stakingContract": "0x3d97040e407078823891c59bb07eadb2ddf3ae32",
-      "LPContract": "0x468c174cc015d4a697586C0a99F95E045F7e6f91",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xa39b5f217EdBDe068b4D3fA98256244ef74774a1",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "wsSCR",
-      "bondingContracts": [
-        {
-          "address": "0x3972dc5D892aE4026416134bc251152067DB0665",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0x1fAdE3E269d8D3734f6AC6dC7f86dCFc3f1F73A5",
-          "symbol": "MIM-SCR"
+    "FTM-SCR": {
+        "farmSymbol": "SCR",
+        "networkSymbol": "FTM",
+        "constants": {
+            "name": "SecureDAO",
+            "symbol": "SCR",
+            "timeTemplate": true,
+            "date": "Dec-16-2021 06:04:50 AM",
+            "link": "https://www.securedao.finance/#/app/stake",
+            "token": "0x8183C18887aC4386CE09Dbdf5dF7c398DAcB2B5a",
+            "stakingSymbol": "sSCR",
+            "stakingToken": "0x27Eef8DC26A6747C54cB74e18665B0734d533a17",
+            "stakingContract": "0x3d97040e407078823891c59bb07eadb2ddf3ae32",
+            "LPContract": "0x468c174cc015d4a697586C0a99F95E045F7e6f91",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xa39b5f217EdBDe068b4D3fA98256244ef74774a1",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "wsSCR",
+            "bondingContracts": [
+                {
+                    "address": "0x3972dc5D892aE4026416134bc251152067DB0665",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x1fAdE3E269d8D3734f6AC6dC7f86dCFc3f1F73A5",
+                    "symbol": "MIM-SCR"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x82f0B8B456c1A451378467398982d4834b6829c1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "SCR-MIM",
+                    "token0": {
+                        "address": "0x8183C18887aC4386CE09Dbdf5dF7c398DAcB2B5a",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x82f0B8B456c1A451378467398982d4834b6829c1",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x468c174cc015d4a697586C0a99F95E045F7e6f91",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0xCEfe150d9fC5Db31e5d00737F4b834f115A7daDD"
         }
-      ]
     }
-  }
 }

@@ -1,39 +1,98 @@
 {
-  "FTM-PUMP": {
-    "farmSymbol": "PUMP",
-    "networkSymbol": "FTM",
-    "constants": {
-      "name": "PumpkinDAO",
-      "symbol": "PUMP",
-      "date": "Nov-04-2021 06:38:10 AM",
-      "link": "https://app.pumpkindao.com/#/stake",
-      "token": "0x8eDDA0107D661E82df660DBa01Ff1D40FA17B70c",
-      "stakingSymbol": "KIN",
-      "stakingToken": "0x05A54D71e0c9F4bd0bF2CAF47344e6393DA66701",
-      "stakingContract": "0x5d189D8224a9aFBc3eC69bedBe2f6dd89B937E73",
-      "LPContract": "0xdf42866dc8fa6a962124b5d9eb8c91fa447f4feb",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x0DEA39519cb8c7c549e321d3020E96f91Ed36Ed3",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xa75e675B31fd279f80646D151BC95b94dEcaf26E",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0x0a7C6339345a22FD0193Bd6E3b0DE62c73B33fFB",
-          "symbol": "PUMP-DAI"
-        },
-        {
-          "address": "0x5d5d07c0d9c4af80e40fc779b12e8b696197fd31",
-          "symbol": "wFTM"
-        },
-        {
-          "address": "0xb75aac5b0061d9395e4b005a4417b21b32055158",
-          "symbol": "PUMP-wFTM"
+    "FTM-PUMP": {
+        "farmSymbol": "PUMP",
+        "networkSymbol": "FTM",
+        "constants": {
+            "name": "PumpkinDAO",
+            "symbol": "PUMP",
+            "date": "Nov-04-2021 06:38:10 AM",
+            "link": "https://app.pumpkindao.com/#/stake",
+            "token": "0x8eDDA0107D661E82df660DBa01Ff1D40FA17B70c",
+            "stakingSymbol": "KIN",
+            "stakingToken": "0x05A54D71e0c9F4bd0bF2CAF47344e6393DA66701",
+            "stakingContract": "0x5d189D8224a9aFBc3eC69bedBe2f6dd89B937E73",
+            "LPContract": "0xdf42866dc8fa6a962124b5d9eb8c91fa447f4feb",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x0DEA39519cb8c7c549e321d3020E96f91Ed36Ed3",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xa75e675B31fd279f80646D151BC95b94dEcaf26E",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0x0a7C6339345a22FD0193Bd6E3b0DE62c73B33fFB",
+                    "symbol": "PUMP-DAI"
+                },
+                {
+                    "address": "0x5d5d07c0d9c4af80e40fc779b12e8b696197fd31",
+                    "symbol": "wFTM"
+                },
+                {
+                    "address": "0xb75aac5b0061d9395e4b005a4417b21b32055158",
+                    "symbol": "PUMP-wFTM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+                        "decimals": 18
+                    },
+                    "symbol": "WFTM",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xe120ffBDA0d14f3Bb6d6053E90E63c572A66a428"
+                },
+                {
+                    "symbol": "DAI-PUMP",
+                    "token0": {
+                        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x8eDDA0107D661E82df660DBa01Ff1D40FA17B70c",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0xdf42866DC8fA6a962124B5d9Eb8c91Fa447F4FEB",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "WFTM-PUMP",
+                    "token0": {
+                        "address": "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x8eDDA0107D661E82df660DBa01Ff1D40FA17B70c",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x01e7f6506Bc3661Dc690A0A076aCe9D3D0253D92",
+                    "stable": false,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x8280bf271e0fbcde4bAC7aa65e57a10fc3DfadCB"
         }
-      ]
     }
-  }
 }

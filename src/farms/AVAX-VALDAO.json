@@ -1,32 +1,63 @@
 {
-  "AVAX-VALDAO": {
-    "farmSymbol": "VALDAO",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "Valhalla DAO",
-      "symbol": "VALDAO",
-      "timeTemplate": true,
-      "date": "Dec-15-2021 10:51:22 AM",
-      "link": "https://valhalladao.app/#/stake",
-      "token": "0x84506992349429dac867b2168843ffca263af6e8",
-      "stakingSymbol": "sVALDAO",
-      "stakingToken": "0xa83b197ba1fb81a4b5da90c87fc3040e4d49eed1",
-      "stakingContract": "0xfe036c9a04153e60e972c6f46a141fb2e6a6ce48",
-      "LPContract": "0x34BFDf840a57f81F8b36a683fa6124d52E104C53",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xeCD81Dfc5a86DD7fFbbe50B8F4aD219950700AA4",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "wsVALDAO",
-      "bondingContracts": [
-        {
-          "address": "0x603fa1d56afb5b07e5b5708256bd0b6f53b0179f",
-          "symbol": "VALDAO-MIM"
-        },
-        {
-          "address": "0xd65e7d7bc57b544e6f5541d99ee23aea7990ec9f",
-          "symbol": "MIM"
+    "AVAX-VALDAO": {
+        "farmSymbol": "VALDAO",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Valhalla DAO",
+            "symbol": "VALDAO",
+            "timeTemplate": true,
+            "date": "Dec-15-2021 10:51:22 AM",
+            "link": "https://valhalladao.app/#/stake",
+            "token": "0x84506992349429dac867b2168843ffca263af6e8",
+            "stakingSymbol": "sVALDAO",
+            "stakingToken": "0xa83b197ba1fb81a4b5da90c87fc3040e4d49eed1",
+            "stakingContract": "0xfe036c9a04153e60e972c6f46a141fb2e6a6ce48",
+            "LPContract": "0x34BFDf840a57f81F8b36a683fa6124d52E104C53",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xeCD81Dfc5a86DD7fFbbe50B8F4aD219950700AA4",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "wsVALDAO",
+            "bondingContracts": [
+                {
+                    "address": "0x603fa1d56afb5b07e5b5708256bd0b6f53b0179f",
+                    "symbol": "VALDAO-MIM"
+                },
+                {
+                    "address": "0xd65e7d7bc57b544e6f5541d99ee23aea7990ec9f",
+                    "symbol": "MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MIM-VALDAO",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x84506992349429DaC867B2168843FfcA263af6E8",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x34BFDf840a57f81F8b36a683fa6124d52E104C53",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0xe7Edb791ca767e0D8b6e2b222275Cb6F45fbF737"
         }
-      ]
     }
-  }
 }

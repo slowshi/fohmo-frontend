@@ -1,43 +1,87 @@
 {
-  "AVAX-PARR": {
-    "farmSymbol": "PARR",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "ParrotDAO",
-      "symbol": "PARR",
-      "timeTemplate": true,
-      "rugged": true,
-      "date": "Dec-17-2021 11:33:57 PM",
-      "link": "https://parrotdao.net/#/stake",
-      "token": "0xf10b5a72f0abeb27a5ddba950082e4edff4c825d",
-      "stakingSymbol": "sPARR",
-      "stakingToken": "0xdacc1d06f3b6686b633a06fe82e5a7ac434d54e6",
-      "indexRatio": 4.5,
-      "stakingContract": "0xF13D8833Edb1D692b0818896D56Ee1f2f63b72F1",
-      "LPContract": "0x29F9d7A515815377d850060996ab06C4202AB4FA",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xab5837daeb77f15b68fab4ffc549a2ac7ebf9d0c",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingCalculator": "",
-      "bondingContracts": [
-        {
-          "address": "0xca547441fbed28aee7aad030d0ea743a769b0674",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0xd1dbc1ff134ac420fcaa8b78de33dca285aa3d0c",
-          "symbol": "MIM (4,4)"
-        },
-        {
-          "address": "0xbbe4eba54583296f78f5c48a4e16205683329df2",
-          "symbol": "USDT (4,4)"
-        },
-        {
-          "address": "0xb4582e43f98991ba6ef03f6a9091f16e3a438c90",
-          "symbol": "MIM-PARR (4,4)"
+    "AVAX-PARR": {
+        "farmSymbol": "PARR",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "ParrotDAO",
+            "symbol": "PARR",
+            "timeTemplate": true,
+            "rugged": true,
+            "date": "Dec-17-2021 11:33:57 PM",
+            "link": "https://parrotdao.net/#/stake",
+            "token": "0xf10b5a72f0abeb27a5ddba950082e4edff4c825d",
+            "stakingSymbol": "sPARR",
+            "stakingToken": "0xdacc1d06f3b6686b633a06fe82e5a7ac434d54e6",
+            "indexRatio": 4.5,
+            "stakingContract": "0xF13D8833Edb1D692b0818896D56Ee1f2f63b72F1",
+            "LPContract": "0x29F9d7A515815377d850060996ab06C4202AB4FA",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xab5837daeb77f15b68fab4ffc549a2ac7ebf9d0c",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingCalculator": "0xa963d4dDb73B32678817401A36EfAC930BAc6117",
+            "bondingContracts": [
+                {
+                    "address": "0xca547441fbed28aee7aad030d0ea743a769b0674",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0xd1dbc1ff134ac420fcaa8b78de33dca285aa3d0c",
+                    "symbol": "MIM (4,4)"
+                },
+                {
+                    "address": "0xbbe4eba54583296f78f5c48a4e16205683329df2",
+                    "symbol": "USDT (4,4)"
+                },
+                {
+                    "address": "0xb4582e43f98991ba6ef03f6a9091f16e3a438c90",
+                    "symbol": "MIM-PARR (4,4)"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDT.e",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MIM-PARR",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xf10b5a72f0abeB27A5DdBa950082e4eDFF4c825d",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x29F9d7A515815377d850060996ab06C4202AB4FA",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

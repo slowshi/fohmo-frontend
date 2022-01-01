@@ -1,37 +1,82 @@
 {
-  "AVAX-VAL": {
-    "farmSymbol": "VAL",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "Vikings Finance",
-      "symbol": "VAL",
-      "timeTemplate": true,
-      "date": "Dec-02-2021 03:39:34 PM",
-      "link": "https://vikings.finance/#/stake",
-      "token": "0xE0474c15BC7f8213eE5bfB42f9E68B2d6BE2e136",
-      "stakingSymbol": "sVAL",
-      "stakingToken": "0x91d680545a1ff4411c1ff4c927f86cd34adb932a",
-      "stakingContract": "0x743de042c7be8c415effa75b960a2a7bb5fc0704",
-      "LPContract": "0x1e2d68196acf7eb9e345c531e476e726d60a5c4b",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x04b611a65a5cfefc1c449f725b1948eeaadeb231",
-      "wsOHMNetworks": [
-        {
-          "address": "0x18cc9d038c587e58b54f3da09b52e607a5ec3dc1",
-          "networkSymbol": "AVAX"
+    "AVAX-VAL": {
+        "farmSymbol": "VAL",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Vikings Finance",
+            "symbol": "VAL",
+            "timeTemplate": true,
+            "date": "Dec-02-2021 03:39:34 PM",
+            "link": "https://vikings.finance/#/stake",
+            "token": "0xE0474c15BC7f8213eE5bfB42f9E68B2d6BE2e136",
+            "stakingSymbol": "sVAL",
+            "stakingToken": "0x91d680545a1ff4411c1ff4c927f86cd34adb932a",
+            "stakingContract": "0x743de042c7be8c415effa75b960a2a7bb5fc0704",
+            "LPContract": "0x1e2d68196acf7eb9e345c531e476e726d60a5c4b",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x04b611a65a5cfefc1c449f725b1948eeaadeb231",
+            "wsOHMNetworks": [
+                {
+                    "address": "0x18cc9d038c587e58b54f3da09b52e607a5ec3dc1",
+                    "networkSymbol": "AVAX"
+                }
+            ],
+            "wsOHMSymbol": "wsVAL",
+            "bondingContracts": [
+                {
+                    "address": "0x46D81a637EA28134439B4922EC4A34660aec057d",
+                    "symbol": "VAL-MIM"
+                },
+                {
+                    "address": "0xbc5299aa63cf9ce9f30b7274845207668d4a1304",
+                    "symbol": "MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x5C8579733E62f6c85599a7bbBb6776e4C10B8BaE",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "fMIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MIM-VAL",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xE0474c15BC7f8213eE5bfB42f9E68B2d6BE2e136",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x1E2D68196AcF7EB9e345c531e476E726D60a5C4b",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x3450f7C977d426b61191026410e83C333BD108B0"
         }
-      ],
-      "wsOHMSymbol": "wsVAL",
-      "bondingContracts": [
-        {
-          "address": "0x46D81a637EA28134439B4922EC4A34660aec057d",
-          "symbol": "VAL-MIM"
-        },
-        {
-          "address": "0xbc5299aa63cf9ce9f30b7274845207668d4a1304",
-          "symbol": "MIM"
-        }
-      ]
     }
-  }
 }

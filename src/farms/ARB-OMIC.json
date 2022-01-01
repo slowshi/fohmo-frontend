@@ -1,33 +1,90 @@
 {
-  "ARB-OMIC": {
-    "farmSymbol": "OMIC",
-    "networkSymbol": "ARB",
-    "constants": {
-      "name": "Omicron",
-      "symbol": "OMIC",
-      "date": "Nov-30-2021 12:15:15 AM",
-      "link": "https://app.omic.finance/#/bonds",
-      "token": "0x86b3353387F560295a8Fa7902679735E5f076Bd5",
-      "stakingSymbol": "sOMIC",
-      "stakingToken": "0x391000047d120e1144f2c275f334979f38851a25",
-      "stakingContract": "0x51568924623E66110ffFAc620e948caD8555Ea98",
-      "LPContract": "0xe4ad045abb586dbdae6b11a4d2c6ff5434b93ed1",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x9EF8600b0f107c083F9df557e0Ddf12E071E75fe",
-      "bondingCalculator": null,
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x490b7e951692a1e81017d9cef82876d2894d7c49",
-          "symbol": "OMIC-MIM"
-        },
-
-        {
-          "address": "0xf4455aa7447bc4ac127e3593eaaefe109ede6f1a",
-          "symbol": "MIM"
+    "ARB-OMIC": {
+        "farmSymbol": "OMIC",
+        "networkSymbol": "ARB",
+        "constants": {
+            "name": "Omicron",
+            "symbol": "OMIC",
+            "date": "Nov-30-2021 12:15:15 AM",
+            "link": "https://app.omic.finance/#/bonds",
+            "token": "0x86b3353387F560295a8Fa7902679735E5f076Bd5",
+            "stakingSymbol": "sOMIC",
+            "stakingToken": "0x391000047d120e1144f2c275f334979f38851a25",
+            "stakingContract": "0x51568924623E66110ffFAc620e948caD8555Ea98",
+            "LPContract": "0xe4ad045abb586dbdae6b11a4d2c6ff5434b93ed1",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x9EF8600b0f107c083F9df557e0Ddf12E071E75fe",
+            "bondingCalculator": "0x503E3e606a7b27Cc840Ee63475E3d990e2790cBB",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x490b7e951692a1e81017d9cef82876d2894d7c49",
+                    "symbol": "OMIC-MIM"
+                },
+                {
+                    "address": "0xf4455aa7447bc4ac127e3593eaaefe109ede6f1a",
+                    "symbol": "MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xFEa7a6a0B346362BF88A9e4A88416B77a57D6c2A",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "OMIC-USDC",
+                    "token0": {
+                        "address": "0x86b3353387F560295a8Fa7902679735E5f076Bd5",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+                        "decimals": 6
+                    },
+                    "LPAddress": "0xe4aD045aBB586dbDaE6b11A4d2c6FF5434B93Ed1",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "OMIC-MIM",
+                    "token0": {
+                        "address": "0x86b3353387F560295a8Fa7902679735E5f076Bd5",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xFEa7a6a0B346362BF88A9e4A88416B77a57D6c2A",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xCF4f4f341b60587513b8fc01482237996C7E3Fd3",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

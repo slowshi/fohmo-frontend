@@ -1,61 +1,176 @@
 {
-  "ONE-WAGMI": {
-    "farmSymbol": "WAGMI",
-    "networkSymbol": "ONE",
-    "constants": {
-      "name": "Euphoria",
-      "symbol": "WAGMI",
-      "timeTemplate": true,
-      "date": "Nov-07-2021 12:20:00 AM",
-      "link": "https://app.euphoria.money/#/stake",
-      "token": "0x0dc78c79B4eB080eaD5C1d16559225a46b580694",
-      "stakingSymbol": "sWAGMI",
-      "stakingToken": "0xF38593388079F7f5130d605E38aBF6090D981eC2",
-      "stakingContract": "0x95066025af40F7f7832f61422802cD1e13C23753",
-      "LPContract": "0xb8f4c06dd0c2f9eb5e67b4faa2d56ff3543d6765",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x1A9Be7D6f94D3Ba8c37568E08D8D8780AAD128E6",
-      "wsOHMNetworks": [
-        {
-          "address": "0xbb948620fa9cd554ef9a331b13edea9b181f9d45",
-          "networkSymbol": "ONE"
+    "ONE-WAGMI": {
+        "farmSymbol": "WAGMI",
+        "networkSymbol": "ONE",
+        "constants": {
+            "name": "Euphoria",
+            "symbol": "WAGMI",
+            "timeTemplate": true,
+            "date": "Nov-07-2021 12:20:00 AM",
+            "link": "https://app.euphoria.money/#/stake",
+            "token": "0x0dc78c79B4eB080eaD5C1d16559225a46b580694",
+            "stakingSymbol": "sWAGMI",
+            "stakingToken": "0xF38593388079F7f5130d605E38aBF6090D981eC2",
+            "stakingContract": "0x95066025af40F7f7832f61422802cD1e13C23753",
+            "LPContract": "0xb8f4c06dd0c2f9eb5e67b4faa2d56ff3543d6765",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x1A9Be7D6f94D3Ba8c37568E08D8D8780AAD128E6",
+            "wsOHMNetworks": [
+                {
+                    "address": "0xbb948620fa9cd554ef9a331b13edea9b181f9d45",
+                    "networkSymbol": "ONE"
+                }
+            ],
+            "wsOHMSymbol": "wsWAGMI",
+            "bondingContracts": [
+                {
+                    "address": "0x1153b233076ee226a1b43f56a9ed55293a6833ee",
+                    "symbol": "wONE"
+                },
+                {
+                    "address": "0xa2473b5B85a9EBEc65679d279979222f28cd9467",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0xECDB54197b7A7F62a8fa3A04850347C4C99Ab7e1",
+                    "symbol": "WAGMI-DAI"
+                },
+                {
+                    "address": "0xF43911c859532E38c969ee1b59Eeca3De5630Fe3",
+                    "symbol": "UST"
+                },
+                {
+                    "address": "0x17ADf3fC3319AfC79BF7D7dD49c34E59A30D410f",
+                    "symbol": "WAGMI-UST"
+                },
+                {
+                    "address": "0x5fa3eC803Ed6EeE64A52C101F4FA96dd1B093ac7",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0x202c598E93F69dbe3a5e5706DfB85bdc598bb16F",
+                    "symbol": "USDC"
+                },
+                {
+                    "address": "0x88eD43604976a65F88EE5be38FC743F7b955AB1e",
+                    "symbol": "WAGMI-ONE"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xEf977d2f931C1978Db5F6747666fa1eACB0d0339",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "1DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x224e64ec1BDce3870a6a6c777eDd450454068FEC",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "UST",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xE176EBE47d621b984a73036B9DA5d834411ef734",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x985458E523dB3d53125813eD68c274899e9DfAb4",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "1USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xef977d2f931c1978db5f6747666fa1eacb0d0339",
+                        "decimals": 18
+                    },
+                    "symbol": "WONE",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x194f4a320cbda15a0910d1AE20E0049Cdc50916e"
+                },
+                {
+                    "symbol": "WAGMI-1DAI",
+                    "token0": {
+                        "address": "0x0dc78c79B4eB080eaD5C1d16559225a46b580694",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xEf977d2f931C1978Db5F6747666fa1eACB0d0339",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xb8F4c06dD0C2f9eb5e67B4FAA2d56Ff3543d6765",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "WAGMI-UST",
+                    "token0": {
+                        "address": "0x0dc78c79B4eB080eaD5C1d16559225a46b580694",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x224e64ec1BDce3870a6a6c777eDd450454068FEC",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xd7E332b4C9f97eA6D05Db8C38F133307ad8847F3",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "WAGMI-WONE",
+                    "token0": {
+                        "address": "0x0dc78c79B4eB080eaD5C1d16559225a46b580694",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x29C1e9fc7a4C19C8FCAf2d2b2De213EF0F323f0C",
+                    "stable": false,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x6aA8444F72c7a3C5c23068A1598481e84dc722e3"
         }
-      ],
-      "wsOHMSymbol": "wsWAGMI",
-      "bondingContracts": [
-        {
-          "address": "0x1153b233076ee226a1b43f56a9ed55293a6833ee",
-          "symbol": "wONE"
-        },
-        {
-          "address": "0xa2473b5B85a9EBEc65679d279979222f28cd9467",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0xECDB54197b7A7F62a8fa3A04850347C4C99Ab7e1",
-          "symbol": "WAGMI-DAI"
-        },
-        {
-          "address": "0xF43911c859532E38c969ee1b59Eeca3De5630Fe3",
-          "symbol": "UST"
-        },
-        {
-          "address": "0x17ADf3fC3319AfC79BF7D7dD49c34E59A30D410f",
-          "symbol": "WAGMI-UST"
-        },
-        {
-          "address": "0x5fa3eC803Ed6EeE64A52C101F4FA96dd1B093ac7",
-          "symbol": "BUSD"
-        },
-        {
-          "address": "0x202c598E93F69dbe3a5e5706DfB85bdc598bb16F",
-          "symbol": "USDC"
-        },
-        {
-          "address": "0x88eD43604976a65F88EE5be38FC743F7b955AB1e",
-          "symbol": "WAGMI-ONE"
-        }
-      ]
     }
-  }
 }

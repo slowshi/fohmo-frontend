@@ -1,39 +1,84 @@
 {
-  "ONE-CHEEZ": {
-    "farmSymbol": "CHEEZ",
-    "networkSymbol": "ONE",
-    "constants": {
-      "name": "CheeseDAO",
-      "symbol": "CHEEZ",
-      "date": "Dec-08-2021 12:00:00 AM",
-      "link": "https://www.cheesedao.xyz/#/ageing",
-      "token": "0xBbD83eF0c9D347C85e60F1b5D2c58796dBE1bA0d",
-      "stakingSymbol": "sCHEEZ",
-      "stakingToken": "0x6C68A2dfEc9fA85Deb2c6e40c73c6760504dbcEC",
-      "stakingContract": "0x72Be77E232Dd13E6aE06088696B83256892c2933",
-      "LPContract": "0x82723f6c0b32f28ddc2006b9cdbca6cee0ad957a",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xf8c08c5aD8270424Ad914d379e85aC03a44fF996",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x7b8EC969c8AA8D61bF4AE4eB7bd5cca4a704dB27",
-          "symbol": "CHEEZ-DAI"
-        },
-        {
-          "address": "0x579c91C6FBf8f674a1A9b5fAaD8F130e2F051869",
-          "symbol": "CHEEZ-DAI"
-        },
-        {
-          "address": "0x67D82c7070c4EB14E149C30467f96B686F055Aa8",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0xf7fC4a9f9FF40254E4E6629571C41916DFe4396B",
-          "symbol": "FRAX"
+    "ONE-CHEEZ": {
+        "farmSymbol": "CHEEZ",
+        "networkSymbol": "ONE",
+        "constants": {
+            "name": "CheeseDAO",
+            "symbol": "CHEEZ",
+            "date": "Dec-08-2021 12:00:00 AM",
+            "link": "https://www.cheesedao.xyz/#/ageing",
+            "token": "0xBbD83eF0c9D347C85e60F1b5D2c58796dBE1bA0d",
+            "stakingSymbol": "sCHEEZ",
+            "stakingToken": "0x6C68A2dfEc9fA85Deb2c6e40c73c6760504dbcEC",
+            "stakingContract": "0x72Be77E232Dd13E6aE06088696B83256892c2933",
+            "LPContract": "0x82723f6c0b32f28ddc2006b9cdbca6cee0ad957a",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xf8c08c5aD8270424Ad914d379e85aC03a44fF996",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x7b8EC969c8AA8D61bF4AE4eB7bd5cca4a704dB27",
+                    "symbol": "CHEEZ-DAI"
+                },
+                {
+                    "address": "0x579c91C6FBf8f674a1A9b5fAaD8F130e2F051869",
+                    "symbol": "CHEEZ-DAI"
+                },
+                {
+                    "address": "0x67D82c7070c4EB14E149C30467f96B686F055Aa8",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0xf7fC4a9f9FF40254E4E6629571C41916DFe4396B",
+                    "symbol": "FRAX"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xEf977d2f931C1978Db5F6747666fa1eACB0d0339",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "1DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xeB6C08ccB4421b6088e581ce04fcFBed15893aC3",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "1FRAX",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "CHEEZ-1DAI",
+                    "token0": {
+                        "address": "0xBbD83eF0c9D347C85e60F1b5D2c58796dBE1bA0d",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xEf977d2f931C1978Db5F6747666fa1eACB0d0339",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x82723f6c0b32F28ddc2006b9cdBCa6cEE0ad957a",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0xA5eC40A632df14b9810e98583bCEc137A69a3699"
         }
-      ]
     }
-  }
 }

@@ -1,34 +1,106 @@
 {
-  "ARB-UMAMI": {
-    "farmSymbol": "UMAMI",
-    "networkSymbol": "ARB",
-    "constants": {
-      "name": "Umami",
-      "symbol": "UMAMI",
-      "timeTemplate": true,
-      "date": "Nov-29-2021 09:16:49 PM",
-      "link": "https://app.umami.finance/#/stake",
-      "token": "0x1622bF67e6e5747b81866fE0b85178a93C7F86e3",
-      "stakingSymbol": "sUMAMI",
-      "stakingToken": "0xe6d557d416ff5640235119369c7e26AA18a906D7",
-      "indexRatio": 4.5,
-      "stakingContract": "0xc9ecFeF2fac1E38b951B8C5f59294a8366Dfbd81",
-      "LPContract": "0xce502ee9bf3ef41508a8a4a38fcf02585fcbfdf0",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xE8E6a534146EFdCAdB64C4ce78600E5C9e71fc97",
-      "bondingCalculator": "0xe0d0e232c09de67a3D74DA1284DC5e72Fc79D808",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xb20543f26f598f094c9147c4c331bb36d411ccbf",
-          "symbol": "gOHM"
-        },
-        {
-          "address": "0x457c4e6b4bcaaa06245b5b34080ba9578e7fcafa",
-          "symbol": "UMAMI-MIM"
+    "ARB-UMAMI": {
+        "farmSymbol": "UMAMI",
+        "networkSymbol": "ARB",
+        "constants": {
+            "name": "Umami",
+            "symbol": "UMAMI",
+            "timeTemplate": true,
+            "date": "Nov-29-2021 09:16:49 PM",
+            "link": "https://app.umami.finance/#/stake",
+            "token": "0x1622bF67e6e5747b81866fE0b85178a93C7F86e3",
+            "stakingSymbol": "sUMAMI",
+            "stakingToken": "0xe6d557d416ff5640235119369c7e26AA18a906D7",
+            "indexRatio": 4.5,
+            "stakingContract": "0xc9ecFeF2fac1E38b951B8C5f59294a8366Dfbd81",
+            "LPContract": "0xce502ee9bf3ef41508a8a4a38fcf02585fcbfdf0",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xE8E6a534146EFdCAdB64C4ce78600E5C9e71fc97",
+            "bondingCalculator": "0xe0d0e232c09de67a3D74DA1284DC5e72Fc79D808",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xb20543f26f598f094c9147c4c331bb36d411ccbf",
+                    "symbol": "gOHM"
+                },
+                {
+                    "address": "0x457c4e6b4bcaaa06245b5b34080ba9578e7fcafa",
+                    "symbol": "UMAMI-MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x8D9bA570D6cb60C7e3e0F31343Efe75AB8E65FB1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+                        "decimals": 6
+                    },
+                    "symbol": "gOHM",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                },
+                {
+                    "token0": {
+                        "address": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
+                        "decimals": 8
+                    },
+                    "token1": {
+                        "address": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+                        "decimals": 6
+                    },
+                    "symbol": "WBTC",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xbdEE369abf5C3dfFF5DC65841e939747BA706a5d"
+                },
+                {
+                    "token0": {
+                        "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+                        "decimals": 6
+                    },
+                    "symbol": "WETH",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xCB0E5bFa72bBb4d16AB5aA0c60601c438F04b4ad"
+                },
+                {
+                    "token0": {
+                        "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "FRAX",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "UMAMI-MIM",
+                    "token0": {
+                        "address": "0x1622bF67e6e5747b81866fE0b85178a93C7F86e3",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xFEa7a6a0B346362BF88A9e4A88416B77a57D6c2A",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xcE502EE9bf3eF41508A8a4A38fcF02585FcbFDf0",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }

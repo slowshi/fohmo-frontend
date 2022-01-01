@@ -1,35 +1,66 @@
 {
-  "FTM-VOLT": {
-    "farmSymbol": "VOLT",
-    "networkSymbol": "FTM",
-    "constants": {
-      "name": "VOLTA",
-      "symbol": "VOLT",
-      "date": "Dec-07-2021 02:19:09 PM",
-      "link": "https://app.voltadao.finance/#/stake",
-      "token": "0xae280713f30942c5956eb0da21f8fed0394af211",
-      "stakingSymbol": "VOLTs",
-      "stakingToken": "0xbece17fe60ea0c583ac350a48b1634cc74640f25",
-      "stakingContract": "0xa51c8576c6c4af6a5edf1bf485284b63797fe409",
-      "LPContract": "0xb38058a9779db9adfed262768c5be493b7476dac",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xd55b096c7e268df9d7d335f00a2fcadf31774cb3",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xdabb1f4f38b8c98c36c689f11565a539435d54bc",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0x421409295e26a3c0a357e076e5b6dfaf8f3aac6f",
-          "symbol": "DAI-VOLT"
-        },
-        {
-          "address": "0xea8a38aa660e1b15215380207a229dc2eca8c362",
-          "symbol": "wFTM"
+    "FTM-VOLT": {
+        "farmSymbol": "VOLT",
+        "networkSymbol": "FTM",
+        "constants": {
+            "name": "VOLTA",
+            "symbol": "VOLT",
+            "date": "Dec-07-2021 02:19:09 PM",
+            "link": "https://app.voltadao.finance/#/stake",
+            "token": "0xae280713f30942c5956eb0da21f8fed0394af211",
+            "stakingSymbol": "VOLTs",
+            "stakingToken": "0xbece17fe60ea0c583ac350a48b1634cc74640f25",
+            "stakingContract": "0xa51c8576c6c4af6a5edf1bf485284b63797fe409",
+            "LPContract": "0xb38058a9779db9adfed262768c5be493b7476dac",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xd55b096c7e268df9d7d335f00a2fcadf31774cb3",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xdabb1f4f38b8c98c36c689f11565a539435d54bc",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0x421409295e26a3c0a357e076e5b6dfaf8f3aac6f",
+                    "symbol": "DAI-VOLT"
+                },
+                {
+                    "address": "0xea8a38aa660e1b15215380207a229dc2eca8c362",
+                    "symbol": "wFTM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x7d84fBD519573A6A3657f84F2AC388037dED3c19",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAIt",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                }
+            ],
+            "bondingCalculator": ""
         }
-      ]
     }
-  }
 }

@@ -1,48 +1,106 @@
 {
-  "BSC-RA": {
-    "farmSymbol": "RA",
-    "networkSymbol": "BSC",
-    "constants": {
-      "rugged": true,
-      "name": "RADAO",
-      "symbol": "RA",
-      "link": "https://radao.finance/stake",
-      "token": "0xcc238200cFfdA7A5E2810086c26d5334e64F1155",
-      "stakingSymbol": "sRA",
-      "stakingToken": "0x06D4A49b0b235B3251Be6e1A668b5151c151B9fC",
-      "stakingContract": "0xf45aE86eD6C7d7A6b6C4640e04FEc228641D4C64",
-      "LPContract": "0xE8C6539663973E892C21652be80cdeE9a62e67BC",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x652A6F3459B276887bf2Fe9fb0FF810c9B24e1E3",
-      "bondingCalculator": "0xB8EC02832bDF94150d74832d6fe4eC7B39546b89",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0xc8034bA71935F8f5253298d24fc6D12b04D715b9",
-          "symbol": "RA-BUSD"
-        },
-        {
-          "address": "0x7eB67c27319a7DCC330fF78dd9d725fB9F0e1D41",
-          "symbol": "BUSD"
-        },
-        {
-          "address": "0x7d79fd5591dbe15427c00f3979c560176071e0d3",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0xcc6ea13ba8a8d3716bebaa6504b352d9b5c908be",
-          "symbol": "USDC"
-        },
-        {
-          "address": "0x2e3c55ae5d8d5a8d5333517085a4b458d4e1e3bd",
-          "symbol": "USDT"
-        },
-        {
-          "address": "0xd870ad3cafbdb2671ce035a928ef900b4328360d",
-          "symbol": "wBNB"
+    "BSC-RA": {
+        "farmSymbol": "RA",
+        "networkSymbol": "BSC",
+        "constants": {
+            "rugged": true,
+            "name": "RADAO",
+            "symbol": "RA",
+            "link": "https://radao.finance/stake",
+            "token": "0xcc238200cFfdA7A5E2810086c26d5334e64F1155",
+            "stakingSymbol": "sRA",
+            "stakingToken": "0x06D4A49b0b235B3251Be6e1A668b5151c151B9fC",
+            "stakingContract": "0xf45aE86eD6C7d7A6b6C4640e04FEc228641D4C64",
+            "LPContract": "0xE8C6539663973E892C21652be80cdeE9a62e67BC",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x652A6F3459B276887bf2Fe9fb0FF810c9B24e1E3",
+            "bondingCalculator": "",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xc8034bA71935F8f5253298d24fc6D12b04D715b9",
+                    "symbol": "RA-BUSD"
+                },
+                {
+                    "address": "0x7eB67c27319a7DCC330fF78dd9d725fB9F0e1D41",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0x7d79fd5591dbe15427c00f3979c560176071e0d3",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0xcc6ea13ba8a8d3716bebaa6504b352d9b5c908be",
+                    "symbol": "USDC"
+                },
+                {
+                    "address": "0x2e3c55ae5d8d5a8d5333517085a4b458d4e1e3bd",
+                    "symbol": "USDT"
+                },
+                {
+                    "address": "0xd870ad3cafbdb2671ce035a928ef900b4328360d",
+                    "symbol": "wBNB"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x55d398326f99059fF775485246999027B3197955",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDT",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xE79d0723201f83ED8297a4b910968993153D9e31",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "LA",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                }
+            ]
         }
-      ]
     }
-  }
 }

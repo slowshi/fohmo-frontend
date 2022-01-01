@@ -1,40 +1,85 @@
 {
-  "MATIC-KLIMA": {
-    "farmSymbol": "KLIMA",
-    "networkSymbol": "MATIC",
-    "constants": {
-      "name": "KLIMA",
-      "symbol": "KLIMA",
-      "date": "Oct-17-2021 09:55:50 PM",
-      "link": "https://dapp.klimadao.finance/#/stake",
-      "token": "0x4e78011Ce80ee02d2c3e649Fb657E45898257815",
-      "stakingSymbol": "sKLIMA",
-      "stakingToken": "0xb0C22d8D350C67420f06F48936654f567C73E8C8",
-      "stakingContract": "0x25d28a24Ceb6F81015bB0b2007D795ACAc411b4d",
-      "LPContract": "0x5786b267d35f9d011c4750e0b0ba584e1fdbead1",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x7Dd4f0B986F032A44F913BF92c9e8b7c17D77aD7",
-      "wsOHMNetworks": [
-        {
-          "address": "0x6f370dba99E32A3cAD959b341120DB3C9E280bA6",
-          "networkSymbol": "MATIC"
+    "MATIC-KLIMA": {
+        "farmSymbol": "KLIMA",
+        "networkSymbol": "MATIC",
+        "constants": {
+            "name": "KLIMA",
+            "symbol": "KLIMA",
+            "date": "Oct-17-2021 09:55:50 PM",
+            "link": "https://dapp.klimadao.finance/#/stake",
+            "token": "0x4e78011Ce80ee02d2c3e649Fb657E45898257815",
+            "stakingSymbol": "sKLIMA",
+            "stakingToken": "0xb0C22d8D350C67420f06F48936654f567C73E8C8",
+            "stakingContract": "0x25d28a24Ceb6F81015bB0b2007D795ACAc411b4d",
+            "LPContract": "0x5786b267d35f9d011c4750e0b0ba584e1fdbead1",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x7Dd4f0B986F032A44F913BF92c9e8b7c17D77aD7",
+            "wsOHMNetworks": [
+                {
+                    "address": "0x6f370dba99E32A3cAD959b341120DB3C9E280bA6",
+                    "networkSymbol": "MATIC"
+                }
+            ],
+            "wsOHMSymbol": "wsKLIMA",
+            "bondingContracts": [
+                {
+                    "address": "0x7De627C56D26529145a5f9D85948ecBeAF9a4b34",
+                    "symbol": "BCT"
+                },
+                {
+                    "address": "0x1E0Dd93C81aC7Af2974cdB326c85B87Dd879389B",
+                    "symbol": "KLIMA-BCT"
+                },
+                {
+                    "address": "0xBF2A35efcd85e790f02458Db4A3e2f29818521c5",
+                    "symbol": "BCT-USDC"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x2F800Db0fdb5223b3C3f354886d907A671414A7F",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                        "decimals": 6
+                    },
+                    "symbol": "BCT",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x1E67124681b402064CD0ABE8ed1B5c79D2e02f64"
+                },
+                {
+                    "symbol": "USDC-BCT",
+                    "token0": {
+                        "address": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "0x2F800Db0fdb5223b3C3f354886d907A671414A7F",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x1E67124681b402064CD0ABE8ed1B5c79D2e02f64",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "BCT-KLIMA",
+                    "token0": {
+                        "address": "0x2F800Db0fdb5223b3C3f354886d907A671414A7F",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x4e78011Ce80ee02d2c3e649Fb657E45898257815",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x9803c7aE526049210a1725F7487AF26fE2c24614",
+                    "stable": false,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x0b8d6D6611Ed7cCe01BbcC57826548C6107B0478"
         }
-      ],
-      "wsOHMSymbol": "wsKLIMA",
-      "bondingContracts": [
-        {
-          "address": "0x7De627C56D26529145a5f9D85948ecBeAF9a4b34",
-          "symbol": "BCT"
-        },
-        {
-          "address": "0x1E0Dd93C81aC7Af2974cdB326c85B87Dd879389B",
-          "symbol": "KLIMA-BCT"
-        },
-        {
-          "address": "0xBF2A35efcd85e790f02458Db4A3e2f29818521c5",
-          "symbol": "BCT-USDC"
-        }
-      ]
     }
-  }
 }

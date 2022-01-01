@@ -1,24 +1,82 @@
 {
-  "ETH-BTRFLY": {
-    "farmSymbol": "BTRFLY",
-    "networkSymbol": "ETH",
-    "constants": {
-      "name": "[REDACTED]",
-      "symbol": "BTRFLY",
-      "date": "Dec-17-2021 10:48:29 PM",
-      "link": "https://app.redactedcartel.xyz/stake",
-      "token": "0xc0d4ceb216b3ba9c3701b291766fdcba977cec3a",
-      "stakingSymbol": "xBTRFLY",
-      "stakingToken": "0xCC94Faf235cC5D3Bf4bEd3a30db5984306c86aBC",
-      "stakingContract": "0xBdE4Dfb0dbb0Dd8833eFb6C5BD0Ce048C852C487",
-      "LPContract": "0xe9AB8038Ee6Dd4fCC7612997FE28d4e22019C4B4",
-      "LPContractETH": "0x055475920a8c93cffb64d039a8205f7acc7722d3",
-      "lockedSupplyContract": null,
-      "wsOHMSymbol": "",
-      "wsOHMNetworks": [],
-      "treasuryContract": "0x086C98855dF3C78C6b481b6e1D47BeF42E9aC36B",
-      "bondingCalculator": "0xCA1d53E40eab232DEff03Dc824410100BcCCF2bC",
-      "bondingContracts": []
+    "ETH-BTRFLY": {
+        "farmSymbol": "BTRFLY",
+        "networkSymbol": "ETH",
+        "constants": {
+            "name": "[REDACTED]",
+            "symbol": "BTRFLY",
+            "date": "Dec-17-2021 10:48:29 PM",
+            "link": "https://app.redactedcartel.xyz/stake",
+            "token": "0xc0d4ceb216b3ba9c3701b291766fdcba977cec3a",
+            "stakingSymbol": "xBTRFLY",
+            "stakingToken": "0xCC94Faf235cC5D3Bf4bEd3a30db5984306c86aBC",
+            "stakingContract": "0xBdE4Dfb0dbb0Dd8833eFb6C5BD0Ce048C852C487",
+            "LPContract": "0xe9AB8038Ee6Dd4fCC7612997FE28d4e22019C4B4",
+            "LPContractETH": "0x055475920a8c93cffb64d039a8205f7acc7722d3",
+            "lockedSupplyContract": null,
+            "wsOHMSymbol": "",
+            "wsOHMNetworks": [],
+            "treasuryContract": "0x086C98855dF3C78C6b481b6e1D47BeF42E9aC36B",
+            "bondingCalculator": "0xa77b57445FA262CaE325DeD434Df89302c93f59A",
+            "bondingContracts": [],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x04906695D6D12CF5459975d7C3C03356E4Ccd460",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "decimals": 18
+                    },
+                    "symbol": "sOHM",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                },
+                {
+                    "token0": {
+                        "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "decimals": 18
+                    },
+                    "symbol": "CVX",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                },
+                {
+                    "token0": {
+                        "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "decimals": 18
+                    },
+                    "symbol": "CRV",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x747c9884d29474fe4334C477ebfd25f8a6f5B90D"
+                },
+                {
+                    "symbol": "OHM-BTRFLY",
+                    "token0": {
+                        "address": "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xC0d4Ceb216B3BA9C3701B291766fDCbA977ceC3A",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0xe9AB8038Ee6Dd4fCC7612997FE28d4e22019C4B4",
+                    "stable": false,
+                    "single": false
+                }
+            ]
+        }
     }
-  }
 }

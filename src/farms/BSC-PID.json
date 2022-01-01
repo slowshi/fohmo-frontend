@@ -1,43 +1,130 @@
 {
-  "BSC-PID": {
-    "farmSymbol": "PID",
-    "networkSymbol": "BSC",
-    "constants": {
-      "name": "PIDAO",
-      "symbol": "PID",
-      "date": "Nov-08-2021 08:07:53 AM",
-      "link": "https://www.pidao.finance/stake",
-      "token": "0x1215ed20aa507578ca352e195016f289e7a17f3a",
-      "stakingSymbol": "sPID",
-      "stakingToken": "0xF6E9FEdef7282C2Df6e805C22ce846eca84469e1",
-      "stakingContract": "0x22d1704817D42bdE262d778bFE097e287151371D",
-      "LPContract": "0x3991e0988A69E4C8Fde46C011Dafe55E26fdD18D",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x458B737d87C40252EC11b160C76bb1C53F248b28",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x5A772CA607d393f84985657536C712E702988fB5",
-          "symbol": "PID-BUSD"
-        },
-        {
-          "address": "0x65488Ec4cFB86b98EAeCb416Eea8131BED00f5F3",
-          "symbol": "PID-USDT"
-        },
-        {
-          "address": "0xF46764743fF3d9B29CD6Cdb1D692221e32ef42e5",
-          "symbol": "BUSD"
-        },
-        {
-          "address": "0x4F1771644ee94ED8aBBA521B68991828FD237cA7",
-          "symbol": "USDT"
-        },
-        {
-          "address": "0xE080905403F0e4332636F93F204256b989702e5E",
-          "symbol": "TUSD"
+    "BSC-PID": {
+        "farmSymbol": "PID",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "PIDAO",
+            "symbol": "PID",
+            "date": "Nov-08-2021 08:07:53 AM",
+            "link": "https://www.pidao.finance/stake",
+            "token": "0x1215ed20aa507578ca352e195016f289e7a17f3a",
+            "stakingSymbol": "sPID",
+            "stakingToken": "0xF6E9FEdef7282C2Df6e805C22ce846eca84469e1",
+            "stakingContract": "0x22d1704817D42bdE262d778bFE097e287151371D",
+            "LPContract": "0x3991e0988A69E4C8Fde46C011Dafe55E26fdD18D",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x458B737d87C40252EC11b160C76bb1C53F248b28",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x5A772CA607d393f84985657536C712E702988fB5",
+                    "symbol": "PID-BUSD"
+                },
+                {
+                    "address": "0x65488Ec4cFB86b98EAeCb416Eea8131BED00f5F3",
+                    "symbol": "PID-USDT"
+                },
+                {
+                    "address": "0xF46764743fF3d9B29CD6Cdb1D692221e32ef42e5",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0x4F1771644ee94ED8aBBA521B68991828FD237cA7",
+                    "symbol": "USDT"
+                },
+                {
+                    "address": "0xE080905403F0e4332636F93F204256b989702e5E",
+                    "symbol": "TUSD"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x55d398326f99059fF775485246999027B3197955",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDT",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x14016E85a25aeb13065688cAFB43044C2ef86784",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "TUSD",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x2E28b9B74D6d99D4697e913b82B41ef1CAC51c6C"
+                },
+                {
+                    "symbol": "PID-BUSD",
+                    "token0": {
+                        "address": "0x1215Ed20aa507578ca352E195016F289e7A17f3A",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x3991e0988A69E4C8Fde46C011Dafe55E26fdD18D",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "rUSD-PID",
+                    "token0": {
+                        "address": "0x07663837218A003e66310a01596af4bf4e44623D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x1215Ed20aa507578ca352E195016F289e7A17f3A",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0xC0d02c7Fc87e50A6580c4091D9D76BB7E38b05b8",
+                    "stable": false,
+                    "single": false
+                },
+                {
+                    "symbol": "PID-USDT",
+                    "token0": {
+                        "address": "0x1215Ed20aa507578ca352E195016F289e7A17f3A",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x55d398326f99059fF775485246999027B3197955",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x149a712378Aba63882C1D372739Eb47a6fD0e12e",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0xEfD242bcEe97F664ea2688Ea81E65a132f8Df205"
         }
-      ]
     }
-  }
 }

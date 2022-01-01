@@ -1,36 +1,81 @@
 {
-  "CRO-FORT": {
-    "farmSymbol": "FORT",
-    "networkSymbol": "CRO",
-    "constants": {
-      "name": "FortuneDAO",
-      "symbol": "FORT",
-      "date": "Nov-17-2021 09:03:39 AM",
-      "link": "https://www.fortunedao.com/#/stake",
-      "token": "0xcA558149225Fb386B9c26716e8C35a650C74d35e",
-      "stakingSymbol": "sFORT",
-      "stakingToken": "0x74bdCAF923e75856E3b9427EFaD4Ad0F3DfE7951",
-      "indexRatio": 16.1,
-      "stakingContract": "0xAFfB721B859db8300F7a13d8E80E7b74845Fe47a",
-      "LPContract": "0x88ef5a29eec8baaab8c1111a57ad2fcec8ad6109",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xC8F249cDCDCBBa52d0908Dd201F20Af926710a9c",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x0339eeeB0B321d6440aDc64888692Cc5A2dD7120",
-          "symbol": "DAI"
-        },
-        {
-          "address": "0x9227cb270f40968B1BC7F34b9eEe8C23C0b5655b",
-          "symbol": "FORT-DAI"
-        },
-        {
-          "address": "0xFDE8d34aF0A67D7DDb1AbE446936B4D759265042",
-          "symbol": "USDC"
+    "CRO-FORT": {
+        "farmSymbol": "FORT",
+        "networkSymbol": "CRO",
+        "constants": {
+            "name": "FortuneDAO",
+            "symbol": "FORT",
+            "date": "Nov-17-2021 09:03:39 AM",
+            "link": "https://www.fortunedao.com/#/stake",
+            "token": "0xcA558149225Fb386B9c26716e8C35a650C74d35e",
+            "stakingSymbol": "sFORT",
+            "stakingToken": "0x74bdCAF923e75856E3b9427EFaD4Ad0F3DfE7951",
+            "indexRatio": 16.1,
+            "stakingContract": "0xAFfB721B859db8300F7a13d8E80E7b74845Fe47a",
+            "LPContract": "0x88ef5a29eec8baaab8c1111a57ad2fcec8ad6109",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xC8F249cDCDCBBa52d0908Dd201F20Af926710a9c",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x0339eeeB0B321d6440aDc64888692Cc5A2dD7120",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0x9227cb270f40968B1BC7F34b9eEe8C23C0b5655b",
+                    "symbol": "FORT-DAI"
+                },
+                {
+                    "address": "0xFDE8d34aF0A67D7DDb1AbE446936B4D759265042",
+                    "symbol": "USDC"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xF2001B145b43032AAF5Ee2884e456CCd805F677D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xc21223249CA28397B4B6541dfFaEcC539BfF0c59",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "FORT-DAI",
+                    "token0": {
+                        "address": "0xcA558149225Fb386B9c26716e8C35a650C74d35e",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xF2001B145b43032AAF5Ee2884e456CCd805F677D",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x88ef5a29eEc8BAAAb8c1111A57Ad2FCeC8aD6109",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x7AA3fb0fA1737F516Fa507149716dfBBC66ad27C"
         }
-      ]
     }
-  }
 }

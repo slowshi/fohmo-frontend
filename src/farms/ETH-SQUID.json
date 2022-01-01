@@ -1,32 +1,63 @@
 {
-  "ETH-SQUID": {
-    "farmSymbol": "SQUID",
-    "networkSymbol": "ETH",
-    "constants": {
-      "name": "SquidDAO",
-      "symbol": "SQUID",
-      "date": "Oct-29-2021 12:00:06 PM",
-      "link": "https://squid.xyz/#/stake",
-      "token": "0x21ad647b8F4Fe333212e735bfC1F36B4941E6Ad2",
-      "stakingSymbol": "sSQUID",
-      "stakingToken": "0x9d49BfC921F36448234b0eFa67B5f91b3C691515",
-      "stakingContract": "0x5895B13Da9BEB11e36136817cdcf3c4fcb16aaeA",
-      "LPContract": "0xfad704847967d9067df7a60910399155fca43fe8",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x61d8a57b3919e9F4777C80b6CF1138962855d2Ca",
-      "LPContractETH": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x5Ab2493d75cbccD0762417839C83Ab6b567d2F71",
-          "symbol": "SQUID-wETH"
-        },
-        {
-          "address": "0xd9cf92F1e3758EdE8bb47e37CAc7927dFbd54c12",
-          "symbol": "wETH"
+    "ETH-SQUID": {
+        "farmSymbol": "SQUID",
+        "networkSymbol": "ETH",
+        "constants": {
+            "name": "SquidDAO",
+            "symbol": "SQUID",
+            "date": "Oct-29-2021 12:00:06 PM",
+            "link": "https://squid.xyz/#/stake",
+            "token": "0x21ad647b8F4Fe333212e735bfC1F36B4941E6Ad2",
+            "stakingSymbol": "sSQUID",
+            "stakingToken": "0x9d49BfC921F36448234b0eFa67B5f91b3C691515",
+            "stakingContract": "0x5895B13Da9BEB11e36136817cdcf3c4fcb16aaeA",
+            "LPContract": "0xfad704847967d9067df7a60910399155fca43fe8",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x61d8a57b3919e9F4777C80b6CF1138962855d2Ca",
+            "LPContractETH": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x5Ab2493d75cbccD0762417839C83Ab6b567d2F71",
+                    "symbol": "SQUID-wETH"
+                },
+                {
+                    "address": "0xd9cf92F1e3758EdE8bb47e37CAc7927dFbd54c12",
+                    "symbol": "wETH"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "decimals": 18
+                    },
+                    "symbol": "WETH",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xC3D03e4F041Fd4cD388c549Ee2A29a9E5075882f"
+                },
+                {
+                    "symbol": "SQUID-WETH",
+                    "token0": {
+                        "address": "0x21ad647b8F4Fe333212e735bfC1F36B4941E6Ad2",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xFad704847967d9067dF7A60910399155fca43Fe8",
+                    "stable": false,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x9c7A74a78880B1Dd9793EDbE62fd409EEf2062D1"
         }
-      ]
     }
-  }
 }

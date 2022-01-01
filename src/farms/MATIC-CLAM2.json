@@ -1,53 +1,140 @@
 {
-  "MATIC-CLAM2": {
-    "farmSymbol": "CLAM2",
-    "networkSymbol": "MATIC",
-    "constants": {
-      "name": "OtterClam V2",
-      "symbol": "CLAM2",
-      "date": "Oct-29-2021 07:56:47 PM",
-      "link": "https://app.otterclam.finance/#/stake",
-      "token": "0xC250e9987A032ACAC293d838726C511E6E1C029d",
-      "stakingSymbol": "sCLAM2",
-      "stakingToken": "0xAAc144Dc08cE39Ed92182dd85ded60E5000C9e67",
-      "stakingContract": "0xC8B0243F350AA5F8B979b228fAe522DAFC61221a",
-      "LPContract": "0x1f847e05afaf47ec54626928d0e6c235663e938f",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0x8ce47D56EAa1299d3e06FF3E04637449fFb01C9C",
-      "wsOHMNetworks": [
-        {
-          "address": "0x52a7f40bb6e9bd9183071cdbdd3a977d713f2e34",
-          "networkSymbol": "MATIC"
+    "MATIC-CLAM2": {
+        "farmSymbol": "CLAM2",
+        "networkSymbol": "MATIC",
+        "constants": {
+            "name": "OtterClam V2",
+            "symbol": "CLAM2",
+            "date": "Oct-29-2021 07:56:47 PM",
+            "link": "https://app.otterclam.finance/#/stake",
+            "token": "0xC250e9987A032ACAC293d838726C511E6E1C029d",
+            "stakingSymbol": "sCLAM2",
+            "stakingToken": "0xAAc144Dc08cE39Ed92182dd85ded60E5000C9e67",
+            "stakingContract": "0xC8B0243F350AA5F8B979b228fAe522DAFC61221a",
+            "LPContract": "0x1f847e05afaf47ec54626928d0e6c235663e938f",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x8ce47D56EAa1299d3e06FF3E04637449fFb01C9C",
+            "wsOHMNetworks": [
+                {
+                    "address": "0x52a7f40bb6e9bd9183071cdbdd3a977d713f2e34",
+                    "networkSymbol": "MATIC"
+                }
+            ],
+            "wsOHMSymbol": "PEARL",
+            "isWarmup": true,
+            "bondingContracts": [
+                {
+                    "address": "0x5fa0fbdb07fe9647b43426dcc79da984f0327e4a",
+                    "symbol": "FRAX (4,4)"
+                },
+                {
+                    "address": "0xd99c8af24c5e7fd6e292b1682ec0f0cb3535e002",
+                    "symbol": "FRAX-CLAM2 (4,4)"
+                },
+                {
+                    "address": "0x779cb532e289cbaa3d0692ae989c63c2b4fbd4d0",
+                    "symbol": "MAI (4,4)"
+                },
+                {
+                    "address": "0xda0d7c3d751d00a1ec1c495eF7Cf3db1a202B0B9",
+                    "symbol": "MAI-CLAM2 (4,4)"
+                },
+                {
+                    "address": "0x1dac605bdd4e8f3ab23da9b360e672f4e973a196",
+                    "symbol": "wMATIC-CLAM2 (4,4)"
+                },
+                {
+                    "address": "0xf57fb38f57d2a4fca0ee074a3f3b4e5c570959e4",
+                    "symbol": "wMATIC (4,4)"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xa3Fa99A148fA48D14Ed51d610c367C61876997F1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "miMATIC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "FRAX",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                        "decimals": 6
+                    },
+                    "symbol": "WMATIC",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xcd353F79d9FADe311fC3119B841e1f456b54e858"
+                },
+                {
+                    "symbol": "miMATIC-CLAM",
+                    "token0": {
+                        "address": "0xa3Fa99A148fA48D14Ed51d610c367C61876997F1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xC250e9987A032ACAC293d838726C511E6E1C029d",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x1581802317f32A2665005109444233ca6E3e2D68",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "FRAX-CLAM",
+                    "token0": {
+                        "address": "0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xC250e9987A032ACAC293d838726C511E6E1C029d",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x1F847e05afAF47ec54626928D0e6c235663E938F",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "WMATIC-CLAM",
+                    "token0": {
+                        "address": "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xC250e9987A032ACAC293d838726C511E6E1C029d",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x3fCc446c70489610462BE9d61528C51151aCA49f",
+                    "stable": false,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x651125e097D7e691f3Df5F9e5224f0181E3A4a0E"
         }
-      ],
-      "wsOHMSymbol": "PEARL",
-      "isWarmup": true,
-      "bondingContracts": [
-        {
-          "address": "0x5fa0fbdb07fe9647b43426dcc79da984f0327e4a",
-          "symbol": "FRAX (4,4)"
-        },
-        {
-          "address": "0xd99c8af24c5e7fd6e292b1682ec0f0cb3535e002",
-          "symbol": "FRAX-CLAM2 (4,4)"
-        },
-        {
-          "address": "0x779cb532e289cbaa3d0692ae989c63c2b4fbd4d0",
-          "symbol": "MAI (4,4)"
-        },
-        {
-          "address": "0xda0d7c3d751d00a1ec1c495eF7Cf3db1a202B0B9",
-          "symbol": "MAI-CLAM2 (4,4)"
-        },
-        {
-          "address": "0x1dac605bdd4e8f3ab23da9b360e672f4e973a196",
-          "symbol": "wMATIC-CLAM2 (4,4)"
-        },
-        {
-          "address": "0xf57fb38f57d2a4fca0ee074a3f3b4e5c570959e4",
-          "symbol": "wMATIC (4,4)"
-        }
-      ]
     }
-  }
 }

@@ -1,37 +1,81 @@
 {
-  "AVAX-SPACE": {
-    "farmSymbol": "SPACE",
-    "networkSymbol": "AVAX",
-    "constants": {
-      "name": "Vortex",
-      "symbol": "SPACE",
-      "timeTemplate": true,
-      "date": "Dec-15-2021 05:43:22 AM",
-      "link": "https://vortexdao.com/#/stake",
-      "token": "0x353af195c0d82820c59427bfbd318a49971aae1a",
-      "stakingSymbol": "sSPACE",
-      "stakingToken": "0xd9e1f77a52393a488545fb0ba69a128ffa90fb27",
-      "stakingContract": "0x073d3f4ed6cb32bd7f6f7b6da4c25672ee76c95b",
-      "LPContract": "0x5087706dd31962938c57a0fb3a3107ed3794c996",
-      "lockedSupplyContract": null,
-      "treasuryContract": "0xE05CEc7Ed93C2d3E106Df88B8d7B963Ce3618f46",
-      "bondingCalculator": null,
-      "wsOHMNetworks": [],
-      "wsOHMSymbol": "",
-      "bondingContracts": [
-        {
-          "address": "0x7a04fc0ce36e3f897ce11492bd6b117ba82a0ccb",
-          "symbol": "MIM"
-        },
-        {
-          "address": "0x390b4bcc52f2ed283d5828e69cf84910b479dfc6",
-          "symbol": "SPACE-MIM"
-        },
-        {
-          "address": "0x71594df529db52875a03e500131c6bf06bf2fd60",
-          "symbol": "AVAI"
+    "AVAX-SPACE": {
+        "farmSymbol": "SPACE",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Vortex",
+            "symbol": "SPACE",
+            "timeTemplate": true,
+            "date": "Dec-15-2021 05:43:22 AM",
+            "link": "https://vortexdao.com/#/stake",
+            "token": "0x353af195c0d82820c59427bfbd318a49971aae1a",
+            "stakingSymbol": "sSPACE",
+            "stakingToken": "0xd9e1f77a52393a488545fb0ba69a128ffa90fb27",
+            "stakingContract": "0x073d3f4ed6cb32bd7f6f7b6da4c25672ee76c95b",
+            "LPContract": "0x5087706dd31962938c57a0fb3a3107ed3794c996",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xE05CEc7Ed93C2d3E106Df88B8d7B963Ce3618f46",
+            "bondingCalculator": "0x006178A760Bad4508160a3DB7B346c59AE91BE40",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x7a04fc0ce36e3f897ce11492bd6b117ba82a0ccb",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x390b4bcc52f2ed283d5828e69cf84910b479dfc6",
+                    "symbol": "SPACE-MIM"
+                },
+                {
+                    "address": "0x71594df529db52875a03e500131c6bf06bf2fd60",
+                    "symbol": "AVAI"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x346A59146b9b4a77100D369a3d18E8007A9F46a6",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "AVAI",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                },
+                {
+                    "symbol": "MIM-SPACE",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x353af195c0d82820c59427BFbD318A49971AAe1a",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x5087706DD31962938c57a0fB3A3107ed3794c996",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
-      ]
     }
-  }
 }
