@@ -15,6 +15,16 @@
             "LPContract": "0x5087706dd31962938c57a0fb3a3107ed3794c996",
             "lockedSupplyContract": null,
             "treasuryContract": "0xE05CEc7Ed93C2d3E106Df88B8d7B963Ce3618f46",
+            "gnosisSafe": [
+                {
+                    "address": "0x78a9e536EBdA08b5b9EDbE5785C9D1D50fA3278C",
+                    "networkSymbol": "AVAX"
+                },
+                {
+                    "address": "0x355d72fb52ad4591b2066e43e89a7a38cf5cb341",
+                    "networkSymbol": "ETH"
+                }
+            ],
             "bondingCalculator": "0x006178A760Bad4508160a3DB7B346c59AE91BE40",
             "wsOHMNetworks": [],
             "wsOHMSymbol": "",
@@ -53,13 +63,13 @@
                         "decimals": 18
                     },
                     "token1": {
-                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "address": "0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664",
                         "decimals": 6
                     },
                     "symbol": "AVAI",
                     "stable": false,
                     "single": true,
-                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                    "LPAddress": "0xeD7a2B4054757Cfdb632Af15Ad528624F0fFf3B0"
                 },
                 {
                     "symbol": "MIM-SPACE",

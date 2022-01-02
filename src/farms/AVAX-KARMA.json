@@ -1,0 +1,62 @@
+{
+    "AVAX-KARMA": {
+        "farmSymbol": "KARMA",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "KARMA DAO",
+            "symbol": "KARMA",
+            "date": "Dec-30-2021 10:44:04 AM",
+            "link": "https://app.karmadao.money/#/stake",
+            "token": "0x5ccff6723f592c223e7b31c6872ba999a028653f",
+            "stakingSymbol": "sKARMA",
+            "stakingToken": "0x16fc835a39aa57509c026035b21ecd83e1a92a34",
+            "stakingContract": "0x4c9b7d49c86220a91c0c8756940c7c27583dc5eb",
+            "LPContract": "0x6db2bccd11bb8dc29b7598dcf0d3d63cfb52a572",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xaa50ba30c9548cb34941c140e9cce8cc55829a71",
+            "bondingCalculator": "0x0ace2aaa7dc7edf6fcd099e6b6018962304598dc",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x69337b56b05aba56ffa4af18b384adc32aa3c4bb",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0xef99453a8b3a81d7a031d6a3be02990a0bb1e0a4",
+                    "symbol": "KARMA-MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MIM-KARMA",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x5Ccff6723F592c223E7b31c6872Ba999A028653F",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x6DB2bCcd11bb8dC29B7598dcf0D3d63cfb52A572",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
+    }
+}

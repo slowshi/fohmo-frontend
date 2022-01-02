@@ -48,20 +48,6 @@
                     "LPAddress": ""
                 },
                 {
-                    "token0": {
-                        "address": "0x5C8579733E62f6c85599a7bbBb6776e4C10B8BaE",
-                        "decimals": 18
-                    },
-                    "token1": {
-                        "address": "",
-                        "decimals": ""
-                    },
-                    "symbol": "fMIM",
-                    "stable": true,
-                    "single": true,
-                    "LPAddress": ""
-                },
-                {
                     "symbol": "MIM-VAL",
                     "token0": {
                         "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",

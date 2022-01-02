@@ -700,19 +700,46 @@ class StakingInfo {
       );
       let stable = 0;
       let token = 0;
+      let adjustedPrice = 1;
+      if (typeof assetInfo.nonStableLP !== 'undefined') {
+        const nonStableLPContract = cacheEthers.contract(assetInfo.nonStableLP.address, PairContractAbi, rpcURL);
+        const stableKey = assetInfo.nonStableLP.stableKey;
+        const nonStableReserves = await cacheEthers.contractCall(
+          nonStableLPContract,
+          'getReserves',
+          [],
+          clearCache
+        );
+        let adjustedStable = 0;
+        let adjustedToken = 0;
+        if(stableKey === 'token1') {
+          adjustedStable = ethers.utils.formatUnits(nonStableReserves.reserve1,
+            assetInfo.nonStableLP.token1.decimals);
+          adjustedToken = ethers.utils.formatUnits(nonStableReserves.reserve0,
+            assetInfo.nonStableLP.token0.decimals);
+        } else {
+          adjustedStable = ethers.utils.formatUnits(nonStableReserves.reserve0,
+            assetInfo.nonStableLP.token0.decimals);
+          adjustedToken = ethers.utils.formatUnits(nonStableReserves.reserve1,
+            assetInfo.nonStableLP.token1.decimals);
+        }
+        adjustedPrice = adjustedStable / adjustedToken;
+      }
+
       if(token0.toLowerCase() === assetInfo.token0.address.toLowerCase()) {
         stable = ethers.utils.formatUnits(reserves.reserve1, assetInfo.token1.decimals);
         token = ethers.utils.formatUnits(reserves.reserve0, assetInfo.token0.decimals);
       } else {
-        stable = ethers.utils.formatUnits(reserves.reserve0, assetInfo.token0.decimals);
-        token = ethers.utils.formatUnits(reserves.reserve1, assetInfo.token1.decimals);
+        stable = ethers.utils.formatUnits(reserves.reserve0, assetInfo.token1.decimals);
+        token = ethers.utils.formatUnits(reserves.reserve1, assetInfo.token0.decimals);
       }
+
+      const price = stable / token * adjustedPrice;
       const balance = ethers.utils.formatUnits(balanceOf, assetInfo.token0.decimals);
-      const price = stable / token;
       return {
         symbol: assetInfo.symbol,
         singleStable: false,
-        value: +(balance * price)
+        value: +(balance * price) || 0
       };
     } else {
       //Token-NonStable
@@ -743,16 +770,51 @@ class StakingInfo {
         clearCache
       );
 
-      let reserve;
+      let reserve = 0;
       let tokenDecimals = 9;
+      let adjustedPrice = 1;
       const symbolParts = assetInfo.symbol.split('-');
       if(assetInfo.token0.address.toLowerCase() === tokenAddress.toLowerCase()) {
         reserve = tokenReserves.reserve0;
         tokenDecimals = assetInfo.token0.decimals;
-      } else {
+      } else if(assetInfo.token1.address.toLowerCase() === tokenAddress.toLowerCase()){
         reserve = tokenReserves.reserve1;
         tokenDecimals = assetInfo.token1.decimals;
+      } else if (typeof assetInfo.nonStableLP !== 'undefined') {
+        const nonStableLPContract = cacheEthers.contract(assetInfo.nonStableLP.address, PairContractAbi, rpcURL);
+        const stableKey = assetInfo.nonStableLP.stableKey;
+        // const nonStableReserves = await cacheEthers.contractCall(
+        //   nonStableLPContract,
+        //   'getReserves',
+        //   [],
+        //   clearCache
+        // );
+        // let adjustedStable = 0;
+        // let adjustedToken = 0;
+        let nonStableKey = 'token0';
+        if(stableKey === 'token1') {
+          // adjustedStable = ethers.utils.formatUnits(nonStableReserves.reserve1,
+          //   assetInfo.nonStableLP.token1.decimals);
+          // adjustedToken = ethers.utils.formatUnits(nonStableReserves.reserve0,
+          //   assetInfo.nonStableLP.token0.decimals);
+        } else {
+          nonStableKey = 'token1';
+          // adjustedStable = ethers.utils.formatUnits(nonStableReserves.reserve0,
+          //   assetInfo.nonStableLP.token0.decimals);
+          // adjustedToken = ethers.utils.formatUnits(nonStableReserves.reserve1,
+          //   assetInfo.nonStableLP.token1.decimals);
+        }
+        // adjustedPrice = adjustedStable / adjustedToken;
+        if(assetInfo.token0.address.toLowerCase() ===
+          assetInfo.nonStableLP[nonStableKey].address.toLowerCase()) {
+          reserve = tokenReserves.reserve0;
+          tokenDecimals = assetInfo.token0.decimals;
+        } else {
+          reserve = tokenReserves.reserve1;
+          tokenDecimals = assetInfo.token1.decimals;
+        }
       }
+
       const LPReserves = (ethers.utils.formatUnits(reserve, tokenDecimals) * 2);
       totalSupply = ethers.utils.formatUnits(totalSupply, 'ether');
       balanceOf = ethers.utils.formatUnits(balanceOf, 'ether');

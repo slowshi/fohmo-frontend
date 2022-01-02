@@ -15,8 +15,8 @@
             "LPContract": "0x918028f9bb2c7a707e2f194a82000923dd7338f3",
             "LPContractETH": "0xaa92c71bb5ecb6a7311e4239b93ad8ae173e0c05",
             "lockedSupplyContract": null,
-            "treasuryContract": "0xcFdd88430712350704b23c91b6cC6469fbd351F1",
-            "bondingCalculator": "",
+            "treasuryContract": "0x10C12B7322Ac2c5a26bD9929ABc6e6b7997570ba",
+            "bondingCalculator": "0x1080c8690a473E00edF300807098de92d80d849b",
             "wsOHMNetworks": [],
             "wsOHMSymbol": "",
             "bondingContracts": [
@@ -44,17 +44,45 @@
             "treasuryAssets": [
                 {
                     "token0": {
-                        "address": "0x567CDC23ec64B538deA9d8297E1cB3d8cdE148F2",
+                        "address": "0x321E7092a180BB43555132ec53AaA65a5bF84251",
                         "decimals": 18
                     },
                     "token1": {
                         "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
                         "decimals": 6
                     },
-                    "symbol": "dwsOHM",
+                    "symbol": "gOHM",
                     "stable": false,
                     "single": true,
-                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                    "LPAddress": "0x26920501e6d46606327d0c5E6E97559cBb594DAf"
+                },
+                {
+                    "token0": {
+                        "address": "0x0da67235dD5787D67955420C84ca1cEcd4E5Bb3b",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x130966628846bfd36ff31a822705796e8cb8c18d",
+                        "decimals": 18
+                    },
+                    "symbol": "wMEMO",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x4d308c46ea9f234ea515cc51f16fba776451cac8"
+                },
+                {
+                    "symbol": "gOHM-OTWO",
+                    "token0": {
+                        "address": "0x321E7092a180BB43555132ec53AaA65a5bF84251",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xAA2439DBAd718c9329a5893A51a708C015F76346",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x7bC2561D69b56FAe9760Df394a9Fa9202C5f1F11",
+                    "stable": false,
+                    "single": false
                 }
             ]
         }

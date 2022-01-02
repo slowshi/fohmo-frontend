@@ -123,14 +123,26 @@
                 {
                     "symbol": "PNG-WAVAX",
                     "token0": {
-                        "address": "0x60781C2586D68229fde47564546784ab3fACA982",
+                        "address": "0x60781c2586d68229fde47564546784ab3faca982",
                         "decimals": 18
                     },
                     "token1": {
                         "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
                         "decimals": 18
                     },
-                    "LPAddress": "0xd7538cABBf8605BdE1f4901B47B8D42c61DE0367",
+                    "nonStableLP": {
+                        "stableKey": "token1",
+                        "address": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256",
+                        "token0": {
+                            "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                            "decimals": 18
+                        },
+                        "token1": {
+                            "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                            "decimals": 6
+                        }
+                    },
+                    "LPAddress": "0xd7538cabbf8605bde1f4901b47b8d42c61de0367",
                     "stable": false,
                     "single": false
                 }

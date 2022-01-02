@@ -1,0 +1,63 @@
+{
+    "AVAX-MAG": {
+        "farmSymbol": "MAG",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Magnet DAO",
+            "symbol": "MAG",
+            "timeTemplate": true,
+            "date": "Jan-02-2022 03:56:29 PM",
+            "link": "https://app.magnetdao.finance/#/stake",
+            "token": "0x1d60109178c48e4a937d8ab71699d8ebb6f7c5de",
+            "stakingSymbol": "sMAG",
+            "stakingToken": "0x1eda3ef892ab5521f4fcd5cee4825f57b48ed961",
+            "stakingContract": "0x587CB56D9d52C80267ca36c774eCECA98dEEc831",
+            "LPContract": "0xd66b92fd29a6e1f9a1ccb8075a88d955fa4a409d",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xd5310653bf047503d30178cf4732bffe3f2a4cd0",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x4c3ef249c06d40130b220fc05a9e43ce1fca79ba",
+                    "symbol": "MAG-MIM"
+                },
+                {
+                    "address": "0xdfeeaa733092dc20e21637fb74988b45a6eb6f23",
+                    "symbol": "MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MIM-MAG",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x1d60109178C48E4A937D8AB71699D8eBb6F7c5dE",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0xD66b92FD29a6e1F9a1ccb8075A88d955Fa4a409D",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0xdbFad776EdcD3d1b2014b53A58765e40f2F52543"
+        }
+    }
+}
