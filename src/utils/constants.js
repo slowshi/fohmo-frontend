@@ -160,7 +160,7 @@ const networks = {
   BSC: {
     symbol: 'BSC',
     name: 'Binance',
-    rpcURL: 'https://bsc-dataseed3.binance.org/',
+    rpcURL: 'https://bsc-dataseed1.defibit.io/',
     chartURL: 'https://dexscreener.com/bsc/',
     blockRateSeconds: 3.00
   },
