@@ -25,8 +25,16 @@ const sortFilters = [
     key: 'date'
   },
   {
-    label: 'TVL',
-    key: 'tvl'
+    label: 'Price/Backing Ratio',
+    key: 'pbr'
+  },
+  {
+    label: 'Treasury',
+    key: 'treasury'
+  },
+  {
+    label: 'Runway',
+    key: 'runway'
   },
   {
     label: 'LP Liquidity',
@@ -49,6 +57,9 @@ const sortMap = {
   'tvl': 'data.rawTVL',
   'liquidity': 'data.rawLPLiquidity',
   'rebase': 'data.nextRebaseSeconds',
+  'pbr': 'treasuryBalance.priceBackingRatio',
+  'runway': 'treasuryBalance.runway',
+  'treasury': 'treasuryBalance.rawTreasuryTotal',
   'farm': 'constants.name',
   'date': 'data.date',
   'eco': 'networkSymbol',

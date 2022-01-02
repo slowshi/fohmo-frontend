@@ -81,15 +81,14 @@ class StakingInfo {
         acc[balance.userAddress] = balance.data;
         return acc;
       },{});
-      const treasuryBalance = await this.getTreasury(res.networkSymbol, res.farmSymbol, clearCache)
+      const treasuryBalance = await this.getTreasury(res.networkSymbol, res.farmSymbol, clearCache);
       store.dispatch(
         {
           type: 'updateStakingInfo',
           payload: {
             farmKey: `${res.networkSymbol}-${res.farmSymbol}`,
             stakingInfo: {
-              ...getFarm({...stateFarm, data: res.data}, balanceMap, state.app.addresses, fiatCurrency),
-              treasuryBalance,
+              ...getFarm({...stateFarm, data: res.data, treasuryBalance}, balanceMap, state.app.addresses, fiatCurrency),
               loading: false
             },
           }

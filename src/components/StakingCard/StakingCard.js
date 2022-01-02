@@ -171,7 +171,7 @@ function StakingCard(params) {
               <span>{farm.treasuryBalance?.rfvInUSD}</span>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
-              <strong>Runway</strong>
+              <strong>Runway (Days)</strong>
               <span>{farm.treasuryBalance?.runway}</span>
             </span>
             <span className="card-text d-flex h-auto justify-content-between align-items-center">
