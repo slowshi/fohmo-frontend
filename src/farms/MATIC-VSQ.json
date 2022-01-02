@@ -1,0 +1,135 @@
+{
+    "MATIC-VSQ": {
+        "farmSymbol": "VSQ",
+        "networkSymbol": "MATIC",
+        "constants": {
+            "name": "Vesq",
+            "symbol": "VSQ",
+            "timeTemplate": true,
+            "date": "Jan-01-2022 08:54:41 AM",
+            "link": "https://app.vesq.io/#/stake",
+            "token": "0x29f1e986fca02b7e54138c04c4f503dddd250558",
+            "stakingSymbol": "sVSQ",
+            "stakingToken": "0xbb0fdc2fe6d3ceb6bf76cc955173a07edbf57494",
+            "stakingContract": "0x2F3E9e54bD4513D1B49A6d915F9a83310638CFC2",
+            "LPContract": "0x5Cf66CeAf7F6395642cD11b5929499229edEF531",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x8c7290399cecbbbf31e471951cc4c2ce91f5073c",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingCalculator": "0xFEeADb0798EF580b1394eb38659Cf85cC25D43e4",
+            "bondingContracts": [
+                {
+                    "address": "0x2d7c40cd0228264ae5a73f01bc54fa13c4476da1",
+                    "symbol": "VSQ-MAI"
+                },
+                {
+                    "address": "0x8ab125d6d6ea1743e53ca79595046f2a0c76a551",
+                    "symbol": "VSQ-FRAX"
+                },
+                {
+                    "address": "0xf4acbe9de1fae931c5a67115184069474d4fadad",
+                    "symbol": "VSQ-DAI"
+                },
+                {
+                    "address": "0x9fd78920cdbe6f365a557cec282cc88152e35670",
+                    "symbol": "MAI"
+                },
+                {
+                    "address": "0x5aec30afe641ebe8789d8b21223f6d2c74f6fe2c",
+                    "symbol": "FRAX"
+                },
+                {
+                    "address": "0x6fd68930ec828ec5906b0fdec686f3f459c08d1a",
+                    "symbol": "DAI"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "FRAX",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xa3Fa99A148fA48D14Ed51d610c367C61876997F1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "miMATIC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "VSQ-FRAX",
+                    "token0": {
+                        "address": "0x29F1e986FCa02B7E54138c04C4F503DdDD250558",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x41d18C810e70C643cc1326f232546ABB620AAe7E",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "VSQ-miMATIC",
+                    "token0": {
+                        "address": "0x29F1e986FCa02B7E54138c04C4F503DdDD250558",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xa3Fa99A148fA48D14Ed51d610c367C61876997F1",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xc2f4694AB1384e6Bce1c8AA91b9A3E8CC1a6477E",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "VSQ-DAI",
+                    "token0": {
+                        "address": "0x29F1e986FCa02B7E54138c04C4F503DdDD250558",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x5Cf66CeAf7F6395642cD11b5929499229edEF531",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
+    }
+}

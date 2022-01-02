@@ -1,0 +1,98 @@
+{
+    "BSC-HUMP": {
+        "farmSymbol": "HUMP",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "Whale Loans",
+            "symbol": "HUMP",
+            "date": "Jan-01-2022 11:29:28 PM",
+            "link": "https://whale.loans/stake",
+            "token": "0x453939c0270e9405876c7f047ade3932fd2d7a51",
+            "stakingSymbol": "sHUMP",
+            "stakingToken": "0x16ed43aa2956eb2b79c9ed91793221b8719049c3",
+            "stakingContract": "0x411ba19a7d908068a1cb5bd808da008f5a977cbc",
+            "LPContract": "0x2023ee355a2c01f084589f87b4fb9a113f940207",
+            "lockedSupplyContract": "",
+            "treasuryContract": "0xbDE54dF36c48456128c0f09D38Ba2b8E778bD2A4",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x1220a95dab05318d5f4a6ceb805b490c221d16bd",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0xd9100b143744a508d427a000ecf6687af766959b",
+                    "symbol": "USDC"
+                },
+                {
+                    "address": "0x82058014ec7c6c784b06af28a4c0b0923f086ca4",
+                    "symbol": "wBNB"
+                },
+                {
+                    "address": "0x82058014ec7c6c784b06af28a4c0b0923f086ca4",
+                    "symbol": "HUMP-BUSD"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "WBNB",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16"
+                },
+                {
+                    "token0": {
+                        "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "HUMP-BUSD",
+                    "token0": {
+                        "address": "0x453939c0270e9405876c7f047ade3932fd2d7a51",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x2023ee355a2C01f084589f87B4Fb9A113F940207",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0xe5b66bb4acd54171cc5a7cb79fa668232646bbf0"
+        }
+    }
+}

@@ -145,6 +145,12 @@ class StakingInfo {
       [],
       clearCache
     );
+    let tokenDecimals = await cacheEthers.contractCall(
+      tokenContract,
+      'decimals',
+      [],
+      clearCache
+    );
     // if(farmParams.lockedSupplyContract !== null) {
     //   if(typeof farmParams.lockedSupplyContract === 'string') {
     //     const lockedSupply = await cacheEthers.contractCall(
@@ -178,7 +184,7 @@ class StakingInfo {
 
     let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
     let lockedValue = 0;
-    if(key !== 'ETH-OHM2') {
+    if(key !== 'ETH-OHM2' && key !== 'BSC-HUMP') {
       lockedValue = await cacheEthers.contractCall(
         stakingContract,
         'contractBalance',
@@ -199,6 +205,7 @@ class StakingInfo {
       [],
       clearCache
     );
+
     const stakingRebase = Number(stakingReward / circulatingSupply);
     // console.log('stakingReward', Number(stakingReward));
     // console.log('circulatingSupply', Number(circulatingSupply));
@@ -214,7 +221,12 @@ class StakingInfo {
       'token0',
       []
     );
-
+    const token1 = await cacheEthers.contractCall(
+      pairingContract,
+      'token1',
+      [],
+      clearCache
+    );
     let price = 0;
     let ethPrice = 0;
     let rawLPLiquidity = 0;
@@ -232,40 +244,42 @@ class StakingInfo {
       if(key === 'ETH-LOBI' || key === 'ETH-BTRFLY') {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve1, 'ether') / ethers.utils.formatUnits(ethReserves.reserve0, 'gwei');
         stable = ethPrice * ethers.utils.formatUnits(reserves.reserve0, 'gwei');
-        token =  ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+        token =  ethers.utils.formatUnits(reserves.reserve1, tokenDecimals);
       } else if (key === 'ETH-MNFST') {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve1, 'ether') / ethers.utils.formatUnits(ethReserves.reserve0, 'gwei');
         stable = ethPrice * ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-        token =  ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+        token =  ethers.utils.formatUnits(reserves.reserve0, tokenDecimals);
       } else if (key === 'AVAX-OTWO') {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 'ether') / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
         stable = ethPrice * ethers.utils.formatUnits(reserves.reserve0, 'ether');
-        token =  ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+        token =  ethers.utils.formatUnits(reserves.reserve1, tokenDecimals);
       } else {
         ethPrice = ethers.utils.formatUnits(ethReserves.reserve0, 6) / ethers.utils.formatUnits(ethReserves.reserve1, 'ether');
         stable = ethPrice * ethers.utils.formatUnits(reserves.reserve1, 'ether');
-        token =  ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+        token =  ethers.utils.formatUnits(reserves.reserve0, tokenDecimals);
       }
       price = Number(price) * ethPrice;
-    } else if (key === 'MATIC-KLIMA' || key === 'MOVR-FHM' || key === 'ARB-OMIC' ) {
-      //usdc
-      if (token0 === farmParams.token) {
-        stable = ethers.utils.formatUnits(reserves.reserve1, 'mwei');
-        token = ethers.utils.formatUnits(reserves.reserve0, 'gwei');
+    } else {
+      if (token0.toLowerCase() === farmParams.token.toLowerCase()) {
+        const token1Contract = cacheEthers.contract(token1, IERC20Abi, networkParams.rpcURL);
+        const token1Decimals = await cacheEthers.contractCall(
+          token1Contract,
+          'decimals',
+          [],
+          clearCache
+        );
+        stable = ethers.utils.formatUnits(reserves.reserve1, token1Decimals);
+        token = ethers.utils.formatUnits(reserves.reserve0, tokenDecimals);
       } else {
-        stable = ethers.utils.formatUnits(reserves.reserve0, 'mwei');
-        token = ethers.utils.formatUnits(reserves.reserve1, 'gwei');
-      }
-    } else if(key === 'ARB-UMAMI' || key === 'BSC-GYRO' || key === 'BSC-PID' || key === 'BSC-WHISKEY' || key === 'BSC-POWER') {
-      stable = ethers.utils.formatUnits(reserves.reserve1, 'ether');
-      token = ethers.utils.formatUnits(reserves.reserve0, 'gwei');
-    }else {
-      if (token0 === farmParams.token) {
-        stable = ethers.utils.formatUnits(reserves.reserve1, 'ether');
-        token = ethers.utils.formatUnits(reserves.reserve0, 'gwei');
-      } else {
-        stable = ethers.utils.formatUnits(reserves.reserve0, 'ether');
-        token = ethers.utils.formatUnits(reserves.reserve1, 'gwei');
+        const token0Contract = cacheEthers.contract(token0, IERC20Abi, networkParams.rpcURL);
+        const token0Decimals = await cacheEthers.contractCall(
+          token0Contract,
+          'decimals',
+          [],
+          clearCache
+        );
+        stable = ethers.utils.formatUnits(reserves.reserve0, token0Decimals);
+        token = ethers.utils.formatUnits(reserves.reserve1, tokenDecimals);
       }
     }
     price = stable / token;
@@ -284,7 +298,7 @@ class StakingInfo {
         [],
         clearCache
       );
-      totalReserves = Number(ethers.utils.formatUnits(totalReserves, 'gwei'));
+      totalReserves = Number(ethers.utils.formatUnits(totalReserves, tokenDecimals));
       if(key === 'ETH-SQUID') {
         totalReserves = totalReserves * ethPrice;
       }
@@ -308,7 +322,7 @@ class StakingInfo {
       const ethCurrentBlock = await cacheEthers.blockNumber(ethParams.rpcURL, clearCache);
       distributeInterval = msPerDay / (epoch._length.toNumber() * ethParams.blockRateSeconds);
       seconds = this.secondsUntilBlock(ethCurrentBlock, epoch.endBlock.toNumber(), ethParams.blockRateSeconds);
-    } else if (key === 'MATIC-CLAM' || key === 'MATIC-CLAM2' || key === 'ONE-EIGHT' || key === 'CRO-FORT' || key === 'ETH-OHM2') {
+    } else if (key === 'MATIC-CLAM2' || key === 'CRO-FORT' || key === 'ETH-OHM2' || key === 'BSC-HUMP') {
       seconds = epoch.endBlock.toNumber() - (Date.now() / 1000);
       distributeInterval = msPerDay / epoch._length.toNumber();
     } else if (key === 'FTM-PUMP' || key === 'FTM-WEN'){
@@ -332,9 +346,9 @@ class StakingInfo {
         totalReserves: Number(totalReserves),
         currentIndex,
         rawCurrentIndex,
-        totalSupply: Number(ethers.utils.formatUnits(totalSupply, 'gwei')),
-        circulatingSupply: Number(ethers.utils.formatUnits(circulatingSupply, 'gwei')),
-        lockedValue: Number(ethers.utils.formatUnits(lockedValue, 'gwei')),
+        totalSupply: Number(ethers.utils.formatUnits(totalSupply, tokenDecimals)),
+        circulatingSupply: Number(ethers.utils.formatUnits(circulatingSupply, tokenDecimals)),
+        lockedValue: Number(ethers.utils.formatUnits(lockedValue, tokenDecimals)),
       }
     };
   }
@@ -362,15 +376,20 @@ class StakingInfo {
       [userAddress],
       clearCache
     );
-    tokenBalance = Number(ethers.utils.formatUnits(tokenBalance, 'gwei'));
-
+    let tokenDecimals = await cacheEthers.contractCall(
+      tokenContract,
+      'decimals',
+      [],
+      clearCache
+    );
+    tokenBalance = Number(ethers.utils.formatUnits(tokenBalance, tokenDecimals));
     let stakingTokenBalance = await cacheEthers.contractCall(
       stakingTokenContract,
       'balanceOf',
       [userAddress],
       clearCache
     );
-    stakingTokenBalance = Number(ethers.utils.formatUnits(stakingTokenBalance, 'gwei'));
+    stakingTokenBalance = Number(ethers.utils.formatUnits(stakingTokenBalance, tokenDecimals));
 
     let fullBondTotal = 0;
     let fullPendingBondTotal = 0;
@@ -397,14 +416,14 @@ class StakingInfo {
           symbol: bondParams.symbol
         }
       }
-      const payout = Number(ethers.utils.formatUnits(bondInfo.payout, 'gwei'));
+      const payout = Number(ethers.utils.formatUnits(bondInfo.payout, tokenDecimals));
       let pendingPayout = await cacheEthers.contractCall(
         bondsContract,
         'pendingPayoutFor',
         [userAddress],
         clearCache
       );
-      pendingPayout = Number(ethers.utils.formatUnits(pendingPayout, 'gwei'));
+      pendingPayout = Number(ethers.utils.formatUnits(pendingPayout, tokenDecimals));
       if(bondParams.symbol.includes('(4,4)')) {
         stakingTokenBalance += payout;
       } else {
@@ -454,8 +473,8 @@ class StakingInfo {
         clearCache
       );
       // warmupPeriod = Number(warmupPeriod);
-      warmupBalance = Number(ethers.utils.formatUnits(warmupInfo.deposit, 'gwei'));
-      const gonsBalance = Number(ethers.utils.formatUnits(balanceForGons, 'gwei'));
+      warmupBalance = Number(ethers.utils.formatUnits(warmupInfo.deposit, tokenDecimals));
+      const gonsBalance = Number(ethers.utils.formatUnits(balanceForGons, tokenDecimals));
       stakingTokenBalance = stakingTokenBalance + gonsBalance;
     }
     // console.log(warmupPeriod);
@@ -724,19 +743,18 @@ class StakingInfo {
         [],
         clearCache
       );
-      const reserves0 = await cacheEthers.contractCall(
-        LPContract,
-        'token0',
-        [],
-        clearCache
-      );
+
       let reserve;
-      if(reserves0.toLowerCase() === tokenAddress.toLowerCase()) {
+      let tokenDecimals = 9;
+      const symbolParts = assetInfo.symbol.split('-');
+      if(assetInfo.token0.address.toLowerCase() === tokenAddress.toLowerCase()) {
         reserve = tokenReserves.reserve0;
+        tokenDecimals = assetInfo.token0.decimals;
       } else {
         reserve = tokenReserves.reserve1;
+        tokenDecimals = assetInfo.token1.decimals;
       }
-      const LPReserves = (ethers.utils.formatUnits(reserve, 'gwei') * 2);
+      const LPReserves = (ethers.utils.formatUnits(reserve, tokenDecimals) * 2);
       totalSupply = ethers.utils.formatUnits(totalSupply, 'ether');
       balanceOf = ethers.utils.formatUnits(balanceOf, 'ether');
       const valueInOHM = balanceOf /totalSupply * LPReserves;

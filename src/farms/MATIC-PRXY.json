@@ -1,0 +1,56 @@
+{
+    "MATIC-PRXY": {
+        "farmSymbol": "PRXY",
+        "networkSymbol": "MATIC",
+        "constants": {
+            "name": "Proxy",
+            "symbol": "PRXY",
+            "date": "Dec-01-2022 00:00:01 AM",
+            "link": "https://app.prxy.fi/#/stake",
+            "token": "0xab3D689C22a2Bb821f50A4Ff0F21A7980dCB8591",
+            "stakingSymbol": "sPRXY",
+            "stakingToken": "0x426ac20aa0ce165cccfb905fb917758731ffc20d",
+            "stakingContract": "0x015cee3ab6d03267b1b2c05d2ac9e2250af5268d",
+            "LPContract": "0x5428212fbb75046d6270c0bef4bc49882e2bb6a9",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xffc37301a09196f073d94c46b3cac7f97eb2b974",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingCalculator": "",
+            "bondingContracts": [
+                {
+                    "address": "0x4b1c6461b03a7e355819eac874f14c907e3f580f",
+                    "symbol": "BTCpx"
+                },
+                {
+                    "address": "0xd51e5cad8e2a8e4de78467f50453008f0cc59df8",
+                    "symbol": "wETH"
+                },
+                {
+                    "address": "0x8a70b1da42ce299cf4c6a232591cd69c3f60f7b7",
+                    "symbol": "USDC-v2"
+                },
+                {
+                    "address": "0x1f8fba1afb7e294ec5c8b030f678096943a36fba",
+                    "symbol": "USDC"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                }
+            ]
+        }
+    }
+}
