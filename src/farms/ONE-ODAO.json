@@ -110,6 +110,20 @@
                 },
                 {
                     "token0": {
+                        "address": "0xeb6c08ccb4421b6088e581ce04fcfbed15893ac3",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "1FRAX",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
                         "address": "0x224e64ec1BDce3870a6a6c777eDd450454068FEC",
                         "decimals": 18
                     },

@@ -60,9 +60,22 @@
                         "address": "0x2F800Db0fdb5223b3C3f354886d907A671414A7F",
                         "decimals": 18
                     },
+                    "nonStableLP": {
+                        "stableKey": "token1",
+                        "address": "0x1E67124681b402064CD0ABE8ed1B5c79D2e02f64",
+                        "token0": {
+                            "address": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+                            "decimals": 6
+                        },
+                        "token1": {
+                            "address": "0x2F800Db0fdb5223b3C3f354886d907A671414A7F",
+                            "decimals": 18
+                        }
+                    },
                     "LPAddress": "0x1E67124681b402064CD0ABE8ed1B5c79D2e02f64",
                     "stable": true,
-                    "single": false
+                    "single": false,
+                    "converted": true
                 },
                 {
                     "symbol": "BCT-KLIMA",

@@ -634,13 +634,13 @@ class StakingInfo {
       return acc;
     }, 0);
     const usdTreasuryValues = allBalances.reduce((acc, data)=>{
-      if(data.symbol.indexOf('-') === -1) {
+      if(data.symbol.indexOf('-') === -1 || data.converted) {
         acc += data.value;
       }
       return acc;
     }, 0);
     const ohmTreasuryValues = allBalances.reduce((acc, data)=>{
-      if(data.symbol.indexOf('-') > -1) {
+      if(data.symbol.indexOf('-') > -1 && !data.converted) {
         acc += data.value;
       }
       return acc;
@@ -781,7 +781,7 @@ class StakingInfo {
         reserve = tokenReserves.reserve1;
         tokenDecimals = assetInfo.token1.decimals;
       } else if (typeof assetInfo.nonStableLP !== 'undefined') {
-        const nonStableLPContract = cacheEthers.contract(assetInfo.nonStableLP.address, PairContractAbi, rpcURL);
+        // const nonStableLPContract = cacheEthers.contract(assetInfo.nonStableLP.address, PairContractAbi, rpcURL);
         const stableKey = assetInfo.nonStableLP.stableKey;
         // const nonStableReserves = await cacheEthers.contractCall(
         //   nonStableLPContract,
@@ -822,6 +822,7 @@ class StakingInfo {
       return {
         symbol: assetInfo.symbol,
         singleStable: false,
+        converted: assetInfo.converted || false,
         value: +(valueInOHM)
       };
     }

@@ -65,7 +65,7 @@ import ETH_OHM2 from './ETH-OHM2.json';
 import ETH_SQUID from './ETH-SQUID.json';
 import ETH_BTRFLY from './ETH-BTRFLY.json';
 import ETH_3DOG from './ETH-3DOG.json';
-import FTM_GIZA from './FTM-GIZA.json';
+// import FTM_GIZA from './FTM-GIZA.json';
 import FTM_EXOD from './FTM-EXOD.json';
 import FTM_FHM from './FTM-FHM.json';
 import FTM_HEC from './FTM-HEC.json';
@@ -164,7 +164,7 @@ const farms = {
   ...FTM_VOLT,
   ...FTM_SCR,
   ...FTM_FHM,
-  ...FTM_GIZA,
+  // ...FTM_GIZA,
   ...FTM_HEC,
   ...FTM_LUX,
   ...FTM_SPA,

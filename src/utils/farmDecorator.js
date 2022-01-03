@@ -80,7 +80,7 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
   const formattedAllBalances = currentFarm.treasuryBalance?.allBalances
   .map((balance) => {
     let value = balance.value;
-    if(balance.symbol.indexOf('-') > -1) {
+    if(balance.symbol.indexOf('-') > -1 && !balance.converted) {
       value = balance.value * currentFarm.data?.rawPrice;
     }
     const valueInUSD = Number(value).toLocaleString(undefined, {

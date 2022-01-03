@@ -6,7 +6,7 @@
             "name": "Exodia",
             "symbol": "EXOD",
             "date": "Oct-25-2021 01:49:17 PM",
-            "link": "https://app.exodia.finance/#/stake",
+            "link": "https://app.exodia.fi/stake",
             "token": "0x3b57f3FeAaF1e8254ec680275Ee6E7727C7413c7",
             "stakingSymbol": "sEXOD",
             "stakingToken": "0x8de250C65636Ef02a75e4999890c91cECd38D03D",
@@ -66,17 +66,29 @@
                 },
                 {
                     "token0": {
-                        "address": "0x91fa20244Fb509e8289CA630E5db3E9166233FDc",
+                        "address": "0x91fa20244fb509e8289ca630e5db3e9166233fdc",
                         "decimals": 18
                     },
                     "token1": {
-                        "address": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+                        "address": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
                         "decimals": 18
+                    },
+                    "nonStableLP": {
+                        "stableKey": "token0",
+                        "address": "0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c",
+                        "token0": {
+                            "address": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+                            "decimals": 6
+                        },
+                        "token1": {
+                            "address": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                            "decimals": 18
+                        }
                     },
                     "symbol": "gOHM",
                     "stable": false,
                     "single": true,
-                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                    "LPAddress": "0xae9BBa22E87866e48ccAcFf0689AFaa41eB94995"
                 },
                 {
                     "symbol": "EXOD-DAI",
