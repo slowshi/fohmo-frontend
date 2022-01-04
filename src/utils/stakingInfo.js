@@ -743,7 +743,6 @@ class StakingInfo {
         stable = ethers.utils.formatUnits(reserves.reserve0, assetInfo.token1.decimals);
         token = ethers.utils.formatUnits(reserves.reserve1, assetInfo.token0.decimals);
       }
-      console.log(assetInfo.symbol, adjustedPrice, stable, token, stable/token)
 
       const price = stable / token * adjustedPrice;
       return {
