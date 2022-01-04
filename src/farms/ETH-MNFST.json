@@ -38,17 +38,21 @@
             "treasuryAssets": [
                 {
                     "token0": {
-                        "address": "0x04F2694C8fcee23e8Fd0dfEA1d4f5Bb8c352111F",
+                        "address": "0x64aa3364f17a4d01c6f1751fd97c2bd3d7e7f1d5",
                         "decimals": 9
                     },
                     "token1": {
                         "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
                         "decimals": 18
                     },
+                    "sOHM": {
+                        "address": "0x04F2694C8fcee23e8Fd0dfEA1d4f5Bb8c352111F",
+                        "decimals": 9
+                    },
                     "symbol": "sOHM",
                     "stable": false,
                     "single": true,
-                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                    "LPAddress": "0x055475920a8c93CfFb64d039A8205F7AcC7722d3"
                 },
                 {
                     "token0": {

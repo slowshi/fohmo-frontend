@@ -42,13 +42,25 @@
                         "decimals": 18
                     },
                     "token1": {
-                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
                         "decimals": 18
+                    },
+                    "nonStableLP": {
+                        "stableKey": "token0",
+                        "address": "0x397FF1542f962076d0BFE58eA045FfA2d347ACa0",
+                        "token0": {
+                            "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                            "decimals": 6
+                        },
+                        "token1": {
+                            "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                            "decimals": 18
+                        }
                     },
                     "symbol": "CRV",
                     "stable": false,
                     "single": true,
-                    "LPAddress": "0x747c9884d29474fe4334C477ebfd25f8a6f5B90D"
+                    "LPAddress": "0x58Dc5a51fE44589BEb22E8CE67720B5BC5378009"
                 },
                 {
                     "token0": {
@@ -56,13 +68,13 @@
                         "decimals": 18
                     },
                     "token1": {
-                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "address": "0x853d955acef822db058eb8505911ed77f175b99e",
                         "decimals": 18
                     },
                     "symbol": "FXS",
                     "stable": false,
                     "single": true,
-                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                    "LPAddress": "0xe1573b9d29e2183b1af0e743dc2754979a40d237"
                 },
                 {
                     "token0": {
@@ -70,13 +82,25 @@
                         "decimals": 18
                     },
                     "token1": {
-                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
                         "decimals": 18
+                    },
+                    "nonStableLP": {
+                        "stableKey": "token0",
+                        "address": "0x397FF1542f962076d0BFE58eA045FfA2d347ACa0",
+                        "token0": {
+                            "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                            "decimals": 6
+                        },
+                        "token1": {
+                            "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                            "decimals": 18
+                        }
                     },
                     "symbol": "TOKE",
                     "stable": false,
                     "single": true,
-                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                    "LPAddress": "0xd4e7a6e2D03e4e48DfC27dd3f46DF1c176647E38"
                 },
                 {
                     "symbol": "OHM-LOBI",

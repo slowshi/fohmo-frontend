@@ -22,31 +22,47 @@
             "treasuryAssets": [
                 {
                     "token0": {
-                        "address": "0x04906695D6D12CF5459975d7C3C03356E4Ccd460",
+                        "address": "0x64aa3364f17a4d01c6f1751fd97c2bd3d7e7f1d5",
                         "decimals": 9
                     },
                     "token1": {
                         "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
                         "decimals": 18
                     },
+                    "sOHM": {
+                        "address": "0x04906695D6D12CF5459975d7C3C03356E4Ccd460",
+                        "decimals": 9
+                    },
                     "symbol": "sOHM",
                     "stable": false,
                     "single": true,
-                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                    "LPAddress": "0x055475920a8c93CfFb64d039A8205F7AcC7722d3"
                 },
                 {
                     "token0": {
-                        "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
+                        "address": "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b",
                         "decimals": 18
                     },
                     "token1": {
-                        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
                         "decimals": 18
+                    },
+                    "nonStableLP": {
+                        "stableKey": "token0",
+                        "address": "0x397FF1542f962076d0BFE58eA045FfA2d347ACa0",
+                        "token0": {
+                            "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                            "decimals": 6
+                        },
+                        "token1": {
+                            "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                            "decimals": 18
+                        }
                     },
                     "symbol": "CVX",
                     "stable": false,
                     "single": true,
-                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                    "LPAddress": "0x05767d9EF41dC40689678fFca0608878fb3dE906"
                 },
                 {
                     "token0": {

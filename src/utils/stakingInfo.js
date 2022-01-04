@@ -672,12 +672,23 @@ class StakingInfo {
     } else if(!assetInfo.stable && assetInfo.single) {
       //NonStable
       const token0Contract = cacheEthers.contract(assetInfo.token0.address, IERC20Abi, rpcURL);
-      const balanceOf = await cacheEthers.contractCall(
+      let balanceOf = await cacheEthers.contractCall(
         token0Contract,
         'balanceOf',
         [treasuryAddress],
         clearCache
       );
+      let balance = ethers.utils.formatUnits(balanceOf, assetInfo.token0.decimals);
+      if (typeof assetInfo.sOHM !== 'undefined') {
+        const sOHMContract = cacheEthers.contract(assetInfo.sOHM.address, IERC20Abi, rpcURL);
+        balanceOf = await cacheEthers.contractCall(
+          sOHMContract,
+          'balanceOf',
+          [treasuryAddress],
+          clearCache
+        );
+        balance = ethers.utils.formatUnits(balanceOf, assetInfo.sOHM.decimals);
+      }
       if(assetInfo.LPAddress === '0x0000000000000000000000000000000000000000') {
         return {
           symbol: assetInfo.symbol,
@@ -725,7 +736,6 @@ class StakingInfo {
         }
         adjustedPrice = adjustedStable / adjustedToken;
       }
-
       if(token0.toLowerCase() === assetInfo.token0.address.toLowerCase()) {
         stable = ethers.utils.formatUnits(reserves.reserve1, assetInfo.token1.decimals);
         token = ethers.utils.formatUnits(reserves.reserve0, assetInfo.token0.decimals);
@@ -733,9 +743,9 @@ class StakingInfo {
         stable = ethers.utils.formatUnits(reserves.reserve0, assetInfo.token1.decimals);
         token = ethers.utils.formatUnits(reserves.reserve1, assetInfo.token0.decimals);
       }
+      console.log(assetInfo.symbol, adjustedPrice, stable, token, stable/token)
 
       const price = stable / token * adjustedPrice;
-      const balance = ethers.utils.formatUnits(balanceOf, assetInfo.token0.decimals);
       return {
         symbol: assetInfo.symbol,
         singleStable: false,
