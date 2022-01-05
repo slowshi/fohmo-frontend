@@ -772,7 +772,7 @@ class StakingInfo {
         let nonStableLPContract = null;
         let nonStableReserves = {};
         if(farmKey !== 'KLAY-KRNO') {
-          nonStableLPContract = cacheEthers.contract(assetInfo.LPAddress, PairContractAbi, rpcURL);
+          nonStableLPContract = cacheEthers.contract(assetInfo.nonStableLP.address, PairContractAbi, rpcURL);
           nonStableReserves = await cacheEthers.contractCall(
             nonStableLPContract,
             'getReserves',
@@ -780,7 +780,7 @@ class StakingInfo {
             clearCache
           );
         } else {
-          nonStableLPContract = cacheEthers.contract(assetInfo.LPAddress, KlaySwapAbi, rpcURL);
+          nonStableLPContract = cacheEthers.contract(assetInfo.nonStableLP.address, KlaySwapAbi, rpcURL);
           const pool = await cacheEthers.contractCall(
             nonStableLPContract,
             'getCurrentPool',
@@ -815,7 +815,6 @@ class StakingInfo {
         stable = ethers.utils.formatUnits(reserves.reserve0, assetInfo.token1.decimals);
         token = ethers.utils.formatUnits(reserves.reserve1, assetInfo.token0.decimals);
       }
-
       const price = stable / token * adjustedPrice;
       return {
         symbol: assetInfo.symbol,
