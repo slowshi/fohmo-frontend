@@ -115,8 +115,7 @@
 
 .KLAY,
 .KLAY:focus {
-  color: white;
-  background-color: #3a4075;
+  color: #3a4075;
   border-color: #3a4075;
 }
 .KLAY.active,
