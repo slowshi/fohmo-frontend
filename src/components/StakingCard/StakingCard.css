@@ -42,7 +42,10 @@
 }
 
 .badge-CRO {
-  background-color: #052c65
+  background-color: #052c65;
+}
+.badge-KLAY {
+  background-color: #3a4075;
 }
 .txt-smol {
   font-size: 11px;

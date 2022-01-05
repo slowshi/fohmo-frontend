@@ -9,6 +9,7 @@ import {abi as StakingTokenAbi} from '../abis/StakingToken.json';
 import {abi as BondContractAbi} from '../abis/BondContract.json';
 import {abi as CurrencyAbi} from '../abis/Currency.json';
 import {abi as TreasuryAbi} from '../abis/Treasury.json';
+import {abi as KlaySwapAbi} from '../abis/KlaySwapLP.json';
 import {abi as wsOHMPoolAbi} from '../abis/wsOHMPool.json';
 import store from '../store/store';
 import { getFarm } from './farmDecorator';
@@ -206,31 +207,62 @@ class StakingInfo {
     );
 
     const stakingRebase = Number(stakingReward / circulatingSupply);
-    // console.log('stakingReward', Number(stakingReward));
-    // console.log('circulatingSupply', Number(circulatingSupply));
-    const pairingContract = cacheEthers.contract(farmParams.LPContract, PairContractAbi, networkParams.rpcURL);
-    const reserves = await cacheEthers.contractCall(
-      pairingContract,
-      'getReserves',
-      [],
-      clearCache
-    );
-    const token0 = await cacheEthers.contractCall(
-      pairingContract,
-      'token0',
-      []
-    );
-    const token1 = await cacheEthers.contractCall(
-      pairingContract,
-      'token1',
-      [],
-      clearCache
-    );
     let price = 0;
     let ethPrice = 0;
     let rawLPLiquidity = 0;
     let stable = 0;
     let token = 0;
+    let token0 = '';
+    let token1 = '';
+
+    let pairingContract = null;
+    let reserves = {};
+    if(key === 'KLAY-KRNO') {
+      pairingContract = cacheEthers.contract(farmParams.LPContract, KlaySwapAbi, networkParams.rpcURL);
+      const pool = await cacheEthers.contractCall(
+        pairingContract,
+        'getCurrentPool',
+        [],
+        clearCache
+      );
+      reserves = {
+        reserve0: pool[0],
+        reserve1: pool[1]
+      }
+      token0 = await cacheEthers.contractCall(
+        pairingContract,
+        'tokenA',
+        [],
+        clearCache
+      );
+      token1 = await cacheEthers.contractCall(
+        pairingContract,
+        'tokenB',
+        [],
+        clearCache
+      );
+    } else {
+      pairingContract = cacheEthers.contract(farmParams.LPContract, PairContractAbi, networkParams.rpcURL);
+      reserves = await cacheEthers.contractCall(
+        pairingContract,
+        'getReserves',
+        [],
+        clearCache
+      );
+      token0 = await cacheEthers.contractCall(
+        pairingContract,
+        'token0',
+        [],
+        clearCache
+      );
+      token1 = await cacheEthers.contractCall(
+        pairingContract,
+        'token1',
+        [],
+        clearCache
+      );
+    }
+
     if (key === 'ETH-SQUID' || key === 'ETH-OHM2' || key === 'ETH-LOBI' ||
         key === 'ETH-MNFST' || key == 'AVAX-OTWO' || key === 'ETH-BTRFLY' || key === 'ETH-3DOG') {
       const ethContract = cacheEthers.contract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
@@ -624,7 +656,7 @@ class StakingInfo {
     const networkParams = networks[networkSymbol];
     const farmParams = allFarms[key].constants;
     const promises = farmParams.treasuryAssets.map((asset)=>{
-      return this.getAssetBalance(farmParams.token, farmParams.treasuryContract, asset, networkParams.rpcURL, clearCache);
+      return this.getAssetBalance(key, farmParams.token, farmParams.treasuryContract, asset, networkParams.rpcURL, clearCache);
     });
     const allBalances = await Promise.all(promises);
     const rfv = allBalances.reduce((acc, data)=>{
@@ -653,7 +685,7 @@ class StakingInfo {
     };
   }
 
-  async getAssetBalance(tokenAddress, treasuryAddress, assetInfo, rpcURL, clearCache=false) {
+  async getAssetBalance(farmKey, tokenAddress, treasuryAddress, assetInfo, rpcURL, clearCache=false) {
     if(assetInfo.stable && assetInfo.single) {
       //Stable
       const token0Contract = cacheEthers.contract(assetInfo.token0.address, IERC20Abi, rpcURL);
@@ -696,31 +728,71 @@ class StakingInfo {
           value: 0
         };
       }
-      const LPContract = cacheEthers.contract(assetInfo.LPAddress, PairContractAbi, rpcURL);
-      const reserves = await cacheEthers.contractCall(
-        LPContract,
-        'getReserves',
-        [],
-        clearCache
-      );
-      const token0 = await cacheEthers.contractCall(
-        LPContract,
-        'token0',
-        [],
-        clearCache
-      );
-      let stable = 0;
-      let token = 0;
-      let adjustedPrice = 1;
-      if (typeof assetInfo.nonStableLP !== 'undefined') {
-        const nonStableLPContract = cacheEthers.contract(assetInfo.nonStableLP.address, PairContractAbi, rpcURL);
-        const stableKey = assetInfo.nonStableLP.stableKey;
-        const nonStableReserves = await cacheEthers.contractCall(
-          nonStableLPContract,
+      let LPContract = null;
+      let reserves = {};
+      let token0 = '';
+      if(farmKey !== 'KLAY-KRNO') {
+        LPContract = cacheEthers.contract(assetInfo.LPAddress, PairContractAbi, rpcURL);
+        reserves = await cacheEthers.contractCall(
+          LPContract,
           'getReserves',
           [],
           clearCache
         );
+        token0 = await cacheEthers.contractCall(
+          LPContract,
+          'token0',
+          [],
+          clearCache
+        );
+      } else {
+        LPContract = cacheEthers.contract(assetInfo.LPAddress, KlaySwapAbi, rpcURL);
+        const pool = await cacheEthers.contractCall(
+          LPContract,
+          'getCurrentPool',
+          [],
+          clearCache
+        );
+        reserves = {
+          reserve0: pool[0],
+          reserve1: pool[1]
+        }
+        token0 = await cacheEthers.contractCall(
+          LPContract,
+          'tokenA',
+          [],
+          clearCache
+        );
+      }
+      let stable = 0;
+      let token = 0;
+      let adjustedPrice = 1;
+      if (typeof assetInfo.nonStableLP !== 'undefined') {
+        const stableKey = assetInfo.nonStableLP.stableKey;
+        let nonStableLPContract = null;
+        let nonStableReserves = {};
+        if(farmKey !== 'KLAY-KRNO') {
+          nonStableLPContract = cacheEthers.contract(assetInfo.LPAddress, PairContractAbi, rpcURL);
+          nonStableReserves = await cacheEthers.contractCall(
+            nonStableLPContract,
+            'getReserves',
+            [],
+            clearCache
+          );
+        } else {
+          nonStableLPContract = cacheEthers.contract(assetInfo.LPAddress, KlaySwapAbi, rpcURL);
+          const pool = await cacheEthers.contractCall(
+            nonStableLPContract,
+            'getCurrentPool',
+            [],
+            clearCache
+          );
+          nonStableReserves = {
+            reserve0: pool[0],
+            reserve1: pool[1]
+          }
+        }
+
         let adjustedStable = 0;
         let adjustedToken = 0;
         if(stableKey === 'token1') {
@@ -759,17 +831,48 @@ class StakingInfo {
           value: 0
         };
       }
-      const LPContract = cacheEthers.contract(assetInfo.LPAddress, PairContractAbi, rpcURL);
+
+      let LPContract = null;
+      let tokenReserves = {};
+      let token0 = '';
+      if(farmKey !== 'KLAY-KRNO') {
+        LPContract = cacheEthers.contract(assetInfo.LPAddress, PairContractAbi, rpcURL);
+        tokenReserves = await cacheEthers.contractCall(
+          LPContract,
+          'getReserves',
+          [],
+          clearCache
+        );
+        token0 = await cacheEthers.contractCall(
+          LPContract,
+          'token0',
+          [],
+          clearCache
+        );
+      } else {
+        LPContract = cacheEthers.contract(assetInfo.LPAddress, KlaySwapAbi, rpcURL);
+        const pool = await cacheEthers.contractCall(
+          LPContract,
+          'getCurrentPool',
+          [],
+          clearCache
+        );
+        tokenReserves = {
+          reserve0: pool[0],
+          reserve1: pool[1]
+        }
+        token0 = await cacheEthers.contractCall(
+          LPContract,
+          'tokenA',
+          [],
+          clearCache
+        );
+      }
+
       let balanceOf = await cacheEthers.contractCall(
         LPContract,
         'balanceOf',
         [treasuryAddress],
-        clearCache
-      );
-      const tokenReserves = await cacheEthers.contractCall(
-        LPContract,
-        'getReserves',
-        [],
         clearCache
       );
       let totalSupply = await cacheEthers.contractCall(
@@ -778,7 +881,6 @@ class StakingInfo {
         [],
         clearCache
       );
-
       let reserve = 0;
       let tokenDecimals = 9;
       let adjustedPrice = 1;

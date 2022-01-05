@@ -75,7 +75,7 @@ import FTM_SCR from './FTM-SCR.json';
 import FTM_WEN from './FTM-WEN.json';
 import FTM_VOLT from './FTM-VOLT.json';
 import FTM_PUMP from './FTM-PUMP.json';
-// import KLAY_KRNO from './KLAY-KRNO.json';
+import KLAY_KRNO from './KLAY-KRNO.json';
 // import MATIC_CLAM from './MATIC-CLAM.json';
 import MATIC_CLAM2 from './MATIC-CLAM2.json';
 import MATIC_VSQ from './MATIC-VSQ.json';
@@ -170,7 +170,7 @@ const farms = {
   ...FTM_SPA,
   ...FTM_PUMP,
   ...FTM_WEN,
-  // ...KLAY_KRNO,
+  ...KLAY_KRNO,
   // ...MATIC_CLAM,
   ...MATIC_CLAM2,
   ...MATIC_GURU,

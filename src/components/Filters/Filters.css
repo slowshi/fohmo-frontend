@@ -112,3 +112,16 @@
   background-color: #052c65;
   border-color: #052c65;
 }
+
+.KLAY,
+.KLAY:focus {
+  color: white;
+  background-color: #3a4075;
+  border-color: #3a4075;
+}
+.KLAY.active,
+.KLAY:hover {
+  color: white;
+  background-color: #3a4075;
+  border-color: #3a4075;
+}

@@ -5,6 +5,7 @@
         "constants": {
             "name": "KronosDAO",
             "symbol": "KRNO",
+            "timeTemplate": true,
             "link": "https://app.kronosdao.finance/#/stake",
             "token": "0xD676e57Ca65b827fEb112AD81Ff738E7B6c1048d",
             "stakingSymbol": "sKRNO",
@@ -17,23 +18,91 @@
             "wsOHMSymbol": "",
             "bondingContracts": [
                 {
-                    "address": "0x5c74070fdea071359b86082bd9f9b3deaafbe32b",
-                    "symbol": "KDAI"
+                    "address": "0x16DC360812d3d07D27bA35eca4CFC01b6E1C947f",
+                    "symbol": "KLAY-KRNO (4,4)"
                 },
                 {
-                    "address": "0x9bA4428d3B753880dF53F67ABb31222EF900DB79",
-                    "symbol": "KDAI-KRNO"
+                    "address": "0x5d21A47DcE0989d961DB51AaE8F2cC7aBaFa0CDa",
+                    "symbol": "KRNO-KDAI (4,4)"
+                },
+                {
+                    "address": "0xFA3A46Bc0E1587CE4ae26298B5c89B5b85Ca7786",
+                    "symbol": "KRNO-KSP (4,4)"
+                },
+                {
+                    "address": "0x5c74070fdea071359b86082bd9f9b3deaafbe32b",
+                    "symbol": "KDAI"
                 },
                 {
                     "address": "0x1FF29982e7eC4F53728ED398063587876F2a0d22",
                     "symbol": "KSD"
                 },
                 {
-                    "address": "0x16DC360812d3d07D27bA35eca4CFC01b6E1C947f",
-                    "symbol": "KLAY-KRNO (4,4)"
+                    "address": "0x9bA4428d3B753880dF53F67ABb31222EF900DB79",
+                    "symbol": "KRNO-KDAI"
+                },
+                {
+                    "address": "0xb805CD015D52e852fC31B8937b80adBc00Cc2B61",
+                    "symbol": "KRNO-KSD"
                 }
             ],
             "treasuryAssets": [
+                {
+                    "symbol": "KDAI-KRNO",
+                    "token0": {
+                        "address": "0x5c74070fdea071359b86082bd9f9b3deaafbe32b",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xD676e57Ca65b827fEb112AD81Ff738E7B6c1048d",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0xdf5caf79899407da1c1b31389448861a9846956d",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "KSD-KRNO",
+                    "token0": {
+                        "address": "0x4fa62f1f404188ce860c8f0041d6ac3765a72e67",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xD676e57Ca65b827fEb112AD81Ff738E7B6c1048d",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x5876aa130de74d9d8924e8ff05a0bc4387ee93f0",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "KSP-KRNO",
+                    "token0": {
+                        "address": "0xc6a2ad8cc6e4a7e08fc37cc5954be07d499e7654",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xD676e57Ca65b827fEb112AD81Ff738E7B6c1048d",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x2febbaed702b9a1d9f6ffccd67701550ac546115",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "KLAY-KRNO",
+                    "token0": {
+                        "address": "0xe4f05a66ec68b54a58b17c22107b02e0232cc817",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xD676e57Ca65b827fEb112AD81Ff738E7B6c1048d",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x193ce4066aebe1911feb03425d4312a7b6514081",
+                    "stable": true,
+                    "single": false
+                },
                 {
                     "token0": {
                         "address": "0x5c74070FDeA071359b86082bd9f9b3dEaafbe32b",
@@ -44,6 +113,20 @@
                         "decimals": ""
                     },
                     "symbol": "KDAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x4fa62f1f404188ce860c8f0041d6ac3765a72e67",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "KSD",
                     "stable": true,
                     "single": true,
                     "LPAddress": ""
