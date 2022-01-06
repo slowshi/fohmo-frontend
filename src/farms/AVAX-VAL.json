@@ -32,6 +32,7 @@
                     "symbol": "MIM"
                 }
             ],
+            "VSS": "0xf443f6c8aff10616009f34409efdf87b09cc0cf8",
             "treasuryAssets": [
                 {
                     "token0": {

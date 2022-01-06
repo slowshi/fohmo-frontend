@@ -14,8 +14,13 @@
             "LPContract": "0xe9AB8038Ee6Dd4fCC7612997FE28d4e22019C4B4",
             "LPContractETH": "0x055475920a8c93cffb64d039a8205f7acc7722d3",
             "lockedSupplyContract": null,
-            "wsOHMSymbol": "",
-            "wsOHMNetworks": [],
+            "wsOHMSymbol": "wsBTRFLY",
+            "wsOHMNetworks": [
+                {
+                    "address": "0x186e55c0bebd2f69348d94c4a27556d93c5bd36c",
+                    "networkSymbol": "ETH"
+                }
+            ],
             "treasuryContract": "0x086C98855dF3C78C6b481b6e1D47BeF42E9aC36B",
             "bondingCalculator": "0xa77b57445FA262CaE325DeD434Df89302c93f59A",
             "bondingContracts": [],

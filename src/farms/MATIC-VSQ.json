@@ -20,6 +20,14 @@
             "bondingCalculator": "0xFEeADb0798EF580b1394eb38659Cf85cC25D43e4",
             "bondingContracts": [
                 {
+                    "address": "0xf48642cc4b7aa1c9f033ef9fa6d32ec509ec73cf",
+                    "symbol": "VSQ-UST"
+                },
+                {
+                    "address": "0x33e7fad98a66edc8f9ba9ee22ced9fed9672ca4d",
+                    "symbol": "VSQ-TUSD"
+                },
+                {
                     "address": "0x2d7c40cd0228264ae5a73f01bc54fa13c4476da1",
                     "symbol": "VSQ-MAI"
                 },
@@ -32,6 +40,14 @@
                     "symbol": "VSQ-DAI"
                 },
                 {
+                    "address": "0xee00c63ee5a3eae669ceb83e1779d005ef43d7fe",
+                    "symbol": "UST"
+                },
+                {
+                    "address": "0xa0727d024a093fc32628c93f50ca7e03e05e2e81",
+                    "symbol": "TUSD"
+                },
+                {
                     "address": "0x9fd78920cdbe6f365a557cec282cc88152e35670",
                     "symbol": "MAI"
                 },
@@ -42,6 +58,10 @@
                 {
                     "address": "0x6fd68930ec828ec5906b0fdec686f3f459c08d1a",
                     "symbol": "DAI"
+                },
+                {
+                    "address": "0x83c091d44189f0d8b3802d2b290769df957ba5a3",
+                    "symbol": "ADAI"
                 }
             ],
             "treasuryAssets": [
@@ -88,6 +108,48 @@
                     "LPAddress": ""
                 },
                 {
+                    "token0": {
+                        "address": "0x27F8D03b3a2196956ED754baDc28D73be8830A6e",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "amDAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x2e1AD108fF1D8C782fcBbB89AAd783aC49586756",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                        "decimals": 6
+                    },
+                    "symbol": "TUSD",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x4AB66a7138F50Db9B7aDaF8CE8aFB3F638B22f7f"
+                },
+                {
+                    "token0": {
+                        "address": "0x692597b009d13C4049a947CAB2239b7d6517875F",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "UST",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
                     "symbol": "VSQ-FRAX",
                     "token0": {
                         "address": "0x29F1e986FCa02B7E54138c04C4F503DdDD250558",
@@ -128,6 +190,74 @@
                     "LPAddress": "0x5Cf66CeAf7F6395642cD11b5929499229edEF531",
                     "stable": true,
                     "single": false
+                },
+                {
+                    "symbol": "VSQ-UST",
+                    "token0": {
+                        "address": "0x29F1e986FCa02B7E54138c04C4F503DdDD250558",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x692597b009d13C4049a947CAB2239b7d6517875F",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x7bf1050510af993c4c731F7BA688e3E8eCee7eA7",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "amDAI-VSQ",
+                    "token0": {
+                        "address": "0x27F8D03b3a2196956ED754baDc28D73be8830A6e",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x29F1e986FCa02B7E54138c04C4F503DdDD250558",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x675C764fb1a7fa3f8AdD2331C2C1A77359B274e5",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "VSQ-TUSD",
+                    "token0": {
+                        "address": "0x29F1e986FCa02B7E54138c04C4F503DdDD250558",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x2e1AD108fF1D8C782fcBbB89AAd783aC49586756",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xDD16F2c6bd83dC7B576ad8BdfF05E6f35D5a0D65",
+                    "stable": false,
+                    "single": false
+                },
+                {
+                    "token0": {
+                        "address": "0xd8cA34fd379d9ca3C6Ee3b3905678320F5b45195",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+                        "decimals": 18
+                    },
+                    "nonStableLP": {
+                        "stableKey": "token0",
+                        "address": "0x34965ba0ac2451A34a0471F04CCa3F990b8dea27",
+                        "token0": {
+                            "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                            "decimals": 6
+                        },
+                        "token1": {
+                            "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+                            "decimals": 18
+                        }
+                    },
+                    "symbol": "gOHM",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x1549e0e8127d380080aab448b82d280433ce4030"
                 }
             ]
         }

@@ -7,28 +7,24 @@
             "symbol": "ICE",
             "date": "Dec-03-2021 03:37:34 PM",
             "link": "https://app.icedao.finance/#/stake",
-            "token": "0x9235b893a3e61a14b2d02a91ec1394fbf411689e",
-            "stakingSymbol": "GLA",
-            "stakingToken": "0x4b993a3544b01946c474bcb82fd483a5cff32a46",
-            "stakingContract": "0x82eeefe5cc8ad478893b377327ef2b710c51059f",
-            "LPContract": "0xfefb9b28f341d855b598e16ecc5f83b40cd827e6",
+            "token": "0x78bf833aae77ebf62c21a9a5a6993a691810f2e1",
+            "stakingSymbol": "GLAZE",
+            "stakingToken": "0x95c8c21c261e3855b62f45121197c5a533a8a4a3",
+            "stakingContract": "0xbde1c85c9faa18bc6e8eda1e2d813e63f86fd145",
+            "LPContract": "0x453B5415Fe883f15686A5fF2aC6FF35ca6702628",
             "lockedSupplyContract": null,
-            "treasuryContract": "0x4f3340a84e610fb3030e6ce5081804bdd8d7532a",
+            "treasuryContract": "0x935aef514141b0ca32849e9686d22cb8b6f1dcaf",
             "bondingCalculator": "0x62afc49295EA9E28926ad124072E8875463177aB",
             "wsOHMNetworks": [],
             "wsOHMSymbol": "",
             "isWarmup": true,
             "bondingContracts": [
                 {
-                    "address": "0x9ec6EdE1D47e4B9E4fF12dd38f7e087a036dD651",
-                    "symbol": "wAVAX"
-                },
-                {
-                    "address": "0xb4c4be95979f8396a70164255a12acfaa1fa9240",
+                    "address": "0x3f43e505b2a79576d81cb1514104557bf02be55b",
                     "symbol": "MIM"
                 },
                 {
-                    "address": "0xe9A0E94c68ff90BfE941673aCCc898671C05c22a",
+                    "address": "0x82c779d4a2472ef892393b72fc9c4a292b22655c",
                     "symbol": "ICE-MIM"
                 }
             ],
@@ -68,10 +64,10 @@
                         "decimals": 18
                     },
                     "token1": {
-                        "address": "0x9235B893a3e61a14b2D02a91EC1394fbF411689E",
+                        "address": "0x78bf833aae77ebf62c21a9a5a6993a691810f2e1",
                         "decimals": 9
                     },
-                    "LPAddress": "0xFeFB9b28f341d855b598E16ECc5f83b40cd827E6",
+                    "LPAddress": "0x453B5415Fe883f15686A5fF2aC6FF35ca6702628",
                     "stable": true,
                     "single": false
                 }

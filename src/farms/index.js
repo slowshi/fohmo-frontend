@@ -20,9 +20,9 @@ import AVAX_ARA from './AVAX-ARA.json';
 // import AVAX_RGK from './AVAX-RGK.json';
 // import AVAX_GHOST from './AVAX-GHOST.json';
 import AVAX_SPACE from './AVAX-SPACE.json';
-import AVAX_SPC from './AVAX-SPC.json';
+// import AVAX_SPC from './AVAX-SPC.json';
 import AVAX_JOLLY from './AVAX-JOLLY.json';
-import AVAX_PEPE from './AVAX-PEPE.json'
+// import AVAX_PEPE from './AVAX-PEPE.json'
 // import AVAX_GNIWS from './AVAX-GNIWS.json'
 // import AVAX_SPACEv1 from './AVAX-SPACEv1.json';
 // import AVAX_SBR from './AVAX-SBR.json';
@@ -104,7 +104,7 @@ const farms = {
   ...AVAX_LF,
   ...AVAX_MAXI,
   ...AVAX_CROWN,
-  ...AVAX_PEPE,
+  // ...AVAX_PEPE,
   ...AVAX_CLAVIS,
   // ...AVAX_NADO,
   ...AVAX_OTWO,
@@ -130,7 +130,7 @@ const farms = {
   ...AVAX_TEMPO,
   ...AVAX_TIME,
   ...AVAX_VAL,
-  ...AVAX_SPC,
+  // ...AVAX_SPC,
   ...AVAX_JOLLY,
   ...AVAX_VALDAO,
   ...CRO_FORT,

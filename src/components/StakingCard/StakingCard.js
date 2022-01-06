@@ -306,6 +306,19 @@ function StakingCard(params) {
               </span>
             </div>
             : ''}
+          {farm.balances.vssBalance?.tokenBalance > 0 ?
+            <div>
+              <hr></hr>
+              <span className="card-text d-flex h-auto justify-content-between align-items-center">
+                <strong>VSS Balance</strong>
+                <div className="align-items-end d-flex h-auto flex-column">
+                  <span>{farm.balances?.vssBalance?.tokenBalance} VSS</span>
+                  <span className="txt-smol">({farm.balances?.vssBalance?.convertedBalanceInUSD})</span>
+                  <span className="mb-1 txt-smol">Claimable MIM: {farm.balances?.vssBalance?.claimableInUSD}</span>
+                </div>
+              </span>
+            </div>
+            : ''}
             {typeof farm.constants.cauldrons !== 'undefined' && farm.constants.cauldrons.length ?
               <div>
                 <hr></hr>

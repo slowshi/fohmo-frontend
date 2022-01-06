@@ -11,6 +11,7 @@ import {abi as CurrencyAbi} from '../abis/Currency.json';
 import {abi as TreasuryAbi} from '../abis/Treasury.json';
 import {abi as KlaySwapAbi} from '../abis/KlaySwapLP.json';
 import {abi as wsOHMPoolAbi} from '../abis/wsOHMPool.json';
+import {abi as vssAbi} from '../abis/VSSContract.json';
 import store from '../store/store';
 import { getFarm } from './farmDecorator';
 
@@ -525,22 +526,27 @@ class StakingInfo {
       total: 0,
       balances: []
     };
-    if(typeof farmParams.cauldrons !== 'undefined') {
-      let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
-      let useIndex = rawCurrentIndex;
-      if (key === 'FTM-SPA') {
-        useIndex = currentIndex;
-      }
-      collateralBalances = await this.getCauldronCollateral(userAddress, farmParams.cauldrons, useIndex, clearCache);
-    }
     let wsOHMPoolBalance = 0;
-    if(typeof farmParams.wsOHMPool !== 'undefined') {
+    let vssBalance = {
+      tokenBalance: 0,
+      convertedBalance: 0,
+      claimable: 0
+    };
+    if(typeof farmParams.cauldrons !== 'undefined' || typeof farmParams.wsOHMPool !== 'undefined' || typeof farmParams.VSS !== 'undefined') {
       let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
       let useIndex = rawCurrentIndex;
       if (key === 'FTM-SPA') {
         useIndex = currentIndex;
       }
-      wsOHMPoolBalance = await this.getwsOHMPoolBalances(userAddress, farmParams.wsOHMPool, useIndex, networkParams.rpcURL, clearCache);
+      if(typeof farmParams.cauldrons !== 'undefined') {
+        collateralBalances = await this.getCauldronCollateral(userAddress, farmParams.cauldrons, useIndex, clearCache);
+      }
+      if(typeof farmParams.wsOHMPool !== 'undefined') {
+        wsOHMPoolBalance = await this.getwsOHMPoolBalances(userAddress, farmParams.wsOHMPool, useIndex, networkParams.rpcURL, clearCache);
+      }
+      if(typeof farmParams.VSS !== 'undefined') {
+        vssBalance = await this.getVSSBalances(userAddress, farmParams.VSS, useIndex, networkParams.rpcURL, clearCache);
+      }
     }
     const data = {
       tokenBalance,
@@ -549,6 +555,7 @@ class StakingInfo {
       wrappedBalances,
       wsOHMPoolBalance,
       collateralBalances,
+      vssBalance,
       fullBondTotal: Number(fullBondTotal),
       fullPendingBondTotal: Number(fullPendingBondTotal),
       bonds,
@@ -606,6 +613,28 @@ class StakingInfo {
       total,
       balances
     };
+  }
+
+  async getVSSBalances(userAddress, VSSAddress, index, rpcURL, clearCache) {
+    const vssContract = cacheEthers.contract(VSSAddress, vssAbi, rpcURL);
+    let vssBalance = await cacheEthers.contractCall(
+      vssContract,
+      'balanceOf',
+      [userAddress],
+      clearCache
+    );
+    let claimable = await cacheEthers.contractCall(
+      vssContract,
+      'withdrawableMIMOf',
+      [userAddress],
+      clearCache
+    );
+    const tokenBalance = Number(ethers.utils.formatUnits(vssBalance, 'ether'));
+    return {
+      tokenBalance,
+      convertedBalance: Number((tokenBalance  * index).toFixed(4)),
+      claimable: Number(ethers.utils.formatUnits(claimable, 'ether')),
+    }
   }
 
   async getCauldronCollateral(userAddress, cauldrons, index, clearCache=false) {

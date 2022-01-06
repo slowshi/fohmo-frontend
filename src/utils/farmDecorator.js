@@ -70,7 +70,7 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
       allBalances.tokenBalance +
       allBalances.stakingTokenBalance +
       allBalances.fullBondTotal +
-      // allBalances.warmupBalance +
+      allBalances.vssBalance.convertedBalance +
       allBalances.wsOHMPoolBalance.convertedBalance +
       allBalances.wrappedBalances.total +
       allBalances.collateralBalances.total
@@ -152,6 +152,22 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
           maximumFractionDigits: fractionDigits
         }),
       },
+      vssBalance: {
+        ...allBalances.vssBalance,
+        tokenBalance: Number(allBalances.vssBalance.tokenBalance) === 0 ? 0 :allBalances.vssBalance.tokenBalance.toFixed(4),
+        convertedBalanceInUSD: Number(allBalances.vssBalance.convertedBalance * rawPrice).toLocaleString(undefined, {
+          style: 'currency',
+          currency,
+          minimumFractionDigits: fractionDigits,
+          maximumFractionDigits: fractionDigits
+        }),
+        claimableInUSD: Number(allBalances.vssBalance.claimable).toLocaleString(undefined, {
+          style: 'currency',
+          currency,
+          minimumFractionDigits: fractionDigits,
+          maximumFractionDigits: fractionDigits
+        }),
+      },
       rawTotal,
       warmupBalance: Number(allBalances.warmupBalance) === 0 ? 0 :allBalances.warmupBalance.toFixed(4),
       warmupBalanceInUSD: Number(allBalances.warmupBalance * rawPrice).toLocaleString(undefined, {
@@ -210,6 +226,11 @@ const combineBalances = (balances, addresses) => {
     wsOHMPoolBalance: {
       tokenBalance: 0,
       convertedBalance: 0
+    },
+    vssBalance: {
+      tokenBalance: 0,
+      convertedBalance: 0,
+      claimable: 0
     },
     wrappedBalances: {
       balances: [],
@@ -272,6 +293,11 @@ const combineBalances = (balances, addresses) => {
         tokenBalance: (acc.wsOHMPoolBalance.tokenBalance || 0) + (balance.wsOHMPoolBalance.tokenBalance || 0),
         convertedBalance: (acc.wsOHMPoolBalance.convertedBalance || 0) + (balance.wsOHMPoolBalance.convertedBalance || 0)
       },
+      vssBalance: {
+        tokenBalance: (acc.vssBalance.tokenBalance || 0) + (balance.vssBalance.tokenBalance || 0),
+        convertedBalance: (acc.vssBalance.convertedBalance || 0) + (balance.vssBalance.convertedBalance || 0),
+        claimable: (acc.vssBalance.claimable || 0) + (balance.vssBalance.claimable || 0)
+      },
       wrappedBalances: {
         total: wrappedBalanceTotals,
         balances: wrappedBalanceList
@@ -291,6 +317,11 @@ const combineBalances = (balances, addresses) => {
     wsOHMPoolBalance: {
       tokenBalance: 0,
       convertedBalance: 0
+    },
+    vssBalance: {
+      tokenBalance: 0,
+      convertedBalance: 0,
+      claimable: 0
     },
     wrappedBalances: {
       balances: [],
