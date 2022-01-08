@@ -1,4 +1,3 @@
-// import ARB_Z20 from './ARB-Z20.json';
 // import ARB_FCS from './ARB-FCS.json';
 import ARB_UMAMI from './ARB-UMAMI.json';
 import ARB_OMIC from './ARB-OMIC.json';
@@ -31,6 +30,7 @@ import AVAX_PB from './AVAX-PB.json';
 import AVAX_VERSE from './AVAX-VERSE.json'
 import AVAX_SB from './AVAX-SB.json';
 import AVAX_SEA from './AVAX-SEA.json';
+import AVAX_SRA from './AVAX-SRA.json';
 // import AVAX_BLIGHT from './AVAX-BLIGHT.json';
 // import AVAX_BLANC from './AVAX-BLANC.json';
 import AVAX_TEMPO from './AVAX-TEMPO.json';
@@ -41,6 +41,9 @@ import AVAX_MAG from './AVAX-MAG.json';
 import BSC_GYRO from './BSC-GYRO.json';
 import BSC_XEUS from './BSC-XEUS.json';
 import BSC_PID from './BSC-PID.json';
+import AVAX_CAT from './AVAX-CAT.json'
+// import CRO_MINO from './CRO-MINO.json'
+import BSC_GLBD from './BSC-GLBD.json'
 import BSC_ASGARD from './BSC-ASGARD.json';
 // import BSC_SD from './BSC-SD.json';
 import BSC_JADE from './BSC-JADE.json';
@@ -51,7 +54,7 @@ import BSC_POWER from './BSC-POWER.json';
 // import BSC_RA from './BSC-RA.json';
 import BSC_META from './BSC-META.json';
 import BSC_NMS from './BSC-NMS.json';
-import BSC_TAC from './BSC-TAC.json';
+// import BSC_TAC from './BSC-TAC.json';
 import BSC_TEM from './BSC-TEM.json';
 import BSC_HUMP from './BSC-HUMP.json';
 import BSC_DIOS from './BSC-DIOS.json';
@@ -64,7 +67,7 @@ import ETH_OHM from './ETH-OHM.json';
 import ETH_OHM2 from './ETH-OHM2.json';
 import ETH_SQUID from './ETH-SQUID.json';
 import ETH_BTRFLY from './ETH-BTRFLY.json';
-import ETH_3DOG from './ETH-3DOG.json';
+// import ETH_3DOG from './ETH-3DOG.json';
 // import FTM_GIZA from './FTM-GIZA.json';
 import FTM_EXOD from './FTM-EXOD.json';
 import FTM_FHM from './FTM-FHM.json';
@@ -120,6 +123,8 @@ const farms = {
   // ...AVAX_SCAT,
   ...AVAX_PB,
   ...AVAX_SEA,
+  ...AVAX_SRA,
+  ...AVAX_CAT,
   ...AVAX_VERSE,
   ...AVAX_SB,
   // ...AVAX_SBR,
@@ -134,11 +139,13 @@ const farms = {
   ...AVAX_JOLLY,
   ...AVAX_VALDAO,
   ...CRO_FORT,
+  // ...CRO_MINO,
   ...BSC_DIOS,
   ...BSC_GYRO,
   ...BSC_XEUS,
   ...BSC_JADE,
   ...BSC_HUMP,
+  ...BSC_GLBD,
   ...BSC_META,
   ...BSC_GG,
   ...BSC_LOVE,
@@ -148,7 +155,7 @@ const farms = {
   // ...BSC_SD,
   ...BSC_PID,
   // ...BSC_RA,
-  ...BSC_TAC,
+  // ...BSC_TAC,
   ...BSC_TEM,
   ...BSC_UDO,
   ...BSC_XPH,
@@ -157,7 +164,7 @@ const farms = {
   ...ETH_MNFST,
   ...ETH_OHM,
   ...ETH_OHM2,
-  ...ETH_3DOG,
+  // ...ETH_3DOG,
   ...ETH_BTRFLY,
   ...ETH_SQUID,
   ...FTM_EXOD,

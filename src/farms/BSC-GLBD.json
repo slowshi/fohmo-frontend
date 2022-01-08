@@ -1,0 +1,62 @@
+{
+    "BSC-GLBD": {
+        "farmSymbol": "GLBD",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "BeGlobal DAO",
+            "symbol": "GLBD",
+            "date": "Jan-08-2022 11:56:17 AM",
+            "link": "https://beglobaldao.finance/#/stake",
+            "token": "0xD177E36377E71775d6f9956B3fDD0f02664C6996",
+            "stakingSymbol": "sGLBD",
+            "stakingToken": "0xf3922fa91bb2e2bf9f694573b3c73cfa765fb1c3",
+            "stakingContract": "0xa4dcd9b6842b7b9b8e5bc430070468d811cf722e",
+            "LPContract": "0x1df0b759ee5b144852eeb571bba9cca2aec66b35",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xb9198323c85ec5d475b6d8fef0c24147f7f7bbc5",
+            "bondingCalculator": "0xa0a2246dc3eb653e63d7b8050d8ac95875518521",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xc7cb10e98b87b95999fb3e324f55ccf2ff43ac92",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0x93aa45c9b2b2227220f2af494ee09f7393f3b293",
+                    "symbol": "GLBD-BSUD"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "GLBD-BUSD",
+                    "token0": {
+                        "address": "0xD177E36377E71775d6f9956B3fDD0f02664C6996",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x1dF0B759ee5b144852EEb571bbA9CCA2aec66b35",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
+    }
+}

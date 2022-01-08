@@ -1,0 +1,82 @@
+{
+    "AVAX-CAT": {
+        "farmSymbol": "CAT",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Cleopatra DAO",
+            "symbol": "CAT",
+            "timeTemplate": true,
+            "date": "Jan-07-2022 07:14:53 AM",
+            "link": "https://www.cleopatra-dao.xyz/#/dashboard",
+            "token": "0x48358BfAA1EC39AafCb0786c3e0342Db676Df93E",
+            "stakingSymbol": "sCAT",
+            "indexRatio": 4.5,
+            "stakingToken": "0xDF5CaB6D4BC4680e931F151FfbDcb80848410020",
+            "stakingContract": "0x6636dF51544bAef6B90f4012504B1dfE1eD5e3Fd",
+            "LPContract": "0x6a71044647c960afb6bbe758cc444dedfa9349f7",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x10243C6D13875443716ff3E88b7Da7664e431E09",
+            "bondingCalculator": "0x9dA7aF9FB54d074cEDB9d9E793eAAbad6A1c36AB",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xd98cdb3210887582173629f3a66b2810b6d3f6ac",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x069439b65280d9e2d9fa57794ca31487a2318cf8",
+                    "symbol": "CAT-MIM"
+                },
+                {
+                    "address": "0x0cc16eda9faf8dc6fac4a3e040164892ee68fd27",
+                    "symbol": "WAVAX"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc7198437980c041c805a1edcba50c1ce5db95118",
+                        "decimals": 6
+                    },
+                    "symbol": "WAVAX",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256"
+                },
+                {
+                    "symbol": "MIM-CAT",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x48358BfAA1EC39AafCb0786c3e0342Db676Df93E",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x6A71044647c960Afb6bBe758cC444Dedfa9349f7",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
+    }
+}

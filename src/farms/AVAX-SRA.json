@@ -1,0 +1,60 @@
+{
+    "AVAX-SRA": {
+        "farmSymbol": "SRA",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Sierra",
+            "symbol": "SRA",
+            "timeTemplate": true,
+            "date": "Jan-07-2022 06:48:18 PM",
+            "link": "https://app.sierra.money/#/stake",
+            "token": "0x862d2e466c28db7961e953083854e19481478842",
+            "stakingSymbol": "sSRA",
+            "indexRatio": 4.5,
+            "stakingToken": "0xb01b09eedb490f833c6c6139603ec13345615f6e",
+            "stakingContract": "0x3acafc2c652c7533bf2782f947fcb8d7a8bb3913",
+            "LPContract": "0xcac0101426fdbfcfe7baff17ddc6652d92540480",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x8ea72332670987463413916019e598040a8537af",
+            "bondingCalculator": "0xc1F64E79513E2309B8b87dE197C787Fb3F0F7e5f",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x8a3ada12e44f40deb19df2db2e11935289ccb116",
+                    "symbol": "MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MIM-SRA",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x862D2E466C28dB7961E953083854e19481478842",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0xCaC0101426fDbFCfE7baff17dDc6652D92540480",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
+    }
+}

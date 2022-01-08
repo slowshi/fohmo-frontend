@@ -1,0 +1,60 @@
+{
+    "CRO-MINO": {
+        "farmSymbol": "MINO",
+        "networkSymbol": "CRO",
+        "constants": {
+            "name": "Minotaur Money",
+            "symbol": "MINO",
+            "timeTemplate": true,
+            "date": "Jan-04-2022 05:23:11 PM",
+            "link": "https://minotaur.money/#/stake",
+            "token": "0x3A1138075bd97a33F23A87824b811146FA44288E",
+            "stakingSymbol": "sMINO",
+            "stakingToken": "0xB46fe6791A30d51970EA3B840C9fa5F1F107b86F",
+            "indexRatio": 4.5,
+            "stakingContract": "0x844e265F24868F7e18D4f90d50b500c6C36bdBA7",
+            "LPContract": "0xf5A5f547612e95c688971fb68334a80cEb3c542B",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x8A8cc2F5346b3C95EE343c62F89f41E0c1b68C7b",
+            "wsOHMNetworks": [
+                {
+                    "address": "0x1066c6753FFaf8540F691643A6D683e23599c4ab",
+                    "networkSymbol": "CRO"
+                }
+            ],
+            "wsOHMSymbol": "wsMINO",
+            "bondingContracts": [
+                {
+                    "address": "0x8DF0679ee8a056416703cdA6224EAaCEFa71663C",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0xB318E8Ee4844dE042588426d551FA26945864389",
+                    "symbol": "MINO-DAI"
+                },
+                {
+                    "address": "0x17DB4Bd30034BAfC7E0b57D5f6aC8b2126eb7635",
+                    "symbol": "wCRO-MINO"
+                },
+                {
+                    "address": "0x4C0B2b0655ac6099911f9948532c4029623fe2Cd",
+                    "symbol": "wBTC"
+                },
+                {
+                    "address": "0x03FE1B80b91F0E6AC4B305aeb4F1b462F6bFF9E7",
+                    "symbol": "wETH"
+                },
+                {
+                    "address": "0x55BB9FC5Eb8D57dD59189f9280A1b8ac81d3B220",
+                    "symbol": "wCRO"
+                },
+                {
+                    "address": "0x122ca9d7489d15736982d6693F1d309Cc61A1dDd",
+                    "symbol": "xUSD"
+                }
+            ],
+            "treasuryAssets": [],
+            "bondingCalculator": "0x56a497929A00dB304A54Ea33B6B1c6C41d3D6c76"
+        }
+    }
+}
