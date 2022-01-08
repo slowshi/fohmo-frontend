@@ -9,13 +9,19 @@
             "link": "https://app.fantohm.com/#/stake",
             "token": "0xfa1FBb8Ef55A4855E5688C0eE13aC3f202486286",
             "stakingSymbol": "sFHM",
+            "indexRatio": 17,
             "stakingToken": "0x5E983ff70DE345de15DbDCf0529640F14446cDfa",
             "stakingContract": "0xcb9297425c889a7cbbaa5d3db97bab4ea54829c2",
             "LPContract": "0xd77fc9c4074b56ecf80009744391942fbfddd88b",
             "lockedSupplyContract": "0x34F93b12cA2e13C6E64f45cFA36EABADD0bA30fC",
             "treasuryContract": "0xA3b52d5A6d2f8932a5cD921e09DA840092349D71",
-            "wsOHMNetworks": [],
-            "wsOHMSymbol": "",
+            "wsOHMNetworks": [
+                {
+                    "address": "0x73199ba57BBFe82a935B9C95850395d80a400937",
+                    "networkSymbol": "FTM"
+                }
+            ],
+            "wsOHMSymbol": "fwsFHM",
             "bondingContracts": [
                 {
                     "address": "0x6d0a19bbba84cc2fe3cb05b4d9a9aaf52fe9df63",
