@@ -5,13 +5,12 @@
         "constants": {
             "name": "Minotaur Money",
             "symbol": "MINO",
-            "timeTemplate": true,
+            "timeTemplate": "true",
             "date": "Jan-04-2022 05:23:11 PM",
             "link": "https://minotaur.money/#/stake",
             "token": "0x3A1138075bd97a33F23A87824b811146FA44288E",
             "stakingSymbol": "sMINO",
             "stakingToken": "0xB46fe6791A30d51970EA3B840C9fa5F1F107b86F",
-            "indexRatio": 4.5,
             "stakingContract": "0x844e265F24868F7e18D4f90d50b500c6C36bdBA7",
             "LPContract": "0xf5A5f547612e95c688971fb68334a80cEb3c542B",
             "lockedSupplyContract": null,
@@ -53,7 +52,130 @@
                     "symbol": "xUSD"
                 }
             ],
-            "treasuryAssets": [],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xF2001B145b43032AAF5Ee2884e456CCd805F677D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MINO-WCRO",
+                    "token0": {
+                        "address": "0x3A1138075bd97a33F23A87824b811146FA44288E",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x1c139F4B953CE0c0F6Aa1CD1755727Ad5ABA5080",
+                    "stable": false,
+                    "single": false
+                },
+                {
+                    "symbol": "MINO-DAI",
+                    "token0": {
+                        "address": "0x3A1138075bd97a33F23A87824b811146FA44288E",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xF2001B145b43032AAF5Ee2884e456CCd805F677D",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xf5A5f547612e95c688971fb68334a80cEb3c542B",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "token0": {
+                        "address": "0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xc21223249ca28397b4b6541dffaecc539bff0c59",
+                        "decimals": 6
+                    },
+                    "symbol": "wCRO",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xe61db569e231b3f5530168aa2c9d50246525b6d6"
+                },
+                {
+                    "token0": {
+                        "address": "0x062E66477Faf219F25D27dCED647BF57C3107d52",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23",
+                        "decimals": 18
+                    },
+                    "nonLPStable": {
+                        "stableKey": "token1",
+                        "token0": {
+                            "address": "0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23",
+                            "decimals": 18
+                        },
+                        "token1": {
+                            "address": "0xc21223249ca28397b4b6541dffaecc539bff0c59",
+                            "decimals": 6
+                        },
+                        "address":""
+                    },
+                    "symbol": "wBTC",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x5383202d48c24aaa19873366168f2ed558a00ff0"
+                },
+                {
+                    "token0": {
+                        "address": "0xe44Fd7fCb2b1581822D0c862B68222998a0c299a",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23",
+                        "decimals": 18
+                    },
+                    "nonLPStable": {
+                        "stableKey": "token1",
+                        "token0": {
+                            "address": "0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23",
+                            "decimals": 18
+                        },
+                        "token1": {
+                            "address": "0xc21223249ca28397b4b6541dffaecc539bff0c59",
+                            "decimals": 6
+                        },
+                        "address":"0xe61db569e231b3f5530168aa2c9d50246525b6d6"
+                    },
+                    "symbol": "wETH",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xA111C17f8B8303280d3EB01BBcd61000AA7F39F9"
+                },
+                {
+                    "token0": {
+                        "address": "0xe6052a9a4c0A2f14ADC9876A3A1a7b2882f5F139",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": 18
+                    },
+                    "symbol": "XUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                }
+            ],
             "bondingCalculator": "0x56a497929A00dB304A54Ea33B6B1c6C41d3D6c76"
         }
     }

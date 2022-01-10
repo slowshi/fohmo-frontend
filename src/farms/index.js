@@ -32,7 +32,7 @@ import AVAX_SB from './AVAX-SB.json';
 import AVAX_SEA from './AVAX-SEA.json';
 import AVAX_SRA from './AVAX-SRA.json';
 // import AVAX_BLIGHT from './AVAX-BLIGHT.json';
-// import AVAX_BLANC from './AVAX-BLANC.json';
+import AVAX_BLANC from './AVAX-BLANC.json';
 import AVAX_TEMPO from './AVAX-TEMPO.json';
 import AVAX_VAL from './AVAX-VAL.json';
 import AVAX_VALDAO from './AVAX-VALDAO.json';
@@ -42,7 +42,7 @@ import BSC_GYRO from './BSC-GYRO.json';
 import BSC_XEUS from './BSC-XEUS.json';
 import BSC_PID from './BSC-PID.json';
 import AVAX_CAT from './AVAX-CAT.json'
-// import CRO_MINO from './CRO-MINO.json'
+import CRO_MINO from './CRO-MINO.json'
 import BSC_GLBD from './BSC-GLBD.json'
 import BSC_ASGARD from './BSC-ASGARD.json';
 // import BSC_SD from './BSC-SD.json';
@@ -119,7 +119,7 @@ const farms = {
   // ...AVAX_RGK,
   // ...AVAX_GNIWS,
   // ...AVAX_PARR,
-  // ...AVAX_BLANC,
+  ...AVAX_BLANC,
   // ...AVAX_SCAT,
   ...AVAX_PB,
   ...AVAX_SEA,
@@ -139,7 +139,7 @@ const farms = {
   ...AVAX_JOLLY,
   ...AVAX_VALDAO,
   ...CRO_FORT,
-  // ...CRO_MINO,
+  ...CRO_MINO,
   ...BSC_DIOS,
   ...BSC_GYRO,
   ...BSC_XEUS,

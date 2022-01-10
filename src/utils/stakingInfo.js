@@ -139,7 +139,6 @@ class StakingInfo {
     const stakingContract = cacheEthers.contract(farmParams.stakingContract, StakingAbi, networkParams.rpcURL);
     const tokenContract = cacheEthers.contract(farmParams.token, IERC20Abi, networkParams.rpcURL);
     const stakingTokenContract = cacheEthers.contract(farmParams.stakingToken, StakingTokenAbi, networkParams.rpcURL);
-
     let totalSupply = await cacheEthers.contractCall(
       tokenContract,
       'totalSupply',

@@ -146,7 +146,7 @@ const networks = {
   ONE: {
     symbol: 'ONE',
     name: 'Harmony',
-    rpcURL: 'https://api.harmony.one',
+    rpcURL: 'https://api.harmony.one/',
     chartURL: 'https://dexscreener.com/harmony/',
     blockRateSeconds: 2
   },
