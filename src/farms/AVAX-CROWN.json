@@ -8,27 +8,27 @@
             "timeTemplate": true,
             "date": "Dec-03-2021 07:20:15 PM",
             "link": "https://app.midasdao.org/#/stake",
-            "token": "0xed46443C18E38064523180Fc364C6180b35803d3",
+            "token": "0x39912d83acb4a373321387300f4fbe88aa5d6f14",
             "stakingSymbol": "sCROWN",
-            "stakingToken": "0x2Ac4CCBc98A6680Bbd9Dd0A2eAFBB13BECf09644",
-            "stakingContract": "0x5B92738B2De8331Bee366378f27d146DcBaD85c5",
-            "LPContract": "0x3f0DE4Ec592e4376aA6925C3B3dc33D5ffBCDcc3",
+            "stakingToken": "0x643D3707FBa05962821e0d0838a82C0Ab40D9549",
+            "stakingContract": "0x9619BC1306B94130FBC70CF07e311E69949f07D4",
+            "LPContract": "0x089a9BF16453b519Fab02e40d143C0dcF9083778",
             "lockedSupplyContract": null,
-            "treasuryContract": "0x820885fCA68fB49d29D40AbF920362FC3e9865C6",
+            "treasuryContract": "0x6D9Cfb705C7b7A5ca1C4565A47Fa1b26FC1bE3d0",
             "bondingCalculator": "0xa600289aebf1d85525D11f7C7544961d1955A21c",
             "wsOHMNetworks": [],
             "wsOHMSymbol": "",
             "bondingContracts": [
                 {
-                    "address": "0xAfbb54F19157657c5BfD350309aa64e39D6214aA",
+                    "address": "0xF3C0aB5d9CAbf12775719959A4ffd218feA0c43C",
                     "symbol": "CROWN-MIM"
                 },
                 {
-                    "address": "0x4AEC1E194BafF9b880C71b6441b3554DfA34E359",
+                    "address": "0x719d4CBAecA6e1a61fd2Cb9fE581aFb9Db18b74B",
                     "symbol": "MIM"
                 },
                 {
-                    "address": "0x1962D5bC849bCA85860252673f65081a926DbA9a",
+                    "address": "0xE4f5d8Ef9c638e487a9e315A673cF598d7b0d4d9",
                     "symbol": "wAVAX"
                 }
             ],
@@ -68,10 +68,10 @@
                         "decimals": 18
                     },
                     "token1": {
-                        "address": "0xed46443C18E38064523180Fc364C6180b35803d3",
+                        "address": "0x39912d83acb4a373321387300f4fbe88aa5d6f14",
                         "decimals": 9
                     },
-                    "LPAddress": "0x3f0DE4Ec592e4376aA6925C3B3dc33D5ffBCDcc3",
+                    "LPAddress": "0x089a9BF16453b519Fab02e40d143C0dcF9083778",
                     "stable": true,
                     "single": false
                 }

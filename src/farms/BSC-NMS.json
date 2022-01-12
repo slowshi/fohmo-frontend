@@ -15,8 +15,13 @@
             "lockedSupplyContract": null,
             "treasuryContract": "0xdffb6fb92e3f54c0daa59e5af3f47fd58824562a",
             "bondingCalculator": "",
-            "wsOHMNetworks": [],
-            "wsOHMSymbol": "",
+            "wsOHMNetworks": [
+                {
+                    "address": "0xe8213db89f1e14fedbc611c30cac7dfdafcd853a",
+                    "networkSymbol": "BSC"
+                }
+            ],
+            "wsOHMSymbol": "wsNMS",
             "bondingContracts": [
                 {
                     "address": "0x7db3599d79b23a405fd735d302ee820ec2c4458a",

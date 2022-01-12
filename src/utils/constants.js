@@ -105,6 +105,10 @@ const fiatCurrencyMap = {
     label: 'JPY',
     address: '0xbce206cae7f0ec07b545edde332a47c2f75bbeb3'
   },
+  aed: {
+    label: 'AED',
+    address: ''
+  },
   btc: {
     label: 'BTC',
     address: '0xf4030086522a5beea4988f8ca5b36dbc97bee88c'
