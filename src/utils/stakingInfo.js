@@ -667,7 +667,7 @@ class StakingInfo {
 
   async getCurrencyConversion(currencyKey='usd', clearCache=false) {
     if(currencyKey === 'usd') return 1;
-    if(currencyKey === 'aed') return 3.67;
+    if(currencyKey === 'aed') return 0.27;
     const networkParams = networks.ETH;
     const currencyAddress = fiatCurrencyMap[currencyKey].address
     const currenyContract = cacheEthers.contract(currencyAddress, CurrencyAbi, networkParams.rpcURL);
