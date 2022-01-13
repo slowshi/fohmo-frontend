@@ -382,7 +382,7 @@ function StakingCard(params) {
             <div>
               <input type="range"
               className="form-range"
-               min="1" max={Number(farm.treasuryBalance.runway).toFixed(0)} id="dynamic-roi" step="1"
+               min="1" max={Number(farm.treasuryBalance.runway) > 0 ? Number(farm.treasuryBalance.runway).toFixed(0) : 365} id="dynamic-roi" step="1"
                value={farm.roiDynamic}
                onInput={(e)=>dispatch({
                   type: 'setRoiDynamic',

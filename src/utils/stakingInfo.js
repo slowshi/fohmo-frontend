@@ -12,6 +12,7 @@ import {abi as TreasuryAbi} from '../abis/Treasury.json';
 import {abi as KlaySwapAbi} from '../abis/KlaySwapLP.json';
 import {abi as wsOHMPoolAbi} from '../abis/wsOHMPool.json';
 import {abi as vssAbi} from '../abis/VSSContract.json';
+import {abi as wxBTRFLYAbi} from '../abis/wxBTRFLY.json';
 import store from '../store/store';
 import { getFarm } from './farmDecorator';
 
@@ -99,26 +100,35 @@ class StakingInfo {
     });
   }
   async getCurrentIndex(stakingContract, key, indexRatio=1, clearCache=false) {
-    let rawCurrentIndex = await cacheEthers.contractCall(
-      stakingContract,
-      'index',
-      [],
-      clearCache
-    );
-    let currentIndex = await cacheEthers.contractCall(
-      stakingContract,
-      'index',
-      [],
-      clearCache
-    );
-    currentIndex = Number(ethers.utils.formatUnits(currentIndex, 'gwei') / indexRatio).toFixed(2);
-    if (key === 'BSC-META' || key === 'BSC-GYRO') {
+    let rawCurrentIndex = 0;
+    let currentIndex = 0;
+    if(key === 'ETH-BTRFLY') {
+      const farm = allFarms[key];
+      const network = networks[farm.networkSymbol];
+      const address = farm.constants.wsOHMNetworks[0].address;
+      const wxBTRFLYContract = cacheEthers.contract(address, wxBTRFLYAbi, network.rpcURL);
+      rawCurrentIndex = await cacheEthers.contractCall(
+        wxBTRFLYContract,
+        'realIndex',
+        [],
+        clearCache
+      );
+      currentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei') / indexRatio).toFixed(2);
       rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei') / indexRatio).toFixed(2);
     } else {
-      rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
-
+      rawCurrentIndex = await cacheEthers.contractCall(
+        stakingContract,
+        'index',
+        [],
+        clearCache
+      );
+      currentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei') / indexRatio).toFixed(2);
+      if (key === 'BSC-META' || key === 'BSC-GYRO') {
+        rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei') / indexRatio).toFixed(2);
+      } else {
+        rawCurrentIndex = Number(ethers.utils.formatUnits(rawCurrentIndex, 'gwei')).toFixed(2);
+      }
     }
-
     return {
       currentIndex: Number(currentIndex),
       rawCurrentIndex: Number(rawCurrentIndex)
@@ -516,7 +526,7 @@ class StakingInfo {
     if(farmParams.wsOHMNetworks !== null) {
       let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
       let useIndex = rawCurrentIndex;
-      if (key === 'FTM-SPA') {
+      if (key === 'FTM-SPA' || key === 'FTM-FHM') {
         useIndex = currentIndex;
       }
       wrappedBalances = await this.getwsOHMBalances(userAddress, farmParams.wsOHMNetworks, useIndex, clearCache);
@@ -589,7 +599,7 @@ class StakingInfo {
     let total = 0;
     const getBalances = async (data) => {
       const networkParams = networks[data.networkSymbol];
-      const tokenContract = cacheEthers.contract(data.address, IERC20Abi, networkParams.rpcURL);
+      const tokenContract = cacheEthers.contract(data.address, wxBTRFLYAbi, networkParams.rpcURL);
       let tokenBalance = await cacheEthers.contractCall(
         tokenContract,
         'balanceOf',
