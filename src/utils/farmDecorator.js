@@ -69,6 +69,7 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
   let rawTotal = (
       allBalances.tokenBalance +
       allBalances.stakingTokenBalance +
+      allBalances.hugsBalance +
       allBalances.fullBondTotal +
       allBalances.vssBalance.convertedBalance +
       allBalances.wsOHMPoolBalance.convertedBalance +
@@ -195,6 +196,13 @@ const getFarm = function(farm, balances, addresses, fiatCurrency) {
         minimumFractionDigits: fractionDigits,
         maximumFractionDigits: fractionDigits
       }),
+      hugsBalance: Number(allBalances.hugsBalance) === 0 ? 0 :allBalances.hugsBalance.toFixed(4),
+      hugsBalanceInUSD: Number(allBalances.hugsBalance * rawPrice).toLocaleString(undefined, {
+        style: 'currency',
+        currency,
+        minimumFractionDigits: fractionDigits,
+        maximumFractionDigits: fractionDigits
+      }),
       total: rawTotal.toLocaleString(undefined, {
         style: 'currency',
         currency,
@@ -223,6 +231,7 @@ const combineBalances = (balances, addresses) => {
     stakingTokenBalance: 0,
     warmupBalance: 0,
     tokenBalance: 0,
+    hugsBalance: 0,
     wsOHMPoolBalance: {
       tokenBalance: 0,
       convertedBalance: 0
@@ -289,6 +298,7 @@ const combineBalances = (balances, addresses) => {
       stakingTokenBalance: (acc.stakingTokenBalance || 0) + (balance.stakingTokenBalance || 0),
       tokenBalance: (acc.tokenBalance || 0) + (balance.tokenBalance || 0),
       warmupBalance: (acc.warmupBalance || 0) + (balance.warmupBalance || 0),
+      hugsBalance: (acc.hugsBalance || 0) + (balance.hugsBalance || 0),
       wsOHMPoolBalance: {
         tokenBalance: (acc.wsOHMPoolBalance.tokenBalance || 0) + (balance.wsOHMPoolBalance.tokenBalance || 0),
         convertedBalance: (acc.wsOHMPoolBalance.convertedBalance || 0) + (balance.wsOHMPoolBalance.convertedBalance || 0)
@@ -314,6 +324,7 @@ const combineBalances = (balances, addresses) => {
     stakingTokenBalance: 0,
     tokenBalance: 0,
     warmupBalance: 0,
+    hugsBalance: 0,
     wsOHMPoolBalance: {
       tokenBalance: 0,
       convertedBalance: 0

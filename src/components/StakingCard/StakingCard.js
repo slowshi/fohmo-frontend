@@ -272,6 +272,17 @@ function StakingCard(params) {
                 </span>
               </div>: ''
             }
+            {farmKey === 'BSC-LOVE' ?
+              <div>
+                <span className="card-text d-flex h-auto justify-content-between align-items-top">
+                  <strong>HUGS</strong>
+                  <div className="align-items-end d-flex h-auto flex-column">
+                  <span>{farm.balances?.hugsBalance}</span>
+                    <span className="mb-1 txt-smol">({farm.balances?.hugsBalanceInUSD})</span>
+                  </div>
+                </span>
+              </div>: ''
+            }
             <span className="card-text d-flex h-auto justify-content-between align-items-top">
               <strong>{farm.constants.stakingSymbol}</strong>
               <div className="align-items-end d-flex h-auto flex-column">

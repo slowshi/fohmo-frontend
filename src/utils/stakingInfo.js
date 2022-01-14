@@ -194,7 +194,7 @@ class StakingInfo {
 
     let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
     let lockedValue = 0;
-    if(key !== 'ETH-OHM2' && key !== 'BSC-HUMP') {
+    if(key !== 'ETH-OHM2' && key !== 'BSC-HUMP'&& key !== 'BSC-LOVE') {
       lockedValue = await cacheEthers.contractCall(
         stakingContract,
         'contractBalance',
@@ -494,7 +494,7 @@ class StakingInfo {
     // console.log(bonds);
     let warmupBalance = 0;
     // let warmupPeriod = 0;
-    if (key !== 'BSC-GYRO') {
+    if (key !== 'BSC-GYRO' && key !== 'BSC-LOVE') {
       const warmupInfo = await cacheEthers.contractCall(
         stakingContract,
         'warmupInfo',
@@ -541,7 +541,8 @@ class StakingInfo {
       convertedBalance: 0,
       claimable: 0
     };
-    if(typeof farmParams.cauldrons !== 'undefined' || typeof farmParams.wsOHMPool !== 'undefined' || typeof farmParams.VSS !== 'undefined') {
+    let hugsBalance = 0
+    if(typeof farmParams.cauldrons !== 'undefined' || typeof farmParams.wsOHMPool !== 'undefined' || typeof farmParams.VSS !== 'undefined' || typeof farmParams.HUGS !== 'undefined') {
       let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
       let useIndex = rawCurrentIndex;
       if (key === 'FTM-SPA') {
@@ -556,6 +557,16 @@ class StakingInfo {
       if(typeof farmParams.VSS !== 'undefined') {
         vssBalance = await this.getVSSBalances(userAddress, farmParams.VSS, useIndex, networkParams.rpcURL, clearCache);
       }
+      if(typeof farmParams.HUGS !== 'undefined') {
+        const hugsContract = cacheEthers.contract(farmParams.HUGS, IERC20Abi, networkParams.rpcURL, clearCache);
+        hugsBalance = await cacheEthers.contractCall(
+          hugsContract,
+          'balanceOf',
+          [userAddress],
+          clearCache
+        );
+        hugsBalance = Number(ethers.utils.formatUnits(hugsBalance, 'gwei'));
+      }
     }
     const data = {
       tokenBalance,
@@ -565,6 +576,7 @@ class StakingInfo {
       wsOHMPoolBalance,
       collateralBalances,
       vssBalance,
+      hugsBalance,
       fullBondTotal: Number(fullBondTotal),
       fullPendingBondTotal: Number(fullPendingBondTotal),
       bonds,
@@ -674,6 +686,15 @@ class StakingInfo {
       balances
     };
   }
+  async getHugsBalance(userAddress, HUGS, rpcURL, clearCache=false) {
+    const vssContract = cacheEthers.contract(VSSAddress, vssAbi, rpcURL);
+    let vssBalance = await cacheEthers.contractCall(
+      vssContract,
+      'balanceOf',
+      [userAddress],
+      clearCache
+    );
+  }
 
   async getCurrencyConversion(currencyKey='usd', clearCache=false) {
     if(currencyKey === 'usd') return 1;
@@ -690,6 +711,7 @@ class StakingInfo {
     latestAnswer = Number(ethers.utils.formatUnits(latestAnswer, 8));
     return latestAnswer;
   }
+
   async getTreasury(networkSymbol, farmSymbol, clearCache=false) {
     const key = `${networkSymbol}-${farmSymbol}`;
     const networkParams = networks[networkSymbol];
