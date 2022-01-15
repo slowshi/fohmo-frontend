@@ -4,7 +4,7 @@
         "networkSymbol": "AVAX",
         "constants": {
             "name": "ICE DAO",
-            "symbol": "ICE",
+            "symbol": "ICY",
             "date": "Dec-03-2021 03:37:34 PM",
             "link": "https://app.icedao.finance/#/stake",
             "token": "0x78bf833aae77ebf62c21a9a5a6993a691810f2e1",
@@ -15,8 +15,13 @@
             "lockedSupplyContract": null,
             "treasuryContract": "0x935aef514141b0ca32849e9686d22cb8b6f1dcaf",
             "bondingCalculator": "0x62afc49295EA9E28926ad124072E8875463177aB",
-            "wsOHMNetworks": [],
-            "wsOHMSymbol": "",
+            "wsOHMNetworks": [
+                {
+                    "address": "0x80277a98bd53aa835ec4cb7aedf04ac8fbac5e3c",
+                    "networkSymbol": "AVAX"
+                }
+            ],
+            "wsOHMSymbol": "wGLAZE",
             "isWarmup": true,
             "bondingContracts": [
                 {

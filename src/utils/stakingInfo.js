@@ -193,15 +193,12 @@ class StakingInfo {
     );
 
     let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
-    let lockedValue = 0;
-    if(key !== 'ETH-OHM2' && key !== 'BSC-HUMP'&& key !== 'BSC-LOVE') {
-      lockedValue = await cacheEthers.contractCall(
-        stakingContract,
-        'contractBalance',
-        [],
-        clearCache
-      );
-    }
+    const lockedValue = await cacheEthers.contractCall(
+      tokenContract,
+      'balanceOf',
+      [farmParams.stakingContract],
+      clearCache
+    );
 
     let stakingReward = epoch.distribute;
     if (typeof farmParams.timeTemplate !== 'undefined' && farmParams.timeTemplate) {
