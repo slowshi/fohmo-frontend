@@ -19,6 +19,7 @@ import AVAX_ARA from './AVAX-ARA.json';
 // import AVAX_RGK from './AVAX-RGK.json';
 // import AVAX_GHOST from './AVAX-GHOST.json';
 import AVAX_SPACE from './AVAX-SPACE.json';
+import AVAX_KANDY from './AVAX-KANDY.json';
 // import AVAX_SPC from './AVAX-SPC.json';
 import AVAX_JOLLY from './AVAX-JOLLY.json';
 // import AVAX_PEPE from './AVAX-PEPE.json'
@@ -117,6 +118,7 @@ const farms = {
   ...AVAX_KARMA,
   ...AVAX_RUG,
   ...AVAX_MAG,
+  ...AVAX_KANDY,
   // ...AVAX_RGK,
   // ...AVAX_GNIWS,
   // ...AVAX_PARR,

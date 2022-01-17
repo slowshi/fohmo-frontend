@@ -1,0 +1,64 @@
+{
+    "AVAX-KANDY": {
+        "farmSymbol": "KANDY",
+        "networkSymbol": "AVAX",
+        "constants": {
+            "name": "Kandyland",
+            "symbol": "KANDY",
+            "timeTemplate": false,
+            "date": "Dec-24-2021 06:33:49 AM",
+            "link": "https://app.kandyland.finance/#/stake",
+            "token": "0x37deD665a387a6f170FB60376B3057f09df6c0Ea",
+            "stakingSymbol": "sKANDY",
+            "stakingToken": "0x2a3aF47470Fe20E605bE2F1d64201a406e984316",
+            "indexRatio": 1,
+            "stakingContract": "0x0AFaBaba220CD10C50A192bd382D06ebB98fAaf2",
+            "LPContract": "0x7deabc1670da88bbc050a9858acdde30aeedccac",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xb1CE95694E02126BEeE66bD6614410cA27C00a5e",
+            "bondingCalculator": "0x0C3Efe335251c804D3d900aac5EFfaD84D6f1969",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xA4d856CFa8edaCcFB7837c36EF11E0231D05e6e7",
+                    "symbol": "MIM"
+                },
+                {
+                    "address": "0x21fBe7e6d6AE4a484C75141D35dBf44aCEB5deA0",
+                    "symbol": "KANDY-MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "MIM-KANDY",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x37deD665a387a6f170FB60376B3057f09df6c0Ea",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x7DEABc1670da88BbC050A9858aCDDE30AEEDcCac",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
+    }
+}
