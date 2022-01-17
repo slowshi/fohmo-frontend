@@ -27,12 +27,12 @@ import AVAX_JOLLY from './AVAX-JOLLY.json';
 // import AVAX_SBR from './AVAX-SBR.json';
 // import AVAX_SCAT from './AVAX-SCAT.json';
 import AVAX_PB from './AVAX-PB.json';
-import AVAX_VERSE from './AVAX-VERSE.json'
+// import AVAX_VERSE from './AVAX-VERSE.json'
 import AVAX_SB from './AVAX-SB.json';
 import AVAX_SEA from './AVAX-SEA.json';
 import AVAX_SRA from './AVAX-SRA.json';
 // import AVAX_BLIGHT from './AVAX-BLIGHT.json';
-import AVAX_BLANC from './AVAX-BLANC.json';
+// import AVAX_BLANC from './AVAX-BLANC.json';
 import AVAX_TEMPO from './AVAX-TEMPO.json';
 import AVAX_VAL from './AVAX-VAL.json';
 import AVAX_VALDAO from './AVAX-VALDAO.json';
@@ -49,6 +49,7 @@ import BSC_ASGARD from './BSC-ASGARD.json';
 import BSC_JADE from './BSC-JADE.json';
 import BSC_LOVE from './BSC-LOVE.json';
 import BSC_GG from './BSC-GG.json';
+import BSC_PAL from './BSC-PAL.json';
 import BSC_XPH from './BSC-XPH.json';
 import BSC_POWER from './BSC-POWER.json';
 // import BSC_RA from './BSC-RA.json';
@@ -76,8 +77,8 @@ import FTM_LUX from './FTM-LUX.json';
 import FTM_SPA from './FTM-SPA.json';
 import FTM_SCR from './FTM-SCR.json';
 import FTM_WEN from './FTM-WEN.json';
-import FTM_VOLT from './FTM-VOLT.json';
-import FTM_PUMP from './FTM-PUMP.json';
+// import FTM_VOLT from './FTM-VOLT.json';
+// import FTM_PUMP from './FTM-PUMP.json';
 import KLAY_KRNO from './KLAY-KRNO.json';
 // import MATIC_CLAM from './MATIC-CLAM.json';
 import MATIC_CLAM2 from './MATIC-CLAM2.json';
@@ -119,13 +120,13 @@ const farms = {
   // ...AVAX_RGK,
   // ...AVAX_GNIWS,
   // ...AVAX_PARR,
-  ...AVAX_BLANC,
+  // ...AVAX_BLANC,
   // ...AVAX_SCAT,
   ...AVAX_PB,
   ...AVAX_SEA,
   ...AVAX_SRA,
   ...AVAX_CAT,
-  ...AVAX_VERSE,
+  // ...AVAX_VERSE,
   ...AVAX_SB,
   // ...AVAX_SBR,
   ...AVAX_SPACE,
@@ -150,6 +151,7 @@ const farms = {
   ...BSC_GG,
   ...BSC_LOVE,
   ...BSC_POWER,
+  ...BSC_PAL,
   ...BSC_NMS,
   ...BSC_ASGARD,
   // ...BSC_SD,
@@ -168,14 +170,14 @@ const farms = {
   ...ETH_BTRFLY,
   ...ETH_SQUID,
   ...FTM_EXOD,
-  ...FTM_VOLT,
+  // ...FTM_VOLT,
   ...FTM_SCR,
   ...FTM_FHM,
   // ...FTM_GIZA,
   ...FTM_HEC,
   ...FTM_LUX,
   ...FTM_SPA,
-  ...FTM_PUMP,
+  // ...FTM_PUMP,
   ...FTM_WEN,
   ...KLAY_KRNO,
   // ...MATIC_CLAM,

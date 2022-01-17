@@ -487,7 +487,7 @@ class StakingInfo {
       }
     }
     const bondPromises = farmParams.bondingContracts.map(getBondContract);
-    const bonds = await Promise.all(bondPromises);
+    let bonds = await Promise.all(bondPromises);
     // console.log(bonds);
     let warmupBalance = 0;
     // let warmupPeriod = 0;
@@ -539,7 +539,15 @@ class StakingInfo {
       claimable: 0
     };
     let hugsBalance = 0
-    if(typeof farmParams.cauldrons !== 'undefined' || typeof farmParams.wsOHMPool !== 'undefined' || typeof farmParams.VSS !== 'undefined' || typeof farmParams.HUGS !== 'undefined') {
+    let ftmBondBalance = {
+      convertedPayout: 0,
+      payout: 0,
+      lastTime: '',
+      convertedPendingPayout:0,
+      pendingPayout: 0,
+      symbol: ''
+    }
+    if(typeof farmParams.cauldrons !== 'undefined' || typeof farmParams.wsOHMPool !== 'undefined' || typeof farmParams.VSS !== 'undefined' || typeof farmParams.HUGS !== 'undefined' || typeof farmParams.FTMBonds !== 'undefined') {
       let {rawCurrentIndex, currentIndex} = await this.getCurrentIndex(stakingContract, key, farmParams.indexRatio, clearCache);
       let useIndex = rawCurrentIndex;
       if (key === 'FTM-SPA') {
@@ -564,6 +572,15 @@ class StakingInfo {
         );
         hugsBalance = Number(ethers.utils.formatUnits(hugsBalance, 'gwei'));
       }
+      if(typeof farmParams.FTMBonds !== 'undefined') {
+        ftmBondBalance = await this.getFTMBond(farmParams.FTMBonds, userAddress, useIndex, clearCache);
+        bonds = [
+          ...bonds,
+          ftmBondBalance
+        ];
+        fullBondTotal += ftmBondBalance.payout;
+        fullPendingBondTotal += ftmBondBalance.pendingPayout;
+      }
     }
     const data = {
       tokenBalance,
@@ -572,6 +589,7 @@ class StakingInfo {
       wrappedBalances,
       wsOHMPoolBalance,
       collateralBalances,
+      ftmBondBalance,
       vssBalance,
       hugsBalance,
       fullBondTotal: Number(fullBondTotal),
@@ -741,6 +759,49 @@ class StakingInfo {
       ohmTreasuryValues,
       allBalances,
     };
+  }
+  async getFTMBond(ftmInfo, userAddress, index, clearCache) {
+    const networkParams = networks.FTM;
+    const bondsContract = cacheEthers.contract(ftmInfo.bondAddress, BondContractAbi, networkParams.rpcURL);
+    const bondInfo = await cacheEthers.contractCall(
+      bondsContract,
+      'bondInfo',
+      [userAddress],
+      clearCache
+    );
+    // console.log(
+    //   key,
+    //   'lastBlock', Number(bondInfo.lastBlock),
+    //   'payout', Number(bondInfo.payout),
+    //   'pricePaid', Number(bondInfo.pricePaid),
+    //   'vesting', Number(bondInfo.vesting)
+    // )
+    let bond = {
+      payout: 0,
+      lastTime: '',
+      pendingPayout: 0,
+      symbol: ftmInfo.symbol
+    };
+    if(Number(bondInfo.payout) > 0) {
+      const payout = Number(ethers.utils.formatUnits(bondInfo.payout, 18));
+      let pendingPayout = await cacheEthers.contractCall(
+        bondsContract,
+        'pendingPayoutFor',
+        [userAddress],
+        clearCache
+      );
+      pendingPayout = Number(ethers.utils.formatUnits(pendingPayout, 18));
+      const bondSeconds = Number(bondInfo.pricePaid) +  Number(bondInfo.lastBlock) - (Date.now() / 1000);
+      bond = {
+        convertedPayout: Number(payout),
+        payout: Number(payout * index),
+        lastTime: '',
+        convertedPendingPayout: Number(pendingPayout),
+        pendingPayout: Number(pendingPayout * index),
+        symbol: ftmInfo.bondSymbol
+      }
+    }
+    return bond;
   }
 
   async getAssetBalance(farmKey, tokenAddress, treasuryAddress, assetInfo, rpcURL, clearCache=false) {

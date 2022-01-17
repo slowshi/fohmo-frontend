@@ -16,6 +16,25 @@
             "LPContract": "0x113f413371fc4cc4c9d6416cf1de9dfd7bf747df",
             "lockedSupplyContract": null,
             "treasuryContract": "0x1c46450211CB2646cc1DA3c5242422967eD9e04c",
+            "FTMBonds": {
+                "bondAddress": "0x629a650E173B730E0F7C1206BF9f74808F475d1b",
+                "bondSymbol": "MIM",
+                "treasueryAddress": "0xD7768472132A41AA8Ba74D0dd0f7E0D55B09ad4c",
+                "treasuryAssets": {
+                    "token0": {
+                        "address": "0x82f0B8B456c1A451378467398982d4834b6829c1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "MIM (FTM)",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                }
+            },
             "cauldrons": [
                 {
                     "address": "0x35fa7a723b3b39f15623ff1eb26d8701e7d6bb21",

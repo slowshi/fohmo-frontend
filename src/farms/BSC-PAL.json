@@ -1,0 +1,65 @@
+{
+    "BSC-PAL": {
+        "farmSymbol": "PAL",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "PaladinDAO",
+            "symbol": "PAL",
+            "timeTemplate": false,
+            "date": "Jan-15-2022 06:44:09 PM",
+            "link": "https://dapp.paladindao.com/#/stake",
+            "token": "0xb4da413d7643000a84c5b62bfb1bf2077604b165",
+            "stakingSymbol": "sPAL",
+            "stakingToken": "0xff55759cbcea32ac28c3317e9115b5ee8f9fa0fb",
+            "indexRatio": 1,
+            "stakingContract": "0x7b73d56c53059699003ac11af4308f6beb4877ff",
+            "LPContract": "0x103900036e483c85ea4748b6733f621b8df21e2d",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x6382192259f45a7acda2a08cc30ce9faf0e1863e",
+            "bondingCalculator": "0xd8dce26dede9539afe79d366478973eb47cf048d",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "wsPAL",
+            "isWarmup": true,
+            "bondingContracts": [
+                {
+                    "address": "0x62524957682cab92dd4a12fa4d88108bf945f387",
+                    "symbol": "PAL-BUSD"
+                },
+                {
+                    "address": "0x84762039afaf140cafbd9898eeb09482c0862b85",
+                    "symbol": "BUSD"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "PAL-BUSD",
+                    "token0": {
+                        "address": "0xB4dA413D7643000A84C5B62Bfb1bF2077604b165",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x103900036E483C85EA4748B6733f621B8df21e2d",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
+    }
+}

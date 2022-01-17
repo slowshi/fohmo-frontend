@@ -16,7 +16,7 @@
             "LPContract": "0x8b667c1e422c08f9874709939bc90e71c2bea167",
             "LPContractETH": "0xa389f9430876455c36478deea9769b7ca4e3ddb1",
             "lockedSupplyContract": null,
-            "treasuryContract": "0x2F87A9550f19666cEF5De29c5F613966cf164BE6",
+            "treasuryContract": "0x9e0ee5e4c93e300ff024518d090f98c719504560",
             "wsOHMNetworks": [],
             "wsOHMSymbol": "",
             "isWarmup": true,
@@ -154,6 +154,20 @@
                     "stable": false,
                     "single": true,
                     "LPAddress": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256"
+                },
+                {
+                    "symbol": "MIM-RUG",
+                    "token0": {
+                        "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xb8EF3a190b68175000B74B4160d325FD5024760e",
+                        "decimals": 9
+                    },
+                    "LPAddress": "0x8b667C1e422c08f9874709939Bc90E71c2BEA167",
+                    "stable": true,
+                    "single": false
                 }
             ],
             "bondingCalculator": "0x0bC65542e9A8fD79002beE76C2E8CfE5A0CA573A"
