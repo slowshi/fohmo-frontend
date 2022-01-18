@@ -16,8 +16,13 @@
             "lockedSupplyContract": null,
             "treasuryContract": "0x6D9Cfb705C7b7A5ca1C4565A47Fa1b26FC1bE3d0",
             "bondingCalculator": "0xa600289aebf1d85525D11f7C7544961d1955A21c",
-            "wsOHMNetworks": [],
-            "wsOHMSymbol": "",
+            "wsOHMNetworks": [
+                {
+                    "address": "0x070092b3A985f9E5424351D68730c9A318ad96eb",
+                    "networkSymbol": "AVAX"
+                }
+            ],
+            "wsOHMSymbol": "THRONE",
             "bondingContracts": [
                 {
                     "address": "0xF3C0aB5d9CAbf12775719959A4ffd218feA0c43C",
