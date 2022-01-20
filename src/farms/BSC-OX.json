@@ -1,0 +1,32 @@
+{
+    "BSC-OX": {
+        "farmSymbol": "OX",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "AlphaOmega Dao",
+            "symbol": "OX",
+            "timeTemplate": false,
+            "date": "Jan-17-2022 02:39:08 AM",
+            "link": "https://app.alphadao.financial/#/stake",
+            "token": "0xAC2f8fb059C96C481fAE3f4702Ca324664b79B26",
+            "stakingSymbol": "xOX",
+            "stakingToken": "0x02aB0e44666285fB9C0C182fBbd3f16805108462",
+            "indexRatio": 1,
+            "stakingContract": "0x86ea26b438e3f724fd42540fc32f61E91B6908B1",
+            "LPContract": "",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xc193c5802d0c962418239D610c2bc3dd0aBFb476",
+            "bondingCalculator": "0x78b1D3FcD50dBe2781a9F7128643Ed03b36d5e20",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "wsOX",
+            "isWarmup": true,
+            "bondingContracts": [
+                {
+                    "address": "0x8FcdB03855082798be12bEB435ec9aAAeFC77AF1",
+                    "symbol": "BUSD"
+                }
+            ],
+            "treasuryAssets": []
+        }
+    }
+}

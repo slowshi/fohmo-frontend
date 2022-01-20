@@ -96,6 +96,7 @@ import ONE_CHEEZ from './ONE-CHEEZ.json';
 // import ONE_EIGHT from './ONE-EIGHT.json';
 import ONE_ODAO from './ONE-ODAO.json';
 import ONE_WAGMI from './ONE-WAGMI.json';
+import ONE_TEM from './ONE-TEM.json';
 
 const farms = {
   // ...ARB_Z20,
@@ -197,6 +198,7 @@ const farms = {
   // ...ONE_EIGHT,
   ...ONE_ODAO,
   ...ONE_WAGMI,
+  ...ONE_TEM
 };
 
 export default farms;

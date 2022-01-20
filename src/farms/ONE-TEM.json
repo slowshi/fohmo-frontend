@@ -1,0 +1,81 @@
+{
+    "ONE-TEM": {
+        "farmSymbol": "TEM",
+        "networkSymbol": "ONE",
+        "constants": {
+            "name": "Templar DAO",
+            "symbol": "TEM",
+            "date": "Dec-24-2021 09:56:54 PM",
+            "link": "https://templar.finance/#/stake",
+            "token": "0xd754ae7bb55fEB0c4BA6bC037b4A140f14ebE018",
+            "stakingSymbol": "SWORD",
+            "stakingToken": "0x8646029f997cDb2Cf51bdE492B15026aEe198C3e",
+            "stakingContract": "0xD86E3F7B2Ff4e803f90c799D702955003bcA9875",
+            "LPContract": "0xeed838406194feba1bd654cfdf85a941ac0944bc",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x92Ae908d7bCF891FFA47ae10596e6a66cf43A77A",
+            "wsOHMNetworks": [
+                {
+                    "address": "0xc7De4E4227f00e91cAB422faa5630d40AeCDb6a4",
+                    "networkSymbol": "ONE"
+                }
+            ],
+            "wsOHMSymbol": "wSword",
+            "bondingCalculator": "0x487C09eC14e34Ea2c5Ef8991cAE9938464Da04d6",
+            "bondingContracts": [
+                {
+                    "address": "0x3765Dff302cD34238f5430E846f8739C2E24D965",
+                    "symbol": "TEM-DAI"
+                },
+                {
+                    "address": "0x377896D053a2b17cAbcb9d7B1aFDAdA5af891C13",
+                    "symbol": "DAI"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xEf977d2f931C1978Db5F6747666fa1eACB0d0339",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "1DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xef977d2f931c1978db5f6747666fa1eacb0d0339",
+                        "decimals": 18
+                    },
+                    "symbol": "WONE",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x194f4a320cbda15a0910d1AE20E0049Cdc50916e"
+                },
+                {
+                    "symbol": "TEM-1DAI",
+                    "token0": {
+                        "address": "0xd754ae7bb55fEB0c4BA6bC037b4A140f14ebE018",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xEf977d2f931C1978Db5F6747666fa1eACB0d0339",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xeeD838406194feBa1bD654CfdF85a941Ac0944Bc",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
+    }
+}
