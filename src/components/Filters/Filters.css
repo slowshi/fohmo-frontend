@@ -124,3 +124,14 @@
   background-color: #3a4075;
   border-color: #3a4075;
 }
+.NEAR,
+.NEAR:focus {
+  color: rgb(120, 214, 75);
+  border-color: rgb(120, 214, 75);
+}
+.NEAR.active,
+.NEAR:hover {
+  color: white;
+  background-color: rgb(120, 214, 75);
+  border-color: rgb(120, 214, 75);
+}

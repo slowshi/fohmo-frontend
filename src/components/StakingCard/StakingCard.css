@@ -47,6 +47,9 @@
 .badge-KLAY {
   background-color: #3a4075;
 }
+.badge-NEAR {
+  background-color: rgb(120, 214, 75);
+}
 .txt-smol {
   font-size: 11px;
 }

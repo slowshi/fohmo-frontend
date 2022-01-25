@@ -188,6 +188,13 @@ const networks = {
     rpcURL: 'https://en.kronosdao.finance/',
     chartURL: 'https://dexscreener.com/cronos/',
     blockRateSeconds: 5.5
+  },
+  NEAR: {
+    symbol: 'NEAR',
+    name: 'Aurora',
+    rpcURL: 'https://mainnet.aurora.dev',
+    chartURL: 'https://dexscreener.com/aurora/',
+    blockRateSeconds: 1.3
   }
 };
 

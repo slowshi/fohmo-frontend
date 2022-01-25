@@ -32,9 +32,6 @@ const formatURL = (state) => {
     currency: state.app.fiatCurrency
   }
 
-  // if(params.sort === 'mc') delete params.sort;
-  // if(params.dir === 'desc') delete params.dir;
-  // if(params.filters === 'ETH-OHM,AVAX-TIME,MATIC-KLIMA') delete params.filters;
   if(params.currency === 'usd') delete params.currency;
 
   if(Object.keys(params).length === 0) return '/';

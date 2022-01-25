@@ -37,11 +37,15 @@
                     "networkSymbol": "MATIC"
                 }
             ],
-            "treasuryContract": "0x9a315bdf513367c0377fb36545857d12e85813ef",
+            "treasuryContract": "0x9A315BdF513367C0377FB36545857d12e85813Ef",
             "bondingContracts": [
                 {
-                    "address": "0xe04925c19a6c53f388d568c02a1833efb6e10dc3",
+                    "address": "0xc60a6656e08b62dd2644dc703d7855301363cc38",
                     "symbol": "FRAX"
+                },
+                {
+                    "address": "0x99e9b0a9dc965361c2cbc07525ea591761aeaa53",
+                    "symbol": "OHM-FRAX"
                 }
             ],
             "treasuryAssets": [],

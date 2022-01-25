@@ -91,6 +91,7 @@ import MATIC_PRXY from './MATIC-PRXY.json';
 import MOVR_FHM from './MOVR-FHM.json';
 import MOVR_ROME from './MOVR-ROME.json'
 import MOVR_TEM from './MOVR-TEM.json';
+import NEAR_EMPYR from './NEAR-EMPYR.json'
 // import MOVR_MD from './MOVR-MD.json';
 import ONE_CHEEZ from './ONE-CHEEZ.json';
 // import ONE_EIGHT from './ONE-EIGHT.json';
@@ -192,6 +193,7 @@ const farms = {
   ...MATIC_PRXY,
   ...MOVR_FHM,
   ...MOVR_TEM,
+  ...NEAR_EMPYR,
   // ...MOVR_MD,
   ...MOVR_ROME,
   ...ONE_CHEEZ,
