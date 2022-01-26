@@ -1,0 +1,64 @@
+{
+    "FTM-CYBER": {
+        "farmSymbol": "CYBER",
+        "networkSymbol": "FTM",
+        "constants": {
+            "name": "CyberDAO",
+            "symbol": "CYBER",
+            "timeTemplate": true,
+            "date": "Jan-24-2022 01:52:03 PM",
+            "link": "https://app.cyberdao.finance/reactor",
+            "token": "0xB2d65f66B69BF3ac78ad2396d6356F4F0e1036B7",
+            "stakingSymbol": "NOX",
+            "stakingToken": "0x1C24b055d771a7C966C0A035933d1C05998CF491",
+            "indexRatio": 4.5,
+            "stakingContract": "0x7b780eEDA32e67C23C7f1c88238316b9a180E19A",
+            "LPContract": "0x03DC939C447F670923f953Da9b421E20114F6D10",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xF1f3b269439230AC7c291e383EC7AF8396D1aaF6",
+            "bondingCalculator": "0xfc7816f78A0f6411588cC1281806aE219a2F8eA2",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0xF298AD103AFf9681F1F9b7948968a435B7DD3e44",
+                    "symbol": "FRAX"
+                },
+                {
+                    "address": "0xbc550025c087610923759AeE30df31EECFaA32f4",
+                    "symbol": "CYBER-FRAX"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xdc301622e621166BD8E82f2cA0A26c13Ad0BE355",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "FRAX",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "CYBER-FRAX",
+                    "token0": {
+                        "address": "0xB2d65f66B69BF3ac78ad2396d6356F4F0e1036B7",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xdc301622e621166BD8E82f2cA0A26c13Ad0BE355",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x03DC939C447F670923f953Da9b421E20114F6D10",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
+    }
+}

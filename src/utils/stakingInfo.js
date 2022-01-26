@@ -102,6 +102,12 @@ class StakingInfo {
   async getCurrentIndex(stakingContract, key, indexRatio=1, clearCache=false) {
     let rawCurrentIndex = 0;
     let currentIndex = 0;
+    if(key === 'FTM-CYBER') {
+      return {
+        currentIndex: Number(currentIndex),
+        rawCurrentIndex: Number(rawCurrentIndex)
+      }
+    }
     if(key === 'ETH-BTRFLY') {
       const farm = allFarms[key];
       const network = networks[farm.networkSymbol];
@@ -206,12 +212,22 @@ class StakingInfo {
     } else if(key === 'FTM-PUMP') {
       stakingReward = epoch.number;
     }
-    const circulatingSupply = await cacheEthers.contractCall(
-      stakingTokenContract,
-      'circulatingSupply',
-      [],
-      clearCache
-    );
+    let circulatingSupply = 0;
+    if (key === 'FTM-CYBER') {
+      circulatingSupply = await cacheEthers.contractCall(
+        stakingTokenContract,
+        'radiatingSupply',
+        [],
+        clearCache
+      );
+    } else {
+      circulatingSupply = await cacheEthers.contractCall(
+        stakingTokenContract,
+        'circulatingSupply',
+        [],
+        clearCache
+      );
+    }
 
     const stakingRebase = Number(stakingReward / circulatingSupply);
     let price = 0;
@@ -491,7 +507,7 @@ class StakingInfo {
     // console.log(bonds);
     let warmupBalance = 0;
     // let warmupPeriod = 0;
-    if (key !== 'BSC-GYRO' && key !== 'BSC-LOVE') {
+    if (key !== 'BSC-GYRO' && key !== 'BSC-LOVE' && key !== 'FTM-CYBER') {
       const warmupInfo = await cacheEthers.contractCall(
         stakingContract,
         'warmupInfo',

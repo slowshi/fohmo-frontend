@@ -78,6 +78,7 @@ import FTM_LUX from './FTM-LUX.json';
 import FTM_SPA from './FTM-SPA.json';
 import FTM_SCR from './FTM-SCR.json';
 import FTM_WEN from './FTM-WEN.json';
+import FTM_CYBER from './FTM-CYBER.json';
 // import FTM_VOLT from './FTM-VOLT.json';
 // import FTM_PUMP from './FTM-PUMP.json';
 import KLAY_KRNO from './KLAY-KRNO.json';
@@ -183,6 +184,7 @@ const farms = {
   ...FTM_SPA,
   // ...FTM_PUMP,
   ...FTM_WEN,
+  ...FTM_CYBER,
   ...KLAY_KRNO,
   // ...MATIC_CLAM,
   ...MATIC_CLAM2,
