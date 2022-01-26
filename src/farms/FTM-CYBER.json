@@ -20,14 +20,6 @@
             "wsOHMNetworks": [],
             "wsOHMSymbol": "",
             "bondingContracts": [
-                {
-                    "address": "0xF298AD103AFf9681F1F9b7948968a435B7DD3e44",
-                    "symbol": "FRAX"
-                },
-                {
-                    "address": "0xbc550025c087610923759AeE30df31EECFaA32f4",
-                    "symbol": "CYBER-FRAX"
-                }
             ],
             "treasuryAssets": [
                 {
