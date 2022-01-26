@@ -21,7 +21,7 @@
                     "networkSymbol": "AVAX"
                 }
             ],
-            "wsOHMSymbol": "wsMAG",
+            "wsOHMSymbol": "wMAG",
             "bondingContracts": [
                 {
                     "address": "0x4c3ef249c06d40130b220fc05a9e43ce1fca79ba",

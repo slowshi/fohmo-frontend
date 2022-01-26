@@ -649,7 +649,12 @@ class StakingInfo {
         [userAddress],
         clearCache
       );
-      tokenBalance = Number(ethers.utils.formatUnits(tokenBalance, 'ether'));
+      console.log(+tokenBalance);
+      let decimals = 18;
+      if(data.address === '0xdd4115bbbc2555d3d3053ff42ade45bebc2f2ddc') {
+        decimals = 9;
+      }
+      tokenBalance = Number(ethers.utils.formatUnits(tokenBalance, decimals));
       const convertedBalance = Number((tokenBalance  * index).toFixed(4));
       total += convertedBalance;
       return {
