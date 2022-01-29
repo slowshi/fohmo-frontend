@@ -63,6 +63,20 @@
                     "LPAddress": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256"
                 },
                 {
+                    "token0": {
+                        "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC.e",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
                     "symbol": "MIM-CAT",
                     "token0": {
                         "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
