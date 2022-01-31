@@ -1,0 +1,75 @@
+{
+    "ETH-FLYZ": {
+        "farmSymbol": "FLYZ",
+        "networkSymbol": "ETH",
+        "constants": {
+            "name": "SwampDAO",
+            "symbol": "FLYZ",
+            "date": "Jan-30-2022 11:32:58 PM",
+            "link": "https://swampdao.finance/",
+            "token": "0x5A1912749d2b7c3cdb832b81601C8C3f437a0dE8",
+            "stakingSymbol": "sFLYZ",
+            "stakingToken": "0x064D8bF7ac3a36d1326EEbCD4216376E236adcd1",
+            "stakingContract": "0x5CF2F480e62F357E8fa5aA2c3791d02cC1d26ded",
+            "LPContract": "0x2f7896984a19d6860be6f18ccf3e0de7365f28e1",
+            "LPContractETH": "0x397FF1542f962076d0BFE58eA045FfA2d347ACa0",
+            "lockedSupplyContract": null,
+            "wsOHMSymbol": "",
+            "wsOHMNetworks": [],
+            "treasuryContract": "0xE742799d9c8b1401c35F2137791d9Cb5e7dEc5d6",
+            "bondingCalculator": "0x2f7A75d3744F1a7419b869332091Ce00040f583C",
+            "bondingContracts": [
+                {
+                    "address": "0x78f1984ea35aecd22a9ac31318d276e8d5f48e2b",
+                    "symbol": "FLYZ-WETH"
+                },
+                {
+                    "address": "0x1675FBd1886dC6181Df599BB1a28c2C9fAD49D56",
+                    "symbol": "LOOKS"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "symbol": "FLYZ-WETH",
+                    "token0": {
+                        "address": "0x5A1912749d2b7c3cdb832b81601C8C3f437a0dE8",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x2f7896984a19d6860be6f18ccf3e0de7365f28e1",
+                    "stable": false,
+                    "single": false
+                },
+                {
+                    "token0": {
+                        "address": "0xf4d2888d29D722226FafA5d9B24F9164c092421E",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                        "decimals": 18
+                    },
+                    "nonStableLP": {
+                        "stableKey": "token0",
+                        "address": "0x397FF1542f962076d0BFE58eA045FfA2d347ACa0",
+                        "token0": {
+                            "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                            "decimals": 6
+                        },
+                        "token1": {
+                            "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                            "decimals": 18
+                        }
+                    },
+                    "symbol": "LOOKS",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xdc00ba87cc2d99468f7f34bc04cbf72e111a32f7"
+                }
+            ]
+        }
+    }
+}

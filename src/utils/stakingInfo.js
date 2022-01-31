@@ -286,7 +286,7 @@ class StakingInfo {
       );
     }
 
-    if (key === 'ETH-SQUID' || key === 'ETH-OHM2' || key === 'ETH-LOBI' ||
+    if (key === 'ETH-SQUID' || key === 'ETH-FLYZ' || key === 'ETH-OHM2' || key === 'ETH-LOBI' ||
         key === 'ETH-MNFST' || key == 'AVAX-OTWO' || key === 'ETH-BTRFLY' || key === 'ETH-3DOG') {
       const ethContract = cacheEthers.contract(farmParams.LPContractETH, PairContractAbi, networkParams.rpcURL);
       const ethReserves = await cacheEthers.contractCall(
@@ -357,13 +357,7 @@ class StakingInfo {
         totalReserves = totalReserves * ethPrice;
       }
     }
-    // console.log(
-    //   key,
-    //   'len', epoch._length.toNumber(),
-    //   'num', epoch.number.toNumber(),
-    //   'end', epoch.endBlock.toNumber(),
-    //   'dist', epoch.distribute.toNumber(),
-    // )
+
     const currentBlock = await cacheEthers.blockNumber(networkParams.rpcURL, clearCache);
     let seconds = 0;
     let distributeInterval = 0;
@@ -376,7 +370,7 @@ class StakingInfo {
       const ethCurrentBlock = await cacheEthers.blockNumber(ethParams.rpcURL, clearCache);
       distributeInterval = msPerDay / (epoch._length.toNumber() * ethParams.blockRateSeconds);
       seconds = this.secondsUntilBlock(ethCurrentBlock, epoch.endBlock.toNumber(), ethParams.blockRateSeconds);
-    } else if (key === 'MATIC-CLAM2' || key === 'CRO-FORT' || key === 'ETH-OHM2' || key === 'BSC-HUMP') {
+    } else if (key === 'MATIC-CLAM2' || key === 'CRO-FORT' || key === 'ETH-OHM2' || key === 'BSC-HUMP' || key === 'ETH-FLYZ') {
       seconds = epoch.endBlock.toNumber() - (Date.now() / 1000);
       distributeInterval = msPerDay / epoch._length.toNumber();
     } else if (key === 'FTM-PUMP' || key === 'FTM-WEN'){
