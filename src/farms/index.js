@@ -53,6 +53,7 @@ import BSC_GG from './BSC-GG.json';
 import BSC_PAL from './BSC-PAL.json';
 import BSC_XPH from './BSC-XPH.json';
 import BSC_OX from './BSC-OX.json';
+import BSC_HXL from './BSC-HXL.json'
 import BSC_POWER from './BSC-POWER.json';
 // import BSC_RA from './BSC-RA.json';
 import BSC_META from './BSC-META.json';
@@ -157,6 +158,7 @@ const farms = {
   ...BSC_META,
   ...BSC_GG,
   ...BSC_LOVE,
+  ...BSC_HXL,
   ...BSC_POWER,
   ...BSC_PAL,
   ...BSC_NMS,

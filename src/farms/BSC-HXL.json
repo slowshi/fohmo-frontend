@@ -1,0 +1,173 @@
+{
+    "BSC-HXL": {
+        "farmSymbol": "HXL",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "Hexal",
+            "symbol": "HXL",
+            "timeTemplate": false,
+            "date": "Jan-19-2022 03:57:34 PM",
+            "link": "https://app.hexal.finance/#/stake",
+            "token": "0x57612D60B415ad812Da9a7cF5672084796A4aB81",
+            "stakingSymbol": "xHXL",
+            "stakingToken": "0xeeB44b68813EeB0e97967a7b6C6f2CD5dF72D048",
+            "indexRatio": 1,
+            "stakingContract": "0x2f6A0D592f7F24D71c4EcA815c94d43AbE190fc3",
+            "LPContract": "0xc94364d0ffd3c015689f55e167ac359eb93c617e",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xC06A7e21289E35eA94cE67C0f7AfAD4e972117D8",
+            "bondingCalculator": "0x1EA4AC1E50aC18Da2E5E81320D335d78EBAD3263",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "isWarmup": true,
+            "bondingContracts": [
+                {
+                    "address": "0x66788fa3dd7c32b729f1f4a0418583451ad2c24f",
+                    "symbol": "HXL-USDT"
+                },
+                {
+                    "address": "0x3aa4540489a9710041da053b4dc4445ac338750d",
+                    "symbol": "HXL-BUSD"
+                },
+                {
+                    "address": "0x03962da6927ccaf95eead75c528ed3a398b46de4",
+                    "symbol": "wBNB"
+                },
+                {
+                    "address": "0x850301a287b3ea4b07928400ee423c5ceb66425e",
+                    "symbol": "CAKE"
+                },
+                {
+                    "address": "0x0fe0541d9ff2ef7558a2972ea0df46eeac3c6549",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0x40A41C03cFA9E8d75a01F75Cc3485ddfB36f75a3",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0xA072eA417147B0Cf7793ed5D6128F8CC163B83AA",
+                    "symbol": "USDT"
+                },
+                {
+                    "address": "0x35bcf2458549e10A04ca4fc96930e71e7Cf8AC70",
+                    "symbol": "USDC"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x55d398326f99059fF775485246999027B3197955",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDT",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "WBNB",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16"
+                },
+                {
+                    "token0": {
+                        "address": "0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "Cake",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x804678fa97d91B974ec2af3c843270886528a9E6"
+                },
+                {
+                    "symbol": "HXL-BUSD",
+                    "token0": {
+                        "address": "0x57612D60B415ad812Da9a7cF5672084796A4aB81",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xC94364D0FFD3c015689f55e167AC359eB93c617E",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "HXL-USDT",
+                    "token0": {
+                        "address": "0x57612D60B415ad812Da9a7cF5672084796A4aB81",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x55d398326f99059fF775485246999027B3197955",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xF3CEDC727098e7f812c3b5B227C022B0CD8A48B1",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
+    }
+}
