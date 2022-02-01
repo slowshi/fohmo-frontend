@@ -357,7 +357,13 @@ class StakingInfo {
         totalReserves = totalReserves * ethPrice;
       }
     }
-
+    // console.log(
+    //   key,
+    //   'len', epoch._length.toNumber(),
+    //   'num', epoch.number.toNumber(),
+    //   'end', epoch.endBlock.toNumber(),
+    //   'dist', epoch.distribute.toNumber(),
+    // )
     const currentBlock = await cacheEthers.blockNumber(networkParams.rpcURL, clearCache);
     let seconds = 0;
     let distributeInterval = 0;

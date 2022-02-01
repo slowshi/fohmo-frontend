@@ -7,26 +7,77 @@
             "symbol": "OX",
             "timeTemplate": false,
             "date": "Jan-17-2022 02:39:08 AM",
-            "link": "https://app.alphadao.financial/#/stake",
-            "token": "0xAC2f8fb059C96C481fAE3f4702Ca324664b79B26",
+            "link": "https://app.alphadao.financial/stake#/",
+            "token": "0x1945698b32cbdb5684a28ad507608205eb1a95cb",
             "stakingSymbol": "xOX",
-            "stakingToken": "0x02aB0e44666285fB9C0C182fBbd3f16805108462",
+            "stakingToken": "0xe0ff59608af41aea10888f73d0d1c1439b105e05",
             "indexRatio": 1,
-            "stakingContract": "0x86ea26b438e3f724fd42540fc32f61E91B6908B1",
-            "LPContract": "",
+            "stakingContract": "0xb361f9b6301686e921f655d00eb87571f5c3fbde",
+            "LPContract": "0x753df31cffd20341d0134cb5e3d9364c26a52137",
             "lockedSupplyContract": null,
-            "treasuryContract": "0xc193c5802d0c962418239D610c2bc3dd0aBFb476",
-            "bondingCalculator": "0x78b1D3FcD50dBe2781a9F7128643Ed03b36d5e20",
+            "treasuryContract": "0x98193f806cd04bab7dbaab5a693ffdea8f26ce17",
+            "bondingCalculator": "0x1878941257c86b196d4474c49054dc70168b452e",
             "wsOHMNetworks": [],
             "wsOHMSymbol": "wsOX",
             "isWarmup": true,
             "bondingContracts": [
                 {
-                    "address": "0x8FcdB03855082798be12bEB435ec9aAAeFC77AF1",
+                    "address": "0x48c7a72198ea09e64caef65d808d762721c0baba",
                     "symbol": "BUSD"
+                },
+                {
+                    "address": "0xed0c1ffd2097f832707dba60594ce510b5211cc4",
+                    "symbol": "USDT"
+                },
+                {
+                    "address": "0x634498b3e42ff245fb655af301783042575468c3",
+                    "symbol": "OX-BUSD"
                 }
             ],
-            "treasuryAssets": []
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x55d398326f99059ff775485246999027b3197955",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDT",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "symbol": "OX-BUSD",
+                    "token0": {
+                        "address": "0x1945698b32cbdb5684a28ad507608205eb1a95cb",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x753df31cffd20341d0134cb5e3d9364c26a52137",
+                    "stable": true,
+                    "single": false
+                }
+            ]
         }
     }
 }
