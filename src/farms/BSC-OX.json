@@ -11,7 +11,7 @@
             "token": "0x1945698b32cbdb5684a28ad507608205eb1a95cb",
             "stakingSymbol": "xOX",
             "stakingToken": "0xe0ff59608af41aea10888f73d0d1c1439b105e05",
-            "indexRatio": 1,
+            "indexRatio": 10000,
             "stakingContract": "0xb361f9b6301686e921f655d00eb87571f5c3fbde",
             "LPContract": "0x753df31cffd20341d0134cb5e3d9364c26a52137",
             "lockedSupplyContract": null,

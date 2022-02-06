@@ -42,6 +42,7 @@ import AVAX_MAG from './AVAX-MAG.json';
 import BSC_GYRO from './BSC-GYRO.json';
 import BSC_XEUS from './BSC-XEUS.json';
 import BSC_PID from './BSC-PID.json';
+import BSC_TRP from './BSC-TRP.json';
 import AVAX_CAT from './AVAX-CAT.json'
 import CRO_MINO from './CRO-MINO.json'
 import BSC_GLBD from './BSC-GLBD.json'
@@ -170,6 +171,7 @@ const farms = {
   // ...BSC_TAC,
   ...BSC_TEM,
   ...BSC_UDO,
+  ...BSC_TRP,
   ...BSC_XPH,
   ...BSC_WHISKEY,
   ...ETH_LOBI,

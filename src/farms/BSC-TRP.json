@@ -1,0 +1,155 @@
+{
+    "BSC-TRP": {
+        "farmSymbol": "TRP",
+        "networkSymbol": "BSC",
+        "constants": {
+            "name": "TDP DAO",
+            "symbol": "TRP",
+            "timeTemplate": false,
+            "date": "Jan-15-2022 07:44:35 PM",
+            "link": "https://app.theredpilldao.com/#/stake",
+            "token": "0x14f070fAf299A2E7E920f5D883fCF74629097dD9",
+            "stakingSymbol": "xTRP",
+            "stakingToken": "0x6eCd00eE24882365867476DC7c136B4A4fcE3919",
+            "indexRatio": 1,
+            "stakingContract": "0x9460Dc233a4715fC816aea93c02e5BfD643fE1e5",
+            "LPContract": "0x4c2dE88E92456a00bB012BB8D653dA7995cd62b5",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0x9c49d57eb986447FB0fdE99e400505C72092b2c5",
+            "bondingCalculator": "0x0cEaEE77Fc7d8E3c670A8EfC87B2F4E7D5C5D487",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "isWarmup": true,
+            "bondingContracts": [
+                {
+                    "address": "0x1E6dba8cD8350BB760b8d70436645668b9E4Af75",
+                    "symbol": "TRP-USDC"
+                },
+                {
+                    "address": "0xdb707804EdFcD5Db311701C291Ba537d589F1e96",
+                    "symbol": "TRP-USDT"
+                },
+                {
+                    "address": "0x2476b7D2686fd79fE3435012d432Ae97E0Add556",
+                    "symbol": "BUSD"
+                },
+                {
+                    "address": "0xf6e6538fc658fcb0fF4F67866E57554F0E885FA1",
+                    "symbol": "USDT"
+                },
+                {
+                    "address": "0x08a5Af55BC8163e8d46f83459dFc26555Cf17526",
+                    "symbol": "USDC"
+                },
+                {
+                    "address": "0x133148Ad8C462BD2c81445A2E673f0c7B9c206FC",
+                    "symbol": "wBNB"
+                },
+                {
+                    "address": "0x2F56562733a3eb498a2fD4BeE10989B9b87D287e",
+                    "symbol": "CAKE"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "BUSD",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x55d398326f99059fF775485246999027B3197955",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDT",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "WBNB",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16"
+                },
+                {
+                    "token0": {
+                        "address": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                        "decimals": 18
+                    },
+                    "symbol": "Cake",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x804678fa97d91B974ec2af3c843270886528a9E6"
+                },
+                {
+                    "symbol": "TRP-BUSD",
+                    "token0": {
+                        "address": "0x14f070fAf299A2E7E920f5D883fCF74629097dD9",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x4c2dE88E92456a00bB012BB8D653dA7995cd62b5",
+                    "stable": true,
+                    "single": false
+                },
+                {
+                    "symbol": "TRP-USDT",
+                    "token0": {
+                        "address": "0x14f070fAf299A2E7E920f5D883fCF74629097dD9",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x55d398326f99059fF775485246999027B3197955",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x83545e1a68c9e20C2889E2EDf07F754888D41648",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
+    }
+}
