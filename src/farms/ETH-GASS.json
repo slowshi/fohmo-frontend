@@ -1,0 +1,44 @@
+{
+    "ETH-GASS": {
+        "farmSymbol": "GASS",
+        "networkSymbol": "ETH",
+        "constants": {
+            "name": "Congruent",
+            "symbol": "GASS",
+            "date": "Feb-05-2022 08:27:06 AM",
+            "link": "https://app.congruent.fi/#/stake",
+            "token": "0xb4dffa52fee44bd493f12d85829d775ec8017691",
+            "stakingSymbol": "sGASS",
+            "stakingToken": "0x0aa9d1c726acbfa1ef8683a6b105ef46c5889a7c",
+            "stakingContract": "0x1bc1ba41156c4b2Cf194D3006Ba59bD142c2b55b",
+            "LPContract": "0xeb1c3021eb23a9b5a0e54beecb2c24c72d630c8b",
+            "lockedSupplyContract": null,
+            "wsOHMSymbol": "wsGASS",
+            "wsOHMNetworks": [],
+            "treasuryContract": "0xe70311b73a193b9f87653c9399dd04c605d3e357",
+            "bondingContracts": [
+                {
+                    "address": "0x20c9ed4bc79269307407c5797e1cfb588e0eb181",
+                    "symbol": "USDC"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                }
+            ],
+            "bondingCalculator": ""
+        }
+    }
+}

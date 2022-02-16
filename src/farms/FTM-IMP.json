@@ -1,0 +1,102 @@
+{
+    "FTM-IMP": {
+        "farmSymbol": "IMP",
+        "networkSymbol": "FTM",
+        "constants": {
+            "name": "ImpDAO",
+            "symbol": "IMP",
+            "date": "Feb-12-2022 07:05:11 PM",
+            "link": "https://impdao.finance/#/app/stake",
+            "token": "0x1C1d786f88eaf8fD1E0939757520beC1413310FE",
+            "stakingSymbol": "sIMP",
+            "stakingToken": "0xe0896CA385fA0E29B906E2f6Ef08FA9D8899B7db",
+            "stakingContract": "0x37fA807eac2b7F290F300E1CC1e714D5d55fA67D",
+            "LPContract": "",
+            "lockedSupplyContract": "",
+            "treasuryContract": "0x372edef970e0d29a4e8a7589505f174f289d8ca6",
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "wsIMP",
+            "bondingContracts": [
+                {
+                    "address": "0x47Aa81348DE26bCa782B4c1BA45a9de8E3B15CF5",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0xc9aa1373152c3e8aaa42941d0a9edf9de97f75d1",
+                    "symbol": "MIM"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+                        "decimals": 18
+                    },
+                    "symbol": "WFTM",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xe120ffBDA0d14f3Bb6d6053E90E63c572A66a428"
+                },
+                {
+                    "token0": {
+                        "address": "0x91fa20244fb509e8289ca630e5db3e9166233fdc",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                        "decimals": 18
+                    },
+                    "nonStableLP": {
+                        "stableKey": "token0",
+                        "address": "0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c",
+                        "token0": {
+                            "address": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+                            "decimals": 6
+                        },
+                        "token1": {
+                            "address": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                            "decimals": 18
+                        }
+                    },
+                    "symbol": "gOHM",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xae9BBa22E87866e48ccAcFf0689AFaa41eB94995"
+                },
+                {
+                    "symbol": "IMP-DAI",
+                    "token0": {
+                        "address": "0x3b57f3FeAaF1e8254ec680275Ee6E7727C7413c7",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0xC0c1Dff0Fe24108586e11ec9E20a7CbB405CB769",
+                    "stable": true,
+                    "single": false
+                }
+            ],
+            "bondingCalculator": "0x01884c8FBA9E2C510093d2af308e7a8bA7060b8F"
+        }
+    }
+}
