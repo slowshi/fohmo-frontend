@@ -1,20 +1,25 @@
 {
-    "ETH-GASS": {
-        "farmSymbol": "GASS",
+    "ETH-GAAS": {
+        "farmSymbol": "GAAS",
         "networkSymbol": "ETH",
         "constants": {
             "name": "Congruent",
-            "symbol": "GASS",
+            "symbol": "GAAS",
             "date": "Feb-05-2022 08:27:06 AM",
             "link": "https://app.congruent.fi/#/stake",
             "token": "0xb4dffa52fee44bd493f12d85829d775ec8017691",
-            "stakingSymbol": "sGASS",
+            "stakingSymbol": "sGAAS",
             "stakingToken": "0x0aa9d1c726acbfa1ef8683a6b105ef46c5889a7c",
             "stakingContract": "0x1bc1ba41156c4b2Cf194D3006Ba59bD142c2b55b",
             "LPContract": "0xeb1c3021eb23a9b5a0e54beecb2c24c72d630c8b",
             "lockedSupplyContract": null,
-            "wsOHMSymbol": "wsGASS",
-            "wsOHMNetworks": [],
+            "wsOHMSymbol": "wsGAAS",
+            "wsOHMNetworks": [
+                {
+                    "networkSymbol": "ETH",
+                    "address": "0x6B5735cbdD0dA81d18B5c2b3ACaF8F27dcad9EdB"
+                }
+            ],
             "treasuryContract": "0xe70311b73a193b9f87653c9399dd04c605d3e357",
             "bondingContracts": [
                 {

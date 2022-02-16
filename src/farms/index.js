@@ -70,7 +70,7 @@ import ETH_LOBI from './ETH-LOBI.json';
 import ETH_MNFST from './ETH-MNFST.json';
 import ETH_OHM from './ETH-OHM.json';
 import ETH_OHM2 from './ETH-OHM2.json';
-import ETH_GASS from './ETH-GASS.json';
+import ETH_GAAS from './ETH-GAAS.json';
 import ETH_FLYZ from './ETH-FLYZ.json';
 import ETH_SQUID from './ETH-SQUID.json';
 import ETH_BTRFLY from './ETH-BTRFLY.json';
@@ -179,7 +179,7 @@ const farms = {
   ...ETH_MNFST,
   ...ETH_OHM,
   ...ETH_OHM2,
-  ...ETH_GASS,
+  ...ETH_GAAS,
   // ...ETH_3DOG,
   ...ETH_BTRFLY,
   ...ETH_SQUID,
