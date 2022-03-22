@@ -39,7 +39,7 @@ import AVAX_TEMPO from './AVAX-TEMPO.json';
 // import AVAX_VALDAO from './AVAX-VALDAO.json';
 import AVAX_TIME from './AVAX-TIME.json';
 import AVAX_MAG from './AVAX-MAG.json';
-// import BSC_GYRO from './BSC-GYRO.json';
+import BSC_GYRO from './BSC-GYRO.json';
 import BSC_XEUS from './BSC-XEUS.json';
 // import BSC_PID from './BSC-PID.json';
 import BSC_TRP from './BSC-TRP.json';
@@ -152,7 +152,7 @@ const farms = {
   // ...CRO_FORT,
   ...CRO_MINO,
   ...BSC_DIOS,
-  // ...BSC_GYRO,
+  ...BSC_GYRO,
   ...BSC_XEUS,
   // ...BSC_JADE,
   // ...BSC_HUMP,

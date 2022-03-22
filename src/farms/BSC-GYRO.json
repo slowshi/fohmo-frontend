@@ -14,8 +14,13 @@
             "LPContract": "0x5Ca063a7e2bEBefEb2BDea42158F5B825f0F9ffB",
             "lockedSupplyContract": "",
             "treasuryContract": "0x8b1522402fece066d83e0f6c97024248be3c8c01",
-            "wsOHMNetworks": [],
-            "wsOHMSymbol": "",
+            "wsOHMNetworks": [
+                {
+                    "address": "0x4FC2A88f277A6C7fFeB3F0b46136a8429f71B673",
+                    "networkSymbol": "BSC"
+                }
+            ],
+            "wsOHMSymbol": "gGYRO",
             "bondingContracts": [
                 {
                     "address": "0xe259A3dFc976b43815C43723ecACB5c1E8794518",
