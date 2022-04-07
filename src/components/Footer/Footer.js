@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import avatar from '../../assets/avatar.png';
 import {DEV_ADDRESS} from '../../utils/constants';
 import './Footer.css';
 
@@ -27,9 +26,6 @@ class Footer extends Component {
               <div className="container-fluid">
                 <div className="row">
                   <div id="leftNav" className="col-md-6 mb-3 col-sm-12">
-                    <div className="p-2">
-                      <img src={avatar} alt="0xLen" width="22" height="22"/>
-                    </div>
                     <a id="discord" className="btn text-light" target="__blank" title="Discord" href="https://discord.gg/Tq3bTFkURb">
                       <i className="bi bi-discord"></i>
                     </a>
