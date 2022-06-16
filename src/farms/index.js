@@ -27,14 +27,14 @@ import AVAX_OTWO from './AVAX-OTWO.json';
 // import AVAX_SPACEv1 from './AVAX-SPACEv1.json';
 // import AVAX_SBR from './AVAX-SBR.json';
 // import AVAX_SCAT from './AVAX-SCAT.json';
-import AVAX_PB from './AVAX-PB.json';
+// import AVAX_PB from './AVAX-PB.json';
 // import AVAX_VERSE from './AVAX-VERSE.json'
 // import AVAX_SB from './AVAX-SB.json';
 // import AVAX_SEA from './AVAX-SEA.json';
 // import AVAX_SRA from './AVAX-SRA.json';
 // import AVAX_BLIGHT from './AVAX-BLIGHT.json';
 // import AVAX_BLANC from './AVAX-BLANC.json';
-import AVAX_TEMPO from './AVAX-TEMPO.json';
+// import AVAX_TEMPO from './AVAX-TEMPO.json';
 // import AVAX_VAL from './AVAX-VAL.json';
 // import AVAX_VALDAO from './AVAX-VALDAO.json';
 import AVAX_TIME from './AVAX-TIME.json';
@@ -42,7 +42,7 @@ import AVAX_MAG from './AVAX-MAG.json';
 import BSC_GYRO from './BSC-GYRO.json';
 import BSC_XEUS from './BSC-XEUS.json';
 // import BSC_PID from './BSC-PID.json';
-import BSC_TRP from './BSC-TRP.json';
+// import BSC_TRP from './BSC-TRP.json';
 // import AVAX_CAT from './AVAX-CAT.json'
 import CRO_MINO from './CRO-MINO.json'
 import BSC_GLBD from './BSC-GLBD.json'
@@ -50,19 +50,19 @@ import BSC_GLBD from './BSC-GLBD.json'
 // import BSC_SD from './BSC-SD.json';
 // import BSC_JADE from './BSC-JADE.json';
 import BSC_LOVE from './BSC-LOVE.json';
-import BSC_GG from './BSC-GG.json';
+// import BSC_GG from './BSC-GG.json';
 // import BSC_PAL from './BSC-PAL.json';
 // import BSC_XPH from './BSC-XPH.json';
 import BSC_OX from './BSC-OX.json';
-import BSC_HXL from './BSC-HXL.json'
-import BSC_POWER from './BSC-POWER.json';
+// import BSC_HXL from './BSC-HXL.json'
+// import BSC_POWER from './BSC-POWER.json';
 // import BSC_RA from './BSC-RA.json';
 // import BSC_META from './BSC-META.json';
 import BSC_NMS from './BSC-NMS.json';
 // import BSC_TAC from './BSC-TAC.json';
 import BSC_TEM from './BSC-TEM.json';
 // import BSC_HUMP from './BSC-HUMP.json';
-import BSC_DIOS from './BSC-DIOS.json';
+// import BSC_DIOS from './BSC-DIOS.json';
 import BSC_UDO from './BSC-UDO.json';
 // import BSC_WHISKEY from './BSC-WHISKEY.json';
 // import CRO_FORT from './CRO-FORT.json';
@@ -70,13 +70,13 @@ import BSC_UDO from './BSC-UDO.json';
 // import ETH_MNFST from './ETH-MNFST.json';
 // import ETH_OHM from './ETH-OHM.json';
 import ETH_OHM2 from './ETH-OHM2.json';
-import ETH_GAAS from './ETH-GAAS.json';
+// import ETH_GAAS from './ETH-GAAS.json';
 import ETH_FLYZ from './ETH-FLYZ.json';
 // import ETH_SQUID from './ETH-SQUID.json';
 import ETH_BTRFLY from './ETH-BTRFLY.json';
 // import ETH_3DOG from './ETH-3DOG.json';
 // import FTM_GIZA from './FTM-GIZA.json';
-import FTM_EXOD from './FTM-EXOD.json';
+// import FTM_EXOD from './FTM-EXOD.json';
 import FTM_FHM from './FTM-FHM.json';
 import FTM_HEC from './FTM-HEC.json';
 import FTM_LUX from './FTM-LUX.json';
@@ -101,7 +101,7 @@ import NEAR_EMPYR from './NEAR-EMPYR.json'
 // import MOVR_MD from './MOVR-MD.json';
 import ONE_CHEEZ from './ONE-CHEEZ.json';
 // import ONE_EIGHT from './ONE-EIGHT.json';
-import ONE_ODAO from './ONE-ODAO.json';
+// import ONE_ODAO from './ONE-ODAO.json';
 import ONE_WAGMI from './ONE-WAGMI.json';
 import ONE_TEM from './ONE-TEM.json';
 
@@ -116,7 +116,7 @@ const farms = {
   // ...AVAX_ICE,
   // ...AVAX_LF,
   ...AVAX_MAXI,
-  ...AVAX_CROWN,
+  // ...AVAX_CROWN,
   // ...AVAX_PEPE,
   // ...AVAX_CLAVIS,
   // ...AVAX_NADO,
@@ -132,7 +132,7 @@ const farms = {
   // ...AVAX_PARR,
   // ...AVAX_BLANC,
   // ...AVAX_SCAT,
-  ...AVAX_PB,
+  // ...AVAX_PB,
   // ...AVAX_SEA,
   // ...AVAX_SRA,
   // ...AVAX_CAT,
@@ -143,7 +143,7 @@ const farms = {
   // ...AVAX_GHOST,
   // ...AVAX_SPACEv1,
   // ...AVAX_BLIGHT,
-  ...AVAX_TEMPO,
+  // ...AVAX_TEMPO,
   ...AVAX_TIME,
   // ...AVAX_VAL,
   // ...AVAX_SPC,
@@ -151,17 +151,17 @@ const farms = {
   // ...AVAX_VALDAO,
   // ...CRO_FORT,
   ...CRO_MINO,
-  ...BSC_DIOS,
+  // ...BSC_DIOS,
   ...BSC_GYRO,
   ...BSC_XEUS,
   // ...BSC_JADE,
   // ...BSC_HUMP,
   ...BSC_GLBD,
   // ...BSC_META,
-  ...BSC_GG,
+  // ...BSC_GG,
   ...BSC_LOVE,
-  ...BSC_HXL,
-  ...BSC_POWER,
+  // ...BSC_HXL,
+  // ...BSC_POWER,
   // ...BSC_PAL,
   ...BSC_NMS,
   // ...BSC_ASGARD,
@@ -172,19 +172,19 @@ const farms = {
   // ...BSC_TAC,
   ...BSC_TEM,
   ...BSC_UDO,
-  ...BSC_TRP,
+  // ...BSC_TRP,
   // ...BSC_XPH,
   // ...BSC_WHISKEY,
   // ...ETH_LOBI,
   // ...ETH_MNFST,
   // ...ETH_OHM,
   ...ETH_OHM2,
-  ...ETH_GAAS,
+  // ...ETH_GAAS,
   // ...ETH_3DOG,
   ...ETH_BTRFLY,
   // ...ETH_SQUID,
   ...ETH_FLYZ,
-  ...FTM_EXOD,
+  // ...FTM_EXOD,
   // ...FTM_VOLT,
   ...FTM_SCR,
   ...FTM_FHM,
@@ -210,7 +210,7 @@ const farms = {
   ...MOVR_ROME,
   ...ONE_CHEEZ,
   // ...ONE_EIGHT,
-  ...ONE_ODAO,
+  // ...ONE_ODAO,
   ...ONE_WAGMI,
   ...ONE_TEM
 };
