@@ -6,7 +6,7 @@ const searchParams = (new URL(document.location)).searchParams;
 let addressParams = '';
 let visible = [];
 let addresses = {};
-let farmFilters = ['MATIC-KLIMA', 'MATIC-PRXY'];
+let farmFilters = ['ETH-OHM2', 'MATIC-KLIMA', 'MATIC-PRXY'];
 let sortDirection = 'desc';
 let sortBy = 'mc';
 let fiatCurrency = 'usd';
@@ -49,7 +49,7 @@ const diff = farmFilters.filter((i) => !validFarmFilters.includes(i));
 if (diff.length > 0) {
   addressParams = '';
   addresses = [];
-  farmFilters = ['MATIC-KLIMA', 'MATIC-PRXY'];
+  farmFilters = ['ETH-OHM2', 'MATIC-KLIMA', 'MATIC-PRXY'];
   window.history.replaceState(null, null,'/');
 }
 const store = createStore(rootReducer,
