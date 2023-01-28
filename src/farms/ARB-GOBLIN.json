@@ -1,0 +1,43 @@
+{
+    "ARB-GOBLIN": {
+        "farmSymbol": "GOBLIN",
+        "networkSymbol": "ARB",
+        "constants": {
+            "name": "GOBLIN",
+            "symbol": "GOBLIN",
+            "timeTemplate": true,
+            "date": "Jan-26-2023 07:47:45 PM",
+            "link": "https://www.stakegoblin.com/staking",
+            "token": "0xfd559867b6d3445f9589074c3ac46418fdfffda4",
+            "stakingSymbol": "INGOT",
+            "stakingToken": "0x13d73addcf15c55b67bcdd53398e3604d464e338",
+            "indexRatio": 4.5,
+            "stakingContract": "0x147dd573c63b74b16d5d6ed70d7fb51057c130ad",
+            "LPContract": "0xCA11d1FA4d571296e5DAcc9a31ac9DAA619A0239",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xb8a464f2f7f081c0ce18256c3b68b4bd9b7363e6",
+            "bondingCalculator": null,
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+                        "decimals": 6
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "USDC",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                }
+            ]
+        }
+    }
+}
