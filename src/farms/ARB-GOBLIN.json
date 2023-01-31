@@ -20,7 +20,10 @@
             "wsOHMNetworks": [],
             "wsOHMSymbol": "",
             "bondingContracts": [
-
+                {
+                    "address": "0x1F4d11d500979f21c5dcd2f6a4839259a2d19F96",
+                    "symbol": "USDC"
+                }
             ],
             "treasuryAssets": [
                 {
