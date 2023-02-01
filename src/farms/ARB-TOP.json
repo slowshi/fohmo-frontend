@@ -1,0 +1,78 @@
+{
+    "ARB-TOP": {
+        "farmSymbol": "TOP",
+        "networkSymbol": "ARB",
+        "constants": {
+            "name": "TOP FI",
+            "symbol": "TOP",
+            "timeTemplate": true,
+            "date": "Feb-01-2023 12:37:04 AM",
+            "link": "https://www.stakegoblin.com/staking",
+            "token": "0xd14aa9de5B0846F74D068f3Ff8db0F760D83C850",
+            "stakingSymbol": "DREAM",
+            "stakingToken": "0x82775b3963f71255d2967da9de7f3041de8eb150",
+            "indexRatio": 1,
+            "stakingContract": "0xABe62b62F7848732FC187242ae77CAf96Bc13F12",
+            "LPContract": "0x6b114e0aabe4688667d1a08b0dfcbdded69ac675",
+            "lockedSupplyContract": null,
+            "treasuryContract": "0xbFF7397d59782936C5080EA1b4a0Ff05026A09F2",
+            "bondingCalculator": null,
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "wDREAM",
+            "bondingContracts": [
+                {
+                    "address": "0x926Aa33d7A26301956195a2d2333D87bc7D709A1",
+                    "symbol": "wETH"
+                },
+                {
+                    "address": "0x2c29EFb2857d2d038B6E55cAebB6401A531f176a",
+                    "symbol": "DAI"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+                        "decimals": 6
+                    },
+                    "symbol": "WETH",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0xCB0E5bFa72bBb4d16AB5aA0c60601c438F04b4ad"
+                },
+                {
+                    "token0": {
+                        "address": "0xbEF455C3CCAe6c3E509add25D6867e3B80884306",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+                        "decimals": 6
+                    },
+                    "symbol": "TOP$",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                }
+            ]
+        }
+    }
+}
