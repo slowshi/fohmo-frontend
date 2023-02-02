@@ -167,29 +167,29 @@ class StakingInfo {
       [],
       clearCache
     );
-    // if(farmParams.lockedSupplyContract !== null) {
-    //   if(typeof farmParams.lockedSupplyContract === 'string') {
-    //     const lockedSupply = await cacheEthers.contractCall(
-    //       tokenContract,
-    //       'balanceOf',
-    //       [farmParams.lockedSupplyContract],
-    //       clearCache
-    //     );
-    //     totalSupply = totalSupply - lockedSupply;
-    //   } else {
-    //     const lockedSupplyPromises = farmParams.lockedSupplyContract.map(async (lockedSupplyContract)=>{
-    //       const lockedSupply = await cacheEthers.contractCall(
-    //         tokenContract,
-    //         'balanceOf',
-    //         [lockedSupplyContract],
-    //         clearCache
-    //       );
-    //       // console.log(lockedSupply);
-    //       totalSupply = totalSupply - lockedSupply;
-    //     });
-    //     await Promise.all(lockedSupplyPromises);
-    //   }
-    // }
+    if(farmParams.lockedSupplyContract !== null && key === 'ARB-TOP') {
+      // if(typeof farmParams.lockedSupplyContract === 'string') {
+        const lockedSupply = await cacheEthers.contractCall(
+          tokenContract,
+          'balanceOf',
+          [farmParams.lockedSupplyContract],
+          clearCache
+        );
+        totalSupply = totalSupply - lockedSupply;
+      // } else {
+      //   const lockedSupplyPromises = farmParams.lockedSupplyContract.map(async (lockedSupplyContract)=>{
+      //     const lockedSupply = await cacheEthers.contractCall(
+      //       tokenContract,
+      //       'balanceOf',
+      //       [lockedSupplyContract],
+      //       clearCache
+      //     );
+      //     // console.log(lockedSupply);
+      //     totalSupply = totalSupply - lockedSupply;
+      //   });
+      //   await Promise.all(lockedSupplyPromises);
+      // }
+    }
 
     const epoch = await cacheEthers.contractCall(
       stakingContract,
