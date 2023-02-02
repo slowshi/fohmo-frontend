@@ -22,12 +22,16 @@
             "wsOHMSymbol": "wDREAM",
             "bondingContracts": [
                 {
+                    "address": "0x45861C5689E06222c346cb620f7f578dc802374A",
+                    "symbol": "DAI"
+                },
+                {
                     "address": "0x926Aa33d7A26301956195a2d2333D87bc7D709A1",
                     "symbol": "wETH"
                 },
                 {
                     "address": "0x2c29EFb2857d2d038B6E55cAebB6401A531f176a",
-                    "symbol": "DAI"
+                    "symbol": "DAI (OLD)"
                 }
             ],
             "treasuryAssets": [
