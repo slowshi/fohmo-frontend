@@ -64,18 +64,18 @@
                     "LPAddress": "0xCB0E5bFa72bBb4d16AB5aA0c60601c438F04b4ad"
                 },
                 {
+                    "symbol": "TOP-DAI",
                     "token0": {
-                        "address": "0xbEF455C3CCAe6c3E509add25D6867e3B80884306",
+                        "address": "0xd14aa9de5B0846F74D068f3Ff8db0F760D83C850",
                         "decimals": 9
                     },
                     "token1": {
-                        "address": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
-                        "decimals": 6
+                        "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+                        "decimals": 18
                     },
-                    "symbol": "TOP$",
-                    "stable": false,
-                    "single": true,
-                    "LPAddress": "0x0000000000000000000000000000000000000000"
+                    "LPAddress": "0x6b114e0AABe4688667D1a08b0DFCbdDED69Ac675",
+                    "stable": true,
+                    "single": false
                 }
             ]
         }
