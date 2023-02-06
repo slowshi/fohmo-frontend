@@ -64,6 +64,46 @@
                     "LPAddress": "0x913398d79438e8D709211cFC3DC8566F6C67e1A8"
                 },
                 {
+                    "token0": {
+                        "address": "0x0C4681e6C0235179ec3D4F4fc4DF3d14FDD96017",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+                        "decimals": 6
+                    },
+                    "symbol": "RDNT",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x3Bc372B4Cd90318fd7a018617ca0bB8e9a78C223"
+                },
+                {
+                    "token0": {
+                        "address": "0x1A5B0aaF478bf1FDA7b934c76E7692D722982a6D",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+                        "decimals": 18
+                    },
+                    "nonStableLP": {
+                        "stableKey": "token1",
+                        "address": "0xCB0E5bFa72bBb4d16AB5aA0c60601c438F04b4ad",
+                        "token0": {
+                            "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+                            "decimals": 18
+                        },
+                        "token1": {
+                            "address": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+                            "decimals": 6
+                        }
+                    },
+                    "symbol": "BFR",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x47ecf602a62baf7d4e6b30fe3e8dd45bb8cffadc"
+                },
+                {
                     "symbol": "DELTA-DAI",
                     "token0": {
                         "address": "0x7A6F6Cfd6c2030aE844C2ffEb7Fa70F4bd006283",
