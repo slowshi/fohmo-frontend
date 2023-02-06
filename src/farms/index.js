@@ -1,6 +1,7 @@
 import ARB_UMAMI from './ARB-UMAMI.json';
 import ARB_GOBLIN from './ARB-GOBLIN.json';
 import ARB_TOP from './ARB-TOP.json';
+import ARB_DELTA from './ARB-DELTA.json';
 import AVAX_MAXI from './AVAX-MAXI.json';
 import AVAX_OTWO from './AVAX-OTWO.json';
 import AVAX_TIME from './AVAX-TIME.json';
@@ -28,6 +29,7 @@ const farms = {
   ...ARB_UMAMI,
   ...ARB_GOBLIN,
   ...ARB_TOP,
+  ...ARB_DELTA,
   ...AVAX_MAXI,
   ...AVAX_OTWO,
   ...AVAX_TIME,

@@ -1,0 +1,83 @@
+{
+    "ARB-DELTA": {
+        "farmSymbol": "DELTA",
+        "networkSymbol": "ARB",
+        "constants": {
+            "name": "Delta",
+            "symbol": "DELTA",
+            "timeTemplate": true,
+            "date": "Feb-04-2023 07:41:57 PM",
+            "link": "https://www.deltafinance.gg/#/stake",
+            "token": "0x7a6f6cfd6c2030ae844c2ffeb7fa70f4bd006283",
+            "stakingSymbol": "sDELTA",
+            "stakingToken": "0xc739e4b3c37784bfbdede157acdcf68d32f77a37",
+            "indexRatio": 1,
+            "stakingContract": "0x6c89EFc48D68227D350F1469365f44822b22C861",
+            "isWarmup": true,
+            "LPContract": "0x3cbbf710b8f0fdeb7dcd95562e3cdc5868bc9e47",
+            "lockedSupplyContract": "",
+            "treasuryContract": "0x85943564EeAbfdB985Ef43F74e098D7ac646ab2b",
+            "bondingCalculator": null,
+            "wsOHMNetworks": [],
+            "wsOHMSymbol": "",
+            "bondingContracts": [
+                {
+                    "address": "0x293dfcda74b7a45c23d08ff8f1ea760d384770ce",
+                    "symbol": "DELTA-DAI"
+                },
+                {
+                    "address": "0xe9bd52967d36c5bbbb9368afd633dffbf8b1c437",
+                    "symbol": "DAI"
+                },
+                {
+                    "address": "0xca030e153d282bb543d5a40c425581cfc88ccd95",
+                    "symbol": "GMX"
+                }
+            ],
+            "treasuryAssets": [
+                {
+                    "token0": {
+                        "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "",
+                        "decimals": ""
+                    },
+                    "symbol": "DAI",
+                    "stable": true,
+                    "single": true,
+                    "LPAddress": ""
+                },
+                {
+                    "token0": {
+                        "address": "0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a",
+                        "decimals": 18
+                    },
+                    "token1": {
+                        "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+                        "decimals": 6
+                    },
+                    "symbol": "GMX",
+                    "stable": false,
+                    "single": true,
+                    "LPAddress": "0x913398d79438e8D709211cFC3DC8566F6C67e1A8"
+                },
+                {
+                    "symbol": "DELTA-DAI",
+                    "token0": {
+                        "address": "0x7A6F6Cfd6c2030aE844C2ffEb7Fa70F4bd006283",
+                        "decimals": 9
+                    },
+                    "token1": {
+                        "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+                        "decimals": 18
+                    },
+                    "LPAddress": "0x3Cbbf710b8F0FDeB7dCD95562e3CDC5868bC9e47",
+                    "stable": true,
+                    "single": false
+                }
+            ]
+        }
+    }
+}
