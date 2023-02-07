@@ -157,7 +157,7 @@ const networks = {
   ARB: {
     symbol: 'ARB',
     name: 'Arbitrum',
-    rpcURL: 'https://arb1.arbitrum.io/rpc',
+    rpcURL: 'https://arbitrum.blockpi.network/v1/rpc/public',
     chartURL: 'https://dexscreener.com/arbitrum/',
     blockRateSeconds: 3.02
   },
