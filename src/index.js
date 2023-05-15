@@ -5,10 +5,12 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import store from './store/store';
+import { Analytics } from '@vercel/analytics/react';
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
+    <Analytics />
   </Provider>,
   document.getElementById('root')
 );
