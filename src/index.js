@@ -5,16 +5,14 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import store from './store/store';
-import { Analytics } from '@vercel/analytics/react';
-
+import { inject } from '@vercel/analytics';
 ReactDOM.render(
   <Provider store={store}>
     <App />
-    <Analytics />
   </Provider>,
   document.getElementById('root')
 );
-
+inject()
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
